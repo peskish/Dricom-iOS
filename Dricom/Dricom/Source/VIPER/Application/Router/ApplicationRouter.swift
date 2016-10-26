@@ -1,0 +1,3 @@
+protocol ApplicationRouter: class {
+    
+}

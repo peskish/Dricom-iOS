@@ -10,6 +10,17 @@
 		F09209421DC13EFB0057302F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F09209411DC13EFB0057302F /* Assets.xcassets */; };
 		F09209451DC13EFB0057302F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F09209431DC13EFB0057302F /* LaunchScreen.storyboard */; };
 		F09209821DC146300057302F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F092096F1DC146300057302F /* AppDelegate.swift */; };
+		F09209A11DC14A7F0057302F /* ApplicationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09209921DC14A7F0057302F /* ApplicationAssembly.swift */; };
+		F09209A21DC14A7F0057302F /* ApplicationAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09209931DC14A7F0057302F /* ApplicationAssemblyImpl.swift */; };
+		F09209A31DC14A7F0057302F /* ApplicationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09209951DC14A7F0057302F /* ApplicationInteractor.swift */; };
+		F09209A41DC14A7F0057302F /* ApplicationInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09209961DC14A7F0057302F /* ApplicationInteractorImpl.swift */; };
+		F09209A61DC14A7F0057302F /* ApplicationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09209991DC14A7F0057302F /* ApplicationPresenter.swift */; };
+		F09209A71DC14A7F0057302F /* ApplicationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F092099B1DC14A7F0057302F /* ApplicationRouter.swift */; };
+		F09209A81DC14A7F0057302F /* ApplicationRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F092099C1DC14A7F0057302F /* ApplicationRouterImpl.swift */; };
+		F09209B41DC1502B0057302F /* AssemblyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09209B31DC1502B0057302F /* AssemblyFactory.swift */; };
+		F09209B61DC150CB0057302F /* AssemblyFactoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09209B51DC150CB0057302F /* AssemblyFactoryImpl.swift */; };
+		F09209B81DC1513B0057302F /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09209B71DC1513B0057302F /* BaseRouter.swift */; };
+		F09209BD1DC1524E0057302F /* BaseAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09209BC1DC1524E0057302F /* BaseAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +29,17 @@
 		F09209441DC13EFB0057302F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F09209461DC13EFB0057302F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F092096F1DC146300057302F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F09209921DC14A7F0057302F /* ApplicationAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationAssembly.swift; sourceTree = "<group>"; };
+		F09209931DC14A7F0057302F /* ApplicationAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationAssemblyImpl.swift; sourceTree = "<group>"; };
+		F09209951DC14A7F0057302F /* ApplicationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationInteractor.swift; sourceTree = "<group>"; };
+		F09209961DC14A7F0057302F /* ApplicationInteractorImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationInteractorImpl.swift; sourceTree = "<group>"; };
+		F09209991DC14A7F0057302F /* ApplicationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationPresenter.swift; sourceTree = "<group>"; };
+		F092099B1DC14A7F0057302F /* ApplicationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationRouter.swift; sourceTree = "<group>"; };
+		F092099C1DC14A7F0057302F /* ApplicationRouterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationRouterImpl.swift; sourceTree = "<group>"; };
+		F09209B31DC1502B0057302F /* AssemblyFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssemblyFactory.swift; sourceTree = "<group>"; };
+		F09209B51DC150CB0057302F /* AssemblyFactoryImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssemblyFactoryImpl.swift; sourceTree = "<group>"; };
+		F09209B71DC1513B0057302F /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseRouter.swift; path = Router/BaseRouter.swift; sourceTree = "<group>"; };
+		F09209BC1DC1524E0057302F /* BaseAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseAssembly.swift; path = Assembly/BaseAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +116,91 @@
 		F09209701DC146300057302F /* VIPER */ = {
 			isa = PBXGroup;
 			children = (
+				F09209B11DC1502B0057302F /* Common */,
+				F09209901DC14A7F0057302F /* Application */,
 			);
 			path = VIPER;
+			sourceTree = "<group>";
+		};
+		F09209901DC14A7F0057302F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				F09209911DC14A7F0057302F /* Assembly */,
+				F09209941DC14A7F0057302F /* Interactor */,
+				F09209971DC14A7F0057302F /* Presenter */,
+				F092099A1DC14A7F0057302F /* Router */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		F09209911DC14A7F0057302F /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				F09209921DC14A7F0057302F /* ApplicationAssembly.swift */,
+				F09209931DC14A7F0057302F /* ApplicationAssemblyImpl.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		F09209941DC14A7F0057302F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				F09209951DC14A7F0057302F /* ApplicationInteractor.swift */,
+				F09209961DC14A7F0057302F /* ApplicationInteractorImpl.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		F09209971DC14A7F0057302F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F09209991DC14A7F0057302F /* ApplicationPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F092099A1DC14A7F0057302F /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F092099B1DC14A7F0057302F /* ApplicationRouter.swift */,
+				F092099C1DC14A7F0057302F /* ApplicationRouterImpl.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F09209B11DC1502B0057302F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F09209B21DC1502B0057302F /* AssemblyFactory */,
+				F09209BE1DC152530057302F /* Assembly */,
+				F09209B91DC151400057302F /* Router */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F09209B21DC1502B0057302F /* AssemblyFactory */ = {
+			isa = PBXGroup;
+			children = (
+				F09209B31DC1502B0057302F /* AssemblyFactory.swift */,
+				F09209B51DC150CB0057302F /* AssemblyFactoryImpl.swift */,
+			);
+			path = AssemblyFactory;
+			sourceTree = "<group>";
+		};
+		F09209B91DC151400057302F /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F09209B71DC1513B0057302F /* BaseRouter.swift */,
+			);
+			name = Router;
+			sourceTree = "<group>";
+		};
+		F09209BE1DC152530057302F /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				F09209BC1DC1524E0057302F /* BaseAssembly.swift */,
+			);
+			name = Assembly;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,7 +275,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F09209A61DC14A7F0057302F /* ApplicationPresenter.swift in Sources */,
+				F09209A11DC14A7F0057302F /* ApplicationAssembly.swift in Sources */,
+				F09209A31DC14A7F0057302F /* ApplicationInteractor.swift in Sources */,
 				F09209821DC146300057302F /* AppDelegate.swift in Sources */,
+				F09209B61DC150CB0057302F /* AssemblyFactoryImpl.swift in Sources */,
+				F09209A21DC14A7F0057302F /* ApplicationAssemblyImpl.swift in Sources */,
+				F09209B41DC1502B0057302F /* AssemblyFactory.swift in Sources */,
+				F09209B81DC1513B0057302F /* BaseRouter.swift in Sources */,
+				F09209A81DC14A7F0057302F /* ApplicationRouterImpl.swift in Sources */,
+				F09209A41DC14A7F0057302F /* ApplicationInteractorImpl.swift in Sources */,
+				F09209BD1DC1524E0057302F /* BaseAssembly.swift in Sources */,
+				F09209A71DC14A7F0057302F /* ApplicationRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
