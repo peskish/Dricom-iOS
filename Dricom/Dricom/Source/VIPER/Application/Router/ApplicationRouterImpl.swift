@@ -3,8 +3,17 @@ import UIKit
 final class ApplicationRouterImpl: BaseRouter, ApplicationRouter {
     // MARK: - ApplicationRouter
     func showLoginOrRegister(configure: (_ module: LoginOrRegisterModule) -> ()) {
+        guard let viewController = viewController else {
+            assertionFailure("viewController is nil")
+            return
+        }
+        
         let assembly = assemblyFactory.loginOrRegisterAssembly()
         let targetViewController = assembly.module(configure: configure)
-        navigationController?.pushViewController(targetViewController, animated: false)
+        let transition = CrossFadePushTransition()
+        
+        transition.animate(from: viewController, to: targetViewController) { [weak self] in
+            self?.viewController?.navigationController?.viewControllers = [targetViewController]
+        }
     }
 }

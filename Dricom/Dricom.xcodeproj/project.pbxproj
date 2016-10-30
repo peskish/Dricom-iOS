@@ -39,11 +39,25 @@
 		F0A115561DC634E200A4DC76 /* LoginOrRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1154B1DC634E200A4DC76 /* LoginOrRegisterView.swift */; };
 		F0A115571DC634E200A4DC76 /* LoginOrRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1154C1DC634E200A4DC76 /* LoginOrRegisterViewController.swift */; };
 		F0A115581DC634E200A4DC76 /* LoginOrRegisterViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1154D1DC634E200A4DC76 /* LoginOrRegisterViewInput.swift */; };
-		F0A1155A1DC6371F00A4DC76 /* ViewLifecycleObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115591DC6371F00A4DC76 /* ViewLifecycleObservable.swift */; };
 		F0A1155E1DC637C600A4DC76 /* DisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1155C1DC637C600A4DC76 /* DisposeBag.swift */; };
 		F0A1155F1DC637C600A4DC76 /* DisposeBagHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1155D1DC637C600A4DC76 /* DisposeBagHolder.swift */; };
 		F0A115611DC6385400A4DC76 /* RouterFocusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115601DC6385400A4DC76 /* RouterFocusable.swift */; };
 		F0A115631DC63A8700A4DC76 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115621DC63A8700A4DC76 /* MainFlowController.swift */; };
+		F0A115651DC67F8400A4DC76 /* RadialGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115641DC67F8400A4DC76 /* RadialGradientView.swift */; };
+		F0A115761DC6863E00A4DC76 /* CGPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1156B1DC6863D00A4DC76 /* CGPoint+Extension.swift */; };
+		F0A115771DC6863E00A4DC76 /* CGRectLayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1156C1DC6863D00A4DC76 /* CGRectLayoutExtension.swift */; };
+		F0A115781DC6863E00A4DC76 /* CGSizeLayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1156D1DC6863D00A4DC76 /* CGSizeLayoutExtension.swift */; };
+		F0A1157A1DC6863E00A4DC76 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1156F1DC6863D00A4DC76 /* UIColorExtension.swift */; };
+		F0A1157B1DC6863E00A4DC76 /* UIEdgeInsetsLayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115701DC6863D00A4DC76 /* UIEdgeInsetsLayoutExtension.swift */; };
+		F0A1157C1DC6863E00A4DC76 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115711DC6863D00A4DC76 /* UIImageExtension.swift */; };
+		F0A1157D1DC6863E00A4DC76 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115721DC6863D00A4DC76 /* UIView+Layout.swift */; };
+		F0A1157E1DC6863E00A4DC76 /* UIView+Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115731DC6863D00A4DC76 /* UIView+Properties.swift */; };
+		F0A1157F1DC6863E00A4DC76 /* UIView+Resizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115741DC6863E00A4DC76 /* UIView+Resizing.swift */; };
+		F0A115801DC6863E00A4DC76 /* UIView+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115751DC6863E00A4DC76 /* UIView+Size.swift */; };
+		F0A115821DC6897300A4DC76 /* SpecColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115811DC6897300A4DC76 /* SpecColors.swift */; };
+		F0A115851DC68DF500A4DC76 /* ViewLifecycleObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115841DC68DF500A4DC76 /* ViewLifecycleObservable.swift */; };
+		F0A115871DC68E1D00A4DC76 /* ViewControllerTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115861DC68E1D00A4DC76 /* ViewControllerTransition.swift */; };
+		F0A115891DC6914100A4DC76 /* CrossFadePushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115881DC6914100A4DC76 /* CrossFadePushTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,11 +95,25 @@
 		F0A1154B1DC634E200A4DC76 /* LoginOrRegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOrRegisterView.swift; sourceTree = "<group>"; };
 		F0A1154C1DC634E200A4DC76 /* LoginOrRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOrRegisterViewController.swift; sourceTree = "<group>"; };
 		F0A1154D1DC634E200A4DC76 /* LoginOrRegisterViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOrRegisterViewInput.swift; sourceTree = "<group>"; };
-		F0A115591DC6371F00A4DC76 /* ViewLifecycleObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewLifecycleObservable.swift; path = Dricom/Source/Presentation/ViewLifecycleObservable.swift; sourceTree = SOURCE_ROOT; };
 		F0A1155C1DC637C600A4DC76 /* DisposeBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposeBag.swift; sourceTree = "<group>"; };
 		F0A1155D1DC637C600A4DC76 /* DisposeBagHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposeBagHolder.swift; sourceTree = "<group>"; };
 		F0A115601DC6385400A4DC76 /* RouterFocusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterFocusable.swift; path = Router/RouterFocusable.swift; sourceTree = "<group>"; };
 		F0A115621DC63A8700A4DC76 /* MainFlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
+		F0A115641DC67F8400A4DC76 /* RadialGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadialGradientView.swift; path = Dricom/Source/Presentation/Views/RadialGradientView.swift; sourceTree = SOURCE_ROOT; };
+		F0A1156B1DC6863D00A4DC76 /* CGPoint+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGPoint+Extension.swift"; path = "Core/Extensions/UIKit/CGPoint+Extension.swift"; sourceTree = "<group>"; };
+		F0A1156C1DC6863D00A4DC76 /* CGRectLayoutExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGRectLayoutExtension.swift; path = Core/Extensions/UIKit/CGRectLayoutExtension.swift; sourceTree = "<group>"; };
+		F0A1156D1DC6863D00A4DC76 /* CGSizeLayoutExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGSizeLayoutExtension.swift; path = Core/Extensions/UIKit/CGSizeLayoutExtension.swift; sourceTree = "<group>"; };
+		F0A1156F1DC6863D00A4DC76 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtension.swift; path = Core/Extensions/UIKit/UIColorExtension.swift; sourceTree = "<group>"; };
+		F0A115701DC6863D00A4DC76 /* UIEdgeInsetsLayoutExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIEdgeInsetsLayoutExtension.swift; path = Core/Extensions/UIKit/UIEdgeInsetsLayoutExtension.swift; sourceTree = "<group>"; };
+		F0A115711DC6863D00A4DC76 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageExtension.swift; path = Core/Extensions/UIKit/UIImageExtension.swift; sourceTree = "<group>"; };
+		F0A115721DC6863D00A4DC76 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Layout.swift"; path = "Core/Extensions/UIKit/UIView+Layout.swift"; sourceTree = "<group>"; };
+		F0A115731DC6863D00A4DC76 /* UIView+Properties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Properties.swift"; path = "Core/Extensions/UIKit/UIView+Properties.swift"; sourceTree = "<group>"; };
+		F0A115741DC6863E00A4DC76 /* UIView+Resizing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Resizing.swift"; path = "Core/Extensions/UIKit/UIView+Resizing.swift"; sourceTree = "<group>"; };
+		F0A115751DC6863E00A4DC76 /* UIView+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Size.swift"; path = "Core/Extensions/UIKit/UIView+Size.swift"; sourceTree = "<group>"; };
+		F0A115811DC6897300A4DC76 /* SpecColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpecColors.swift; path = Dricom/Source/Presentation/Spec/SpecColors.swift; sourceTree = SOURCE_ROOT; };
+		F0A115841DC68DF500A4DC76 /* ViewLifecycleObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewLifecycleObservable.swift; path = Dricom/Source/Presentation/ViewControllers/ViewLifecycleObservable.swift; sourceTree = SOURCE_ROOT; };
+		F0A115861DC68E1D00A4DC76 /* ViewControllerTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerTransition.swift; path = Dricom/Source/Presentation/Transitions/ViewControllerTransition.swift; sourceTree = SOURCE_ROOT; };
+		F0A115881DC6914100A4DC76 /* CrossFadePushTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CrossFadePushTransition.swift; path = Dricom/Source/Presentation/Transitions/CrossFadePushTransition.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,8 +286,10 @@
 		F0A115171DC622A100A4DC76 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F0A115831DC68DDD00A4DC76 /* Spec */,
+				F0A115661DC67F9500A4DC76 /* View */,
 				F0A115181DC622AB00A4DC76 /* ViewControllers */,
-				F0A115591DC6371F00A4DC76 /* ViewLifecycleObservable.swift */,
+				F0A1158A1DC6914700A4DC76 /* ViewControllerTransitions */,
 			);
 			name = Presentation;
 			path = VIPER;
@@ -268,6 +298,7 @@
 		F0A115181DC622AB00A4DC76 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F0A115841DC68DF500A4DC76 /* ViewLifecycleObservable.swift */,
 				F0A115151DC6229500A4DC76 /* BaseViewController.swift */,
 				F0A115191DC622D900A4DC76 /* BaseNavigationController.swift */,
 			);
@@ -281,6 +312,7 @@
 				F0A115221DC629CE00A4DC76 /* Model */,
 				F0A1151E1DC6284B00A4DC76 /* Networking */,
 				F0A1155B1DC637C600A4DC76 /* Utilities */,
+				F0A115691DC685B300A4DC76 /* Extensions */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -396,9 +428,9 @@
 		F0A1154A1DC634E200A4DC76 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F0A1154B1DC634E200A4DC76 /* LoginOrRegisterView.swift */,
-				F0A1154C1DC634E200A4DC76 /* LoginOrRegisterViewController.swift */,
 				F0A1154D1DC634E200A4DC76 /* LoginOrRegisterViewInput.swift */,
+				F0A1154C1DC634E200A4DC76 /* LoginOrRegisterViewController.swift */,
+				F0A1154B1DC634E200A4DC76 /* LoginOrRegisterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -411,6 +443,56 @@
 			);
 			name = Utilities;
 			path = Core/Utilities;
+			sourceTree = "<group>";
+		};
+		F0A115661DC67F9500A4DC76 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0A115641DC67F8400A4DC76 /* RadialGradientView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		F0A115691DC685B300A4DC76 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F0A1156A1DC685BC00A4DC76 /* UIKit */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		F0A1156A1DC685BC00A4DC76 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				F0A1156B1DC6863D00A4DC76 /* CGPoint+Extension.swift */,
+				F0A1156C1DC6863D00A4DC76 /* CGRectLayoutExtension.swift */,
+				F0A1156D1DC6863D00A4DC76 /* CGSizeLayoutExtension.swift */,
+				F0A1156F1DC6863D00A4DC76 /* UIColorExtension.swift */,
+				F0A115701DC6863D00A4DC76 /* UIEdgeInsetsLayoutExtension.swift */,
+				F0A115711DC6863D00A4DC76 /* UIImageExtension.swift */,
+				F0A115721DC6863D00A4DC76 /* UIView+Layout.swift */,
+				F0A115731DC6863D00A4DC76 /* UIView+Properties.swift */,
+				F0A115741DC6863E00A4DC76 /* UIView+Resizing.swift */,
+				F0A115751DC6863E00A4DC76 /* UIView+Size.swift */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
+		F0A115831DC68DDD00A4DC76 /* Spec */ = {
+			isa = PBXGroup;
+			children = (
+				F0A115811DC6897300A4DC76 /* SpecColors.swift */,
+			);
+			name = Spec;
+			sourceTree = "<group>";
+		};
+		F0A1158A1DC6914700A4DC76 /* ViewControllerTransitions */ = {
+			isa = PBXGroup;
+			children = (
+				F0A115861DC68E1D00A4DC76 /* ViewControllerTransition.swift */,
+				F0A115881DC6914100A4DC76 /* CrossFadePushTransition.swift */,
+			);
+			name = ViewControllerTransitions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -487,6 +569,7 @@
 			files = (
 				F0A115351DC6309F00A4DC76 /* ServiceFactory.swift in Sources */,
 				F0A115521DC634E200A4DC76 /* LoginOrRegisterModule.swift in Sources */,
+				F0A115761DC6863E00A4DC76 /* CGPoint+Extension.swift in Sources */,
 				F0A115561DC634E200A4DC76 /* LoginOrRegisterView.swift in Sources */,
 				F0A115581DC634E200A4DC76 /* LoginOrRegisterViewInput.swift in Sources */,
 				F0A115161DC6229500A4DC76 /* BaseViewController.swift in Sources */,
@@ -494,23 +577,33 @@
 				F0A115531DC634E200A4DC76 /* LoginOrRegisterPresenter.swift in Sources */,
 				F0A1152D1DC62CB300A4DC76 /* RegistrationService.swift in Sources */,
 				F09209A61DC14A7F0057302F /* ApplicationPresenter.swift in Sources */,
+				F0A115801DC6863E00A4DC76 /* UIView+Size.swift in Sources */,
+				F0A1157F1DC6863E00A4DC76 /* UIView+Resizing.swift in Sources */,
 				F09209A11DC14A7F0057302F /* ApplicationAssembly.swift in Sources */,
 				F09209A31DC14A7F0057302F /* ApplicationInteractor.swift in Sources */,
 				F09209821DC146300057302F /* AppDelegate.swift in Sources */,
+				F0A1157D1DC6863E00A4DC76 /* UIView+Layout.swift in Sources */,
 				F09209B61DC150CB0057302F /* AssemblyFactoryImpl.swift in Sources */,
+				F0A1157C1DC6863E00A4DC76 /* UIImageExtension.swift in Sources */,
 				F0A1155E1DC637C600A4DC76 /* DisposeBag.swift in Sources */,
 				F0A1152B1DC62C8000A4DC76 /* ViewDebugRegistrationService.swift in Sources */,
 				F0A1154E1DC634E200A4DC76 /* LoginOrRegisterAssembly.swift in Sources */,
 				F0A1155F1DC637C600A4DC76 /* DisposeBagHolder.swift in Sources */,
 				F09209A21DC14A7F0057302F /* ApplicationAssemblyImpl.swift in Sources */,
+				F0A115891DC6914100A4DC76 /* CrossFadePushTransition.swift in Sources */,
 				F0A115541DC634E200A4DC76 /* LoginOrRegisterRouter.swift in Sources */,
+				F0A115851DC68DF500A4DC76 /* ViewLifecycleObservable.swift in Sources */,
+				F0A115651DC67F8400A4DC76 /* RadialGradientView.swift in Sources */,
 				F09209B41DC1502B0057302F /* AssemblyFactory.swift in Sources */,
 				F0A1151A1DC622D900A4DC76 /* BaseNavigationController.swift in Sources */,
 				F0A115551DC634E200A4DC76 /* LoginOrRegisterRouterImpl.swift in Sources */,
 				F09209B81DC1513B0057302F /* BaseRouter.swift in Sources */,
+				F0A115821DC6897300A4DC76 /* SpecColors.swift in Sources */,
 				F0A115301DC62D2000A4DC76 /* DataResult.swift in Sources */,
 				F0A115571DC634E200A4DC76 /* LoginOrRegisterViewController.swift in Sources */,
-				F0A1155A1DC6371F00A4DC76 /* ViewLifecycleObservable.swift in Sources */,
+				F0A1157E1DC6863E00A4DC76 /* UIView+Properties.swift in Sources */,
+				F0A1157A1DC6863E00A4DC76 /* UIColorExtension.swift in Sources */,
+				F0A115871DC68E1D00A4DC76 /* ViewControllerTransition.swift in Sources */,
 				F09209A81DC14A7F0057302F /* ApplicationRouterImpl.swift in Sources */,
 				F09209A41DC14A7F0057302F /* ApplicationInteractorImpl.swift in Sources */,
 				F09209BD1DC1524E0057302F /* BaseAssembly.swift in Sources */,
@@ -518,7 +611,10 @@
 				F09209A71DC14A7F0057302F /* ApplicationRouter.swift in Sources */,
 				F0A115331DC62DB600A4DC76 /* NetworkError.swift in Sources */,
 				F0A115381DC630DD00A4DC76 /* ViewDebugServiceFactory.swift in Sources */,
+				F0A115771DC6863E00A4DC76 /* CGRectLayoutExtension.swift in Sources */,
 				F0A115631DC63A8700A4DC76 /* MainFlowController.swift in Sources */,
+				F0A115781DC6863E00A4DC76 /* CGSizeLayoutExtension.swift in Sources */,
+				F0A1157B1DC6863E00A4DC76 /* UIEdgeInsetsLayoutExtension.swift in Sources */,
 				F0A1154F1DC634E200A4DC76 /* LoginOrRegisterAssemblyImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

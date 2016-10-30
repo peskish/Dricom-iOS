@@ -11,5 +11,6 @@ class BaseRouter {
     // MARK: - Init
     init(assemblyFactory: AssemblyFactory, viewController: UIViewController) {
         self.assemblyFactory = assemblyFactory
+        self.viewController = viewController
     }
 }
