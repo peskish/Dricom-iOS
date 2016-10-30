@@ -21,6 +21,15 @@
 		F09209B61DC150CB0057302F /* AssemblyFactoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09209B51DC150CB0057302F /* AssemblyFactoryImpl.swift */; };
 		F09209B81DC1513B0057302F /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09209B71DC1513B0057302F /* BaseRouter.swift */; };
 		F09209BD1DC1524E0057302F /* BaseAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09209BC1DC1524E0057302F /* BaseAssembly.swift */; };
+		F0A115161DC6229500A4DC76 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115151DC6229500A4DC76 /* BaseViewController.swift */; };
+		F0A1151A1DC622D900A4DC76 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115191DC622D900A4DC76 /* BaseNavigationController.swift */; };
+		F0A115241DC629CE00A4DC76 /* SessionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115231DC629CE00A4DC76 /* SessionInfo.swift */; };
+		F0A1152B1DC62C8000A4DC76 /* ViewDebugRegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1152A1DC62C8000A4DC76 /* ViewDebugRegistrationService.swift */; };
+		F0A1152D1DC62CB300A4DC76 /* RegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1152C1DC62CB300A4DC76 /* RegistrationService.swift */; };
+		F0A115301DC62D2000A4DC76 /* DataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1152F1DC62D2000A4DC76 /* DataResult.swift */; };
+		F0A115331DC62DB600A4DC76 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115321DC62DB600A4DC76 /* NetworkError.swift */; };
+		F0A115351DC6309F00A4DC76 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115341DC6309F00A4DC76 /* ServiceFactory.swift */; };
+		F0A115381DC630DD00A4DC76 /* ViewDebugServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115371DC630DD00A4DC76 /* ViewDebugServiceFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +49,15 @@
 		F09209B51DC150CB0057302F /* AssemblyFactoryImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssemblyFactoryImpl.swift; sourceTree = "<group>"; };
 		F09209B71DC1513B0057302F /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseRouter.swift; path = Router/BaseRouter.swift; sourceTree = "<group>"; };
 		F09209BC1DC1524E0057302F /* BaseAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseAssembly.swift; path = Assembly/BaseAssembly.swift; sourceTree = "<group>"; };
+		F0A115151DC6229500A4DC76 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Dricom/Source/Presentation/ViewControllers/BaseViewController.swift; sourceTree = SOURCE_ROOT; };
+		F0A115191DC622D900A4DC76 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseNavigationController.swift; path = Dricom/Source/Presentation/ViewControllers/BaseNavigationController.swift; sourceTree = SOURCE_ROOT; };
+		F0A115231DC629CE00A4DC76 /* SessionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionInfo.swift; sourceTree = "<group>"; };
+		F0A1152A1DC62C8000A4DC76 /* ViewDebugRegistrationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewDebugRegistrationService.swift; path = Dricom/Source/VIPER/Services/ViewDebug/ViewDebugRegistrationService.swift; sourceTree = SOURCE_ROOT; };
+		F0A1152C1DC62CB300A4DC76 /* RegistrationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationService.swift; path = Dricom/Source/VIPER/Services/Interface/RegistrationService.swift; sourceTree = SOURCE_ROOT; };
+		F0A1152F1DC62D2000A4DC76 /* DataResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataResult.swift; path = Core/Common/DataResult.swift; sourceTree = "<group>"; };
+		F0A115321DC62DB600A4DC76 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkError.swift; path = Core/Common/NetworkError.swift; sourceTree = "<group>"; };
+		F0A115341DC6309F00A4DC76 /* ServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceFactory.swift; path = Dricom/Source/VIPER/Services/Factory/ServiceFactory.swift; sourceTree = SOURCE_ROOT; };
+		F0A115371DC630DD00A4DC76 /* ViewDebugServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewDebugServiceFactory.swift; path = Dricom/Source/VIPER/Services/Factory/ViewDebugServiceFactory.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +119,8 @@
 			children = (
 				F092096E1DC146300057302F /* Application */,
 				F09209701DC146300057302F /* VIPER */,
+				F0A115171DC622A100A4DC76 /* Presentation */,
+				F0A1151D1DC6284400A4DC76 /* Core */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -118,6 +138,7 @@
 			children = (
 				F09209B11DC1502B0057302F /* Common */,
 				F09209901DC14A7F0057302F /* Application */,
+				F0A115271DC62C2E00A4DC76 /* Services */,
 			);
 			path = VIPER;
 			sourceTree = "<group>";
@@ -203,6 +224,104 @@
 			name = Assembly;
 			sourceTree = "<group>";
 		};
+		F0A115171DC622A100A4DC76 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F0A115181DC622AB00A4DC76 /* ViewControllers */,
+			);
+			name = Presentation;
+			path = VIPER;
+			sourceTree = "<group>";
+		};
+		F0A115181DC622AB00A4DC76 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F0A115151DC6229500A4DC76 /* BaseViewController.swift */,
+				F0A115191DC622D900A4DC76 /* BaseNavigationController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F0A1151D1DC6284400A4DC76 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F0A115311DC62D2300A4DC76 /* Common */,
+				F0A115221DC629CE00A4DC76 /* Model */,
+				F0A1151E1DC6284B00A4DC76 /* Networking */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		F0A1151E1DC6284B00A4DC76 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		F0A115221DC629CE00A4DC76 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F0A115231DC629CE00A4DC76 /* SessionInfo.swift */,
+			);
+			name = Model;
+			path = Core/Model;
+			sourceTree = "<group>";
+		};
+		F0A115271DC62C2E00A4DC76 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F0A115361DC630A500A4DC76 /* Factory */,
+				F0A1152E1DC62CB800A4DC76 /* Interface */,
+				F0A115291DC62C6900A4DC76 /* Network */,
+				F0A115281DC62C3700A4DC76 /* ViewDebug */,
+			);
+			name = Services;
+			path = Application;
+			sourceTree = "<group>";
+		};
+		F0A115281DC62C3700A4DC76 /* ViewDebug */ = {
+			isa = PBXGroup;
+			children = (
+				F0A1152A1DC62C8000A4DC76 /* ViewDebugRegistrationService.swift */,
+			);
+			name = ViewDebug;
+			sourceTree = "<group>";
+		};
+		F0A115291DC62C6900A4DC76 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Network;
+			path = Dricom/Source/VIPER/Services/Network;
+			sourceTree = SOURCE_ROOT;
+		};
+		F0A1152E1DC62CB800A4DC76 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				F0A1152C1DC62CB300A4DC76 /* RegistrationService.swift */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
+		F0A115311DC62D2300A4DC76 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F0A1152F1DC62D2000A4DC76 /* DataResult.swift */,
+				F0A115321DC62DB600A4DC76 /* NetworkError.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		F0A115361DC630A500A4DC76 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				F0A115341DC6309F00A4DC76 /* ServiceFactory.swift */,
+				F0A115371DC630DD00A4DC76 /* ViewDebugServiceFactory.swift */,
+			);
+			name = Factory;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -275,18 +394,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0A115351DC6309F00A4DC76 /* ServiceFactory.swift in Sources */,
+				F0A115161DC6229500A4DC76 /* BaseViewController.swift in Sources */,
+				F0A1152D1DC62CB300A4DC76 /* RegistrationService.swift in Sources */,
 				F09209A61DC14A7F0057302F /* ApplicationPresenter.swift in Sources */,
 				F09209A11DC14A7F0057302F /* ApplicationAssembly.swift in Sources */,
 				F09209A31DC14A7F0057302F /* ApplicationInteractor.swift in Sources */,
 				F09209821DC146300057302F /* AppDelegate.swift in Sources */,
 				F09209B61DC150CB0057302F /* AssemblyFactoryImpl.swift in Sources */,
+				F0A1152B1DC62C8000A4DC76 /* ViewDebugRegistrationService.swift in Sources */,
 				F09209A21DC14A7F0057302F /* ApplicationAssemblyImpl.swift in Sources */,
 				F09209B41DC1502B0057302F /* AssemblyFactory.swift in Sources */,
+				F0A1151A1DC622D900A4DC76 /* BaseNavigationController.swift in Sources */,
 				F09209B81DC1513B0057302F /* BaseRouter.swift in Sources */,
+				F0A115301DC62D2000A4DC76 /* DataResult.swift in Sources */,
 				F09209A81DC14A7F0057302F /* ApplicationRouterImpl.swift in Sources */,
 				F09209A41DC14A7F0057302F /* ApplicationInteractorImpl.swift in Sources */,
 				F09209BD1DC1524E0057302F /* BaseAssembly.swift in Sources */,
+				F0A115241DC629CE00A4DC76 /* SessionInfo.swift in Sources */,
 				F09209A71DC14A7F0057302F /* ApplicationRouter.swift in Sources */,
+				F0A115331DC62DB600A4DC76 /* NetworkError.swift in Sources */,
+				F0A115381DC630DD00A4DC76 /* ViewDebugServiceFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +570,7 @@
 				F092094B1DC13EFB0057302F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
