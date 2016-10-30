@@ -13,7 +13,7 @@ final class ApplicationAssemblyImpl: BaseAssembly, ApplicationAssembly {
         let navigationController = BaseNavigationController(rootViewController: viewController)
         
         let interactor = ApplicationInteractorImpl()
-        let router = ApplicationRouterImpl(assemblyFactory: assemblyFactory)
+        let router = ApplicationRouterImpl(assemblyFactory: assemblyFactory, viewController: viewController)
         let presenter = ApplicationPresenter(
             interactor: interactor,
             router: router

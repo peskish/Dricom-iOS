@@ -30,6 +30,20 @@
 		F0A115331DC62DB600A4DC76 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115321DC62DB600A4DC76 /* NetworkError.swift */; };
 		F0A115351DC6309F00A4DC76 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115341DC6309F00A4DC76 /* ServiceFactory.swift */; };
 		F0A115381DC630DD00A4DC76 /* ViewDebugServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115371DC630DD00A4DC76 /* ViewDebugServiceFactory.swift */; };
+		F0A1154E1DC634E200A4DC76 /* LoginOrRegisterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1153F1DC634E200A4DC76 /* LoginOrRegisterAssembly.swift */; };
+		F0A1154F1DC634E200A4DC76 /* LoginOrRegisterAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115401DC634E200A4DC76 /* LoginOrRegisterAssemblyImpl.swift */; };
+		F0A115521DC634E200A4DC76 /* LoginOrRegisterModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115451DC634E200A4DC76 /* LoginOrRegisterModule.swift */; };
+		F0A115531DC634E200A4DC76 /* LoginOrRegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115461DC634E200A4DC76 /* LoginOrRegisterPresenter.swift */; };
+		F0A115541DC634E200A4DC76 /* LoginOrRegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115481DC634E200A4DC76 /* LoginOrRegisterRouter.swift */; };
+		F0A115551DC634E200A4DC76 /* LoginOrRegisterRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115491DC634E200A4DC76 /* LoginOrRegisterRouterImpl.swift */; };
+		F0A115561DC634E200A4DC76 /* LoginOrRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1154B1DC634E200A4DC76 /* LoginOrRegisterView.swift */; };
+		F0A115571DC634E200A4DC76 /* LoginOrRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1154C1DC634E200A4DC76 /* LoginOrRegisterViewController.swift */; };
+		F0A115581DC634E200A4DC76 /* LoginOrRegisterViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1154D1DC634E200A4DC76 /* LoginOrRegisterViewInput.swift */; };
+		F0A1155A1DC6371F00A4DC76 /* ViewLifecycleObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115591DC6371F00A4DC76 /* ViewLifecycleObservable.swift */; };
+		F0A1155E1DC637C600A4DC76 /* DisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1155C1DC637C600A4DC76 /* DisposeBag.swift */; };
+		F0A1155F1DC637C600A4DC76 /* DisposeBagHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1155D1DC637C600A4DC76 /* DisposeBagHolder.swift */; };
+		F0A115611DC6385400A4DC76 /* RouterFocusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115601DC6385400A4DC76 /* RouterFocusable.swift */; };
+		F0A115631DC63A8700A4DC76 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115621DC63A8700A4DC76 /* MainFlowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +72,20 @@
 		F0A115321DC62DB600A4DC76 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkError.swift; path = Core/Common/NetworkError.swift; sourceTree = "<group>"; };
 		F0A115341DC6309F00A4DC76 /* ServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceFactory.swift; path = Dricom/Source/VIPER/Services/Factory/ServiceFactory.swift; sourceTree = SOURCE_ROOT; };
 		F0A115371DC630DD00A4DC76 /* ViewDebugServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewDebugServiceFactory.swift; path = Dricom/Source/VIPER/Services/Factory/ViewDebugServiceFactory.swift; sourceTree = SOURCE_ROOT; };
+		F0A1153F1DC634E200A4DC76 /* LoginOrRegisterAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOrRegisterAssembly.swift; sourceTree = "<group>"; };
+		F0A115401DC634E200A4DC76 /* LoginOrRegisterAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOrRegisterAssemblyImpl.swift; sourceTree = "<group>"; };
+		F0A115451DC634E200A4DC76 /* LoginOrRegisterModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOrRegisterModule.swift; sourceTree = "<group>"; };
+		F0A115461DC634E200A4DC76 /* LoginOrRegisterPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOrRegisterPresenter.swift; sourceTree = "<group>"; };
+		F0A115481DC634E200A4DC76 /* LoginOrRegisterRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOrRegisterRouter.swift; sourceTree = "<group>"; };
+		F0A115491DC634E200A4DC76 /* LoginOrRegisterRouterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOrRegisterRouterImpl.swift; sourceTree = "<group>"; };
+		F0A1154B1DC634E200A4DC76 /* LoginOrRegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOrRegisterView.swift; sourceTree = "<group>"; };
+		F0A1154C1DC634E200A4DC76 /* LoginOrRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOrRegisterViewController.swift; sourceTree = "<group>"; };
+		F0A1154D1DC634E200A4DC76 /* LoginOrRegisterViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOrRegisterViewInput.swift; sourceTree = "<group>"; };
+		F0A115591DC6371F00A4DC76 /* ViewLifecycleObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewLifecycleObservable.swift; path = Dricom/Source/Presentation/ViewLifecycleObservable.swift; sourceTree = SOURCE_ROOT; };
+		F0A1155C1DC637C600A4DC76 /* DisposeBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposeBag.swift; sourceTree = "<group>"; };
+		F0A1155D1DC637C600A4DC76 /* DisposeBagHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposeBagHolder.swift; sourceTree = "<group>"; };
+		F0A115601DC6385400A4DC76 /* RouterFocusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterFocusable.swift; path = Router/RouterFocusable.swift; sourceTree = "<group>"; };
+		F0A115621DC63A8700A4DC76 /* MainFlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +166,7 @@
 			children = (
 				F09209B11DC1502B0057302F /* Common */,
 				F09209901DC14A7F0057302F /* Application */,
+				F0A1153D1DC634E200A4DC76 /* LoginOrRegister */,
 				F0A115271DC62C2E00A4DC76 /* Services */,
 			);
 			path = VIPER;
@@ -176,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				F09209991DC14A7F0057302F /* ApplicationPresenter.swift */,
+				F0A115621DC63A8700A4DC76 /* MainFlowController.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -212,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				F09209B71DC1513B0057302F /* BaseRouter.swift */,
+				F0A115601DC6385400A4DC76 /* RouterFocusable.swift */,
 			);
 			name = Router;
 			sourceTree = "<group>";
@@ -228,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				F0A115181DC622AB00A4DC76 /* ViewControllers */,
+				F0A115591DC6371F00A4DC76 /* ViewLifecycleObservable.swift */,
 			);
 			name = Presentation;
 			path = VIPER;
@@ -248,6 +280,7 @@
 				F0A115311DC62D2300A4DC76 /* Common */,
 				F0A115221DC629CE00A4DC76 /* Model */,
 				F0A1151E1DC6284B00A4DC76 /* Networking */,
+				F0A1155B1DC637C600A4DC76 /* Utilities */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -320,6 +353,64 @@
 				F0A115371DC630DD00A4DC76 /* ViewDebugServiceFactory.swift */,
 			);
 			name = Factory;
+			sourceTree = "<group>";
+		};
+		F0A1153D1DC634E200A4DC76 /* LoginOrRegister */ = {
+			isa = PBXGroup;
+			children = (
+				F0A1153E1DC634E200A4DC76 /* Assembly */,
+				F0A115441DC634E200A4DC76 /* Presenter */,
+				F0A115471DC634E200A4DC76 /* Router */,
+				F0A1154A1DC634E200A4DC76 /* View */,
+			);
+			path = LoginOrRegister;
+			sourceTree = "<group>";
+		};
+		F0A1153E1DC634E200A4DC76 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				F0A1153F1DC634E200A4DC76 /* LoginOrRegisterAssembly.swift */,
+				F0A115401DC634E200A4DC76 /* LoginOrRegisterAssemblyImpl.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		F0A115441DC634E200A4DC76 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F0A115451DC634E200A4DC76 /* LoginOrRegisterModule.swift */,
+				F0A115461DC634E200A4DC76 /* LoginOrRegisterPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F0A115471DC634E200A4DC76 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F0A115481DC634E200A4DC76 /* LoginOrRegisterRouter.swift */,
+				F0A115491DC634E200A4DC76 /* LoginOrRegisterRouterImpl.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F0A1154A1DC634E200A4DC76 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0A1154B1DC634E200A4DC76 /* LoginOrRegisterView.swift */,
+				F0A1154C1DC634E200A4DC76 /* LoginOrRegisterViewController.swift */,
+				F0A1154D1DC634E200A4DC76 /* LoginOrRegisterViewInput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0A1155B1DC637C600A4DC76 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F0A1155C1DC637C600A4DC76 /* DisposeBag.swift */,
+				F0A1155D1DC637C600A4DC76 /* DisposeBagHolder.swift */,
+			);
+			name = Utilities;
+			path = Core/Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,19 +486,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0A115351DC6309F00A4DC76 /* ServiceFactory.swift in Sources */,
+				F0A115521DC634E200A4DC76 /* LoginOrRegisterModule.swift in Sources */,
+				F0A115561DC634E200A4DC76 /* LoginOrRegisterView.swift in Sources */,
+				F0A115581DC634E200A4DC76 /* LoginOrRegisterViewInput.swift in Sources */,
 				F0A115161DC6229500A4DC76 /* BaseViewController.swift in Sources */,
+				F0A115611DC6385400A4DC76 /* RouterFocusable.swift in Sources */,
+				F0A115531DC634E200A4DC76 /* LoginOrRegisterPresenter.swift in Sources */,
 				F0A1152D1DC62CB300A4DC76 /* RegistrationService.swift in Sources */,
 				F09209A61DC14A7F0057302F /* ApplicationPresenter.swift in Sources */,
 				F09209A11DC14A7F0057302F /* ApplicationAssembly.swift in Sources */,
 				F09209A31DC14A7F0057302F /* ApplicationInteractor.swift in Sources */,
 				F09209821DC146300057302F /* AppDelegate.swift in Sources */,
 				F09209B61DC150CB0057302F /* AssemblyFactoryImpl.swift in Sources */,
+				F0A1155E1DC637C600A4DC76 /* DisposeBag.swift in Sources */,
 				F0A1152B1DC62C8000A4DC76 /* ViewDebugRegistrationService.swift in Sources */,
+				F0A1154E1DC634E200A4DC76 /* LoginOrRegisterAssembly.swift in Sources */,
+				F0A1155F1DC637C600A4DC76 /* DisposeBagHolder.swift in Sources */,
 				F09209A21DC14A7F0057302F /* ApplicationAssemblyImpl.swift in Sources */,
+				F0A115541DC634E200A4DC76 /* LoginOrRegisterRouter.swift in Sources */,
 				F09209B41DC1502B0057302F /* AssemblyFactory.swift in Sources */,
 				F0A1151A1DC622D900A4DC76 /* BaseNavigationController.swift in Sources */,
+				F0A115551DC634E200A4DC76 /* LoginOrRegisterRouterImpl.swift in Sources */,
 				F09209B81DC1513B0057302F /* BaseRouter.swift in Sources */,
 				F0A115301DC62D2000A4DC76 /* DataResult.swift in Sources */,
+				F0A115571DC634E200A4DC76 /* LoginOrRegisterViewController.swift in Sources */,
+				F0A1155A1DC6371F00A4DC76 /* ViewLifecycleObservable.swift in Sources */,
 				F09209A81DC14A7F0057302F /* ApplicationRouterImpl.swift in Sources */,
 				F09209A41DC14A7F0057302F /* ApplicationInteractorImpl.swift in Sources */,
 				F09209BD1DC1524E0057302F /* BaseAssembly.swift in Sources */,
@@ -415,6 +518,8 @@
 				F09209A71DC14A7F0057302F /* ApplicationRouter.swift in Sources */,
 				F0A115331DC62DB600A4DC76 /* NetworkError.swift in Sources */,
 				F0A115381DC630DD00A4DC76 /* ViewDebugServiceFactory.swift in Sources */,
+				F0A115631DC63A8700A4DC76 /* MainFlowController.swift in Sources */,
+				F0A1154F1DC634E200A4DC76 /* LoginOrRegisterAssemblyImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

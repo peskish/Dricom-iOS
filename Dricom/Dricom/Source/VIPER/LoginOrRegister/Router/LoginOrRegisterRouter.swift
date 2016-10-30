@@ -1,0 +1,3 @@
+protocol LoginOrRegisterRouter: class, RouterFocusable {
+    
+}
