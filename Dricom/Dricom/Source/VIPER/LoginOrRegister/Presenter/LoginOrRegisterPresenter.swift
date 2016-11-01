@@ -21,7 +21,19 @@ final class LoginOrRegisterPresenter:
     
     // MARK: - Private
     private func setUpView() {
-        
+        view?.onViewDidLoad = { [weak self] in
+            self?.view?.setLoginButtonTitle("Войти")
+            self?.view?.setRegisterButtonTitle("Зарегистрироваться")
+        }
+        view?.onLoginButtonTap = {
+            print("onLoginButtonTap")
+        }
+        view?.onRegisterButtonTap = {
+            print("onRegisterButtonTap")
+        }
+        view?.onInfoButtonTap = {
+            print("onInfoButtonTap")
+        }
     }
     
     // MARK: - LoginOrRegisterModule

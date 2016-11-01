@@ -4,6 +4,9 @@ final class LoginOrRegisterView: UIView {
     // MARK: Properties
     private let logoImageView = UIImageView(image: UIImage(named: "Logo"))
     private let backgroundView = RadialGradientView()
+    private let loginButtonView = ActionButtonView()
+    private let registerButtonView = ActionButtonView()
+    private let infoButtonView = InfoButtonView()
     
     // MARK: Init
     init() {
@@ -11,6 +14,9 @@ final class LoginOrRegisterView: UIView {
         
         addSubview(backgroundView)
         addSubview(logoImageView)
+        addSubview(loginButtonView)
+        addSubview(registerButtonView)
+        addSubview(infoButtonView)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,5 +35,45 @@ final class LoginOrRegisterView: UIView {
         logoImageView.size = CGSize(width: imageSize.width/2, height: imageSize.height/2)
         logoImageView.top = height/6
         logoImageView.centerX = bounds.centerX
+        
+        infoButtonView.size = infoButtonView.sizeThatFits(bounds.size)
+        infoButtonView.layout(right: bounds.right, bottom: bounds.bottom)
+        
+        registerButtonView.layout(
+            left: bounds.left,
+            bottom: infoButtonView.top - SpecMargins.contentMargin,
+            fitWidth: bounds.width,
+            fitHeight: SpecMargins.actionButtonHeight
+        )
+        
+        loginButtonView.layout(
+            left: bounds.left,
+            bottom: registerButtonView.top - SpecMargins.contentMargin,
+            fitWidth: bounds.width,
+            fitHeight: SpecMargins.actionButtonHeight
+        )
+    }
+    
+    // MARK: - Setup
+    func setLoginButtonTitle(_ title: String) {
+        loginButtonView.setTitle(title)
+    }
+    
+    func setRegisterButtonTitle(_ title: String) {
+        registerButtonView.setTitle(title)
+    }
+    
+    // MARK: - Actions
+    var onLoginButtonTap: (() -> ())? {
+        get { return loginButtonView.onTap }
+        set { loginButtonView.onTap = newValue }
+    }
+    var onRegisterButtonTap: (() -> ())? {
+        get { return registerButtonView.onTap }
+        set { registerButtonView.onTap = newValue }
+    }
+    var onInfoButtonTap: (() -> ())? {
+        get { return infoButtonView.onTap }
+        set { infoButtonView.onTap = newValue }
     }
 }

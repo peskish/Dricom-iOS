@@ -1,7 +1,7 @@
 import UIKit
 
 public extension UIImage {
-    static func imageWithColor(_ color: UIColor, imageSize: CGSize) -> UIImage? {
+    static func imageWithColor(_ color: UIColor, imageSize: CGSize = CGSize(width: 1, height: 1)) -> UIImage? {
         UIGraphicsBeginImageContext(imageSize)
         guard let currentContext = UIGraphicsGetCurrentContext() else { return nil }
         currentContext.setFillColor(color.cgColor)
