@@ -7,6 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F076D6401DCF67F200E3ED0F /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6311DCF67F200E3ED0F /* LoginAssembly.swift */; };
+		F076D6411DCF67F200E3ED0F /* LoginAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6321DCF67F200E3ED0F /* LoginAssemblyImpl.swift */; };
+		F076D6421DCF67F200E3ED0F /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6341DCF67F200E3ED0F /* LoginInteractor.swift */; };
+		F076D6431DCF67F200E3ED0F /* LoginInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6351DCF67F200E3ED0F /* LoginInteractorImpl.swift */; };
+		F076D6441DCF67F200E3ED0F /* LoginModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6371DCF67F200E3ED0F /* LoginModule.swift */; };
+		F076D6451DCF67F200E3ED0F /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6381DCF67F200E3ED0F /* LoginPresenter.swift */; };
+		F076D6461DCF67F200E3ED0F /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D63A1DCF67F200E3ED0F /* LoginRouter.swift */; };
+		F076D6471DCF67F200E3ED0F /* LoginRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D63B1DCF67F200E3ED0F /* LoginRouterImpl.swift */; };
+		F076D6481DCF67F200E3ED0F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D63D1DCF67F200E3ED0F /* LoginView.swift */; };
+		F076D6491DCF67F200E3ED0F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D63E1DCF67F200E3ED0F /* LoginViewController.swift */; };
+		F076D64A1DCF67F200E3ED0F /* LoginViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D63F1DCF67F200E3ED0F /* LoginViewInput.swift */; };
+		F076D64C1DCF684A00E3ED0F /* ModuleFocusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D64B1DCF684A00E3ED0F /* ModuleFocusable.swift */; };
+		F076D6511DCF6A0000E3ED0F /* RouterDismissable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6501DCF6A0000E3ED0F /* RouterDismissable.swift */; };
+		F076D6531DCF6CFB00E3ED0F /* ModuleDismissable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6521DCF6CFB00E3ED0F /* ModuleDismissable.swift */; };
+		F076D6551DCF6D2000E3ED0F /* MessageDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6541DCF6D2000E3ED0F /* MessageDisplayable.swift */; };
+		F076D6581DCF6E2F00E3ED0F /* StandardAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6571DCF6E2F00E3ED0F /* StandardAlert.swift */; };
+		F076D66A1DCF6F3800E3ED0F /* AppMetadataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D65E1DCF6F3800E3ED0F /* AppMetadataExtension.swift */; };
+		F076D66B1DCF6F3800E3ED0F /* CollectionsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D65F1DCF6F3800E3ED0F /* CollectionsExtensions.swift */; };
+		F076D66C1DCF6F3800E3ED0F /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6601DCF6F3800E3ED0F /* DictionaryExtensions.swift */; };
+		F076D66D1DCF6F3800E3ED0F /* NumbersExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6611DCF6F3800E3ED0F /* NumbersExtension.swift */; };
+		F076D66E1DCF6F3800E3ED0F /* OptionalsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6621DCF6F3800E3ED0F /* OptionalsExtensions.swift */; };
+		F076D66F1DCF6F3800E3ED0F /* RangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6631DCF6F3800E3ED0F /* RangeExtension.swift */; };
+		F076D6701DCF6F3800E3ED0F /* SequenceTypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6641DCF6F3800E3ED0F /* SequenceTypeExtensions.swift */; };
+		F076D6711DCF6F3800E3ED0F /* String+Pluralization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6651DCF6F3800E3ED0F /* String+Pluralization.swift */; };
+		F076D6721DCF6F3800E3ED0F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6661DCF6F3800E3ED0F /* StringExtension.swift */; };
+		F076D6731DCF6F3800E3ED0F /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6671DCF6F3800E3ED0F /* StringExtensions.swift */; };
+		F076D6751DCF6FC500E3ED0F /* NSURLPathComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6741DCF6FC500E3ED0F /* NSURLPathComponents.swift */; };
 		F08BE1A21DC9265000243B56 /* ActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BE1A11DC9265000243B56 /* ActionButtonView.swift */; };
 		F08BE1A41DC926B600243B56 /* SpecMargins.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BE1A31DC926B600243B56 /* SpecMargins.swift */; };
 		F08BE1A61DC9326A00243B56 /* InfoButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BE1A51DC9326A00243B56 /* InfoButtonView.swift */; };
@@ -64,6 +91,33 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F076D6311DCF67F200E3ED0F /* LoginAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
+		F076D6321DCF67F200E3ED0F /* LoginAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAssemblyImpl.swift; sourceTree = "<group>"; };
+		F076D6341DCF67F200E3ED0F /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		F076D6351DCF67F200E3ED0F /* LoginInteractorImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractorImpl.swift; sourceTree = "<group>"; };
+		F076D6371DCF67F200E3ED0F /* LoginModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModule.swift; sourceTree = "<group>"; };
+		F076D6381DCF67F200E3ED0F /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		F076D63A1DCF67F200E3ED0F /* LoginRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		F076D63B1DCF67F200E3ED0F /* LoginRouterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRouterImpl.swift; sourceTree = "<group>"; };
+		F076D63D1DCF67F200E3ED0F /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		F076D63E1DCF67F200E3ED0F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F076D63F1DCF67F200E3ED0F /* LoginViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewInput.swift; sourceTree = "<group>"; };
+		F076D64B1DCF684A00E3ED0F /* ModuleFocusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModuleFocusable.swift; path = Module/ModuleFocusable.swift; sourceTree = "<group>"; };
+		F076D6501DCF6A0000E3ED0F /* RouterDismissable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterDismissable.swift; path = Router/RouterDismissable.swift; sourceTree = "<group>"; };
+		F076D6521DCF6CFB00E3ED0F /* ModuleDismissable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModuleDismissable.swift; path = Module/ModuleDismissable.swift; sourceTree = "<group>"; };
+		F076D6541DCF6D2000E3ED0F /* MessageDisplayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageDisplayable.swift; path = MessageDisplaying/MessageDisplayable.swift; sourceTree = "<group>"; };
+		F076D6571DCF6E2F00E3ED0F /* StandardAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StandardAlert.swift; path = MessageDisplaying/StandardAlert.swift; sourceTree = "<group>"; };
+		F076D65E1DCF6F3800E3ED0F /* AppMetadataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMetadataExtension.swift; sourceTree = "<group>"; };
+		F076D65F1DCF6F3800E3ED0F /* CollectionsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionsExtensions.swift; sourceTree = "<group>"; };
+		F076D6601DCF6F3800E3ED0F /* DictionaryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
+		F076D6611DCF6F3800E3ED0F /* NumbersExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumbersExtension.swift; sourceTree = "<group>"; };
+		F076D6621DCF6F3800E3ED0F /* OptionalsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalsExtensions.swift; sourceTree = "<group>"; };
+		F076D6631DCF6F3800E3ED0F /* RangeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeExtension.swift; sourceTree = "<group>"; };
+		F076D6641DCF6F3800E3ED0F /* SequenceTypeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceTypeExtensions.swift; sourceTree = "<group>"; };
+		F076D6651DCF6F3800E3ED0F /* String+Pluralization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Pluralization.swift"; sourceTree = "<group>"; };
+		F076D6661DCF6F3800E3ED0F /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		F076D6671DCF6F3800E3ED0F /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		F076D6741DCF6FC500E3ED0F /* NSURLPathComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLPathComponents.swift; sourceTree = "<group>"; };
 		F08BE1A11DC9265000243B56 /* ActionButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionButtonView.swift; path = Dricom/Source/Presentation/Views/ActionButtonView.swift; sourceTree = SOURCE_ROOT; };
 		F08BE1A31DC926B600243B56 /* SpecMargins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpecMargins.swift; path = Dricom/Source/Presentation/Spec/SpecMargins.swift; sourceTree = SOURCE_ROOT; };
 		F08BE1A51DC9326A00243B56 /* InfoButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoButtonView.swift; path = Dricom/Source/Presentation/Views/InfoButtonView.swift; sourceTree = SOURCE_ROOT; };
@@ -133,6 +187,102 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F076D62F1DCF67F200E3ED0F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F076D6301DCF67F200E3ED0F /* Assembly */,
+				F076D6331DCF67F200E3ED0F /* Interactor */,
+				F076D6361DCF67F200E3ED0F /* Presenter */,
+				F076D6391DCF67F200E3ED0F /* Router */,
+				F076D63C1DCF67F200E3ED0F /* View */,
+			);
+			name = Login;
+			path = Dricom/Source/VIPER/Login;
+			sourceTree = SOURCE_ROOT;
+		};
+		F076D6301DCF67F200E3ED0F /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				F076D6311DCF67F200E3ED0F /* LoginAssembly.swift */,
+				F076D6321DCF67F200E3ED0F /* LoginAssemblyImpl.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		F076D6331DCF67F200E3ED0F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				F076D6341DCF67F200E3ED0F /* LoginInteractor.swift */,
+				F076D6351DCF67F200E3ED0F /* LoginInteractorImpl.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		F076D6361DCF67F200E3ED0F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F076D6371DCF67F200E3ED0F /* LoginModule.swift */,
+				F076D6381DCF67F200E3ED0F /* LoginPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F076D6391DCF67F200E3ED0F /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F076D63A1DCF67F200E3ED0F /* LoginRouter.swift */,
+				F076D63B1DCF67F200E3ED0F /* LoginRouterImpl.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F076D63C1DCF67F200E3ED0F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F076D63D1DCF67F200E3ED0F /* LoginView.swift */,
+				F076D63E1DCF67F200E3ED0F /* LoginViewController.swift */,
+				F076D63F1DCF67F200E3ED0F /* LoginViewInput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F076D64D1DCF688500E3ED0F /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				F076D6521DCF6CFB00E3ED0F /* ModuleDismissable.swift */,
+				F076D64B1DCF684A00E3ED0F /* ModuleFocusable.swift */,
+			);
+			name = Module;
+			sourceTree = "<group>";
+		};
+		F076D6561DCF6D2F00E3ED0F /* MessageDisplaying */ = {
+			isa = PBXGroup;
+			children = (
+				F076D6571DCF6E2F00E3ED0F /* StandardAlert.swift */,
+				F076D6541DCF6D2000E3ED0F /* MessageDisplayable.swift */,
+			);
+			name = MessageDisplaying;
+			sourceTree = "<group>";
+		};
+		F076D65D1DCF6F3800E3ED0F /* SwiftAdditions */ = {
+			isa = PBXGroup;
+			children = (
+				F076D65E1DCF6F3800E3ED0F /* AppMetadataExtension.swift */,
+				F076D65F1DCF6F3800E3ED0F /* CollectionsExtensions.swift */,
+				F076D6601DCF6F3800E3ED0F /* DictionaryExtensions.swift */,
+				F076D6611DCF6F3800E3ED0F /* NumbersExtension.swift */,
+				F076D6741DCF6FC500E3ED0F /* NSURLPathComponents.swift */,
+				F076D6621DCF6F3800E3ED0F /* OptionalsExtensions.swift */,
+				F076D6631DCF6F3800E3ED0F /* RangeExtension.swift */,
+				F076D6641DCF6F3800E3ED0F /* SequenceTypeExtensions.swift */,
+				F076D6651DCF6F3800E3ED0F /* String+Pluralization.swift */,
+				F076D6661DCF6F3800E3ED0F /* StringExtension.swift */,
+				F076D6671DCF6F3800E3ED0F /* StringExtensions.swift */,
+			);
+			name = SwiftAdditions;
+			path = Core/Extensions/SwiftAdditions;
+			sourceTree = "<group>";
+		};
 		F092092E1DC13EFB0057302F = {
 			isa = PBXGroup;
 			children = (
@@ -256,8 +406,10 @@
 		F09209B11DC1502B0057302F /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				F09209B21DC1502B0057302F /* AssemblyFactory */,
 				F09209BE1DC152530057302F /* Assembly */,
+				F09209B21DC1502B0057302F /* AssemblyFactory */,
+				F076D6561DCF6D2F00E3ED0F /* MessageDisplaying */,
+				F076D64D1DCF688500E3ED0F /* Module */,
 				F09209B91DC151400057302F /* Router */,
 			);
 			path = Common;
@@ -277,6 +429,7 @@
 			children = (
 				F09209B71DC1513B0057302F /* BaseRouter.swift */,
 				F0A115601DC6385400A4DC76 /* RouterFocusable.swift */,
+				F076D6501DCF6A0000E3ED0F /* RouterDismissable.swift */,
 			);
 			name = Router;
 			sourceTree = "<group>";
@@ -400,6 +553,7 @@
 				F0A115441DC634E200A4DC76 /* Presenter */,
 				F0A115471DC634E200A4DC76 /* Router */,
 				F0A1154A1DC634E200A4DC76 /* View */,
+				F076D62F1DCF67F200E3ED0F /* Login */,
 			);
 			path = LoginOrRegister;
 			sourceTree = "<group>";
@@ -464,6 +618,7 @@
 		F0A115691DC685B300A4DC76 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F076D65D1DCF6F3800E3ED0F /* SwiftAdditions */,
 				F0A1156A1DC685BC00A4DC76 /* UIKit */,
 			);
 			name = Extensions;
@@ -577,53 +732,80 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0A115351DC6309F00A4DC76 /* ServiceFactory.swift in Sources */,
+				F076D6411DCF67F200E3ED0F /* LoginAssemblyImpl.swift in Sources */,
 				F0A115521DC634E200A4DC76 /* LoginOrRegisterModule.swift in Sources */,
+				F076D6551DCF6D2000E3ED0F /* MessageDisplayable.swift in Sources */,
+				F076D6701DCF6F3800E3ED0F /* SequenceTypeExtensions.swift in Sources */,
 				F0A115761DC6863E00A4DC76 /* CGPoint+Extension.swift in Sources */,
+				F076D6721DCF6F3800E3ED0F /* StringExtension.swift in Sources */,
+				F076D6471DCF67F200E3ED0F /* LoginRouterImpl.swift in Sources */,
 				F0A115561DC634E200A4DC76 /* LoginOrRegisterView.swift in Sources */,
 				F0A115581DC634E200A4DC76 /* LoginOrRegisterViewInput.swift in Sources */,
 				F0A115161DC6229500A4DC76 /* BaseViewController.swift in Sources */,
 				F08BE1A61DC9326A00243B56 /* InfoButtonView.swift in Sources */,
 				F0A115611DC6385400A4DC76 /* RouterFocusable.swift in Sources */,
 				F0A115531DC634E200A4DC76 /* LoginOrRegisterPresenter.swift in Sources */,
+				F076D6431DCF67F200E3ED0F /* LoginInteractorImpl.swift in Sources */,
 				F0A1152D1DC62CB300A4DC76 /* RegistrationService.swift in Sources */,
 				F09209A61DC14A7F0057302F /* ApplicationPresenter.swift in Sources */,
+				F076D6581DCF6E2F00E3ED0F /* StandardAlert.swift in Sources */,
 				F0A115801DC6863E00A4DC76 /* UIView+Size.swift in Sources */,
 				F0A1157F1DC6863E00A4DC76 /* UIView+Resizing.swift in Sources */,
 				F09209A11DC14A7F0057302F /* ApplicationAssembly.swift in Sources */,
 				F09209A31DC14A7F0057302F /* ApplicationInteractor.swift in Sources */,
 				F09209821DC146300057302F /* AppDelegate.swift in Sources */,
+				F076D6451DCF67F200E3ED0F /* LoginPresenter.swift in Sources */,
 				F0A1157D1DC6863E00A4DC76 /* UIView+Layout.swift in Sources */,
 				F09209B61DC150CB0057302F /* AssemblyFactoryImpl.swift in Sources */,
 				F0A1157C1DC6863E00A4DC76 /* UIImageExtension.swift in Sources */,
 				F0A1155E1DC637C600A4DC76 /* DisposeBag.swift in Sources */,
 				F0A1152B1DC62C8000A4DC76 /* ViewDebugRegistrationService.swift in Sources */,
 				F0A1154E1DC634E200A4DC76 /* LoginOrRegisterAssembly.swift in Sources */,
+				F076D6421DCF67F200E3ED0F /* LoginInteractor.swift in Sources */,
+				F076D66F1DCF6F3800E3ED0F /* RangeExtension.swift in Sources */,
 				F0A1155F1DC637C600A4DC76 /* DisposeBagHolder.swift in Sources */,
 				F09209A21DC14A7F0057302F /* ApplicationAssemblyImpl.swift in Sources */,
 				F0A115891DC6914100A4DC76 /* CrossFadePushTransition.swift in Sources */,
 				F0A115541DC634E200A4DC76 /* LoginOrRegisterRouter.swift in Sources */,
 				F0A115851DC68DF500A4DC76 /* ViewLifecycleObservable.swift in Sources */,
 				F0A115651DC67F8400A4DC76 /* RadialGradientView.swift in Sources */,
+				F076D66C1DCF6F3800E3ED0F /* DictionaryExtensions.swift in Sources */,
+				F076D66E1DCF6F3800E3ED0F /* OptionalsExtensions.swift in Sources */,
+				F076D6461DCF67F200E3ED0F /* LoginRouter.swift in Sources */,
 				F09209B41DC1502B0057302F /* AssemblyFactory.swift in Sources */,
+				F076D6441DCF67F200E3ED0F /* LoginModule.swift in Sources */,
 				F0A1151A1DC622D900A4DC76 /* BaseNavigationController.swift in Sources */,
 				F0A115551DC634E200A4DC76 /* LoginOrRegisterRouterImpl.swift in Sources */,
 				F09209B81DC1513B0057302F /* BaseRouter.swift in Sources */,
 				F0A115821DC6897300A4DC76 /* SpecColors.swift in Sources */,
 				F0A115301DC62D2000A4DC76 /* DataResult.swift in Sources */,
+				F076D6401DCF67F200E3ED0F /* LoginAssembly.swift in Sources */,
+				F076D66B1DCF6F3800E3ED0F /* CollectionsExtensions.swift in Sources */,
+				F076D64C1DCF684A00E3ED0F /* ModuleFocusable.swift in Sources */,
+				F076D6481DCF67F200E3ED0F /* LoginView.swift in Sources */,
 				F0A115571DC634E200A4DC76 /* LoginOrRegisterViewController.swift in Sources */,
+				F076D6711DCF6F3800E3ED0F /* String+Pluralization.swift in Sources */,
+				F076D6491DCF67F200E3ED0F /* LoginViewController.swift in Sources */,
+				F076D66A1DCF6F3800E3ED0F /* AppMetadataExtension.swift in Sources */,
 				F0A1157E1DC6863E00A4DC76 /* UIView+Properties.swift in Sources */,
 				F0A1157A1DC6863E00A4DC76 /* UIColorExtension.swift in Sources */,
+				F076D66D1DCF6F3800E3ED0F /* NumbersExtension.swift in Sources */,
 				F0A115871DC68E1D00A4DC76 /* ViewControllerTransition.swift in Sources */,
 				F09209A81DC14A7F0057302F /* ApplicationRouterImpl.swift in Sources */,
 				F09209A41DC14A7F0057302F /* ApplicationInteractorImpl.swift in Sources */,
+				F076D6751DCF6FC500E3ED0F /* NSURLPathComponents.swift in Sources */,
 				F09209BD1DC1524E0057302F /* BaseAssembly.swift in Sources */,
 				F0A115241DC629CE00A4DC76 /* SessionInfo.swift in Sources */,
 				F09209A71DC14A7F0057302F /* ApplicationRouter.swift in Sources */,
 				F0A115331DC62DB600A4DC76 /* NetworkError.swift in Sources */,
 				F0A115381DC630DD00A4DC76 /* ViewDebugServiceFactory.swift in Sources */,
+				F076D6531DCF6CFB00E3ED0F /* ModuleDismissable.swift in Sources */,
+				F076D64A1DCF67F200E3ED0F /* LoginViewInput.swift in Sources */,
 				F0A115771DC6863E00A4DC76 /* CGRectLayoutExtension.swift in Sources */,
+				F076D6731DCF6F3800E3ED0F /* StringExtensions.swift in Sources */,
 				F0A115631DC63A8700A4DC76 /* MainFlowController.swift in Sources */,
 				F0A115781DC6863E00A4DC76 /* CGSizeLayoutExtension.swift in Sources */,
+				F076D6511DCF6A0000E3ED0F /* RouterDismissable.swift in Sources */,
 				F0A1157B1DC6863E00A4DC76 /* UIEdgeInsetsLayoutExtension.swift in Sources */,
 				F0A1154F1DC634E200A4DC76 /* LoginOrRegisterAssemblyImpl.swift in Sources */,
 				F08BE1A41DC926B600243B56 /* SpecMargins.swift in Sources */,

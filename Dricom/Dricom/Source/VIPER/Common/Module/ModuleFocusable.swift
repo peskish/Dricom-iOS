@@ -1,0 +1,3 @@
+protocol ModuleFocusable {
+    func focusOnModule()
+}
