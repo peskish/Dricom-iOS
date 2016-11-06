@@ -34,6 +34,10 @@
 		F076D6721DCF6F3800E3ED0F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6661DCF6F3800E3ED0F /* StringExtension.swift */; };
 		F076D6731DCF6F3800E3ED0F /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6671DCF6F3800E3ED0F /* StringExtensions.swift */; };
 		F076D6751DCF6FC500E3ED0F /* NSURLPathComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6741DCF6FC500E3ED0F /* NSURLPathComponents.swift */; };
+		F076D6771DCF762700E3ED0F /* ContentScrollingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6761DCF762700E3ED0F /* ContentScrollingView.swift */; };
+		F076D6791DCF7DD200E3ED0F /* UIView+FindFirstResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6781DCF7DD200E3ED0F /* UIView+FindFirstResponder.swift */; };
+		F076D67B1DCF87D300E3ED0F /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D67A1DCF87D300E3ED0F /* TextFieldView.swift */; };
+		F076D67D1DCF8F4900E3ED0F /* DoneButtonAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D67C1DCF8F4900E3ED0F /* DoneButtonAccessoryView.swift */; };
 		F08BE1A21DC9265000243B56 /* ActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BE1A11DC9265000243B56 /* ActionButtonView.swift */; };
 		F08BE1A41DC926B600243B56 /* SpecMargins.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BE1A31DC926B600243B56 /* SpecMargins.swift */; };
 		F08BE1A61DC9326A00243B56 /* InfoButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BE1A51DC9326A00243B56 /* InfoButtonView.swift */; };
@@ -118,6 +122,10 @@
 		F076D6661DCF6F3800E3ED0F /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		F076D6671DCF6F3800E3ED0F /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		F076D6741DCF6FC500E3ED0F /* NSURLPathComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLPathComponents.swift; sourceTree = "<group>"; };
+		F076D6761DCF762700E3ED0F /* ContentScrollingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentScrollingView.swift; path = Dricom/Source/Presentation/Views/ContentScrollingView.swift; sourceTree = SOURCE_ROOT; };
+		F076D6781DCF7DD200E3ED0F /* UIView+FindFirstResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+FindFirstResponder.swift"; path = "Core/Extensions/UIKit/UIView+FindFirstResponder.swift"; sourceTree = "<group>"; };
+		F076D67A1DCF87D300E3ED0F /* TextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldView.swift; path = Dricom/Source/Presentation/Views/TextFieldView.swift; sourceTree = SOURCE_ROOT; };
+		F076D67C1DCF8F4900E3ED0F /* DoneButtonAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoneButtonAccessoryView.swift; path = Dricom/Source/Presentation/Views/DoneButtonAccessoryView.swift; sourceTree = SOURCE_ROOT; };
 		F08BE1A11DC9265000243B56 /* ActionButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionButtonView.swift; path = Dricom/Source/Presentation/Views/ActionButtonView.swift; sourceTree = SOURCE_ROOT; };
 		F08BE1A31DC926B600243B56 /* SpecMargins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpecMargins.swift; path = Dricom/Source/Presentation/Spec/SpecMargins.swift; sourceTree = SOURCE_ROOT; };
 		F08BE1A51DC9326A00243B56 /* InfoButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoButtonView.swift; path = Dricom/Source/Presentation/Views/InfoButtonView.swift; sourceTree = SOURCE_ROOT; };
@@ -608,9 +616,12 @@
 		F0A115661DC67F9500A4DC76 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F0A115641DC67F8400A4DC76 /* RadialGradientView.swift */,
 				F08BE1A11DC9265000243B56 /* ActionButtonView.swift */,
+				F076D6761DCF762700E3ED0F /* ContentScrollingView.swift */,
+				F076D67C1DCF8F4900E3ED0F /* DoneButtonAccessoryView.swift */,
 				F08BE1A51DC9326A00243B56 /* InfoButtonView.swift */,
+				F0A115641DC67F8400A4DC76 /* RadialGradientView.swift */,
+				F076D67A1DCF87D300E3ED0F /* TextFieldView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -637,6 +648,7 @@
 				F0A115731DC6863D00A4DC76 /* UIView+Properties.swift */,
 				F0A115741DC6863E00A4DC76 /* UIView+Resizing.swift */,
 				F0A115751DC6863E00A4DC76 /* UIView+Size.swift */,
+				F076D6781DCF7DD200E3ED0F /* UIView+FindFirstResponder.swift */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -755,7 +767,9 @@
 				F09209A31DC14A7F0057302F /* ApplicationInteractor.swift in Sources */,
 				F09209821DC146300057302F /* AppDelegate.swift in Sources */,
 				F076D6451DCF67F200E3ED0F /* LoginPresenter.swift in Sources */,
+				F076D67B1DCF87D300E3ED0F /* TextFieldView.swift in Sources */,
 				F0A1157D1DC6863E00A4DC76 /* UIView+Layout.swift in Sources */,
+				F076D67D1DCF8F4900E3ED0F /* DoneButtonAccessoryView.swift in Sources */,
 				F09209B61DC150CB0057302F /* AssemblyFactoryImpl.swift in Sources */,
 				F0A1157C1DC6863E00A4DC76 /* UIImageExtension.swift in Sources */,
 				F0A1155E1DC637C600A4DC76 /* DisposeBag.swift in Sources */,
@@ -769,6 +783,7 @@
 				F0A115541DC634E200A4DC76 /* LoginOrRegisterRouter.swift in Sources */,
 				F0A115851DC68DF500A4DC76 /* ViewLifecycleObservable.swift in Sources */,
 				F0A115651DC67F8400A4DC76 /* RadialGradientView.swift in Sources */,
+				F076D6791DCF7DD200E3ED0F /* UIView+FindFirstResponder.swift in Sources */,
 				F076D66C1DCF6F3800E3ED0F /* DictionaryExtensions.swift in Sources */,
 				F076D66E1DCF6F3800E3ED0F /* OptionalsExtensions.swift in Sources */,
 				F076D6461DCF67F200E3ED0F /* LoginRouter.swift in Sources */,
@@ -787,6 +802,7 @@
 				F076D6711DCF6F3800E3ED0F /* String+Pluralization.swift in Sources */,
 				F076D6491DCF67F200E3ED0F /* LoginViewController.swift in Sources */,
 				F076D66A1DCF6F3800E3ED0F /* AppMetadataExtension.swift in Sources */,
+				F076D6771DCF762700E3ED0F /* ContentScrollingView.swift in Sources */,
 				F0A1157E1DC6863E00A4DC76 /* UIView+Properties.swift in Sources */,
 				F0A1157A1DC6863E00A4DC76 /* UIColorExtension.swift in Sources */,
 				F076D66D1DCF6F3800E3ED0F /* NumbersExtension.swift in Sources */,

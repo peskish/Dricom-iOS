@@ -27,6 +27,9 @@ class ActionButtonView: UIView {
             UIImage.imageWithColor(SpecColors.ActionButton.highlightedBackground),
             for: .highlighted
         )
+        
+        button.layer.cornerRadius = 4
+        button.layer.masksToBounds = true
     }
     
     required init?(coder aDecoder: NSCoder) {
