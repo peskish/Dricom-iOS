@@ -25,11 +25,11 @@ final class LoginOrRegisterPresenter:
             self?.view?.setLoginButtonTitle("Войти")
             self?.view?.setRegisterButtonTitle("Зарегистрироваться")
         }
-        view?.onLoginButtonTap = {
-            print("onLoginButtonTap")
+        view?.onLoginButtonTap = { [weak self] in
+            self?.onFinish?(.login)
         }
-        view?.onRegisterButtonTap = {
-            print("onRegisterButtonTap")
+        view?.onRegisterButtonTap = { [weak self] in
+            self?.onFinish?(.register)
         }
         view?.onInfoButtonTap = {
             print("onInfoButtonTap")

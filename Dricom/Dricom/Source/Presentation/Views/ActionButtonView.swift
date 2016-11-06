@@ -59,7 +59,7 @@ class ActionButtonView: UIView {
     
     // MARK: - Public
     var onTap: (() -> ())?
-    func setTitle(_ title: String) {
+    func setTitle(_ title: String?) {
         button.setTitle(title, for: .normal)
     }
 }

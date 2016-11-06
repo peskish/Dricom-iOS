@@ -11,6 +11,12 @@ final class LoginViewController: BaseViewController, LoginViewInput {
         view = loginView
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        loginView.initialInsets = .zero
+    }
+    
     // MARK: - LoginViewInput
     func setLoginPlaceholder(_ placeholder: String?) {
         loginView.setLoginPlaceholder(placeholder)
@@ -18,6 +24,10 @@ final class LoginViewController: BaseViewController, LoginViewInput {
     
     func setLoginValue(_ value: String?) {
         loginView.setLoginValue(value)
+    }
+    
+    func setLoginButtonTitle(_ title: String?) {
+        loginView.setLoginButtonTitle(title)
     }
     
     func setPasswordPlaceholder(_ placeholder: String?) {

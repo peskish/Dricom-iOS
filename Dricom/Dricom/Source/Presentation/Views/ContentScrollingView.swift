@@ -23,7 +23,7 @@ class BaseContentScrollingView : UIScrollView {
 // WARNING: There's a bug. If you have ContentScrollingView and push view controller with another ContentScrollingView,
 // open a keyboard and pop back, parent ContentScrollingView will calculate its insets not properly.
 // However, there's no such case at the moment.
-final class ContentScrollingView : BaseContentScrollingView {
+class ContentScrollingView : BaseContentScrollingView {
     // MARK: Properties
     private var presentingKeyboardFrame: CGRect = .zero
     
@@ -47,7 +47,7 @@ final class ContentScrollingView : BaseContentScrollingView {
                 // Handle change of the frame of first responder.
                 // Coincidentally it can be handled within this method.
                 // TODO: also observe change of first responder, because it may be changed without change of self.frame or frame of keyboard
-                updateOffsets(animationDuration:kScrollingContentsDefaultAnimationDuration)
+                updateOffsets(animationDuration:0)
             }
         }
     }
@@ -83,17 +83,22 @@ final class ContentScrollingView : BaseContentScrollingView {
     // MARK: - Keyboard events
     @objc func onKeyboardWillChangeFrame(notification: Notification) {
         guard let info = notification.userInfo,
-            let keyboardFrame = info[UIKeyboardFrameEndUserInfoKey] as? CGRect
+            let keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
             else { return }
         
         
         self.presentingKeyboardFrame = keyboardFrame
         
-        let animationDuration = (info[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval)
+        let animationDuration = (info[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue
             ?? kScrollingContentsDefaultAnimationDuration
         
-        let animationCurve = (info[UIKeyboardAnimationCurveUserInfoKey] as? UIViewAnimationCurve)
-            ?? UIViewAnimationCurve.linear
+        let animationCurve: UIViewAnimationCurve
+        if let rawAnimationCurve = (info[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber)?.intValue,
+            let animationCurveFromNotification = UIViewAnimationCurve(rawValue: rawAnimationCurve) {
+            animationCurve = animationCurveFromNotification
+        } else {
+            animationCurve = .linear
+        }
         
         updateOffsets(
             keyboardFrameRelativeToWindow: keyboardFrame,
@@ -144,8 +149,8 @@ final class ContentScrollingView : BaseContentScrollingView {
                 from: firstResponderView.superview
             ) ?? .zero
             var insets = contentInset
-            insets.top += SpecMargins.contentMargin
-            insets.bottom += SpecMargins.contentMargin
+            insets.top += SpecMargins.innerContentMargin
+            insets.bottom += SpecMargins.innerContentMargin
             let targetAreaForFirstResponder = UIEdgeInsetsInsetRect(frame, insets)
             let firstResponderOffsetRect = fitFirstResponderRect(
                 firstResponderFrame,

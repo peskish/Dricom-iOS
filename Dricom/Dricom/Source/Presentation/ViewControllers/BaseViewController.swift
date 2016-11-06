@@ -1,6 +1,15 @@
 import UIKit
 
-class BaseViewController: UIViewController, ViewLifecycleObservable, DisposeBag, DisposeBagHolder {
+class BaseViewController: UIViewController,
+    ViewLifecycleObservable,
+    DisposeBag,
+    DisposeBagHolder,
+    ViewControllerPositionHolder {
+    
+    // MARK: - ViewControllerPositionHolder
+    
+    var position: ViewControllerPosition?
+    
     // MARK: - ViewLifecycleObservable
     
     var onViewDidLoad: (() -> ())? {
@@ -22,7 +31,12 @@ class BaseViewController: UIViewController, ViewLifecycleObservable, DisposeBag,
     
     // MARK: - Lifecycle
     
-    @nonobjc init() {
+    @nonobjc convenience init() {
+        self.init(position: .pushed)
+    }
+    
+    @nonobjc init(position: ViewControllerPosition) {
+        self.position = position
         super.init(nibName: nil, bundle: nil)
     }
     

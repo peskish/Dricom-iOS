@@ -33,7 +33,7 @@ final class LoginOrRegisterView: UIView {
         guard let imageSize = logoImageView.image?.size else { return }
         
         logoImageView.size = CGSize(width: imageSize.width/2, height: imageSize.height/2)
-        logoImageView.top = height/6
+        logoImageView.top = SpecSizes.statusBarHeight * 2
         logoImageView.centerX = bounds.centerX
         
         infoButtonView.size = infoButtonView.sizeThatFits(bounds.size)

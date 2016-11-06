@@ -1,10 +1,9 @@
 import Foundation
 
 enum LoginResult {
-    case Finished
-    case Cancelled
+    case finished
 }
 
-protocol LoginModule: class, ModuleFocusable, ModuleDismissable {
+protocol LoginModule: class, ModuleFocusable, ModuleDismissable, ViewControllerPositionHolder {
     var onFinish: ((LoginResult) -> ())? { get set }
 }

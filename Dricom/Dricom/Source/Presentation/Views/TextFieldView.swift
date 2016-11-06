@@ -2,7 +2,7 @@ import UIKit
 
 class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
     // MARK: Properties
-    private let textField = UITextField()
+    private let textField = InputTextField()
     
     // MARK: Init
     init() {
@@ -10,6 +10,7 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
         
         textField.delegate = self
         textField.returnKeyType = .done
+        textField.clearButtonMode = .always
         textField.addTarget(self, action: #selector(textFieldDidChangeValue(_:)), for: .editingChanged)
         addSubview(textField)
         
@@ -24,7 +25,8 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
         textField.textColor = SpecColors.InputField.textMain
         textField.backgroundColor = .clear
         textField.layer.borderColor = SpecColors.InputField.stroke.cgColor
-        textField.layer.borderWidth = 2
+        textField.layer.borderWidth = 1
+        textField.tintColor = .white
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -73,8 +75,13 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
+        if let onDoneButtonTap = onDoneButtonTap {
+            onDoneButtonTap()
+        } else {
+            textField.resignFirstResponder()
+        }
+        
+        return false
     }
     
     @objc func textFieldDidChangeValue(_ textField: UITextField) {
@@ -82,6 +89,19 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
     }
     
     // MARK: - Public
+    var isSecureTextEntry: Bool {
+        get { return textField.isSecureTextEntry }
+        set { textField.isSecureTextEntry = newValue }
+    }
+    
+    func startEditing() {
+        textField.becomeFirstResponder()
+    }
+    
+    func endEditing() {
+        textField.resignFirstResponder()
+    }
+    
     var text: String? {
         get {
             return textField.text
@@ -93,6 +113,8 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
     
     var onTextChange: ((String?) -> ())?
     
+    var onDoneButtonTap: (() -> ())?
+    
     var placeholder: String? {
         get {
             return textField.attributedPlaceholder?.string
@@ -100,6 +122,11 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
         set {
             textField.attributedPlaceholder = attributedPlaceholderTextFromText(newValue)
         }
+    }
+    
+    var returnKeyType: UIReturnKeyType {
+        get { return textField.returnKeyType }
+        set { textField.returnKeyType = newValue }
     }
     
     var keyboardType: UIKeyboardType? {
@@ -121,5 +148,24 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
         var attributes = [String: AnyObject]()
         attributes[NSForegroundColorAttributeName] = SpecColors.InputField.placeholder
         return NSAttributedString(string: text ?? "", attributes: attributes)
+    }
+}
+
+private class InputTextField: UITextField {
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.shrinked(
+            top: 0,
+            left: SpecMargins.innerContentMargin,
+            bottom: 0,
+            right: SpecMargins.innerContentMargin
+        )
+    }
+    
+    override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+        return textRect(forBounds: bounds)
+    }
+    
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return textRect(forBounds: bounds)
     }
 }

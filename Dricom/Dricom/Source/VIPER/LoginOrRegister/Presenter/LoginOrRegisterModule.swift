@@ -1,8 +1,8 @@
 import Foundation
 
 enum LoginOrRegisterResult {
-    case Login
-    case Register
+    case login
+    case register
 }
 
 protocol LoginOrRegisterModule: class {

@@ -11,6 +11,5 @@ class BaseNavigationController: UINavigationController {
         navigationBar.shadowImage = UIImage()
         navigationBar.backgroundColor = .clear
         navigationBar.tintColor = .white
-//        navigationBar.barTintColor = .clear
     }
 }

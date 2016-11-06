@@ -10,16 +10,30 @@ final class MainFlowController {
     // MARK: Flow control
     func start() {
         router.showLoginOrRegister { loginOrRegisterModule in
-            loginOrRegisterModule.onFinish = { loginOrRegisterResult in
+            loginOrRegisterModule.onFinish = { [weak self] loginOrRegisterResult in
                 switch loginOrRegisterResult {
-                case .Login:
-                    print("Login")
-                    break
-                case .Register:
-                    print("Register")
-                    break
+                case .login:
+                    self?.openLoginScreen()
+                case .register:
+                    self?.openRegisterScreen()
                 }
             }
         }
+    }
+    
+    func openLoginScreen() {
+        router.showLogin { loginModule in
+            loginModule.onFinish = { [weak self] _ in
+                self?.openMainPage()
+            }
+        }
+    }
+    
+    func openRegisterScreen() {
+        print("Open register screen")
+    }
+    
+    func openMainPage() {
+        print("Open main page")
     }
 }
