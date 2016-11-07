@@ -34,10 +34,6 @@ final class LoginViewController: BaseViewController, LoginViewInput {
         loginView.setPasswordPlaceholder(placeholder)
     }
     
-    func setRememberLoginChecked(_ checked: Bool) {
-        loginView.setRememberLoginChecked(checked)
-    }
-    
     var onLoginChange: ((String?) -> ())? {
         get { return loginView.onLoginChange }
         set { loginView.onLoginChange = newValue }
@@ -51,10 +47,5 @@ final class LoginViewController: BaseViewController, LoginViewInput {
     var onLoginButtonTap: (() -> ())? {
         get { return loginView.onLoginButtonTap }
         set { loginView.onLoginButtonTap = newValue }
-    }
-    
-    var onRememberLoginValueChange: (() -> ())? {
-        get { return loginView.onRememberLoginValueChange }
-        set { loginView.onRememberLoginValueChange = newValue }
     }
 }

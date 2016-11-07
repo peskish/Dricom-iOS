@@ -113,10 +113,4 @@ final class LoginView: ContentScrollingView {
         get { return loginButtonView.onTap }
         set { loginButtonView.onTap = newValue }
     }
-    
-    func setRememberLoginChecked(_ checked: Bool) {
-        
-    }
-    
-    var onRememberLoginValueChange: (() -> ())?
 }
