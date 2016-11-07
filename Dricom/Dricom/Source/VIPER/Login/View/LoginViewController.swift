@@ -48,4 +48,24 @@ final class LoginViewController: BaseViewController, LoginViewInput {
         get { return loginView.onLoginButtonTap }
         set { loginView.onLoginButtonTap = newValue }
     }
+    
+    func focusOnLoginField() {
+        loginView.focusOnLoginField()
+    }
+    
+    func focusOnPasswordField() {
+        loginView.focusOnPasswordField()
+    }
+    
+    func setLoginFieldState(_ state: InputFieldViewState) {
+        loginView.setLoginFieldState(state)
+    }
+    
+    func setPasswordFieldState(_ state: InputFieldViewState) {
+        loginView.setPasswordFieldState(state)
+    }
+    
+    func endEditing() {
+        loginView.endEditing(true)
+    }
 }

@@ -1,5 +1,10 @@
 import UIKit
 
+enum InputFieldViewState {
+    case normal
+    case validationError
+}
+
 class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
     // MARK: Properties
     private let textField = InputTextField()
@@ -89,6 +94,10 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
     }
     
     // MARK: - Public
+    var state: InputFieldViewState = .normal {
+        didSet { updateVisibleState() }
+    }
+    
     var isSecureTextEntry: Bool {
         get { return textField.isSecureTextEntry }
         set { textField.isSecureTextEntry = newValue }
@@ -148,6 +157,15 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
         var attributes = [String: AnyObject]()
         attributes[NSForegroundColorAttributeName] = SpecColors.InputField.placeholder
         return NSAttributedString(string: text ?? "", attributes: attributes)
+    }
+    
+    func updateVisibleState() {
+        switch state {
+        case .normal:
+            textField.layer.borderColor = SpecColors.InputField.stroke.cgColor
+        case .validationError:
+            textField.layer.borderColor = SpecColors.InputField.textInvalid.cgColor
+        }
     }
 }
 

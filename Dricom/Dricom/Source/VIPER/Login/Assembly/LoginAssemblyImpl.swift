@@ -6,7 +6,9 @@ final class LoginAssemblyImpl: BaseAssembly, LoginAssembly {
         configure: (_ module: LoginModule) -> ())
         -> UIViewController
     {
-        let interactor = LoginInteractorImpl()
+        let interactor = LoginInteractorImpl(
+            authorizationService: serviceFactory.authorizationService()
+        )
         
         let viewController = LoginViewController()
         

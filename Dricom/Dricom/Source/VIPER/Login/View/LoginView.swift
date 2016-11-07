@@ -113,4 +113,20 @@ final class LoginView: ContentScrollingView {
         get { return loginButtonView.onTap }
         set { loginButtonView.onTap = newValue }
     }
+    
+    func focusOnLoginField() {
+        loginView.startEditing()
+    }
+    
+    func focusOnPasswordField() {
+        passwordView.startEditing()
+    }
+    
+    func setLoginFieldState(_ state: InputFieldViewState) {
+        loginView.state = state
+    }
+    
+    func setPasswordFieldState(_ state: InputFieldViewState) {
+        passwordView.state = state
+    }
 }

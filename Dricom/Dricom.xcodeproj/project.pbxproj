@@ -93,6 +93,10 @@
 		F0A115851DC68DF500A4DC76 /* ViewLifecycleObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115841DC68DF500A4DC76 /* ViewLifecycleObservable.swift */; };
 		F0A115871DC68E1D00A4DC76 /* ViewControllerTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115861DC68E1D00A4DC76 /* ViewControllerTransition.swift */; };
 		F0A115891DC6914100A4DC76 /* CrossFadePushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115881DC6914100A4DC76 /* CrossFadePushTransition.swift */; };
+		F0F434081DD10CAB00F278BD /* AlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F434071DD10CAB00F278BD /* AlertDisplayable.swift */; };
+		F0F4340B1DD10CC500F278BD /* WindowWaiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F4340A1DD10CC500F278BD /* WindowWaiter.swift */; };
+		F0F434111DD119EE00F278BD /* ViewDebugAuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F434101DD119EE00F278BD /* ViewDebugAuthorizationService.swift */; };
+		F0F434131DD11A7100F278BD /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F434121DD11A7100F278BD /* AuthorizationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -184,6 +188,10 @@
 		F0A115841DC68DF500A4DC76 /* ViewLifecycleObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewLifecycleObservable.swift; path = Dricom/Source/Presentation/ViewControllers/ViewLifecycleObservable.swift; sourceTree = SOURCE_ROOT; };
 		F0A115861DC68E1D00A4DC76 /* ViewControllerTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerTransition.swift; path = Dricom/Source/Presentation/Transitions/ViewControllerTransition.swift; sourceTree = SOURCE_ROOT; };
 		F0A115881DC6914100A4DC76 /* CrossFadePushTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CrossFadePushTransition.swift; path = Dricom/Source/Presentation/Transitions/CrossFadePushTransition.swift; sourceTree = SOURCE_ROOT; };
+		F0F434071DD10CAB00F278BD /* AlertDisplayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertDisplayable.swift; path = MessageDisplaying/AlertDisplayable.swift; sourceTree = "<group>"; };
+		F0F4340A1DD10CC500F278BD /* WindowWaiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowWaiter.swift; sourceTree = "<group>"; };
+		F0F434101DD119EE00F278BD /* ViewDebugAuthorizationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewDebugAuthorizationService.swift; path = Dricom/Source/VIPER/Services/ViewDebug/ViewDebugAuthorizationService.swift; sourceTree = SOURCE_ROOT; };
+		F0F434121DD11A7100F278BD /* AuthorizationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthorizationService.swift; path = Dricom/Source/VIPER/Services/Interface/AuthorizationService.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,8 +276,9 @@
 		F076D6561DCF6D2F00E3ED0F /* MessageDisplaying */ = {
 			isa = PBXGroup;
 			children = (
-				F076D6571DCF6E2F00E3ED0F /* StandardAlert.swift */,
+				F0F434071DD10CAB00F278BD /* AlertDisplayable.swift */,
 				F076D6541DCF6D2000E3ED0F /* MessageDisplayable.swift */,
+				F076D6571DCF6E2F00E3ED0F /* StandardAlert.swift */,
 			);
 			name = MessageDisplaying;
 			sourceTree = "<group>";
@@ -460,6 +469,7 @@
 				F0A115661DC67F9500A4DC76 /* View */,
 				F0A115181DC622AB00A4DC76 /* ViewControllers */,
 				F0A1158A1DC6914700A4DC76 /* ViewControllerTransitions */,
+				F0F434091DD10CC400F278BD /* UIServices */,
 			);
 			name = Presentation;
 			path = VIPER;
@@ -518,6 +528,7 @@
 		F0A115281DC62C3700A4DC76 /* ViewDebug */ = {
 			isa = PBXGroup;
 			children = (
+				F0F434101DD119EE00F278BD /* ViewDebugAuthorizationService.swift */,
 				F0A1152A1DC62C8000A4DC76 /* ViewDebugRegistrationService.swift */,
 			);
 			name = ViewDebug;
@@ -535,6 +546,7 @@
 			isa = PBXGroup;
 			children = (
 				F0A1152C1DC62CB300A4DC76 /* RegistrationService.swift */,
+				F0F434121DD11A7100F278BD /* AuthorizationService.swift */,
 			);
 			name = Interface;
 			sourceTree = "<group>";
@@ -674,6 +686,15 @@
 			name = ViewControllerTransitions;
 			sourceTree = "<group>";
 		};
+		F0F434091DD10CC400F278BD /* UIServices */ = {
+			isa = PBXGroup;
+			children = (
+				F0F4340A1DD10CC500F278BD /* WindowWaiter.swift */,
+			);
+			name = UIServices;
+			path = Dricom/Source/Presentation/UIServices;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -769,13 +790,16 @@
 				F0A1157F1DC6863E00A4DC76 /* UIView+Resizing.swift in Sources */,
 				F09209A11DC14A7F0057302F /* ApplicationAssembly.swift in Sources */,
 				F09209A31DC14A7F0057302F /* ApplicationInteractor.swift in Sources */,
+				F0F434131DD11A7100F278BD /* AuthorizationService.swift in Sources */,
 				F09209821DC146300057302F /* AppDelegate.swift in Sources */,
+				F0F434081DD10CAB00F278BD /* AlertDisplayable.swift in Sources */,
 				F076D6451DCF67F200E3ED0F /* LoginPresenter.swift in Sources */,
 				F076D67B1DCF87D300E3ED0F /* TextFieldView.swift in Sources */,
 				F0A1157D1DC6863E00A4DC76 /* UIView+Layout.swift in Sources */,
 				F076D67D1DCF8F4900E3ED0F /* DoneButtonAccessoryView.swift in Sources */,
 				F09209B61DC150CB0057302F /* AssemblyFactoryImpl.swift in Sources */,
 				F0A1157C1DC6863E00A4DC76 /* UIImageExtension.swift in Sources */,
+				F0F434111DD119EE00F278BD /* ViewDebugAuthorizationService.swift in Sources */,
 				F0A1155E1DC637C600A4DC76 /* DisposeBag.swift in Sources */,
 				F0A1152B1DC62C8000A4DC76 /* ViewDebugRegistrationService.swift in Sources */,
 				F0A1154E1DC634E200A4DC76 /* LoginOrRegisterAssembly.swift in Sources */,
@@ -828,6 +852,7 @@
 				F076D6511DCF6A0000E3ED0F /* RouterDismissable.swift in Sources */,
 				F0A1157B1DC6863E00A4DC76 /* UIEdgeInsetsLayoutExtension.swift in Sources */,
 				F0A1154F1DC634E200A4DC76 /* LoginOrRegisterAssemblyImpl.swift in Sources */,
+				F0F4340B1DD10CC500F278BD /* WindowWaiter.swift in Sources */,
 				F08BE1A41DC926B600243B56 /* SpecMargins.swift in Sources */,
 				F08BE1A21DC9265000243B56 /* ActionButtonView.swift in Sources */,
 			);
