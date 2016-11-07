@@ -9,6 +9,12 @@ final class LoginOrRegisterViewController: BaseViewController, LoginOrRegisterVi
         view = loginOrRegisterView
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+    
     // MARK: - LoginOrRegisterViewInput
     func setLoginButtonTitle(_ title: String) {
         loginOrRegisterView.setLoginButtonTitle(title)

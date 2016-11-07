@@ -26,7 +26,7 @@ final class LoginView: ContentScrollingView {
             onLoginButtonTap?()
         }
         
-        keyboardDismissMode = .interactive
+        keyboardDismissMode = .none
         
         loginView.returnKeyType = .next
         

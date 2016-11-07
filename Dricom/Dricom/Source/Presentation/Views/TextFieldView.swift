@@ -10,7 +10,7 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
         
         textField.delegate = self
         textField.returnKeyType = .done
-        textField.clearButtonMode = .always
+        textField.clearButtonMode = .whileEditing
         textField.addTarget(self, action: #selector(textFieldDidChangeValue(_:)), for: .editingChanged)
         addSubview(textField)
         
