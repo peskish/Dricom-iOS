@@ -93,6 +93,18 @@
 		F0A115851DC68DF500A4DC76 /* ViewLifecycleObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115841DC68DF500A4DC76 /* ViewLifecycleObservable.swift */; };
 		F0A115871DC68E1D00A4DC76 /* ViewControllerTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115861DC68E1D00A4DC76 /* ViewControllerTransition.swift */; };
 		F0A115891DC6914100A4DC76 /* CrossFadePushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115881DC6914100A4DC76 /* CrossFadePushTransition.swift */; };
+		F0D038561DD3AE0500E0085D /* FeedbackAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038471DD3AE0500E0085D /* FeedbackAssembly.swift */; };
+		F0D038571DD3AE0500E0085D /* FeedbackAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038481DD3AE0500E0085D /* FeedbackAssemblyImpl.swift */; };
+		F0D038581DD3AE0500E0085D /* FeedbackInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D0384A1DD3AE0500E0085D /* FeedbackInteractor.swift */; };
+		F0D038591DD3AE0500E0085D /* FeedbackInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D0384B1DD3AE0500E0085D /* FeedbackInteractorImpl.swift */; };
+		F0D0385A1DD3AE0500E0085D /* FeedbackModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D0384D1DD3AE0500E0085D /* FeedbackModule.swift */; };
+		F0D0385B1DD3AE0500E0085D /* FeedbackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D0384E1DD3AE0500E0085D /* FeedbackPresenter.swift */; };
+		F0D0385C1DD3AE0500E0085D /* FeedbackRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038501DD3AE0500E0085D /* FeedbackRouter.swift */; };
+		F0D0385D1DD3AE0500E0085D /* FeedbackRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038511DD3AE0500E0085D /* FeedbackRouterImpl.swift */; };
+		F0D0385E1DD3AE0500E0085D /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038531DD3AE0500E0085D /* FeedbackView.swift */; };
+		F0D0385F1DD3AE0500E0085D /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038541DD3AE0500E0085D /* FeedbackViewController.swift */; };
+		F0D038601DD3AE0500E0085D /* FeedbackViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038551DD3AE0500E0085D /* FeedbackViewInput.swift */; };
+		F0D038621DD3AFA100E0085D /* RouterFeedbackShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038611DD3AFA100E0085D /* RouterFeedbackShowable.swift */; };
 		F0F434081DD10CAB00F278BD /* AlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F434071DD10CAB00F278BD /* AlertDisplayable.swift */; };
 		F0F4340B1DD10CC500F278BD /* WindowWaiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F4340A1DD10CC500F278BD /* WindowWaiter.swift */; };
 		F0F434111DD119EE00F278BD /* ViewDebugAuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F434101DD119EE00F278BD /* ViewDebugAuthorizationService.swift */; };
@@ -188,6 +200,18 @@
 		F0A115841DC68DF500A4DC76 /* ViewLifecycleObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewLifecycleObservable.swift; path = Dricom/Source/Presentation/ViewControllers/ViewLifecycleObservable.swift; sourceTree = SOURCE_ROOT; };
 		F0A115861DC68E1D00A4DC76 /* ViewControllerTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerTransition.swift; path = Dricom/Source/Presentation/Transitions/ViewControllerTransition.swift; sourceTree = SOURCE_ROOT; };
 		F0A115881DC6914100A4DC76 /* CrossFadePushTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CrossFadePushTransition.swift; path = Dricom/Source/Presentation/Transitions/CrossFadePushTransition.swift; sourceTree = SOURCE_ROOT; };
+		F0D038471DD3AE0500E0085D /* FeedbackAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackAssembly.swift; sourceTree = "<group>"; };
+		F0D038481DD3AE0500E0085D /* FeedbackAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackAssemblyImpl.swift; sourceTree = "<group>"; };
+		F0D0384A1DD3AE0500E0085D /* FeedbackInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackInteractor.swift; sourceTree = "<group>"; };
+		F0D0384B1DD3AE0500E0085D /* FeedbackInteractorImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackInteractorImpl.swift; sourceTree = "<group>"; };
+		F0D0384D1DD3AE0500E0085D /* FeedbackModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackModule.swift; sourceTree = "<group>"; };
+		F0D0384E1DD3AE0500E0085D /* FeedbackPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackPresenter.swift; sourceTree = "<group>"; };
+		F0D038501DD3AE0500E0085D /* FeedbackRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackRouter.swift; sourceTree = "<group>"; };
+		F0D038511DD3AE0500E0085D /* FeedbackRouterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackRouterImpl.swift; sourceTree = "<group>"; };
+		F0D038531DD3AE0500E0085D /* FeedbackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
+		F0D038541DD3AE0500E0085D /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
+		F0D038551DD3AE0500E0085D /* FeedbackViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewInput.swift; sourceTree = "<group>"; };
+		F0D038611DD3AFA100E0085D /* RouterFeedbackShowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterFeedbackShowable.swift; path = Router/RouterFeedbackShowable.swift; sourceTree = "<group>"; };
 		F0F434071DD10CAB00F278BD /* AlertDisplayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertDisplayable.swift; path = MessageDisplaying/AlertDisplayable.swift; sourceTree = "<group>"; };
 		F0F4340A1DD10CC500F278BD /* WindowWaiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowWaiter.swift; sourceTree = "<group>"; };
 		F0F434101DD119EE00F278BD /* ViewDebugAuthorizationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewDebugAuthorizationService.swift; path = Dricom/Source/VIPER/Services/ViewDebug/ViewDebugAuthorizationService.swift; sourceTree = SOURCE_ROOT; };
@@ -369,7 +393,9 @@
 			children = (
 				F09209B11DC1502B0057302F /* Common */,
 				F09209901DC14A7F0057302F /* Application */,
+				F0D038451DD3AE0500E0085D /* Feedback */,
 				F0A1153D1DC634E200A4DC76 /* LoginOrRegister */,
+				F076D62F1DCF67F200E3ED0F /* Login */,
 				F0A115271DC62C2E00A4DC76 /* Services */,
 			);
 			path = VIPER;
@@ -449,6 +475,7 @@
 				F09209B71DC1513B0057302F /* BaseRouter.swift */,
 				F0A115601DC6385400A4DC76 /* RouterFocusable.swift */,
 				F076D6501DCF6A0000E3ED0F /* RouterDismissable.swift */,
+				F0D038611DD3AFA100E0085D /* RouterFeedbackShowable.swift */,
 				F076D67E1DCFAEF400E3ED0F /* ViewControllerPosition.swift */,
 			);
 			name = Router;
@@ -576,7 +603,6 @@
 				F0A115441DC634E200A4DC76 /* Presenter */,
 				F0A115471DC634E200A4DC76 /* Router */,
 				F0A1154A1DC634E200A4DC76 /* View */,
-				F076D62F1DCF67F200E3ED0F /* Login */,
 			);
 			path = LoginOrRegister;
 			sourceTree = "<group>";
@@ -686,6 +712,65 @@
 			name = ViewControllerTransitions;
 			sourceTree = "<group>";
 		};
+		F0D038451DD3AE0500E0085D /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				F0D038461DD3AE0500E0085D /* Assembly */,
+				F0D038491DD3AE0500E0085D /* Interactor */,
+				F0D0384C1DD3AE0500E0085D /* Presenter */,
+				F0D0384F1DD3AE0500E0085D /* Router */,
+				F0D038521DD3AE0500E0085D /* View */,
+			);
+			name = Feedback;
+			path = Dricom/Source/VIPER/Application/Feedback;
+			sourceTree = SOURCE_ROOT;
+		};
+		F0D038461DD3AE0500E0085D /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				F0D038471DD3AE0500E0085D /* FeedbackAssembly.swift */,
+				F0D038481DD3AE0500E0085D /* FeedbackAssemblyImpl.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		F0D038491DD3AE0500E0085D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				F0D0384A1DD3AE0500E0085D /* FeedbackInteractor.swift */,
+				F0D0384B1DD3AE0500E0085D /* FeedbackInteractorImpl.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		F0D0384C1DD3AE0500E0085D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F0D0384D1DD3AE0500E0085D /* FeedbackModule.swift */,
+				F0D0384E1DD3AE0500E0085D /* FeedbackPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F0D0384F1DD3AE0500E0085D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F0D038501DD3AE0500E0085D /* FeedbackRouter.swift */,
+				F0D038511DD3AE0500E0085D /* FeedbackRouterImpl.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F0D038521DD3AE0500E0085D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0D038531DD3AE0500E0085D /* FeedbackView.swift */,
+				F0D038541DD3AE0500E0085D /* FeedbackViewController.swift */,
+				F0D038551DD3AE0500E0085D /* FeedbackViewInput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F0F434091DD10CC400F278BD /* UIServices */ = {
 			isa = PBXGroup;
 			children = (
@@ -778,6 +863,8 @@
 				F076D6471DCF67F200E3ED0F /* LoginRouterImpl.swift in Sources */,
 				F0A115561DC634E200A4DC76 /* LoginOrRegisterView.swift in Sources */,
 				F0A115581DC634E200A4DC76 /* LoginOrRegisterViewInput.swift in Sources */,
+				F0D0385D1DD3AE0500E0085D /* FeedbackRouterImpl.swift in Sources */,
+				F0D0385B1DD3AE0500E0085D /* FeedbackPresenter.swift in Sources */,
 				F0A115161DC6229500A4DC76 /* BaseViewController.swift in Sources */,
 				F08BE1A61DC9326A00243B56 /* InfoButtonView.swift in Sources */,
 				F0A115611DC6385400A4DC76 /* RouterFocusable.swift in Sources */,
@@ -786,6 +873,7 @@
 				F0A1152D1DC62CB300A4DC76 /* RegistrationService.swift in Sources */,
 				F09209A61DC14A7F0057302F /* ApplicationPresenter.swift in Sources */,
 				F076D6581DCF6E2F00E3ED0F /* StandardAlert.swift in Sources */,
+				F0D0385A1DD3AE0500E0085D /* FeedbackModule.swift in Sources */,
 				F0A115801DC6863E00A4DC76 /* UIView+Size.swift in Sources */,
 				F0A1157F1DC6863E00A4DC76 /* UIView+Resizing.swift in Sources */,
 				F09209A11DC14A7F0057302F /* ApplicationAssembly.swift in Sources */,
@@ -795,14 +883,17 @@
 				F0F434081DD10CAB00F278BD /* AlertDisplayable.swift in Sources */,
 				F076D6451DCF67F200E3ED0F /* LoginPresenter.swift in Sources */,
 				F076D67B1DCF87D300E3ED0F /* TextFieldView.swift in Sources */,
+				F0D0385F1DD3AE0500E0085D /* FeedbackViewController.swift in Sources */,
 				F0A1157D1DC6863E00A4DC76 /* UIView+Layout.swift in Sources */,
 				F076D67D1DCF8F4900E3ED0F /* DoneButtonAccessoryView.swift in Sources */,
+				F0D038561DD3AE0500E0085D /* FeedbackAssembly.swift in Sources */,
 				F09209B61DC150CB0057302F /* AssemblyFactoryImpl.swift in Sources */,
 				F0A1157C1DC6863E00A4DC76 /* UIImageExtension.swift in Sources */,
 				F0F434111DD119EE00F278BD /* ViewDebugAuthorizationService.swift in Sources */,
 				F0A1155E1DC637C600A4DC76 /* DisposeBag.swift in Sources */,
 				F0A1152B1DC62C8000A4DC76 /* ViewDebugRegistrationService.swift in Sources */,
 				F0A1154E1DC634E200A4DC76 /* LoginOrRegisterAssembly.swift in Sources */,
+				F0D038591DD3AE0500E0085D /* FeedbackInteractorImpl.swift in Sources */,
 				F076D6421DCF67F200E3ED0F /* LoginInteractor.swift in Sources */,
 				F076D66F1DCF6F3800E3ED0F /* RangeExtension.swift in Sources */,
 				F0A1155F1DC637C600A4DC76 /* DisposeBagHolder.swift in Sources */,
@@ -810,6 +901,7 @@
 				F0A115891DC6914100A4DC76 /* CrossFadePushTransition.swift in Sources */,
 				F0A115541DC634E200A4DC76 /* LoginOrRegisterRouter.swift in Sources */,
 				F0A115851DC68DF500A4DC76 /* ViewLifecycleObservable.swift in Sources */,
+				F0D038601DD3AE0500E0085D /* FeedbackViewInput.swift in Sources */,
 				F0A115651DC67F8400A4DC76 /* RadialGradientView.swift in Sources */,
 				F076D6791DCF7DD200E3ED0F /* UIView+FindFirstResponder.swift in Sources */,
 				F076D66C1DCF6F3800E3ED0F /* DictionaryExtensions.swift in Sources */,
@@ -820,12 +912,14 @@
 				F0A1151A1DC622D900A4DC76 /* BaseNavigationController.swift in Sources */,
 				F0A115551DC634E200A4DC76 /* LoginOrRegisterRouterImpl.swift in Sources */,
 				F09209B81DC1513B0057302F /* BaseRouter.swift in Sources */,
+				F0D038571DD3AE0500E0085D /* FeedbackAssemblyImpl.swift in Sources */,
 				F0A115821DC6897300A4DC76 /* SpecColors.swift in Sources */,
 				F0A115301DC62D2000A4DC76 /* DataResult.swift in Sources */,
 				F076D6401DCF67F200E3ED0F /* LoginAssembly.swift in Sources */,
 				F076D66B1DCF6F3800E3ED0F /* CollectionsExtensions.swift in Sources */,
 				F076D64C1DCF684A00E3ED0F /* ModuleFocusable.swift in Sources */,
 				F076D6481DCF67F200E3ED0F /* LoginView.swift in Sources */,
+				F0D038581DD3AE0500E0085D /* FeedbackInteractor.swift in Sources */,
 				F0A115571DC634E200A4DC76 /* LoginOrRegisterViewController.swift in Sources */,
 				F076D6711DCF6F3800E3ED0F /* String+Pluralization.swift in Sources */,
 				F076D6491DCF67F200E3ED0F /* LoginViewController.swift in Sources */,
@@ -835,7 +929,9 @@
 				F0A1157A1DC6863E00A4DC76 /* UIColorExtension.swift in Sources */,
 				F076D66D1DCF6F3800E3ED0F /* NumbersExtension.swift in Sources */,
 				F0A115871DC68E1D00A4DC76 /* ViewControllerTransition.swift in Sources */,
+				F0D0385E1DD3AE0500E0085D /* FeedbackView.swift in Sources */,
 				F09209A81DC14A7F0057302F /* ApplicationRouterImpl.swift in Sources */,
+				F0D038621DD3AFA100E0085D /* RouterFeedbackShowable.swift in Sources */,
 				F09209A41DC14A7F0057302F /* ApplicationInteractorImpl.swift in Sources */,
 				F076D6751DCF6FC500E3ED0F /* NSURLPathComponents.swift in Sources */,
 				F09209BD1DC1524E0057302F /* BaseAssembly.swift in Sources */,
@@ -847,6 +943,7 @@
 				F076D64A1DCF67F200E3ED0F /* LoginViewInput.swift in Sources */,
 				F0A115771DC6863E00A4DC76 /* CGRectLayoutExtension.swift in Sources */,
 				F076D6731DCF6F3800E3ED0F /* StringExtensions.swift in Sources */,
+				F0D0385C1DD3AE0500E0085D /* FeedbackRouter.swift in Sources */,
 				F0A115631DC63A8700A4DC76 /* MainFlowController.swift in Sources */,
 				F0A115781DC6863E00A4DC76 /* CGSizeLayoutExtension.swift in Sources */,
 				F076D6511DCF6A0000E3ED0F /* RouterDismissable.swift in Sources */,

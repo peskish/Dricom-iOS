@@ -31,8 +31,8 @@ final class LoginOrRegisterPresenter:
         view?.onRegisterButtonTap = { [weak self] in
             self?.onFinish?(.register)
         }
-        view?.onInfoButtonTap = {
-            print("onInfoButtonTap")
+        view?.onInfoButtonTap = { [weak self] in
+            self?.router.showFeedback()
         }
     }
     

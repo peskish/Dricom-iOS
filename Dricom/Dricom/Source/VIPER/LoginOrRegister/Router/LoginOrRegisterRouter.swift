@@ -1,3 +1,1 @@
-protocol LoginOrRegisterRouter: class, RouterFocusable {
-    
-}
+protocol LoginOrRegisterRouter: class, RouterFocusable, RouterFeedbackShowable {}

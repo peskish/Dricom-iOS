@@ -19,4 +19,8 @@ final class AssemblyFactoryImpl: AssemblyFactory {
     func loginAssembly() -> LoginAssembly {
         return LoginAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
     }
+    
+    func feedbackAssembly() -> FeedbackAssembly {
+        return FeedbackAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
+    }
 }

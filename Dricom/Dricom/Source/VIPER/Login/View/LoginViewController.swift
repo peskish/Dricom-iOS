@@ -49,6 +49,11 @@ final class LoginViewController: BaseViewController, LoginViewInput {
         set { loginView.onLoginButtonTap = newValue }
     }
     
+    var onInfoButtonTap: (() -> ())? {
+        get { return loginView.onInfoButtonTap }
+        set { loginView.onInfoButtonTap = newValue }
+    }
+    
     func focusOnLoginField() {
         loginView.focusOnLoginField()
     }

@@ -47,6 +47,10 @@ final class LoginPresenter:
                 self?.view?.endEditing()
                 self?.checkFieldsAndProceed(login: self?.login, password: self?.password)
             }
+            
+            self?.view?.onInfoButtonTap = { [weak self] in
+                self?.router.showFeedback()
+            }
         }
     }
     

@@ -1,5 +1,3 @@
 import Foundation
 
-protocol LoginRouter: class, RouterFocusable, RouterDismissable {
-    
-}
+protocol LoginRouter: class, RouterFocusable, RouterDismissable, RouterFeedbackShowable {}

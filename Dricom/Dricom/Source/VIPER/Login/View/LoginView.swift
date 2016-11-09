@@ -114,6 +114,11 @@ final class LoginView: ContentScrollingView {
         set { loginButtonView.onTap = newValue }
     }
     
+    var onInfoButtonTap: (() -> ())? {
+        get { return infoButtonView.onTap }
+        set { infoButtonView.onTap = newValue }
+    }
+    
     func focusOnLoginField() {
         loginView.startEditing()
     }
