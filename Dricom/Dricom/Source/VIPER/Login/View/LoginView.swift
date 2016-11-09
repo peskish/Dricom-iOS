@@ -7,7 +7,7 @@ final class LoginView: ContentScrollingView {
     private let loginView = TextFieldView()
     private let passwordView = TextFieldView()
     private let loginButtonView = ActionButtonView()
-    private let infoButtonView = InfoButtonView()
+    private let infoButtonView = ImageButtonView(image: UIImage(named: "Info sign"))
     
     // MARK: - Init
     init() {
@@ -58,9 +58,16 @@ final class LoginView: ContentScrollingView {
         infoButtonView.size = infoButtonView.sizeThatFits(bounds.size)
         infoButtonView.layout(right: bounds.right, bottom: frame.bottom)
         
+        let tabBarArea = CGRect(
+            left: bounds.left,
+            right: bounds.right,
+            bottom: bounds.bottom,
+            height: SpecSizes.bottomAreaHeight
+        )
+        
         loginButtonView.layout(
                 left: bounds.left,
-                bottom: infoButtonView.top - SpecMargins.contentMargin,
+                bottom: tabBarArea.top - SpecMargins.contentMargin,
                 fitWidth: bounds.width,
                 fitHeight: SpecMargins.actionButtonHeight
         )

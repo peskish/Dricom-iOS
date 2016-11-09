@@ -6,7 +6,7 @@ final class LoginOrRegisterView: UIView {
     private let backgroundView = RadialGradientView()
     private let loginButtonView = ActionButtonView()
     private let registerButtonView = ActionButtonView()
-    private let infoButtonView = InfoButtonView()
+    private let infoButtonView = ImageButtonView(image: UIImage(named: "Info sign"))
     
     // MARK: Init
     init() {
@@ -39,9 +39,16 @@ final class LoginOrRegisterView: UIView {
         infoButtonView.size = infoButtonView.sizeThatFits(bounds.size)
         infoButtonView.layout(right: bounds.right, bottom: bounds.bottom)
         
+        let tabBarArea = CGRect(
+            left: bounds.left,
+            right: bounds.right,
+            bottom: bounds.bottom,
+            height: SpecSizes.bottomAreaHeight
+        )
+            
         registerButtonView.layout(
             left: bounds.left,
-            bottom: infoButtonView.top - SpecMargins.contentMargin,
+            bottom: tabBarArea.top - SpecMargins.contentMargin,
             fitWidth: bounds.width,
             fitHeight: SpecMargins.actionButtonHeight
         )

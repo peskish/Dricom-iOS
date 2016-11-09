@@ -41,7 +41,7 @@
 		F076D67F1DCFAEF400E3ED0F /* ViewControllerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D67E1DCFAEF400E3ED0F /* ViewControllerPosition.swift */; };
 		F08BE1A21DC9265000243B56 /* ActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BE1A11DC9265000243B56 /* ActionButtonView.swift */; };
 		F08BE1A41DC926B600243B56 /* SpecMargins.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BE1A31DC926B600243B56 /* SpecMargins.swift */; };
-		F08BE1A61DC9326A00243B56 /* InfoButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BE1A51DC9326A00243B56 /* InfoButtonView.swift */; };
+		F08BE1A61DC9326A00243B56 /* ImageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BE1A51DC9326A00243B56 /* ImageButtonView.swift */; };
 		F09209421DC13EFB0057302F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F09209411DC13EFB0057302F /* Assets.xcassets */; };
 		F09209451DC13EFB0057302F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F09209431DC13EFB0057302F /* LaunchScreen.storyboard */; };
 		F09209821DC146300057302F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F092096F1DC146300057302F /* AppDelegate.swift */; };
@@ -146,7 +146,7 @@
 		F076D67E1DCFAEF400E3ED0F /* ViewControllerPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerPosition.swift; path = Router/ViewControllerPosition.swift; sourceTree = "<group>"; };
 		F08BE1A11DC9265000243B56 /* ActionButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionButtonView.swift; path = Dricom/Source/Presentation/Views/ActionButtonView.swift; sourceTree = SOURCE_ROOT; };
 		F08BE1A31DC926B600243B56 /* SpecMargins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpecMargins.swift; path = Dricom/Source/Presentation/Spec/SpecMargins.swift; sourceTree = SOURCE_ROOT; };
-		F08BE1A51DC9326A00243B56 /* InfoButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoButtonView.swift; path = Dricom/Source/Presentation/Views/InfoButtonView.swift; sourceTree = SOURCE_ROOT; };
+		F08BE1A51DC9326A00243B56 /* ImageButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageButtonView.swift; path = Dricom/Source/Presentation/Views/ImageButtonView.swift; sourceTree = SOURCE_ROOT; };
 		F09209371DC13EFB0057302F /* Dricom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dricom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F09209411DC13EFB0057302F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F09209441DC13EFB0057302F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -660,7 +660,7 @@
 				F08BE1A11DC9265000243B56 /* ActionButtonView.swift */,
 				F076D6761DCF762700E3ED0F /* ContentScrollingView.swift */,
 				F076D67C1DCF8F4900E3ED0F /* DoneButtonAccessoryView.swift */,
-				F08BE1A51DC9326A00243B56 /* InfoButtonView.swift */,
+				F08BE1A51DC9326A00243B56 /* ImageButtonView.swift */,
 				F0A115641DC67F8400A4DC76 /* RadialGradientView.swift */,
 				F076D67A1DCF87D300E3ED0F /* TextFieldView.swift */,
 			);
@@ -866,7 +866,7 @@
 				F0D0385D1DD3AE0500E0085D /* FeedbackRouterImpl.swift in Sources */,
 				F0D0385B1DD3AE0500E0085D /* FeedbackPresenter.swift in Sources */,
 				F0A115161DC6229500A4DC76 /* BaseViewController.swift in Sources */,
-				F08BE1A61DC9326A00243B56 /* InfoButtonView.swift in Sources */,
+				F08BE1A61DC9326A00243B56 /* ImageButtonView.swift in Sources */,
 				F0A115611DC6385400A4DC76 /* RouterFocusable.swift in Sources */,
 				F0A115531DC634E200A4DC76 /* LoginOrRegisterPresenter.swift in Sources */,
 				F076D6431DCF67F200E3ED0F /* LoginInteractorImpl.swift in Sources */,

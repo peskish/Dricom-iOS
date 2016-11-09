@@ -1,26 +1,51 @@
 import UIKit
 
-class InfoButtonView: UIView {
+struct ImageButtonSet {
+    let normal: UIImage?
+    let highlighted: UIImage?
+    let disabled: UIImage?
+}
+
+class ImageButtonView: UIView {
     // MARK: Properties
     private let button = UIButton(type: .custom)
     
     // MARK: Init
-    init() {
+    init(imageSet: ImageButtonSet) {
         super.init(frame: .zero)
         
         button.addTarget(self, action: #selector(onButtonTap), for: .touchUpInside)
         addSubview(button)
         
+        setImageSet(imageSet)
         setStyle()
+    }
+    
+    convenience init(image: UIImage?) {
+        self.init(
+            imageSet: ImageButtonSet(
+                normal: image,
+                highlighted: nil,
+                disabled: nil
+            )
+        )
+    }
+    
+    private func setImageSet(_ imageSet: ImageButtonSet) {
+        button.setImage(imageSet.normal, for: .normal)
+        button.setImage(imageSet.highlighted, for: .highlighted)
+        button.setImage(imageSet.disabled, for: .disabled)
+        
+        if imageSet.highlighted == nil {
+            button.adjustsImageWhenHighlighted = true
+        }
     }
     
     private func setStyle() {
         backgroundColor = .clear
         
         button.backgroundColor = .clear
-        button.setImage(UIImage(named: "Info sign"), for: .normal)
         button.contentMode = .center
-        button.adjustsImageWhenHighlighted = true
     }
     
     required init?(coder aDecoder: NSCoder) {
