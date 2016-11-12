@@ -8,7 +8,7 @@ struct ImageButtonSet {
 
 class ImageButtonView: UIView {
     // MARK: Properties
-    private let button = UIButton(type: .custom)
+    let button = UIButton(type: .custom)
     
     // MARK: Init
     init(imageSet: ImageButtonSet) {
@@ -59,7 +59,10 @@ class ImageButtonView: UIView {
     }
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
-        return SpecSizes.minimumButtonArea
+        let imageSize = button.image(for: .normal)?.size ?? .zero
+        let width = max(imageSize.width, SpecSizes.minimumButtonArea.width)
+        let height = max(imageSize.height, SpecSizes.minimumButtonArea.height)
+        return CGSize(width: width, height: height)
     }
     
     // MARK: - Actions

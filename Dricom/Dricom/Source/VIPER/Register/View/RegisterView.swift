@@ -3,6 +3,15 @@ import UIKit
 final class RegisterView: ContentScrollingView {
     // MARK: - Properties
     private let backgroundView = RadialGradientView()
+    private let addPhotoButton = ImageButtonView(image: UIImage(named: "Add photo"))
+    private let addPhotoLabel: UILabel = {
+        let label = UILabel()
+        label.backgroundColor = .clear
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = SpecColors.textMain
+        label.textAlignment = .center
+        return label
+    }()
     
     // MARK: - Init
     init() {
@@ -11,6 +20,9 @@ final class RegisterView: ContentScrollingView {
         backgroundColor = SpecColors.Background.defaultEdge
         
         addSubview(backgroundView)
+        addSubview(addPhotoButton)
+        addSubview(addPhotoLabel)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -23,6 +35,27 @@ final class RegisterView: ContentScrollingView {
         
         backgroundView.frame = bounds
         
-//        contentSize = CGSize(width: bounds.width, height: max(bounds.height, infoButtonView.bottom))
+        addPhotoButton.size = addPhotoButton.sizeThatFits(bounds.size)
+        addPhotoButton.top = SpecSizes.statusBarHeight * 2
+        addPhotoButton.centerX = bounds.centerX
+        
+        addPhotoLabel.sizeToFit()
+        addPhotoLabel.top = addPhotoButton.bottom + SpecMargins.innerContentMargin
+        addPhotoLabel.centerX = bounds.centerX
+        
+        contentSize = CGSize(
+            width: bounds.width,
+            height: (subviews.last?.bottom ?? 0) + SpecMargins.contentMargin
+        )
+    }
+    
+    // MARK: Public
+    func setAddPhotoTitle(_ title: String) {
+        addPhotoLabel.text = title
+    }
+    
+    var onAddPhotoButtonTap: (() -> ())? {
+        get { return addPhotoButton.onTap }
+        set { addPhotoButton.onTap = newValue }
     }
 }

@@ -24,7 +24,11 @@ final class RegisterPresenter:
     
     // MARK: - Private
     private func setUpView() {
+        view?.setAddPhotoTitle("Добавьте фото")
         
+        view?.onAddPhotoButtonTap = { [weak self] in
+            print("add photo")
+        }
     }
     
     // MARK: - RegisterModule

@@ -18,4 +18,12 @@ final class RegisterViewController: BaseViewController, RegisterViewInput {
     }
     
     // MARK: - RegisterViewInput
+    func setAddPhotoTitle(_ title: String) {
+        registerView.setAddPhotoTitle(title)
+    }
+    
+    var onAddPhotoButtonTap: (() -> ())? {
+        get { return registerView.onAddPhotoButtonTap }
+        set { registerView.onAddPhotoButtonTap = newValue }
+    }
 }
