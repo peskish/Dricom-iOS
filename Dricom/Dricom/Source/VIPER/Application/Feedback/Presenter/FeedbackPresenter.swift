@@ -24,8 +24,31 @@ final class FeedbackPresenter:
     
     // MARK: - Private
     private func setUpView() {
+        view?.setSupportButtonTitle("Сообщить о проблеме")
+        view?.setFeedbackButtonTitle("Обратная связь")
+        
         view?.onCloseButtonTap = { [weak self] in
             self?.onFinish?(.finished)
+        }
+        
+        view?.onFbButtonTap = { [weak self] in
+            self?.interactor.openFb()
+        }
+        
+        view?.onVkButtonTap = { [weak self] in
+            self?.interactor.openVk()
+        }
+        
+        view?.onInstagramButtonTap = { [weak self] in
+            self?.interactor.openInstagram()
+        }
+        
+        view?.onFeedbackButtonTap = { [weak self] in
+            print("open mail with feedback")
+        }
+        
+        view?.onSupportButtonTap = { [weak self] in
+            print("open mail with support info")
         }
     }
     

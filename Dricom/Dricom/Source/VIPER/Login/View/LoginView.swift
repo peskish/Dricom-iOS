@@ -46,7 +46,7 @@ final class LoginView: ContentScrollingView {
         
         var desiredHeight: CGFloat = SpecSizes.statusBarHeight * 2
         desiredHeight += imageSize.height
-        desiredHeight += SpecMargins.contentMargin + loginInputView.sizeThatFits(size).height
+        desiredHeight += 2*SpecMargins.contentMargin + loginInputView.sizeThatFits(size).height
         desiredHeight += SpecMargins.innerContentMargin + passwordView.sizeThatFits(size).height
         desiredHeight += SpecMargins.contentMargin + loginButtonView.sizeThatFits(size).height
         desiredHeight += SpecMargins.contentMargin + registerButtonView.sizeThatFits(size).height
@@ -122,7 +122,7 @@ final class LoginView: ContentScrollingView {
         loginInputView.layout(
             left: bounds.left,
             right: bounds.right,
-            top: logoImageView.bottom + SpecMargins.contentMargin,
+            top: logoImageView.bottom + 2*SpecMargins.contentMargin,
             height: SpecMargins.inputFieldHeight
         )
         

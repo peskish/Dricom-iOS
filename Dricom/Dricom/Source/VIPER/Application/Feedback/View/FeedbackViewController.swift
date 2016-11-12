@@ -27,4 +27,37 @@ final class FeedbackViewController: BaseViewController, FeedbackViewInput {
     @objc private func closeButtonTapped() {
         onCloseButtonTap?()
     }
+    
+    func setFeedbackButtonTitle(_ title: String) {
+        feedbackView.setFeedbackButtonTitle(title)
+    }
+    
+    func setSupportButtonTitle(_ title: String) {
+        feedbackView.setSupportButtonTitle(title)
+    }
+    
+    var onFeedbackButtonTap: (() -> ())? {
+        get { return feedbackView.onFeedbackButtonTap }
+        set { feedbackView.onFeedbackButtonTap = newValue }
+    }
+    
+    var onSupportButtonTap: (() -> ())? {
+        get { return feedbackView.onSupportButtonTap }
+        set { feedbackView.onSupportButtonTap = newValue }
+    }
+    
+    var onFbButtonTap: (() -> ())? {
+        get { return feedbackView.onFbButtonTap }
+        set { feedbackView.onFbButtonTap = newValue }
+    }
+    
+    var onVkButtonTap: (() -> ())? {
+        get { return feedbackView.onVkButtonTap }
+        set { feedbackView.onVkButtonTap = newValue }
+    }
+    
+    var onInstagramButtonTap: (() -> ())? {
+        get { return feedbackView.onInstagramButtonTap }
+        set { feedbackView.onInstagramButtonTap = newValue }
+    }
 }

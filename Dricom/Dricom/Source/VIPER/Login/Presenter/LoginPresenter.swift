@@ -28,34 +28,32 @@ final class LoginPresenter:
     
     // MARK: - Private
     private func setUpView() {
-        view?.onViewDidLoad = { [weak self] in
-            self?.view?.setLoginPlaceholder("Имя пользователя")
-            self?.view?.setPasswordPlaceholder("Введите пароль")
-            self?.view?.setLoginButtonTitle("Войти")
-            self?.view?.setRegisterButtonTitle("Зарегистрироваться")
-            
-            self?.view?.onLoginChange = { [weak self] text in
-                self?.view?.setLoginFieldState(.normal)
-                self?.login = text
-            }
-            
-            self?.view?.onPasswordChange = { [weak self] text in
-                self?.view?.setPasswordFieldState(.normal)
-                self?.password = text
-            }
-            
-            self?.view?.onLoginButtonTap = { [weak self] in
-                self?.view?.endEditing()
-                self?.checkFieldsAndProceed(login: self?.login, password: self?.password)
-            }
-            
-            self?.view?.onRegisterButtonTap = { [weak self] in
-                print("open register screen")
-            }
-            
-            self?.view?.onInfoButtonTap = { [weak self] in
-                self?.router.showFeedback()
-            }
+        view?.setLoginPlaceholder("Имя пользователя")
+        view?.setPasswordPlaceholder("Введите пароль")
+        view?.setLoginButtonTitle("Войти")
+        view?.setRegisterButtonTitle("Зарегистрироваться")
+        
+        view?.onLoginChange = { [weak self] text in
+            self?.view?.setLoginFieldState(.normal)
+            self?.login = text
+        }
+        
+        view?.onPasswordChange = { [weak self] text in
+            self?.view?.setPasswordFieldState(.normal)
+            self?.password = text
+        }
+        
+        view?.onLoginButtonTap = { [weak self] in
+            self?.view?.endEditing()
+            self?.checkFieldsAndProceed(login: self?.login, password: self?.password)
+        }
+        
+        view?.onRegisterButtonTap = { [weak self] in
+            print("open register screen")
+        }
+        
+        view?.onInfoButtonTap = { [weak self] in
+            self?.router.showFeedback()
         }
     }
     

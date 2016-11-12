@@ -8,7 +8,6 @@ final class FeedbackView: UIView {
     private let fbButtonView = ImageButtonView(image: UIImage(named: "Facebook"))
     private let vkButtonView = ImageButtonView(image: UIImage(named: "VKontakte"))
     private let instagramButtonView = ImageButtonView(image: UIImage(named: "Instagram"))
-    private let viberButtonView = ImageButtonView(image: UIImage(named: "Viber"))
     
     // MARK: - Init
     init() {
@@ -21,7 +20,6 @@ final class FeedbackView: UIView {
         addSubview(fbButtonView)
         addSubview(vkButtonView)
         addSubview(instagramButtonView)
-        addSubview(viberButtonView)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -61,15 +59,14 @@ final class FeedbackView: UIView {
             fitHeight: SpecMargins.actionButtonHeight
         )
         
-        for view in [fbButtonView, vkButtonView, instagramButtonView, viberButtonView] {
+        for view in [fbButtonView, vkButtonView, instagramButtonView] {
             view.sizeToFit()
             view.centerY = bounds.centerY
         }
         
-        vkButtonView.right = centerX - SpecMargins.contentMargin/2
-        instagramButtonView.left = centerX + SpecMargins.contentMargin/2
-        fbButtonView.right = vkButtonView.left - SpecMargins.contentMargin
-        viberButtonView.left = instagramButtonView.right + SpecMargins.contentMargin
+        vkButtonView.centerX = bounds.centerX
+        instagramButtonView.centerX = bounds.width/4
+        fbButtonView.centerX = bounds.width*3/4
     }
     
     // MARK: - Public
@@ -104,10 +101,5 @@ final class FeedbackView: UIView {
     var onInstagramButtonTap: (() -> ())? {
         get { return instagramButtonView.onTap }
         set { instagramButtonView.onTap = newValue }
-    }
-    
-    var onViberButtonTap: (() -> ())? {
-        get { return viberButtonView.onTap }
-        set { viberButtonView.onTap = newValue }
     }
 }
