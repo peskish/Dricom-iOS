@@ -12,7 +12,8 @@ final class FeedbackAssemblyImpl: BaseAssembly, FeedbackAssembly {
         
         let router = FeedbackRouterImpl(
             assemblyFactory: assemblyFactory,
-            viewController: viewController
+            viewController: viewController,
+            mailComposeDelegateService: serviceFactory.mailComposeDelegateService()
         )
         
         let presenter = FeedbackPresenter(

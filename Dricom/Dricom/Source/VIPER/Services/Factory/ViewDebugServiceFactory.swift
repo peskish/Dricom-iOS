@@ -6,4 +6,8 @@ final class ViewDebugServiceFactory: ServiceFactory {
     func authorizationService() -> AuthorizationService {
         return ViewDebugAuthorizationServiceImpl()
     }
+    
+    func mailComposeDelegateService() -> MailComposeDelegateService {
+        return MailComposeDelegateServiceImpl()
+    }
 }

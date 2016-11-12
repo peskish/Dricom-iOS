@@ -1,7 +1,10 @@
 import UIKit
+import MessageUI
 
 final class FeedbackInteractorImpl: FeedbackInteractor {
     private let application = UIApplication.shared
+    
+    private let adminEmailAddress = "admin@dricom.ru"
     
     private let vkUrl = "vk://vk.com/dricomru"
     private let fbUrl = "fb://profile/dricom.ru"
@@ -31,6 +34,23 @@ final class FeedbackInteractorImpl: FeedbackInteractor {
             else { return }
         
         openUrl(url, fallbackUrl: httpUrl)
+    }
+    
+    func canSendEmail() -> Bool {
+        return MFMailComposeViewController.canSendMail()
+    }
+    
+    func adminEmail() -> String {
+        return adminEmailAddress
+    }
+    
+    func supportMessageData() -> SupportMessageData {
+        return SupportMessageData(
+            deviceVersion: UIDevice.current.modelName,
+            iosVersion: "IOS: \(UIDevice.current.systemVersion)",
+            userEmail: nil,    // TODO: user email if available
+            appVersion: AppMetadataExtension.appVersion ?? "1.0"
+        )
     }
     
     // MARK: - Private

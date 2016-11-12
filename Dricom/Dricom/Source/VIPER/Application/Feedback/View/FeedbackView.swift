@@ -61,7 +61,7 @@ final class FeedbackView: UIView {
         
         for view in [fbButtonView, vkButtonView, instagramButtonView] {
             view.sizeToFit()
-            view.centerY = bounds.centerY
+            view.top = logoImageView.bottom + 2*SpecMargins.contentMargin
         }
         
         vkButtonView.centerX = bounds.centerX

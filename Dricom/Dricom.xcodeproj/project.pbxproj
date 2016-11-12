@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F021D69B1DD7A43A00F50091 /* SupportMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D69A1DD7A43A00F50091 /* SupportMessageData.swift */; };
+		F021D6A21DD7A61900F50091 /* MailComposerAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6A01DD7A61900F50091 /* MailComposerAssemblyImpl.swift */; };
+		F021D6A31DD7A61900F50091 /* MailComposerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6A11DD7A61900F50091 /* MailComposerAssembly.swift */; };
+		F021D6A51DD7A6E300F50091 /* MailComposeDelegateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6A41DD7A6E300F50091 /* MailComposeDelegateService.swift */; };
 		F076D6401DCF67F200E3ED0F /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6311DCF67F200E3ED0F /* LoginAssembly.swift */; };
 		F076D6411DCF67F200E3ED0F /* LoginAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6321DCF67F200E3ED0F /* LoginAssemblyImpl.swift */; };
 		F076D6421DCF67F200E3ED0F /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6341DCF67F200E3ED0F /* LoginInteractor.swift */; };
@@ -103,6 +107,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F021D69A1DD7A43A00F50091 /* SupportMessageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportMessageData.swift; sourceTree = "<group>"; };
+		F021D6A01DD7A61900F50091 /* MailComposerAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailComposerAssemblyImpl.swift; sourceTree = "<group>"; };
+		F021D6A11DD7A61900F50091 /* MailComposerAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailComposerAssembly.swift; sourceTree = "<group>"; };
+		F021D6A41DD7A6E300F50091 /* MailComposeDelegateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MailComposeDelegateService.swift; path = MailComposeDelegateService/MailComposeDelegateService.swift; sourceTree = "<group>"; };
 		F076D6311DCF67F200E3ED0F /* LoginAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		F076D6321DCF67F200E3ED0F /* LoginAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAssemblyImpl.swift; sourceTree = "<group>"; };
 		F076D6341DCF67F200E3ED0F /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
@@ -211,6 +219,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F021D69E1DD7A61900F50091 /* MailComposer */ = {
+			isa = PBXGroup;
+			children = (
+				F021D69F1DD7A61900F50091 /* Assembly */,
+			);
+			path = MailComposer;
+			sourceTree = "<group>";
+		};
+		F021D69F1DD7A61900F50091 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				F021D6A11DD7A61900F50091 /* MailComposerAssembly.swift */,
+				F021D6A01DD7A61900F50091 /* MailComposerAssemblyImpl.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		F021D6A61DD7A6EE00F50091 /* MailComposeDelegateService */ = {
+			isa = PBXGroup;
+			children = (
+				F021D6A41DD7A6E300F50091 /* MailComposeDelegateService.swift */,
+			);
+			name = MailComposeDelegateService;
+			sourceTree = "<group>";
+		};
 		F076D62F1DCF67F200E3ED0F /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,6 +409,7 @@
 				F09209B11DC1502B0057302F /* Common */,
 				F09209901DC14A7F0057302F /* Application */,
 				F0D038451DD3AE0500E0085D /* Feedback */,
+				F021D69E1DD7A61900F50091 /* MailComposer */,
 				F076D62F1DCF67F200E3ED0F /* Login */,
 				F0A115271DC62C2E00A4DC76 /* Services */,
 			);
@@ -434,6 +468,7 @@
 			children = (
 				F09209BE1DC152530057302F /* Assembly */,
 				F09209B21DC1502B0057302F /* AssemblyFactory */,
+				F021D6A61DD7A6EE00F50091 /* MailComposeDelegateService */,
 				F076D6561DCF6D2F00E3ED0F /* MessageDisplaying */,
 				F076D64D1DCF688500E3ED0F /* Module */,
 				F09209B91DC151400057302F /* Router */,
@@ -681,6 +716,7 @@
 			children = (
 				F0D0384D1DD3AE0500E0085D /* FeedbackModule.swift */,
 				F0D0384E1DD3AE0500E0085D /* FeedbackPresenter.swift */,
+				F021D69A1DD7A43A00F50091 /* SupportMessageData.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -746,7 +782,7 @@
 					F09209361DC13EFB0057302F = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = RU54DQG53V;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -787,6 +823,7 @@
 			files = (
 				F0A115351DC6309F00A4DC76 /* ServiceFactory.swift in Sources */,
 				F076D6411DCF67F200E3ED0F /* LoginAssemblyImpl.swift in Sources */,
+				F021D6A21DD7A61900F50091 /* MailComposerAssemblyImpl.swift in Sources */,
 				F076D67F1DCFAEF400E3ED0F /* ViewControllerPosition.swift in Sources */,
 				F076D6551DCF6D2000E3ED0F /* MessageDisplayable.swift in Sources */,
 				F076D6701DCF6F3800E3ED0F /* SequenceTypeExtensions.swift in Sources */,
@@ -804,16 +841,19 @@
 				F076D6581DCF6E2F00E3ED0F /* StandardAlert.swift in Sources */,
 				F0D0385A1DD3AE0500E0085D /* FeedbackModule.swift in Sources */,
 				F0A115801DC6863E00A4DC76 /* UIView+Size.swift in Sources */,
+				F021D6A51DD7A6E300F50091 /* MailComposeDelegateService.swift in Sources */,
 				F0A1157F1DC6863E00A4DC76 /* UIView+Resizing.swift in Sources */,
 				F09209A11DC14A7F0057302F /* ApplicationAssembly.swift in Sources */,
 				F09209A31DC14A7F0057302F /* ApplicationInteractor.swift in Sources */,
 				F0F434131DD11A7100F278BD /* AuthorizationService.swift in Sources */,
+				F021D69B1DD7A43A00F50091 /* SupportMessageData.swift in Sources */,
 				F09209821DC146300057302F /* AppDelegate.swift in Sources */,
 				F0F434081DD10CAB00F278BD /* AlertDisplayable.swift in Sources */,
 				F076D6451DCF67F200E3ED0F /* LoginPresenter.swift in Sources */,
 				F076D67B1DCF87D300E3ED0F /* TextFieldView.swift in Sources */,
 				F0D0385F1DD3AE0500E0085D /* FeedbackViewController.swift in Sources */,
 				F0A1157D1DC6863E00A4DC76 /* UIView+Layout.swift in Sources */,
+				F021D6A31DD7A61900F50091 /* MailComposerAssembly.swift in Sources */,
 				F076D67D1DCF8F4900E3ED0F /* DoneButtonAccessoryView.swift in Sources */,
 				F0D038561DD3AE0500E0085D /* FeedbackAssembly.swift in Sources */,
 				F09209B61DC150CB0057302F /* AssemblyFactoryImpl.swift in Sources */,
@@ -994,6 +1034,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.dricom.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ac0cfbe4-86ab-496e-af00-c0d7374cc701";
+				PROVISIONING_PROFILE_SPECIFIER = "Dricom Dev";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -1002,7 +1044,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = RU54DQG53V;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Dricom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

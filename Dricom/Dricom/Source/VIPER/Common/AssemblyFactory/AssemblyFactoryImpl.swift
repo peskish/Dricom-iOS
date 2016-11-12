@@ -19,4 +19,8 @@ final class AssemblyFactoryImpl: AssemblyFactory {
     func feedbackAssembly() -> FeedbackAssembly {
         return FeedbackAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
     }
+    
+    func mailComposerAssembly() -> MailComposerAssembly {
+        return MailComposerAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
+    }
 }
