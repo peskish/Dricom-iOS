@@ -4,9 +4,10 @@ final class LoginView: ContentScrollingView {
     // MARK: Properties
     private let backgroundView = RadialGradientView()
     private let logoImageView = UIImageView(image: UIImage(named: "Logo"))
-    private let loginView = TextFieldView()
+    private let loginInputView = TextFieldView()
     private let passwordView = TextFieldView()
     private let loginButtonView = ActionButtonView()
+    private let registerButtonView = ActionButtonView()
     private let infoButtonView = ImageButtonView(image: UIImage(named: "Info sign"))
     
     // MARK: - Init
@@ -17,20 +18,17 @@ final class LoginView: ContentScrollingView {
         
         addSubview(backgroundView)
         addSubview(logoImageView)
-        addSubview(loginView)
+        addSubview(loginInputView)
         addSubview(passwordView)
         addSubview(loginButtonView)
+        addSubview(registerButtonView)
         addSubview(infoButtonView)
-        
-        loginButtonView.onTap = { [onLoginButtonTap] in
-            onLoginButtonTap?()
-        }
         
         keyboardDismissMode = .none
         
-        loginView.returnKeyType = .next
+        loginInputView.returnKeyType = .next
         
-        loginView.onDoneButtonTap = { [weak self] in
+        loginInputView.onDoneButtonTap = { [weak self] in
             self?.passwordView.startEditing()
         }
         
@@ -43,6 +41,20 @@ final class LoginView: ContentScrollingView {
     }
     
     // MARK: Layout
+    override func sizeThatFits(_ size: CGSize) -> CGSize {
+        guard let imageSize = logoImageView.image?.size else { return .zero }
+        
+        var desiredHeight: CGFloat = SpecSizes.statusBarHeight * 2
+        desiredHeight += imageSize.height
+        desiredHeight += SpecMargins.contentMargin + loginInputView.sizeThatFits(size).height
+        desiredHeight += SpecMargins.innerContentMargin + passwordView.sizeThatFits(size).height
+        desiredHeight += SpecMargins.contentMargin + loginButtonView.sizeThatFits(size).height
+        desiredHeight += SpecMargins.contentMargin + registerButtonView.sizeThatFits(size).height
+        desiredHeight += SpecMargins.contentMargin + SpecSizes.bottomAreaHeight
+        
+        return CGSize(width: size.width, height: desiredHeight)
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -55,6 +67,18 @@ final class LoginView: ContentScrollingView {
         logoImageView.top = SpecSizes.statusBarHeight * 2
         logoImageView.centerX = bounds.centerX
         
+        let desiredSize = sizeThatFits(frame.size)
+        
+        if desiredSize.height > frame.height {
+            layoutFromTop()
+        } else {
+            layoutFromBottom()
+        }
+
+        contentSize = CGSize(width: bounds.width, height: max(bounds.height, infoButtonView.bottom))
+    }
+    
+    private func layoutFromBottom() {
         infoButtonView.size = infoButtonView.sizeThatFits(bounds.size)
         infoButtonView.layout(right: bounds.right, bottom: frame.bottom)
         
@@ -65,11 +89,18 @@ final class LoginView: ContentScrollingView {
             height: SpecSizes.bottomAreaHeight
         )
         
+        registerButtonView.layout(
+            left: bounds.left,
+            bottom: tabBarArea.top - SpecMargins.contentMargin,
+            fitWidth: bounds.width,
+            fitHeight: SpecMargins.actionButtonHeight
+        )
+        
         loginButtonView.layout(
-                left: bounds.left,
-                bottom: tabBarArea.top - SpecMargins.contentMargin,
-                fitWidth: bounds.width,
-                fitHeight: SpecMargins.actionButtonHeight
+            left: bounds.left,
+            bottom: registerButtonView.top - SpecMargins.contentMargin,
+            fitWidth: bounds.width,
+            fitHeight: SpecMargins.actionButtonHeight
         )
         
         passwordView.layout(
@@ -79,23 +110,54 @@ final class LoginView: ContentScrollingView {
             height: SpecMargins.inputFieldHeight
         )
         
-        loginView.layout(
+        loginInputView.layout(
             left: bounds.left,
             right: bounds.right,
             bottom: passwordView.top - SpecMargins.innerContentMargin,
             height: SpecMargins.inputFieldHeight
         )
+    }
+    
+    private func layoutFromTop() {
+        loginInputView.layout(
+            left: bounds.left,
+            right: bounds.right,
+            top: logoImageView.bottom + SpecMargins.contentMargin,
+            height: SpecMargins.inputFieldHeight
+        )
         
-        contentSize = CGSize(width: bounds.width, height: max(bounds.height, infoButtonView.bottom))
+        passwordView.layout(
+            left: bounds.left,
+            right: bounds.right,
+            top: loginInputView.bottom + SpecMargins.innerContentMargin,
+            height: SpecMargins.inputFieldHeight
+        )
+        
+        loginButtonView.layout(
+            left: bounds.left,
+            right: bounds.right,
+            top: passwordView.bottom + SpecMargins.contentMargin,
+            height: SpecMargins.actionButtonHeight
+        )
+        
+        registerButtonView.layout(
+            left: bounds.left,
+            right: bounds.right,
+            top: loginButtonView.bottom + SpecMargins.contentMargin,
+            height: SpecMargins.actionButtonHeight
+        )
+        
+        infoButtonView.size = infoButtonView.sizeThatFits(bounds.size)
+        infoButtonView.layout(right: bounds.right, top: registerButtonView.bottom + SpecMargins.contentMargin)
     }
     
     // MARK: Public
     func setLoginPlaceholder(_ placeholder: String?) {
-        loginView.placeholder = placeholder
+        loginInputView.placeholder = placeholder
     }
     
     func setLoginValue(_ value: String?) {
-        loginView.text = value
+        loginInputView.text = value
     }
     
     func setLoginButtonTitle(_ title: String?) {
@@ -106,9 +168,13 @@ final class LoginView: ContentScrollingView {
         passwordView.placeholder = placeholder
     }
     
+    func setRegisterButtonTitle(_ title: String) {
+        registerButtonView.setTitle(title)
+    }
+    
     var onLoginChange: ((String?) -> ())? {
-        get { return loginView.onTextChange }
-        set { loginView.onTextChange = newValue }
+        get { return loginInputView.onTextChange }
+        set { loginInputView.onTextChange = newValue }
     }
     
     var onPasswordChange: ((String?) -> ())? {
@@ -121,13 +187,18 @@ final class LoginView: ContentScrollingView {
         set { loginButtonView.onTap = newValue }
     }
     
+    var onRegisterButtonTap: (() -> ())? {
+        get { return registerButtonView.onTap }
+        set { registerButtonView.onTap = newValue }
+    }
+    
     var onInfoButtonTap: (() -> ())? {
         get { return infoButtonView.onTap }
         set { infoButtonView.onTap = newValue }
     }
     
     func focusOnLoginField() {
-        loginView.startEditing()
+        loginInputView.startEditing()
     }
     
     func focusOnPasswordField() {
@@ -135,7 +206,7 @@ final class LoginView: ContentScrollingView {
     }
     
     func setLoginFieldState(_ state: InputFieldViewState) {
-        loginView.state = state
+        loginInputView.state = state
     }
     
     func setPasswordFieldState(_ state: InputFieldViewState) {

@@ -5,6 +5,7 @@ protocol LoginViewInput: class, ViewLifecycleObservable, MessageDisplayable, Vie
     func setLoginValue(_ value: String?)
     func setLoginButtonTitle(_ title: String?)
     func setPasswordPlaceholder(_ placeholder: String?)
+    func setRegisterButtonTitle(_ title: String)
     
     func focusOnLoginField()
     func focusOnPasswordField()
@@ -17,4 +18,5 @@ protocol LoginViewInput: class, ViewLifecycleObservable, MessageDisplayable, Vie
     var onPasswordChange: ((String?) -> ())? { get set }
     var onLoginButtonTap: (() -> ())? { get set }
     var onInfoButtonTap: (() -> ())? { get set }
+    var onRegisterButtonTap: (() -> ())? { get set }
 }

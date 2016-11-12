@@ -34,6 +34,10 @@ final class LoginViewController: BaseViewController, LoginViewInput {
         loginView.setPasswordPlaceholder(placeholder)
     }
     
+    func setRegisterButtonTitle(_ title: String) {
+        loginView.setRegisterButtonTitle(title)
+    }
+    
     var onLoginChange: ((String?) -> ())? {
         get { return loginView.onLoginChange }
         set { loginView.onLoginChange = newValue }
@@ -52,6 +56,11 @@ final class LoginViewController: BaseViewController, LoginViewInput {
     var onInfoButtonTap: (() -> ())? {
         get { return loginView.onInfoButtonTap }
         set { loginView.onInfoButtonTap = newValue }
+    }
+    
+    var onRegisterButtonTap: (() -> ())? {
+        get { return loginView.onRegisterButtonTap }
+        set { loginView.onRegisterButtonTap = newValue }
     }
     
     func focusOnLoginField() {

@@ -12,10 +12,6 @@ final class AssemblyFactoryImpl: AssemblyFactory {
         return ApplicationAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
     }
     
-    func loginOrRegisterAssembly() -> LoginOrRegisterAssembly {
-        return LoginOrRegisterAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
-    }
-    
     func loginAssembly() -> LoginAssembly {
         return LoginAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
     }

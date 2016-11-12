@@ -43,8 +43,8 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
         super.layoutSubviews()
         
         textField.layout(
-            left: SpecMargins.contentMargin,
-            right: bounds.width - SpecMargins.contentMargin,
+            left: SpecMargins.contentSidePadding,
+            right: bounds.width - SpecMargins.contentSidePadding,
             top: bounds.top,
             height: SpecMargins.inputFieldHeight
         )
