@@ -3,4 +3,5 @@ protocol AssemblyFactory: class {
     func loginAssembly() -> LoginAssembly
     func feedbackAssembly() -> FeedbackAssembly
     func mailComposerAssembly() -> MailComposerAssembly
+    func registerAssembly() -> RegisterAssembly
 }

@@ -23,4 +23,8 @@ final class AssemblyFactoryImpl: AssemblyFactory {
     func mailComposerAssembly() -> MailComposerAssembly {
         return MailComposerAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
     }
+    
+    func registerAssembly() -> RegisterAssembly {
+        return RegisterAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
+    }
 }
