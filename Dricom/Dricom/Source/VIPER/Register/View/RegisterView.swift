@@ -36,7 +36,7 @@ final class RegisterView: ContentScrollingView {
         backgroundView.frame = bounds
         
         addPhotoButton.size = addPhotoButton.sizeThatFits(bounds.size)
-        addPhotoButton.top = SpecSizes.statusBarHeight * 2
+        addPhotoButton.top = SpecSizes.statusBarHeight * 3
         addPhotoButton.centerX = bounds.centerX
         
         addPhotoLabel.sizeToFit()
