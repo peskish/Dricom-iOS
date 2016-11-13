@@ -80,18 +80,11 @@ final class LoginView: ContentScrollingView {
     
     private func layoutFromBottom() {
         infoButtonView.size = infoButtonView.sizeThatFits(bounds.size)
-        infoButtonView.layout(right: bounds.right, bottom: frame.bottom)
-        
-        let tabBarArea = CGRect(
-            left: bounds.left,
-            right: bounds.right,
-            bottom: bounds.bottom,
-            height: SpecSizes.bottomAreaHeight
-        )
+        infoButtonView.layout(right: bounds.right, bottom: frame.height)
         
         registerButtonView.layout(
             left: bounds.left,
-            bottom: tabBarArea.top - SpecMargins.contentMargin,
+            bottom: infoButtonView.top - SpecMargins.innerContentMargin,
             fitWidth: bounds.width,
             fitHeight: SpecMargins.actionButtonHeight
         )

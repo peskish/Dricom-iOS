@@ -12,7 +12,6 @@ private struct LastPresentedAlert {
     }
 }
 
-// TODO: Replace with custom alert
 final class StandardAlert {
     enum `Type` {
         case alert

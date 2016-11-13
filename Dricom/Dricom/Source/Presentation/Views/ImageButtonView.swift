@@ -8,46 +8,40 @@ struct ImageButtonSet {
 
 class ImageButtonView: UIView {
     // MARK: Properties
-    private let button = UIButton(type: .custom)
+    let button = UIButton(type: .custom)
+    let customSize: CGSize?
     
     // MARK: Init
-    init(imageSet: ImageButtonSet) {
+    init(imageSet: ImageButtonSet, customSize: CGSize? = nil) {
+        self.customSize = customSize
+        
         super.init(frame: .zero)
         
         button.addTarget(self, action: #selector(onButtonTap), for: .touchUpInside)
         addSubview(button)
         
-        self.imageSet = imageSet
-        
+        setImageSet(imageSet)
         setStyle()
     }
     
-    convenience init(image: UIImage?) {
+    convenience init(image: UIImage?, customSize: CGSize? = nil) {
         self.init(
             imageSet: ImageButtonSet(
                 normal: image,
                 highlighted: nil,
                 disabled: nil
-            )
+            ),
+            customSize: customSize
         )
     }
     
-    var imageSet: ImageButtonSet {
-        get {
-            return ImageButtonSet(
-                normal: button.image(for: .normal),
-                highlighted: button.image(for: .highlighted),
-                disabled: button.image(for: .disabled)
-            )
-        }
-        set {
-            button.setImage(imageSet.normal, for: .normal)
-            button.setImage(imageSet.highlighted, for: .highlighted)
-            button.setImage(imageSet.disabled, for: .disabled)
-            
-            if imageSet.highlighted == nil {
-                button.adjustsImageWhenHighlighted = true
-            }
+    private func setImageSet(_ imageSet: ImageButtonSet) {
+        button.setImage(imageSet.normal, for: .normal)
+        button.setImage(imageSet.highlighted, for: .highlighted)
+        button.setImage(imageSet.disabled, for: .disabled)
+        
+        if imageSet.highlighted == nil {
+            button.adjustsImageWhenHighlighted = true
         }
     }
     
@@ -69,6 +63,10 @@ class ImageButtonView: UIView {
     }
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
+        if let customSize = customSize {
+            return customSize
+        }
+        
         let imageSize = button.image(for: .normal)?.size ?? .zero
         let width = max(imageSize.width, SpecSizes.minimumButtonArea.width)
         let height = max(imageSize.height, SpecSizes.minimumButtonArea.height)

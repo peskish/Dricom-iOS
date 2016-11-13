@@ -24,6 +24,7 @@
 		F021D6C71DD7B99300F50091 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6BC1DD7B99300F50091 /* RegisterViewController.swift */; };
 		F021D6C81DD7B99300F50091 /* RegisterViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6BD1DD7B99300F50091 /* RegisterViewInput.swift */; };
 		F021D6CA1DD8879400F50091 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = F021D6C91DD8879300F50091 /* Podfile */; };
+		F021D6CD1DD88D6100F50091 /* SpecSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6CC1DD88D6100F50091 /* SpecSizes.swift */; };
 		F076D6401DCF67F200E3ED0F /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6311DCF67F200E3ED0F /* LoginAssembly.swift */; };
 		F076D6411DCF67F200E3ED0F /* LoginAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6321DCF67F200E3ED0F /* LoginAssemblyImpl.swift */; };
 		F076D6421DCF67F200E3ED0F /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6341DCF67F200E3ED0F /* LoginInteractor.swift */; };
@@ -139,6 +140,7 @@
 		F021D6BC1DD7B99300F50091 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F021D6BD1DD7B99300F50091 /* RegisterViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewInput.swift; sourceTree = "<group>"; };
 		F021D6C91DD8879300F50091 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		F021D6CC1DD88D6100F50091 /* SpecSizes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpecSizes.swift; path = Dricom/Source/Presentation/Spec/SpecSizes.swift; sourceTree = SOURCE_ROOT; };
 		F076D6311DCF67F200E3ED0F /* LoginAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		F076D6321DCF67F200E3ED0F /* LoginAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAssemblyImpl.swift; sourceTree = "<group>"; };
 		F076D6341DCF67F200E3ED0F /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
@@ -775,6 +777,7 @@
 			children = (
 				F0A115811DC6897300A4DC76 /* SpecColors.swift */,
 				F08BE1A31DC926B600243B56 /* SpecMargins.swift */,
+				F021D6CC1DD88D6100F50091 /* SpecSizes.swift */,
 			);
 			name = Spec;
 			sourceTree = "<group>";
@@ -1014,6 +1017,7 @@
 				F021D6A51DD7A6E300F50091 /* MailComposeDelegateService.swift in Sources */,
 				F0A1157F1DC6863E00A4DC76 /* UIView+Resizing.swift in Sources */,
 				F021D6BE1DD7B99300F50091 /* RegisterAssembly.swift in Sources */,
+				F021D6CD1DD88D6100F50091 /* SpecSizes.swift in Sources */,
 				F09209A11DC14A7F0057302F /* ApplicationAssembly.swift in Sources */,
 				F09209A31DC14A7F0057302F /* ApplicationInteractor.swift in Sources */,
 				F0F434131DD11A7100F278BD /* AuthorizationService.swift in Sources */,

@@ -5,9 +5,18 @@ final class FeedbackView: UIView {
     private let backgroundView = RadialGradientView()
     private let feedbackButton = ActionButtonView()
     private let supportButton = ActionButtonView()
-    private let fbButtonView = ImageButtonView(image: UIImage(named: "Facebook"))
-    private let vkButtonView = ImageButtonView(image: UIImage(named: "VKontakte"))
-    private let instagramButtonView = ImageButtonView(image: UIImage(named: "Instagram"))
+    private let fbButtonView = ImageButtonView(
+        image: UIImage(named: "Facebook"),
+        customSize: SpecSizes.socialFeedbackButtonSize
+    )
+    private let vkButtonView = ImageButtonView(
+        image: UIImage(named: "VKontakte"),
+        customSize: SpecSizes.socialFeedbackButtonSize
+    )
+    private let instagramButtonView = ImageButtonView(
+        image: UIImage(named: "Instagram"),
+        customSize: SpecSizes.socialFeedbackButtonSize
+    )
     
     // MARK: - Init
     init() {

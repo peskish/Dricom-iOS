@@ -27,8 +27,25 @@ final class RegisterPresenter:
         view?.setAddPhotoTitle("Добавьте фото")
         
         view?.onAddPhotoButtonTap = { [weak self] in
-            print("add photo")
+            let actionSheet = StandardAlert(type: .actionSheet)
+            actionSheet.cancelButton = StandardAlert.Button("Отмена", type: .cancel)
+            let takePhotoButton = StandardAlert.Button("Сделать фото", type: .custom) { [weak self] in
+                self?.takeAvatarPhoto()
+            }
+            let selectPhotoButton = StandardAlert.Button("Выбрать из галереи", type: .custom) { [weak self] in
+                self?.selectAvatarPhoto()
+            }
+            actionSheet.buttons = [takePhotoButton, selectPhotoButton]
+            self?.view?.showAlert(actionSheet)
         }
+    }
+    
+    private func takeAvatarPhoto() {
+        print("takeAvatarPhoto")
+    }
+    
+    private func selectAvatarPhoto() {
+        print("selectAvatarPhoto")
     }
     
     // MARK: - RegisterModule
