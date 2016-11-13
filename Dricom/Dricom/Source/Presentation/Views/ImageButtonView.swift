@@ -8,7 +8,7 @@ struct ImageButtonSet {
 
 class ImageButtonView: UIView {
     // MARK: Properties
-    let button = UIButton(type: .custom)
+    private let button = UIButton(type: .custom)
     
     // MARK: Init
     init(imageSet: ImageButtonSet) {
@@ -17,7 +17,8 @@ class ImageButtonView: UIView {
         button.addTarget(self, action: #selector(onButtonTap), for: .touchUpInside)
         addSubview(button)
         
-        setImageSet(imageSet)
+        self.imageSet = imageSet
+        
         setStyle()
     }
     
@@ -31,13 +32,22 @@ class ImageButtonView: UIView {
         )
     }
     
-    private func setImageSet(_ imageSet: ImageButtonSet) {
-        button.setImage(imageSet.normal, for: .normal)
-        button.setImage(imageSet.highlighted, for: .highlighted)
-        button.setImage(imageSet.disabled, for: .disabled)
-        
-        if imageSet.highlighted == nil {
-            button.adjustsImageWhenHighlighted = true
+    var imageSet: ImageButtonSet {
+        get {
+            return ImageButtonSet(
+                normal: button.image(for: .normal),
+                highlighted: button.image(for: .highlighted),
+                disabled: button.image(for: .disabled)
+            )
+        }
+        set {
+            button.setImage(imageSet.normal, for: .normal)
+            button.setImage(imageSet.highlighted, for: .highlighted)
+            button.setImage(imageSet.disabled, for: .disabled)
+            
+            if imageSet.highlighted == nil {
+                button.adjustsImageWhenHighlighted = true
+            }
         }
     }
     
