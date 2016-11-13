@@ -1,0 +1,14 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '8.0'
+
+target 'Dricom' do
+  use_frameworks!
+
+  # Pods for Dricom
+  pod 'AlamofireImage', :git => 'https://github.com/avito-tech/AlamofireImage'
+  pod 'Alamofire', :git => 'https://github.com/avito-tech/Alamofire'
+  pod 'Unbox'
+  pod 'KeychainAccess'
+  pod "FastttCamera"
+  pod 'CTAssetsPickerController'
+end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B2644558852E66D87B22CAF /* Pods_Dricom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FE1AE5ED782AA0B3DB9DB8 /* Pods_Dricom.framework */; };
 		F021D69B1DD7A43A00F50091 /* SupportMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D69A1DD7A43A00F50091 /* SupportMessageData.swift */; };
 		F021D6A21DD7A61900F50091 /* MailComposerAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6A01DD7A61900F50091 /* MailComposerAssemblyImpl.swift */; };
 		F021D6A31DD7A61900F50091 /* MailComposerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6A11DD7A61900F50091 /* MailComposerAssembly.swift */; };
@@ -22,6 +23,7 @@
 		F021D6C61DD7B99300F50091 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6BB1DD7B99300F50091 /* RegisterView.swift */; };
 		F021D6C71DD7B99300F50091 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6BC1DD7B99300F50091 /* RegisterViewController.swift */; };
 		F021D6C81DD7B99300F50091 /* RegisterViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6BD1DD7B99300F50091 /* RegisterViewInput.swift */; };
+		F021D6CA1DD8879400F50091 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = F021D6C91DD8879300F50091 /* Podfile */; };
 		F076D6401DCF67F200E3ED0F /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6311DCF67F200E3ED0F /* LoginAssembly.swift */; };
 		F076D6411DCF67F200E3ED0F /* LoginAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6321DCF67F200E3ED0F /* LoginAssemblyImpl.swift */; };
 		F076D6421DCF67F200E3ED0F /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6341DCF67F200E3ED0F /* LoginInteractor.swift */; };
@@ -118,6 +120,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38FE1AE5ED782AA0B3DB9DB8 /* Pods_Dricom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dricom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CEAD0BF03CF89749F61C8F2 /* Pods-Dricom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dricom.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dricom/Pods-Dricom.release.xcconfig"; sourceTree = "<group>"; };
+		4DB1949EEFE9AB53D8BFFE3D /* Pods-Dricom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dricom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dricom/Pods-Dricom.debug.xcconfig"; sourceTree = "<group>"; };
 		F021D69A1DD7A43A00F50091 /* SupportMessageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportMessageData.swift; sourceTree = "<group>"; };
 		F021D6A01DD7A61900F50091 /* MailComposerAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailComposerAssemblyImpl.swift; sourceTree = "<group>"; };
 		F021D6A11DD7A61900F50091 /* MailComposerAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailComposerAssembly.swift; sourceTree = "<group>"; };
@@ -133,6 +138,7 @@
 		F021D6BB1DD7B99300F50091 /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		F021D6BC1DD7B99300F50091 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F021D6BD1DD7B99300F50091 /* RegisterViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewInput.swift; sourceTree = "<group>"; };
+		F021D6C91DD8879300F50091 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		F076D6311DCF67F200E3ED0F /* LoginAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		F076D6321DCF67F200E3ED0F /* LoginAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAssemblyImpl.swift; sourceTree = "<group>"; };
 		F076D6341DCF67F200E3ED0F /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
@@ -235,12 +241,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B2644558852E66D87B22CAF /* Pods_Dricom.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EED58C307B694DD777F955D9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4DB1949EEFE9AB53D8BFFE3D /* Pods-Dricom.debug.xcconfig */,
+				3CEAD0BF03CF89749F61C8F2 /* Pods-Dricom.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F021D69E1DD7A61900F50091 /* MailComposer */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +338,14 @@
 				F021D6BD1DD7B99300F50091 /* RegisterViewInput.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F021D6CB1DD8879800F50091 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F021D6C91DD8879300F50091 /* Podfile */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		F076D62F1DCF67F200E3ED0F /* Login */ = {
@@ -426,6 +450,8 @@
 			children = (
 				F09209391DC13EFB0057302F /* Dricom */,
 				F09209381DC13EFB0057302F /* Products */,
+				EED58C307B694DD777F955D9 /* Pods */,
+				F279DA0D2D1A1E4AFAC3F9E1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -443,6 +469,7 @@
 				F092096D1DC146300057302F /* Source */,
 				F092094C1DC141D80057302F /* Resources */,
 				F092094D1DC141E20057302F /* Supporting files */,
+				F021D6CB1DD8879800F50091 /* Pods */,
 			);
 			path = Dricom;
 			sourceTree = "<group>";
@@ -830,6 +857,14 @@
 			path = Dricom/Source/Presentation/UIServices;
 			sourceTree = SOURCE_ROOT;
 		};
+		F279DA0D2D1A1E4AFAC3F9E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				38FE1AE5ED782AA0B3DB9DB8 /* Pods_Dricom.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -837,9 +872,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F09209491DC13EFB0057302F /* Build configuration list for PBXNativeTarget "Dricom" */;
 			buildPhases = (
+				2F81E5BBC8557FDD40633FCE /* [CP] Check Pods Manifest.lock */,
 				F09209331DC13EFB0057302F /* Sources */,
 				F09209341DC13EFB0057302F /* Frameworks */,
 				F09209351DC13EFB0057302F /* Resources */,
+				09816CE5E51C7FF88FF5C28C /* [CP] Embed Pods Frameworks */,
+				BD886E7D33C4FD76B619FEBD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -890,12 +928,61 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F021D6CA1DD8879400F50091 /* Podfile in Resources */,
 				F09209451DC13EFB0057302F /* LaunchScreen.storyboard in Resources */,
 				F09209421DC13EFB0057302F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09816CE5E51C7FF88FF5C28C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dricom/Pods-Dricom-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2F81E5BBC8557FDD40633FCE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BD886E7D33C4FD76B619FEBD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dricom/Pods-Dricom-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F09209331DC13EFB0057302F /* Sources */ = {
@@ -1118,6 +1205,7 @@
 		};
 		F092094A1DC13EFB0057302F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DB1949EEFE9AB53D8BFFE3D /* Pods-Dricom.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RU54DQG53V;
@@ -1136,6 +1224,7 @@
 		};
 		F092094B1DC13EFB0057302F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CEAD0BF03CF89749F61C8F2 /* Pods-Dricom.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
