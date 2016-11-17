@@ -39,6 +39,7 @@
 		F021D6ED1DD8925B00F50091 /* CameraViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6E21DD8925B00F50091 /* CameraViewInput.swift */; };
 		F021D6EF1DDDB4E600F50091 /* CameraPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6EE1DDDB4E600F50091 /* CameraPreviewViewController.swift */; };
 		F021D6F31DDDB5E600F50091 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6F21DDDB5E600F50091 /* CameraPreviewView.swift */; };
+		F021D7161DDE420100F50091 /* PHAssetUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D7151DDE420100F50091 /* PHAssetUtilities.swift */; };
 		F076D6401DCF67F200E3ED0F /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6311DCF67F200E3ED0F /* LoginAssembly.swift */; };
 		F076D6411DCF67F200E3ED0F /* LoginAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6321DCF67F200E3ED0F /* LoginAssemblyImpl.swift */; };
 		F076D6421DCF67F200E3ED0F /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6341DCF67F200E3ED0F /* LoginInteractor.swift */; };
@@ -153,7 +154,7 @@
 		F021D6BB1DD7B99300F50091 /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		F021D6BC1DD7B99300F50091 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F021D6BD1DD7B99300F50091 /* RegisterViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewInput.swift; sourceTree = "<group>"; };
-		F021D6C91DD8879300F50091 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		F021D6C91DD8879300F50091 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F021D6CC1DD88D6100F50091 /* SpecSizes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpecSizes.swift; path = Dricom/Source/Presentation/Spec/SpecSizes.swift; sourceTree = SOURCE_ROOT; };
 		F021D6CE1DD8914200F50091 /* RouterCameraShowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterCameraShowable.swift; path = Router/RouterCameraShowable.swift; sourceTree = "<group>"; };
 		F021D6D41DD8925B00F50091 /* CameraAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraAssembly.swift; sourceTree = "<group>"; };
@@ -169,6 +170,7 @@
 		F021D6E21DD8925B00F50091 /* CameraViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewInput.swift; sourceTree = "<group>"; };
 		F021D6EE1DDDB4E600F50091 /* CameraPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewViewController.swift; sourceTree = "<group>"; };
 		F021D6F21DDDB5E600F50091 /* CameraPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		F021D7151DDE420100F50091 /* PHAssetUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHAssetUtilities.swift; sourceTree = "<group>"; };
 		F076D6311DCF67F200E3ED0F /* LoginAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		F076D6321DCF67F200E3ED0F /* LoginAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAssemblyImpl.swift; sourceTree = "<group>"; };
 		F076D6341DCF67F200E3ED0F /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
@@ -833,6 +835,7 @@
 			children = (
 				F0A1155C1DC637C600A4DC76 /* DisposeBag.swift */,
 				F0A1155D1DC637C600A4DC76 /* DisposeBagHolder.swift */,
+				F021D7151DDE420100F50091 /* PHAssetUtilities.swift */,
 			);
 			name = Utilities;
 			path = Core/Utilities;
@@ -1169,6 +1172,7 @@
 				F09209B81DC1513B0057302F /* BaseRouter.swift in Sources */,
 				F0D038571DD3AE0500E0085D /* FeedbackAssemblyImpl.swift in Sources */,
 				F021D6C51DD7B99300F50091 /* RegisterRouterImpl.swift in Sources */,
+				F021D7161DDE420100F50091 /* PHAssetUtilities.swift in Sources */,
 				F0A115821DC6897300A4DC76 /* SpecColors.swift in Sources */,
 				F0A115301DC62D2000A4DC76 /* DataResult.swift in Sources */,
 				F076D6401DCF67F200E3ED0F /* LoginAssembly.swift in Sources */,

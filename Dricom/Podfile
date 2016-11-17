@@ -9,6 +9,6 @@ target 'Dricom' do
   pod 'Alamofire', :git => 'https://github.com/avito-tech/Alamofire'
   pod 'Unbox'
   pod 'KeychainAccess'
-  pod "FastttCamera"
+  pod 'FastttCamera'
   pod 'CTAssetsPickerController'
 end

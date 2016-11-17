@@ -1,7 +1,8 @@
-import Foundation
+import CTAssetsPickerController
 
-final class RegisterPresenter:
-    RegisterModule
+final class RegisterPresenter: NSObject,
+    RegisterModule,
+    CTAssetsPickerControllerDelegate
 {
     // MARK: - Private properties
     private let interactor: RegisterInteractor
@@ -70,13 +71,27 @@ final class RegisterPresenter:
     }
     
     private func selectAvatarPhoto() {
-        print("selectAvatarPhoto")
+        router.showMediaPicker(delegate: self)
     }
     
     private func removeAvatarPhoto() {
         interactor.setAvatar(nil)
         view?.setAddPhotoImage(nil)
         view?.setAddPhotoTitle(addPhotoCapture)
+    }
+    
+    // MARK: - CTAssetsPickerControllerDelegate
+    func assetsPickerController(_ picker: CTAssetsPickerController!, didFinishPickingAssets assets: [Any]!) {
+        if let asset = assets.first as? PHAsset {
+            let avatarThumbnail = PHAssetUtilities.getAssetThumbnail(asset: asset)
+            interactor.setAvatar(avatarThumbnail)
+            
+            let croppedAvatar = avatarThumbnail.imageByScalingAndCropping(SpecSizes.avatarImageSize)
+            view?.setAddPhotoImage(croppedAvatar)
+            view?.setAddPhotoTitle("")
+        }
+        
+        focusOnModule()
     }
     
     // MARK: - RegisterModule
