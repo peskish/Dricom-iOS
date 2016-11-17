@@ -35,7 +35,7 @@ class ImageButtonView: UIView {
         )
     }
     
-    func setImage(_ image: UIImage) {
+    func setImage(_ image: UIImage?) {
         setImageSet(
             ImageButtonSet(
                 normal: image,

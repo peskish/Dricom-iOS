@@ -22,7 +22,7 @@ final class RegisterViewController: BaseViewController, RegisterViewInput {
         registerView.setAddPhotoTitle(title)
     }
     
-    func setAddPhotoImage(_ image: UIImage) {
+    func setAddPhotoImage(_ image: UIImage?) {
         registerView.setAddPhotoImage(image)
     }
     

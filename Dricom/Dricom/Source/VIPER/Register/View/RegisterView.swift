@@ -57,8 +57,8 @@ final class RegisterView: ContentScrollingView {
         addPhotoLabel.text = title
     }
     
-    func setAddPhotoImage(_ image: UIImage) {
-        addPhotoButton.setImage(image)
+    func setAddPhotoImage(_ image: UIImage?) {
+        addPhotoButton.setImage(image ?? UIImage(named: "Add photo"))
     }
     
     var onAddPhotoButtonTap: (() -> ())? {

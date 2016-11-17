@@ -23,19 +23,33 @@ final class RegisterPresenter:
     }
     
     // MARK: - Private
+    private let addPhotoCapture = "Добавьте фото"
+    
     private func setUpView() {
-        view?.setAddPhotoTitle("Добавьте фото")
+        view?.setAddPhotoTitle(addPhotoCapture)
         
         view?.onAddPhotoButtonTap = { [weak self] in
             let actionSheet = StandardAlert(type: .actionSheet)
+            
             actionSheet.cancelButton = StandardAlert.Button("Отмена", type: .cancel)
+            
+            if self?.interactor.hasAvatar() == true {
+                let removePhotoButton = StandardAlert.Button("Удалить", type: .destructive) { [weak self] in
+                    self?.removeAvatarPhoto()
+                }
+                actionSheet.buttons.append(removePhotoButton)
+            }
+            
             let takePhotoButton = StandardAlert.Button("Сделать фото", type: .custom) { [weak self] in
                 self?.takeAvatarPhoto()
             }
+            actionSheet.buttons.append(takePhotoButton)
+            
             let selectPhotoButton = StandardAlert.Button("Выбрать из галереи", type: .custom) { [weak self] in
                 self?.selectAvatarPhoto()
             }
-            actionSheet.buttons = [takePhotoButton, selectPhotoButton]
+            actionSheet.buttons.append(selectPhotoButton)
+            
             self?.view?.showAlert(actionSheet)
         }
     }
@@ -47,6 +61,7 @@ final class RegisterPresenter:
                 if case .finished(let avatar) = result {
                     self?.interactor.setAvatar(avatar)
                     self?.view?.setAddPhotoImage(avatar)
+                    self?.view?.setAddPhotoTitle("")
                 }
                 
                 module?.dismissModule()
@@ -56,6 +71,12 @@ final class RegisterPresenter:
     
     private func selectAvatarPhoto() {
         print("selectAvatarPhoto")
+    }
+    
+    private func removeAvatarPhoto() {
+        interactor.setAvatar(nil)
+        view?.setAddPhotoImage(nil)
+        view?.setAddPhotoTitle(addPhotoCapture)
     }
     
     // MARK: - RegisterModule

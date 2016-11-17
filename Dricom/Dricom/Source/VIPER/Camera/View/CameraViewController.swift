@@ -29,8 +29,22 @@ final class CameraViewController: BaseViewController, CameraViewInput, FastttCam
             action: #selector(closeButtonTapped)
         )
         
+        cameraView.setTakePhotoButtonTitle("Take photo")
+        cameraView.setSwitchCameraButtonTitle("Switch camera")
+        
+        fastCamera.cameraFlashMode = .off
+        cameraView.setFlashButtonTitle("Flash off")
+        
         cameraView.onTakePhotoTap = { [fastCamera] in
             fastCamera.takePicture()
+        }
+        
+        cameraView.onFlashTap = { [weak self] in
+            self?.onFlashButtonTap()
+        }
+        
+        cameraView.onSwitchCameraTap = { [weak self] in
+            self?.onSwitchCameraTap()
         }
     }
     
@@ -143,5 +157,39 @@ final class CameraViewController: BaseViewController, CameraViewInput, FastttCam
         flashView.alpha = 0
         flashView.frame = frame
         return flashView
+    }
+    
+    private func onFlashButtonTap() {
+        let flashMode: FastttCameraFlashMode
+        let flashButtonTitle: String
+        switch fastCamera.cameraFlashMode {
+        case .on:
+            flashMode = .off
+            flashButtonTitle = "Flash off"
+        case .off, .auto:
+            flashMode = .on
+            flashButtonTitle = "Flash on"
+        }
+        if fastCamera.isFlashAvailableForCurrentDevice() {
+            fastCamera.cameraFlashMode = flashMode
+            cameraView.setFlashButtonTitle(flashButtonTitle)
+        }
+    }
+    
+    private func onSwitchCameraTap() {
+        let cameraDevice: FastttCameraDevice
+        switch fastCamera.cameraDevice {
+        case .front:
+            cameraDevice = .rear
+        case .rear:
+            cameraDevice = .front
+        }
+        if FastttCamera.isCameraDeviceAvailable(cameraDevice) {
+            fastCamera.cameraDevice = cameraDevice
+            if fastCamera.isFlashAvailableForCurrentDevice() {
+                let flashButtonTitle = "Flash off"
+                cameraView.setFlashButtonTitle(flashButtonTitle)
+            }
+        }
     }
 }

@@ -9,7 +9,11 @@ final class RegisterInteractorImpl: RegisterInteractor {
     private var registerData = RegisterData()
     
     // MARK: - RegisterInteractor
-    func setAvatar(_ avatar: UIImage) {
+    func hasAvatar() -> Bool {
+        return registerData.avatar != nil
+    }
+    
+    func setAvatar(_ avatar: UIImage?) {
         registerData.avatar = avatar
     }
 }

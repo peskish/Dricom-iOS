@@ -1,5 +1,6 @@
 import UIKit
 
 protocol RegisterInteractor: class {
-    func setAvatar(_ avatar: UIImage)
+    func hasAvatar() -> Bool
+    func setAvatar(_ avatar: UIImage?)
 }
