@@ -27,4 +27,8 @@ final class AssemblyFactoryImpl: AssemblyFactory {
     func registerAssembly() -> RegisterAssembly {
         return RegisterAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
     }
+    
+    func cameraAssembly() -> CameraAssembly {
+        return CameraAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
+    }
 }

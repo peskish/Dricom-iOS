@@ -41,7 +41,17 @@ final class RegisterPresenter:
     }
     
     private func takeAvatarPhoto() {
-        print("takeAvatarPhoto")
+        router.showCamera { [weak self] cameraModule in
+            let module = cameraModule
+            cameraModule.onFinish = { [weak module] result in
+                if case .finished(let avatar) = result {
+                    self?.interactor.setAvatar(avatar)
+                    self?.view?.setAddPhotoImage(avatar)
+                }
+                
+                module?.dismissModule()
+            }
+        }
     }
     
     private func selectAvatarPhoto() {

@@ -19,7 +19,6 @@ final class FeedbackViewController: BaseViewController, FeedbackViewInput {
             target: self,
             action: #selector(closeButtonTapped)
         )
-        
     }
     
     // MARK: - FeedbackViewInput

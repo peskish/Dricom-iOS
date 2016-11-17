@@ -23,6 +23,9 @@ final class RegisterView: ContentScrollingView {
         addSubview(addPhotoButton)
         addSubview(addPhotoLabel)
         
+        addPhotoButton.sizeToFit()
+        addPhotoButton.layer.cornerRadius = addPhotoButton.width/2
+        addPhotoButton.layer.masksToBounds = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -52,6 +55,10 @@ final class RegisterView: ContentScrollingView {
     // MARK: Public
     func setAddPhotoTitle(_ title: String) {
         addPhotoLabel.text = title
+    }
+    
+    func setAddPhotoImage(_ image: UIImage) {
+        addPhotoButton.setImage(image)
     }
     
     var onAddPhotoButtonTap: (() -> ())? {

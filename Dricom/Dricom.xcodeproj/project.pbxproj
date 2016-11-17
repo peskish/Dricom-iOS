@@ -25,6 +25,20 @@
 		F021D6C81DD7B99300F50091 /* RegisterViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6BD1DD7B99300F50091 /* RegisterViewInput.swift */; };
 		F021D6CA1DD8879400F50091 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = F021D6C91DD8879300F50091 /* Podfile */; };
 		F021D6CD1DD88D6100F50091 /* SpecSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6CC1DD88D6100F50091 /* SpecSizes.swift */; };
+		F021D6CF1DD8914200F50091 /* RouterCameraShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6CE1DD8914200F50091 /* RouterCameraShowable.swift */; };
+		F021D6E31DD8925B00F50091 /* CameraAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6D41DD8925B00F50091 /* CameraAssembly.swift */; };
+		F021D6E41DD8925B00F50091 /* CameraAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6D51DD8925B00F50091 /* CameraAssemblyImpl.swift */; };
+		F021D6E51DD8925B00F50091 /* CameraInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6D71DD8925B00F50091 /* CameraInteractor.swift */; };
+		F021D6E61DD8925B00F50091 /* CameraInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6D81DD8925B00F50091 /* CameraInteractorImpl.swift */; };
+		F021D6E71DD8925B00F50091 /* CameraModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6DA1DD8925B00F50091 /* CameraModule.swift */; };
+		F021D6E81DD8925B00F50091 /* CameraPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6DB1DD8925B00F50091 /* CameraPresenter.swift */; };
+		F021D6E91DD8925B00F50091 /* CameraRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6DD1DD8925B00F50091 /* CameraRouter.swift */; };
+		F021D6EA1DD8925B00F50091 /* CameraRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6DE1DD8925B00F50091 /* CameraRouterImpl.swift */; };
+		F021D6EB1DD8925B00F50091 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6E01DD8925B00F50091 /* CameraView.swift */; };
+		F021D6EC1DD8925B00F50091 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6E11DD8925B00F50091 /* CameraViewController.swift */; };
+		F021D6ED1DD8925B00F50091 /* CameraViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6E21DD8925B00F50091 /* CameraViewInput.swift */; };
+		F021D6EF1DDDB4E600F50091 /* CameraPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6EE1DDDB4E600F50091 /* CameraPreviewViewController.swift */; };
+		F021D6F31DDDB5E600F50091 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6F21DDDB5E600F50091 /* CameraPreviewView.swift */; };
 		F076D6401DCF67F200E3ED0F /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6311DCF67F200E3ED0F /* LoginAssembly.swift */; };
 		F076D6411DCF67F200E3ED0F /* LoginAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6321DCF67F200E3ED0F /* LoginAssemblyImpl.swift */; };
 		F076D6421DCF67F200E3ED0F /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6341DCF67F200E3ED0F /* LoginInteractor.swift */; };
@@ -141,6 +155,20 @@
 		F021D6BD1DD7B99300F50091 /* RegisterViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewInput.swift; sourceTree = "<group>"; };
 		F021D6C91DD8879300F50091 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		F021D6CC1DD88D6100F50091 /* SpecSizes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpecSizes.swift; path = Dricom/Source/Presentation/Spec/SpecSizes.swift; sourceTree = SOURCE_ROOT; };
+		F021D6CE1DD8914200F50091 /* RouterCameraShowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterCameraShowable.swift; path = Router/RouterCameraShowable.swift; sourceTree = "<group>"; };
+		F021D6D41DD8925B00F50091 /* CameraAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraAssembly.swift; sourceTree = "<group>"; };
+		F021D6D51DD8925B00F50091 /* CameraAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraAssemblyImpl.swift; sourceTree = "<group>"; };
+		F021D6D71DD8925B00F50091 /* CameraInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraInteractor.swift; sourceTree = "<group>"; };
+		F021D6D81DD8925B00F50091 /* CameraInteractorImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraInteractorImpl.swift; sourceTree = "<group>"; };
+		F021D6DA1DD8925B00F50091 /* CameraModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraModule.swift; sourceTree = "<group>"; };
+		F021D6DB1DD8925B00F50091 /* CameraPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPresenter.swift; sourceTree = "<group>"; };
+		F021D6DD1DD8925B00F50091 /* CameraRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraRouter.swift; sourceTree = "<group>"; };
+		F021D6DE1DD8925B00F50091 /* CameraRouterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraRouterImpl.swift; sourceTree = "<group>"; };
+		F021D6E01DD8925B00F50091 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		F021D6E11DD8925B00F50091 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		F021D6E21DD8925B00F50091 /* CameraViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewInput.swift; sourceTree = "<group>"; };
+		F021D6EE1DDDB4E600F50091 /* CameraPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewViewController.swift; sourceTree = "<group>"; };
+		F021D6F21DDDB5E600F50091 /* CameraPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
 		F076D6311DCF67F200E3ED0F /* LoginAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		F076D6321DCF67F200E3ED0F /* LoginAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAssemblyImpl.swift; sourceTree = "<group>"; };
 		F076D6341DCF67F200E3ED0F /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
@@ -350,6 +378,82 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F021D6D21DD8925B00F50091 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				F021D6D31DD8925B00F50091 /* Assembly */,
+				F021D6D61DD8925B00F50091 /* Interactor */,
+				F021D6D91DD8925B00F50091 /* Presenter */,
+				F021D6DC1DD8925B00F50091 /* Router */,
+				F021D6DF1DD8925B00F50091 /* View */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		F021D6D31DD8925B00F50091 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				F021D6D41DD8925B00F50091 /* CameraAssembly.swift */,
+				F021D6D51DD8925B00F50091 /* CameraAssemblyImpl.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		F021D6D61DD8925B00F50091 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				F021D6D71DD8925B00F50091 /* CameraInteractor.swift */,
+				F021D6D81DD8925B00F50091 /* CameraInteractorImpl.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		F021D6D91DD8925B00F50091 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F021D6DA1DD8925B00F50091 /* CameraModule.swift */,
+				F021D6DB1DD8925B00F50091 /* CameraPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F021D6DC1DD8925B00F50091 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F021D6DD1DD8925B00F50091 /* CameraRouter.swift */,
+				F021D6DE1DD8925B00F50091 /* CameraRouterImpl.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F021D6DF1DD8925B00F50091 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F021D6E21DD8925B00F50091 /* CameraViewInput.swift */,
+				F021D6F01DDDB53600F50091 /* Camera */,
+				F021D6F11DDDB53C00F50091 /* Preview */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F021D6F01DDDB53600F50091 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				F021D6E11DD8925B00F50091 /* CameraViewController.swift */,
+				F021D6E01DD8925B00F50091 /* CameraView.swift */,
+			);
+			name = Camera;
+			sourceTree = "<group>";
+		};
+		F021D6F11DDDB53C00F50091 /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				F021D6EE1DDDB4E600F50091 /* CameraPreviewViewController.swift */,
+				F021D6F21DDDB5E600F50091 /* CameraPreviewView.swift */,
+			);
+			name = Preview;
+			sourceTree = "<group>";
+		};
 		F076D62F1DCF67F200E3ED0F /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -517,6 +621,7 @@
 			children = (
 				F09209B11DC1502B0057302F /* Common */,
 				F09209901DC14A7F0057302F /* Application */,
+				F021D6D21DD8925B00F50091 /* Camera */,
 				F0D038451DD3AE0500E0085D /* Feedback */,
 				F021D69E1DD7A61900F50091 /* MailComposer */,
 				F076D62F1DCF67F200E3ED0F /* Login */,
@@ -602,6 +707,7 @@
 				F0A115601DC6385400A4DC76 /* RouterFocusable.swift */,
 				F076D6501DCF6A0000E3ED0F /* RouterDismissable.swift */,
 				F0D038611DD3AFA100E0085D /* RouterFeedbackShowable.swift */,
+				F021D6CE1DD8914200F50091 /* RouterCameraShowable.swift */,
 				F076D67E1DCFAEF400E3ED0F /* ViewControllerPosition.swift */,
 			);
 			name = Router;
@@ -1016,6 +1122,7 @@
 				F0A115801DC6863E00A4DC76 /* UIView+Size.swift in Sources */,
 				F021D6A51DD7A6E300F50091 /* MailComposeDelegateService.swift in Sources */,
 				F0A1157F1DC6863E00A4DC76 /* UIView+Resizing.swift in Sources */,
+				F021D6CF1DD8914200F50091 /* RouterCameraShowable.swift in Sources */,
 				F021D6BE1DD7B99300F50091 /* RegisterAssembly.swift in Sources */,
 				F021D6CD1DD88D6100F50091 /* SpecSizes.swift in Sources */,
 				F09209A11DC14A7F0057302F /* ApplicationAssembly.swift in Sources */,
@@ -1024,6 +1131,7 @@
 				F021D69B1DD7A43A00F50091 /* SupportMessageData.swift in Sources */,
 				F09209821DC146300057302F /* AppDelegate.swift in Sources */,
 				F0F434081DD10CAB00F278BD /* AlertDisplayable.swift in Sources */,
+				F021D6E91DD8925B00F50091 /* CameraRouter.swift in Sources */,
 				F076D6451DCF67F200E3ED0F /* LoginPresenter.swift in Sources */,
 				F076D67B1DCF87D300E3ED0F /* TextFieldView.swift in Sources */,
 				F0D0385F1DD3AE0500E0085D /* FeedbackViewController.swift in Sources */,
@@ -1038,12 +1146,16 @@
 				F0A1152B1DC62C8000A4DC76 /* ViewDebugRegistrationService.swift in Sources */,
 				F0D038591DD3AE0500E0085D /* FeedbackInteractorImpl.swift in Sources */,
 				F076D6421DCF67F200E3ED0F /* LoginInteractor.swift in Sources */,
+				F021D6E51DD8925B00F50091 /* CameraInteractor.swift in Sources */,
 				F076D66F1DCF6F3800E3ED0F /* RangeExtension.swift in Sources */,
 				F0A1155F1DC637C600A4DC76 /* DisposeBagHolder.swift in Sources */,
 				F09209A21DC14A7F0057302F /* ApplicationAssemblyImpl.swift in Sources */,
 				F0A115891DC6914100A4DC76 /* CrossFadePushTransition.swift in Sources */,
 				F0A115851DC68DF500A4DC76 /* ViewLifecycleObservable.swift in Sources */,
+				F021D6E31DD8925B00F50091 /* CameraAssembly.swift in Sources */,
+				F021D6ED1DD8925B00F50091 /* CameraViewInput.swift in Sources */,
 				F021D6C31DD7B99300F50091 /* RegisterPresenter.swift in Sources */,
+				F021D6E71DD8925B00F50091 /* CameraModule.swift in Sources */,
 				F021D6C71DD7B99300F50091 /* RegisterViewController.swift in Sources */,
 				F0D038601DD3AE0500E0085D /* FeedbackViewInput.swift in Sources */,
 				F0A115651DC67F8400A4DC76 /* RadialGradientView.swift in Sources */,
@@ -1064,20 +1176,24 @@
 				F021D6C81DD7B99300F50091 /* RegisterViewInput.swift in Sources */,
 				F076D66B1DCF6F3800E3ED0F /* CollectionsExtensions.swift in Sources */,
 				F076D64C1DCF684A00E3ED0F /* ModuleFocusable.swift in Sources */,
+				F021D6E61DD8925B00F50091 /* CameraInteractorImpl.swift in Sources */,
 				F076D6481DCF67F200E3ED0F /* LoginView.swift in Sources */,
 				F0D038581DD3AE0500E0085D /* FeedbackInteractor.swift in Sources */,
+				F021D6F31DDDB5E600F50091 /* CameraPreviewView.swift in Sources */,
 				F076D6711DCF6F3800E3ED0F /* String+Pluralization.swift in Sources */,
 				F076D6491DCF67F200E3ED0F /* LoginViewController.swift in Sources */,
 				F021D6C21DD7B99300F50091 /* RegisterModule.swift in Sources */,
 				F076D66A1DCF6F3800E3ED0F /* AppMetadataExtension.swift in Sources */,
 				F076D6771DCF762700E3ED0F /* ContentScrollingView.swift in Sources */,
 				F021D6C01DD7B99300F50091 /* RegisterInteractor.swift in Sources */,
+				F021D6E41DD8925B00F50091 /* CameraAssemblyImpl.swift in Sources */,
 				F0A1157E1DC6863E00A4DC76 /* UIView+Properties.swift in Sources */,
 				F0A1157A1DC6863E00A4DC76 /* UIColorExtension.swift in Sources */,
 				F076D66D1DCF6F3800E3ED0F /* NumbersExtension.swift in Sources */,
 				F0A115871DC68E1D00A4DC76 /* ViewControllerTransition.swift in Sources */,
 				F0D0385E1DD3AE0500E0085D /* FeedbackView.swift in Sources */,
 				F09209A81DC14A7F0057302F /* ApplicationRouterImpl.swift in Sources */,
+				F021D6EB1DD8925B00F50091 /* CameraView.swift in Sources */,
 				F0D038621DD3AFA100E0085D /* RouterFeedbackShowable.swift in Sources */,
 				F09209A41DC14A7F0057302F /* ApplicationInteractorImpl.swift in Sources */,
 				F076D6751DCF6FC500E3ED0F /* NSURLPathComponents.swift in Sources */,
@@ -1085,8 +1201,11 @@
 				F0A115241DC629CE00A4DC76 /* SessionInfo.swift in Sources */,
 				F09209A71DC14A7F0057302F /* ApplicationRouter.swift in Sources */,
 				F0A115331DC62DB600A4DC76 /* NetworkError.swift in Sources */,
+				F021D6E81DD8925B00F50091 /* CameraPresenter.swift in Sources */,
+				F021D6EA1DD8925B00F50091 /* CameraRouterImpl.swift in Sources */,
 				F0A115381DC630DD00A4DC76 /* ViewDebugServiceFactory.swift in Sources */,
 				F076D6531DCF6CFB00E3ED0F /* ModuleDismissable.swift in Sources */,
+				F021D6EF1DDDB4E600F50091 /* CameraPreviewViewController.swift in Sources */,
 				F076D64A1DCF67F200E3ED0F /* LoginViewInput.swift in Sources */,
 				F021D6C61DD7B99300F50091 /* RegisterView.swift in Sources */,
 				F0A115771DC6863E00A4DC76 /* CGRectLayoutExtension.swift in Sources */,
@@ -1095,6 +1214,7 @@
 				F0A115631DC63A8700A4DC76 /* MainFlowController.swift in Sources */,
 				F0A115781DC6863E00A4DC76 /* CGSizeLayoutExtension.swift in Sources */,
 				F076D6511DCF6A0000E3ED0F /* RouterDismissable.swift in Sources */,
+				F021D6EC1DD8925B00F50091 /* CameraViewController.swift in Sources */,
 				F0A1157B1DC6863E00A4DC76 /* UIEdgeInsetsLayoutExtension.swift in Sources */,
 				F0F4340B1DD10CC500F278BD /* WindowWaiter.swift in Sources */,
 				F08BE1A41DC926B600243B56 /* SpecMargins.swift in Sources */,

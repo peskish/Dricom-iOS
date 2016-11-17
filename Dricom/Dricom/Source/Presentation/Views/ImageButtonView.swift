@@ -35,7 +35,17 @@ class ImageButtonView: UIView {
         )
     }
     
-    private func setImageSet(_ imageSet: ImageButtonSet) {
+    func setImage(_ image: UIImage) {
+        setImageSet(
+            ImageButtonSet(
+                normal: image,
+                highlighted: nil,
+                disabled: nil
+            )
+        )
+    }
+    
+    func setImageSet(_ imageSet: ImageButtonSet) {
         button.setImage(imageSet.normal, for: .normal)
         button.setImage(imageSet.highlighted, for: .highlighted)
         button.setImage(imageSet.disabled, for: .disabled)
