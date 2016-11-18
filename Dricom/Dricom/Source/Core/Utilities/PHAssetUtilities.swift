@@ -1,8 +1,8 @@
 import Photos
 
 final class PHAssetUtilities {
-    class func getAssetThumbnail(asset: PHAsset, size: CGSize? = nil) -> UIImage {
-        let size = size ?? CGSize(width: asset.pixelWidth, height: asset.pixelWidth)
+    class func getImageFrom(asset: PHAsset, size: CGSize? = nil) -> UIImage {
+        let size = size ?? PHImageManagerMaximumSize
         let manager = PHImageManager.default()
         let option = PHImageRequestOptions()
         var thumbnail = UIImage()

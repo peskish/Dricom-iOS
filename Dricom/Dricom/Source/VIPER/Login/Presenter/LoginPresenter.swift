@@ -49,6 +49,7 @@ final class LoginPresenter:
         }
         
         view?.onRegisterButtonTap = { [weak self] in
+            self?.view?.endEditing()
             self?.router.showRegister { registerModule in
                 registerModule.onFinish = { _ in
                     self?.onFinish?(.finished)

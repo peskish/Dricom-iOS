@@ -83,15 +83,24 @@ final class RegisterPresenter: NSObject,
     // MARK: - CTAssetsPickerControllerDelegate
     func assetsPickerController(_ picker: CTAssetsPickerController!, didFinishPickingAssets assets: [Any]!) {
         if let asset = assets.first as? PHAsset {
-            let avatarThumbnail = PHAssetUtilities.getAssetThumbnail(asset: asset)
-            interactor.setAvatar(avatarThumbnail)
-            
-            let croppedAvatar = avatarThumbnail.imageByScalingAndCropping(SpecSizes.avatarImageSize)
-            view?.setAddPhotoImage(croppedAvatar)
-            view?.setAddPhotoTitle("")
+            setAvatarImageFromAsset(asset)
         }
         
         focusOnModule()
+    }
+    
+    func assetsPickerController(_ picker: CTAssetsPickerController!, didSelect asset: PHAsset!) {
+        setAvatarImageFromAsset(asset)
+        focusOnModule()
+    }
+    
+    private func setAvatarImageFromAsset(_ asset: PHAsset) {
+        let avatarThumbnail = PHAssetUtilities.getImageFrom(asset: asset)
+        interactor.setAvatar(avatarThumbnail)
+        
+        let croppedAvatar = avatarThumbnail.imageByScalingAndCropping(SpecSizes.avatarImageSize)
+        view?.setAddPhotoImage(croppedAvatar)
+        view?.setAddPhotoTitle("")
     }
     
     // MARK: - RegisterModule
