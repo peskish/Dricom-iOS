@@ -72,7 +72,7 @@ class BaseViewController: UIViewController,
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
+        view.endEditing(true)
         onViewWillDisappear?()
     }
     

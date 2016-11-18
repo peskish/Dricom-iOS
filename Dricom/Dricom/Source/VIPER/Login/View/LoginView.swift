@@ -25,6 +25,8 @@ final class LoginView: ContentScrollingView {
         addSubview(infoButtonView)
         
         keyboardDismissMode = .none
+        showsVerticalScrollIndicator = false
+        showsHorizontalScrollIndicator = false
         
         loginInputView.returnKeyType = .next
         

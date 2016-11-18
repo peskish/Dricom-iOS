@@ -62,7 +62,11 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
         accessoryView.setDoneButtonTitle("Готово")
         accessoryView.delegate = self
         accessoryView.onDoneTap = { [weak self] in
-            self?.textField.resignFirstResponder()
+            if self?.onDoneButtonTap != nil {
+                self?.onDoneButtonTap?()
+            } else {
+                self?.textField.resignFirstResponder()
+            }
         }
         return accessoryView
     }
