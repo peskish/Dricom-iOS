@@ -118,7 +118,7 @@ final class RegisterView: ContentScrollingView {
         
         infoButtonView.size = infoButtonView.sizeThatFits(bounds.size)
         
-        let lastInputFieldDesiredMaxY = frame.bottom - infoButtonView.size.height - SpecMargins.innerContentMargin - SpecMargins.actionButtonHeight - SpecMargins.contentMargin
+        let lastInputFieldDesiredMaxY = frame.bottom - infoButtonView.size.height - SpecMargins.actionButtonHeight - 2*SpecMargins.contentMargin
         if confirmPasswordInputView.bottom >= lastInputFieldDesiredMaxY {
             registerButtonView.layout(
                 left: bounds.left,
@@ -131,7 +131,7 @@ final class RegisterView: ContentScrollingView {
             infoButtonView.layout(right: bounds.right, bottom: frame.height)
             registerButtonView.layout(
                 left: bounds.left,
-                bottom: infoButtonView.top - SpecMargins.innerContentMargin,
+                bottom: infoButtonView.top - SpecMargins.contentMargin,
                 fitWidth: bounds.width,
                 fitHeight: SpecMargins.actionButtonHeight
             )

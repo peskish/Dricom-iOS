@@ -47,7 +47,7 @@ final class LoginView: ContentScrollingView {
         guard let imageSize = logoImageView.image?.size else { return .zero }
         
         var desiredHeight: CGFloat = SpecSizes.statusBarHeight * 2
-        desiredHeight += imageSize.height
+        desiredHeight += imageSize.height/2
         desiredHeight += 2*SpecMargins.contentMargin + loginInputView.sizeThatFits(size).height
         desiredHeight += SpecMargins.innerContentMargin + passwordView.sizeThatFits(size).height
         desiredHeight += SpecMargins.contentMargin + loginButtonView.sizeThatFits(size).height
