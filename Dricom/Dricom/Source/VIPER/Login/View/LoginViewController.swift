@@ -1,6 +1,6 @@
 import UIKit
 
-final class LoginViewController: BaseViewController, LoginViewInput {
+final class LoginViewController: ContentScrollingViewController, LoginViewInput {
     // MARK: - Properties
     private let loginView = LoginView()
     

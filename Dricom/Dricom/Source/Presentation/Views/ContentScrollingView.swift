@@ -63,21 +63,10 @@ class ContentScrollingView : BaseContentScrollingView {
         isDirectionalLockEnabled = true
         
         keyboardDismissMode = .onDrag
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(onKeyboardWillChangeFrame(notification:)),
-            name: .UIKeyboardWillChangeFrame,
-            object: nil
-        )
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: - Keyboard events
