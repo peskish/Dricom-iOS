@@ -94,15 +94,24 @@ final class RegisterPresenter: NSObject,
         }
         
         view?.onRegisterButtonTap = { [weak self] in
-            // TODO
+            self?.validateDataAndProceed()
         }
-        
-//        addSubview(nameInputView)
-//        addSubview(emailInputView)
-//        addSubview(licenseInputView)
-//        addSubview(phoneInputView)
-//        addSubview(passwordInputView)
-//        addSubview(confirmPasswordInputView)
+    }
+    
+    private func validateDataAndProceed() {
+        interactor.validateData { [weak self] validationResult in
+            switch validationResult {
+            case .correct:
+                // TODO: Register through interactor
+                break
+            case .incorrect(let errors):
+                self?.showValidationErrors(errors)
+            }
+        }
+    }
+    
+    private func showValidationErrors(_ errors: [RegisterInputFieldError]) {
+        // TODO: Show errors
     }
     
     private func showAddPhotoActionSheet() {

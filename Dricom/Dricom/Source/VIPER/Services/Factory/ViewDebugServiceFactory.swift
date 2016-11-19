@@ -10,4 +10,8 @@ final class ViewDebugServiceFactory: ServiceFactory {
     func mailComposeDelegateService() -> MailComposeDelegateService {
         return MailComposeDelegateServiceImpl()
     }
+    
+    func registerDataValidationService() -> RegisterDataValidationService {
+        return RegisterDataValidationServiceImpl()
+    }
 }

@@ -42,6 +42,7 @@
 		F021D7161DDE420100F50091 /* PHAssetUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D7151DDE420100F50091 /* PHAssetUtilities.swift */; };
 		F021D7A51DDF1B3D00F50091 /* RegisterInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D7A41DDF1B3D00F50091 /* RegisterInputField.swift */; };
 		F021D7A71DE0DF3500F50091 /* ContentScrollingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D7A61DE0DF3500F50091 /* ContentScrollingViewController.swift */; };
+		F021D7A91DE0E63F00F50091 /* RegisterDataValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D7A81DE0E63F00F50091 /* RegisterDataValidationService.swift */; };
 		F076D6401DCF67F200E3ED0F /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6311DCF67F200E3ED0F /* LoginAssembly.swift */; };
 		F076D6411DCF67F200E3ED0F /* LoginAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6321DCF67F200E3ED0F /* LoginAssemblyImpl.swift */; };
 		F076D6421DCF67F200E3ED0F /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6341DCF67F200E3ED0F /* LoginInteractor.swift */; };
@@ -175,6 +176,7 @@
 		F021D7151DDE420100F50091 /* PHAssetUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHAssetUtilities.swift; sourceTree = "<group>"; };
 		F021D7A41DDF1B3D00F50091 /* RegisterInputField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterInputField.swift; sourceTree = "<group>"; };
 		F021D7A61DE0DF3500F50091 /* ContentScrollingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentScrollingViewController.swift; path = Dricom/Source/Presentation/ViewControllers/ContentScrollingViewController.swift; sourceTree = SOURCE_ROOT; };
+		F021D7A81DE0E63F00F50091 /* RegisterDataValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterDataValidationService.swift; path = Dricom/Source/VIPER/Services/Validation/RegisterDataValidationService.swift; sourceTree = SOURCE_ROOT; };
 		F076D6311DCF67F200E3ED0F /* LoginAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		F076D6321DCF67F200E3ED0F /* LoginAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAssemblyImpl.swift; sourceTree = "<group>"; };
 		F076D6341DCF67F200E3ED0F /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
@@ -459,6 +461,14 @@
 				F021D6F21DDDB5E600F50091 /* CameraPreviewView.swift */,
 			);
 			name = Preview;
+			sourceTree = "<group>";
+		};
+		F021D7AA1DE0E64300F50091 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				F021D7A81DE0E63F00F50091 /* RegisterDataValidationService.swift */,
+			);
+			name = Validation;
 			sourceTree = "<group>";
 		};
 		F076D62F1DCF67F200E3ED0F /* Login */ = {
@@ -786,6 +796,7 @@
 				F0A115361DC630A500A4DC76 /* Factory */,
 				F0A1152E1DC62CB800A4DC76 /* Interface */,
 				F0A115291DC62C6900A4DC76 /* Network */,
+				F021D7AA1DE0E64300F50091 /* Validation */,
 				F0A115281DC62C3700A4DC76 /* ViewDebug */,
 			);
 			name = Services;
@@ -1188,6 +1199,7 @@
 				F021D6C81DD7B99300F50091 /* RegisterViewInput.swift in Sources */,
 				F076D66B1DCF6F3800E3ED0F /* CollectionsExtensions.swift in Sources */,
 				F076D64C1DCF684A00E3ED0F /* ModuleFocusable.swift in Sources */,
+				F021D7A91DE0E63F00F50091 /* RegisterDataValidationService.swift in Sources */,
 				F021D6E61DD8925B00F50091 /* CameraInteractorImpl.swift in Sources */,
 				F076D6481DCF67F200E3ED0F /* LoginView.swift in Sources */,
 				F0D038581DD3AE0500E0085D /* FeedbackInteractor.swift in Sources */,

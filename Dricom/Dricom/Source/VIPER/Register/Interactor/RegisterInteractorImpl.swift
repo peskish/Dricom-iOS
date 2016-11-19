@@ -14,6 +14,14 @@ final class RegisterInteractorImpl: RegisterInteractor {
     // MARK: - State
     private var registerData = RegisterData()
     
+    // MARK: - Dependencies
+    private let registerDataValidationService: RegisterDataValidationService
+    
+    // MARK: - Init
+    init(registerDataValidationService: RegisterDataValidationService) {
+        self.registerDataValidationService = registerDataValidationService
+    }
+    
     // MARK: - RegisterInteractor
     func hasAvatar() -> Bool {
         return registerData.avatar != nil
@@ -24,26 +32,30 @@ final class RegisterInteractorImpl: RegisterInteractor {
     }
     
     func setName(_ name: String?) {
-        registerData.name = name
+        registerData.name = name?.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
     func setEmail(_ email: String?) {
-        registerData.email = email
+        registerData.email = email?.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
     func setLicense(_ license: String?) {
-        registerData.license = license
+        registerData.license = license?.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
     func setPhone(_ phone: String?) {
-        registerData.phone = phone
+        registerData.phone = phone?.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
     func setPassword(_ password: String?) {
-        registerData.password = password
+        registerData.password = password?.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
     func setPasswordConfirmation(_ passwordConfirmation: String?) {
-        registerData.passwordConfirmation = passwordConfirmation
+        registerData.passwordConfirmation = passwordConfirmation?.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    
+    func validateData(completion: @escaping (RegisterDataValidationResult) -> ()) {
+        registerDataValidationService.validateData(registerData, completion: completion)
     }
 }

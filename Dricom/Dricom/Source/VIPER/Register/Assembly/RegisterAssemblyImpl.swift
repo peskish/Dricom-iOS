@@ -6,7 +6,9 @@ final class RegisterAssemblyImpl: BaseAssembly, RegisterAssembly {
         configure: (_ module: RegisterModule) -> ())
         -> UIViewController
     {
-        let interactor = RegisterInteractorImpl()
+        let interactor = RegisterInteractorImpl(
+            registerDataValidationService: serviceFactory.registerDataValidationService()
+        )
         
         let viewController = RegisterViewController()
         
