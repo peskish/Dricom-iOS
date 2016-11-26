@@ -8,6 +8,8 @@ enum InputFieldViewState {
 class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
     // MARK: Properties
     private let textField = InputTextField()
+    private let titleLabel = UILabel()
+    private let placeholderLabel = UILabel()
     
     // MARK: Init
     init() {
@@ -18,6 +20,10 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
         textField.clearButtonMode = .whileEditing
         textField.addTarget(self, action: #selector(textFieldDidChangeValue(_:)), for: .editingChanged)
         addSubview(textField)
+        
+        titleLabel.alpha = 0
+        addSubview(titleLabel)
+        addSubview(placeholderLabel)
         
         setStyle()
     }
@@ -32,6 +38,13 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
         textField.layer.borderColor = SpecColors.InputField.stroke.cgColor
         textField.layer.borderWidth = 1
         textField.tintColor = .white
+        
+        titleLabel.backgroundColor = .clear
+        titleLabel.textColor = .white
+        titleLabel.font = UIFont.systemFont(ofSize: 14)
+        
+        placeholderLabel.backgroundColor = .clear
+        placeholderLabel.textColor = SpecColors.InputField.placeholder
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -47,6 +60,17 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
             right: bounds.width - SpecMargins.contentSidePadding,
             top: bounds.top,
             height: SpecMargins.inputFieldHeight
+        )
+        
+        titleLabel.sizeToFit()
+        titleLabel.top = textField.top + 2
+        titleLabel.left = textField.left + SpecMargins.innerContentMargin
+        
+        placeholderLabel.layout(
+            left: textField.left + SpecMargins.innerContentMargin,
+            right: textField.right - SpecMargins.innerContentMargin,
+            top: textField.top,
+            bottom: textField.bottom
         )
     }
     
@@ -75,11 +99,45 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
         return .top
     }
     
+    // MARK: - Private
+    private var isTextEmpty: Bool {
+        return textField.text?.isEmpty == true 
+    }
+    
+    private func animateBeginTextEntering() {
+        titleLabel.centerY = textField.centerY
+        titleLabel.alpha = 0
+        
+        UIView.animate(withDuration: 0.2) {
+            self.titleLabel.alpha = 1
+            self.titleLabel.top = self.textField.top + 2
+            self.placeholderLabel.alpha = 0
+        }
+    }
+    
+    private func animateEndTextEntering() {
+        UIView.animate(withDuration: 0.2) {
+            self.placeholderLabel.alpha = 1
+            self.titleLabel.centerY = self.textField.centerY
+            self.titleLabel.alpha = 0
+        }
+    }
+    
     // MARK: - UITextFieldDelegate -
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if let keyboardType = keyboardType {
             textField.keyboardType = keyboardType
             textField.reloadInputViews()
+        }
+        
+        if isTextEmpty {
+            animateBeginTextEntering()
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if isTextEmpty {
+            animateEndTextEntering()
         }
     }
     
@@ -130,10 +188,11 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
     
     var placeholder: String? {
         get {
-            return textField.attributedPlaceholder?.string
+            return placeholderLabel.text
         }
         set {
-            textField.attributedPlaceholder = attributedPlaceholderTextFromText(newValue)
+            placeholderLabel.text = newValue
+            titleLabel.text = newValue
         }
     }
     
@@ -157,12 +216,6 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
     }
     
     // MARK: Private
-    private func attributedPlaceholderTextFromText(_ text: String?) -> NSAttributedString {
-        var attributes = [String: AnyObject]()
-        attributes[NSForegroundColorAttributeName] = SpecColors.InputField.placeholder
-        return NSAttributedString(string: text ?? "", attributes: attributes)
-    }
-    
     func updateVisibleState() {
         switch state {
         case .normal:
@@ -176,7 +229,7 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
 private class InputTextField: UITextField {
     override func textRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.shrinked(
-            top: 0,
+            top: SpecMargins.inputFieldTitleHeight,
             left: SpecMargins.innerContentMargin,
             bottom: 0,
             right: SpecMargins.innerContentMargin
