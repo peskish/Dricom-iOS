@@ -99,10 +99,11 @@ final class RegisterPresenter: NSObject,
     }
     
     private func validateDataAndProceed() {
+        view?.endEditing()
         interactor.validateData { [weak self] validationResult in
             switch validationResult {
             case .correct:
-                // TODO: Register through interactor
+                print("correct")
                 break
             case .incorrect(let errors):
                 self?.showValidationErrors(errors)
@@ -111,7 +112,31 @@ final class RegisterPresenter: NSObject,
     }
     
     private func showValidationErrors(_ errors: [RegisterInputFieldError]) {
-        // TODO: Show errors
+        view?.setStateAccordingToErrors(errors)
+        
+        let validationErrors: [String] = errors.flatMap {
+            if case .incorrectData(let message) = $0.errorType {
+                return message
+            } else {
+                return nil
+            }
+        }
+        
+        if !validationErrors.isEmpty {
+            let cancelButton = StandardAlert.Button("OK", type: .cancel) { [weak self] in
+                self?.view?.focusOnField(errors.first?.field)
+            }
+            
+            let alert = StandardAlert(
+                title: "Пожалуйста, исправьте:",
+                message: validationErrors.joined(separator: "\n"),
+                cancelButton: cancelButton
+            )
+            
+            view?.showAlert(alert)
+        } else {
+            view?.focusOnField(errors.first?.field)
+        }
     }
     
     private func showAddPhotoActionSheet() {

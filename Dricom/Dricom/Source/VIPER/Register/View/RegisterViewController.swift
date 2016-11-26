@@ -38,8 +38,12 @@ final class RegisterViewController: ContentScrollingViewController, RegisterView
         registerView.setInputPlaceholder(field: field, placeholder: placeholder)
     }
     
-    func focusOnField(_ field: RegisterInputField) {
+    func focusOnField(_ field: RegisterInputField?) {
         registerView.focusOnField(field)
+    }
+    
+    func setStateAccordingToErrors(_ errors: [RegisterInputFieldError]) {
+        registerView.setStateAccordingToErrors(errors)
     }
     
     func setOnDoneButtonTap(field: RegisterInputField, onDoneButtonTap: (() -> ())?) {

@@ -7,7 +7,8 @@ protocol RegisterViewInput: class, ViewLifecycleObservable, MessageDisplayable {
     func setOnInputChange(field: RegisterInputField, onChange: ((String?) -> ())?)
     func setInputPlaceholder(field: RegisterInputField, placeholder: String?)
     func setOnDoneButtonTap(field: RegisterInputField, onDoneButtonTap: (() -> ())?)
-    func focusOnField(_ field: RegisterInputField)
+    func focusOnField(_ field: RegisterInputField?)
+    func setStateAccordingToErrors(_ errors: [RegisterInputFieldError])
     func endEditing()
     
     var onAddPhotoButtonTap: (() -> ())? { get set }

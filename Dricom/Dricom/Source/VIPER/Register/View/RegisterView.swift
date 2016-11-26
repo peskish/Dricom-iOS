@@ -171,7 +171,9 @@ final class RegisterView: ContentScrollingView {
         set { infoButtonView.onTap = newValue }
     }
     
-    func focusOnField(_ field: RegisterInputField) {
+    func focusOnField(_ field: RegisterInputField?) {
+        guard let field = field else { return }
+        
         let inputField = inputFieldView(field: field)
         inputField.startEditing()
     }
@@ -191,6 +193,17 @@ final class RegisterView: ContentScrollingView {
         inputField.placeholder = placeholder
     }
     
+    func setStateAccordingToErrors(_ errors: [RegisterInputFieldError]) {
+        allFields().forEach{ field in
+            let state: InputFieldViewState = errors.contains(where: { $0.field == field })
+                ? .validationError
+                : .normal
+            
+            let inputView = self.inputFieldView(field: field)
+            inputView.state = state
+        }
+    }
+    
     // MARK: - Private
     private func inputFieldView(field: RegisterInputField) -> TextFieldView {
         switch field {
@@ -207,5 +220,16 @@ final class RegisterView: ContentScrollingView {
         case .passwordConfirmation:
             return confirmPasswordInputView
         }
+    }
+    
+    private func allFields() -> [RegisterInputField] {
+        return [
+            .name,
+            .email,
+            .license,
+            .phone,
+            .password,
+            .passwordConfirmation
+        ]
     }
 }
