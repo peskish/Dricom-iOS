@@ -39,26 +39,37 @@ final class RegisterPresenter: NSObject,
         
         view?.setOnInputChange(field: .name) { [weak self] text in
             self?.interactor.setName(text)
+            let error = self?.interactor.validateName()
+            self?.view?.setState(error == nil ? .normal : .validationError, to: .name)
         }
         
         view?.setOnInputChange(field: .email) { [weak self] text in
             self?.interactor.setEmail(text)
+            let error = self?.interactor.validateEmail()
+            self?.view?.setState(error == nil ? .normal : .validationError, to: .email)
         }
         
         view?.setOnInputChange(field: .phone) { [weak self] text in
             self?.interactor.setPhone(text)
+            let error = self?.interactor.validatePhone()
+            self?.view?.setState(error == nil ? .normal : .validationError, to: .phone)
         }
         
         view?.setOnInputChange(field: .license) { [weak self] text in
             self?.interactor.setLicense(text)
+            let error = self?.interactor.validateLicense()
+            self?.view?.setState(error == nil ? .normal : .validationError, to: .license)
         }
         
         view?.setOnInputChange(field: .password) { [weak self] text in
             self?.interactor.setPassword(text)
+            let error = self?.interactor.validatePassword()
+            self?.view?.setState(error == nil ? .normal : .validationError, to: .password)
         }
         
         view?.setOnInputChange(field: .passwordConfirmation) { [weak self] text in
             self?.interactor.setPasswordConfirmation(text)
+            self?.view?.setState(.normal, to: .passwordConfirmation)
         }
         
         view?.setOnDoneButtonTap(field: .name) { [weak self] in
@@ -125,6 +136,8 @@ final class RegisterPresenter: NSObject,
     }
     
     private func showValidationErrors(_ errors: [RegisterInputFieldError]) {
+        view?.setStateAccordingToErrors(errors)
+        
         let validationErrors: [String] = errors.flatMap {
             if case .incorrectData(let message) = $0.errorType {
                 return message

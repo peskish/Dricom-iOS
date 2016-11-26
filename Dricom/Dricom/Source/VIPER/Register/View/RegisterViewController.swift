@@ -46,6 +46,10 @@ final class RegisterViewController: ContentScrollingViewController, RegisterView
         registerView.setStateAccordingToErrors(errors)
     }
     
+    func setState(_ state: InputFieldViewState, to field: RegisterInputField) {
+        registerView.setState(state, to: field)
+    }
+    
     func setOnDoneButtonTap(field: RegisterInputField, onDoneButtonTap: (() -> ())?) {
         registerView.setOnDoneButtonTap(field: field, onDoneButtonTap: onDoneButtonTap)
     }

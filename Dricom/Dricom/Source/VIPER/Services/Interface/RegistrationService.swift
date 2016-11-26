@@ -1,11 +1,13 @@
 struct RegistrationData {
-    let name: String
-    let license: String
-    let phone: String
-    let password: String
+    var avatarImageId: String?
+    var name: String?
+    var email: String?
+    var phone: String?
+    var license: String?
+    var password: String?
     let token: String?
 }
 
 protocol RegistrationService {
-    func register(with data: RegistrationData, completion: ApiResult<SessionInfo>.Completion)
+    func register(with data: RegistrationData, completion: @escaping ApiResult<Void>.Completion)
 }

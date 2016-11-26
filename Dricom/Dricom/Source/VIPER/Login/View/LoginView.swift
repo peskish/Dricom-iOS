@@ -10,7 +10,7 @@ final class LoginView: ContentScrollingView, StandardPreloaderViewHolder, Activi
     private let registerButtonView = ActionButtonView()
     private let infoButtonView = ImageButtonView(image: UIImage(named: "Info sign"))
     
-    let preloader = StandardPreloaderView(style: .light)
+    let preloader = StandardPreloaderView(style: .dark)
     
     // MARK: - Init
     init() {
@@ -39,8 +39,6 @@ final class LoginView: ContentScrollingView, StandardPreloaderViewHolder, Activi
         
         passwordView.isSecureTextEntry = true
         passwordView.returnKeyType = .done
-        
-        preloader.frame = bounds
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -82,6 +80,8 @@ final class LoginView: ContentScrollingView, StandardPreloaderViewHolder, Activi
             layoutFromBottom()
         }
 
+        preloader.frame = bounds
+        
         contentSize = CGSize(width: bounds.width, height: max(bounds.height, infoButtonView.bottom))
     }
     

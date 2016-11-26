@@ -16,11 +16,13 @@ final class RegisterInteractorImpl: RegisterInteractor {
     private var registerData = RegisterData()
     
     // MARK: - Dependencies
+    private let registrationService: RegistrationService
     private let registerDataValidationService: RegisterDataValidationService
     
     // MARK: - Init
-    init(registerDataValidationService: RegisterDataValidationService) {
+    init(registerDataValidationService: RegisterDataValidationService, registrationService: RegistrationService) {
         self.registerDataValidationService = registerDataValidationService
+        self.registrationService = registrationService
     }
     
     // MARK: - RegisterInteractor
@@ -60,7 +62,36 @@ final class RegisterInteractorImpl: RegisterInteractor {
         registerDataValidationService.validateData(registerData, completion: completion)
     }
     
-    func registerUser(completion: (DataResult<Void, NetworkError>) -> ()) {
-        // TODO: Call service and proceed
+    func validateName() -> RegisterInputFieldError? {
+        return registerDataValidationService.validateName(registerData.name)
+    }
+    
+    func validateEmail() -> RegisterInputFieldError? {
+        return registerDataValidationService.validateEmail(registerData.email)
+    }
+    
+    func validateLicense() -> RegisterInputFieldError? {
+        return registerDataValidationService.validateLicense(registerData.license)
+    }
+    
+    func validatePhone() -> RegisterInputFieldError? {
+        return registerDataValidationService.validatePhone(registerData.phone)
+    }
+    
+    func validatePassword() -> RegisterInputFieldError? {
+        return registerDataValidationService.validatePassword(registerData.password)
+    }
+    
+    func registerUser(completion: @escaping (DataResult<Void, NetworkError>) -> ()) {
+        let registrationData = RegistrationData(
+            avatarImageId: nil, // TODO: after image uploading implementation
+            name: registerData.name,
+            email: registerData.email,
+            phone: registerData.phone,
+            license: registerData.license,
+            password: registerData.password,
+            token: nil // TODO: device token holder
+        )
+        registrationService.register(with: registrationData, completion: completion)
     }
 }

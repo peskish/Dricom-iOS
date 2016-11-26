@@ -9,6 +9,7 @@ protocol RegisterViewInput: class, ViewLifecycleObservable, MessageDisplayable, 
     func setOnDoneButtonTap(field: RegisterInputField, onDoneButtonTap: (() -> ())?)
     func focusOnField(_ field: RegisterInputField?)
     func setStateAccordingToErrors(_ errors: [RegisterInputFieldError])
+    func setState(_ state: InputFieldViewState, to field: RegisterInputField)
     func endEditing()
     
     

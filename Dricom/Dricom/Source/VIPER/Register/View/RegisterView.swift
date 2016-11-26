@@ -21,7 +21,7 @@ final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, Act
     private let registerButtonView = ActionButtonView()
     private let infoButtonView = ImageButtonView(image: UIImage(named: "Info sign"))
     
-    let preloader = StandardPreloaderView(style: .light)
+    let preloader = StandardPreloaderView(style: .dark)
     
     // MARK: - Init
     init() {
@@ -207,6 +207,11 @@ final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, Act
             let inputView = self.inputFieldView(field: field)
             inputView.state = state
         }
+    }
+    
+    func setState(_ state: InputFieldViewState, to field: RegisterInputField) {
+        let inputField = inputFieldView(field: field)
+        inputField.state = state
     }
     
     // MARK: - Private

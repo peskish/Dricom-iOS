@@ -9,13 +9,15 @@ protocol StandardPreloaderViewHolder {
     var preloader: StandardPreloaderView { get }
 }
 
-extension ActivityDisplayable where Self: StandardPreloaderViewHolder {
+extension ActivityDisplayable where Self: StandardPreloaderViewHolder, Self: UIView {
     func startActivity() {
+        isUserInteractionEnabled = false
         preloader.setLoading(true)
     }
     
     func stopActivity() {
         preloader.setLoading(false)
+        isUserInteractionEnabled = true
     }
 }
 
@@ -31,7 +33,7 @@ public final class StandardPreloaderView: UIView {
         
         switch style {
         case .dark:
-            backgroundColor = UIColor(white: 1, alpha: 0.5)
+            backgroundColor = UIColor(white: 1, alpha: 0.3)
             activityIndicatorStyle =  .gray
         case .light:
             backgroundColor = .clear

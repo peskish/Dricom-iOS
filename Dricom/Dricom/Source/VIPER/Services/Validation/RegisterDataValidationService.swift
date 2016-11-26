@@ -17,6 +17,11 @@ enum RegisterDataValidationErrorType {
 
 protocol RegisterDataValidationService {
     func validateData(_ data: RegisterData, completion: @escaping (RegisterDataValidationResult) -> ())
+    func validateName(_ name: String?) -> RegisterInputFieldError?
+    func validateEmail(_ email: String?) -> RegisterInputFieldError?
+    func validateLicense(_ license: String?) -> RegisterInputFieldError?
+    func validatePhone(_ phone: String?) -> RegisterInputFieldError?
+    func validatePassword(_ password: String?) -> RegisterInputFieldError?
 }
 
 final class RegisterDataValidationServiceImpl: RegisterDataValidationService {
@@ -37,7 +42,7 @@ final class RegisterDataValidationServiceImpl: RegisterDataValidationService {
         }
     }
     
-    private func validateName(_ name: String?) -> RegisterInputFieldError? {
+    func validateName(_ name: String?) -> RegisterInputFieldError? {
         guard let name = name, !name.isEmpty else {
             return RegisterInputFieldError(field: .name, errorType: .requiredFieldIsEmpty)
         }
@@ -64,7 +69,7 @@ final class RegisterDataValidationServiceImpl: RegisterDataValidationService {
         return nil
     }
     
-    private func validateEmail(_ email: String?) -> RegisterInputFieldError? {
+    func validateEmail(_ email: String?) -> RegisterInputFieldError? {
         guard let email = email, !email.isEmpty else {
             return RegisterInputFieldError(field: .email, errorType: .requiredFieldIsEmpty)
         }
@@ -82,7 +87,7 @@ final class RegisterDataValidationServiceImpl: RegisterDataValidationService {
         return nil
     }
     
-    private func validateLicense(_ license: String?) -> RegisterInputFieldError? {
+    func validateLicense(_ license: String?) -> RegisterInputFieldError? {
         guard let license = license, !license.isEmpty else {
             return RegisterInputFieldError(field: .license, errorType: .requiredFieldIsEmpty)
         }
@@ -100,7 +105,7 @@ final class RegisterDataValidationServiceImpl: RegisterDataValidationService {
         return nil
     }
     
-    private func validatePhone(_ phone: String?) -> RegisterInputFieldError? {
+    func validatePhone(_ phone: String?) -> RegisterInputFieldError? {
         guard let phone = phone, !phone.isEmpty else {
             return RegisterInputFieldError(field: .phone, errorType: .requiredFieldIsEmpty)
         }
@@ -118,7 +123,7 @@ final class RegisterDataValidationServiceImpl: RegisterDataValidationService {
         return nil
     }
     
-    private func validatePassword(_ password: String?) -> RegisterInputFieldError? {
+    func validatePassword(_ password: String?) -> RegisterInputFieldError? {
         guard let password = password, !password.isEmpty else {
             return RegisterInputFieldError(field: .password, errorType: .requiredFieldIsEmpty)
         }

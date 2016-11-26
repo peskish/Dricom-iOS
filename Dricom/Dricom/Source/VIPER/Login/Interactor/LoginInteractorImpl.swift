@@ -10,7 +10,7 @@ final class LoginInteractorImpl: LoginInteractor {
     }
     
     // MARK: - LoginInteractor
-    func login(userName: String, password: String, completion: DataResult<Void, NetworkError>.Completion) {
+    func login(userName: String, password: String, completion: @escaping DataResult<Void, NetworkError>.Completion) {
         authorizationService.login(userName: userName, password: password, completion: completion)
     }
 }
