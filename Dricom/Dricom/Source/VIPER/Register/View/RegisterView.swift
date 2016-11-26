@@ -1,6 +1,6 @@
 import UIKit
 
-final class RegisterView: ContentScrollingView {
+final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, ActivityDisplayable {
     // MARK: - Properties
     private let backgroundView = RadialGradientView()
     private let addPhotoButton = ImageButtonView(image: UIImage(named: "Add photo"))
@@ -21,6 +21,8 @@ final class RegisterView: ContentScrollingView {
     private let registerButtonView = ActionButtonView()
     private let infoButtonView = ImageButtonView(image: UIImage(named: "Info sign"))
     
+    let preloader = StandardPreloaderView(style: .light)
+    
     // MARK: - Init
     init() {
         super.init(frame: .zero)
@@ -38,6 +40,7 @@ final class RegisterView: ContentScrollingView {
         addSubview(confirmPasswordInputView)
         addSubview(registerButtonView)
         addSubview(infoButtonView)
+        addSubview(preloader)
         
         keyboardDismissMode = .none
         showsVerticalScrollIndicator = false
@@ -136,6 +139,8 @@ final class RegisterView: ContentScrollingView {
                 fitHeight: SpecMargins.actionButtonHeight
             )
         }
+        
+        preloader.frame = bounds
         
         contentSize = CGSize(
             width: bounds.width,

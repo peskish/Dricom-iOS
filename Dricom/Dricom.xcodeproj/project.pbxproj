@@ -75,6 +75,8 @@
 		F076D67B1DCF87D300E3ED0F /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D67A1DCF87D300E3ED0F /* TextFieldView.swift */; };
 		F076D67D1DCF8F4900E3ED0F /* DoneButtonAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D67C1DCF8F4900E3ED0F /* DoneButtonAccessoryView.swift */; };
 		F076D67F1DCFAEF400E3ED0F /* ViewControllerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D67E1DCFAEF400E3ED0F /* ViewControllerPosition.swift */; };
+		F0823DB71DE9D929007BD04D /* ActivityDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0823DB61DE9D929007BD04D /* ActivityDisplayable.swift */; };
+		F0823DBA1DE9DA10007BD04D /* StandardPreloaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0823DB91DE9DA10007BD04D /* StandardPreloaderView.swift */; };
 		F08BE1A21DC9265000243B56 /* ActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BE1A11DC9265000243B56 /* ActionButtonView.swift */; };
 		F08BE1A41DC926B600243B56 /* SpecMargins.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BE1A31DC926B600243B56 /* SpecMargins.swift */; };
 		F08BE1A61DC9326A00243B56 /* ImageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BE1A51DC9326A00243B56 /* ImageButtonView.swift */; };
@@ -209,6 +211,8 @@
 		F076D67A1DCF87D300E3ED0F /* TextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldView.swift; path = Dricom/Source/Presentation/Views/TextFieldView.swift; sourceTree = SOURCE_ROOT; };
 		F076D67C1DCF8F4900E3ED0F /* DoneButtonAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoneButtonAccessoryView.swift; path = Dricom/Source/Presentation/Views/DoneButtonAccessoryView.swift; sourceTree = SOURCE_ROOT; };
 		F076D67E1DCFAEF400E3ED0F /* ViewControllerPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerPosition.swift; path = Router/ViewControllerPosition.swift; sourceTree = "<group>"; };
+		F0823DB61DE9D929007BD04D /* ActivityDisplayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityDisplayable.swift; path = ActivityDisplayable/ActivityDisplayable.swift; sourceTree = "<group>"; };
+		F0823DB91DE9DA10007BD04D /* StandardPreloaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StandardPreloaderView.swift; path = Dricom/Source/Presentation/Views/StandardPreloaderView.swift; sourceTree = SOURCE_ROOT; };
 		F08BE1A11DC9265000243B56 /* ActionButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionButtonView.swift; path = Dricom/Source/Presentation/Views/ActionButtonView.swift; sourceTree = SOURCE_ROOT; };
 		F08BE1A31DC926B600243B56 /* SpecMargins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpecMargins.swift; path = Dricom/Source/Presentation/Spec/SpecMargins.swift; sourceTree = SOURCE_ROOT; };
 		F08BE1A51DC9326A00243B56 /* ImageButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageButtonView.swift; path = Dricom/Source/Presentation/Views/ImageButtonView.swift; sourceTree = SOURCE_ROOT; };
@@ -568,6 +572,14 @@
 			path = Core/Extensions/SwiftAdditions;
 			sourceTree = "<group>";
 		};
+		F0823DB81DE9D931007BD04D /* ActivityDisplayable */ = {
+			isa = PBXGroup;
+			children = (
+				F0823DB61DE9D929007BD04D /* ActivityDisplayable.swift */,
+			);
+			name = ActivityDisplayable;
+			sourceTree = "<group>";
+		};
 		F092092E1DC13EFB0057302F = {
 			isa = PBXGroup;
 			children = (
@@ -698,6 +710,7 @@
 		F09209B11DC1502B0057302F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F0823DB81DE9D931007BD04D /* ActivityDisplayable */,
 				F09209BE1DC152530057302F /* Assembly */,
 				F09209B21DC1502B0057302F /* AssemblyFactory */,
 				F021D6A61DD7A6EE00F50091 /* MailComposeDelegateService */,
@@ -866,6 +879,7 @@
 				F076D67C1DCF8F4900E3ED0F /* DoneButtonAccessoryView.swift */,
 				F08BE1A51DC9326A00243B56 /* ImageButtonView.swift */,
 				F0A115641DC67F8400A4DC76 /* RadialGradientView.swift */,
+				F0823DB91DE9DA10007BD04D /* StandardPreloaderView.swift */,
 				F076D67A1DCF87D300E3ED0F /* TextFieldView.swift */,
 			);
 			name = View;
@@ -1119,6 +1133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0A115351DC6309F00A4DC76 /* ServiceFactory.swift in Sources */,
+				F0823DB71DE9D929007BD04D /* ActivityDisplayable.swift in Sources */,
 				F076D6411DCF67F200E3ED0F /* LoginAssemblyImpl.swift in Sources */,
 				F021D6A21DD7A61900F50091 /* MailComposerAssemblyImpl.swift in Sources */,
 				F076D67F1DCFAEF400E3ED0F /* ViewControllerPosition.swift in Sources */,
@@ -1191,6 +1206,7 @@
 				F09209B81DC1513B0057302F /* BaseRouter.swift in Sources */,
 				F0D038571DD3AE0500E0085D /* FeedbackAssemblyImpl.swift in Sources */,
 				F021D6C51DD7B99300F50091 /* RegisterRouterImpl.swift in Sources */,
+				F0823DBA1DE9DA10007BD04D /* StandardPreloaderView.swift in Sources */,
 				F021D7161DDE420100F50091 /* PHAssetUtilities.swift in Sources */,
 				F0A115821DC6897300A4DC76 /* SpecColors.swift in Sources */,
 				F0A115301DC62D2000A4DC76 /* DataResult.swift in Sources */,

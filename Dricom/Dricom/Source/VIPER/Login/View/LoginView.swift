@@ -1,6 +1,6 @@
 import UIKit
 
-final class LoginView: ContentScrollingView {
+final class LoginView: ContentScrollingView, StandardPreloaderViewHolder, ActivityDisplayable {
     // MARK: Properties
     private let backgroundView = RadialGradientView()
     private let logoImageView = UIImageView(image: UIImage(named: "Logo"))
@@ -9,6 +9,8 @@ final class LoginView: ContentScrollingView {
     private let loginButtonView = ActionButtonView()
     private let registerButtonView = ActionButtonView()
     private let infoButtonView = ImageButtonView(image: UIImage(named: "Info sign"))
+    
+    let preloader = StandardPreloaderView(style: .light)
     
     // MARK: - Init
     init() {
@@ -23,6 +25,7 @@ final class LoginView: ContentScrollingView {
         addSubview(loginButtonView)
         addSubview(registerButtonView)
         addSubview(infoButtonView)
+        addSubview(preloader)
         
         keyboardDismissMode = .none
         showsVerticalScrollIndicator = false
@@ -36,6 +39,8 @@ final class LoginView: ContentScrollingView {
         
         passwordView.isSecureTextEntry = true
         passwordView.returnKeyType = .done
+        
+        preloader.frame = bounds
     }
     
     required init?(coder aDecoder: NSCoder) {

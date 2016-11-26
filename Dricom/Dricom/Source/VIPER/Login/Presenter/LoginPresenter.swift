@@ -86,7 +86,9 @@ final class LoginPresenter:
     }
     
     private func proceed(login: String, password: String) {
+        view?.startActivity()
         interactor.login(userName: login, password: password) { [weak self] result in
+            self?.view?.stopActivity()
             result.onData { _ in
                 self?.onFinish?(.finished)
             }

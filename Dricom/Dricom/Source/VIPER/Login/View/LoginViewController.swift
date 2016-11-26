@@ -82,4 +82,13 @@ final class LoginViewController: ContentScrollingViewController, LoginViewInput 
     func endEditing() {
         loginView.endEditing(true)
     }
+    
+    // MARK: ActivityDisplayable
+    func startActivity() {
+        loginView.startActivity()
+    }
+    
+    func stopActivity() {
+        loginView.stopActivity()
+    }
 }

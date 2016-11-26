@@ -68,4 +68,13 @@ final class RegisterViewController: ContentScrollingViewController, RegisterView
         get { return registerView.onAddPhotoButtonTap }
         set { registerView.onAddPhotoButtonTap = newValue }
     }
+    
+    // MARK: ActivityDisplayable
+    func startActivity() {
+        registerView.startActivity()
+    }
+    
+    func stopActivity() {
+        registerView.stopActivity()
+    }
 }

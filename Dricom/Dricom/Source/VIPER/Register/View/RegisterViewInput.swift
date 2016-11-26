@@ -1,6 +1,6 @@
 import UIKit
 
-protocol RegisterViewInput: class, ViewLifecycleObservable, MessageDisplayable {
+protocol RegisterViewInput: class, ViewLifecycleObservable, MessageDisplayable, ActivityDisplayable {
     func setAddPhotoTitle(_ title: String)
     func setAddPhotoImage(_ image: UIImage?)
     func setRegisterButtonTitle(_ title: String)
@@ -10,6 +10,7 @@ protocol RegisterViewInput: class, ViewLifecycleObservable, MessageDisplayable {
     func focusOnField(_ field: RegisterInputField?)
     func setStateAccordingToErrors(_ errors: [RegisterInputFieldError])
     func endEditing()
+    
     
     var onAddPhotoButtonTap: (() -> ())? { get set }
     var onRegisterButtonTap: (() -> ())? { get set }

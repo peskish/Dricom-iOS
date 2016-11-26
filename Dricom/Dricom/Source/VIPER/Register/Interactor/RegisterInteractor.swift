@@ -12,4 +12,5 @@ protocol RegisterInteractor: class {
     func setPasswordConfirmation(_ passwordConfirmation: String?)
     
     func validateData(completion: @escaping (RegisterDataValidationResult) -> ())
+    func registerUser(completion: ApiResult<Void>.Completion)
 }

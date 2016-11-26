@@ -103,17 +103,28 @@ final class RegisterPresenter: NSObject,
         interactor.validateData { [weak self] validationResult in
             switch validationResult {
             case .correct:
-                print("correct")
-                break
+                self?.view?.setStateAccordingToErrors([])
+                self?.proceedRegistration()
             case .incorrect(let errors):
                 self?.showValidationErrors(errors)
             }
         }
     }
     
+    private func proceedRegistration() {
+        view?.startActivity()
+        interactor.registerUser { [weak self] result in
+            self?.view?.stopActivity()
+            result.onData { _ in
+                print("show main screen")
+            }
+            result.onError { error in
+                self?.view?.showError(networkError: error)
+            }
+        }
+    }
+    
     private func showValidationErrors(_ errors: [RegisterInputFieldError]) {
-        view?.setStateAccordingToErrors(errors)
-        
         let validationErrors: [String] = errors.flatMap {
             if case .incorrectData(let message) = $0.errorType {
                 return message

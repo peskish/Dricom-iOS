@@ -11,6 +11,7 @@ struct RegisterData {
 }
 
 final class RegisterInteractorImpl: RegisterInteractor {
+
     // MARK: - State
     private var registerData = RegisterData()
     
@@ -57,5 +58,9 @@ final class RegisterInteractorImpl: RegisterInteractor {
     
     func validateData(completion: @escaping (RegisterDataValidationResult) -> ()) {
         registerDataValidationService.validateData(registerData, completion: completion)
+    }
+    
+    func registerUser(completion: (DataResult<Void, NetworkError>) -> ()) {
+        // TODO: Call service and proceed
     }
 }

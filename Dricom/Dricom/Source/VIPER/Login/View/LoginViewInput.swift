@@ -1,6 +1,6 @@
 import Foundation
 
-protocol LoginViewInput: class, ViewLifecycleObservable, MessageDisplayable, ViewControllerPositionHolder {
+protocol LoginViewInput: class, ViewLifecycleObservable, MessageDisplayable, ViewControllerPositionHolder, ActivityDisplayable {
     func setLoginPlaceholder(_ placeholder: String?)
     func setLoginValue(_ value: String?)
     func setLoginButtonTitle(_ title: String?)
