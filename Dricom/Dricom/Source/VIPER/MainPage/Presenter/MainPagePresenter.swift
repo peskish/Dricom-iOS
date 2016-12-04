@@ -1,8 +1,6 @@
 import Foundation
 
-final class MainPagePresenter:
-    MainPageModule
-{
+final class MainPagePresenter {
     // MARK: - Private properties
     private let interactor: MainPageInteractor
     private let router: MainPageRouter
@@ -24,7 +22,17 @@ final class MainPagePresenter:
     
     // MARK: - Private
     private func setUpView() {
-        
+        view?.onViewDidLoad = { [weak self] in
+            self?.fetchAndPresentData()
+        }
+    }
+    
+    private func fetchAndPresentData() {
+        interactor.user { [weak self] user in
+            self?.view?.setAvatarImageUrl(
+                user.avatar.flatMap{ URL(string: $0) }
+            )
+        }
     }
     
     // MARK: - MainPageModule
@@ -35,6 +43,4 @@ final class MainPagePresenter:
     func dismissModule() {
         router.dismissCurrentModule()
     }
-    
-    var onFinish: ((MainPageResult) -> ())?
 }

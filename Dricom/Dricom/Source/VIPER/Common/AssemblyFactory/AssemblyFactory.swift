@@ -5,4 +5,5 @@ protocol AssemblyFactory: class {
     func mailComposerAssembly() -> MailComposerAssembly
     func registerAssembly() -> RegisterAssembly
     func cameraAssembly() -> CameraAssembly
+    func mainPageAssembly() -> MainPageAssembly
 }

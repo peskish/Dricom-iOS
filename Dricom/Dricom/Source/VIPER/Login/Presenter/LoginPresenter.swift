@@ -51,8 +51,10 @@ final class LoginPresenter:
         view?.onRegisterButtonTap = { [weak self] in
             self?.view?.endEditing()
             self?.router.showRegister { registerModule in
-                registerModule.onFinish = { _ in
-                    self?.onFinish?(.finished)
+                registerModule.onFinish = { result in
+                    if case .finished(let user) = result {
+                        self?.onFinish?(.finished(user: user))
+                    }
                 }
             }
         }
@@ -89,8 +91,8 @@ final class LoginPresenter:
         view?.startActivity()
         interactor.login(userName: login, password: password) { [weak self] result in
             self?.view?.stopActivity()
-            result.onData { _ in
-                self?.onFinish?(.finished)
+            result.onData { user in
+                self?.onFinish?(.finished(user: user))
             }
             result.onError { networkError in
                 self?.view?.showError(networkError: networkError)

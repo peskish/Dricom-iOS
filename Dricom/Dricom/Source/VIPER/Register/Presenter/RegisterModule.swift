@@ -1,7 +1,7 @@
 import Foundation
 
 enum RegisterResult {
-    case finished
+    case finished(user: User)
 }
 
 protocol RegisterModule: class, ModuleFocusable, ModuleDismissable {

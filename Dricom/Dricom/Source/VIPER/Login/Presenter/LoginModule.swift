@@ -1,7 +1,7 @@
 import Foundation
 
 enum LoginResult {
-    case finished
+    case finished(user: User)
 }
 
 protocol LoginModule: class, ModuleFocusable, ModuleDismissable, ViewControllerPositionHolder {

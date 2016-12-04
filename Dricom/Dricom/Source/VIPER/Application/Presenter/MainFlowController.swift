@@ -14,13 +14,15 @@ final class MainFlowController {
     
     func openLoginScreen() {
         router.showLogin { loginModule in
-            loginModule.onFinish = { [weak self] _ in
-                self?.openMainPage()
+            loginModule.onFinish = { [weak self] result in
+                if case .finished(let user) = result {
+                    self?.openMainPage(user: user)
+                }
             }
         }
     }
     
-    func openMainPage() {
-        print("Open main page")
+    func openMainPage(user: User) {
+        router.showMainPage(user: user)
     }
 }

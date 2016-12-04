@@ -1,9 +1,10 @@
 import UIKit
+import AlamofireImage
 
-final class MainPageView: UIView {
+final class MainPageView: UIView, StandardPreloaderViewHolder, ActivityDisplayable {
     // MARK: Properties
     private let backgroundView = RadialGradientView()
-    private let avatarImageView = UIImageView()
+    private let avatarImageView = UIImageView(image: UIImage(named: "No photo"))
     private let nameLabel = UILabel()
     private let licenceLabel = UILabel()
     private let favoriteUserAvatar1 = UIImageView()
@@ -45,7 +46,7 @@ final class MainPageView: UIView {
     private func setStyle() {
         backgroundColor = SpecColors.Background.defaultEdge
         
-        avatarImageView.size = SpecSizes.avatarImageSize
+        avatarImageView.size = SpecSizes.avatarImageSize/SpecSizes.scale
         avatarImageView.layer.cornerRadius = avatarImageView.size.width/2
         avatarImageView.layer.masksToBounds = true
         
@@ -72,5 +73,30 @@ final class MainPageView: UIView {
     }
     
     // MARK: Layout
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        avatarImageView.top = SpecSizes.statusBarHeight * 3
+        avatarImageView.centerX = bounds.centerX
+        
+        
+    }
     
+    // MARK: Public
+    func setAvatarImageUrl(_ avatarImageUrl: URL?) {
+        guard let avatarImageUrl = avatarImageUrl
+            else { return }
+        
+        let imageFilter = AspectScaledToFillSizeWithRoundedCornersFilter(
+            size: avatarImageView.size,
+            radius: avatarImageView.size.width/2
+        )
+        
+        avatarImageView.af_setImage(
+            withURL: avatarImageUrl,
+            placeholderImage: nil,
+            filter: imageFilter,
+            imageTransition: .crossDissolve(0.3)
+        )
+    }
 }

@@ -2,11 +2,9 @@ import UIKit
 
 final class MainPageAssemblyImpl: BaseAssembly, MainPageAssembly {
     // MARK: - MainPageAssembly
-    func module(
-        configure: (_ module: MainPageModule) -> ())
-        -> UIViewController
+    func module(user: User) -> UIViewController
     {
-        let interactor = MainPageInteractorImpl()
+        let interactor = MainPageInteractorImpl(user: user)
         
         let viewController = MainPageViewController()
         
@@ -23,8 +21,6 @@ final class MainPageAssemblyImpl: BaseAssembly, MainPageAssembly {
         viewController.addDisposable(presenter)
         
         presenter.view = viewController
-        
-        configure(presenter)
         
         return viewController
     }

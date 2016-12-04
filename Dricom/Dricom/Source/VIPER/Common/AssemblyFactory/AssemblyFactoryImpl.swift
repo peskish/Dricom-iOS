@@ -31,4 +31,8 @@ final class AssemblyFactoryImpl: AssemblyFactory {
     func cameraAssembly() -> CameraAssembly {
         return CameraAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
     }
+    
+    func mainPageAssembly() -> MainPageAssembly {
+        return MainPageAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
+    }
 }

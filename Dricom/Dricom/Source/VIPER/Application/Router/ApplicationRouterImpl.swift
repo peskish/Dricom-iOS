@@ -18,4 +18,16 @@ final class ApplicationRouterImpl: BaseRouter, ApplicationRouter {
             self?.viewController = targetViewController
         }
     }
+    
+    func showMainPage(user: User) {
+        let assembly = assemblyFactory.mainPageAssembly()
+        let targetViewController = assembly.module(user: user)
+        
+        CATransaction.begin()
+        CATransaction.setCompletionBlock({
+            self.navigationController?.viewControllers = [targetViewController]
+        })
+        navigationController?.pushViewController(targetViewController, animated: true)
+        CATransaction.commit()
+    }
 }

@@ -12,4 +12,16 @@ final class MainPageViewController: BaseViewController, MainPageViewInput {
     }
     
     // MARK: - MainPageViewInput
+    func setAvatarImageUrl(_ avatarImageUrl: URL?) {
+        mainPageView.setAvatarImageUrl(avatarImageUrl)
+    }
+    
+    // MARK: ActivityDisplayable
+    func startActivity() {
+        mainPageView.startActivity()
+    }
+    
+    func stopActivity() {
+        mainPageView.stopActivity()
+    }
 }
