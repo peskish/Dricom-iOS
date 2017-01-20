@@ -44,6 +44,18 @@
 		F021D7A51DDF1B3D00F50091 /* RegisterInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D7A41DDF1B3D00F50091 /* RegisterInputField.swift */; };
 		F021D7A71DE0DF3500F50091 /* ContentScrollingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D7A61DE0DF3500F50091 /* ContentScrollingViewController.swift */; };
 		F021D7A91DE0E63F00F50091 /* RegisterDataValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D7A81DE0E63F00F50091 /* RegisterDataValidationService.swift */; };
+		F05790C61E32A442004FBD4A /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790BC1E32A442004FBD4A /* Rubik-Black.ttf */; };
+		F05790C71E32A442004FBD4A /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790BD1E32A442004FBD4A /* Rubik-BlackItalic.ttf */; };
+		F05790C81E32A442004FBD4A /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790BE1E32A442004FBD4A /* Rubik-Bold.ttf */; };
+		F05790C91E32A442004FBD4A /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790BF1E32A442004FBD4A /* Rubik-BoldItalic.ttf */; };
+		F05790CA1E32A442004FBD4A /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790C01E32A442004FBD4A /* Rubik-Italic.ttf */; };
+		F05790CB1E32A442004FBD4A /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790C11E32A442004FBD4A /* Rubik-Light.ttf */; };
+		F05790CC1E32A442004FBD4A /* Rubik-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790C21E32A442004FBD4A /* Rubik-LightItalic.ttf */; };
+		F05790CD1E32A442004FBD4A /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790C31E32A442004FBD4A /* Rubik-Medium.ttf */; };
+		F05790CE1E32A442004FBD4A /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790C41E32A442004FBD4A /* Rubik-MediumItalic.ttf */; };
+		F05790CF1E32A442004FBD4A /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790C51E32A442004FBD4A /* Rubik-Regular.ttf */; };
+		F05790D61E32A72D004FBD4A /* UIColor+Styleguide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05790D41E32A72D004FBD4A /* UIColor+Styleguide.swift */; };
+		F05790D71E32A72D004FBD4A /* UIFont+Styleguide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05790D51E32A72D004FBD4A /* UIFont+Styleguide.swift */; };
 		F076D6401DCF67F200E3ED0F /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6311DCF67F200E3ED0F /* LoginAssembly.swift */; };
 		F076D6411DCF67F200E3ED0F /* LoginAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6321DCF67F200E3ED0F /* LoginAssemblyImpl.swift */; };
 		F076D6421DCF67F200E3ED0F /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6341DCF67F200E3ED0F /* LoginInteractor.swift */; };
@@ -68,8 +80,7 @@
 		F076D66F1DCF6F3800E3ED0F /* RangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6631DCF6F3800E3ED0F /* RangeExtension.swift */; };
 		F076D6701DCF6F3800E3ED0F /* SequenceTypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6641DCF6F3800E3ED0F /* SequenceTypeExtensions.swift */; };
 		F076D6711DCF6F3800E3ED0F /* String+Pluralization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6651DCF6F3800E3ED0F /* String+Pluralization.swift */; };
-		F076D6721DCF6F3800E3ED0F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6661DCF6F3800E3ED0F /* StringExtension.swift */; };
-		F076D6731DCF6F3800E3ED0F /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6671DCF6F3800E3ED0F /* StringExtensions.swift */; };
+		F076D6721DCF6F3800E3ED0F /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6661DCF6F3800E3ED0F /* StringExtensions.swift */; };
 		F076D6751DCF6FC500E3ED0F /* NSURLPathComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6741DCF6FC500E3ED0F /* NSURLPathComponents.swift */; };
 		F076D6771DCF762700E3ED0F /* ContentScrollingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6761DCF762700E3ED0F /* ContentScrollingView.swift */; };
 		F076D6791DCF7DD200E3ED0F /* UIView+FindFirstResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6781DCF7DD200E3ED0F /* UIView+FindFirstResponder.swift */; };
@@ -191,6 +202,18 @@
 		F021D7A41DDF1B3D00F50091 /* RegisterInputField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterInputField.swift; sourceTree = "<group>"; };
 		F021D7A61DE0DF3500F50091 /* ContentScrollingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentScrollingViewController.swift; path = Dricom/Source/Presentation/ViewControllers/ContentScrollingViewController.swift; sourceTree = SOURCE_ROOT; };
 		F021D7A81DE0E63F00F50091 /* RegisterDataValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterDataValidationService.swift; path = Dricom/Source/VIPER/Services/Validation/RegisterDataValidationService.swift; sourceTree = SOURCE_ROOT; };
+		F05790BC1E32A442004FBD4A /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Black.ttf"; sourceTree = "<group>"; };
+		F05790BD1E32A442004FBD4A /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
+		F05790BE1E32A442004FBD4A /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
+		F05790BF1E32A442004FBD4A /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
+		F05790C01E32A442004FBD4A /* Rubik-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Italic.ttf"; sourceTree = "<group>"; };
+		F05790C11E32A442004FBD4A /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Light.ttf"; sourceTree = "<group>"; };
+		F05790C21E32A442004FBD4A /* Rubik-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-LightItalic.ttf"; sourceTree = "<group>"; };
+		F05790C31E32A442004FBD4A /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
+		F05790C41E32A442004FBD4A /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
+		F05790C51E32A442004FBD4A /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		F05790D41E32A72D004FBD4A /* UIColor+Styleguide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Styleguide.swift"; sourceTree = "<group>"; };
+		F05790D51E32A72D004FBD4A /* UIFont+Styleguide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Styleguide.swift"; sourceTree = "<group>"; };
 		F076D6311DCF67F200E3ED0F /* LoginAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		F076D6321DCF67F200E3ED0F /* LoginAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAssemblyImpl.swift; sourceTree = "<group>"; };
 		F076D6341DCF67F200E3ED0F /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
@@ -215,8 +238,7 @@
 		F076D6631DCF6F3800E3ED0F /* RangeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeExtension.swift; sourceTree = "<group>"; };
 		F076D6641DCF6F3800E3ED0F /* SequenceTypeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceTypeExtensions.swift; sourceTree = "<group>"; };
 		F076D6651DCF6F3800E3ED0F /* String+Pluralization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Pluralization.swift"; sourceTree = "<group>"; };
-		F076D6661DCF6F3800E3ED0F /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		F076D6671DCF6F3800E3ED0F /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		F076D6661DCF6F3800E3ED0F /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		F076D6741DCF6FC500E3ED0F /* NSURLPathComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLPathComponents.swift; sourceTree = "<group>"; };
 		F076D6761DCF762700E3ED0F /* ContentScrollingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentScrollingView.swift; path = Dricom/Source/Presentation/Views/ContentScrollingView.swift; sourceTree = SOURCE_ROOT; };
 		F076D6781DCF7DD200E3ED0F /* UIView+FindFirstResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+FindFirstResponder.swift"; path = "Core/Extensions/UIKit/UIView+FindFirstResponder.swift"; sourceTree = "<group>"; };
@@ -497,6 +519,41 @@
 			name = Validation;
 			sourceTree = "<group>";
 		};
+		F05790BA1E32A442004FBD4A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F05790BB1E32A442004FBD4A /* Rubic */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F05790BB1E32A442004FBD4A /* Rubic */ = {
+			isa = PBXGroup;
+			children = (
+				F05790BC1E32A442004FBD4A /* Rubik-Black.ttf */,
+				F05790BD1E32A442004FBD4A /* Rubik-BlackItalic.ttf */,
+				F05790BE1E32A442004FBD4A /* Rubik-Bold.ttf */,
+				F05790BF1E32A442004FBD4A /* Rubik-BoldItalic.ttf */,
+				F05790C01E32A442004FBD4A /* Rubik-Italic.ttf */,
+				F05790C11E32A442004FBD4A /* Rubik-Light.ttf */,
+				F05790C21E32A442004FBD4A /* Rubik-LightItalic.ttf */,
+				F05790C31E32A442004FBD4A /* Rubik-Medium.ttf */,
+				F05790C41E32A442004FBD4A /* Rubik-MediumItalic.ttf */,
+				F05790C51E32A442004FBD4A /* Rubik-Regular.ttf */,
+			);
+			path = Rubic;
+			sourceTree = "<group>";
+		};
+		F05790D31E32A72D004FBD4A /* Styleguide */ = {
+			isa = PBXGroup;
+			children = (
+				F05790D41E32A72D004FBD4A /* UIColor+Styleguide.swift */,
+				F05790D51E32A72D004FBD4A /* UIFont+Styleguide.swift */,
+			);
+			name = Styleguide;
+			path = Core/Extensions/Styleguide;
+			sourceTree = "<group>";
+		};
 		F076D62F1DCF67F200E3ED0F /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -587,8 +644,7 @@
 				F076D6631DCF6F3800E3ED0F /* RangeExtension.swift */,
 				F076D6641DCF6F3800E3ED0F /* SequenceTypeExtensions.swift */,
 				F076D6651DCF6F3800E3ED0F /* String+Pluralization.swift */,
-				F076D6661DCF6F3800E3ED0F /* StringExtension.swift */,
-				F076D6671DCF6F3800E3ED0F /* StringExtensions.swift */,
+				F076D6661DCF6F3800E3ED0F /* StringExtensions.swift */,
 			);
 			name = SwiftAdditions;
 			path = Core/Extensions/SwiftAdditions;
@@ -691,6 +747,7 @@
 		F092094C1DC141D80057302F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F05790BA1E32A442004FBD4A /* Fonts */,
 				F09209411DC13EFB0057302F /* Assets.xcassets */,
 				F09209431DC13EFB0057302F /* LaunchScreen.storyboard */,
 			);
@@ -969,6 +1026,7 @@
 		F0A115691DC685B300A4DC76 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F05790D31E32A72D004FBD4A /* Styleguide */,
 				F076D65D1DCF6F3800E3ED0F /* SwiftAdditions */,
 				F0A1156A1DC685BC00A4DC76 /* UIKit */,
 			);
@@ -1119,7 +1177,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Dricom;
 				TargetAttributes = {
 					F09209361DC13EFB0057302F = {
@@ -1152,8 +1210,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F05790C71E32A442004FBD4A /* Rubik-BlackItalic.ttf in Resources */,
+				F05790CC1E32A442004FBD4A /* Rubik-LightItalic.ttf in Resources */,
+				F05790C81E32A442004FBD4A /* Rubik-Bold.ttf in Resources */,
 				F021D6CA1DD8879400F50091 /* Podfile in Resources */,
 				F09209451DC13EFB0057302F /* LaunchScreen.storyboard in Resources */,
+				F05790CB1E32A442004FBD4A /* Rubik-Light.ttf in Resources */,
+				F05790CA1E32A442004FBD4A /* Rubik-Italic.ttf in Resources */,
+				F05790CE1E32A442004FBD4A /* Rubik-MediumItalic.ttf in Resources */,
+				F05790C61E32A442004FBD4A /* Rubik-Black.ttf in Resources */,
+				F05790C91E32A442004FBD4A /* Rubik-BoldItalic.ttf in Resources */,
+				F05790CF1E32A442004FBD4A /* Rubik-Regular.ttf in Resources */,
+				F05790CD1E32A442004FBD4A /* Rubik-Medium.ttf in Resources */,
 				F09209421DC13EFB0057302F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1216,12 +1284,13 @@
 				F0A115351DC6309F00A4DC76 /* ServiceFactory.swift in Sources */,
 				F0823DB71DE9D929007BD04D /* ActivityDisplayable.swift in Sources */,
 				F076D6411DCF67F200E3ED0F /* LoginAssemblyImpl.swift in Sources */,
+				F05790D61E32A72D004FBD4A /* UIColor+Styleguide.swift in Sources */,
 				F021D6A21DD7A61900F50091 /* MailComposerAssemblyImpl.swift in Sources */,
 				F076D67F1DCFAEF400E3ED0F /* ViewControllerPosition.swift in Sources */,
 				F076D6551DCF6D2000E3ED0F /* MessageDisplayable.swift in Sources */,
 				F076D6701DCF6F3800E3ED0F /* SequenceTypeExtensions.swift in Sources */,
 				F0A115761DC6863E00A4DC76 /* CGPoint+Extension.swift in Sources */,
-				F076D6721DCF6F3800E3ED0F /* StringExtension.swift in Sources */,
+				F076D6721DCF6F3800E3ED0F /* StringExtensions.swift in Sources */,
 				F076D6471DCF67F200E3ED0F /* LoginRouterImpl.swift in Sources */,
 				F0D0385D1DD3AE0500E0085D /* FeedbackRouterImpl.swift in Sources */,
 				F021D6BF1DD7B99300F50091 /* RegisterAssemblyImpl.swift in Sources */,
@@ -1269,6 +1338,7 @@
 				F0D038591DD3AE0500E0085D /* FeedbackInteractorImpl.swift in Sources */,
 				F076D6421DCF67F200E3ED0F /* LoginInteractor.swift in Sources */,
 				F0823DCE1DE9EEA2007BD04D /* MainPageAssembly.swift in Sources */,
+				F05790D71E32A72D004FBD4A /* UIFont+Styleguide.swift in Sources */,
 				F021D6E51DD8925B00F50091 /* CameraInteractor.swift in Sources */,
 				F076D66F1DCF6F3800E3ED0F /* RangeExtension.swift in Sources */,
 				F0A1155F1DC637C600A4DC76 /* DisposeBagHolder.swift in Sources */,
@@ -1341,7 +1411,6 @@
 				F076D64A1DCF67F200E3ED0F /* LoginViewInput.swift in Sources */,
 				F021D6C61DD7B99300F50091 /* RegisterView.swift in Sources */,
 				F0A115771DC6863E00A4DC76 /* CGRectLayoutExtension.swift in Sources */,
-				F076D6731DCF6F3800E3ED0F /* StringExtensions.swift in Sources */,
 				F0D0385C1DD3AE0500E0085D /* FeedbackRouter.swift in Sources */,
 				F0A115631DC63A8700A4DC76 /* MainFlowController.swift in Sources */,
 				F0A115781DC6863E00A4DC76 /* CGSizeLayoutExtension.swift in Sources */,

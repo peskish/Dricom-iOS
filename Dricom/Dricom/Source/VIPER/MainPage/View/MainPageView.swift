@@ -7,19 +7,28 @@ final class MainPageView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
     private let avatarImageView = UIImageView(image: UIImage(named: "No photo"))
     private let nameLabel = UILabel()
     private let licenceLabel = UILabel()
-    private let favoriteUserAvatar1 = UIImageView()
-    private let favoriteUserAvatar2 = UIImageView()
-    private let favoriteUserAvatar3 = UIImageView()
-    private let favoriteUserAvatar4 = UIImageView()
-    private let favoriteUserAvatar5 = UIImageView()
+    private let favoriteUserAvatar1: ImageButtonView
+    private let favoriteUserAvatar2: ImageButtonView
+    private let favoriteUserAvatar3: ImageButtonView
+    private let favoriteUserAvatar4: ImageButtonView
+    private let favoriteUserAvatar5: ImageButtonView
     private let licenseSearchInputField = TextFieldView()
     private let licenseSearchButton = ActionButtonView()
     private let infoButtonView = ImageButtonView(image: UIImage(named: "Info sign"))
     
     let preloader = StandardPreloaderView(style: .dark)
     
+    private let favoriteUserAvatarSize = SpecSizes.smallAvatarImageSize/SpecSizes.scale
+    
     // MARK: - Init
     init() {
+        
+        favoriteUserAvatar1 = ImageButtonView(image: nil, customSize: favoriteUserAvatarSize)
+        favoriteUserAvatar2 = ImageButtonView(image: nil, customSize: favoriteUserAvatarSize)
+        favoriteUserAvatar3 = ImageButtonView(image: nil, customSize: favoriteUserAvatarSize)
+        favoriteUserAvatar4 = ImageButtonView(image: nil, customSize: favoriteUserAvatarSize)
+        favoriteUserAvatar5 = ImageButtonView(image: nil, customSize: favoriteUserAvatarSize)
+        
         super.init(frame: .zero)
         
         addSubview(backgroundView)
@@ -56,8 +65,8 @@ final class MainPageView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
          favoriteUserAvatar4,
          favoriteUserAvatar5]
             .forEach {
-                $0.size = SpecSizes.smallAvatarImageSize
-                $0.layer.cornerRadius = avatarImageView.size.width/2
+                $0.size = favoriteUserAvatarSize
+                $0.layer.cornerRadius = self.favoriteUserAvatarSize.width/2
                 $0.layer.masksToBounds = true
                 $0.backgroundColor = SpecColors.Background.defaultEdge
                 $0.layer.borderColor = UIColor.white.cgColor
@@ -79,7 +88,18 @@ final class MainPageView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
         avatarImageView.top = SpecSizes.statusBarHeight * 3
         avatarImageView.centerX = bounds.centerX
         
+        [favoriteUserAvatar1,
+         favoriteUserAvatar2,
+         favoriteUserAvatar3,
+         favoriteUserAvatar4,
+         favoriteUserAvatar5]
+            .forEach{ $0.top = avatarImageView.bottom + SpecMargins.contentMargin }
         
+        favoriteUserAvatar3.centerX = bounds.centerX
+        favoriteUserAvatar2.right = favoriteUserAvatar3.left - SpecMargins.contentMargin
+        favoriteUserAvatar1.right = favoriteUserAvatar2.left - SpecMargins.contentMargin
+        favoriteUserAvatar4.left = favoriteUserAvatar3.right + SpecMargins.contentMargin
+        favoriteUserAvatar5.left = favoriteUserAvatar4.right + SpecMargins.contentMargin
     }
     
     // MARK: Public
