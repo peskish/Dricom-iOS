@@ -1,39 +1,39 @@
 import UIKit
 
 extension UIFont {
-  class func logoLargeFont() -> UIFont? { 
-    return UIFont(name: "Lato-Semibold", size: 68.0)
-  }
-
-  class func logoMediumFont() -> UIFont? { 
-    return UIFont(name: "Lato-Semibold", size: 48.0)
-  }
-
-  class func buttonInactiveFont() -> UIFont? { 
-    return UIFont(name: "Lato-Medium", size: 34.0)
-  }
-
-  class func screenNameFont() -> UIFont? { 
-    return UIFont(name: "Rubik-Medium", size: 34.0)
-  }
-
-  class func buttonActiveFont() -> UIFont? { 
-    return UIFont(name: "Rubik-Regular", size: 34.0)
-  }
-
-  class func buttonActiveLightFont() -> UIFont? { 
-    return UIFont(name: "Rubik-Regular", size: 34.0)
-  }
-
-  class func inputPlaceholderFont() -> UIFont? { 
-    return UIFont(name: "Rubik-Regular", size: 32.0)
-  }
-
-  class func addPhotoFont() -> UIFont? { 
-    return UIFont(name: "Rubik-Regular", size: 30.0)
-  }
-
-  class func feedbackLinkFont() -> UIFont? { 
-    return UIFont(name: "Rubik-Regular", size: 28.0)
-  }
+    class func drcLogoLargeFont() -> UIFont? {
+        return UIFont(name: "Lato-Semibold", size: 34.0)
+    }
+    
+    class func drcLogoMediumFont() -> UIFont? {
+        return UIFont(name: "Lato-Semibold", size: 24.0)
+    }
+    
+    class func drcButtonInactiveFont() -> UIFont? {
+        return UIFont(name: "Lato-Medium", size: 17.0)
+    }
+    
+    class func drcScreenNameFont() -> UIFont? {
+        return UIFont(name: "Rubik-Medium", size: 17.0)
+    }
+    
+    class func drcButtonActiveFont() -> UIFont? {
+        return UIFont(name: "Rubik-Regular", size: 17.0)
+    }
+    
+    class func drcButtonActiveLightFont() -> UIFont? {
+        return UIFont(name: "Rubik-Regular", size: 17.0)
+    }
+    
+    class func drcInputPlaceholderFont() -> UIFont? {
+        return UIFont(name: "Rubik-Regular", size: 16.0)
+    }
+    
+    class func drcAddPhotoFont() -> UIFont? {
+        return UIFont(name: "Rubik-Regular", size: 15.0)
+    }
+    
+    class func drcFeedbackLinkFont() -> UIFont? {
+        return UIFont(name: "Rubik-Regular", size: 14.0)
+    }
 }

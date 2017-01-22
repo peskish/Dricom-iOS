@@ -2,8 +2,8 @@ import UIKit
 
 final class LoginView: ContentScrollingView, StandardPreloaderViewHolder, ActivityDisplayable {
     // MARK: Properties
-    private let backgroundView = RadialGradientView()
-    private let logoImageView = UIImageView(image: UIImage(named: "Logo"))
+    private let logoImageView = UIImageView(image: #imageLiteral(resourceName: "Logo"))
+    private let illustration = UIImageView(image: #imageLiteral(resourceName: "City illustration"))
     private let loginInputView = TextFieldView()
     private let passwordView = TextFieldView()
     private let loginButtonView = ActionButtonView()
@@ -16,9 +16,8 @@ final class LoginView: ContentScrollingView, StandardPreloaderViewHolder, Activi
     init() {
         super.init(frame: .zero)
         
-        backgroundColor = SpecColors.Background.defaultEdge
+        backgroundColor = .drcWhite
         
-        addSubview(backgroundView)
         addSubview(logoImageView)
         addSubview(loginInputView)
         addSubview(passwordView)
@@ -63,13 +62,8 @@ final class LoginView: ContentScrollingView, StandardPreloaderViewHolder, Activi
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        backgroundView.frame = bounds
-        
-        // Logo image has strange size (too big) - i'll try to use the half of it for now
-        guard let imageSize = logoImageView.image?.size else { return }
-        
-        logoImageView.size = CGSize(width: imageSize.width/2, height: imageSize.height/2)
-        logoImageView.top = SpecSizes.statusBarHeight * 2
+        logoImageView.sizeToFit()
+        logoImageView.top = 75
         logoImageView.centerX = bounds.centerX
         
         let desiredSize = sizeThatFits(frame.size)

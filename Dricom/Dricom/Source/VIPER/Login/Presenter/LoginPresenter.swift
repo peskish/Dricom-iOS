@@ -44,7 +44,6 @@ final class LoginPresenter:
         }
         
         view?.onLoginButtonTap = { [weak self] in
-            self?.view?.endEditing()
             self?.checkFieldsAndProceed(login: self?.login, password: self?.password)
         }
         
@@ -88,6 +87,7 @@ final class LoginPresenter:
     }
     
     private func proceed(login: String, password: String) {
+        view?.endEditing()
         view?.startActivity()
         interactor.login(userName: login, password: password) { [weak self] result in
             self?.view?.stopActivity()

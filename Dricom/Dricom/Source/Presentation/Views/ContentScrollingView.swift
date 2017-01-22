@@ -130,7 +130,7 @@ class ContentScrollingView : BaseContentScrollingView {
         var contentInset = self.initialInsets
         contentInset.bottom = max(contentInset.bottom, heightOfKeyboardInSelf)
         
-        let firstResponderView = UIView.findFirstResponderIn(view: self)
+        let firstResponderView = UIView.findFirstResponderView(self)
         
         if let firstResponderView = firstResponderView, keyboardIsVisible {
             let firstResponderFrame = superview?.convert(

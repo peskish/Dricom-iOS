@@ -56,6 +56,8 @@
 		F05790CF1E32A442004FBD4A /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790C51E32A442004FBD4A /* Rubik-Regular.ttf */; };
 		F05790D61E32A72D004FBD4A /* UIColor+Styleguide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05790D41E32A72D004FBD4A /* UIColor+Styleguide.swift */; };
 		F05790D71E32A72D004FBD4A /* UIFont+Styleguide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05790D51E32A72D004FBD4A /* UIFont+Styleguide.swift */; };
+		F05790DB1E34DC5D004FBD4A /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05790D91E34DC5D004FBD4A /* HoshiTextField.swift */; };
+		F05790DC1E34DC5D004FBD4A /* TextFieldsEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05790DA1E34DC5D004FBD4A /* TextFieldsEffects.swift */; };
 		F076D6401DCF67F200E3ED0F /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6311DCF67F200E3ED0F /* LoginAssembly.swift */; };
 		F076D6411DCF67F200E3ED0F /* LoginAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6321DCF67F200E3ED0F /* LoginAssemblyImpl.swift */; };
 		F076D6421DCF67F200E3ED0F /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6341DCF67F200E3ED0F /* LoginInteractor.swift */; };
@@ -214,6 +216,8 @@
 		F05790C51E32A442004FBD4A /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		F05790D41E32A72D004FBD4A /* UIColor+Styleguide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Styleguide.swift"; sourceTree = "<group>"; };
 		F05790D51E32A72D004FBD4A /* UIFont+Styleguide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Styleguide.swift"; sourceTree = "<group>"; };
+		F05790D91E34DC5D004FBD4A /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
+		F05790DA1E34DC5D004FBD4A /* TextFieldsEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldsEffects.swift; sourceTree = "<group>"; };
 		F076D6311DCF67F200E3ED0F /* LoginAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		F076D6321DCF67F200E3ED0F /* LoginAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAssemblyImpl.swift; sourceTree = "<group>"; };
 		F076D6341DCF67F200E3ED0F /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
@@ -554,6 +558,15 @@
 			path = Core/Extensions/Styleguide;
 			sourceTree = "<group>";
 		};
+		F05790D81E34DC5D004FBD4A /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				F05790D91E34DC5D004FBD4A /* HoshiTextField.swift */,
+				F05790DA1E34DC5D004FBD4A /* TextFieldsEffects.swift */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
 		F076D62F1DCF67F200E3ED0F /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -769,6 +782,7 @@
 				F09209701DC146300057302F /* VIPER */,
 				F0A115171DC622A100A4DC76 /* Presentation */,
 				F0A1151D1DC6284400A4DC76 /* Core */,
+				F05790D81E34DC5D004FBD4A /* ThirdParty */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -1363,6 +1377,7 @@
 				F09209B81DC1513B0057302F /* BaseRouter.swift in Sources */,
 				F0D038571DD3AE0500E0085D /* FeedbackAssemblyImpl.swift in Sources */,
 				F021D6C51DD7B99300F50091 /* RegisterRouterImpl.swift in Sources */,
+				F05790DC1E34DC5D004FBD4A /* TextFieldsEffects.swift in Sources */,
 				F0823DBA1DE9DA10007BD04D /* StandardPreloaderView.swift in Sources */,
 				F021D7161DDE420100F50091 /* PHAssetUtilities.swift in Sources */,
 				F0A115821DC6897300A4DC76 /* SpecColors.swift in Sources */,
@@ -1380,6 +1395,7 @@
 				F021D6F31DDDB5E600F50091 /* CameraPreviewView.swift in Sources */,
 				F01398E51DF43D8300E4F188 /* User.swift in Sources */,
 				F076D6711DCF6F3800E3ED0F /* String+Pluralization.swift in Sources */,
+				F05790DB1E34DC5D004FBD4A /* HoshiTextField.swift in Sources */,
 				F076D6491DCF67F200E3ED0F /* LoginViewController.swift in Sources */,
 				F021D6C21DD7B99300F50091 /* RegisterModule.swift in Sources */,
 				F076D66A1DCF6F3800E3ED0F /* AppMetadataExtension.swift in Sources */,
