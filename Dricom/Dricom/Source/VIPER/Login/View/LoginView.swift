@@ -3,6 +3,7 @@ import UIKit
 final class LoginView: ContentScrollingView, StandardPreloaderViewHolder, ActivityDisplayable {
     // MARK: Properties
     private let logoImageView = UIImageView(image: #imageLiteral(resourceName: "Logo"))
+    private let logoTitleView = UILabel()
     private let illustration = UIImageView(image: #imageLiteral(resourceName: "City illustration"))
     private let loginInputView = TextFieldView()
     private let passwordView = TextFieldView()
@@ -18,13 +19,17 @@ final class LoginView: ContentScrollingView, StandardPreloaderViewHolder, Activi
         
         backgroundColor = .drcWhite
         
+        addSubview(illustration)
         addSubview(logoImageView)
+        addSubview(logoTitleView)
         addSubview(loginInputView)
         addSubview(passwordView)
         addSubview(loginButtonView)
         addSubview(registerButtonView)
         addSubview(infoButtonView)
         addSubview(preloader)
+        
+        logoTitleView.text = "DRICOM" // this is used as a part of design without any logic
         
         keyboardDismissMode = .none
         showsVerticalScrollIndicator = false
@@ -38,27 +43,21 @@ final class LoginView: ContentScrollingView, StandardPreloaderViewHolder, Activi
         
         passwordView.isSecureTextEntry = true
         passwordView.returnKeyType = .done
+        
+        setStyle()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: Layout
-    override func sizeThatFits(_ size: CGSize) -> CGSize {
-        guard let imageSize = logoImageView.image?.size else { return .zero }
-        
-        var desiredHeight: CGFloat = SpecSizes.statusBarHeight * 2
-        desiredHeight += imageSize.height/2
-        desiredHeight += 2*SpecMargins.contentMargin + loginInputView.sizeThatFits(size).height
-        desiredHeight += SpecMargins.innerContentMargin + passwordView.sizeThatFits(size).height
-        desiredHeight += SpecMargins.contentMargin + loginButtonView.sizeThatFits(size).height
-        desiredHeight += SpecMargins.contentMargin + registerButtonView.sizeThatFits(size).height
-        desiredHeight += SpecMargins.contentMargin + SpecSizes.bottomAreaHeight
-        
-        return CGSize(width: size.width, height: desiredHeight)
+    private func setStyle() {
+        logoTitleView.font = UIFont.drcLogoMediumFont()
+        logoTitleView.textColor = .drcLightBlue
+        logoTitleView.textAlignment = .center
     }
     
+    // MARK: Layout
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -66,64 +65,26 @@ final class LoginView: ContentScrollingView, StandardPreloaderViewHolder, Activi
         logoImageView.top = 75
         logoImageView.centerX = bounds.centerX
         
-        let desiredSize = sizeThatFits(frame.size)
+        logoTitleView.sizeToFit()
+        logoTitleView.centerX = centerX
+        logoTitleView.top = logoImageView.bottom + 4
         
-        if desiredSize.height > frame.height {
-            layoutFromTop()
-        } else {
-            layoutFromBottom()
-        }
-
-        preloader.frame = bounds
-        
-        contentSize = CGSize(width: bounds.width, height: max(bounds.height, infoButtonView.bottom))
-    }
-    
-    private func layoutFromBottom() {
-        infoButtonView.size = infoButtonView.sizeThatFits(bounds.size)
-        infoButtonView.layout(right: bounds.right, bottom: frame.height)
-        
-        registerButtonView.layout(
-            left: bounds.left,
-            bottom: infoButtonView.top - SpecMargins.innerContentMargin,
-            fitWidth: bounds.width,
-            fitHeight: SpecMargins.actionButtonHeight
+        illustration.size = illustration.sizeThatFits(
+            CGSize(width: bounds.width, height: .greatestFiniteMagnitude)
         )
-        
-        loginButtonView.layout(
-            left: bounds.left,
-            bottom: registerButtonView.top - SpecMargins.contentMargin,
-            fitWidth: bounds.width,
-            fitHeight: SpecMargins.actionButtonHeight
-        )
-        
-        passwordView.layout(
-            left: bounds.left,
-            right: bounds.right,
-            bottom: loginButtonView.top - SpecMargins.contentMargin,
-            height: SpecMargins.inputFieldHeight
-        )
+        illustration.top = logoImageView.top + 3
         
         loginInputView.layout(
             left: bounds.left,
             right: bounds.right,
-            bottom: passwordView.top - SpecMargins.innerContentMargin,
-            height: SpecMargins.inputFieldHeight
-        )
-    }
-    
-    private func layoutFromTop() {
-        loginInputView.layout(
-            left: bounds.left,
-            right: bounds.right,
-            top: logoImageView.bottom + 2*SpecMargins.contentMargin,
+            top: illustration.bottom + 10,
             height: SpecMargins.inputFieldHeight
         )
         
         passwordView.layout(
             left: bounds.left,
             right: bounds.right,
-            top: loginInputView.bottom + SpecMargins.innerContentMargin,
+            top: loginInputView.bottom,
             height: SpecMargins.inputFieldHeight
         )
         
@@ -143,6 +104,10 @@ final class LoginView: ContentScrollingView, StandardPreloaderViewHolder, Activi
         
         infoButtonView.size = infoButtonView.sizeThatFits(bounds.size)
         infoButtonView.layout(right: bounds.right, top: registerButtonView.bottom + SpecMargins.contentMargin)
+
+        preloader.frame = bounds
+        
+        contentSize = CGSize(width: bounds.width, height: max(bounds.height, infoButtonView.bottom))
     }
     
     // MARK: Public

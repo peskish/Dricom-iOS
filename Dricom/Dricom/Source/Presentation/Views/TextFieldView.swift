@@ -8,7 +8,6 @@ enum InputFieldViewState {
 class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
     // MARK: Properties
     private let textField = HoshiTextField()
-    private let titleLabel = UILabel()
     
     // MARK: Init
     init() {
@@ -19,9 +18,6 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
         textField.clearButtonMode = .whileEditing
         textField.addTarget(self, action: #selector(textFieldDidChangeValue(_:)), for: .editingChanged)
         addSubview(textField)
-        
-        titleLabel.alpha = 0
-        addSubview(titleLabel)
         
         setStyle()
     }
@@ -34,10 +30,6 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
         textField.borderActiveColor = .drcSlate
         textField.font = UIFont.drcInputPlaceholderFont()
         textField.placeholderNormalFontScale = 1
-        
-        titleLabel.backgroundColor = .clear
-        titleLabel.textColor = .white
-        titleLabel.font = UIFont.systemFont(ofSize: 14)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -54,10 +46,6 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
             top: bounds.top,
             height: SpecMargins.inputFieldHeight
         )
-        
-        titleLabel.sizeToFit()
-        titleLabel.top = textField.top + 2
-        titleLabel.left = textField.left + SpecMargins.innerContentMargin
     }
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
