@@ -9,6 +9,10 @@ extension UIColor {
         return UIColor(red: 72.0 / 255.0, green: 108.0 / 255.0, blue: 1.0, alpha: 1.0)
     }
     
+    class var drcWarmBlue: UIColor {
+        return UIColor(red: 70.0 / 255.0, green: 101.0 / 255.0, blue: 223.0 / 255.0, alpha: 1.0)
+    }
+    
     class var drcSlate: UIColor {
         return UIColor(red: 63.0 / 255.0, green: 77.0 / 255.0, blue: 96.0 / 255.0, alpha: 1.0)
     }

@@ -81,9 +81,10 @@ import UIKit
         }
     }
     
-    let borderThickness: (active: CGFloat, inactive: CGFloat) = (active: 2, inactive: 0.5)
-    let placeholderInsets = CGPoint(x: 0, y: 6)
-    let textFieldInsets = CGPoint(x: 0, y: 12)
+    var borderThickness: (active: CGFloat, inactive: CGFloat) = (active: 2, inactive: 0.5)
+    var placeholderInsets = CGPoint(x: 0, y: 6)
+    var textFieldInsets = CGPoint(x: 0, y: 12)
+    var placeholderEditingAlpha: CGFloat = 0.5
     
     private let inactiveBorderLayer = CALayer()
     private let activeBorderLayer = CALayer()    
@@ -127,7 +128,7 @@ import UIKit
             if self.placeholderNormalFontScale != self.placeholderEditingFontScale {
                 self.placeholderLabel.font = self.placeholderEditingFontFromFont(self.font!)
             }
-            self.placeholderLabel.alpha = 0.5
+            self.placeholderLabel.alpha = self.placeholderEditingAlpha
         })
         
         activeBorderLayer.frame = rectForBorder(borderThickness.active, isFilled: true)

@@ -31,7 +31,7 @@ final class LoginPresenter:
         view?.setLoginPlaceholder("Имя пользователя")
         view?.setPasswordPlaceholder("Введите пароль")
         view?.setLoginButtonTitle("Войти")
-        view?.setRegisterButtonTitle("Зарегистрироваться")
+        view?.setRegisterButtonTitle("Регистрация")
         
         view?.onLoginChange = { [weak self] text in
             self?.view?.setLoginFieldState(.normal)

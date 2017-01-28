@@ -29,7 +29,11 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
         textField.borderInactiveColor = .drcSilver
         textField.borderActiveColor = .drcSlate
         textField.font = UIFont.drcInputPlaceholderFont()
+        textField.textColor = .drcSlate
         textField.placeholderNormalFontScale = 1
+        textField.placeholderEditingFontScale = 0.75
+        textField.placeholderEditingAlpha = 1
+        textField.alpha = 0.5
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -44,12 +48,12 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
             left: SpecMargins.contentSidePadding,
             right: bounds.width - SpecMargins.contentSidePadding,
             top: bounds.top,
-            height: SpecMargins.inputFieldHeight
+            height: SpecSizes.inputFieldHeight
         )
     }
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
-        return isHidden ? CGSize(width: size.width, height: SpecMargins.inputFieldHeight) : .zero
+        return isHidden ? CGSize(width: size.width, height: SpecSizes.inputFieldHeight) : .zero
     }
     
     // MARK: - Accessory view support

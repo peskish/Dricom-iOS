@@ -6,7 +6,7 @@ extension UIFont {
     }
     
     class func drcLogoMediumFont() -> UIFont? {
-        return UIFont(name: "Lato-Semibold", size: 24.0)
+        return UIFont(name: "Rubik-Medium", size: 24.0)
     }
     
     class func drcButtonInactiveFont() -> UIFont? {

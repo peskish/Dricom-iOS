@@ -16,7 +16,6 @@ class CameraPreviewView: UIView {
         addSubview(usePhotoButton)
         
         usePhotoButton.backgroundColor = .clear
-        usePhotoButton.setTitleColor(SpecColors.ActionButton.highlightedBackground, for: .highlighted)
         usePhotoButton.setTitle("Use photo", for: .normal)
         
         setStyle()

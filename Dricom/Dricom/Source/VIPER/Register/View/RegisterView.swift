@@ -81,53 +81,53 @@ final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, Act
             left: bounds.left,
             right: bounds.right,
             top: addPhotoLabel.bottom + 2*SpecMargins.contentMargin,
-            height: SpecMargins.inputFieldHeight
+            height: SpecSizes.inputFieldHeight
         )
         
         emailInputView.layout(
             left: bounds.left,
             right: bounds.right,
             top: nameInputView.bottom + SpecMargins.innerContentMargin,
-            height: SpecMargins.inputFieldHeight
+            height: SpecSizes.inputFieldHeight
         )
         
         licenseInputView.layout(
             left: bounds.left,
             right: bounds.right,
             top: emailInputView.bottom + SpecMargins.innerContentMargin,
-            height: SpecMargins.inputFieldHeight
+            height: SpecSizes.inputFieldHeight
         )
         
         phoneInputView.layout(
             left: bounds.left,
             right: bounds.right,
             top: licenseInputView.bottom + SpecMargins.innerContentMargin,
-            height: SpecMargins.inputFieldHeight
+            height: SpecSizes.inputFieldHeight
         )
         
         passwordInputView.layout(
             left: bounds.left,
             right: bounds.right,
             top: phoneInputView.bottom + SpecMargins.innerContentMargin,
-            height: SpecMargins.inputFieldHeight
+            height: SpecSizes.inputFieldHeight
         )
         
         confirmPasswordInputView.layout(
             left: bounds.left,
             right: bounds.right,
             top: passwordInputView.bottom + SpecMargins.innerContentMargin,
-            height: SpecMargins.inputFieldHeight
+            height: SpecSizes.inputFieldHeight
         )
         
         infoButtonView.size = infoButtonView.sizeThatFits(bounds.size)
         
-        let lastInputFieldDesiredMaxY = frame.bottom - infoButtonView.size.height - SpecMargins.actionButtonHeight - 2*SpecMargins.contentMargin
+        let lastInputFieldDesiredMaxY = frame.bottom - infoButtonView.size.height - SpecSizes.actionButtonHeight - 2*SpecMargins.contentMargin
         if confirmPasswordInputView.bottom >= lastInputFieldDesiredMaxY {
             registerButtonView.layout(
                 left: bounds.left,
                 right: bounds.right,
                 top: confirmPasswordInputView.bottom + SpecMargins.contentMargin,
-                height: SpecMargins.actionButtonHeight
+                height: SpecSizes.actionButtonHeight
             )
             infoButtonView.layout(right: bounds.right, top: registerButtonView.bottom + SpecMargins.contentMargin)
         } else {
@@ -136,7 +136,7 @@ final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, Act
                 left: bounds.left,
                 bottom: infoButtonView.top - SpecMargins.contentMargin,
                 fitWidth: bounds.width,
-                fitHeight: SpecMargins.actionButtonHeight
+                fitHeight: SpecSizes.actionButtonHeight
             )
         }
         

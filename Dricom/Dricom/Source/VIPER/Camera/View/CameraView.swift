@@ -32,11 +32,6 @@ final class CameraView: UIView {
     // MARK: Style
     private func setStyle() {
         backgroundColor = SpecColors.Background.defaultEdge
-        
-        [takePhotoButton, flashButton, switchCameraButton].forEach {
-            $0.backgroundColor = .clear
-            $0.setTitleColor(SpecColors.ActionButton.highlightedBackground, for: .highlighted)
-        }
     }
     
     // MARK: Layout

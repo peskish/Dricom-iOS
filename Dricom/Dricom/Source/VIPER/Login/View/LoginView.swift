@@ -55,6 +55,9 @@ final class LoginView: ContentScrollingView, StandardPreloaderViewHolder, Activi
         logoTitleView.font = UIFont.drcLogoMediumFont()
         logoTitleView.textColor = .drcLightBlue
         logoTitleView.textAlignment = .center
+        
+        loginButtonView.style = .dark
+        registerButtonView.style = .light
     }
     
     // MARK: Layout
@@ -77,29 +80,29 @@ final class LoginView: ContentScrollingView, StandardPreloaderViewHolder, Activi
         loginInputView.layout(
             left: bounds.left,
             right: bounds.right,
-            top: illustration.bottom + 10,
-            height: SpecMargins.inputFieldHeight
+            top: illustration.bottom,
+            height: SpecSizes.inputFieldHeight
         )
         
         passwordView.layout(
             left: bounds.left,
             right: bounds.right,
             top: loginInputView.bottom,
-            height: SpecMargins.inputFieldHeight
+            height: SpecSizes.inputFieldHeight
         )
         
         loginButtonView.layout(
             left: bounds.left,
             right: bounds.right,
-            top: passwordView.bottom + SpecMargins.contentMargin,
-            height: SpecMargins.actionButtonHeight
+            top: passwordView.bottom + SpecMargins.contentSidePadding,
+            height: SpecSizes.actionButtonHeight
         )
         
         registerButtonView.layout(
             left: bounds.left,
             right: bounds.right,
             top: loginButtonView.bottom + SpecMargins.contentMargin,
-            height: SpecMargins.actionButtonHeight
+            height: SpecSizes.actionButtonHeight
         )
         
         infoButtonView.size = infoButtonView.sizeThatFits(bounds.size)

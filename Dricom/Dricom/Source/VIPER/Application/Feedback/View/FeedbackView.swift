@@ -58,14 +58,14 @@ final class FeedbackView: UIView {
             left: bounds.left,
             bottom: tabBarArea.top - SpecMargins.contentMargin,
             fitWidth: bounds.width,
-            fitHeight: SpecMargins.actionButtonHeight
+            fitHeight: SpecSizes.actionButtonHeight
         )
         
         feedbackButton.layout(
             left: bounds.left,
             bottom: supportButton.top - SpecMargins.contentMargin,
             fitWidth: bounds.width,
-            fitHeight: SpecMargins.actionButtonHeight
+            fitHeight: SpecSizes.actionButtonHeight
         )
         
         for view in [fbButtonView, vkButtonView, instagramButtonView] {
