@@ -2,16 +2,9 @@ import UIKit
 
 final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, ActivityDisplayable {
     // MARK: - Properties
-    private let backgroundView = RadialGradientView()
-    private let addPhotoButton = ImageButtonView(image: UIImage(named: "Add photo"))
-    private let addPhotoLabel: UILabel = {
-        let label = UILabel()
-        label.backgroundColor = .clear
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = SpecColors.textMain
-        label.textAlignment = .center
-        return label
-    }()
+    private let topBackgroundView = UIView()
+    private let addPhotoButton = UIButton(type: .custom)
+    private let avatarImageView = UIImageView(image: #imageLiteral(resourceName: "Avatar"))
     private let nameInputView = TextFieldView()
     private let emailInputView = TextFieldView()
     private let licenseInputView = TextFieldView()
@@ -19,7 +12,6 @@ final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, Act
     private let passwordInputView = TextFieldView()
     private let confirmPasswordInputView = TextFieldView()
     private let registerButtonView = ActionButtonView()
-    private let infoButtonView = ImageButtonView(image: UIImage(named: "Info sign"))
     
     let preloader = StandardPreloaderView(style: .dark)
     
@@ -27,11 +19,9 @@ final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, Act
     init() {
         super.init(frame: .zero)
         
-        backgroundColor = SpecColors.Background.defaultEdge
-        
-        addSubview(backgroundView)
+        addSubview(topBackgroundView)
         addSubview(addPhotoButton)
-        addSubview(addPhotoLabel)
+        addSubview(avatarImageView)
         addSubview(nameInputView)
         addSubview(emailInputView)
         addSubview(licenseInputView)
@@ -39,89 +29,112 @@ final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, Act
         addSubview(passwordInputView)
         addSubview(confirmPasswordInputView)
         addSubview(registerButtonView)
-        addSubview(infoButtonView)
         addSubview(preloader)
         
         keyboardDismissMode = .none
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
         
-        addPhotoButton.sizeToFit()
-        addPhotoButton.layer.cornerRadius = addPhotoButton.width/2
-        addPhotoButton.layer.masksToBounds = true
-        
         [nameInputView, emailInputView, licenseInputView, passwordInputView].forEach({ $0.returnKeyType = .next})
         
-        emailInputView.keyboardType = UIKeyboardType.emailAddress
-        phoneInputView.keyboardType = UIKeyboardType.phonePad
+        emailInputView.keyboardType = .emailAddress
+        phoneInputView.keyboardType = .phonePad
         
         passwordInputView.isSecureTextEntry = true
         confirmPasswordInputView.isSecureTextEntry = true
+        
+        setStyle()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private func setStyle() {
+        backgroundColor = .drcWhite
+        
+        topBackgroundView.backgroundColor = UIColor.drcBlue
+        
+        addPhotoButton.setImage(#imageLiteral(resourceName: "Add photo"), for: .normal)
+        addPhotoButton.adjustsImageWhenHighlighted = false
+        addPhotoButton.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
+        
+        avatarImageView.size = #imageLiteral(resourceName: "Avatar").size
+        avatarImageView.layer.masksToBounds = true
+        avatarImageView.layer.cornerRadius = avatarImageView.size.height/2
+    }
+    
     // MARK: Layout
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        backgroundView.frame = bounds
+        topBackgroundView.layout(
+            left: bounds.left,
+            right: bounds.right,
+            top: bounds.top,
+            height: 45
+        )
         
-        addPhotoButton.size = addPhotoButton.sizeThatFits(bounds.size)
-        addPhotoButton.top = SpecSizes.statusBarHeight * 3
+        avatarImageView.centerX = bounds.centerX
+        avatarImageView.top = bounds.top
+        
+        addPhotoButton.sizeToFit()
+        let sizeOfText = addPhotoButton.titleLabel?.sizeThatFits() ?? .zero
+        let sizeOfImage = addPhotoButton.imageView?.sizeThatFits() ?? .zero
+        addPhotoButton.width = sizeOfText.width
+            + sizeOfImage.width
+            + addPhotoButton.titleEdgeInsets.left
+            + addPhotoButton.titleEdgeInsets.right
+        addPhotoButton.top = avatarImageView.bottom + 10
         addPhotoButton.centerX = bounds.centerX
-        
-        addPhotoLabel.sizeToFit()
-        addPhotoLabel.top = addPhotoButton.bottom + SpecMargins.innerContentMargin
-        addPhotoLabel.centerX = bounds.centerX
         
         nameInputView.layout(
             left: bounds.left,
             right: bounds.right,
-            top: addPhotoLabel.bottom + 2*SpecMargins.contentMargin,
+            top: addPhotoButton.bottom + SpecMargins.contentMargin,
             height: SpecSizes.inputFieldHeight
         )
         
         emailInputView.layout(
             left: bounds.left,
             right: bounds.right,
-            top: nameInputView.bottom + SpecMargins.innerContentMargin,
+            top: nameInputView.bottom,
             height: SpecSizes.inputFieldHeight
         )
         
         licenseInputView.layout(
             left: bounds.left,
             right: bounds.right,
-            top: emailInputView.bottom + SpecMargins.innerContentMargin,
+            top: emailInputView.bottom,
             height: SpecSizes.inputFieldHeight
         )
         
         phoneInputView.layout(
             left: bounds.left,
             right: bounds.right,
-            top: licenseInputView.bottom + SpecMargins.innerContentMargin,
+            top: licenseInputView.bottom,
             height: SpecSizes.inputFieldHeight
         )
         
         passwordInputView.layout(
             left: bounds.left,
             right: bounds.right,
-            top: phoneInputView.bottom + SpecMargins.innerContentMargin,
+            top: phoneInputView.bottom,
             height: SpecSizes.inputFieldHeight
         )
         
         confirmPasswordInputView.layout(
             left: bounds.left,
             right: bounds.right,
-            top: passwordInputView.bottom + SpecMargins.innerContentMargin,
+            top: passwordInputView.bottom,
             height: SpecSizes.inputFieldHeight
         )
         
-        infoButtonView.size = infoButtonView.sizeThatFits(bounds.size)
+        let lastInputFieldDesiredMaxY = frame.bottom
+            - SpecMargins.contentSidePadding
+            - SpecSizes.actionButtonHeight
+            - SpecMargins.contentMargin
         
-        let lastInputFieldDesiredMaxY = frame.bottom - infoButtonView.size.height - SpecSizes.actionButtonHeight - 2*SpecMargins.contentMargin
         if confirmPasswordInputView.bottom >= lastInputFieldDesiredMaxY {
             registerButtonView.layout(
                 left: bounds.left,
@@ -129,12 +142,10 @@ final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, Act
                 top: confirmPasswordInputView.bottom + SpecMargins.contentMargin,
                 height: SpecSizes.actionButtonHeight
             )
-            infoButtonView.layout(right: bounds.right, top: registerButtonView.bottom + SpecMargins.contentMargin)
         } else {
-            infoButtonView.layout(right: bounds.right, bottom: frame.height)
             registerButtonView.layout(
                 left: bounds.left,
-                bottom: infoButtonView.top - SpecMargins.contentMargin,
+                bottom: bounds.bottom - SpecMargins.contentSidePadding,
                 fitWidth: bounds.width,
                 fitHeight: SpecSizes.actionButtonHeight
             )
@@ -144,36 +155,40 @@ final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, Act
         
         contentSize = CGSize(
             width: bounds.width,
-            height: infoButtonView.bottom + SpecMargins.contentMargin
+            height: registerButtonView.bottom + SpecMargins.contentMargin
         )
     }
     
     // MARK: Public
     func setAddPhotoTitle(_ title: String) {
-        addPhotoLabel.text = title
+        var attributes: [String: Any] = [
+            NSForegroundColorAttributeName: UIColor.drcBlue,
+            NSFontAttributeName: UIFont.drcAddPhotoFont() ?? .systemFont(ofSize: 15)
+        ]
+        let normalTitle = NSAttributedString(string: title, attributes: attributes)
+        
+        attributes[NSForegroundColorAttributeName] = UIColor.drcWarmBlue
+        let highlightedTitle = NSAttributedString(string: title, attributes: attributes)
+            
+        addPhotoButton.setAttributedTitle(normalTitle, for: .normal)
+        addPhotoButton.setAttributedTitle(highlightedTitle, for: .highlighted)
+        
+        setNeedsLayout()
     }
     
-    func setAddPhotoImage(_ image: UIImage?) {
-        addPhotoButton.setImage(image ?? UIImage(named: "Add photo"))
+    func setAvatarPhotoImage(_ image: UIImage?) {
+        avatarImageView.image = image ?? #imageLiteral(resourceName: "Avatar")
     }
     
     func setRegisterButtonTitle(_ title: String) {
         registerButtonView.setTitle(title)
     }
     
-    var onAddPhotoButtonTap: (() -> ())? {
-        get { return addPhotoButton.onTap }
-        set { addPhotoButton.onTap = newValue }
-    }
+    var onAddPhotoButtonTap: (() -> ())?
     
     var onRegisterButtonTap: (() -> ())? {
         get { return registerButtonView.onTap }
         set { registerButtonView.onTap = newValue }
-    }
-    
-    var onInfoButtonTap: (() -> ())? {
-        get { return infoButtonView.onTap }
-        set { infoButtonView.onTap = newValue }
     }
     
     func focusOnField(_ field: RegisterInputField?) {

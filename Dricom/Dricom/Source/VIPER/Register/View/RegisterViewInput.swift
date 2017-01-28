@@ -1,8 +1,9 @@
 import UIKit
 
 protocol RegisterViewInput: class, ViewLifecycleObservable, MessageDisplayable, ActivityDisplayable {
+    func setViewTitle(_ title: String)
     func setAddPhotoTitle(_ title: String)
-    func setAddPhotoImage(_ image: UIImage?)
+    func setAvatarPhotoImage(_ image: UIImage?)
     func setRegisterButtonTitle(_ title: String)
     func setOnInputChange(field: RegisterInputField, onChange: ((String?) -> ())?)
     func setInputPlaceholder(field: RegisterInputField, placeholder: String?)
@@ -15,5 +16,4 @@ protocol RegisterViewInput: class, ViewLifecycleObservable, MessageDisplayable, 
     
     var onAddPhotoButtonTap: (() -> ())? { get set }
     var onRegisterButtonTap: (() -> ())? { get set }
-    var onInfoButtonTap: (() -> ())? { get set }
 }

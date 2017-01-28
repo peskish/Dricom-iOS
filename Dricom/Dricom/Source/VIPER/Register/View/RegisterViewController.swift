@@ -17,13 +17,46 @@ final class RegisterViewController: ContentScrollingViewController, RegisterView
         registerView.initialInsets = .zero
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationController?.navigationBar.tintColor = UIColor.drcWhite
+        navigationController?.navigationBar.titleTextAttributes = [
+            NSForegroundColorAttributeName: UIColor.drcWhite,
+            NSFontAttributeName: UIFont.drcScreenNameFont() ?? UIFont.systemFont(ofSize: 17)
+        ]
+        
+        if let backgroundImage = UIImage.imageWithColor(UIColor.drcBlue) {
+            navigationController?.navigationBar.setBackgroundImage(
+                backgroundImage,
+                for: .default
+            )
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     // MARK: - RegisterViewInput
+    func setViewTitle(_ title: String) {
+        self.title = title
+    }
+    
     func setAddPhotoTitle(_ title: String) {
         registerView.setAddPhotoTitle(title)
     }
     
-    func setAddPhotoImage(_ image: UIImage?) {
-        registerView.setAddPhotoImage(image)
+    func setAvatarPhotoImage(_ image: UIImage?) {
+        registerView.setAvatarPhotoImage(image)
     }
 
     func setRegisterButtonTitle(_ title: String) {
@@ -61,11 +94,6 @@ final class RegisterViewController: ContentScrollingViewController, RegisterView
     var onRegisterButtonTap: (() -> ())? {
         get { return registerView.onRegisterButtonTap }
         set { registerView.onRegisterButtonTap = newValue }
-    }
-    
-    var onInfoButtonTap: (() -> ())? {
-        get { return registerView.onInfoButtonTap }
-        set { registerView.onInfoButtonTap = newValue }
     }
     
     var onAddPhotoButtonTap: (() -> ())? {

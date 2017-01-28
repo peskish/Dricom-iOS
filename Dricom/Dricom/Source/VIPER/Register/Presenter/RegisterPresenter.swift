@@ -24,9 +24,10 @@ final class RegisterPresenter: NSObject,
     }
     
     // MARK: - Private
-    private let addPhotoCapture = "Добавьте фото"
+    private let addPhotoCapture = "Добавить фото"
     
     private func setUpView() {
+        view?.setViewTitle("Регистрация".uppercased())
         view?.setAddPhotoTitle(addPhotoCapture)
         view?.setRegisterButtonTitle("Зарегистрироваться")
         
@@ -98,10 +99,6 @@ final class RegisterPresenter: NSObject,
         
         view?.onAddPhotoButtonTap = { [weak self] in
             self?.showAddPhotoActionSheet()
-        }
-        
-        view?.onInfoButtonTap = { [weak self] in
-            self?.router.showFeedback()
         }
         
         view?.onRegisterButtonTap = { [weak self] in
@@ -194,7 +191,7 @@ final class RegisterPresenter: NSObject,
             cameraModule.onFinish = { [weak module] result in
                 if case .finished(let avatar) = result {
                     self?.interactor.setAvatar(avatar)
-                    self?.view?.setAddPhotoImage(avatar)
+                    self?.view?.setAvatarPhotoImage(avatar)
                     self?.view?.setAddPhotoTitle("")
                 }
                 
@@ -209,7 +206,7 @@ final class RegisterPresenter: NSObject,
     
     private func removeAvatarPhoto() {
         interactor.setAvatar(nil)
-        view?.setAddPhotoImage(nil)
+        view?.setAvatarPhotoImage(nil)
         view?.setAddPhotoTitle(addPhotoCapture)
     }
     
@@ -232,7 +229,7 @@ final class RegisterPresenter: NSObject,
         interactor.setAvatar(avatarThumbnail)
         
         let croppedAvatar = avatarThumbnail.imageByScalingAndCropping(SpecSizes.avatarImageSize)
-        view?.setAddPhotoImage(croppedAvatar)
+        view?.setAvatarPhotoImage(croppedAvatar)
         view?.setAddPhotoTitle("")
     }
     
