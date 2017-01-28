@@ -17,6 +17,12 @@ final class LoginViewController: ContentScrollingViewController, LoginViewInput 
         loginView.initialInsets = .zero
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     // MARK: - LoginViewInput
     func setLoginPlaceholder(_ placeholder: String?) {
         loginView.setLoginPlaceholder(placeholder)

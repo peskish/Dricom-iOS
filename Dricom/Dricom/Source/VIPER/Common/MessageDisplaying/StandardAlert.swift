@@ -90,6 +90,8 @@ final class StandardAlert {
     func showInViewController(_ viewController: UIViewController) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: type.toUIAlertControllerStyle())
         
+        alertController.view.tintColor = UIColor.drcSlate
+        
         let alertCancelAction: (() -> ())?
         
         if let cancelButton = cancelButton {

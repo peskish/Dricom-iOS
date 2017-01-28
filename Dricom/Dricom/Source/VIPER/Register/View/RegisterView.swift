@@ -44,6 +44,12 @@ final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, Act
         confirmPasswordInputView.isSecureTextEntry = true
         
         setStyle()
+        
+        addPhotoButton.addTarget(self, action: #selector(addPhotoPressed), for: .touchUpInside)
+        
+        avatarImageView.isUserInteractionEnabled = true
+        let avatarTapGesture = UITapGestureRecognizer(target: self, action: #selector(addPhotoPressed))
+        avatarImageView.addGestureRecognizer(avatarTapGesture)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -62,6 +68,8 @@ final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, Act
         avatarImageView.size = #imageLiteral(resourceName: "Avatar").size
         avatarImageView.layer.masksToBounds = true
         avatarImageView.layer.cornerRadius = avatarImageView.size.height/2
+        
+        registerButtonView.style = .dark
     }
     
     // MARK: Layout
@@ -230,6 +238,10 @@ final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, Act
     }
     
     // MARK: - Private
+    @objc private func addPhotoPressed() {
+        onAddPhotoButtonTap?()
+    }
+    
     private func inputFieldView(field: RegisterInputField) -> TextFieldView {
         switch field {
         case .name:

@@ -31,12 +31,12 @@ final class RegisterPresenter: NSObject,
         view?.setAddPhotoTitle(addPhotoCapture)
         view?.setRegisterButtonTitle("Зарегистрироваться")
         
-        view?.setInputPlaceholder(field: .name, placeholder: "Имя")
-        view?.setInputPlaceholder(field: .email, placeholder: "Email")
-        view?.setInputPlaceholder(field: .phone, placeholder: "Контактный телефон")
+        view?.setInputPlaceholder(field: .name, placeholder: "Ваше имя")
+        view?.setInputPlaceholder(field: .email, placeholder: "Ваш Email")
         view?.setInputPlaceholder(field: .license, placeholder: "Номер автомобиля")
-        view?.setInputPlaceholder(field: .password, placeholder: "Пароль")
-        view?.setInputPlaceholder(field: .passwordConfirmation, placeholder: "Подтверждение пароля")
+        view?.setInputPlaceholder(field: .phone, placeholder: "Контактный телефон")
+        view?.setInputPlaceholder(field: .password, placeholder: "Введите пароль")
+        view?.setInputPlaceholder(field: .passwordConfirmation, placeholder: "Повторите пароль")
         
         view?.setOnInputChange(field: .name) { [weak self] text in
             self?.interactor.setName(text)
@@ -163,21 +163,21 @@ final class RegisterPresenter: NSObject,
     private func showAddPhotoActionSheet() {
         let actionSheet = StandardAlert(type: .actionSheet)
         
-        actionSheet.cancelButton = StandardAlert.Button("Отмена", type: .cancel)
+        actionSheet.cancelButton = StandardAlert.Button("Отмена".uppercased(), type: .cancel)
         
         if interactor.hasAvatar() == true {
-            let removePhotoButton = StandardAlert.Button("Удалить", type: .destructive) { [weak self] in
+            let removePhotoButton = StandardAlert.Button("Удалить".uppercased(), type: .destructive) { [weak self] in
                 self?.removeAvatarPhoto()
             }
             actionSheet.buttons.append(removePhotoButton)
         }
         
-        let takePhotoButton = StandardAlert.Button("Сделать фото", type: .custom) { [weak self] in
+        let takePhotoButton = StandardAlert.Button("Сделать фото".uppercased(), type: .custom) { [weak self] in
             self?.takeAvatarPhoto()
         }
         actionSheet.buttons.append(takePhotoButton)
         
-        let selectPhotoButton = StandardAlert.Button("Выбрать из галереи", type: .custom) { [weak self] in
+        let selectPhotoButton = StandardAlert.Button("Выбрать из галереи".uppercased(), type: .custom) { [weak self] in
             self?.selectAvatarPhoto()
         }
         actionSheet.buttons.append(selectPhotoButton)

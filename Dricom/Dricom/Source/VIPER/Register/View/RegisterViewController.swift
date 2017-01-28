@@ -40,12 +40,6 @@ final class RegisterViewController: ContentScrollingViewController, RegisterView
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        navigationController?.setNavigationBarHidden(true, animated: true)
-    }
-    
     // MARK: - RegisterViewInput
     func setViewTitle(_ title: String) {
         self.title = title
