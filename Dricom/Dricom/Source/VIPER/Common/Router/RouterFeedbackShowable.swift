@@ -1,3 +1,5 @@
+import UIKit
+
 protocol RouterFeedbackShowable: class {
     func showFeedback()
 }
@@ -11,7 +13,7 @@ extension RouterFeedbackShowable where Self: BaseRouter, Self: RouterFocusable {
                 module?.dismissModule()
             }
         }
-        let navigationController = BaseNavigationController(rootViewController: targetViewController)
+        let navigationController = UINavigationController(rootViewController: targetViewController)
         viewController?.present(navigationController, animated: true, completion: nil)
     }
 }

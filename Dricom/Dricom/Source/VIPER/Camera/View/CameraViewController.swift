@@ -8,33 +8,49 @@ final class CameraViewController: BaseViewController, CameraViewInput, FastttCam
     private let fastCamera = FastttCamera()
     
     // MARK: - View events
-    override func loadView() {
-        super.loadView()
-        
-        view = cameraView
-    }
-    
     override func viewDidLoad() {
-        fastCamera.delegate = self
-        fastCamera.maxScaledDimension = 600
-        fastttAddChildViewController(fastCamera)
-        
         super.viewDidLoad()
         
-        navigationItem.backBarButtonItem = nil
-        navigationItem.leftBarButtonItem = UIBarButtonItem(
-            image: UIImage(named: "Close"),
-            style: .plain,
-            target: self,
-            action: #selector(closeButtonTapped)
-        )
+        title = "ФОТО" // TODO: to presenter
         
-        cameraView.setTakePhotoButtonTitle("Take photo")
-        cameraView.setSwitchCameraButtonTitle("Switch camera")
+        setupViewHierarchy()
         
-        fastCamera.cameraFlashMode = .off
-        cameraView.setFlashButtonTitle("Flash off")
+        setupNavigationBar()
         
+        setupStyle()
+        
+        setupCamera()
+        
+        setupCallbacks()
+    }
+    
+    private func setupStyle() {
+        view.backgroundColor = UIColor.drcWhite
+        fastCamera.view.backgroundColor = .black
+        
+        // Navigation bar
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.tintColor = UIColor.drcBlue
+        navigationController?.navigationBar.titleTextAttributes = [
+            NSForegroundColorAttributeName: UIColor.drcSlate,
+            NSFontAttributeName: UIFont.drcScreenNameFont() ?? UIFont.systemFont(ofSize: 17)
+        ]
+        
+        if let backgroundImage = UIImage.imageWithColor(UIColor.drcWhite) {
+            navigationController?.navigationBar.setBackgroundImage(
+                backgroundImage,
+                for: .default
+            )
+        }
+    }
+    
+    private func setupViewHierarchy() {
+        fastttAddChildViewController(fastCamera)
+        view.addSubview(cameraView)
+        cameraView.cameraView = fastCamera.view
+    }
+    
+    private func setupCallbacks() {
         cameraView.onTakePhotoTap = { [fastCamera] in
             fastCamera.takePicture()
         }
@@ -48,21 +64,28 @@ final class CameraViewController: BaseViewController, CameraViewInput, FastttCam
         }
     }
     
+    private func setupCamera() {
+        fastCamera.delegate = self
+        fastCamera.maxScaledDimension = 600
+        fastCamera.cameraFlashMode = .off
+        cameraView.flashMode = .off
+    }
+    
+    private func setupNavigationBar() {
+        navigationItem.backBarButtonItem = nil
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            title: "Отмена",
+            style: .plain,
+            target: self,
+            action: #selector(closeButtonTapped)
+        )
+    }
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        
-        let side = min(view.width, view.height)
-        fastCamera.view.size = CGSize(width: side, height: side)
-        fastCamera.view.center = view.center
-        
+
+        cameraView.frame = view.bounds
         previewViewController?.view.frame = view.frame
-        
-        cameraView.cameraArea = CGRect(
-            x: view.centerX - side/2,
-            y: view.centerY - side/2,
-            width: side,
-            height: side
-        )
     }
     
     // MARK: - CameraViewInput
@@ -161,18 +184,18 @@ final class CameraViewController: BaseViewController, CameraViewInput, FastttCam
     
     private func onFlashButtonTap() {
         let flashMode: FastttCameraFlashMode
-        let flashButtonTitle: String
+        let cameraFlashMode: CameraFlashMode
         switch fastCamera.cameraFlashMode {
         case .on:
             flashMode = .off
-            flashButtonTitle = "Flash off"
+            cameraFlashMode = .off
         case .off, .auto:
             flashMode = .on
-            flashButtonTitle = "Flash on"
+            cameraFlashMode = .on
         }
         if fastCamera.isFlashAvailableForCurrentDevice() {
             fastCamera.cameraFlashMode = flashMode
-            cameraView.setFlashButtonTitle(flashButtonTitle)
+            cameraView.flashMode = cameraFlashMode
         }
     }
     
@@ -187,8 +210,7 @@ final class CameraViewController: BaseViewController, CameraViewInput, FastttCam
         if FastttCamera.isCameraDeviceAvailable(cameraDevice) {
             fastCamera.cameraDevice = cameraDevice
             if fastCamera.isFlashAvailableForCurrentDevice() {
-                let flashButtonTitle = "Flash off"
-                cameraView.setFlashButtonTitle(flashButtonTitle)
+                cameraView.flashMode = .off
             }
         }
     }

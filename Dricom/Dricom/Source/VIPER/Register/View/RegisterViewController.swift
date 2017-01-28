@@ -20,6 +20,7 @@ final class RegisterViewController: ContentScrollingViewController, RegisterView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.tintColor = UIColor.drcWhite
         navigationController?.navigationBar.titleTextAttributes = [
             NSForegroundColorAttributeName: UIColor.drcWhite,

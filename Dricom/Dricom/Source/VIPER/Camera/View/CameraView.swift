@@ -1,10 +1,16 @@
 import UIKit
 
+enum CameraFlashMode {
+    case on
+    case off
+}
+
 final class CameraView: UIView {
     let takePhotoButton =  UIButton(type: .custom)
     let flashButton =  UIButton(type: .custom)
     let switchCameraButton =  UIButton(type: .custom)
-    let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
+    
+    weak var cameraView: UIView?
     
     // MARK: - Init
     init() {
@@ -16,60 +22,57 @@ final class CameraView: UIView {
         flashButton.addTarget(self, action: #selector(flashButtonTapped), for: .touchUpInside)
         addSubview(flashButton)
         
+        switchCameraButton.setImage(#imageLiteral(resourceName: "SwitchCamera"), for: .normal)
         switchCameraButton.addTarget(self, action: #selector(switchCameraButtonTapped), for: .touchUpInside)
         addSubview(switchCameraButton)
         
-        addSubview(activityIndicator)
-        activityIndicator.startAnimating()
-        
-        setStyle()
+        backgroundColor = .clear
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: Style
-    private func setStyle() {
-        backgroundColor = SpecColors.Background.defaultEdge
+    // MARK: Layout
+    var cameraArea: CGRect {
+        return cameraView?.frame ?? .zero
     }
     
-    // MARK: Layout
-    var cameraArea: CGRect = .zero
-    
+    private let buttonsPadding: CGFloat = 25
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        cameraView?.layout(
+            left: bounds.left,
+            right: bounds.right,
+            top: bounds.top,
+            height: min(bounds.height, 480)
+        )
+        
         takePhotoButton.sizeToFit()
         takePhotoButton.centerX = bounds.centerX
-        takePhotoButton.top = cameraArea.bottom + SpecMargins.contentMargin
+        takePhotoButton.centerY = bounds.bottom - cameraArea.bottom
         
         flashButton.sizeToFit()
-        flashButton.left = SpecMargins.contentMargin
-        flashButton.bottom = cameraArea.top - SpecMargins.contentMargin
+        flashButton.right = bounds.right - buttonsPadding
+        flashButton.bottom = cameraArea.bottom - buttonsPadding
         
         switchCameraButton.sizeToFit()
-        switchCameraButton.right = bounds.right - SpecMargins.contentMargin
-        switchCameraButton.bottom = cameraArea.top - SpecMargins.contentMargin
-        
-        activityIndicator.center = cameraArea.center
+        switchCameraButton.left = buttonsPadding
+        switchCameraButton.bottom = cameraArea.bottom - buttonsPadding
     }
     
     // MARK: - Public
     var onTakePhotoTap: (() -> ())?
-    func setTakePhotoButtonTitle(_ title: String) {
-        takePhotoButton.setTitle(title, for: .normal)
-    }
     
     var onFlashTap: (() -> ())?
-    func setFlashButtonTitle(_ title: String) {
-        flashButton.setTitle(title, for: .normal)
+    var flashMode: CameraFlashMode = .on {
+        didSet {
+            flashButton.setImage(flashMode == .on ? #imageLiteral(resourceName: "FlashOff") : #imageLiteral(resourceName: "FlashOn"), for: .normal)
+        }
     }
     
     var onSwitchCameraTap: (() -> ())?
-    func setSwitchCameraButtonTitle(_ title: String) {
-        switchCameraButton.setTitle(title, for: .normal)
-    }
     
     // MARK: - Private
     @objc private func takePhotoTapped() {

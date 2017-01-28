@@ -119,7 +119,6 @@
 		F09209B81DC1513B0057302F /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09209B71DC1513B0057302F /* BaseRouter.swift */; };
 		F09209BD1DC1524E0057302F /* BaseAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09209BC1DC1524E0057302F /* BaseAssembly.swift */; };
 		F0A115161DC6229500A4DC76 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115151DC6229500A4DC76 /* BaseViewController.swift */; };
-		F0A1151A1DC622D900A4DC76 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115191DC622D900A4DC76 /* BaseNavigationController.swift */; };
 		F0A115241DC629CE00A4DC76 /* SessionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115231DC629CE00A4DC76 /* SessionInfo.swift */; };
 		F0A1152B1DC62C8000A4DC76 /* ViewDebugRegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1152A1DC62C8000A4DC76 /* ViewDebugRegistrationService.swift */; };
 		F0A1152D1DC62CB300A4DC76 /* RegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1152C1DC62CB300A4DC76 /* RegistrationService.swift */; };
@@ -281,7 +280,6 @@
 		F09209B71DC1513B0057302F /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseRouter.swift; path = Router/BaseRouter.swift; sourceTree = "<group>"; };
 		F09209BC1DC1524E0057302F /* BaseAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseAssembly.swift; path = Assembly/BaseAssembly.swift; sourceTree = "<group>"; };
 		F0A115151DC6229500A4DC76 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Dricom/Source/Presentation/ViewControllers/BaseViewController.swift; sourceTree = SOURCE_ROOT; };
-		F0A115191DC622D900A4DC76 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseNavigationController.swift; path = Dricom/Source/Presentation/ViewControllers/BaseNavigationController.swift; sourceTree = SOURCE_ROOT; };
 		F0A115231DC629CE00A4DC76 /* SessionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionInfo.swift; sourceTree = "<group>"; };
 		F0A1152A1DC62C8000A4DC76 /* ViewDebugRegistrationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewDebugRegistrationService.swift; path = Dricom/Source/VIPER/Services/ViewDebug/ViewDebugRegistrationService.swift; sourceTree = SOURCE_ROOT; };
 		F0A1152C1DC62CB300A4DC76 /* RegistrationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationService.swift; path = Dricom/Source/VIPER/Services/Interface/RegistrationService.swift; sourceTree = SOURCE_ROOT; };
@@ -920,7 +918,6 @@
 			children = (
 				F0A115841DC68DF500A4DC76 /* ViewLifecycleObservable.swift */,
 				F0A115151DC6229500A4DC76 /* BaseViewController.swift */,
-				F0A115191DC622D900A4DC76 /* BaseNavigationController.swift */,
 				F021D7A61DE0DF3500F50091 /* ContentScrollingViewController.swift */,
 			);
 			name = ViewControllers;
@@ -1373,7 +1370,6 @@
 				F076D6461DCF67F200E3ED0F /* LoginRouter.swift in Sources */,
 				F09209B41DC1502B0057302F /* AssemblyFactory.swift in Sources */,
 				F076D6441DCF67F200E3ED0F /* LoginModule.swift in Sources */,
-				F0A1151A1DC622D900A4DC76 /* BaseNavigationController.swift in Sources */,
 				F09209B81DC1513B0057302F /* BaseRouter.swift in Sources */,
 				F0D038571DD3AE0500E0085D /* FeedbackAssemblyImpl.swift in Sources */,
 				F021D6C51DD7B99300F50091 /* RegisterRouterImpl.swift in Sources */,

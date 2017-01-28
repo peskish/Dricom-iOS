@@ -10,7 +10,7 @@ final class ApplicationAssemblyImpl: BaseAssembly, ApplicationAssembly {
             assertionFailure("Can't create splash view controller from LaunchScreen storyboard")
             return (rootViewController: nil, applicationEventsHandler: nil)
         }
-        let navigationController = BaseNavigationController(rootViewController: viewController)
+        let navigationController = UINavigationController(rootViewController: viewController)
         
         let interactor = ApplicationInteractorImpl()
         let router = ApplicationRouterImpl(assemblyFactory: assemblyFactory, viewController: viewController)
