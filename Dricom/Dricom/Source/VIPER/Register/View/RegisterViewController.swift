@@ -50,6 +50,10 @@ final class RegisterViewController: ContentScrollingViewController, RegisterView
         registerView.setAddPhotoTitle(title)
     }
     
+    func setAddPhotoButtonVisible(_ visible: Bool) {
+        registerView.setAddPhotoButtonVisible(visible)
+    }
+    
     func setAvatarPhotoImage(_ image: UIImage?) {
         registerView.setAvatarPhotoImage(image)
     }

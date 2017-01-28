@@ -3,6 +3,7 @@ import UIKit
 protocol RegisterViewInput: class, ViewLifecycleObservable, MessageDisplayable, ActivityDisplayable {
     func setViewTitle(_ title: String)
     func setAddPhotoTitle(_ title: String)
+    func setAddPhotoButtonVisible(_ visible: Bool)
     func setAvatarPhotoImage(_ image: UIImage?)
     func setRegisterButtonTitle(_ title: String)
     func setOnInputChange(field: RegisterInputField, onChange: ((String?) -> ())?)

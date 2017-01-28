@@ -184,6 +184,10 @@ final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, Act
         setNeedsLayout()
     }
     
+    func setAddPhotoButtonVisible(_ visible: Bool) {
+        addPhotoButton.isHidden = !visible
+    }
+    
     func setAvatarPhotoImage(_ image: UIImage?) {
         avatarImageView.image = image ?? #imageLiteral(resourceName: "Avatar")
     }

@@ -24,11 +24,10 @@ final class RegisterPresenter: NSObject,
     }
     
     // MARK: - Private
-    private let addPhotoCapture = "Добавить фото"
     
     private func setUpView() {
         view?.setViewTitle("Регистрация".uppercased())
-        view?.setAddPhotoTitle(addPhotoCapture)
+        view?.setAddPhotoTitle("Добавить фото")
         view?.setRegisterButtonTitle("Зарегистрироваться")
         
         view?.setInputPlaceholder(field: .name, placeholder: "Ваше имя")
@@ -192,7 +191,7 @@ final class RegisterPresenter: NSObject,
                 if case .finished(let avatar) = result {
                     self?.interactor.setAvatar(avatar)
                     self?.view?.setAvatarPhotoImage(avatar)
-                    self?.view?.setAddPhotoTitle("")
+                    self?.view?.setAddPhotoButtonVisible(false)
                 }
                 
                 module?.dismissModule()
@@ -207,7 +206,7 @@ final class RegisterPresenter: NSObject,
     private func removeAvatarPhoto() {
         interactor.setAvatar(nil)
         view?.setAvatarPhotoImage(nil)
-        view?.setAddPhotoTitle(addPhotoCapture)
+        view?.setAddPhotoButtonVisible(true)
     }
     
     // MARK: - CTAssetsPickerControllerDelegate
@@ -230,7 +229,7 @@ final class RegisterPresenter: NSObject,
         
         let croppedAvatar = avatarThumbnail.imageByScalingAndCropping(SpecSizes.avatarImageSize)
         view?.setAvatarPhotoImage(croppedAvatar)
-        view?.setAddPhotoTitle("")
+        view?.setAddPhotoButtonVisible(false)
     }
     
     // MARK: - RegisterModule
