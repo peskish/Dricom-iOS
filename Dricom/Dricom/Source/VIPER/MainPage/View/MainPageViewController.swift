@@ -11,9 +11,40 @@ final class MainPageViewController: BaseViewController, MainPageViewInput {
         view = mainPageView
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     // MARK: - MainPageViewInput
     func setAvatarImageUrl(_ avatarImageUrl: URL?) {
         mainPageView.setAvatarImageUrl(avatarImageUrl)
+    }
+    
+    func setName(_ name: String?) {
+        mainPageView.setName(name)
+    }
+    
+    func setLicenseParts(_ licenseParts: LicenseParts) {
+        mainPageView.setLicenseParts(licenseParts)
+    }
+    
+    func setLicenseSearchPlaceholder(_ placeholder: String?) {
+        mainPageView.setLicenseSearchPlaceholder(placeholder)
+    }
+    
+    var onLicenseSearchChange: ((String?) -> ())? {
+        get { return mainPageView.onLicenseSearchChange }
+        set { mainPageView.onLicenseSearchChange = newValue }
+    }
+    
+    func setLicenseSearchTitle(_ title: String) {
+        mainPageView.setLicenseSearchTitle(title)
+    }
+    
+    func setOnSearchButtonTap(_ onSearchButtonTap: ((String?) -> ())?) {
+        mainPageView.setOnSearchButtonTap(onSearchButtonTap)
     }
     
     // MARK: ActivityDisplayable

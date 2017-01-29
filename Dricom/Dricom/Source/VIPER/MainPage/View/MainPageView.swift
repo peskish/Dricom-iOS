@@ -3,18 +3,11 @@ import AlamofireImage
 
 final class MainPageView: UIView, StandardPreloaderViewHolder, ActivityDisplayable {
     // MARK: Properties
-    private let backgroundView = RadialGradientView()
-    private let avatarImageView = UIImageView(image: UIImage(named: "No photo"))
     private let nameLabel = UILabel()
-    private let licenceLabel = UILabel()
-    private let favoriteUserAvatar1: ImageButtonView
-    private let favoriteUserAvatar2: ImageButtonView
-    private let favoriteUserAvatar3: ImageButtonView
-    private let favoriteUserAvatar4: ImageButtonView
-    private let favoriteUserAvatar5: ImageButtonView
+    private let avatarImageView = UIImageView(image: #imageLiteral(resourceName: "Avatar"))
+    private let licenceView = LicensePlateView()
     private let licenseSearchInputField = TextFieldView()
     private let licenseSearchButton = ActionButtonView()
-    private let infoButtonView = ImageButtonView(image: UIImage(named: "Info sign"))
     
     let preloader = StandardPreloaderView(style: .dark)
     
@@ -22,27 +15,13 @@ final class MainPageView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
     
     // MARK: - Init
     init() {
-        
-        favoriteUserAvatar1 = ImageButtonView(image: nil, customSize: favoriteUserAvatarSize)
-        favoriteUserAvatar2 = ImageButtonView(image: nil, customSize: favoriteUserAvatarSize)
-        favoriteUserAvatar3 = ImageButtonView(image: nil, customSize: favoriteUserAvatarSize)
-        favoriteUserAvatar4 = ImageButtonView(image: nil, customSize: favoriteUserAvatarSize)
-        favoriteUserAvatar5 = ImageButtonView(image: nil, customSize: favoriteUserAvatarSize)
-        
         super.init(frame: .zero)
         
-        addSubview(backgroundView)
-        addSubview(avatarImageView)
         addSubview(nameLabel)
-        addSubview(licenceLabel)
-        addSubview(favoriteUserAvatar1)
-        addSubview(favoriteUserAvatar2)
-        addSubview(favoriteUserAvatar3)
-        addSubview(favoriteUserAvatar4)
-        addSubview(favoriteUserAvatar5)
+        addSubview(avatarImageView)
+        addSubview(licenceView)
         addSubview(licenseSearchInputField)
         addSubview(licenseSearchButton)
-        addSubview(infoButtonView)
         
         setStyle()
     }
@@ -53,59 +32,58 @@ final class MainPageView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
     
     // MARK: Style
     private func setStyle() {
-        backgroundColor = SpecColors.Background.defaultEdge
+        backgroundColor = UIColor.drcWhite
         
-        avatarImageView.size = SpecSizes.avatarImageSize/SpecSizes.scale
-        avatarImageView.layer.cornerRadius = avatarImageView.size.width/2
+        avatarImageView.size = #imageLiteral(resourceName: "Avatar").size
+        avatarImageView.layer.cornerRadius = avatarImageView.size.height/2
         avatarImageView.layer.masksToBounds = true
         
-        [favoriteUserAvatar1,
-         favoriteUserAvatar2,
-         favoriteUserAvatar3,
-         favoriteUserAvatar4,
-         favoriteUserAvatar5]
-            .forEach {
-                $0.size = favoriteUserAvatarSize
-                $0.layer.cornerRadius = self.favoriteUserAvatarSize.width/2
-                $0.layer.masksToBounds = true
-                $0.backgroundColor = SpecColors.Background.defaultEdge
-                $0.layer.borderColor = UIColor.white.cgColor
-                $0.layer.borderWidth = 1
-            }
+        nameLabel.font = UIFont.drcUserNameFont()
+        nameLabel.textColor = UIColor.drcSlate
+        nameLabel.textAlignment = .center
         
-        [nameLabel, licenceLabel].forEach {
-            $0.backgroundColor = .clear
-            $0.font = UIFont.systemFont(ofSize: 14)
-            $0.textColor = SpecColors.textMain
-            $0.textAlignment = .center
-        }
+        licenseSearchButton.style = .dark
     }
     
     // MARK: Layout
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        avatarImageView.top = SpecSizes.statusBarHeight * 3
+        nameLabel.sizeToFit()
+        nameLabel.layout(left: bounds.left, right: bounds.right, top: bounds.top + 45, fitBottom: bounds.bottom)
+        
+        avatarImageView.top = nameLabel.bottom + SpecMargins.innerContentMargin
         avatarImageView.centerX = bounds.centerX
         
-        [favoriteUserAvatar1,
-         favoriteUserAvatar2,
-         favoriteUserAvatar3,
-         favoriteUserAvatar4,
-         favoriteUserAvatar5]
-            .forEach{ $0.top = avatarImageView.bottom + SpecMargins.contentMargin }
+        licenceView.size = licenceView.sizeThatFits()
+        licenceView.top = avatarImageView.bottom + SpecMargins.contentMargin
+        licenceView.centerX = bounds.centerX
         
-        favoriteUserAvatar3.centerX = bounds.centerX
-        favoriteUserAvatar2.right = favoriteUserAvatar3.left - SpecMargins.contentMargin
-        favoriteUserAvatar1.right = favoriteUserAvatar2.left - SpecMargins.contentMargin
-        favoriteUserAvatar4.left = favoriteUserAvatar3.right + SpecMargins.contentMargin
-        favoriteUserAvatar5.left = favoriteUserAvatar4.right + SpecMargins.contentMargin
+        licenseSearchButton.layout(
+            left: bounds.left + SpecMargins.contentSidePadding,
+            right: bounds.right - SpecMargins.contentSidePadding,
+            bottom: bounds.bottom - 35,
+            height: SpecSizes.actionButtonHeight
+        )
+        
+        licenseSearchInputField.layout(
+            left: bounds.left,
+            right: bounds.right,
+            bottom: licenseSearchButton.top - 15,
+            height: SpecSizes.inputFieldHeight
+        )
     }
     
     // MARK: Public
+    func setName(_ name: String?) {
+        nameLabel.text = name
+    }
+    
     func setAvatarImageUrl(_ avatarImageUrl: URL?) {
-        guard let avatarImageUrl = avatarImageUrl
-            else { return }
+        guard let avatarImageUrl = avatarImageUrl else {
+            avatarImageView.image = #imageLiteral(resourceName: "Avatar")
+            return
+        }
         
         let imageFilter = AspectScaledToFillSizeWithRoundedCornersFilter(
             size: avatarImageView.size,
@@ -118,5 +96,28 @@ final class MainPageView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
             filter: imageFilter,
             imageTransition: .crossDissolve(0.3)
         )
+    }
+    
+    func setLicenseParts(_ licenseParts: LicenseParts) {
+        licenceView.setLicenseParts(licenseParts)
+    }
+    
+    func setLicenseSearchPlaceholder(_ placeholder: String?) {
+        licenseSearchInputField.placeholder = placeholder
+    }
+    
+    var onLicenseSearchChange: ((String?) -> ())? {
+        get { return licenseSearchInputField.onTextChange }
+        set { licenseSearchInputField.onTextChange = newValue }
+    }
+    
+    func setLicenseSearchTitle(_ title: String) {
+        licenseSearchButton.setTitle(title)
+    }
+    
+    func setOnSearchButtonTap(_ onSearchButtonTap: ((String?) -> ())?) {
+        licenseSearchButton.onTap = { [licenseSearchInputField] in
+            onSearchButtonTap?(licenseSearchInputField.text)
+        }
     }
 }

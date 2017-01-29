@@ -2,7 +2,6 @@ import UIKit
 
 final class FeedbackView: UIView {
     private let logoImageView = UIImageView(image: UIImage(named: "Logo"))
-    private let backgroundView = RadialGradientView()
     private let feedbackButton = ActionButtonView()
     private let supportButton = ActionButtonView()
     private let fbButtonView = ImageButtonView(
@@ -22,7 +21,6 @@ final class FeedbackView: UIView {
     init() {
         super.init(frame: .zero)
         
-        addSubview(backgroundView)
         addSubview(logoImageView)
         addSubview(feedbackButton)
         addSubview(supportButton)
@@ -37,8 +35,6 @@ final class FeedbackView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        backgroundView.frame = bounds
         
         // Logo image has strange size (too big) - i'll try to use the half of it for now
         guard let imageSize = logoImageView.image?.size else { return }

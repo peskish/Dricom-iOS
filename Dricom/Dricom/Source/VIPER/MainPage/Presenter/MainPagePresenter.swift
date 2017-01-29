@@ -22,6 +22,9 @@ final class MainPagePresenter {
     
     // MARK: - Private
     private func setUpView() {
+        view?.setLicenseSearchPlaceholder("Введите номер автомобиля")
+        view?.setLicenseSearchTitle("Найти пользователя")
+        
         view?.onViewDidLoad = { [weak self] in
             self?.fetchAndPresentData()
         }
@@ -29,8 +32,20 @@ final class MainPagePresenter {
     
     private func fetchAndPresentData() {
         interactor.user { [weak self] user in
+            self?.view?.setName(user.userName)
+            
             self?.view?.setAvatarImageUrl(
                 user.avatar.flatMap{ URL(string: $0) }
+            )
+            
+            self?.view?.setLicenseParts(
+                LicenseParts(
+                    firstLetter: "A",
+                    numberPart: "245",
+                    restLetters: "MN",
+                    regionCode: "197",
+                    countryCode: "RUS"
+                )
             )
         }
     }

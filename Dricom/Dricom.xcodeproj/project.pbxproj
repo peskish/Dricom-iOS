@@ -130,7 +130,6 @@
 		F0A1155F1DC637C600A4DC76 /* DisposeBagHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1155D1DC637C600A4DC76 /* DisposeBagHolder.swift */; };
 		F0A115611DC6385400A4DC76 /* RouterFocusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115601DC6385400A4DC76 /* RouterFocusable.swift */; };
 		F0A115631DC63A8700A4DC76 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115621DC63A8700A4DC76 /* MainFlowController.swift */; };
-		F0A115651DC67F8400A4DC76 /* RadialGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115641DC67F8400A4DC76 /* RadialGradientView.swift */; };
 		F0A115761DC6863E00A4DC76 /* CGPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1156B1DC6863D00A4DC76 /* CGPoint+Extension.swift */; };
 		F0A115771DC6863E00A4DC76 /* CGRectLayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1156C1DC6863D00A4DC76 /* CGRectLayoutExtension.swift */; };
 		F0A115781DC6863E00A4DC76 /* CGSizeLayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1156D1DC6863D00A4DC76 /* CGSizeLayoutExtension.swift */; };
@@ -145,6 +144,7 @@
 		F0A115851DC68DF500A4DC76 /* ViewLifecycleObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115841DC68DF500A4DC76 /* ViewLifecycleObservable.swift */; };
 		F0A115871DC68E1D00A4DC76 /* ViewControllerTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115861DC68E1D00A4DC76 /* ViewControllerTransition.swift */; };
 		F0A115891DC6914100A4DC76 /* CrossFadePushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115881DC6914100A4DC76 /* CrossFadePushTransition.swift */; };
+		F0AFDA371E3D2A7000CCEE24 /* LicensePlateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AFDA361E3D2A7000CCEE24 /* LicensePlateView.swift */; };
 		F0D038561DD3AE0500E0085D /* FeedbackAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038471DD3AE0500E0085D /* FeedbackAssembly.swift */; };
 		F0D038571DD3AE0500E0085D /* FeedbackAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038481DD3AE0500E0085D /* FeedbackAssemblyImpl.swift */; };
 		F0D038581DD3AE0500E0085D /* FeedbackInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D0384A1DD3AE0500E0085D /* FeedbackInteractor.swift */; };
@@ -291,7 +291,6 @@
 		F0A1155D1DC637C600A4DC76 /* DisposeBagHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposeBagHolder.swift; sourceTree = "<group>"; };
 		F0A115601DC6385400A4DC76 /* RouterFocusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterFocusable.swift; path = Router/RouterFocusable.swift; sourceTree = "<group>"; };
 		F0A115621DC63A8700A4DC76 /* MainFlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
-		F0A115641DC67F8400A4DC76 /* RadialGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadialGradientView.swift; path = Dricom/Source/Presentation/Views/RadialGradientView.swift; sourceTree = SOURCE_ROOT; };
 		F0A1156B1DC6863D00A4DC76 /* CGPoint+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGPoint+Extension.swift"; path = "Core/Extensions/UIKit/CGPoint+Extension.swift"; sourceTree = "<group>"; };
 		F0A1156C1DC6863D00A4DC76 /* CGRectLayoutExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGRectLayoutExtension.swift; path = Core/Extensions/UIKit/CGRectLayoutExtension.swift; sourceTree = "<group>"; };
 		F0A1156D1DC6863D00A4DC76 /* CGSizeLayoutExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGSizeLayoutExtension.swift; path = Core/Extensions/UIKit/CGSizeLayoutExtension.swift; sourceTree = "<group>"; };
@@ -306,6 +305,7 @@
 		F0A115841DC68DF500A4DC76 /* ViewLifecycleObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewLifecycleObservable.swift; path = Dricom/Source/Presentation/ViewControllers/ViewLifecycleObservable.swift; sourceTree = SOURCE_ROOT; };
 		F0A115861DC68E1D00A4DC76 /* ViewControllerTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerTransition.swift; path = Dricom/Source/Presentation/Transitions/ViewControllerTransition.swift; sourceTree = SOURCE_ROOT; };
 		F0A115881DC6914100A4DC76 /* CrossFadePushTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CrossFadePushTransition.swift; path = Dricom/Source/Presentation/Transitions/CrossFadePushTransition.swift; sourceTree = SOURCE_ROOT; };
+		F0AFDA361E3D2A7000CCEE24 /* LicensePlateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LicensePlateView.swift; path = Dricom/Source/Presentation/Views/LicensePlateView.swift; sourceTree = SOURCE_ROOT; };
 		F0D038471DD3AE0500E0085D /* FeedbackAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackAssembly.swift; sourceTree = "<group>"; };
 		F0D038481DD3AE0500E0085D /* FeedbackAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackAssemblyImpl.swift; sourceTree = "<group>"; };
 		F0D0384A1DD3AE0500E0085D /* FeedbackInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackInteractor.swift; sourceTree = "<group>"; };
@@ -1027,9 +1027,9 @@
 				F076D6761DCF762700E3ED0F /* ContentScrollingView.swift */,
 				F076D67C1DCF8F4900E3ED0F /* DoneButtonAccessoryView.swift */,
 				F08BE1A51DC9326A00243B56 /* ImageButtonView.swift */,
-				F0A115641DC67F8400A4DC76 /* RadialGradientView.swift */,
 				F0823DB91DE9DA10007BD04D /* StandardPreloaderView.swift */,
 				F076D67A1DCF87D300E3ED0F /* TextFieldView.swift */,
+				F0AFDA361E3D2A7000CCEE24 /* LicensePlateView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1296,6 +1296,7 @@
 				F0823DB71DE9D929007BD04D /* ActivityDisplayable.swift in Sources */,
 				F076D6411DCF67F200E3ED0F /* LoginAssemblyImpl.swift in Sources */,
 				F05790D61E32A72D004FBD4A /* UIColor+Styleguide.swift in Sources */,
+				F0AFDA371E3D2A7000CCEE24 /* LicensePlateView.swift in Sources */,
 				F021D6A21DD7A61900F50091 /* MailComposerAssemblyImpl.swift in Sources */,
 				F076D67F1DCFAEF400E3ED0F /* ViewControllerPosition.swift in Sources */,
 				F076D6551DCF6D2000E3ED0F /* MessageDisplayable.swift in Sources */,
@@ -1363,7 +1364,6 @@
 				F021D6E71DD8925B00F50091 /* CameraModule.swift in Sources */,
 				F021D6C71DD7B99300F50091 /* RegisterViewController.swift in Sources */,
 				F0D038601DD3AE0500E0085D /* FeedbackViewInput.swift in Sources */,
-				F0A115651DC67F8400A4DC76 /* RadialGradientView.swift in Sources */,
 				F076D6791DCF7DD200E3ED0F /* UIView+FindFirstResponder.swift in Sources */,
 				F076D66C1DCF6F3800E3ED0F /* DictionaryExtensions.swift in Sources */,
 				F076D66E1DCF6F3800E3ED0F /* OptionalsExtensions.swift in Sources */,
