@@ -8,6 +8,10 @@ final class AssemblyFactoryImpl: AssemblyFactory {
     }
     
     // MARK: - AssemblyFactory
+    func appStarterAssembly() -> AppStarterAssembly {
+        return AppStarterAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
+    }
+    
     func applicationAssembly() -> ApplicationAssembly {
         return ApplicationAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
     }

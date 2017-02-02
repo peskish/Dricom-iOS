@@ -1,4 +1,5 @@
 protocol AssemblyFactory: class {
+    func appStarterAssembly() -> AppStarterAssembly
     func applicationAssembly() -> ApplicationAssembly
     func loginAssembly() -> LoginAssembly
     func feedbackAssembly() -> FeedbackAssembly

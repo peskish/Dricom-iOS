@@ -44,6 +44,16 @@
 		F021D7A51DDF1B3D00F50091 /* RegisterInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D7A41DDF1B3D00F50091 /* RegisterInputField.swift */; };
 		F021D7A71DE0DF3500F50091 /* ContentScrollingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D7A61DE0DF3500F50091 /* ContentScrollingViewController.swift */; };
 		F021D7A91DE0E63F00F50091 /* RegisterDataValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D7A81DE0E63F00F50091 /* RegisterDataValidationService.swift */; };
+		F0322AFE1E43CB4100F3CD47 /* AppStarterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AEF1E43CB4100F3CD47 /* AppStarterAssembly.swift */; };
+		F0322AFF1E43CB4100F3CD47 /* AppStarterAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AF01E43CB4100F3CD47 /* AppStarterAssemblyImpl.swift */; };
+		F0322B001E43CB4100F3CD47 /* AppStarterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AF21E43CB4100F3CD47 /* AppStarterInteractor.swift */; };
+		F0322B011E43CB4100F3CD47 /* AppStarterInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AF31E43CB4100F3CD47 /* AppStarterInteractorImpl.swift */; };
+		F0322B031E43CB4100F3CD47 /* AppStarterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AF61E43CB4100F3CD47 /* AppStarterPresenter.swift */; };
+		F0322B041E43CB4100F3CD47 /* AppStarterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AF81E43CB4100F3CD47 /* AppStarterRouter.swift */; };
+		F0322B051E43CB4100F3CD47 /* AppStarterRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AF91E43CB4100F3CD47 /* AppStarterRouterImpl.swift */; };
+		F0322B061E43CB4100F3CD47 /* AppStarterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AFB1E43CB4100F3CD47 /* AppStarterView.swift */; };
+		F0322B071E43CB4100F3CD47 /* AppStarterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AFC1E43CB4100F3CD47 /* AppStarterViewController.swift */; };
+		F0322B081E43CB4100F3CD47 /* AppStarterViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AFD1E43CB4100F3CD47 /* AppStarterViewInput.swift */; };
 		F05790C61E32A442004FBD4A /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790BC1E32A442004FBD4A /* Rubik-Black.ttf */; };
 		F05790C71E32A442004FBD4A /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790BD1E32A442004FBD4A /* Rubik-BlackItalic.ttf */; };
 		F05790C81E32A442004FBD4A /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790BE1E32A442004FBD4A /* Rubik-Bold.ttf */; };
@@ -129,7 +139,6 @@
 		F0A1155E1DC637C600A4DC76 /* DisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1155C1DC637C600A4DC76 /* DisposeBag.swift */; };
 		F0A1155F1DC637C600A4DC76 /* DisposeBagHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1155D1DC637C600A4DC76 /* DisposeBagHolder.swift */; };
 		F0A115611DC6385400A4DC76 /* RouterFocusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115601DC6385400A4DC76 /* RouterFocusable.swift */; };
-		F0A115631DC63A8700A4DC76 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115621DC63A8700A4DC76 /* MainFlowController.swift */; };
 		F0A115761DC6863E00A4DC76 /* CGPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1156B1DC6863D00A4DC76 /* CGPoint+Extension.swift */; };
 		F0A115771DC6863E00A4DC76 /* CGRectLayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1156C1DC6863D00A4DC76 /* CGRectLayoutExtension.swift */; };
 		F0A115781DC6863E00A4DC76 /* CGSizeLayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1156D1DC6863D00A4DC76 /* CGSizeLayoutExtension.swift */; };
@@ -203,6 +212,16 @@
 		F021D7A41DDF1B3D00F50091 /* RegisterInputField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterInputField.swift; sourceTree = "<group>"; };
 		F021D7A61DE0DF3500F50091 /* ContentScrollingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentScrollingViewController.swift; path = Dricom/Source/Presentation/ViewControllers/ContentScrollingViewController.swift; sourceTree = SOURCE_ROOT; };
 		F021D7A81DE0E63F00F50091 /* RegisterDataValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterDataValidationService.swift; path = Dricom/Source/VIPER/Services/Validation/RegisterDataValidationService.swift; sourceTree = SOURCE_ROOT; };
+		F0322AEF1E43CB4100F3CD47 /* AppStarterAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterAssembly.swift; sourceTree = "<group>"; };
+		F0322AF01E43CB4100F3CD47 /* AppStarterAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterAssemblyImpl.swift; sourceTree = "<group>"; };
+		F0322AF21E43CB4100F3CD47 /* AppStarterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterInteractor.swift; sourceTree = "<group>"; };
+		F0322AF31E43CB4100F3CD47 /* AppStarterInteractorImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterInteractorImpl.swift; sourceTree = "<group>"; };
+		F0322AF61E43CB4100F3CD47 /* AppStarterPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterPresenter.swift; sourceTree = "<group>"; };
+		F0322AF81E43CB4100F3CD47 /* AppStarterRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterRouter.swift; sourceTree = "<group>"; };
+		F0322AF91E43CB4100F3CD47 /* AppStarterRouterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterRouterImpl.swift; sourceTree = "<group>"; };
+		F0322AFB1E43CB4100F3CD47 /* AppStarterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterView.swift; sourceTree = "<group>"; };
+		F0322AFC1E43CB4100F3CD47 /* AppStarterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterViewController.swift; sourceTree = "<group>"; };
+		F0322AFD1E43CB4100F3CD47 /* AppStarterViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterViewInput.swift; sourceTree = "<group>"; };
 		F05790BC1E32A442004FBD4A /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Black.ttf"; sourceTree = "<group>"; };
 		F05790BD1E32A442004FBD4A /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
 		F05790BE1E32A442004FBD4A /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
@@ -290,7 +309,6 @@
 		F0A1155C1DC637C600A4DC76 /* DisposeBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposeBag.swift; sourceTree = "<group>"; };
 		F0A1155D1DC637C600A4DC76 /* DisposeBagHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposeBagHolder.swift; sourceTree = "<group>"; };
 		F0A115601DC6385400A4DC76 /* RouterFocusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterFocusable.swift; path = Router/RouterFocusable.swift; sourceTree = "<group>"; };
-		F0A115621DC63A8700A4DC76 /* MainFlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
 		F0A1156B1DC6863D00A4DC76 /* CGPoint+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGPoint+Extension.swift"; path = "Core/Extensions/UIKit/CGPoint+Extension.swift"; sourceTree = "<group>"; };
 		F0A1156C1DC6863D00A4DC76 /* CGRectLayoutExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGRectLayoutExtension.swift; path = Core/Extensions/UIKit/CGRectLayoutExtension.swift; sourceTree = "<group>"; };
 		F0A1156D1DC6863D00A4DC76 /* CGSizeLayoutExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGSizeLayoutExtension.swift; path = Core/Extensions/UIKit/CGSizeLayoutExtension.swift; sourceTree = "<group>"; };
@@ -519,6 +537,63 @@
 				F021D7A81DE0E63F00F50091 /* RegisterDataValidationService.swift */,
 			);
 			name = Validation;
+			sourceTree = "<group>";
+		};
+		F0322AED1E43CB4100F3CD47 /* AppStarter */ = {
+			isa = PBXGroup;
+			children = (
+				F0322AEE1E43CB4100F3CD47 /* Assembly */,
+				F0322AF11E43CB4100F3CD47 /* Interactor */,
+				F0322AF41E43CB4100F3CD47 /* Presenter */,
+				F0322AF71E43CB4100F3CD47 /* Router */,
+				F0322AFA1E43CB4100F3CD47 /* View */,
+			);
+			path = AppStarter;
+			sourceTree = "<group>";
+		};
+		F0322AEE1E43CB4100F3CD47 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				F0322AEF1E43CB4100F3CD47 /* AppStarterAssembly.swift */,
+				F0322AF01E43CB4100F3CD47 /* AppStarterAssemblyImpl.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		F0322AF11E43CB4100F3CD47 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				F0322AF21E43CB4100F3CD47 /* AppStarterInteractor.swift */,
+				F0322AF31E43CB4100F3CD47 /* AppStarterInteractorImpl.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		F0322AF41E43CB4100F3CD47 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F0322AF61E43CB4100F3CD47 /* AppStarterPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F0322AF71E43CB4100F3CD47 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F0322AF81E43CB4100F3CD47 /* AppStarterRouter.swift */,
+				F0322AF91E43CB4100F3CD47 /* AppStarterRouterImpl.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F0322AFA1E43CB4100F3CD47 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0322AFB1E43CB4100F3CD47 /* AppStarterView.swift */,
+				F0322AFC1E43CB4100F3CD47 /* AppStarterViewController.swift */,
+				F0322AFD1E43CB4100F3CD47 /* AppStarterViewInput.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F05790BA1E32A442004FBD4A /* Fonts */ = {
@@ -797,6 +872,7 @@
 			isa = PBXGroup;
 			children = (
 				F09209B11DC1502B0057302F /* Common */,
+				F0322AED1E43CB4100F3CD47 /* AppStarter */,
 				F09209901DC14A7F0057302F /* Application */,
 				F021D6D21DD8925B00F50091 /* Camera */,
 				F0D038451DD3AE0500E0085D /* Feedback */,
@@ -842,7 +918,6 @@
 			isa = PBXGroup;
 			children = (
 				F09209991DC14A7F0057302F /* ApplicationPresenter.swift */,
-				F0A115621DC63A8700A4DC76 /* MainFlowController.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -1313,12 +1388,14 @@
 				F08BE1A61DC9326A00243B56 /* ImageButtonView.swift in Sources */,
 				F0A115611DC6385400A4DC76 /* RouterFocusable.swift in Sources */,
 				F076D6431DCF67F200E3ED0F /* LoginInteractorImpl.swift in Sources */,
+				F0322AFF1E43CB4100F3CD47 /* AppStarterAssemblyImpl.swift in Sources */,
 				F0A1152D1DC62CB300A4DC76 /* RegistrationService.swift in Sources */,
 				F09209A61DC14A7F0057302F /* ApplicationPresenter.swift in Sources */,
 				F076D6581DCF6E2F00E3ED0F /* StandardAlert.swift in Sources */,
 				F0D0385A1DD3AE0500E0085D /* FeedbackModule.swift in Sources */,
 				F0A115801DC6863E00A4DC76 /* UIView+Size.swift in Sources */,
 				F021D6A51DD7A6E300F50091 /* MailComposeDelegateService.swift in Sources */,
+				F0322B071E43CB4100F3CD47 /* AppStarterViewController.swift in Sources */,
 				F0A1157F1DC6863E00A4DC76 /* UIView+Resizing.swift in Sources */,
 				F021D6CF1DD8914200F50091 /* RouterCameraShowable.swift in Sources */,
 				F021D7A51DDF1B3D00F50091 /* RegisterInputField.swift in Sources */,
@@ -1329,6 +1406,7 @@
 				F021D7A71DE0DF3500F50091 /* ContentScrollingViewController.swift in Sources */,
 				F0F434131DD11A7100F278BD /* AuthorizationService.swift in Sources */,
 				F021D69B1DD7A43A00F50091 /* SupportMessageData.swift in Sources */,
+				F0322B031E43CB4100F3CD47 /* AppStarterPresenter.swift in Sources */,
 				F09209821DC146300057302F /* AppDelegate.swift in Sources */,
 				F0F434081DD10CAB00F278BD /* AlertDisplayable.swift in Sources */,
 				F021D6E91DD8925B00F50091 /* CameraRouter.swift in Sources */,
@@ -1342,6 +1420,7 @@
 				F0D038561DD3AE0500E0085D /* FeedbackAssembly.swift in Sources */,
 				F09209B61DC150CB0057302F /* AssemblyFactoryImpl.swift in Sources */,
 				F0823DD01DE9EEA2007BD04D /* MainPageInteractor.swift in Sources */,
+				F0322B061E43CB4100F3CD47 /* AppStarterView.swift in Sources */,
 				F0A1157C1DC6863E00A4DC76 /* UIImageExtension.swift in Sources */,
 				F0F434111DD119EE00F278BD /* ViewDebugAuthorizationService.swift in Sources */,
 				F0A1155E1DC637C600A4DC76 /* DisposeBag.swift in Sources */,
@@ -1353,6 +1432,8 @@
 				F05790D71E32A72D004FBD4A /* UIFont+Styleguide.swift in Sources */,
 				F021D6E51DD8925B00F50091 /* CameraInteractor.swift in Sources */,
 				F076D66F1DCF6F3800E3ED0F /* RangeExtension.swift in Sources */,
+				F0322B001E43CB4100F3CD47 /* AppStarterInteractor.swift in Sources */,
+				F0322AFE1E43CB4100F3CD47 /* AppStarterAssembly.swift in Sources */,
 				F0A1155F1DC637C600A4DC76 /* DisposeBagHolder.swift in Sources */,
 				F09209A21DC14A7F0057302F /* ApplicationAssemblyImpl.swift in Sources */,
 				F0A115891DC6914100A4DC76 /* CrossFadePushTransition.swift in Sources */,
@@ -1381,8 +1462,10 @@
 				F076D6401DCF67F200E3ED0F /* LoginAssembly.swift in Sources */,
 				F021D6C41DD7B99300F50091 /* RegisterRouter.swift in Sources */,
 				F021D6C81DD7B99300F50091 /* RegisterViewInput.swift in Sources */,
+				F0322B011E43CB4100F3CD47 /* AppStarterInteractorImpl.swift in Sources */,
 				F076D66B1DCF6F3800E3ED0F /* CollectionsExtensions.swift in Sources */,
 				F0823DD31DE9EEA2007BD04D /* MainPagePresenter.swift in Sources */,
+				F0322B041E43CB4100F3CD47 /* AppStarterRouter.swift in Sources */,
 				F076D64C1DCF684A00E3ED0F /* ModuleFocusable.swift in Sources */,
 				F021D7A91DE0E63F00F50091 /* RegisterDataValidationService.swift in Sources */,
 				F021D6E61DD8925B00F50091 /* CameraInteractorImpl.swift in Sources */,
@@ -1419,18 +1502,19 @@
 				F021D6EA1DD8925B00F50091 /* CameraRouterImpl.swift in Sources */,
 				F0A115381DC630DD00A4DC76 /* ViewDebugServiceFactory.swift in Sources */,
 				F076D6531DCF6CFB00E3ED0F /* ModuleDismissable.swift in Sources */,
+				F0322B051E43CB4100F3CD47 /* AppStarterRouterImpl.swift in Sources */,
 				F021D6EF1DDDB4E600F50091 /* CameraPreviewViewController.swift in Sources */,
 				F076D64A1DCF67F200E3ED0F /* LoginViewInput.swift in Sources */,
 				F021D6C61DD7B99300F50091 /* RegisterView.swift in Sources */,
 				F0A115771DC6863E00A4DC76 /* CGRectLayoutExtension.swift in Sources */,
 				F0D0385C1DD3AE0500E0085D /* FeedbackRouter.swift in Sources */,
-				F0A115631DC63A8700A4DC76 /* MainFlowController.swift in Sources */,
 				F0A115781DC6863E00A4DC76 /* CGSizeLayoutExtension.swift in Sources */,
 				F076D6511DCF6A0000E3ED0F /* RouterDismissable.swift in Sources */,
 				F021D6EC1DD8925B00F50091 /* CameraViewController.swift in Sources */,
 				F0A1157B1DC6863E00A4DC76 /* UIEdgeInsetsLayoutExtension.swift in Sources */,
 				F0F4340B1DD10CC500F278BD /* WindowWaiter.swift in Sources */,
 				F08BE1A41DC926B600243B56 /* SpecMargins.swift in Sources */,
+				F0322B081E43CB4100F3CD47 /* AppStarterViewInput.swift in Sources */,
 				F08BE1A21DC9265000243B56 /* ActionButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
