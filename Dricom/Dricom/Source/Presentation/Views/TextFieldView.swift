@@ -16,6 +16,8 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
         textField.delegate = self
         textField.returnKeyType = .done
         textField.clearButtonMode = .whileEditing
+        textField.autocorrectionType = .no
+        textField.autocapitalizationType = .none
         textField.addTarget(self, action: #selector(textFieldDidChangeValue(_:)), for: .editingChanged)
         addSubview(textField)
         
@@ -32,8 +34,6 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
         textField.textColor = .drcSlate
         textField.placeholderNormalFontScale = 1
         textField.placeholderEditingFontScale = 0.75
-        textField.placeholderEditingAlpha = 1
-        textField.alpha = 0.5
     }
     
     required init?(coder aDecoder: NSCoder) {

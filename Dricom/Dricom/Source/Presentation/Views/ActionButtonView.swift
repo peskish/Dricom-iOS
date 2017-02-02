@@ -71,6 +71,11 @@ class ActionButtonView: UIView {
         button.setTitle(title, for: .normal)
     }
     
+    func setImage(_ image: UIImage, forState state: UIControlState) {
+        button.setImage(image, for: state)
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 12)
+    }
+    
     // - MARK: Private
     private func setColorScheme(_ scheme: ActionButtonColorScheme.Type) {
         button.setTitleColor(scheme.title, for: .normal)

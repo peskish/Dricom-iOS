@@ -25,6 +25,8 @@ final class LicensePlateView: UIView {
         addSubview(regionCode)
         addSubview(country)
         addSubview(flag)
+        
+        setupStyle()
     }
     
     required init?(coder aDecoder: NSCoder) {

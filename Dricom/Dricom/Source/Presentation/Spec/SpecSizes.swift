@@ -10,6 +10,6 @@ final class SpecSizes {
     static let actionButtonHeight: CGFloat = 45
     static let inputFieldHeight: CGFloat = 55
     static let socialFeedbackButtonSize = CGSize(width: 60, height: 60)
-    static let avatarImageSize = CGSize(width: 102*scale, height: 102*scale)
+    static let avatarImageSize = CGSize(width: 130, height: 130)
     static let smallAvatarImageSize = CGSize(width: 44*scale, height: 44*scale)
 }

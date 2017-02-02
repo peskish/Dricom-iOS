@@ -11,8 +11,6 @@ final class MainPageView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
     
     let preloader = StandardPreloaderView(style: .dark)
     
-    private let favoriteUserAvatarSize = SpecSizes.smallAvatarImageSize/SpecSizes.scale
-    
     // MARK: - Init
     init() {
         super.init(frame: .zero)
@@ -22,6 +20,8 @@ final class MainPageView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
         addSubview(licenceView)
         addSubview(licenseSearchInputField)
         addSubview(licenseSearchButton)
+        
+        licenseSearchButton.setImage(#imageLiteral(resourceName: "Loupe"), forState: .normal)
         
         setStyle()
     }
@@ -34,7 +34,7 @@ final class MainPageView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
     private func setStyle() {
         backgroundColor = UIColor.drcWhite
         
-        avatarImageView.size = #imageLiteral(resourceName: "Avatar").size
+        avatarImageView.size = SpecSizes.avatarImageSize
         avatarImageView.layer.cornerRadius = avatarImageView.size.height/2
         avatarImageView.layer.masksToBounds = true
         
@@ -60,8 +60,8 @@ final class MainPageView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
         licenceView.centerX = bounds.centerX
         
         licenseSearchButton.layout(
-            left: bounds.left + SpecMargins.contentSidePadding,
-            right: bounds.right - SpecMargins.contentSidePadding,
+            left: bounds.left,
+            right: bounds.right,
             bottom: bounds.bottom - 35,
             height: SpecSizes.actionButtonHeight
         )

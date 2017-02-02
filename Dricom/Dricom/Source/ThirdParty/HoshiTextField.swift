@@ -84,6 +84,7 @@ import UIKit
     var borderThickness: (active: CGFloat, inactive: CGFloat) = (active: 2, inactive: 0.5)
     var placeholderInsets = CGPoint(x: 0, y: 6)
     var textFieldInsets = CGPoint(x: 0, y: 12)
+    var placeholderNormalAlpha: CGFloat = 0.5
     var placeholderEditingAlpha: CGFloat = 0.5
     
     private let inactiveBorderLayer = CALayer()
@@ -142,7 +143,7 @@ import UIKit
                 }
                 
                 self.layoutPlaceholderInTextRect()
-                self.placeholderLabel.alpha = 1
+                self.placeholderLabel.alpha = self.placeholderNormalAlpha
             }), completion: { _ in
                 self.animationCompletionHandler?(.textDisplay)
             })
@@ -166,6 +167,8 @@ import UIKit
         placeholderLabel.textColor = placeholderColor
         placeholderLabel.sizeToFit()
         layoutPlaceholderInTextRect()
+        
+        placeholderLabel.alpha = text!.isEmpty ? placeholderNormalAlpha : placeholderEditingAlpha
         
         if isFirstResponder || text!.isNotEmpty {
             animateViewsForTextEntry()

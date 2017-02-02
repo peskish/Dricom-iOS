@@ -40,9 +40,9 @@ final class MainPagePresenter {
             
             self?.view?.setLicenseParts(
                 LicenseParts(
-                    firstLetter: "A",
+                    firstLetter: "A ",
                     numberPart: "245",
-                    restLetters: "MN",
+                    restLetters: " MN",
                     regionCode: "197",
                     countryCode: "RUS"
                 )
