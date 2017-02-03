@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9B2644558852E66D87B22CAF /* Pods_Dricom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FE1AE5ED782AA0B3DB9DB8 /* Pods_Dricom.framework */; };
+		F0128B741E45156C008E6668 /* ApplicationTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B731E45156C008E6668 /* ApplicationTabBarController.swift */; };
+		F0128B771E4515C4008E6668 /* ApplicationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B761E4515C4008E6668 /* ApplicationViewInput.swift */; };
+		F0128B791E45182A008E6668 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B781E45182A008E6668 /* ViewControllerExtensions.swift */; };
+		F0128B7C1E451946008E6668 /* IosVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B7B1E451946008E6668 /* IosVersion.swift */; };
 		F01398E51DF43D8300E4F188 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01398E41DF43D8300E4F188 /* User.swift */; };
 		F021D69B1DD7A43A00F50091 /* SupportMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D69A1DD7A43A00F50091 /* SupportMessageData.swift */; };
 		F021D6A21DD7A61900F50091 /* MailComposerAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6A01DD7A61900F50091 /* MailComposerAssemblyImpl.swift */; };
@@ -51,9 +55,6 @@
 		F0322B031E43CB4100F3CD47 /* AppStarterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AF61E43CB4100F3CD47 /* AppStarterPresenter.swift */; };
 		F0322B041E43CB4100F3CD47 /* AppStarterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AF81E43CB4100F3CD47 /* AppStarterRouter.swift */; };
 		F0322B051E43CB4100F3CD47 /* AppStarterRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AF91E43CB4100F3CD47 /* AppStarterRouterImpl.swift */; };
-		F0322B061E43CB4100F3CD47 /* AppStarterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AFB1E43CB4100F3CD47 /* AppStarterView.swift */; };
-		F0322B071E43CB4100F3CD47 /* AppStarterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AFC1E43CB4100F3CD47 /* AppStarterViewController.swift */; };
-		F0322B081E43CB4100F3CD47 /* AppStarterViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AFD1E43CB4100F3CD47 /* AppStarterViewInput.swift */; };
 		F05790C61E32A442004FBD4A /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790BC1E32A442004FBD4A /* Rubik-Black.ttf */; };
 		F05790C71E32A442004FBD4A /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790BD1E32A442004FBD4A /* Rubik-BlackItalic.ttf */; };
 		F05790C81E32A442004FBD4A /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790BE1E32A442004FBD4A /* Rubik-Bold.ttf */; };
@@ -176,6 +177,10 @@
 		38FE1AE5ED782AA0B3DB9DB8 /* Pods_Dricom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dricom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CEAD0BF03CF89749F61C8F2 /* Pods-Dricom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dricom.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dricom/Pods-Dricom.release.xcconfig"; sourceTree = "<group>"; };
 		4DB1949EEFE9AB53D8BFFE3D /* Pods-Dricom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dricom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dricom/Pods-Dricom.debug.xcconfig"; sourceTree = "<group>"; };
+		F0128B731E45156C008E6668 /* ApplicationTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationTabBarController.swift; path = Dricom/Source/VIPER/Application/View/ApplicationTabBarController.swift; sourceTree = SOURCE_ROOT; };
+		F0128B761E4515C4008E6668 /* ApplicationViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationViewInput.swift; path = Dricom/Source/VIPER/Application/View/ApplicationViewInput.swift; sourceTree = SOURCE_ROOT; };
+		F0128B781E45182A008E6668 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerExtensions.swift; path = Core/Extensions/UIKit/ViewControllerExtensions.swift; sourceTree = "<group>"; };
+		F0128B7B1E451946008E6668 /* IosVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IosVersion.swift; sourceTree = "<group>"; };
 		F01398E41DF43D8300E4F188 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F021D69A1DD7A43A00F50091 /* SupportMessageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportMessageData.swift; sourceTree = "<group>"; };
 		F021D6A01DD7A61900F50091 /* MailComposerAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailComposerAssemblyImpl.swift; sourceTree = "<group>"; };
@@ -219,9 +224,6 @@
 		F0322AF61E43CB4100F3CD47 /* AppStarterPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterPresenter.swift; sourceTree = "<group>"; };
 		F0322AF81E43CB4100F3CD47 /* AppStarterRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterRouter.swift; sourceTree = "<group>"; };
 		F0322AF91E43CB4100F3CD47 /* AppStarterRouterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterRouterImpl.swift; sourceTree = "<group>"; };
-		F0322AFB1E43CB4100F3CD47 /* AppStarterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterView.swift; sourceTree = "<group>"; };
-		F0322AFC1E43CB4100F3CD47 /* AppStarterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterViewController.swift; sourceTree = "<group>"; };
-		F0322AFD1E43CB4100F3CD47 /* AppStarterViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterViewInput.swift; sourceTree = "<group>"; };
 		F05790BC1E32A442004FBD4A /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Black.ttf"; sourceTree = "<group>"; };
 		F05790BD1E32A442004FBD4A /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
 		F05790BE1E32A442004FBD4A /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
@@ -361,6 +363,25 @@
 				3CEAD0BF03CF89749F61C8F2 /* Pods-Dricom.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F0128B751E451571008E6668 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0128B731E45156C008E6668 /* ApplicationTabBarController.swift */,
+				F0128B761E4515C4008E6668 /* ApplicationViewInput.swift */,
+			);
+			name = View;
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F0128B7A1E451946008E6668 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				F0128B7B1E451946008E6668 /* IosVersion.swift */,
+			);
+			name = Tools;
+			path = Core/Extensions/Tools;
 			sourceTree = "<group>";
 		};
 		F021D69E1DD7A61900F50091 /* MailComposer */ = {
@@ -546,7 +567,6 @@
 				F0322AF11E43CB4100F3CD47 /* Interactor */,
 				F0322AF41E43CB4100F3CD47 /* Presenter */,
 				F0322AF71E43CB4100F3CD47 /* Router */,
-				F0322AFA1E43CB4100F3CD47 /* View */,
 			);
 			path = AppStarter;
 			sourceTree = "<group>";
@@ -584,16 +604,6 @@
 				F0322AF91E43CB4100F3CD47 /* AppStarterRouterImpl.swift */,
 			);
 			path = Router;
-			sourceTree = "<group>";
-		};
-		F0322AFA1E43CB4100F3CD47 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				F0322AFB1E43CB4100F3CD47 /* AppStarterView.swift */,
-				F0322AFC1E43CB4100F3CD47 /* AppStarterViewController.swift */,
-				F0322AFD1E43CB4100F3CD47 /* AppStarterViewInput.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		F05790BA1E32A442004FBD4A /* Fonts */ = {
@@ -891,6 +901,7 @@
 				F09209911DC14A7F0057302F /* Assembly */,
 				F09209941DC14A7F0057302F /* Interactor */,
 				F09209971DC14A7F0057302F /* Presenter */,
+				F0128B751E451571008E6668 /* View */,
 				F092099A1DC14A7F0057302F /* Router */,
 			);
 			path = Application;
@@ -1114,6 +1125,7 @@
 			children = (
 				F05790D31E32A72D004FBD4A /* Styleguide */,
 				F076D65D1DCF6F3800E3ED0F /* SwiftAdditions */,
+				F0128B7A1E451946008E6668 /* Tools */,
 				F0A1156A1DC685BC00A4DC76 /* UIKit */,
 			);
 			name = Extensions;
@@ -1133,6 +1145,7 @@
 				F0A115741DC6863E00A4DC76 /* UIView+Resizing.swift */,
 				F0A115751DC6863E00A4DC76 /* UIView+Size.swift */,
 				F076D6781DCF7DD200E3ED0F /* UIView+FindFirstResponder.swift */,
+				F0128B781E45182A008E6668 /* ViewControllerExtensions.swift */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -1388,6 +1401,7 @@
 				F08BE1A61DC9326A00243B56 /* ImageButtonView.swift in Sources */,
 				F0A115611DC6385400A4DC76 /* RouterFocusable.swift in Sources */,
 				F076D6431DCF67F200E3ED0F /* LoginInteractorImpl.swift in Sources */,
+				F0128B741E45156C008E6668 /* ApplicationTabBarController.swift in Sources */,
 				F0322AFF1E43CB4100F3CD47 /* AppStarterAssemblyImpl.swift in Sources */,
 				F0A1152D1DC62CB300A4DC76 /* RegistrationService.swift in Sources */,
 				F09209A61DC14A7F0057302F /* ApplicationPresenter.swift in Sources */,
@@ -1395,7 +1409,6 @@
 				F0D0385A1DD3AE0500E0085D /* FeedbackModule.swift in Sources */,
 				F0A115801DC6863E00A4DC76 /* UIView+Size.swift in Sources */,
 				F021D6A51DD7A6E300F50091 /* MailComposeDelegateService.swift in Sources */,
-				F0322B071E43CB4100F3CD47 /* AppStarterViewController.swift in Sources */,
 				F0A1157F1DC6863E00A4DC76 /* UIView+Resizing.swift in Sources */,
 				F021D6CF1DD8914200F50091 /* RouterCameraShowable.swift in Sources */,
 				F021D7A51DDF1B3D00F50091 /* RegisterInputField.swift in Sources */,
@@ -1420,7 +1433,6 @@
 				F0D038561DD3AE0500E0085D /* FeedbackAssembly.swift in Sources */,
 				F09209B61DC150CB0057302F /* AssemblyFactoryImpl.swift in Sources */,
 				F0823DD01DE9EEA2007BD04D /* MainPageInteractor.swift in Sources */,
-				F0322B061E43CB4100F3CD47 /* AppStarterView.swift in Sources */,
 				F0A1157C1DC6863E00A4DC76 /* UIImageExtension.swift in Sources */,
 				F0F434111DD119EE00F278BD /* ViewDebugAuthorizationService.swift in Sources */,
 				F0A1155E1DC637C600A4DC76 /* DisposeBag.swift in Sources */,
@@ -1438,6 +1450,7 @@
 				F09209A21DC14A7F0057302F /* ApplicationAssemblyImpl.swift in Sources */,
 				F0A115891DC6914100A4DC76 /* CrossFadePushTransition.swift in Sources */,
 				F0A115851DC68DF500A4DC76 /* ViewLifecycleObservable.swift in Sources */,
+				F0128B7C1E451946008E6668 /* IosVersion.swift in Sources */,
 				F0823DD51DE9EEA2007BD04D /* MainPageRouterImpl.swift in Sources */,
 				F021D6E31DD8925B00F50091 /* CameraAssembly.swift in Sources */,
 				F021D6ED1DD8925B00F50091 /* CameraViewInput.swift in Sources */,
@@ -1472,6 +1485,7 @@
 				F076D6481DCF67F200E3ED0F /* LoginView.swift in Sources */,
 				F0D038581DD3AE0500E0085D /* FeedbackInteractor.swift in Sources */,
 				F021D6F31DDDB5E600F50091 /* CameraPreviewView.swift in Sources */,
+				F0128B771E4515C4008E6668 /* ApplicationViewInput.swift in Sources */,
 				F01398E51DF43D8300E4F188 /* User.swift in Sources */,
 				F076D6711DCF6F3800E3ED0F /* String+Pluralization.swift in Sources */,
 				F05790DB1E34DC5D004FBD4A /* HoshiTextField.swift in Sources */,
@@ -1498,6 +1512,7 @@
 				F09209A71DC14A7F0057302F /* ApplicationRouter.swift in Sources */,
 				F0A115331DC62DB600A4DC76 /* NetworkError.swift in Sources */,
 				F0823DD71DE9EEA2007BD04D /* MainPageViewController.swift in Sources */,
+				F0128B791E45182A008E6668 /* ViewControllerExtensions.swift in Sources */,
 				F021D6E81DD8925B00F50091 /* CameraPresenter.swift in Sources */,
 				F021D6EA1DD8925B00F50091 /* CameraRouterImpl.swift in Sources */,
 				F0A115381DC630DD00A4DC76 /* ViewDebugServiceFactory.swift in Sources */,
@@ -1514,7 +1529,6 @@
 				F0A1157B1DC6863E00A4DC76 /* UIEdgeInsetsLayoutExtension.swift in Sources */,
 				F0F4340B1DD10CC500F278BD /* WindowWaiter.swift in Sources */,
 				F08BE1A41DC926B600243B56 /* SpecMargins.swift in Sources */,
-				F0322B081E43CB4100F3CD47 /* AppStarterViewInput.swift in Sources */,
 				F08BE1A21DC9265000243B56 /* ActionButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

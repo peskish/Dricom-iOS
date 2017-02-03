@@ -1,11 +1,6 @@
 import Foundation
 
-protocol AppStarterModule {
-    func handleApplicationDidFinishLaunching()
-}
-
-
-final class AppStarterPresenter: AppStarterModule {
+final class AppStarterPresenter: ApplicationLaunchHandler {
     // MARK: - Private properties
     private let interactor: AppStarterInteractor
     private let router: AppStarterRouter
@@ -18,18 +13,6 @@ final class AppStarterPresenter: AppStarterModule {
         self.router = router
     }
     
-    // MARK: - Weak properties
-    weak var view: AppStarterViewInput? {
-        didSet {
-            setUpView()
-        }
-    }
-    
-    // MARK: - Private
-    private func setUpView() {
-        
-    }
-    
     // MARK: - ApplicationLaunchHandler
     func handleApplicationDidFinishLaunching() {
         // TODO: check saved session
@@ -40,14 +23,10 @@ final class AppStarterPresenter: AppStarterModule {
     func openLoginScreen() {
         router.showLogin { loginModule in
             loginModule.onFinish = { [weak self] result in
-                if case .finished(let user) = result {
-                    self?.openMainPage(user: user)
+                if case .finished = result {
+                    self?.router.dismissCurrentModule()
                 }
             }
         }
-    }
-    
-    func openMainPage(user: User) {
-        router.showMainPage(user: user)
     }
 }

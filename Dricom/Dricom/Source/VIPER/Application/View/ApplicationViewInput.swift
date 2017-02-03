@@ -1,0 +1,3 @@
+protocol ApplicationViewInput: class, DisposeBagHolder {
+    
+}

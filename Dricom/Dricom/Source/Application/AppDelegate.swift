@@ -9,22 +9,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var assemblyFactory: AssemblyFactory = {
         return AssemblyFactoryImpl(serviceFactory: self.serviceFactory)
     }()
-    var appStarterModule: AppStarterModule?
 
     // MARK: - UIApplicationDelegate
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
-        let appStarterAssembly = assemblyFactory.appStarterAssembly()
-        let module = appStarterAssembly.module()
-        appStarterModule = module.starterModule
+        let applicationAssembly = assemblyFactory.applicationAssembly()
+        let applicationModule = applicationAssembly.module()
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = module.rootViewController
+        window?.rootViewController = applicationModule.rootViewController
         window?.makeKeyAndVisible()
         
-        appStarterModule?.handleApplicationDidFinishLaunching()
+        applicationModule.applicationLaunchHandler.handleApplicationDidFinishLaunching()
         
         return true
     }

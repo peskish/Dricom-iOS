@@ -1,5 +1,5 @@
 import UIKit
 
 protocol ApplicationAssembly: class {
-    func module() -> UITabBarController
+    func module() -> (rootViewController: UIViewController, applicationLaunchHandler: ApplicationLaunchHandler)
 }

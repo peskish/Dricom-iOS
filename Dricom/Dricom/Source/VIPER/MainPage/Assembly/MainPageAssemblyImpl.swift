@@ -2,9 +2,9 @@ import UIKit
 
 final class MainPageAssemblyImpl: BaseAssembly, MainPageAssembly {
     // MARK: - MainPageAssembly
-    func module(user: User) -> UIViewController
+    func module() -> UIViewController
     {
-        let interactor = MainPageInteractorImpl(user: user)
+        let interactor = MainPageInteractorImpl()
         
         let viewController = MainPageViewController()
         

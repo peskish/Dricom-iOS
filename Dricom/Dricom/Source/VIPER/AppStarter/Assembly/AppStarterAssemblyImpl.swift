@@ -2,16 +2,12 @@ import UIKit
 
 final class AppStarterAssemblyImpl: BaseAssembly, AppStarterAssembly {
     // MARK: - AppStarterAssembly
-    func module() -> (rootViewController: UIViewController?, starterModule: AppStarterModule?) {
+    func module(disposeBag: DisposeBag)
+        -> (viewController: UIViewController, applicationLaunchHandler: ApplicationLaunchHandler) {
         // Splash screen
         let storyboard = UIStoryboard(name: "LaunchScreen", bundle: Bundle.main)
         
-        guard let viewController = storyboard.instantiateInitialViewController() else {
-            assertionFailure("Can't create splash view controller from LaunchScreen storyboard")
-            return (rootViewController: nil, starterModule: nil)
-        }
-        
-        let navigationController = UINavigationController(rootViewController: viewController)
+        let viewController = storyboard.instantiateInitialViewController()!
         
         let interactor = AppStarterInteractorImpl()
         let router = AppStarterRouterImpl(assemblyFactory: assemblyFactory, viewController: viewController)
@@ -20,6 +16,8 @@ final class AppStarterAssemblyImpl: BaseAssembly, AppStarterAssembly {
             router: router
         )
         
-        return (rootViewController: navigationController, starterModule: presenter)
+        disposeBag.addDisposable(presenter)
+        
+        return (viewController: viewController, applicationLaunchHandler: presenter)
     }
 }

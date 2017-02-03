@@ -80,5 +80,5 @@ class BaseViewController: UIViewController,
         super.viewDidDisappear(animated)
         
         onViewDidDisappear?()
-    }   
+    }
 }
