@@ -5,6 +5,7 @@ final class ApplicationRouterImpl: BaseRouter, ApplicationRouter {
     func showAppStarter(disposeBag: DisposeBag, completion: ((ApplicationLaunchHandler) -> ())?) {
         let assembly = assemblyFactory.appStarterAssembly()
         let module = assembly.module(disposeBag: disposeBag)
+        
         viewController?.present(module.viewController, animated: false) {
             completion?(module.applicationLaunchHandler)
         }

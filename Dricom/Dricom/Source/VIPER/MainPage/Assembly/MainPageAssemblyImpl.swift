@@ -22,6 +22,8 @@ final class MainPageAssemblyImpl: BaseAssembly, MainPageAssembly {
         
         presenter.view = viewController
         
+        let _ = viewController.view
+        
         return viewController
     }
 }

@@ -10,12 +10,10 @@ final class AppStarterRouterImpl: BaseRouter, AppStarterRouter {
         
         let assembly = assemblyFactory.loginAssembly()
         let targetViewController = assembly.module(configure: configure)
-        let _ = targetViewController.view
-        let transition = CrossFadePushTransition()
+        let navigationController = UINavigationController(rootViewController: targetViewController)
         
-        transition.animate(from: viewController, to: targetViewController) { [weak self] in
-            self?.viewController?.navigationController?.viewControllers = [targetViewController]
-            self?.viewController = targetViewController
-        }
+        navigationController.modalTransitionStyle = .crossDissolve
+        navigationController.modalPresentationStyle = .overCurrentContext
+        viewController.present(navigationController, animated: true, completion: nil)
     }
 }
