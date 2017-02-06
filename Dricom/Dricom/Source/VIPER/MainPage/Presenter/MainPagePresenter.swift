@@ -32,7 +32,7 @@ final class MainPagePresenter {
     
     private func fetchAndPresentData() {
         interactor.user { [weak self] user in
-            self?.view?.setName(user.userName)
+            self?.view?.setName(user.name)
             
             self?.view?.setAvatarImageUrl(
                 user.avatar.flatMap{ URL(string: $0) }

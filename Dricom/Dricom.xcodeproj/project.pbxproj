@@ -12,6 +12,8 @@
 		F0128B771E4515C4008E6668 /* ApplicationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B761E4515C4008E6668 /* ApplicationViewInput.swift */; };
 		F0128B791E45182A008E6668 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B781E45182A008E6668 /* ViewControllerExtensions.swift */; };
 		F0128B7C1E451946008E6668 /* IosVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B7B1E451946008E6668 /* IosVersion.swift */; };
+		F0128B851E49120C008E6668 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B841E49120C008E6668 /* NetworkRequest.swift */; };
+		F0128B881E491787008E6668 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B871E491787008E6668 /* LoginResponse.swift */; };
 		F01398E51DF43D8300E4F188 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01398E41DF43D8300E4F188 /* User.swift */; };
 		F021D69B1DD7A43A00F50091 /* SupportMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D69A1DD7A43A00F50091 /* SupportMessageData.swift */; };
 		F021D6A21DD7A61900F50091 /* MailComposerAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6A01DD7A61900F50091 /* MailComposerAssemblyImpl.swift */; };
@@ -181,6 +183,8 @@
 		F0128B761E4515C4008E6668 /* ApplicationViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationViewInput.swift; path = Dricom/Source/VIPER/Application/View/ApplicationViewInput.swift; sourceTree = SOURCE_ROOT; };
 		F0128B781E45182A008E6668 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerExtensions.swift; path = Core/Extensions/UIKit/ViewControllerExtensions.swift; sourceTree = "<group>"; };
 		F0128B7B1E451946008E6668 /* IosVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IosVersion.swift; sourceTree = "<group>"; };
+		F0128B841E49120C008E6668 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkRequest.swift; path = Core/Networking/Request/NetworkRequest.swift; sourceTree = "<group>"; };
+		F0128B871E491787008E6668 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginResponse.swift; path = Core/Networking/Response/LoginResponse.swift; sourceTree = "<group>"; };
 		F01398E41DF43D8300E4F188 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F021D69A1DD7A43A00F50091 /* SupportMessageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportMessageData.swift; sourceTree = "<group>"; };
 		F021D6A01DD7A61900F50091 /* MailComposerAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailComposerAssemblyImpl.swift; sourceTree = "<group>"; };
@@ -382,6 +386,22 @@
 			);
 			name = Tools;
 			path = Core/Extensions/Tools;
+			sourceTree = "<group>";
+		};
+		F0128B861E49176C008E6668 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				F0128B841E49120C008E6668 /* NetworkRequest.swift */,
+			);
+			name = Request;
+			sourceTree = "<group>";
+		};
+		F0128B891E491790008E6668 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				F0128B871E491787008E6668 /* LoginResponse.swift */,
+			);
+			name = Response;
 			sourceTree = "<group>";
 		};
 		F021D69E1DD7A61900F50091 /* MailComposer */ = {
@@ -1024,6 +1044,8 @@
 		F0A1151E1DC6284B00A4DC76 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				F0128B861E49176C008E6668 /* Request */,
+				F0128B891E491790008E6668 /* Response */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -1386,6 +1408,7 @@
 				F05790D61E32A72D004FBD4A /* UIColor+Styleguide.swift in Sources */,
 				F0AFDA371E3D2A7000CCEE24 /* LicensePlateView.swift in Sources */,
 				F021D6A21DD7A61900F50091 /* MailComposerAssemblyImpl.swift in Sources */,
+				F0128B881E491787008E6668 /* LoginResponse.swift in Sources */,
 				F076D67F1DCFAEF400E3ED0F /* ViewControllerPosition.swift in Sources */,
 				F076D6551DCF6D2000E3ED0F /* MessageDisplayable.swift in Sources */,
 				F076D6701DCF6F3800E3ED0F /* SequenceTypeExtensions.swift in Sources */,
@@ -1396,6 +1419,7 @@
 				F021D6BF1DD7B99300F50091 /* RegisterAssemblyImpl.swift in Sources */,
 				F0D0385B1DD3AE0500E0085D /* FeedbackPresenter.swift in Sources */,
 				F0823DD11DE9EEA2007BD04D /* MainPageInteractorImpl.swift in Sources */,
+				F0128B851E49120C008E6668 /* NetworkRequest.swift in Sources */,
 				F0A115161DC6229500A4DC76 /* BaseViewController.swift in Sources */,
 				F021D6C11DD7B99300F50091 /* RegisterInteractorImpl.swift in Sources */,
 				F08BE1A61DC9326A00243B56 /* ImageButtonView.swift in Sources */,
