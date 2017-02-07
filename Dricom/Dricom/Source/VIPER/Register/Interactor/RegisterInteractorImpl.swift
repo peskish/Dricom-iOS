@@ -82,14 +82,14 @@ final class RegisterInteractorImpl: RegisterInteractor {
         return registerDataValidationService.validatePassword(registerData.password)
     }
     
-    func registerUser(completion: @escaping (DataResult<Void, NetworkError>) -> ()) {
+    func registerUser(completion: @escaping (ApiResult<Void>) -> ()) {
         let registrationData = RegistrationData(
             avatarImageId: nil, // TODO: after image uploading implementation
-            name: registerData.name,
-            email: registerData.email,
-            phone: registerData.phone,
-            license: registerData.license,
-            password: registerData.password,
+            name: registerData.name ?? "",
+            email: registerData.email ?? "",
+            phone: registerData.phone ?? "",
+            license: registerData.license ?? "",
+            password: registerData.password ?? "",
             token: nil // TODO: device token holder
         )
         registrationService.register(with: registrationData, completion: completion)

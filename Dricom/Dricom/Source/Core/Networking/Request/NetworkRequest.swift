@@ -1,8 +1,9 @@
 import Alamofire
+import Unbox
 
 //MARK: - NetworkRequest -
 
-public protocol NetworkRequest {
+protocol NetworkRequest {
     associatedtype Result
     
     var version: Int { get }
@@ -10,57 +11,42 @@ public protocol NetworkRequest {
     var isAuthorizationRequired: Bool { get }
     var path: String { get }
     var params: [String: Any] { get }
-    var cachePolicy: NSURLRequest.CachePolicy { get }
+    var encoding: ParameterEncoding { get }
+    
+    var errorConverter: NetworkResponseConverterOf<ApiError> { get }
+    var resultConverter: NetworkResponseConverterOf<Result> { get }
 }
 
 //MARK: - Default declarations
 
 extension NetworkRequest {
-    public var cachePolicy: NSURLRequest.CachePolicy {
-        return .useProtocolCachePolicy
+    var encoding: ParameterEncoding {
+        return JSONEncoding.default
+    }
+    public var errorConverter: NetworkResponseConverterOf<ApiError> {
+        return NetworkResponseConverterOf(ApiErrorConverter())
     }
 }
 
-final class RegisterRequest: NetworkRequest {
-    typealias Result = LoginResponse
-
-    private let email: String
-    private let name: String
-    private let license: String
-    private let phone: String
-    private let password: String
-    private let token: String?
+final class ApiErrorConverter: NetworkResponseConverter {
+    typealias ConversionResult = ApiError
     
-    init(
-        email: String,
-        name: String,
-        license: String,
-        phone: String,
-        password: String,
-        token: String?
-        )
-    {
-        self.email = email
-        self.name = name
-        self.license = license
-        self.phone = phone
-        self.password = password
-        self.token = token
+    func decodeResponse(data: Data) -> ConversionResult? {
+        guard let json = data.toJSON?["error"] as? [String: Any] else {
+            return nil
+        }
+        return try? unbox(dictionary: json)
     }
-    
-    let version = 1
-    let httpMethod: HTTPMethod = .post
-    let isAuthorizationRequired = false
-    let path = "register"
-    
-    var params: [String: Any] {
-        var parameters = [String: Any]()
-        parameters["email"] = email
-        parameters["name"] = name
-        parameters["license"] = license
-        parameters["phone"] = phone
-        parameters["password"] = password
-        parameters["token"] = token
-        return parameters
+}
+
+extension NetworkRequest where Result: Unboxable {
+    var resultConverter: NetworkResponseConverterOf<Result> {
+        return NetworkResponseConverterOf(UnboxingNetworkResponseConverter<Result>())
+    }
+}
+
+extension NetworkRequest where Result: Collection, Result.Iterator.Element: Unboxable {
+    var resultConverter: NetworkResponseConverterOf<Result> {
+        return NetworkResponseConverterOf(CollectionUnboxingNetworkResponseConverter<Result>())
     }
 }

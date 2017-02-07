@@ -1,5 +1,5 @@
 // MARK: - ApiResult
-typealias ApiResult<T> = DataResult<T, NetworkError>
+typealias ApiResult<T> = DataResult<T, NetworkRequestError>
 
 // MARK: - DataResult
 

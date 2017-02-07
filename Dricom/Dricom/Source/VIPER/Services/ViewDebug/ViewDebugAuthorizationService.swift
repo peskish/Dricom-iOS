@@ -7,7 +7,11 @@ final class ViewDebugAuthorizationServiceImpl: AuthorizationService {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             if !self.errorShown {
                 self.errorShown = true
-                completion(.error(NetworkError(code: 403, message: "Неверная пара имя пользователя/пароль")))
+                completion(
+                    .error(
+                        .apiError(ApiError(code: 403, message: "Неверная пара имя пользователя/пароль"))
+                    )
+                )
             } else {
                 let user = User(
                     avatar: "http://www.indebioscoop.com/wp-content/afbeeldingen/2012/05/avatar.jpg",

@@ -1,6 +1,6 @@
 import Unbox
 
-struct User: Equatable {
+struct User: Equatable, Unboxable {
     // let userId: String // TODO: добавить с Ромой ID
     let avatar: String?
     let name: String?
@@ -33,7 +33,11 @@ struct User: Equatable {
     }
     
     // MARK: Unboxable
-//    init(unboxer: Unboxer) {
-//        
-//    }
+    init(unboxer: Unboxer) throws {
+        avatar = unboxer.unbox(key: "avatar")
+        name = unboxer.unbox(key: "name")
+        licence = unboxer.unbox(key: "licence")
+        phone = unboxer.unbox(key: "phone")
+        email = unboxer.unbox(key: "email")
+    }
 }

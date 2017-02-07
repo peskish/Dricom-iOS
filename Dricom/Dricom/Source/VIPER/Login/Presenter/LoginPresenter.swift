@@ -94,8 +94,8 @@ final class LoginPresenter:
             result.onData { user in
                 self?.onFinish?(.finished(user: user))
             }
-            result.onError { networkError in
-                self?.view?.showError(networkError: networkError)
+            result.onError { networkRequestError in
+                self?.view?.showError(networkRequestError)
             }
         }
     }

@@ -14,6 +14,14 @@
 		F0128B7C1E451946008E6668 /* IosVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B7B1E451946008E6668 /* IosVersion.swift */; };
 		F0128B851E49120C008E6668 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B841E49120C008E6668 /* NetworkRequest.swift */; };
 		F0128B881E491787008E6668 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B871E491787008E6668 /* LoginResponse.swift */; };
+		F0128B931E4A5260008E6668 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B921E4A5260008E6668 /* NetworkClient.swift */; };
+		F0128B961E4A566A008E6668 /* RegistrationServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B951E4A566A008E6668 /* RegistrationServiceImpl.swift */; };
+		F0128B981E4A56A9008E6668 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B971E4A56A9008E6668 /* RegisterRequest.swift */; };
+		F0128B9A1E4A599E008E6668 /* NetworkRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B991E4A599E008E6668 /* NetworkRequestError.swift */; };
+		F0128BA01E4A64C6008E6668 /* NetworkResponseConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B9D1E4A64C6008E6668 /* NetworkResponseConverter.swift */; };
+		F0128BA11E4A64C6008E6668 /* NetworkResponseConverterOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B9E1E4A64C6008E6668 /* NetworkResponseConverterOf.swift */; };
+		F0128BA21E4A64C6008E6668 /* OptionalNetworkResponseConverterOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B9F1E4A64C6008E6668 /* OptionalNetworkResponseConverterOf.swift */; };
+		F0128BA41E4A6592008E6668 /* Data+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128BA31E4A6592008E6668 /* Data+JSON.swift */; };
 		F01398E51DF43D8300E4F188 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01398E41DF43D8300E4F188 /* User.swift */; };
 		F021D69B1DD7A43A00F50091 /* SupportMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D69A1DD7A43A00F50091 /* SupportMessageData.swift */; };
 		F021D6A21DD7A61900F50091 /* MailComposerAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6A01DD7A61900F50091 /* MailComposerAssemblyImpl.swift */; };
@@ -136,7 +144,7 @@
 		F0A1152B1DC62C8000A4DC76 /* ViewDebugRegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1152A1DC62C8000A4DC76 /* ViewDebugRegistrationService.swift */; };
 		F0A1152D1DC62CB300A4DC76 /* RegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1152C1DC62CB300A4DC76 /* RegistrationService.swift */; };
 		F0A115301DC62D2000A4DC76 /* DataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1152F1DC62D2000A4DC76 /* DataResult.swift */; };
-		F0A115331DC62DB600A4DC76 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115321DC62DB600A4DC76 /* NetworkError.swift */; };
+		F0A115331DC62DB600A4DC76 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115321DC62DB600A4DC76 /* ApiError.swift */; };
 		F0A115351DC6309F00A4DC76 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115341DC6309F00A4DC76 /* ServiceFactory.swift */; };
 		F0A115381DC630DD00A4DC76 /* ViewDebugServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115371DC630DD00A4DC76 /* ViewDebugServiceFactory.swift */; };
 		F0A1155E1DC637C600A4DC76 /* DisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1155C1DC637C600A4DC76 /* DisposeBag.swift */; };
@@ -185,6 +193,14 @@
 		F0128B7B1E451946008E6668 /* IosVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IosVersion.swift; sourceTree = "<group>"; };
 		F0128B841E49120C008E6668 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkRequest.swift; path = Core/Networking/Request/NetworkRequest.swift; sourceTree = "<group>"; };
 		F0128B871E491787008E6668 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginResponse.swift; path = Core/Networking/Response/LoginResponse.swift; sourceTree = "<group>"; };
+		F0128B921E4A5260008E6668 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkClient.swift; path = Core/Networking/Client/NetworkClient.swift; sourceTree = "<group>"; };
+		F0128B951E4A566A008E6668 /* RegistrationServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationServiceImpl.swift; sourceTree = "<group>"; };
+		F0128B971E4A56A9008E6668 /* RegisterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterRequest.swift; path = Core/Networking/Request/RegisterRequest.swift; sourceTree = "<group>"; };
+		F0128B991E4A599E008E6668 /* NetworkRequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkRequestError.swift; path = Core/Networking/Error/NetworkRequestError.swift; sourceTree = "<group>"; };
+		F0128B9D1E4A64C6008E6668 /* NetworkResponseConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseConverter.swift; sourceTree = "<group>"; };
+		F0128B9E1E4A64C6008E6668 /* NetworkResponseConverterOf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseConverterOf.swift; sourceTree = "<group>"; };
+		F0128B9F1E4A64C6008E6668 /* OptionalNetworkResponseConverterOf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalNetworkResponseConverterOf.swift; sourceTree = "<group>"; };
+		F0128BA31E4A6592008E6668 /* Data+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+JSON.swift"; sourceTree = "<group>"; };
 		F01398E41DF43D8300E4F188 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F021D69A1DD7A43A00F50091 /* SupportMessageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportMessageData.swift; sourceTree = "<group>"; };
 		F021D6A01DD7A61900F50091 /* MailComposerAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailComposerAssemblyImpl.swift; sourceTree = "<group>"; };
@@ -309,7 +325,7 @@
 		F0A1152A1DC62C8000A4DC76 /* ViewDebugRegistrationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewDebugRegistrationService.swift; path = Dricom/Source/VIPER/Services/ViewDebug/ViewDebugRegistrationService.swift; sourceTree = SOURCE_ROOT; };
 		F0A1152C1DC62CB300A4DC76 /* RegistrationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationService.swift; path = Dricom/Source/VIPER/Services/Interface/RegistrationService.swift; sourceTree = SOURCE_ROOT; };
 		F0A1152F1DC62D2000A4DC76 /* DataResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataResult.swift; path = Core/Common/DataResult.swift; sourceTree = "<group>"; };
-		F0A115321DC62DB600A4DC76 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkError.swift; path = Core/Common/NetworkError.swift; sourceTree = "<group>"; };
+		F0A115321DC62DB600A4DC76 /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiError.swift; path = Core/Common/ApiError.swift; sourceTree = "<group>"; };
 		F0A115341DC6309F00A4DC76 /* ServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceFactory.swift; path = Dricom/Source/VIPER/Services/Factory/ServiceFactory.swift; sourceTree = SOURCE_ROOT; };
 		F0A115371DC630DD00A4DC76 /* ViewDebugServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewDebugServiceFactory.swift; path = Dricom/Source/VIPER/Services/Factory/ViewDebugServiceFactory.swift; sourceTree = SOURCE_ROOT; };
 		F0A1155C1DC637C600A4DC76 /* DisposeBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposeBag.swift; sourceTree = "<group>"; };
@@ -392,6 +408,7 @@
 			isa = PBXGroup;
 			children = (
 				F0128B841E49120C008E6668 /* NetworkRequest.swift */,
+				F0128B971E4A56A9008E6668 /* RegisterRequest.swift */,
 			);
 			name = Request;
 			sourceTree = "<group>";
@@ -402,6 +419,33 @@
 				F0128B871E491787008E6668 /* LoginResponse.swift */,
 			);
 			name = Response;
+			sourceTree = "<group>";
+		};
+		F0128B941E4A5264008E6668 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				F0128B921E4A5260008E6668 /* NetworkClient.swift */,
+			);
+			name = Client;
+			sourceTree = "<group>";
+		};
+		F0128B9B1E4A59A1008E6668 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				F0128B991E4A599E008E6668 /* NetworkRequestError.swift */,
+			);
+			name = Error;
+			sourceTree = "<group>";
+		};
+		F0128B9C1E4A64C6008E6668 /* Converter */ = {
+			isa = PBXGroup;
+			children = (
+				F0128B9D1E4A64C6008E6668 /* NetworkResponseConverter.swift */,
+				F0128B9E1E4A64C6008E6668 /* NetworkResponseConverterOf.swift */,
+				F0128B9F1E4A64C6008E6668 /* OptionalNetworkResponseConverterOf.swift */,
+			);
+			name = Converter;
+			path = Core/Networking/Converter;
 			sourceTree = "<group>";
 		};
 		F021D69E1DD7A61900F50091 /* MailComposer */ = {
@@ -753,6 +797,7 @@
 			children = (
 				F076D65E1DCF6F3800E3ED0F /* AppMetadataExtension.swift */,
 				F076D65F1DCF6F3800E3ED0F /* CollectionsExtensions.swift */,
+				F0128BA31E4A6592008E6668 /* Data+JSON.swift */,
 				F076D6601DCF6F3800E3ED0F /* DictionaryExtensions.swift */,
 				F076D6611DCF6F3800E3ED0F /* NumbersExtension.swift */,
 				F076D6741DCF6FC500E3ED0F /* NSURLPathComponents.swift */,
@@ -1044,6 +1089,9 @@
 		F0A1151E1DC6284B00A4DC76 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				F0128B941E4A5264008E6668 /* Client */,
+				F0128B9C1E4A64C6008E6668 /* Converter */,
+				F0128B9B1E4A59A1008E6668 /* Error */,
 				F0128B861E49176C008E6668 /* Request */,
 				F0128B891E491790008E6668 /* Response */,
 			);
@@ -1085,6 +1133,7 @@
 		F0A115291DC62C6900A4DC76 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				F0128B951E4A566A008E6668 /* RegistrationServiceImpl.swift */,
 			);
 			name = Network;
 			path = Dricom/Source/VIPER/Services/Network;
@@ -1103,7 +1152,7 @@
 			isa = PBXGroup;
 			children = (
 				F0A1152F1DC62D2000A4DC76 /* DataResult.swift */,
-				F0A115321DC62DB600A4DC76 /* NetworkError.swift */,
+				F0A115321DC62DB600A4DC76 /* ApiError.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -1406,6 +1455,7 @@
 				F0823DB71DE9D929007BD04D /* ActivityDisplayable.swift in Sources */,
 				F076D6411DCF67F200E3ED0F /* LoginAssemblyImpl.swift in Sources */,
 				F05790D61E32A72D004FBD4A /* UIColor+Styleguide.swift in Sources */,
+				F0128B961E4A566A008E6668 /* RegistrationServiceImpl.swift in Sources */,
 				F0AFDA371E3D2A7000CCEE24 /* LicensePlateView.swift in Sources */,
 				F021D6A21DD7A61900F50091 /* MailComposerAssemblyImpl.swift in Sources */,
 				F0128B881E491787008E6668 /* LoginResponse.swift in Sources */,
@@ -1439,10 +1489,13 @@
 				F021D6BE1DD7B99300F50091 /* RegisterAssembly.swift in Sources */,
 				F021D6CD1DD88D6100F50091 /* SpecSizes.swift in Sources */,
 				F09209A11DC14A7F0057302F /* ApplicationAssembly.swift in Sources */,
+				F0128BA21E4A64C6008E6668 /* OptionalNetworkResponseConverterOf.swift in Sources */,
 				F09209A31DC14A7F0057302F /* ApplicationInteractor.swift in Sources */,
 				F021D7A71DE0DF3500F50091 /* ContentScrollingViewController.swift in Sources */,
+				F0128BA41E4A6592008E6668 /* Data+JSON.swift in Sources */,
 				F0F434131DD11A7100F278BD /* AuthorizationService.swift in Sources */,
 				F021D69B1DD7A43A00F50091 /* SupportMessageData.swift in Sources */,
+				F0128B981E4A56A9008E6668 /* RegisterRequest.swift in Sources */,
 				F0322B031E43CB4100F3CD47 /* AppStarterPresenter.swift in Sources */,
 				F09209821DC146300057302F /* AppDelegate.swift in Sources */,
 				F0F434081DD10CAB00F278BD /* AlertDisplayable.swift in Sources */,
@@ -1453,6 +1506,7 @@
 				F0D0385F1DD3AE0500E0085D /* FeedbackViewController.swift in Sources */,
 				F0A1157D1DC6863E00A4DC76 /* UIView+Layout.swift in Sources */,
 				F021D6A31DD7A61900F50091 /* MailComposerAssembly.swift in Sources */,
+				F0128B9A1E4A599E008E6668 /* NetworkRequestError.swift in Sources */,
 				F076D67D1DCF8F4900E3ED0F /* DoneButtonAccessoryView.swift in Sources */,
 				F0D038561DD3AE0500E0085D /* FeedbackAssembly.swift in Sources */,
 				F09209B61DC150CB0057302F /* AssemblyFactoryImpl.swift in Sources */,
@@ -1461,6 +1515,7 @@
 				F0F434111DD119EE00F278BD /* ViewDebugAuthorizationService.swift in Sources */,
 				F0A1155E1DC637C600A4DC76 /* DisposeBag.swift in Sources */,
 				F0A1152B1DC62C8000A4DC76 /* ViewDebugRegistrationService.swift in Sources */,
+				F0128B931E4A5260008E6668 /* NetworkClient.swift in Sources */,
 				F0823DD41DE9EEA2007BD04D /* MainPageRouter.swift in Sources */,
 				F0D038591DD3AE0500E0085D /* FeedbackInteractorImpl.swift in Sources */,
 				F076D6421DCF67F200E3ED0F /* LoginInteractor.swift in Sources */,
@@ -1478,8 +1533,10 @@
 				F0823DD51DE9EEA2007BD04D /* MainPageRouterImpl.swift in Sources */,
 				F021D6E31DD8925B00F50091 /* CameraAssembly.swift in Sources */,
 				F021D6ED1DD8925B00F50091 /* CameraViewInput.swift in Sources */,
+				F0128BA11E4A64C6008E6668 /* NetworkResponseConverterOf.swift in Sources */,
 				F021D6C31DD7B99300F50091 /* RegisterPresenter.swift in Sources */,
 				F021D6E71DD8925B00F50091 /* CameraModule.swift in Sources */,
+				F0128BA01E4A64C6008E6668 /* NetworkResponseConverter.swift in Sources */,
 				F021D6C71DD7B99300F50091 /* RegisterViewController.swift in Sources */,
 				F0D038601DD3AE0500E0085D /* FeedbackViewInput.swift in Sources */,
 				F076D6791DCF7DD200E3ED0F /* UIView+FindFirstResponder.swift in Sources */,
@@ -1534,7 +1591,7 @@
 				F0823DD61DE9EEA2007BD04D /* MainPageView.swift in Sources */,
 				F0A115241DC629CE00A4DC76 /* SessionInfo.swift in Sources */,
 				F09209A71DC14A7F0057302F /* ApplicationRouter.swift in Sources */,
-				F0A115331DC62DB600A4DC76 /* NetworkError.swift in Sources */,
+				F0A115331DC62DB600A4DC76 /* ApiError.swift in Sources */,
 				F0823DD71DE9EEA2007BD04D /* MainPageViewController.swift in Sources */,
 				F0128B791E45182A008E6668 /* ViewControllerExtensions.swift in Sources */,
 				F021D6E81DD8925B00F50091 /* CameraPresenter.swift in Sources */,
