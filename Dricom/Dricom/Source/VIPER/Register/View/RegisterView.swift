@@ -2,9 +2,11 @@ import UIKit
 
 final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, ActivityDisplayable {
     // MARK: - Properties
+    private let topContainer = UIView()
     private let topBackgroundView = UIView()
     private let addPhotoButton = UIButton(type: .custom)
     private let avatarImageView = UIImageView(image: #imageLiteral(resourceName: "Avatar"))
+    
     private let nameInputView = TextFieldView()
     private let emailInputView = TextFieldView()
     private let licenseInputView = TextFieldView()
@@ -19,9 +21,12 @@ final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, Act
     init() {
         super.init(frame: .zero)
         
-        addSubview(topBackgroundView)
-        addSubview(addPhotoButton)
-        addSubview(avatarImageView)
+        addSubview(topContainer)
+        
+        topContainer.addSubview(topBackgroundView)
+        topContainer.addSubview(addPhotoButton)
+        topContainer.addSubview(avatarImageView)
+        
         addSubview(nameInputView)
         addSubview(emailInputView)
         addSubview(licenseInputView)
@@ -59,6 +64,7 @@ final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, Act
     private func setStyle() {
         backgroundColor = .drcWhite
         
+        topContainer.backgroundColor = UIColor.drcWhite
         topBackgroundView.backgroundColor = UIColor.drcBlue
         
         addPhotoButton.setImage(#imageLiteral(resourceName: "Add photo"), for: .normal)
@@ -76,15 +82,16 @@ final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, Act
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        // Top views
         topBackgroundView.layout(
             left: bounds.left,
             right: bounds.right,
-            top: bounds.top,
+            top: 0,
             height: 45
         )
         
         avatarImageView.centerX = bounds.centerX
-        avatarImageView.top = bounds.top
+        avatarImageView.top = 0
         
         addPhotoButton.sizeToFit()
         let sizeOfText = addPhotoButton.titleLabel?.sizeThatFits() ?? .zero
@@ -96,6 +103,14 @@ final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, Act
         addPhotoButton.top = avatarImageView.bottom + 10
         addPhotoButton.centerX = bounds.centerX
         
+        topContainer.layout(
+            top: 0,
+            bottom: addPhotoButton.bottom,
+            left: bounds.left,
+            right: bounds.right
+        )
+        
+        // Input fields
         nameInputView.layout(
             left: bounds.left,
             right: bounds.right,

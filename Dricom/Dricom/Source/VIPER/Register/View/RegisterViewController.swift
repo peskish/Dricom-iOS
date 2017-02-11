@@ -1,6 +1,6 @@
 import UIKit
 
-final class RegisterViewController: ContentScrollingViewController, RegisterViewInput {
+final class RegisterViewController: BaseViewController, RegisterViewInput {
     // MARK: - Properties
     private let registerView = RegisterView()
     

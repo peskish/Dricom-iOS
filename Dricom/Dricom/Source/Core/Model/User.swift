@@ -4,7 +4,7 @@ struct User: Equatable, Unboxable {
     // let userId: String // TODO: добавить с Ромой ID
     let avatar: String?
     let name: String?
-    let licence: String?
+    let license: String?
     let phone: String?
     let email: String?
     
@@ -17,7 +17,7 @@ struct User: Equatable, Unboxable {
     {
         self.avatar = avatar
         self.name = name
-        self.licence = licence
+        self.license = licence
         self.phone = phone
         self.email = email
     }
@@ -25,7 +25,7 @@ struct User: Equatable, Unboxable {
     // MARK: Equatable
     static func ==(left: User, right: User) -> Bool {
         return left.avatar == right.avatar
-            && left.licence == right.licence
+            && left.license == right.license
             && left.name == right.name
             && left.phone == right.phone
             && left.email == right.email
@@ -36,7 +36,7 @@ struct User: Equatable, Unboxable {
     init(unboxer: Unboxer) throws {
         avatar = unboxer.unbox(key: "avatar")
         name = unboxer.unbox(key: "name")
-        licence = unboxer.unbox(key: "licence")
+        license = unboxer.unbox(key: "license")
         phone = unboxer.unbox(key: "phone")
         email = unboxer.unbox(key: "email")
     }

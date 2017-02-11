@@ -5,7 +5,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Properties with app lifetime
     var window: UIWindow?
-    let serviceFactory = ViewDebugServiceFactory()
+    let serviceFactory = ServiceFactoryImpl()
     lazy var assemblyFactory: AssemblyFactory = {
         return AssemblyFactoryImpl(serviceFactory: self.serviceFactory)
     }()

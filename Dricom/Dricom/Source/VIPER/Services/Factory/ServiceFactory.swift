@@ -7,10 +7,14 @@ protocol ServiceFactory {
 }
 
 final class ServiceFactoryImpl: ServiceFactory {
-    // TODO: продолжить, использовать ее и потестить запрос
+    // MARK: - Properties
+    private let networkClient = NetworkClientImpl()
     
+    // MARK: - ServiceFactory
     func registrationService() -> RegistrationService {
-        return ViewDebugRegistrationService()
+        return RegistrationServiceImpl(
+            networkClient: networkClient
+        )
     }
     
     func authorizationService() -> AuthorizationService {

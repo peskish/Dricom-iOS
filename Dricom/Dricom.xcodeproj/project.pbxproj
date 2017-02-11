@@ -22,6 +22,42 @@
 		F0128BA11E4A64C6008E6668 /* NetworkResponseConverterOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B9E1E4A64C6008E6668 /* NetworkResponseConverterOf.swift */; };
 		F0128BA21E4A64C6008E6668 /* OptionalNetworkResponseConverterOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B9F1E4A64C6008E6668 /* OptionalNetworkResponseConverterOf.swift */; };
 		F0128BA41E4A6592008E6668 /* Data+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128BA31E4A6592008E6668 /* Data+JSON.swift */; };
+		F0128BF81E4F9CED008E6668 /* ContentInsetHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128BDC1E4F9CED008E6668 /* ContentInsetHolder.swift */; };
+		F0128BF91E4F9CED008E6668 /* DelegatingContentInsetHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128BDD1E4F9CED008E6668 /* DelegatingContentInsetHolder.swift */; };
+		F0128BFA1E4F9CED008E6668 /* DisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128BDF1E4F9CED008E6668 /* DisposeBag.swift */; };
+		F0128BFB1E4F9CED008E6668 /* DisposeBagHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128BE01E4F9CED008E6668 /* DisposeBagHolder.swift */; };
+		F0128BFC1E4F9CED008E6668 /* BypassingKeyboardAvoidingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128BE21E4F9CED008E6668 /* BypassingKeyboardAvoidingService.swift */; };
+		F0128BFD1E4F9CED008E6668 /* FirstResponderSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128BE41E4F9CED008E6668 /* FirstResponderSettingsManager.swift */; };
+		F0128BFE1E4F9CED008E6668 /* ContentFittingCombineFunctionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128BE71E4F9CED008E6668 /* ContentFittingCombineFunctionBuilder.swift */; };
+		F0128BFF1E4F9CED008E6668 /* ContentFittingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128BE81E4F9CED008E6668 /* ContentFittingFunction.swift */; };
+		F0128C001E4F9CED008E6668 /* ContentFittingFunctionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128BE91E4F9CED008E6668 /* ContentFittingFunctionBuilder.swift */; };
+		F0128C011E4F9CED008E6668 /* ContentFittingRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128BEA1E4F9CED008E6668 /* ContentFittingRect.swift */; };
+		F0128C021E4F9CED008E6668 /* KeyboardAvoidingSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128BEB1E4F9CED008E6668 /* KeyboardAvoidingSettings.swift */; };
+		F0128C031E4F9CED008E6668 /* KeyboardAvoidingSettingsObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128BEC1E4F9CED008E6668 /* KeyboardAvoidingSettingsObservable.swift */; };
+		F0128C041E4F9CED008E6668 /* UIView+FirstResponderSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128BED1E4F9CED008E6668 /* UIView+FirstResponderSettings.swift */; };
+		F0128C051E4F9CED008E6668 /* ScrollViewKeyboardAvoidingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128BEE1E4F9CED008E6668 /* ScrollViewKeyboardAvoidingService.swift */; };
+		F0128C061E4F9CED008E6668 /* ScrollViewKeyboardAvoidingServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128BEF1E4F9CED008E6668 /* ScrollViewKeyboardAvoidingServiceImpl.swift */; };
+		F0128C071E4F9CED008E6668 /* KeyboardFrameChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128BF11E4F9CED008E6668 /* KeyboardFrameChange.swift */; };
+		F0128C081E4F9CED008E6668 /* KeyboardFrameObservingAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128BF21E4F9CED008E6668 /* KeyboardFrameObservingAccessoryView.swift */; };
+		F0128C091E4F9CED008E6668 /* KeyboardFrameObservingAccessoryViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128BF31E4F9CED008E6668 /* KeyboardFrameObservingAccessoryViewDelegate.swift */; };
+		F0128C0A1E4F9CED008E6668 /* KeyboardFrameProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128BF41E4F9CED008E6668 /* KeyboardFrameProvider.swift */; };
+		F0128C0B1E4F9CED008E6668 /* KeyboardFrameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128BF51E4F9CED008E6668 /* KeyboardFrameService.swift */; };
+		F0128C0C1E4F9CED008E6668 /* PHAssetUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128BF61E4F9CED008E6668 /* PHAssetUtilities.swift */; };
+		F0128C0D1E4F9CED008E6668 /* RecursionBreakingClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128BF71E4F9CED008E6668 /* RecursionBreakingClosure.swift */; };
+		F0128C211E4F9D39008E6668 /* ScrollViewRefresherProgressCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C101E4F9D39008E6668 /* ScrollViewRefresherProgressCalculator.swift */; };
+		F0128C221E4F9D39008E6668 /* ScrollViewRefresherStateAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C111E4F9D39008E6668 /* ScrollViewRefresherStateAnimator.swift */; };
+		F0128C231E4F9D39008E6668 /* ActivityIndicatorRefresherFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C141E4F9D39008E6668 /* ActivityIndicatorRefresherFactory.swift */; };
+		F0128C241E4F9D39008E6668 /* ActivityIndicatorRefresherStateAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C151E4F9D39008E6668 /* ActivityIndicatorRefresherStateAnimator.swift */; };
+		F0128C251E4F9D39008E6668 /* ActivityIndicatorRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C161E4F9D39008E6668 /* ActivityIndicatorRefreshView.swift */; };
+		F0128C261E4F9D39008E6668 /* PullToRefreshProgressCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C181E4F9D39008E6668 /* PullToRefreshProgressCalculator.swift */; };
+		F0128C271E4F9D39008E6668 /* ScrollToRefreshProgressCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C191E4F9D39008E6668 /* ScrollToRefreshProgressCalculator.swift */; };
+		F0128C281E4F9D39008E6668 /* ScrollViewRefresherFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C1A1E4F9D39008E6668 /* ScrollViewRefresherFactory.swift */; };
+		F0128C291E4F9D39008E6668 /* ScrollViewRefresher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C1B1E4F9D39008E6668 /* ScrollViewRefresher.swift */; };
+		F0128C2A1E4F9D39008E6668 /* ScrollViewRefresherInterfaceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C1D1E4F9D39008E6668 /* ScrollViewRefresherInterfaceState.swift */; };
+		F0128C2B1E4F9D39008E6668 /* ScrollViewRefresherPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C1E1E4F9D39008E6668 /* ScrollViewRefresherPosition.swift */; };
+		F0128C2C1E4F9D39008E6668 /* ScrollViewRefresherProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C1F1E4F9D39008E6668 /* ScrollViewRefresherProgress.swift */; };
+		F0128C2D1E4F9D39008E6668 /* ScrollViewRefresherState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C201E4F9D39008E6668 /* ScrollViewRefresherState.swift */; };
+		F0128C2F1E4F9E47008E6668 /* KeyValueObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C2E1E4F9E47008E6668 /* KeyValueObserver.swift */; };
 		F01398E51DF43D8300E4F188 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01398E41DF43D8300E4F188 /* User.swift */; };
 		F021D69B1DD7A43A00F50091 /* SupportMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D69A1DD7A43A00F50091 /* SupportMessageData.swift */; };
 		F021D6A21DD7A61900F50091 /* MailComposerAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6A01DD7A61900F50091 /* MailComposerAssemblyImpl.swift */; };
@@ -54,7 +90,6 @@
 		F021D6ED1DD8925B00F50091 /* CameraViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6E21DD8925B00F50091 /* CameraViewInput.swift */; };
 		F021D6EF1DDDB4E600F50091 /* CameraPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6EE1DDDB4E600F50091 /* CameraPreviewViewController.swift */; };
 		F021D6F31DDDB5E600F50091 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6F21DDDB5E600F50091 /* CameraPreviewView.swift */; };
-		F021D7161DDE420100F50091 /* PHAssetUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D7151DDE420100F50091 /* PHAssetUtilities.swift */; };
 		F021D7A51DDF1B3D00F50091 /* RegisterInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D7A41DDF1B3D00F50091 /* RegisterInputField.swift */; };
 		F021D7A71DE0DF3500F50091 /* ContentScrollingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D7A61DE0DF3500F50091 /* ContentScrollingViewController.swift */; };
 		F021D7A91DE0E63F00F50091 /* RegisterDataValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D7A81DE0E63F00F50091 /* RegisterDataValidationService.swift */; };
@@ -147,8 +182,6 @@
 		F0A115331DC62DB600A4DC76 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115321DC62DB600A4DC76 /* ApiError.swift */; };
 		F0A115351DC6309F00A4DC76 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115341DC6309F00A4DC76 /* ServiceFactory.swift */; };
 		F0A115381DC630DD00A4DC76 /* ViewDebugServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115371DC630DD00A4DC76 /* ViewDebugServiceFactory.swift */; };
-		F0A1155E1DC637C600A4DC76 /* DisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1155C1DC637C600A4DC76 /* DisposeBag.swift */; };
-		F0A1155F1DC637C600A4DC76 /* DisposeBagHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1155D1DC637C600A4DC76 /* DisposeBagHolder.swift */; };
 		F0A115611DC6385400A4DC76 /* RouterFocusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115601DC6385400A4DC76 /* RouterFocusable.swift */; };
 		F0A115761DC6863E00A4DC76 /* CGPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1156B1DC6863D00A4DC76 /* CGPoint+Extension.swift */; };
 		F0A115771DC6863E00A4DC76 /* CGRectLayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1156C1DC6863D00A4DC76 /* CGRectLayoutExtension.swift */; };
@@ -201,6 +234,42 @@
 		F0128B9E1E4A64C6008E6668 /* NetworkResponseConverterOf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseConverterOf.swift; sourceTree = "<group>"; };
 		F0128B9F1E4A64C6008E6668 /* OptionalNetworkResponseConverterOf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalNetworkResponseConverterOf.swift; sourceTree = "<group>"; };
 		F0128BA31E4A6592008E6668 /* Data+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+JSON.swift"; sourceTree = "<group>"; };
+		F0128BDC1E4F9CED008E6668 /* ContentInsetHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentInsetHolder.swift; sourceTree = "<group>"; };
+		F0128BDD1E4F9CED008E6668 /* DelegatingContentInsetHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegatingContentInsetHolder.swift; sourceTree = "<group>"; };
+		F0128BDF1E4F9CED008E6668 /* DisposeBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposeBag.swift; sourceTree = "<group>"; };
+		F0128BE01E4F9CED008E6668 /* DisposeBagHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposeBagHolder.swift; sourceTree = "<group>"; };
+		F0128BE21E4F9CED008E6668 /* BypassingKeyboardAvoidingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BypassingKeyboardAvoidingService.swift; sourceTree = "<group>"; };
+		F0128BE41E4F9CED008E6668 /* FirstResponderSettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstResponderSettingsManager.swift; sourceTree = "<group>"; };
+		F0128BE71E4F9CED008E6668 /* ContentFittingCombineFunctionBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentFittingCombineFunctionBuilder.swift; sourceTree = "<group>"; };
+		F0128BE81E4F9CED008E6668 /* ContentFittingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentFittingFunction.swift; sourceTree = "<group>"; };
+		F0128BE91E4F9CED008E6668 /* ContentFittingFunctionBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentFittingFunctionBuilder.swift; sourceTree = "<group>"; };
+		F0128BEA1E4F9CED008E6668 /* ContentFittingRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentFittingRect.swift; sourceTree = "<group>"; };
+		F0128BEB1E4F9CED008E6668 /* KeyboardAvoidingSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardAvoidingSettings.swift; sourceTree = "<group>"; };
+		F0128BEC1E4F9CED008E6668 /* KeyboardAvoidingSettingsObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardAvoidingSettingsObservable.swift; sourceTree = "<group>"; };
+		F0128BED1E4F9CED008E6668 /* UIView+FirstResponderSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+FirstResponderSettings.swift"; sourceTree = "<group>"; };
+		F0128BEE1E4F9CED008E6668 /* ScrollViewKeyboardAvoidingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewKeyboardAvoidingService.swift; sourceTree = "<group>"; };
+		F0128BEF1E4F9CED008E6668 /* ScrollViewKeyboardAvoidingServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewKeyboardAvoidingServiceImpl.swift; sourceTree = "<group>"; };
+		F0128BF11E4F9CED008E6668 /* KeyboardFrameChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardFrameChange.swift; sourceTree = "<group>"; };
+		F0128BF21E4F9CED008E6668 /* KeyboardFrameObservingAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardFrameObservingAccessoryView.swift; sourceTree = "<group>"; };
+		F0128BF31E4F9CED008E6668 /* KeyboardFrameObservingAccessoryViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardFrameObservingAccessoryViewDelegate.swift; sourceTree = "<group>"; };
+		F0128BF41E4F9CED008E6668 /* KeyboardFrameProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardFrameProvider.swift; sourceTree = "<group>"; };
+		F0128BF51E4F9CED008E6668 /* KeyboardFrameService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardFrameService.swift; sourceTree = "<group>"; };
+		F0128BF61E4F9CED008E6668 /* PHAssetUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHAssetUtilities.swift; sourceTree = "<group>"; };
+		F0128BF71E4F9CED008E6668 /* RecursionBreakingClosure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecursionBreakingClosure.swift; sourceTree = "<group>"; };
+		F0128C101E4F9D39008E6668 /* ScrollViewRefresherProgressCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewRefresherProgressCalculator.swift; sourceTree = "<group>"; };
+		F0128C111E4F9D39008E6668 /* ScrollViewRefresherStateAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewRefresherStateAnimator.swift; sourceTree = "<group>"; };
+		F0128C141E4F9D39008E6668 /* ActivityIndicatorRefresherFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorRefresherFactory.swift; sourceTree = "<group>"; };
+		F0128C151E4F9D39008E6668 /* ActivityIndicatorRefresherStateAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorRefresherStateAnimator.swift; sourceTree = "<group>"; };
+		F0128C161E4F9D39008E6668 /* ActivityIndicatorRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorRefreshView.swift; sourceTree = "<group>"; };
+		F0128C181E4F9D39008E6668 /* PullToRefreshProgressCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefreshProgressCalculator.swift; sourceTree = "<group>"; };
+		F0128C191E4F9D39008E6668 /* ScrollToRefreshProgressCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollToRefreshProgressCalculator.swift; sourceTree = "<group>"; };
+		F0128C1A1E4F9D39008E6668 /* ScrollViewRefresherFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewRefresherFactory.swift; sourceTree = "<group>"; };
+		F0128C1B1E4F9D39008E6668 /* ScrollViewRefresher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewRefresher.swift; sourceTree = "<group>"; };
+		F0128C1D1E4F9D39008E6668 /* ScrollViewRefresherInterfaceState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewRefresherInterfaceState.swift; sourceTree = "<group>"; };
+		F0128C1E1E4F9D39008E6668 /* ScrollViewRefresherPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewRefresherPosition.swift; sourceTree = "<group>"; };
+		F0128C1F1E4F9D39008E6668 /* ScrollViewRefresherProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewRefresherProgress.swift; sourceTree = "<group>"; };
+		F0128C201E4F9D39008E6668 /* ScrollViewRefresherState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewRefresherState.swift; sourceTree = "<group>"; };
+		F0128C2E1E4F9E47008E6668 /* KeyValueObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyValueObserver.swift; path = Dricom/Source/Core/Utilities/KeyValueObserver.swift; sourceTree = SOURCE_ROOT; };
 		F01398E41DF43D8300E4F188 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F021D69A1DD7A43A00F50091 /* SupportMessageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportMessageData.swift; sourceTree = "<group>"; };
 		F021D6A01DD7A61900F50091 /* MailComposerAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailComposerAssemblyImpl.swift; sourceTree = "<group>"; };
@@ -233,7 +302,6 @@
 		F021D6E21DD8925B00F50091 /* CameraViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewInput.swift; sourceTree = "<group>"; };
 		F021D6EE1DDDB4E600F50091 /* CameraPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewViewController.swift; sourceTree = "<group>"; };
 		F021D6F21DDDB5E600F50091 /* CameraPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
-		F021D7151DDE420100F50091 /* PHAssetUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHAssetUtilities.swift; sourceTree = "<group>"; };
 		F021D7A41DDF1B3D00F50091 /* RegisterInputField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterInputField.swift; sourceTree = "<group>"; };
 		F021D7A61DE0DF3500F50091 /* ContentScrollingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentScrollingViewController.swift; path = Dricom/Source/Presentation/ViewControllers/ContentScrollingViewController.swift; sourceTree = SOURCE_ROOT; };
 		F021D7A81DE0E63F00F50091 /* RegisterDataValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterDataValidationService.swift; path = Dricom/Source/VIPER/Services/Validation/RegisterDataValidationService.swift; sourceTree = SOURCE_ROOT; };
@@ -328,8 +396,6 @@
 		F0A115321DC62DB600A4DC76 /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiError.swift; path = Core/Common/ApiError.swift; sourceTree = "<group>"; };
 		F0A115341DC6309F00A4DC76 /* ServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceFactory.swift; path = Dricom/Source/VIPER/Services/Factory/ServiceFactory.swift; sourceTree = SOURCE_ROOT; };
 		F0A115371DC630DD00A4DC76 /* ViewDebugServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewDebugServiceFactory.swift; path = Dricom/Source/VIPER/Services/Factory/ViewDebugServiceFactory.swift; sourceTree = SOURCE_ROOT; };
-		F0A1155C1DC637C600A4DC76 /* DisposeBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposeBag.swift; sourceTree = "<group>"; };
-		F0A1155D1DC637C600A4DC76 /* DisposeBagHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposeBagHolder.swift; sourceTree = "<group>"; };
 		F0A115601DC6385400A4DC76 /* RouterFocusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterFocusable.swift; path = Router/RouterFocusable.swift; sourceTree = "<group>"; };
 		F0A1156B1DC6863D00A4DC76 /* CGPoint+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGPoint+Extension.swift"; path = "Core/Extensions/UIKit/CGPoint+Extension.swift"; sourceTree = "<group>"; };
 		F0A1156C1DC6863D00A4DC76 /* CGRectLayoutExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGRectLayoutExtension.swift; path = Core/Extensions/UIKit/CGRectLayoutExtension.swift; sourceTree = "<group>"; };
@@ -446,6 +512,139 @@
 			);
 			name = Converter;
 			path = Core/Networking/Converter;
+			sourceTree = "<group>";
+		};
+		F0128BDB1E4F9CED008E6668 /* ContentInsetHolder */ = {
+			isa = PBXGroup;
+			children = (
+				F0128BDC1E4F9CED008E6668 /* ContentInsetHolder.swift */,
+				F0128BDD1E4F9CED008E6668 /* DelegatingContentInsetHolder.swift */,
+			);
+			path = ContentInsetHolder;
+			sourceTree = "<group>";
+		};
+		F0128BDE1E4F9CED008E6668 /* DisposeBag */ = {
+			isa = PBXGroup;
+			children = (
+				F0128BDF1E4F9CED008E6668 /* DisposeBag.swift */,
+				F0128BE01E4F9CED008E6668 /* DisposeBagHolder.swift */,
+			);
+			path = DisposeBag;
+			sourceTree = "<group>";
+		};
+		F0128BE11E4F9CED008E6668 /* KeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				F0128BE21E4F9CED008E6668 /* BypassingKeyboardAvoidingService.swift */,
+				F0128BE31E4F9CED008E6668 /* FirstResponderSettings */,
+				F0128BEE1E4F9CED008E6668 /* ScrollViewKeyboardAvoidingService.swift */,
+				F0128BEF1E4F9CED008E6668 /* ScrollViewKeyboardAvoidingServiceImpl.swift */,
+			);
+			path = KeyboardAvoiding;
+			sourceTree = "<group>";
+		};
+		F0128BE31E4F9CED008E6668 /* FirstResponderSettings */ = {
+			isa = PBXGroup;
+			children = (
+				F0128BE41E4F9CED008E6668 /* FirstResponderSettingsManager.swift */,
+				F0128BE51E4F9CED008E6668 /* KeyboardAvoidingSettings */,
+				F0128BED1E4F9CED008E6668 /* UIView+FirstResponderSettings.swift */,
+			);
+			path = FirstResponderSettings;
+			sourceTree = "<group>";
+		};
+		F0128BE51E4F9CED008E6668 /* KeyboardAvoidingSettings */ = {
+			isa = PBXGroup;
+			children = (
+				F0128BE61E4F9CED008E6668 /* ContentFitting */,
+				F0128BEB1E4F9CED008E6668 /* KeyboardAvoidingSettings.swift */,
+				F0128BEC1E4F9CED008E6668 /* KeyboardAvoidingSettingsObservable.swift */,
+			);
+			path = KeyboardAvoidingSettings;
+			sourceTree = "<group>";
+		};
+		F0128BE61E4F9CED008E6668 /* ContentFitting */ = {
+			isa = PBXGroup;
+			children = (
+				F0128BE71E4F9CED008E6668 /* ContentFittingCombineFunctionBuilder.swift */,
+				F0128BE81E4F9CED008E6668 /* ContentFittingFunction.swift */,
+				F0128BE91E4F9CED008E6668 /* ContentFittingFunctionBuilder.swift */,
+				F0128BEA1E4F9CED008E6668 /* ContentFittingRect.swift */,
+			);
+			path = ContentFitting;
+			sourceTree = "<group>";
+		};
+		F0128BF01E4F9CED008E6668 /* KeyboardFrameService */ = {
+			isa = PBXGroup;
+			children = (
+				F0128BF11E4F9CED008E6668 /* KeyboardFrameChange.swift */,
+				F0128BF21E4F9CED008E6668 /* KeyboardFrameObservingAccessoryView.swift */,
+				F0128BF31E4F9CED008E6668 /* KeyboardFrameObservingAccessoryViewDelegate.swift */,
+				F0128BF41E4F9CED008E6668 /* KeyboardFrameProvider.swift */,
+				F0128BF51E4F9CED008E6668 /* KeyboardFrameService.swift */,
+			);
+			path = KeyboardFrameService;
+			sourceTree = "<group>";
+		};
+		F0128C0E1E4F9D39008E6668 /* PullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				F0128C0F1E4F9D39008E6668 /* Dependencies */,
+				F0128C121E4F9D39008E6668 /* Factory */,
+				F0128C1B1E4F9D39008E6668 /* ScrollViewRefresher.swift */,
+				F0128C1C1E4F9D39008E6668 /* State */,
+			);
+			name = PullToRefresh;
+			path = Dricom/Source/Presentation/PullToRefresh;
+			sourceTree = SOURCE_ROOT;
+		};
+		F0128C0F1E4F9D39008E6668 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				F0128C101E4F9D39008E6668 /* ScrollViewRefresherProgressCalculator.swift */,
+				F0128C111E4F9D39008E6668 /* ScrollViewRefresherStateAnimator.swift */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		F0128C121E4F9D39008E6668 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				F0128C131E4F9D39008E6668 /* ActivityIndicator */,
+				F0128C171E4F9D39008E6668 /* Calculators */,
+				F0128C1A1E4F9D39008E6668 /* ScrollViewRefresherFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		F0128C131E4F9D39008E6668 /* ActivityIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				F0128C141E4F9D39008E6668 /* ActivityIndicatorRefresherFactory.swift */,
+				F0128C151E4F9D39008E6668 /* ActivityIndicatorRefresherStateAnimator.swift */,
+				F0128C161E4F9D39008E6668 /* ActivityIndicatorRefreshView.swift */,
+			);
+			path = ActivityIndicator;
+			sourceTree = "<group>";
+		};
+		F0128C171E4F9D39008E6668 /* Calculators */ = {
+			isa = PBXGroup;
+			children = (
+				F0128C181E4F9D39008E6668 /* PullToRefreshProgressCalculator.swift */,
+				F0128C191E4F9D39008E6668 /* ScrollToRefreshProgressCalculator.swift */,
+			);
+			path = Calculators;
+			sourceTree = "<group>";
+		};
+		F0128C1C1E4F9D39008E6668 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				F0128C1D1E4F9D39008E6668 /* ScrollViewRefresherInterfaceState.swift */,
+				F0128C1E1E4F9D39008E6668 /* ScrollViewRefresherPosition.swift */,
+				F0128C1F1E4F9D39008E6668 /* ScrollViewRefresherProgress.swift */,
+				F0128C201E4F9D39008E6668 /* ScrollViewRefresherState.swift */,
+			);
+			path = State;
 			sourceTree = "<group>";
 		};
 		F021D69E1DD7A61900F50091 /* MailComposer */ = {
@@ -1054,6 +1253,7 @@
 		F0A115171DC622A100A4DC76 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F0128C0E1E4F9D39008E6668 /* PullToRefresh */,
 				F0A115831DC68DDD00A4DC76 /* Spec */,
 				F0A115661DC67F9500A4DC76 /* View */,
 				F0A115181DC622AB00A4DC76 /* ViewControllers */,
@@ -1169,9 +1369,13 @@
 		F0A1155B1DC637C600A4DC76 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				F0A1155C1DC637C600A4DC76 /* DisposeBag.swift */,
-				F0A1155D1DC637C600A4DC76 /* DisposeBagHolder.swift */,
-				F021D7151DDE420100F50091 /* PHAssetUtilities.swift */,
+				F0128BDB1E4F9CED008E6668 /* ContentInsetHolder */,
+				F0128BDE1E4F9CED008E6668 /* DisposeBag */,
+				F0128BE11E4F9CED008E6668 /* KeyboardAvoiding */,
+				F0128BF01E4F9CED008E6668 /* KeyboardFrameService */,
+				F0128C2E1E4F9E47008E6668 /* KeyValueObserver.swift */,
+				F0128BF61E4F9CED008E6668 /* PHAssetUtilities.swift */,
+				F0128BF71E4F9CED008E6668 /* RecursionBreakingClosure.swift */,
 			);
 			name = Utilities;
 			path = Core/Utilities;
@@ -1454,12 +1658,15 @@
 				F0A115351DC6309F00A4DC76 /* ServiceFactory.swift in Sources */,
 				F0823DB71DE9D929007BD04D /* ActivityDisplayable.swift in Sources */,
 				F076D6411DCF67F200E3ED0F /* LoginAssemblyImpl.swift in Sources */,
+				F0128C221E4F9D39008E6668 /* ScrollViewRefresherStateAnimator.swift in Sources */,
 				F05790D61E32A72D004FBD4A /* UIColor+Styleguide.swift in Sources */,
 				F0128B961E4A566A008E6668 /* RegistrationServiceImpl.swift in Sources */,
 				F0AFDA371E3D2A7000CCEE24 /* LicensePlateView.swift in Sources */,
 				F021D6A21DD7A61900F50091 /* MailComposerAssemblyImpl.swift in Sources */,
 				F0128B881E491787008E6668 /* LoginResponse.swift in Sources */,
+				F0128C071E4F9CED008E6668 /* KeyboardFrameChange.swift in Sources */,
 				F076D67F1DCFAEF400E3ED0F /* ViewControllerPosition.swift in Sources */,
+				F0128C001E4F9CED008E6668 /* ContentFittingFunctionBuilder.swift in Sources */,
 				F076D6551DCF6D2000E3ED0F /* MessageDisplayable.swift in Sources */,
 				F076D6701DCF6F3800E3ED0F /* SequenceTypeExtensions.swift in Sources */,
 				F0A115761DC6863E00A4DC76 /* CGPoint+Extension.swift in Sources */,
@@ -1487,11 +1694,14 @@
 				F021D6CF1DD8914200F50091 /* RouterCameraShowable.swift in Sources */,
 				F021D7A51DDF1B3D00F50091 /* RegisterInputField.swift in Sources */,
 				F021D6BE1DD7B99300F50091 /* RegisterAssembly.swift in Sources */,
+				F0128C051E4F9CED008E6668 /* ScrollViewKeyboardAvoidingService.swift in Sources */,
 				F021D6CD1DD88D6100F50091 /* SpecSizes.swift in Sources */,
 				F09209A11DC14A7F0057302F /* ApplicationAssembly.swift in Sources */,
+				F0128C091E4F9CED008E6668 /* KeyboardFrameObservingAccessoryViewDelegate.swift in Sources */,
 				F0128BA21E4A64C6008E6668 /* OptionalNetworkResponseConverterOf.swift in Sources */,
 				F09209A31DC14A7F0057302F /* ApplicationInteractor.swift in Sources */,
 				F021D7A71DE0DF3500F50091 /* ContentScrollingViewController.swift in Sources */,
+				F0128C0A1E4F9CED008E6668 /* KeyboardFrameProvider.swift in Sources */,
 				F0128BA41E4A6592008E6668 /* Data+JSON.swift in Sources */,
 				F0F434131DD11A7100F278BD /* AuthorizationService.swift in Sources */,
 				F021D69B1DD7A43A00F50091 /* SupportMessageData.swift in Sources */,
@@ -1500,8 +1710,10 @@
 				F09209821DC146300057302F /* AppDelegate.swift in Sources */,
 				F0F434081DD10CAB00F278BD /* AlertDisplayable.swift in Sources */,
 				F021D6E91DD8925B00F50091 /* CameraRouter.swift in Sources */,
+				F0128C011E4F9CED008E6668 /* ContentFittingRect.swift in Sources */,
 				F076D6451DCF67F200E3ED0F /* LoginPresenter.swift in Sources */,
 				F076D67B1DCF87D300E3ED0F /* TextFieldView.swift in Sources */,
+				F0128BFE1E4F9CED008E6668 /* ContentFittingCombineFunctionBuilder.swift in Sources */,
 				F0823DCF1DE9EEA2007BD04D /* MainPageAssemblyImpl.swift in Sources */,
 				F0D0385F1DD3AE0500E0085D /* FeedbackViewController.swift in Sources */,
 				F0A1157D1DC6863E00A4DC76 /* UIView+Layout.swift in Sources */,
@@ -1513,10 +1725,12 @@
 				F0823DD01DE9EEA2007BD04D /* MainPageInteractor.swift in Sources */,
 				F0A1157C1DC6863E00A4DC76 /* UIImageExtension.swift in Sources */,
 				F0F434111DD119EE00F278BD /* ViewDebugAuthorizationService.swift in Sources */,
-				F0A1155E1DC637C600A4DC76 /* DisposeBag.swift in Sources */,
 				F0A1152B1DC62C8000A4DC76 /* ViewDebugRegistrationService.swift in Sources */,
 				F0128B931E4A5260008E6668 /* NetworkClient.swift in Sources */,
+				F0128C2F1E4F9E47008E6668 /* KeyValueObserver.swift in Sources */,
+				F0128C041E4F9CED008E6668 /* UIView+FirstResponderSettings.swift in Sources */,
 				F0823DD41DE9EEA2007BD04D /* MainPageRouter.swift in Sources */,
+				F0128C2A1E4F9D39008E6668 /* ScrollViewRefresherInterfaceState.swift in Sources */,
 				F0D038591DD3AE0500E0085D /* FeedbackInteractorImpl.swift in Sources */,
 				F076D6421DCF67F200E3ED0F /* LoginInteractor.swift in Sources */,
 				F0823DCE1DE9EEA2007BD04D /* MainPageAssembly.swift in Sources */,
@@ -1525,17 +1739,24 @@
 				F076D66F1DCF6F3800E3ED0F /* RangeExtension.swift in Sources */,
 				F0322B001E43CB4100F3CD47 /* AppStarterInteractor.swift in Sources */,
 				F0322AFE1E43CB4100F3CD47 /* AppStarterAssembly.swift in Sources */,
-				F0A1155F1DC637C600A4DC76 /* DisposeBagHolder.swift in Sources */,
 				F09209A21DC14A7F0057302F /* ApplicationAssemblyImpl.swift in Sources */,
 				F0A115891DC6914100A4DC76 /* CrossFadePushTransition.swift in Sources */,
 				F0A115851DC68DF500A4DC76 /* ViewLifecycleObservable.swift in Sources */,
+				F0128C061E4F9CED008E6668 /* ScrollViewKeyboardAvoidingServiceImpl.swift in Sources */,
 				F0128B7C1E451946008E6668 /* IosVersion.swift in Sources */,
+				F0128BF81E4F9CED008E6668 /* ContentInsetHolder.swift in Sources */,
 				F0823DD51DE9EEA2007BD04D /* MainPageRouterImpl.swift in Sources */,
 				F021D6E31DD8925B00F50091 /* CameraAssembly.swift in Sources */,
+				F0128C241E4F9D39008E6668 /* ActivityIndicatorRefresherStateAnimator.swift in Sources */,
+				F0128BFD1E4F9CED008E6668 /* FirstResponderSettingsManager.swift in Sources */,
+				F0128C2C1E4F9D39008E6668 /* ScrollViewRefresherProgress.swift in Sources */,
 				F021D6ED1DD8925B00F50091 /* CameraViewInput.swift in Sources */,
 				F0128BA11E4A64C6008E6668 /* NetworkResponseConverterOf.swift in Sources */,
+				F0128C261E4F9D39008E6668 /* PullToRefreshProgressCalculator.swift in Sources */,
 				F021D6C31DD7B99300F50091 /* RegisterPresenter.swift in Sources */,
 				F021D6E71DD8925B00F50091 /* CameraModule.swift in Sources */,
+				F0128C031E4F9CED008E6668 /* KeyboardAvoidingSettingsObservable.swift in Sources */,
+				F0128C231E4F9D39008E6668 /* ActivityIndicatorRefresherFactory.swift in Sources */,
 				F0128BA01E4A64C6008E6668 /* NetworkResponseConverter.swift in Sources */,
 				F021D6C71DD7B99300F50091 /* RegisterViewController.swift in Sources */,
 				F0D038601DD3AE0500E0085D /* FeedbackViewInput.swift in Sources */,
@@ -1550,55 +1771,70 @@
 				F021D6C51DD7B99300F50091 /* RegisterRouterImpl.swift in Sources */,
 				F05790DC1E34DC5D004FBD4A /* TextFieldsEffects.swift in Sources */,
 				F0823DBA1DE9DA10007BD04D /* StandardPreloaderView.swift in Sources */,
-				F021D7161DDE420100F50091 /* PHAssetUtilities.swift in Sources */,
 				F0A115821DC6897300A4DC76 /* SpecColors.swift in Sources */,
 				F0A115301DC62D2000A4DC76 /* DataResult.swift in Sources */,
 				F076D6401DCF67F200E3ED0F /* LoginAssembly.swift in Sources */,
 				F021D6C41DD7B99300F50091 /* RegisterRouter.swift in Sources */,
 				F021D6C81DD7B99300F50091 /* RegisterViewInput.swift in Sources */,
 				F0322B011E43CB4100F3CD47 /* AppStarterInteractorImpl.swift in Sources */,
+				F0128C0C1E4F9CED008E6668 /* PHAssetUtilities.swift in Sources */,
+				F0128C021E4F9CED008E6668 /* KeyboardAvoidingSettings.swift in Sources */,
 				F076D66B1DCF6F3800E3ED0F /* CollectionsExtensions.swift in Sources */,
 				F0823DD31DE9EEA2007BD04D /* MainPagePresenter.swift in Sources */,
+				F0128BFC1E4F9CED008E6668 /* BypassingKeyboardAvoidingService.swift in Sources */,
 				F0322B041E43CB4100F3CD47 /* AppStarterRouter.swift in Sources */,
 				F076D64C1DCF684A00E3ED0F /* ModuleFocusable.swift in Sources */,
+				F0128BFA1E4F9CED008E6668 /* DisposeBag.swift in Sources */,
 				F021D7A91DE0E63F00F50091 /* RegisterDataValidationService.swift in Sources */,
 				F021D6E61DD8925B00F50091 /* CameraInteractorImpl.swift in Sources */,
 				F076D6481DCF67F200E3ED0F /* LoginView.swift in Sources */,
 				F0D038581DD3AE0500E0085D /* FeedbackInteractor.swift in Sources */,
 				F021D6F31DDDB5E600F50091 /* CameraPreviewView.swift in Sources */,
+				F0128BFF1E4F9CED008E6668 /* ContentFittingFunction.swift in Sources */,
+				F0128C211E4F9D39008E6668 /* ScrollViewRefresherProgressCalculator.swift in Sources */,
 				F0128B771E4515C4008E6668 /* ApplicationViewInput.swift in Sources */,
 				F01398E51DF43D8300E4F188 /* User.swift in Sources */,
 				F076D6711DCF6F3800E3ED0F /* String+Pluralization.swift in Sources */,
+				F0128C0B1E4F9CED008E6668 /* KeyboardFrameService.swift in Sources */,
 				F05790DB1E34DC5D004FBD4A /* HoshiTextField.swift in Sources */,
 				F076D6491DCF67F200E3ED0F /* LoginViewController.swift in Sources */,
+				F0128C291E4F9D39008E6668 /* ScrollViewRefresher.swift in Sources */,
 				F021D6C21DD7B99300F50091 /* RegisterModule.swift in Sources */,
 				F076D66A1DCF6F3800E3ED0F /* AppMetadataExtension.swift in Sources */,
 				F076D6771DCF762700E3ED0F /* ContentScrollingView.swift in Sources */,
+				F0128BFB1E4F9CED008E6668 /* DisposeBagHolder.swift in Sources */,
 				F0823DD81DE9EEA2007BD04D /* MainPageViewInput.swift in Sources */,
 				F021D6C01DD7B99300F50091 /* RegisterInteractor.swift in Sources */,
+				F0128BF91E4F9CED008E6668 /* DelegatingContentInsetHolder.swift in Sources */,
 				F021D6E41DD8925B00F50091 /* CameraAssemblyImpl.swift in Sources */,
 				F0A1157E1DC6863E00A4DC76 /* UIView+Properties.swift in Sources */,
 				F0A1157A1DC6863E00A4DC76 /* UIColorExtension.swift in Sources */,
 				F076D66D1DCF6F3800E3ED0F /* NumbersExtension.swift in Sources */,
 				F0A115871DC68E1D00A4DC76 /* ViewControllerTransition.swift in Sources */,
+				F0128C281E4F9D39008E6668 /* ScrollViewRefresherFactory.swift in Sources */,
 				F0D0385E1DD3AE0500E0085D /* FeedbackView.swift in Sources */,
 				F09209A81DC14A7F0057302F /* ApplicationRouterImpl.swift in Sources */,
 				F021D6EB1DD8925B00F50091 /* CameraView.swift in Sources */,
 				F0D038621DD3AFA100E0085D /* RouterFeedbackShowable.swift in Sources */,
 				F09209A41DC14A7F0057302F /* ApplicationInteractorImpl.swift in Sources */,
 				F076D6751DCF6FC500E3ED0F /* NSURLPathComponents.swift in Sources */,
+				F0128C251E4F9D39008E6668 /* ActivityIndicatorRefreshView.swift in Sources */,
 				F09209BD1DC1524E0057302F /* BaseAssembly.swift in Sources */,
+				F0128C2B1E4F9D39008E6668 /* ScrollViewRefresherPosition.swift in Sources */,
 				F0823DD61DE9EEA2007BD04D /* MainPageView.swift in Sources */,
 				F0A115241DC629CE00A4DC76 /* SessionInfo.swift in Sources */,
 				F09209A71DC14A7F0057302F /* ApplicationRouter.swift in Sources */,
 				F0A115331DC62DB600A4DC76 /* ApiError.swift in Sources */,
 				F0823DD71DE9EEA2007BD04D /* MainPageViewController.swift in Sources */,
+				F0128C2D1E4F9D39008E6668 /* ScrollViewRefresherState.swift in Sources */,
 				F0128B791E45182A008E6668 /* ViewControllerExtensions.swift in Sources */,
 				F021D6E81DD8925B00F50091 /* CameraPresenter.swift in Sources */,
+				F0128C0D1E4F9CED008E6668 /* RecursionBreakingClosure.swift in Sources */,
 				F021D6EA1DD8925B00F50091 /* CameraRouterImpl.swift in Sources */,
 				F0A115381DC630DD00A4DC76 /* ViewDebugServiceFactory.swift in Sources */,
 				F076D6531DCF6CFB00E3ED0F /* ModuleDismissable.swift in Sources */,
 				F0322B051E43CB4100F3CD47 /* AppStarterRouterImpl.swift in Sources */,
+				F0128C271E4F9D39008E6668 /* ScrollToRefreshProgressCalculator.swift in Sources */,
 				F021D6EF1DDDB4E600F50091 /* CameraPreviewViewController.swift in Sources */,
 				F076D64A1DCF67F200E3ED0F /* LoginViewInput.swift in Sources */,
 				F021D6C61DD7B99300F50091 /* RegisterView.swift in Sources */,
@@ -1608,6 +1844,7 @@
 				F076D6511DCF6A0000E3ED0F /* RouterDismissable.swift in Sources */,
 				F021D6EC1DD8925B00F50091 /* CameraViewController.swift in Sources */,
 				F0A1157B1DC6863E00A4DC76 /* UIEdgeInsetsLayoutExtension.swift in Sources */,
+				F0128C081E4F9CED008E6668 /* KeyboardFrameObservingAccessoryView.swift in Sources */,
 				F0F4340B1DD10CC500F278BD /* WindowWaiter.swift in Sources */,
 				F08BE1A41DC926B600243B56 /* SpecMargins.swift in Sources */,
 				F08BE1A21DC9265000243B56 /* ActionButtonView.swift in Sources */,

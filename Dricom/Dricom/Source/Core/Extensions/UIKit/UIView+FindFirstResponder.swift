@@ -21,12 +21,16 @@ public extension UIView {
         }
     }
     
-    public class func findFirstResponderView(_ view: UIView) -> UIView? {
+    public final func findFirstResponderView() -> UIView? {
+        return UIView.findFirstResponderViewInView(self)
+    }
+    
+    public static func findFirstResponderViewInView(_ view: UIView) -> UIView? {
         if view.isFirstResponder {
             return view
         }
         for subview in view.subviews {
-            let firstResponder = findFirstResponderView(subview)
+            let firstResponder = findFirstResponderViewInView(subview)
             if let firstResponder = firstResponder {
                 return firstResponder
             }
@@ -35,17 +39,16 @@ public extension UIView {
     }
     
     // It looks a bit kludgy, but it's recommended solution to find first responder (and the most proper)
-    public func firstResponderFindingAction(_ sender: AnyObject?) {
+    func firstResponderFindingAction(_ sender: AnyObject?) {
         UIView.currentFirstResponder = self
     }
     
-    public class func findFirstResponderViewInApplication() -> UIView? {
+    public static func findFirstResponderViewInApplication() -> UIView? {
         currentFirstResponder = nil
         UIApplication.shared.sendAction(#selector(UIView.firstResponderFindingAction(_:)), to: nil, from: nil, for: nil)
         if let currentFirstResponder = currentFirstResponder {
-            return currentFirstResponder
+            return currentFirstResponder.isKind(of: UIView.self) ? currentFirstResponder : nil
         }
         return nil
     }
-    
 }
