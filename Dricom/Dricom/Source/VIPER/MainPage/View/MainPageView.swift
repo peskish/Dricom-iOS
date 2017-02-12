@@ -1,7 +1,7 @@
 import UIKit
 import AlamofireImage
 
-final class MainPageView: ContentScrollingView, StandardPreloaderViewHolder, ActivityDisplayable {
+final class MainPageView: UIView, StandardPreloaderViewHolder, ActivityDisplayable {
     // MARK: Properties
     private let nameLabel = UILabel()
     private let avatarImageView = UIImageView(image: #imageLiteral(resourceName: "Avatar"))
@@ -62,7 +62,7 @@ final class MainPageView: ContentScrollingView, StandardPreloaderViewHolder, Act
         licenseSearchButton.layout(
             left: bounds.left,
             right: bounds.right,
-            bottom: bounds.bottom - contentInset.bottom - 35,
+            bottom: bounds.bottom - 35,
             height: SpecSizes.actionButtonHeight
         )
         
@@ -72,8 +72,6 @@ final class MainPageView: ContentScrollingView, StandardPreloaderViewHolder, Act
             bottom: licenseSearchButton.top - 15,
             height: SpecSizes.inputFieldHeight
         )
-        
-        contentSize = CGSize(width: bounds.width, height: licenseSearchButton.bottom)
     }
     
     // MARK: Public

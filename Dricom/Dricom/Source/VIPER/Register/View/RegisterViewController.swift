@@ -11,17 +11,12 @@ final class RegisterViewController: BaseViewController, RegisterViewInput {
         view = registerView
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        registerView.initialInsets = .zero
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.tintColor = UIColor.drcWhite
+        navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.titleTextAttributes = [
             NSForegroundColorAttributeName: UIColor.drcWhite,
             NSFontAttributeName: UIFont.drcScreenNameFont() ?? UIFont.systemFont(ofSize: 17)

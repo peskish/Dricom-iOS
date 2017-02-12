@@ -1,6 +1,6 @@
 import UIKit
 
-final class LoginView: ContentScrollingView, StandardPreloaderViewHolder, ActivityDisplayable {
+final class LoginView: UIScrollView, StandardPreloaderViewHolder, ActivityDisplayable {
     // MARK: Properties
     private let logoImageView = UIImageView(image: #imageLiteral(resourceName: "Logo"))
     private let logoTitleView = UILabel()
@@ -12,6 +12,16 @@ final class LoginView: ContentScrollingView, StandardPreloaderViewHolder, Activi
     private let infoButtonView = ImageButtonView(image: UIImage(named: "Info sign"))
     
     let preloader = StandardPreloaderView(style: .dark)
+    
+    private let keyboardAvoidingService = ScrollViewKeyboardAvoidingServiceImpl()
+    
+    override var contentInset: UIEdgeInsets {
+        didSet {
+            if contentInset != oldValue {
+                keyboardAvoidingService.contentInset = contentInset
+            }
+        }
+    }
     
     // MARK: - Init
     init() {
@@ -43,6 +53,8 @@ final class LoginView: ContentScrollingView, StandardPreloaderViewHolder, Activi
         
         passwordView.isSecureTextEntry = true
         passwordView.returnKeyType = .done
+        
+        keyboardAvoidingService.attachToScrollView(self, contentInsetOutput: self)
         
         setStyle()
     }

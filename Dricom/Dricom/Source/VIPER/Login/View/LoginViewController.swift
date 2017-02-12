@@ -1,6 +1,6 @@
 import UIKit
 
-final class LoginViewController: ContentScrollingViewController, LoginViewInput {
+final class LoginViewController: BaseViewController, LoginViewInput {
     // MARK: - Properties
     private let loginView = LoginView()
     
@@ -9,12 +9,6 @@ final class LoginViewController: ContentScrollingViewController, LoginViewInput 
         super.loadView()
         
         view = loginView
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        loginView.initialInsets = .zero
     }
     
     override func viewWillAppear(_ animated: Bool) {

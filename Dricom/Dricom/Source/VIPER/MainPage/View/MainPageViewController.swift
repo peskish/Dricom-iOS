@@ -1,6 +1,6 @@
 import UIKit
 
-final class MainPageViewController: ContentScrollingViewController, MainPageViewInput {
+final class MainPageViewController: BaseViewController, MainPageViewInput {
     // MARK: - Properties
     private let mainPageView = MainPageView()
     
@@ -15,12 +15,6 @@ final class MainPageViewController: ContentScrollingViewController, MainPageView
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: true)
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        mainPageView.initialInsets = defaultContentInsets
     }
     
     // MARK: - MainPageViewInput

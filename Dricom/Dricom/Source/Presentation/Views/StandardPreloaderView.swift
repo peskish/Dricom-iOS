@@ -11,13 +11,11 @@ protocol StandardPreloaderViewHolder {
 
 extension ActivityDisplayable where Self: StandardPreloaderViewHolder, Self: UIView {
     func startActivity() {
-        isUserInteractionEnabled = false
         preloader.setLoading(true)
     }
     
     func stopActivity() {
         preloader.setLoading(false)
-        isUserInteractionEnabled = true
     }
 }
 

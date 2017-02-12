@@ -1,11 +1,9 @@
 import UIKit
 
-final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, ActivityDisplayable {
+final class RegisterView: UIView, ActivityDisplayable, StandardPreloaderViewHolder {
     // MARK: - Properties
-    private let topContainer = UIView()
-    private let topBackgroundView = UIView()
-    private let addPhotoButton = UIButton(type: .custom)
-    private let avatarImageView = UIImageView(image: #imageLiteral(resourceName: "Avatar"))
+    private let topContainer = RegisterTopView()
+    private let inputFieldsContainer = UIScrollView()
     
     private let nameInputView = TextFieldView()
     private let emailInputView = TextFieldView()
@@ -17,28 +15,27 @@ final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, Act
     
     let preloader = StandardPreloaderView(style: .dark)
     
+    private let keyboardAvoidingService = ScrollViewKeyboardAvoidingServiceImpl()
+    
     // MARK: - Init
     init() {
         super.init(frame: .zero)
         
+        inputFieldsContainer.addSubview(nameInputView)
+        inputFieldsContainer.addSubview(emailInputView)
+        inputFieldsContainer.addSubview(licenseInputView)
+        inputFieldsContainer.addSubview(phoneInputView)
+        inputFieldsContainer.addSubview(passwordInputView)
+        inputFieldsContainer.addSubview(confirmPasswordInputView)
+        inputFieldsContainer.addSubview(registerButtonView)
+        
+        addSubview(inputFieldsContainer)
         addSubview(topContainer)
-        
-        topContainer.addSubview(topBackgroundView)
-        topContainer.addSubview(addPhotoButton)
-        topContainer.addSubview(avatarImageView)
-        
-        addSubview(nameInputView)
-        addSubview(emailInputView)
-        addSubview(licenseInputView)
-        addSubview(phoneInputView)
-        addSubview(passwordInputView)
-        addSubview(confirmPasswordInputView)
-        addSubview(registerButtonView)
         addSubview(preloader)
         
-        keyboardDismissMode = .none
-        showsVerticalScrollIndicator = false
-        showsHorizontalScrollIndicator = false
+        inputFieldsContainer.keyboardDismissMode = .none
+        inputFieldsContainer.showsVerticalScrollIndicator = false
+        inputFieldsContainer.showsHorizontalScrollIndicator = false
         
         [nameInputView, emailInputView, licenseInputView, passwordInputView].forEach({ $0.returnKeyType = .next})
         
@@ -48,13 +45,9 @@ final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, Act
         passwordInputView.isSecureTextEntry = true
         confirmPasswordInputView.isSecureTextEntry = true
         
+        keyboardAvoidingService.attachToScrollView(inputFieldsContainer, contentInsetOutput: inputFieldsContainer)
+        
         setStyle()
-        
-        addPhotoButton.addTarget(self, action: #selector(addPhotoPressed), for: .touchUpInside)
-        
-        avatarImageView.isUserInteractionEnabled = true
-        let avatarTapGesture = UITapGestureRecognizer(target: self, action: #selector(addPhotoPressed))
-        avatarImageView.addGestureRecognizer(avatarTapGesture)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -63,18 +56,6 @@ final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, Act
     
     private func setStyle() {
         backgroundColor = .drcWhite
-        
-        topContainer.backgroundColor = UIColor.drcWhite
-        topBackgroundView.backgroundColor = UIColor.drcBlue
-        
-        addPhotoButton.setImage(#imageLiteral(resourceName: "Add photo"), for: .normal)
-        addPhotoButton.adjustsImageWhenHighlighted = false
-        addPhotoButton.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
-        
-        avatarImageView.size = #imageLiteral(resourceName: "Avatar").size
-        avatarImageView.layer.masksToBounds = true
-        avatarImageView.layer.cornerRadius = avatarImageView.size.height/2
-        
         registerButtonView.style = .dark
     }
     
@@ -82,39 +63,14 @@ final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, Act
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        // Top views
-        topBackgroundView.layout(
-            left: bounds.left,
-            right: bounds.right,
-            top: 0,
-            height: 45
-        )
-        
-        avatarImageView.centerX = bounds.centerX
-        avatarImageView.top = 0
-        
-        addPhotoButton.sizeToFit()
-        let sizeOfText = addPhotoButton.titleLabel?.sizeThatFits() ?? .zero
-        let sizeOfImage = addPhotoButton.imageView?.sizeThatFits() ?? .zero
-        addPhotoButton.width = sizeOfText.width
-            + sizeOfImage.width
-            + addPhotoButton.titleEdgeInsets.left
-            + addPhotoButton.titleEdgeInsets.right
-        addPhotoButton.top = avatarImageView.bottom + 10
-        addPhotoButton.centerX = bounds.centerX
-        
-        topContainer.layout(
-            top: 0,
-            bottom: addPhotoButton.bottom,
-            left: bounds.left,
-            right: bounds.right
-        )
+        topContainer.size = topContainer.sizeThatFits(bounds.size)
+        topContainer.top = bounds.top
         
         // Input fields
         nameInputView.layout(
             left: bounds.left,
             right: bounds.right,
-            top: addPhotoButton.bottom + SpecMargins.contentMargin,
+            top: topContainer.height,
             height: SpecSizes.inputFieldHeight
         )
         
@@ -174,9 +130,10 @@ final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, Act
             )
         }
         
+        inputFieldsContainer.frame = bounds
         preloader.frame = bounds
         
-        contentSize = CGSize(
+        inputFieldsContainer.contentSize = CGSize(
             width: bounds.width,
             height: registerButtonView.bottom + SpecMargins.contentMargin
         )
@@ -184,34 +141,25 @@ final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, Act
     
     // MARK: Public
     func setAddPhotoTitle(_ title: String) {
-        var attributes: [String: Any] = [
-            NSForegroundColorAttributeName: UIColor.drcBlue,
-            NSFontAttributeName: UIFont.drcAddPhotoFont() ?? .systemFont(ofSize: 15)
-        ]
-        let normalTitle = NSAttributedString(string: title, attributes: attributes)
-        
-        attributes[NSForegroundColorAttributeName] = UIColor.drcWarmBlue
-        let highlightedTitle = NSAttributedString(string: title, attributes: attributes)
-            
-        addPhotoButton.setAttributedTitle(normalTitle, for: .normal)
-        addPhotoButton.setAttributedTitle(highlightedTitle, for: .highlighted)
-        
-        setNeedsLayout()
+        topContainer.setAddPhotoTitle(title)
     }
     
     func setAddPhotoButtonVisible(_ visible: Bool) {
-        addPhotoButton.isHidden = !visible
+        topContainer.setAddPhotoButtonVisible(visible)
     }
     
     func setAvatarPhotoImage(_ image: UIImage?) {
-        avatarImageView.image = image ?? #imageLiteral(resourceName: "Avatar")
+        topContainer.setAvatarPhotoImage(image)
+    }
+    
+    var onAddPhotoButtonTap: (() -> ())? {
+        get { return topContainer.onAddPhotoButtonTap }
+        set { topContainer.onAddPhotoButtonTap = newValue }
     }
     
     func setRegisterButtonTitle(_ title: String) {
         registerButtonView.setTitle(title)
     }
-    
-    var onAddPhotoButtonTap: (() -> ())?
     
     var onRegisterButtonTap: (() -> ())? {
         get { return registerButtonView.onTap }
@@ -257,10 +205,6 @@ final class RegisterView: ContentScrollingView, StandardPreloaderViewHolder, Act
     }
     
     // MARK: - Private
-    @objc private func addPhotoPressed() {
-        onAddPhotoButtonTap?()
-    }
-    
     private func inputFieldView(field: RegisterInputField) -> TextFieldView {
         switch field {
         case .name:
