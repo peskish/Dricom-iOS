@@ -38,7 +38,7 @@ final class ApplicationAssemblyImpl: BaseAssembly, ApplicationAssembly {
         navigationController.tabBarItem = UITabBarItem(
             title: nil,
             image: #imageLiteral(resourceName: "TabMain"),
-            selectedImage: #imageLiteral(resourceName: "TabMain")
+            selectedImage: #imageLiteral(resourceName: "TabMainSelected")
         )
         return navigationController
     }
