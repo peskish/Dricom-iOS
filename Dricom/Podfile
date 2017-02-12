@@ -11,4 +11,5 @@ target 'Dricom' do
   pod 'KeychainAccess'
   pod 'FastttCamera'
   pod 'CTAssetsPickerController'
+  pod 'CryptoSwift'
 end

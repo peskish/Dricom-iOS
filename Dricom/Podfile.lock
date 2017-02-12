@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.0.0)
   - AlamofireImage (3.0.0):
     - Alamofire (~> 4.0)
+  - CryptoSwift (0.6.7)
   - CTAssetsPickerController (3.3.1):
     - PureLayout (~> 3.0.0)
   - FastttCamera (0.3.4):
@@ -14,6 +15,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (from `https://github.com/avito-tech/Alamofire`)
   - AlamofireImage (from `https://github.com/avito-tech/AlamofireImage`)
+  - CryptoSwift
   - CTAssetsPickerController
   - FastttCamera
   - KeychainAccess
@@ -36,12 +38,13 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 29102f79068e4769ded8aec795a792f11da018a6
   AlamofireImage: e2176b92a7374745f03661d740cc4bb35e874d7d
+  CryptoSwift: 685ae257941e5447474348a2b545583e1a16b573
   CTAssetsPickerController: b1d1d50ab87cf6b8b13531de5f4530482e7e53ed
   FastttCamera: 51f16712cbd5bdb08bc6231b957325c6be5e478d
   KeychainAccess: 017ea25e313a49eda10bb19b0bb0760fb1edfe1a
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   Unbox: 03d7128ce429987986bc08d967e9d5e0da158946
 
-PODFILE CHECKSUM: a2f8fc496af8485ad65caf67833fdf1d452f1579
+PODFILE CHECKSUM: 5362d9ac9f92ebc22ee1b6c9ddfad82b106d05ec
 
-COCOAPODS: 1.2.0.beta.3
+COCOAPODS: 1.2.0

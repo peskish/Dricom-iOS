@@ -15,7 +15,7 @@
 		F0128B851E49120C008E6668 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B841E49120C008E6668 /* NetworkRequest.swift */; };
 		F0128B881E491787008E6668 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B871E491787008E6668 /* LoginResponse.swift */; };
 		F0128B931E4A5260008E6668 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B921E4A5260008E6668 /* NetworkClient.swift */; };
-		F0128B961E4A566A008E6668 /* RegistrationServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B951E4A566A008E6668 /* RegistrationServiceImpl.swift */; };
+		F0128B961E4A566A008E6668 /* RegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B951E4A566A008E6668 /* RegistrationService.swift */; };
 		F0128B981E4A56A9008E6668 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B971E4A56A9008E6668 /* RegisterRequest.swift */; };
 		F0128B9A1E4A599E008E6668 /* NetworkRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B991E4A599E008E6668 /* NetworkRequestError.swift */; };
 		F0128BA01E4A64C6008E6668 /* NetworkResponseConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B9D1E4A64C6008E6668 /* NetworkResponseConverter.swift */; };
@@ -59,7 +59,8 @@
 		F0128C2D1E4F9D39008E6668 /* ScrollViewRefresherState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C201E4F9D39008E6668 /* ScrollViewRefresherState.swift */; };
 		F0128C2F1E4F9E47008E6668 /* KeyValueObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C2E1E4F9E47008E6668 /* KeyValueObserver.swift */; };
 		F0128C311E4FA520008E6668 /* RegisterTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C301E4FA520008E6668 /* RegisterTopView.swift */; };
-		F0128C331E50F8CF008E6668 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C321E50F8CF008E6668 /* LoginRequest.swift */; };
+		F0128C331E50F8CF008E6668 /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C321E50F8CF008E6668 /* AuthRequest.swift */; };
+		F0128C351E50FB50008E6668 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C341E50FB50008E6668 /* AuthorizationService.swift */; };
 		F01398E51DF43D8300E4F188 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01398E41DF43D8300E4F188 /* User.swift */; };
 		F021D69B1DD7A43A00F50091 /* SupportMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D69A1DD7A43A00F50091 /* SupportMessageData.swift */; };
 		F021D6A21DD7A61900F50091 /* MailComposerAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6A01DD7A61900F50091 /* MailComposerAssemblyImpl.swift */; };
@@ -176,12 +177,9 @@
 		F09209BD1DC1524E0057302F /* BaseAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09209BC1DC1524E0057302F /* BaseAssembly.swift */; };
 		F0A115161DC6229500A4DC76 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115151DC6229500A4DC76 /* BaseViewController.swift */; };
 		F0A115241DC629CE00A4DC76 /* SessionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115231DC629CE00A4DC76 /* SessionInfo.swift */; };
-		F0A1152B1DC62C8000A4DC76 /* ViewDebugRegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1152A1DC62C8000A4DC76 /* ViewDebugRegistrationService.swift */; };
-		F0A1152D1DC62CB300A4DC76 /* RegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1152C1DC62CB300A4DC76 /* RegistrationService.swift */; };
 		F0A115301DC62D2000A4DC76 /* DataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1152F1DC62D2000A4DC76 /* DataResult.swift */; };
 		F0A115331DC62DB600A4DC76 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115321DC62DB600A4DC76 /* ApiError.swift */; };
 		F0A115351DC6309F00A4DC76 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115341DC6309F00A4DC76 /* ServiceFactory.swift */; };
-		F0A115381DC630DD00A4DC76 /* ViewDebugServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115371DC630DD00A4DC76 /* ViewDebugServiceFactory.swift */; };
 		F0A115611DC6385400A4DC76 /* RouterFocusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115601DC6385400A4DC76 /* RouterFocusable.swift */; };
 		F0A115761DC6863E00A4DC76 /* CGPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1156B1DC6863D00A4DC76 /* CGPoint+Extension.swift */; };
 		F0A115771DC6863E00A4DC76 /* CGRectLayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1156C1DC6863D00A4DC76 /* CGRectLayoutExtension.swift */; };
@@ -212,8 +210,6 @@
 		F0D038621DD3AFA100E0085D /* RouterFeedbackShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038611DD3AFA100E0085D /* RouterFeedbackShowable.swift */; };
 		F0F434081DD10CAB00F278BD /* AlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F434071DD10CAB00F278BD /* AlertDisplayable.swift */; };
 		F0F4340B1DD10CC500F278BD /* WindowWaiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F4340A1DD10CC500F278BD /* WindowWaiter.swift */; };
-		F0F434111DD119EE00F278BD /* ViewDebugAuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F434101DD119EE00F278BD /* ViewDebugAuthorizationService.swift */; };
-		F0F434131DD11A7100F278BD /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F434121DD11A7100F278BD /* AuthorizationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -227,7 +223,7 @@
 		F0128B841E49120C008E6668 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkRequest.swift; path = Core/Networking/Request/NetworkRequest.swift; sourceTree = "<group>"; };
 		F0128B871E491787008E6668 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginResponse.swift; path = Core/Networking/Response/LoginResponse.swift; sourceTree = "<group>"; };
 		F0128B921E4A5260008E6668 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkClient.swift; path = Core/Networking/Client/NetworkClient.swift; sourceTree = "<group>"; };
-		F0128B951E4A566A008E6668 /* RegistrationServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationServiceImpl.swift; sourceTree = "<group>"; };
+		F0128B951E4A566A008E6668 /* RegistrationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationService.swift; sourceTree = "<group>"; };
 		F0128B971E4A56A9008E6668 /* RegisterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterRequest.swift; path = Core/Networking/Request/RegisterRequest.swift; sourceTree = "<group>"; };
 		F0128B991E4A599E008E6668 /* NetworkRequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkRequestError.swift; path = Core/Networking/Error/NetworkRequestError.swift; sourceTree = "<group>"; };
 		F0128B9D1E4A64C6008E6668 /* NetworkResponseConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseConverter.swift; sourceTree = "<group>"; };
@@ -271,7 +267,8 @@
 		F0128C201E4F9D39008E6668 /* ScrollViewRefresherState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewRefresherState.swift; sourceTree = "<group>"; };
 		F0128C2E1E4F9E47008E6668 /* KeyValueObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyValueObserver.swift; path = Dricom/Source/Core/Utilities/KeyValueObserver.swift; sourceTree = SOURCE_ROOT; };
 		F0128C301E4FA520008E6668 /* RegisterTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterTopView.swift; sourceTree = "<group>"; };
-		F0128C321E50F8CF008E6668 /* LoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginRequest.swift; path = Core/Networking/Request/LoginRequest.swift; sourceTree = "<group>"; };
+		F0128C321E50F8CF008E6668 /* AuthRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthRequest.swift; path = Core/Networking/Request/AuthRequest.swift; sourceTree = "<group>"; };
+		F0128C341E50FB50008E6668 /* AuthorizationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
 		F01398E41DF43D8300E4F188 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F021D69A1DD7A43A00F50091 /* SupportMessageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportMessageData.swift; sourceTree = "<group>"; };
 		F021D6A01DD7A61900F50091 /* MailComposerAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailComposerAssemblyImpl.swift; sourceTree = "<group>"; };
@@ -390,12 +387,9 @@
 		F09209BC1DC1524E0057302F /* BaseAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseAssembly.swift; path = Assembly/BaseAssembly.swift; sourceTree = "<group>"; };
 		F0A115151DC6229500A4DC76 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Dricom/Source/Presentation/ViewControllers/BaseViewController.swift; sourceTree = SOURCE_ROOT; };
 		F0A115231DC629CE00A4DC76 /* SessionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionInfo.swift; sourceTree = "<group>"; };
-		F0A1152A1DC62C8000A4DC76 /* ViewDebugRegistrationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewDebugRegistrationService.swift; path = Dricom/Source/VIPER/Services/ViewDebug/ViewDebugRegistrationService.swift; sourceTree = SOURCE_ROOT; };
-		F0A1152C1DC62CB300A4DC76 /* RegistrationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationService.swift; path = Dricom/Source/VIPER/Services/Interface/RegistrationService.swift; sourceTree = SOURCE_ROOT; };
 		F0A1152F1DC62D2000A4DC76 /* DataResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataResult.swift; path = Core/Common/DataResult.swift; sourceTree = "<group>"; };
 		F0A115321DC62DB600A4DC76 /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiError.swift; path = Core/Common/ApiError.swift; sourceTree = "<group>"; };
 		F0A115341DC6309F00A4DC76 /* ServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceFactory.swift; path = Dricom/Source/VIPER/Services/Factory/ServiceFactory.swift; sourceTree = SOURCE_ROOT; };
-		F0A115371DC630DD00A4DC76 /* ViewDebugServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewDebugServiceFactory.swift; path = Dricom/Source/VIPER/Services/Factory/ViewDebugServiceFactory.swift; sourceTree = SOURCE_ROOT; };
 		F0A115601DC6385400A4DC76 /* RouterFocusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterFocusable.swift; path = Router/RouterFocusable.swift; sourceTree = "<group>"; };
 		F0A1156B1DC6863D00A4DC76 /* CGPoint+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGPoint+Extension.swift"; path = "Core/Extensions/UIKit/CGPoint+Extension.swift"; sourceTree = "<group>"; };
 		F0A1156C1DC6863D00A4DC76 /* CGRectLayoutExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGRectLayoutExtension.swift; path = Core/Extensions/UIKit/CGRectLayoutExtension.swift; sourceTree = "<group>"; };
@@ -426,8 +420,6 @@
 		F0D038611DD3AFA100E0085D /* RouterFeedbackShowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterFeedbackShowable.swift; path = Router/RouterFeedbackShowable.swift; sourceTree = "<group>"; };
 		F0F434071DD10CAB00F278BD /* AlertDisplayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertDisplayable.swift; path = MessageDisplaying/AlertDisplayable.swift; sourceTree = "<group>"; };
 		F0F4340A1DD10CC500F278BD /* WindowWaiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowWaiter.swift; sourceTree = "<group>"; };
-		F0F434101DD119EE00F278BD /* ViewDebugAuthorizationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewDebugAuthorizationService.swift; path = Dricom/Source/VIPER/Services/ViewDebug/ViewDebugAuthorizationService.swift; sourceTree = SOURCE_ROOT; };
-		F0F434121DD11A7100F278BD /* AuthorizationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthorizationService.swift; path = Dricom/Source/VIPER/Services/Interface/AuthorizationService.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -475,7 +467,7 @@
 			children = (
 				F0128B841E49120C008E6668 /* NetworkRequest.swift */,
 				F0128B971E4A56A9008E6668 /* RegisterRequest.swift */,
-				F0128C321E50F8CF008E6668 /* LoginRequest.swift */,
+				F0128C321E50F8CF008E6668 /* AuthRequest.swift */,
 			);
 			name = Request;
 			sourceTree = "<group>";
@@ -1313,41 +1305,22 @@
 			isa = PBXGroup;
 			children = (
 				F0A115361DC630A500A4DC76 /* Factory */,
-				F0A1152E1DC62CB800A4DC76 /* Interface */,
 				F0A115291DC62C6900A4DC76 /* Network */,
 				F021D7AA1DE0E64300F50091 /* Validation */,
-				F0A115281DC62C3700A4DC76 /* ViewDebug */,
 			);
 			name = Services;
 			path = Application;
 			sourceTree = "<group>";
 		};
-		F0A115281DC62C3700A4DC76 /* ViewDebug */ = {
-			isa = PBXGroup;
-			children = (
-				F0F434101DD119EE00F278BD /* ViewDebugAuthorizationService.swift */,
-				F0A1152A1DC62C8000A4DC76 /* ViewDebugRegistrationService.swift */,
-			);
-			name = ViewDebug;
-			sourceTree = "<group>";
-		};
 		F0A115291DC62C6900A4DC76 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				F0128B951E4A566A008E6668 /* RegistrationServiceImpl.swift */,
+				F0128B951E4A566A008E6668 /* RegistrationService.swift */,
+				F0128C341E50FB50008E6668 /* AuthorizationService.swift */,
 			);
 			name = Network;
 			path = Dricom/Source/VIPER/Services/Network;
 			sourceTree = SOURCE_ROOT;
-		};
-		F0A1152E1DC62CB800A4DC76 /* Interface */ = {
-			isa = PBXGroup;
-			children = (
-				F0A1152C1DC62CB300A4DC76 /* RegistrationService.swift */,
-				F0F434121DD11A7100F278BD /* AuthorizationService.swift */,
-			);
-			name = Interface;
-			sourceTree = "<group>";
 		};
 		F0A115311DC62D2300A4DC76 /* Common */ = {
 			isa = PBXGroup;
@@ -1362,7 +1335,6 @@
 			isa = PBXGroup;
 			children = (
 				F0A115341DC6309F00A4DC76 /* ServiceFactory.swift */,
-				F0A115371DC630DD00A4DC76 /* ViewDebugServiceFactory.swift */,
 			);
 			name = Factory;
 			sourceTree = "<group>";
@@ -1660,7 +1632,7 @@
 				F076D6411DCF67F200E3ED0F /* LoginAssemblyImpl.swift in Sources */,
 				F0128C221E4F9D39008E6668 /* ScrollViewRefresherStateAnimator.swift in Sources */,
 				F05790D61E32A72D004FBD4A /* UIColor+Styleguide.swift in Sources */,
-				F0128B961E4A566A008E6668 /* RegistrationServiceImpl.swift in Sources */,
+				F0128B961E4A566A008E6668 /* RegistrationService.swift in Sources */,
 				F0AFDA371E3D2A7000CCEE24 /* LicensePlateView.swift in Sources */,
 				F021D6A21DD7A61900F50091 /* MailComposerAssemblyImpl.swift in Sources */,
 				F0128B881E491787008E6668 /* LoginResponse.swift in Sources */,
@@ -1685,7 +1657,6 @@
 				F076D6431DCF67F200E3ED0F /* LoginInteractorImpl.swift in Sources */,
 				F0128B741E45156C008E6668 /* ApplicationTabBarController.swift in Sources */,
 				F0322AFF1E43CB4100F3CD47 /* AppStarterAssemblyImpl.swift in Sources */,
-				F0A1152D1DC62CB300A4DC76 /* RegistrationService.swift in Sources */,
 				F09209A61DC14A7F0057302F /* ApplicationPresenter.swift in Sources */,
 				F076D6581DCF6E2F00E3ED0F /* StandardAlert.swift in Sources */,
 				F0D0385A1DD3AE0500E0085D /* FeedbackModule.swift in Sources */,
@@ -1703,7 +1674,6 @@
 				F09209A31DC14A7F0057302F /* ApplicationInteractor.swift in Sources */,
 				F0128C0A1E4F9CED008E6668 /* KeyboardFrameProvider.swift in Sources */,
 				F0128BA41E4A6592008E6668 /* Data+JSON.swift in Sources */,
-				F0F434131DD11A7100F278BD /* AuthorizationService.swift in Sources */,
 				F021D69B1DD7A43A00F50091 /* SupportMessageData.swift in Sources */,
 				F0128B981E4A56A9008E6668 /* RegisterRequest.swift in Sources */,
 				F0322B031E43CB4100F3CD47 /* AppStarterPresenter.swift in Sources */,
@@ -1716,7 +1686,7 @@
 				F0128BFE1E4F9CED008E6668 /* ContentFittingCombineFunctionBuilder.swift in Sources */,
 				F0823DCF1DE9EEA2007BD04D /* MainPageAssemblyImpl.swift in Sources */,
 				F0D0385F1DD3AE0500E0085D /* FeedbackViewController.swift in Sources */,
-				F0128C331E50F8CF008E6668 /* LoginRequest.swift in Sources */,
+				F0128C331E50F8CF008E6668 /* AuthRequest.swift in Sources */,
 				F0A1157D1DC6863E00A4DC76 /* UIView+Layout.swift in Sources */,
 				F021D6A31DD7A61900F50091 /* MailComposerAssembly.swift in Sources */,
 				F0128B9A1E4A599E008E6668 /* NetworkRequestError.swift in Sources */,
@@ -1725,8 +1695,6 @@
 				F09209B61DC150CB0057302F /* AssemblyFactoryImpl.swift in Sources */,
 				F0823DD01DE9EEA2007BD04D /* MainPageInteractor.swift in Sources */,
 				F0A1157C1DC6863E00A4DC76 /* UIImageExtension.swift in Sources */,
-				F0F434111DD119EE00F278BD /* ViewDebugAuthorizationService.swift in Sources */,
-				F0A1152B1DC62C8000A4DC76 /* ViewDebugRegistrationService.swift in Sources */,
 				F0128B931E4A5260008E6668 /* NetworkClient.swift in Sources */,
 				F0128C2F1E4F9E47008E6668 /* KeyValueObserver.swift in Sources */,
 				F0128C041E4F9CED008E6668 /* UIView+FirstResponderSettings.swift in Sources */,
@@ -1819,6 +1787,7 @@
 				F09209A41DC14A7F0057302F /* ApplicationInteractorImpl.swift in Sources */,
 				F076D6751DCF6FC500E3ED0F /* NSURLPathComponents.swift in Sources */,
 				F0128C251E4F9D39008E6668 /* ActivityIndicatorRefreshView.swift in Sources */,
+				F0128C351E50FB50008E6668 /* AuthorizationService.swift in Sources */,
 				F09209BD1DC1524E0057302F /* BaseAssembly.swift in Sources */,
 				F0128C2B1E4F9D39008E6668 /* ScrollViewRefresherPosition.swift in Sources */,
 				F0823DD61DE9EEA2007BD04D /* MainPageView.swift in Sources */,
@@ -1831,7 +1800,6 @@
 				F021D6E81DD8925B00F50091 /* CameraPresenter.swift in Sources */,
 				F0128C0D1E4F9CED008E6668 /* RecursionBreakingClosure.swift in Sources */,
 				F021D6EA1DD8925B00F50091 /* CameraRouterImpl.swift in Sources */,
-				F0A115381DC630DD00A4DC76 /* ViewDebugServiceFactory.swift in Sources */,
 				F076D6531DCF6CFB00E3ED0F /* ModuleDismissable.swift in Sources */,
 				F0322B051E43CB4100F3CD47 /* AppStarterRouterImpl.swift in Sources */,
 				F0128C271E4F9D39008E6668 /* ScrollToRefreshProgressCalculator.swift in Sources */,

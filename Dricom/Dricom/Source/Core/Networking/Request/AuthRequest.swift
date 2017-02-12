@@ -1,6 +1,6 @@
 import Alamofire
 
-struct LoginRequest: NetworkRequest {
+struct AuthRequest: NetworkRequest {
     typealias Result = LoginResponse
     
     private let email: String

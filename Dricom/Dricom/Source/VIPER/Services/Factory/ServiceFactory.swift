@@ -18,7 +18,9 @@ final class ServiceFactoryImpl: ServiceFactory {
     }
     
     func authorizationService() -> AuthorizationService {
-        return ViewDebugAuthorizationServiceImpl()
+        return AuthorizationServiceImpl(
+            networkClient: networkClient
+        )
     }
     
     func mailComposeDelegateService() -> MailComposeDelegateService {

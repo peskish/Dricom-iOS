@@ -1,4 +1,10 @@
-final class RegistrationServiceImpl: RegistrationService {
+protocol AuthorizationService: class {
+    func authorize(email: String, password: String, completion: @escaping ApiResult<User>.Completion)
+}
+
+import CryptoSwift
+
+final class AuthorizationServiceImpl: AuthorizationService {
     // MARK: - Dependencies
     private let networkClient: NetworkClient
     
@@ -7,21 +13,14 @@ final class RegistrationServiceImpl: RegistrationService {
         self.networkClient = networkClient
     }
     
-    // MARK: - RegistrationService
-    func register(with data: RegistrationData, completion: @escaping ApiResult<Void>.Completion) {
-        let request = RegisterRequest(
-            email: data.email,
-            name: data.name,
-            license: data.license,
-            phone: data.phone,
-            password: data.password,
-            token: nil  // TODO: send push token if exists
-        )
-        
+    // MARK: - AuthorizationService
+    func authorize(email: String, password: String, completion: @escaping ApiResult<User>.Completion) {
+        let request = AuthRequest(email: email, password: password.sha512())
+
         networkClient.send(request: request) { result in
             result.onData { [weak self] loginResponse in
                 self?.networkClient.jwt = loginResponse.jwt
-                completion(.data())
+                completion(.data(loginResponse.user))
             }
             result.onError { networkRequestError in
                 completion(.error(networkRequestError))
