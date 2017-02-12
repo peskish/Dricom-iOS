@@ -59,6 +59,7 @@
 		F0128C2D1E4F9D39008E6668 /* ScrollViewRefresherState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C201E4F9D39008E6668 /* ScrollViewRefresherState.swift */; };
 		F0128C2F1E4F9E47008E6668 /* KeyValueObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C2E1E4F9E47008E6668 /* KeyValueObserver.swift */; };
 		F0128C311E4FA520008E6668 /* RegisterTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C301E4FA520008E6668 /* RegisterTopView.swift */; };
+		F0128C331E50F8CF008E6668 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C321E50F8CF008E6668 /* LoginRequest.swift */; };
 		F01398E51DF43D8300E4F188 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01398E41DF43D8300E4F188 /* User.swift */; };
 		F021D69B1DD7A43A00F50091 /* SupportMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D69A1DD7A43A00F50091 /* SupportMessageData.swift */; };
 		F021D6A21DD7A61900F50091 /* MailComposerAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6A01DD7A61900F50091 /* MailComposerAssemblyImpl.swift */; };
@@ -270,6 +271,7 @@
 		F0128C201E4F9D39008E6668 /* ScrollViewRefresherState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewRefresherState.swift; sourceTree = "<group>"; };
 		F0128C2E1E4F9E47008E6668 /* KeyValueObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyValueObserver.swift; path = Dricom/Source/Core/Utilities/KeyValueObserver.swift; sourceTree = SOURCE_ROOT; };
 		F0128C301E4FA520008E6668 /* RegisterTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterTopView.swift; sourceTree = "<group>"; };
+		F0128C321E50F8CF008E6668 /* LoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginRequest.swift; path = Core/Networking/Request/LoginRequest.swift; sourceTree = "<group>"; };
 		F01398E41DF43D8300E4F188 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F021D69A1DD7A43A00F50091 /* SupportMessageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportMessageData.swift; sourceTree = "<group>"; };
 		F021D6A01DD7A61900F50091 /* MailComposerAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailComposerAssemblyImpl.swift; sourceTree = "<group>"; };
@@ -473,6 +475,7 @@
 			children = (
 				F0128B841E49120C008E6668 /* NetworkRequest.swift */,
 				F0128B971E4A56A9008E6668 /* RegisterRequest.swift */,
+				F0128C321E50F8CF008E6668 /* LoginRequest.swift */,
 			);
 			name = Request;
 			sourceTree = "<group>";
@@ -1713,6 +1716,7 @@
 				F0128BFE1E4F9CED008E6668 /* ContentFittingCombineFunctionBuilder.swift in Sources */,
 				F0823DCF1DE9EEA2007BD04D /* MainPageAssemblyImpl.swift in Sources */,
 				F0D0385F1DD3AE0500E0085D /* FeedbackViewController.swift in Sources */,
+				F0128C331E50F8CF008E6668 /* LoginRequest.swift in Sources */,
 				F0A1157D1DC6863E00A4DC76 /* UIView+Layout.swift in Sources */,
 				F021D6A31DD7A61900F50091 /* MailComposerAssembly.swift in Sources */,
 				F0128B9A1E4A599E008E6668 /* NetworkRequestError.swift in Sources */,
