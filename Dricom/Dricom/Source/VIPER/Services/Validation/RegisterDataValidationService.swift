@@ -128,21 +128,11 @@ final class RegisterDataValidationServiceImpl: RegisterDataValidationService {
             return RegisterInputFieldError(field: .password, errorType: .requiredFieldIsEmpty)
         }
         
-        guard password.characters.count >= 8 else {
+        guard password.characters.count >= 6 else {
             return RegisterInputFieldError(
                 field: .password,
                 errorType: .incorrectData(
-                    message: "Количество знаков в пароле должно быть не меньше 8"
-                )
-            )
-        }
-        
-        let passwordRegexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*(_|[-+_!@#$%^&*.,?])).+$"
-        guard validate(text: password, regexp: passwordRegexp) else {
-            return RegisterInputFieldError(
-                field: .password,
-                errorType: .incorrectData(
-                    message: "Пароль должен содержать символы верхнего и нижнего регистра, цифры и специальные символы"
+                    message: "Количество знаков в пароле должно быть не меньше 6"
                 )
             )
         }

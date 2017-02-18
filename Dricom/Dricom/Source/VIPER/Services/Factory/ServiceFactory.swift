@@ -8,18 +8,31 @@ protocol ServiceFactory {
 
 final class ServiceFactoryImpl: ServiceFactory {
     // MARK: - Properties
-    private let networkClient = NetworkClientImpl()
+    private let networkClientInstance: NetworkClient
+    private let authInfoHolderInstance: LoginResponseProcessor & AuthorizationStatusHolder & LastSuccessLoginHolder
+    
+    // MARK: - Init
+    init() {
+        authInfoHolderInstance = AuthInfoHolder()
+        networkClientInstance = NetworkClientImpl()
+    }
     
     // MARK: - ServiceFactory
+    func networkClient() -> NetworkClient {
+        return networkClientInstance
+    }
+    
     func registrationService() -> RegistrationService {
         return RegistrationServiceImpl(
-            networkClient: networkClient
+            networkClient: networkClient(),
+            loginResponseProcessor: authInfoHolderInstance
         )
     }
     
     func authorizationService() -> AuthorizationService {
         return AuthorizationServiceImpl(
-            networkClient: networkClient
+            networkClient: networkClient(),
+            loginResponseProcessor: authInfoHolderInstance
         )
     }
     

@@ -15,10 +15,12 @@ protocol RegistrationService {
 final class RegistrationServiceImpl: RegistrationService {
     // MARK: - Dependencies
     private let networkClient: NetworkClient
+    private let loginResponseProcessor: LoginResponseProcessor
     
     // MARK: - Init
-    init(networkClient: NetworkClient) {
+    init(networkClient: NetworkClient, loginResponseProcessor: LoginResponseProcessor) {
         self.networkClient = networkClient
+        self.loginResponseProcessor = loginResponseProcessor
     }
     
     // MARK: - RegistrationService
@@ -34,7 +36,7 @@ final class RegistrationServiceImpl: RegistrationService {
         
         networkClient.send(request: request) { result in
             result.onData { [weak self] loginResponse in
-                self?.networkClient.jwt = loginResponse.jwt
+                self?.loginResponseProcessor.processLoginResponse(loginResponse)
                 completion(.data(loginResponse.user))
             }
             result.onError { networkRequestError in

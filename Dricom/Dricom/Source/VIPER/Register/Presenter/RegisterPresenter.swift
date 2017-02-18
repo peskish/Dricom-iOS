@@ -122,9 +122,8 @@ final class RegisterPresenter: NSObject,
         view?.startActivity()
         interactor.registerUser { [weak self] result in
             self?.view?.stopActivity()
-            result.onData { _ in
-                // TODO: dismiss
-                print("show main screen")
+            result.onData { user in
+                self?.onFinish?(.finished(user: user))
             }
             result.onError { networkRequestError in
                 self?.view?.showError(networkRequestError)

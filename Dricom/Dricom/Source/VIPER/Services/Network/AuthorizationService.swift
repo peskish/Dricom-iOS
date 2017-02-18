@@ -7,10 +7,12 @@ import CryptoSwift
 final class AuthorizationServiceImpl: AuthorizationService {
     // MARK: - Dependencies
     private let networkClient: NetworkClient
+    private let loginResponseProcessor: LoginResponseProcessor
     
     // MARK: - Init
-    init(networkClient: NetworkClient) {
+    init(networkClient: NetworkClient, loginResponseProcessor: LoginResponseProcessor) {
         self.networkClient = networkClient
+        self.loginResponseProcessor = loginResponseProcessor
     }
     
     // MARK: - AuthorizationService
@@ -19,7 +21,7 @@ final class AuthorizationServiceImpl: AuthorizationService {
 
         networkClient.send(request: request) { result in
             result.onData { [weak self] loginResponse in
-                self?.networkClient.jwt = loginResponse.jwt
+                self?.loginResponseProcessor.processLoginResponse(loginResponse)
                 completion(.data(loginResponse.user))
             }
             result.onError { networkRequestError in
