@@ -202,6 +202,7 @@
 		F0B450821E5A2D1D00F3B2E4 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450811E5A2D1D00F3B2E4 /* UserDataService.swift */; };
 		F0B450841E5A2D8B00F3B2E4 /* MainPageModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450831E5A2D8B00F3B2E4 /* MainPageModule.swift */; };
 		F0B450861E5A303300F3B2E4 /* AccountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450851E5A303300F3B2E4 /* AccountRequest.swift */; };
+		F0B450881E5A3D1C00F3B2E4 /* LicensePartsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450871E5A3D1C00F3B2E4 /* LicensePartsTests.swift */; };
 		F0D038561DD3AE0500E0085D /* FeedbackAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038471DD3AE0500E0085D /* FeedbackAssembly.swift */; };
 		F0D038571DD3AE0500E0085D /* FeedbackAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038481DD3AE0500E0085D /* FeedbackAssemblyImpl.swift */; };
 		F0D038581DD3AE0500E0085D /* FeedbackInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D0384A1DD3AE0500E0085D /* FeedbackInteractor.swift */; };
@@ -432,6 +433,7 @@
 		F0B450811E5A2D1D00F3B2E4 /* UserDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		F0B450831E5A2D8B00F3B2E4 /* MainPageModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageModule.swift; sourceTree = "<group>"; };
 		F0B450851E5A303300F3B2E4 /* AccountRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountRequest.swift; path = Core/Networking/Request/AccountRequest.swift; sourceTree = "<group>"; };
+		F0B450871E5A3D1C00F3B2E4 /* LicensePartsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicensePartsTests.swift; sourceTree = "<group>"; };
 		F0D038471DD3AE0500E0085D /* FeedbackAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackAssembly.swift; sourceTree = "<group>"; };
 		F0D038481DD3AE0500E0085D /* FeedbackAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackAssemblyImpl.swift; sourceTree = "<group>"; };
 		F0D0384A1DD3AE0500E0085D /* FeedbackInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackInteractor.swift; sourceTree = "<group>"; };
@@ -1462,6 +1464,7 @@
 			isa = PBXGroup;
 			children = (
 				F0B450791E5A276400F3B2E4 /* RegistrationDataValidationServiceTests.swift */,
+				F0B450871E5A3D1C00F3B2E4 /* LicensePartsTests.swift */,
 				F0B4507B1E5A276400F3B2E4 /* Info.plist */,
 			);
 			path = DricomTests;
@@ -1959,6 +1962,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0B450881E5A3D1C00F3B2E4 /* LicensePartsTests.swift in Sources */,
 				F0B4507A1E5A276400F3B2E4 /* RegistrationDataValidationServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

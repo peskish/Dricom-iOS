@@ -6,6 +6,22 @@ struct LicenseParts {
     let restLetters: String
     let regionCode: String
     let countryCode: String
+    
+    init?(licenseNumber: String?) {
+        guard let licenseNumber = licenseNumber, licenseNumber.characters.count >= 7 else {
+            return nil
+        }
+        
+        firstLetter = (licenseNumber as NSString).substring(to: 1) + " "
+        numberPart = (licenseNumber as NSString).substring(
+            with: NSRange(location: 1, length: 3)
+        )
+        restLetters = " " + (licenseNumber as NSString).substring(
+            with: NSRange(location: 4, length: 2)
+        )
+        regionCode = (licenseNumber as NSString).substring(from: 6)
+        countryCode = "RUS"
+    }
 }
 
 final class LicensePlateView: UIView {

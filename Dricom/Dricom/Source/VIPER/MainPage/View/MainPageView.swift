@@ -77,6 +77,7 @@ final class MainPageView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
     // MARK: Public
     func setName(_ name: String?) {
         nameLabel.text = name
+        setNeedsLayout()
     }
     
     func setAvatarImageUrl(_ avatarImageUrl: URL?) {

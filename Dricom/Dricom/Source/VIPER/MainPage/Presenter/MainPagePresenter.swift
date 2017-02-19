@@ -34,15 +34,9 @@ final class MainPagePresenter: MainPageModule {
             user.avatar.flatMap{ URL(string: $0) }
         )
         
-        view?.setLicenseParts(
-            LicenseParts(
-                firstLetter: "A ",
-                numberPart: "245",
-                restLetters: " MN",
-                regionCode: "197",
-                countryCode: "RUS"
-            )
-        )
+        if let licenseNumber = user.license, let licenseParts = LicenseParts(licenseNumber: licenseNumber) {
+            view?.setLicenseParts(licenseParts)
+        }
     }
     
     func focusOnModule() {
