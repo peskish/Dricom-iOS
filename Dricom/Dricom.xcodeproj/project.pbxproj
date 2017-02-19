@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27533475C0A2BD856D9F321C /* Pods_DricomTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36BD3AD360B63F1B8A3635D2 /* Pods_DricomTests.framework */; };
 		9B2644558852E66D87B22CAF /* Pods_Dricom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FE1AE5ED782AA0B3DB9DB8 /* Pods_Dricom.framework */; };
 		F0128B741E45156C008E6668 /* ApplicationTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B731E45156C008E6668 /* ApplicationTabBarController.swift */; };
 		F0128B771E4515C4008E6668 /* ApplicationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B761E4515C4008E6668 /* ApplicationViewInput.swift */; };
@@ -197,6 +198,7 @@
 		F0A115891DC6914100A4DC76 /* CrossFadePushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115881DC6914100A4DC76 /* CrossFadePushTransition.swift */; };
 		F0AFDA371E3D2A7000CCEE24 /* LicensePlateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AFDA361E3D2A7000CCEE24 /* LicensePlateView.swift */; };
 		F0B450721E58CFE000F3B2E4 /* AuthInfoHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450711E58CFE000F3B2E4 /* AuthInfoHolder.swift */; };
+		F0B4507A1E5A276400F3B2E4 /* RegistrationDataValidationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450791E5A276400F3B2E4 /* RegistrationDataValidationServiceTests.swift */; };
 		F0D038561DD3AE0500E0085D /* FeedbackAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038471DD3AE0500E0085D /* FeedbackAssembly.swift */; };
 		F0D038571DD3AE0500E0085D /* FeedbackAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038481DD3AE0500E0085D /* FeedbackAssemblyImpl.swift */; };
 		F0D038581DD3AE0500E0085D /* FeedbackInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D0384A1DD3AE0500E0085D /* FeedbackInteractor.swift */; };
@@ -213,10 +215,23 @@
 		F0F4340B1DD10CC500F278BD /* WindowWaiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F4340A1DD10CC500F278BD /* WindowWaiter.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F0B4507C1E5A276400F3B2E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F092092F1DC13EFB0057302F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F09209361DC13EFB0057302F;
+			remoteInfo = Dricom;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		36BD3AD360B63F1B8A3635D2 /* Pods_DricomTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DricomTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38FE1AE5ED782AA0B3DB9DB8 /* Pods_Dricom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dricom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CEAD0BF03CF89749F61C8F2 /* Pods-Dricom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dricom.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dricom/Pods-Dricom.release.xcconfig"; sourceTree = "<group>"; };
 		4DB1949EEFE9AB53D8BFFE3D /* Pods-Dricom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dricom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dricom/Pods-Dricom.debug.xcconfig"; sourceTree = "<group>"; };
+		59F04607D182323815686D50 /* Pods-DricomTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DricomTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DricomTests/Pods-DricomTests.release.xcconfig"; sourceTree = "<group>"; };
+		D3FEE52193AC8F8716FDABAF /* Pods-DricomTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DricomTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DricomTests/Pods-DricomTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F0128B731E45156C008E6668 /* ApplicationTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationTabBarController.swift; path = Dricom/Source/VIPER/Application/View/ApplicationTabBarController.swift; sourceTree = SOURCE_ROOT; };
 		F0128B761E4515C4008E6668 /* ApplicationViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationViewInput.swift; path = Dricom/Source/VIPER/Application/View/ApplicationViewInput.swift; sourceTree = SOURCE_ROOT; };
 		F0128B781E45182A008E6668 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerExtensions.swift; path = Core/Extensions/UIKit/ViewControllerExtensions.swift; sourceTree = "<group>"; };
@@ -408,6 +423,9 @@
 		F0A115881DC6914100A4DC76 /* CrossFadePushTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CrossFadePushTransition.swift; path = Dricom/Source/Presentation/Transitions/CrossFadePushTransition.swift; sourceTree = SOURCE_ROOT; };
 		F0AFDA361E3D2A7000CCEE24 /* LicensePlateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LicensePlateView.swift; path = Dricom/Source/Presentation/Views/LicensePlateView.swift; sourceTree = SOURCE_ROOT; };
 		F0B450711E58CFE000F3B2E4 /* AuthInfoHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthInfoHolder.swift; sourceTree = "<group>"; };
+		F0B450771E5A276400F3B2E4 /* DricomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DricomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0B450791E5A276400F3B2E4 /* RegistrationDataValidationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationDataValidationServiceTests.swift; sourceTree = "<group>"; };
+		F0B4507B1E5A276400F3B2E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0D038471DD3AE0500E0085D /* FeedbackAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackAssembly.swift; sourceTree = "<group>"; };
 		F0D038481DD3AE0500E0085D /* FeedbackAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackAssemblyImpl.swift; sourceTree = "<group>"; };
 		F0D0384A1DD3AE0500E0085D /* FeedbackInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackInteractor.swift; sourceTree = "<group>"; };
@@ -433,6 +451,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F0B450741E5A276400F3B2E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27533475C0A2BD856D9F321C /* Pods_DricomTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -441,6 +467,8 @@
 			children = (
 				4DB1949EEFE9AB53D8BFFE3D /* Pods-Dricom.debug.xcconfig */,
 				3CEAD0BF03CF89749F61C8F2 /* Pods-Dricom.release.xcconfig */,
+				D3FEE52193AC8F8716FDABAF /* Pods-DricomTests.debug.xcconfig */,
+				59F04607D182323815686D50 /* Pods-DricomTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1075,6 +1103,7 @@
 			isa = PBXGroup;
 			children = (
 				F09209391DC13EFB0057302F /* Dricom */,
+				F0B450781E5A276400F3B2E4 /* DricomTests */,
 				F09209381DC13EFB0057302F /* Products */,
 				EED58C307B694DD777F955D9 /* Pods */,
 				F279DA0D2D1A1E4AFAC3F9E1 /* Frameworks */,
@@ -1085,6 +1114,7 @@
 			isa = PBXGroup;
 			children = (
 				F09209371DC13EFB0057302F /* Dricom.app */,
+				F0B450771E5A276400F3B2E4 /* DricomTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1419,6 +1449,15 @@
 			name = ViewControllerTransitions;
 			sourceTree = "<group>";
 		};
+		F0B450781E5A276400F3B2E4 /* DricomTests */ = {
+			isa = PBXGroup;
+			children = (
+				F0B450791E5A276400F3B2E4 /* RegistrationDataValidationServiceTests.swift */,
+				F0B4507B1E5A276400F3B2E4 /* Info.plist */,
+			);
+			path = DricomTests;
+			sourceTree = "<group>";
+		};
 		F0D038451DD3AE0500E0085D /* Feedback */ = {
 			isa = PBXGroup;
 			children = (
@@ -1492,6 +1531,7 @@
 			isa = PBXGroup;
 			children = (
 				38FE1AE5ED782AA0B3DB9DB8 /* Pods_Dricom.framework */,
+				36BD3AD360B63F1B8A3635D2 /* Pods_DricomTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1519,13 +1559,34 @@
 			productReference = F09209371DC13EFB0057302F /* Dricom.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F0B450761E5A276400F3B2E4 /* DricomTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0B450801E5A276400F3B2E4 /* Build configuration list for PBXNativeTarget "DricomTests" */;
+			buildPhases = (
+				406EE42D80C3AD3A638563B3 /* [CP] Check Pods Manifest.lock */,
+				F0B450731E5A276400F3B2E4 /* Sources */,
+				F0B450741E5A276400F3B2E4 /* Frameworks */,
+				F0B450751E5A276400F3B2E4 /* Resources */,
+				6DFA16AF4678E3C77E298D45 /* [CP] Embed Pods Frameworks */,
+				9BFA28CF7D9B2BFE5523D7EC /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F0B4507D1E5A276400F3B2E4 /* PBXTargetDependency */,
+			);
+			name = DricomTests;
+			productName = DricomTests;
+			productReference = F0B450771E5A276400F3B2E4 /* DricomTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		F092092F1DC13EFB0057302F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Dricom;
 				TargetAttributes = {
@@ -1533,6 +1594,12 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = RU54DQG53V;
 						ProvisioningStyle = Manual;
+					};
+					F0B450761E5A276400F3B2E4 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = RU54DQG53V;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F09209361DC13EFB0057302F;
 					};
 				};
 			};
@@ -1550,6 +1617,7 @@
 			projectRoot = "";
 			targets = (
 				F09209361DC13EFB0057302F /* Dricom */,
+				F0B450761E5A276400F3B2E4 /* DricomTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1572,6 +1640,13 @@
 				F05790CF1E32A442004FBD4A /* Rubik-Regular.ttf in Resources */,
 				F05790CD1E32A442004FBD4A /* Rubik-Medium.ttf in Resources */,
 				F09209421DC13EFB0057302F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0B450751E5A276400F3B2E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1606,6 +1681,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		406EE42D80C3AD3A638563B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6DFA16AF4678E3C77E298D45 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DricomTests/Pods-DricomTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9BFA28CF7D9B2BFE5523D7EC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DricomTests/Pods-DricomTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BD886E7D33C4FD76B619FEBD /* [CP] Copy Pods Resources */ = {
@@ -1823,7 +1943,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F0B450731E5A276400F3B2E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0B4507A1E5A276400F3B2E4 /* RegistrationDataValidationServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F0B4507D1E5A276400F3B2E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F09209361DC13EFB0057302F /* Dricom */;
+			targetProxy = F0B4507C1E5A276400F3B2E4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F09209431DC13EFB0057302F /* LaunchScreen.storyboard */ = {
@@ -1967,6 +2103,38 @@
 			};
 			name = Release;
 		};
+		F0B4507E1E5A276400F3B2E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3FEE52193AC8F8716FDABAF /* Pods-DricomTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = RU54DQG53V;
+				INFOPLIST_FILE = DricomTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.dricom.DricomTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dricom.app/Dricom";
+			};
+			name = Debug;
+		};
+		F0B4507F1E5A276400F3B2E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59F04607D182323815686D50 /* Pods-DricomTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = RU54DQG53V;
+				INFOPLIST_FILE = DricomTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.dricom.DricomTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dricom.app/Dricom";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1987,6 +2155,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		F0B450801E5A276400F3B2E4 /* Build configuration list for PBXNativeTarget "DricomTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0B4507E1E5A276400F3B2E4 /* Debug */,
+				F0B4507F1E5A276400F3B2E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

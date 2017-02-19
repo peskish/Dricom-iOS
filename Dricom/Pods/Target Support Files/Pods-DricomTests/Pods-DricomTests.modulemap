@@ -1,0 +1,6 @@
+framework module Pods_DricomTests {
+  umbrella header "Pods-DricomTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

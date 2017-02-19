@@ -128,14 +128,18 @@ final class RegisterDataValidationServiceImpl: RegisterDataValidationService {
             return RegisterInputFieldError(field: .password, errorType: .requiredFieldIsEmpty)
         }
         
-        guard password.characters.count >= 6 else {
+        let passwordRegexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{6,}$"
+
+        guard validate(text: password, regexp: passwordRegexp) else {
             return RegisterInputFieldError(
                 field: .password,
                 errorType: .incorrectData(
-                    message: "Количество знаков в пароле должно быть не меньше 6"
+                    message: "Пароль должен быть не менее 6 символов длиной, содержать строчные и прописные латинские буквы и цифры"
                 )
             )
         }
+        
+        
         
         return nil
     }
