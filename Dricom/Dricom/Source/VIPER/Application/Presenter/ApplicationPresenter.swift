@@ -10,6 +10,7 @@ final class ApplicationPresenter: ApplicationLaunchHandler {
     private let router: ApplicationRouter
     
     weak var view: ApplicationViewInput?
+    weak var mainPageModule: MainPageModule?
     
     // MARK: - Init
     init(interactor: ApplicationInteractor,
@@ -23,7 +24,7 @@ final class ApplicationPresenter: ApplicationLaunchHandler {
     func handleApplicationDidFinishLaunching() {
         guard let view = view else { return }
         
-        router.showAppStarter(disposeBag: view.disposeBag) { applicationLaunchHandler in
+        router.showAppStarter(disposeBag: view.disposeBag, mainPageModule: mainPageModule) { applicationLaunchHandler in
             applicationLaunchHandler.handleApplicationDidFinishLaunching()
         }
     }

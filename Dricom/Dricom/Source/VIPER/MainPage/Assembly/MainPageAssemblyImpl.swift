@@ -2,7 +2,7 @@ import UIKit
 
 final class MainPageAssemblyImpl: BaseAssembly, MainPageAssembly {
     // MARK: - MainPageAssembly
-    func module() -> UIViewController
+    func module() -> (viewController: UIViewController, interface: MainPageModule)
     {
         let interactor = MainPageInteractorImpl()
         
@@ -24,6 +24,6 @@ final class MainPageAssemblyImpl: BaseAssembly, MainPageAssembly {
         
         let _ = viewController.view
         
-        return viewController
+        return (viewController: viewController, interface: presenter)
     }
 }

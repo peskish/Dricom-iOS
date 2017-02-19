@@ -10,6 +10,14 @@ final class NetworkClientImpl: NetworkClient {
     // MARK: - Properties
     private let baseUrl = "http://dricom.hftgeek.com/"
     
+    // MARK: - Dependencies
+    private let authorizationStatusHolder: AuthorizationStatusHolder
+    
+    // MARK: - Init
+    init(authorizationStatusHolder: AuthorizationStatusHolder) {
+        self.authorizationStatusHolder = authorizationStatusHolder
+    }
+    
     // MARK: - NetworkClient
     func send<T, R: NetworkRequest>(
         request: R,
@@ -20,10 +28,22 @@ final class NetworkClientImpl: NetworkClient {
             return
         }
         
+        var parameters = request.params
+        
+        if request.isAuthorizationRequired {
+            switch authorizationStatusHolder.authorizationStatus {
+            case .notAuthorized:
+                completion(.error(.userIsNotAuthorized))
+                return
+            case .authorized(let jwt):
+                parameters["jwt"] = jwt
+            }
+        }
+        
         Alamofire.request(
             url,
             method: request.httpMethod,
-            parameters: request.params,
+            parameters: parameters,
             encoding: request.encoding,
             headers: nil
         ).responseData { response in

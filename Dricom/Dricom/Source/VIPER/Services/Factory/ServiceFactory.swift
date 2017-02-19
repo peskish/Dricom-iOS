@@ -4,6 +4,7 @@ protocol ServiceFactory {
     func registrationService() -> RegistrationService
     func mailComposeDelegateService() -> MailComposeDelegateService
     func registerDataValidationService() -> RegisterDataValidationService
+    func userDataService() -> UserDataService
 }
 
 final class ServiceFactoryImpl: ServiceFactory {
@@ -14,7 +15,7 @@ final class ServiceFactoryImpl: ServiceFactory {
     // MARK: - Init
     init() {
         authInfoHolderInstance = AuthInfoHolder()
-        networkClientInstance = NetworkClientImpl()
+        networkClientInstance = NetworkClientImpl(authorizationStatusHolder: authInfoHolderInstance)
     }
     
     // MARK: - ServiceFactory
@@ -42,5 +43,9 @@ final class ServiceFactoryImpl: ServiceFactory {
     
     func registerDataValidationService() -> RegisterDataValidationService {
         return RegisterDataValidationServiceImpl()
+    }
+    
+    func userDataService() -> UserDataService {
+        return UserDataServiceImpl(networkClient: networkClient())
     }
 }

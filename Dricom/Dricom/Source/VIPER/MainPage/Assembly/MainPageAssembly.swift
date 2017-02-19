@@ -1,5 +1,5 @@
 import UIKit
 
 protocol MainPageAssembly: class {
-    func module() -> UIViewController
+    func module() -> (viewController: UIViewController, interface: MainPageModule)
 }

@@ -5,6 +5,8 @@ final class AppStarterPresenter: ApplicationLaunchHandler {
     private let interactor: AppStarterInteractor
     private let router: AppStarterRouter
     
+    weak var mainPageModule: MainPageModule?
+    
     // MARK: - Init
     init(interactor: AppStarterInteractor,
          router: AppStarterRouter)
@@ -15,15 +17,23 @@ final class AppStarterPresenter: ApplicationLaunchHandler {
     
     // MARK: - ApplicationLaunchHandler
     func handleApplicationDidFinishLaunching() {
-        // TODO: check saved session
-        openLoginScreen()
+        interactor.user { [weak self] result in
+            result.onData { user in
+                self?.mainPageModule?.setUser(user)
+                self?.router.dismissCurrentModule()
+            }
+            result.onError { _ in
+                self?.openLoginScreen()
+            }
+        }
     }
     
     // MARK: Flow control
     func openLoginScreen() {
         router.showLogin { loginModule in
             loginModule.onFinish = { [weak self] result in
-                if case .finished = result {
+                if case .finished(let user) = result {
+                    self?.mainPageModule?.setUser(user)
                     self?.router.dismissCurrentModule()
                 }
             }

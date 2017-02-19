@@ -1,6 +1,6 @@
 import Foundation
 
-final class MainPagePresenter {
+final class MainPagePresenter: MainPageModule {
     // MARK: - Private properties
     private let interactor: MainPageInteractor
     private let router: MainPageRouter
@@ -24,38 +24,28 @@ final class MainPagePresenter {
     private func setUpView() {
         view?.setLicenseSearchPlaceholder("Введите номер автомобиля")
         view?.setLicenseSearchTitle("Найти пользователя")
-        
-        view?.onViewDidLoad = { [weak self] in
-            self?.fetchAndPresentData()
-        }
-    }
-    
-    private func fetchAndPresentData() {
-        interactor.user { [weak self] user in
-            self?.view?.setName(user.name)
-            
-            self?.view?.setAvatarImageUrl(
-                user.avatar.flatMap{ URL(string: $0) }
-            )
-            
-            self?.view?.setLicenseParts(
-                LicenseParts(
-                    firstLetter: "A ",
-                    numberPart: "245",
-                    restLetters: " MN",
-                    regionCode: "197",
-                    countryCode: "RUS"
-                )
-            )
-        }
     }
     
     // MARK: - MainPageModule
-    func focusOnModule() {
-        router.focusOnCurrentModule()
+    func setUser(_ user: User) {
+        view?.setName(user.name)
+        
+        view?.setAvatarImageUrl(
+            user.avatar.flatMap{ URL(string: $0) }
+        )
+        
+        view?.setLicenseParts(
+            LicenseParts(
+                firstLetter: "A ",
+                numberPart: "245",
+                restLetters: " MN",
+                regionCode: "197",
+                countryCode: "RUS"
+            )
+        )
     }
     
-    func dismissModule() {
-        router.dismissCurrentModule()
+    func focusOnModule() {
+        router.focusOnCurrentModule()
     }
 }

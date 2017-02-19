@@ -1,7 +1,7 @@
 import Unbox
 
 struct User: Equatable, Unboxable {
-    // let userId: String // TODO: добавить с Ромой ID
+    let userId: String
     let avatar: String?
     let name: String?
     let license: String?
@@ -9,12 +9,14 @@ struct User: Equatable, Unboxable {
     let email: String?
     
     init(
+        userId: String,
         avatar: String?,
         name: String?,
         licence: String?,
         phone: String?,
         email: String?)
     {
+        self.userId = userId
         self.avatar = avatar
         self.name = name
         self.license = licence
@@ -29,7 +31,7 @@ struct User: Equatable, Unboxable {
             && left.name == right.name
             && left.phone == right.phone
             && left.email == right.email
-            // && left.userId == right.userId
+            && left.userId == right.userId
     }
     
     // MARK: Unboxable
@@ -39,5 +41,6 @@ struct User: Equatable, Unboxable {
         license = unboxer.unbox(key: "license")
         phone = unboxer.unbox(key: "phone")
         email = unboxer.unbox(key: "email")
+        userId = try unboxer.unbox(key: "id")
     }
 }
