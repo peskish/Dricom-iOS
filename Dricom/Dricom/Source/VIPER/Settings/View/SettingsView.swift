@@ -13,4 +13,9 @@ final class SettingsView: UITableView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - View input
+    func setViewData(_ viewData: SettingsViewData) {
+        
+    }
 }

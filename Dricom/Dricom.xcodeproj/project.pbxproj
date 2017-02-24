@@ -216,6 +216,7 @@
 		F0B450AC1E60B6A400F3B2E4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450A11E60B6A400F3B2E4 /* SettingsViewController.swift */; };
 		F0B450AD1E60B6A400F3B2E4 /* SettingsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450A21E60B6A400F3B2E4 /* SettingsViewInput.swift */; };
 		F0B450AF1E60BBB900F3B2E4 /* SettingsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450AE1E60BBB900F3B2E4 /* SettingsModule.swift */; };
+		F0B450B11E60C1B700F3B2E4 /* SettingsViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450B01E60C1B700F3B2E4 /* SettingsViewData.swift */; };
 		F0D038561DD3AE0500E0085D /* FeedbackAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038471DD3AE0500E0085D /* FeedbackAssembly.swift */; };
 		F0D038571DD3AE0500E0085D /* FeedbackAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038481DD3AE0500E0085D /* FeedbackAssemblyImpl.swift */; };
 		F0D038581DD3AE0500E0085D /* FeedbackInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D0384A1DD3AE0500E0085D /* FeedbackInteractor.swift */; };
@@ -460,6 +461,7 @@
 		F0B450A11E60B6A400F3B2E4 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F0B450A21E60B6A400F3B2E4 /* SettingsViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewInput.swift; sourceTree = "<group>"; };
 		F0B450AE1E60BBB900F3B2E4 /* SettingsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsModule.swift; sourceTree = "<group>"; };
+		F0B450B01E60C1B700F3B2E4 /* SettingsViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewData.swift; sourceTree = "<group>"; };
 		F0D038471DD3AE0500E0085D /* FeedbackAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackAssembly.swift; sourceTree = "<group>"; };
 		F0D038481DD3AE0500E0085D /* FeedbackAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackAssemblyImpl.swift; sourceTree = "<group>"; };
 		F0D0384A1DD3AE0500E0085D /* FeedbackInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackInteractor.swift; sourceTree = "<group>"; };
@@ -1551,9 +1553,10 @@
 		F0B4509F1E60B6A400F3B2E4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F0B450A01E60B6A400F3B2E4 /* SettingsView.swift */,
-				F0B450A11E60B6A400F3B2E4 /* SettingsViewController.swift */,
+				F0B450B01E60C1B700F3B2E4 /* SettingsViewData.swift */,
 				F0B450A21E60B6A400F3B2E4 /* SettingsViewInput.swift */,
+				F0B450A11E60B6A400F3B2E4 /* SettingsViewController.swift */,
+				F0B450A01E60B6A400F3B2E4 /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1877,6 +1880,7 @@
 				F0823DD11DE9EEA2007BD04D /* MainPageInteractorImpl.swift in Sources */,
 				F0128B851E49120C008E6668 /* NetworkRequest.swift in Sources */,
 				F0B450841E5A2D8B00F3B2E4 /* MainPageModule.swift in Sources */,
+				F0B450B11E60C1B700F3B2E4 /* SettingsViewData.swift in Sources */,
 				F0A115161DC6229500A4DC76 /* BaseViewController.swift in Sources */,
 				F021D6C11DD7B99300F50091 /* RegisterInteractorImpl.swift in Sources */,
 				F08BE1A61DC9326A00243B56 /* ImageButtonView.swift in Sources */,

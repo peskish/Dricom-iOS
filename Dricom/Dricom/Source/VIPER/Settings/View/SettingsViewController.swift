@@ -33,4 +33,8 @@ final class SettingsViewController: BaseViewController, SettingsViewInput {
     func setViewTitle(_ title: String) {
         self.title = title
     }
+    
+    func setViewData(_ viewData: SettingsViewData) {
+        settingsView.setViewData(viewData)
+    }
 }
