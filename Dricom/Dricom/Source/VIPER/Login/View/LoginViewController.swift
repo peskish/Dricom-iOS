@@ -9,12 +9,18 @@ final class LoginViewController: BaseViewController, LoginViewInput {
         super.loadView()
         
         view = loginView
+        
+        automaticallyAdjustsScrollViewInsets = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
     }
     
     // MARK: - LoginViewInput

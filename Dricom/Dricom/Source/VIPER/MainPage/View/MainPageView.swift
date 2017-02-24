@@ -1,7 +1,7 @@
 import UIKit
 import AlamofireImage
 
-final class MainPageView: UIView, StandardPreloaderViewHolder, ActivityDisplayable {
+final class MainPageView: UIScrollView, StandardPreloaderViewHolder, ActivityDisplayable {
     // MARK: Properties
     private let nameLabel = UILabel()
     private let avatarImageView = UIImageView(image: #imageLiteral(resourceName: "Avatar"))
@@ -14,6 +14,8 @@ final class MainPageView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
     // MARK: - Init
     init() {
         super.init(frame: .zero)
+        
+        bounces = false
         
         addSubview(nameLabel)
         addSubview(avatarImageView)
@@ -59,18 +61,18 @@ final class MainPageView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
         licenceView.top = avatarImageView.bottom + SpecMargins.contentMargin
         licenceView.centerX = bounds.centerX
         
-        licenseSearchButton.layout(
-            left: bounds.left,
-            right: bounds.right,
-            bottom: bounds.bottom - 35,
-            height: SpecSizes.actionButtonHeight
-        )
-        
         licenseSearchInputField.layout(
             left: bounds.left,
             right: bounds.right,
-            bottom: licenseSearchButton.top - 15,
+            top: licenceView.bottom + SpecMargins.contentMargin,
             height: SpecSizes.inputFieldHeight
+        )
+        
+        licenseSearchButton.layout(
+            left: bounds.left,
+            right: bounds.right,
+            top: licenseSearchInputField.bottom + SpecMargins.inputAndButtonMargin,
+            height: SpecSizes.actionButtonHeight
         )
     }
     

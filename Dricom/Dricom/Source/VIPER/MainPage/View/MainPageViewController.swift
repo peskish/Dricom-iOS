@@ -17,6 +17,12 @@ final class MainPageViewController: BaseViewController, MainPageViewInput {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        mainPageView.contentInset = defaultContentInsets
+    }
+    
     // MARK: - MainPageViewInput
     func setAvatarImageUrl(_ avatarImageUrl: URL?) {
         mainPageView.setAvatarImageUrl(avatarImageUrl)

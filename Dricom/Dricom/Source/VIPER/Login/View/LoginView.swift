@@ -76,8 +76,10 @@ final class LoginView: UIScrollView, StandardPreloaderViewHolder, ActivityDispla
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        let topPadding = calculateTopPadding(for: bounds.size)
+        
         logoImageView.sizeToFit()
-        logoImageView.top = 75
+        logoImageView.top = topPadding
         logoImageView.centerX = bounds.centerX
         
         logoTitleView.sizeToFit()
@@ -87,7 +89,7 @@ final class LoginView: UIScrollView, StandardPreloaderViewHolder, ActivityDispla
         illustration.size = illustration.sizeThatFits(
             CGSize(width: bounds.width, height: .greatestFiniteMagnitude)
         )
-        illustration.top = logoImageView.top + 3
+        illustration.top = logoImageView.top + 13
         
         loginInputView.layout(
             left: bounds.left,
@@ -117,12 +119,35 @@ final class LoginView: UIScrollView, StandardPreloaderViewHolder, ActivityDispla
             height: SpecSizes.actionButtonHeight
         )
         
-        infoButtonView.size = infoButtonView.sizeThatFits(bounds.size)
-        infoButtonView.layout(right: bounds.right, top: registerButtonView.bottom + SpecMargins.contentMargin)
-
         preloader.frame = bounds
         
-        contentSize = CGSize(width: bounds.width, height: max(bounds.height, infoButtonView.bottom))
+        contentSize = CGSize(
+            width: bounds.width,
+            height: max(bounds.height, registerButtonView.bottom + SpecMargins.contentMargin)
+        )
+    }
+    
+    private func calculateTopPadding(for size: CGSize) -> CGFloat {
+        let maxTopPadding: CGFloat = 55  // iPhone 6 and bigger
+        
+        let illustrationSize = illustration.sizeThatFits(
+            CGSize(width: bounds.width, height: .greatestFiniteMagnitude)
+        )
+        
+        let desiredHeight = contentInset.top
+            + maxTopPadding
+            + 13
+            + illustrationSize.height
+            + 2 * SpecSizes.inputFieldHeight
+            + SpecMargins.contentSidePadding
+            + SpecSizes.actionButtonHeight
+            + SpecMargins.contentMargin
+            + SpecSizes.actionButtonHeight
+            + SpecMargins.contentMargin
+        
+        return (desiredHeight <= size.height)
+            ? maxTopPadding
+            : max(0, maxTopPadding - ( desiredHeight - size.height ) )
     }
     
     // MARK: Public

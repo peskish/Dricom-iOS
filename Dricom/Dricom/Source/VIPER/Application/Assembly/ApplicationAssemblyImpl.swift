@@ -38,10 +38,11 @@ final class ApplicationAssemblyImpl: BaseAssembly, ApplicationAssembly {
         let module = assembly.module()
         let navigationController = UINavigationController(rootViewController: module.viewController)
         navigationController.tabBarItem = UITabBarItem(
-            title: nil,
+            title: "Мой Dricom",
             image: #imageLiteral(resourceName: "TabMain"),
             selectedImage: #imageLiteral(resourceName: "TabMainSelected")
         )
+        navigationController.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -2)
         return (viewController: navigationController, interface: module.interface)
     }
 }
