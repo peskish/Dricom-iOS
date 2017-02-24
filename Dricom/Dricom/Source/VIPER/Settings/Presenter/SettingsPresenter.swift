@@ -1,7 +1,6 @@
 import Foundation
 
-final class SettingsPresenter:
-    SettingsModule
+final class SettingsPresenter: SettingsModule
 {
     // MARK: - Private properties
     private let interactor: SettingsInteractor
@@ -22,9 +21,14 @@ final class SettingsPresenter:
         }
     }
     
+    // MARK: - SettingsModule
+    func setUser(_ user: User) {
+        // TODO:
+    }
+    
     // MARK: - Private
     private func setUpView() {
-        
+        view?.setViewTitle("Настройки")
     }
     
     // MARK: - SettingsModule
@@ -35,6 +39,4 @@ final class SettingsPresenter:
     func dismissModule() {
         router.dismissCurrentModule()
     }
-    
-    var onFinish: ((SettingsResult) -> ())?
 }

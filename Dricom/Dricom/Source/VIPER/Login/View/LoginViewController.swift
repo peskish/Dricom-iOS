@@ -19,10 +19,6 @@ final class LoginViewController: BaseViewController, LoginViewInput {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
-    }
-    
     // MARK: - LoginViewInput
     func setLoginPlaceholder(_ placeholder: String?) {
         loginView.setLoginPlaceholder(placeholder)

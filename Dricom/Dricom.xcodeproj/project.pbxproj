@@ -209,13 +209,13 @@
 		F0B450A41E60B6A400F3B2E4 /* SettingsAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450951E60B6A400F3B2E4 /* SettingsAssemblyImpl.swift */; };
 		F0B450A51E60B6A400F3B2E4 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450971E60B6A400F3B2E4 /* SettingsInteractor.swift */; };
 		F0B450A61E60B6A400F3B2E4 /* SettingsInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450981E60B6A400F3B2E4 /* SettingsInteractorImpl.swift */; };
-		F0B450A71E60B6A400F3B2E4 /* SettingsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B4509A1E60B6A400F3B2E4 /* SettingsModule.swift */; };
 		F0B450A81E60B6A400F3B2E4 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B4509B1E60B6A400F3B2E4 /* SettingsPresenter.swift */; };
 		F0B450A91E60B6A400F3B2E4 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B4509D1E60B6A400F3B2E4 /* SettingsRouter.swift */; };
 		F0B450AA1E60B6A400F3B2E4 /* SettingsRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B4509E1E60B6A400F3B2E4 /* SettingsRouterImpl.swift */; };
 		F0B450AB1E60B6A400F3B2E4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450A01E60B6A400F3B2E4 /* SettingsView.swift */; };
 		F0B450AC1E60B6A400F3B2E4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450A11E60B6A400F3B2E4 /* SettingsViewController.swift */; };
 		F0B450AD1E60B6A400F3B2E4 /* SettingsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450A21E60B6A400F3B2E4 /* SettingsViewInput.swift */; };
+		F0B450AF1E60BBB900F3B2E4 /* SettingsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450AE1E60BBB900F3B2E4 /* SettingsModule.swift */; };
 		F0D038561DD3AE0500E0085D /* FeedbackAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038471DD3AE0500E0085D /* FeedbackAssembly.swift */; };
 		F0D038571DD3AE0500E0085D /* FeedbackAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038481DD3AE0500E0085D /* FeedbackAssemblyImpl.swift */; };
 		F0D038581DD3AE0500E0085D /* FeedbackInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D0384A1DD3AE0500E0085D /* FeedbackInteractor.swift */; };
@@ -453,13 +453,13 @@
 		F0B450951E60B6A400F3B2E4 /* SettingsAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsAssemblyImpl.swift; sourceTree = "<group>"; };
 		F0B450971E60B6A400F3B2E4 /* SettingsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
 		F0B450981E60B6A400F3B2E4 /* SettingsInteractorImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInteractorImpl.swift; sourceTree = "<group>"; };
-		F0B4509A1E60B6A400F3B2E4 /* SettingsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsModule.swift; sourceTree = "<group>"; };
 		F0B4509B1E60B6A400F3B2E4 /* SettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		F0B4509D1E60B6A400F3B2E4 /* SettingsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
 		F0B4509E1E60B6A400F3B2E4 /* SettingsRouterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRouterImpl.swift; sourceTree = "<group>"; };
 		F0B450A01E60B6A400F3B2E4 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F0B450A11E60B6A400F3B2E4 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F0B450A21E60B6A400F3B2E4 /* SettingsViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewInput.swift; sourceTree = "<group>"; };
+		F0B450AE1E60BBB900F3B2E4 /* SettingsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsModule.swift; sourceTree = "<group>"; };
 		F0D038471DD3AE0500E0085D /* FeedbackAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackAssembly.swift; sourceTree = "<group>"; };
 		F0D038481DD3AE0500E0085D /* FeedbackAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackAssemblyImpl.swift; sourceTree = "<group>"; };
 		F0D0384A1DD3AE0500E0085D /* FeedbackInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackInteractor.swift; sourceTree = "<group>"; };
@@ -1533,7 +1533,7 @@
 		F0B450991E60B6A400F3B2E4 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				F0B4509A1E60B6A400F3B2E4 /* SettingsModule.swift */,
+				F0B450AE1E60BBB900F3B2E4 /* SettingsModule.swift */,
 				F0B4509B1E60B6A400F3B2E4 /* SettingsPresenter.swift */,
 			);
 			path = Presenter;
@@ -1933,6 +1933,7 @@
 				F0823DCE1DE9EEA2007BD04D /* MainPageAssembly.swift in Sources */,
 				F05790D71E32A72D004FBD4A /* UIFont+Styleguide.swift in Sources */,
 				F021D6E51DD8925B00F50091 /* CameraInteractor.swift in Sources */,
+				F0B450AF1E60BBB900F3B2E4 /* SettingsModule.swift in Sources */,
 				F076D66F1DCF6F3800E3ED0F /* RangeExtension.swift in Sources */,
 				F0322B001E43CB4100F3CD47 /* AppStarterInteractor.swift in Sources */,
 				F0322AFE1E43CB4100F3CD47 /* AppStarterAssembly.swift in Sources */,
@@ -2006,7 +2007,6 @@
 				F0128BFB1E4F9CED008E6668 /* DisposeBagHolder.swift in Sources */,
 				F0823DD81DE9EEA2007BD04D /* MainPageViewInput.swift in Sources */,
 				F021D6C01DD7B99300F50091 /* RegisterInteractor.swift in Sources */,
-				F0B450A71E60B6A400F3B2E4 /* SettingsModule.swift in Sources */,
 				F0128BF91E4F9CED008E6668 /* DelegatingContentInsetHolder.swift in Sources */,
 				F021D6E41DD8925B00F50091 /* CameraAssemblyImpl.swift in Sources */,
 				F0A1157E1DC6863E00A4DC76 /* UIView+Properties.swift in Sources */,

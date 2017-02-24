@@ -39,4 +39,8 @@ final class AssemblyFactoryImpl: AssemblyFactory {
     func mainPageAssembly() -> MainPageAssembly {
         return MainPageAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
     }
+    
+    func settingsAssembly() -> SettingsAssembly {
+        return SettingsAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
+    }
 }

@@ -4,11 +4,11 @@ final class ApplicationRouterImpl: BaseRouter, ApplicationRouter {
     // MARK: - ApplicationRouter
     func showAppStarter(
         disposeBag: DisposeBag,
-        mainPageModule: MainPageModule?,
+        userSettable: UserSettable,
         completion: ((ApplicationLaunchHandler) -> ())?)
     {
         let assembly = assemblyFactory.appStarterAssembly()
-        let module = assembly.module(disposeBag: disposeBag, mainPageModule: mainPageModule)
+        let module = assembly.module(disposeBag: disposeBag, userSettable: userSettable)
         
         module.viewController.modalTransitionStyle = .crossDissolve
         module.viewController.modalPresentationStyle = .fullScreen

@@ -5,7 +5,7 @@ final class AppStarterPresenter: ApplicationLaunchHandler {
     private let interactor: AppStarterInteractor
     private let router: AppStarterRouter
     
-    weak var mainPageModule: MainPageModule?
+    weak var userSettable: UserSettable?
     
     // MARK: - Init
     init(interactor: AppStarterInteractor,
@@ -19,7 +19,7 @@ final class AppStarterPresenter: ApplicationLaunchHandler {
     func handleApplicationDidFinishLaunching() {
         interactor.user { [weak self] result in
             result.onData { user in
-                self?.mainPageModule?.setUser(user)
+                self?.userSettable?.setUser(user)
                 self?.router.dismissCurrentModule()
             }
             result.onError { _ in
@@ -33,7 +33,7 @@ final class AppStarterPresenter: ApplicationLaunchHandler {
         router.showLogin { loginModule in
             loginModule.onFinish = { [weak self] result in
                 if case .finished(let user) = result {
-                    self?.mainPageModule?.setUser(user)
+                    self?.userSettable?.setUser(user)
                     self?.router.dismissCurrentModule()
                 }
             }

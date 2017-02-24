@@ -1,3 +1,3 @@
-protocol MainPageModule: class, ModuleFocusable {
-    func setUser(_ user: User)
+protocol MainPageModule: class, UserSettable, ModuleFocusable {
+    
 }

@@ -1,9 +1,13 @@
 import UIKit
 
-final class SettingsView: UIView {
+final class SettingsView: UITableView {
     // MARK: - Init
     init() {
-        super.init(frame: .zero)
+        super.init(frame: .zero, style: .grouped)
+        
+        backgroundColor = UIColor.drcWhite
+        tableHeaderView = nil
+        tableFooterView = nil
     }
     
     required init?(coder aDecoder: NSCoder) {

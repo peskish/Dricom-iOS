@@ -1,5 +1,5 @@
 import UIKit
 
 protocol SettingsAssembly: class {
-    func module() -> UIViewController
+    func module() -> (viewController: UIViewController, interface: SettingsModule)
 }

@@ -7,4 +7,5 @@ protocol AssemblyFactory: class {
     func registerAssembly() -> RegisterAssembly
     func cameraAssembly() -> CameraAssembly
     func mainPageAssembly() -> MainPageAssembly
+    func settingsAssembly() -> SettingsAssembly
 }

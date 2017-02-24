@@ -1,6 +1,6 @@
 import UIKit
 
 protocol AppStarterAssembly: class {
-    func module(disposeBag: DisposeBag, mainPageModule: MainPageModule?)
+    func module(disposeBag: DisposeBag, userSettable: UserSettable?)
         -> (viewController: UIViewController, applicationLaunchHandler: ApplicationLaunchHandler)
 }

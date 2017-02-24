@@ -2,7 +2,7 @@ import UIKit
 
 final class SettingsAssemblyImpl: BaseAssembly, SettingsAssembly {
     // MARK: - SettingsAssembly
-    func module() -> UIViewController
+    func module() -> (viewController: UIViewController, interface: SettingsModule)
     {
         let interactor = SettingsInteractorImpl()
         
@@ -22,6 +22,6 @@ final class SettingsAssemblyImpl: BaseAssembly, SettingsAssembly {
         
         presenter.view = viewController
         
-        return viewController
+        return (viewController: viewController, interface: presenter)
     }
 }

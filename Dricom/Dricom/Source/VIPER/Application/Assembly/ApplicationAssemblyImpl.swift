@@ -6,9 +6,11 @@ final class ApplicationAssemblyImpl: BaseAssembly, ApplicationAssembly {
         let tabBarController = ApplicationTabBarController()
         
         let mainPageModule = assembleMainPageModule()
+        let settingsModule = assembleSettingsModule()
         
         let viewControllers = [
             mainPageModule.viewController,
+            settingsModule.viewController
         ]
         tabBarController.viewControllers = viewControllers
         
@@ -28,6 +30,7 @@ final class ApplicationAssemblyImpl: BaseAssembly, ApplicationAssembly {
         
         presenter.view = tabBarController
         presenter.mainPageModule = mainPageModule.interface
+        presenter.settingsModule = settingsModule.interface
         
         return (rootViewController: tabBarController, applicationLaunchHandler: presenter)
     }
@@ -41,6 +44,19 @@ final class ApplicationAssemblyImpl: BaseAssembly, ApplicationAssembly {
             title: "Мой Dricom",
             image: #imageLiteral(resourceName: "TabMain"),
             selectedImage: #imageLiteral(resourceName: "TabMainSelected")
+        )
+        navigationController.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -2)
+        return (viewController: navigationController, interface: module.interface)
+    }
+    
+    private func assembleSettingsModule() -> (viewController: UIViewController, interface: SettingsModule) {
+        let assembly = assemblyFactory.settingsAssembly()
+        let module = assembly.module()
+        let navigationController = UINavigationController(rootViewController: module.viewController)
+        navigationController.tabBarItem = UITabBarItem(
+            title: "Настройки",
+            image: #imageLiteral(resourceName: "TabSettings"),
+            selectedImage: #imageLiteral(resourceName: "TabSettingsSelected")
         )
         navigationController.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -2)
         return (viewController: navigationController, interface: module.interface)

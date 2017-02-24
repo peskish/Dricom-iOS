@@ -1,6 +1,6 @@
 protocol ApplicationRouter: class {
     func showAppStarter(
         disposeBag: DisposeBag,
-        mainPageModule: MainPageModule?,
+        userSettable: UserSettable,
         completion: ((ApplicationLaunchHandler) -> ())?)
 }
