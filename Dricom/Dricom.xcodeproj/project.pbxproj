@@ -203,6 +203,8 @@
 		F0B450841E5A2D8B00F3B2E4 /* MainPageModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450831E5A2D8B00F3B2E4 /* MainPageModule.swift */; };
 		F0B450861E5A303300F3B2E4 /* AccountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450851E5A303300F3B2E4 /* AccountRequest.swift */; };
 		F0B450881E5A3D1C00F3B2E4 /* LicensePartsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450871E5A3D1C00F3B2E4 /* LicensePartsTests.swift */; };
+		F0B4508D1E6042A900F3B2E4 /* LicenseNormalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B4508C1E6042A900F3B2E4 /* LicenseNormalizer.swift */; };
+		F0B4508F1E604C2800F3B2E4 /* LicenseNormalizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B4508E1E604C2800F3B2E4 /* LicenseNormalizerTests.swift */; };
 		F0D038561DD3AE0500E0085D /* FeedbackAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038471DD3AE0500E0085D /* FeedbackAssembly.swift */; };
 		F0D038571DD3AE0500E0085D /* FeedbackAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038481DD3AE0500E0085D /* FeedbackAssemblyImpl.swift */; };
 		F0D038581DD3AE0500E0085D /* FeedbackInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D0384A1DD3AE0500E0085D /* FeedbackInteractor.swift */; };
@@ -434,6 +436,8 @@
 		F0B450831E5A2D8B00F3B2E4 /* MainPageModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageModule.swift; sourceTree = "<group>"; };
 		F0B450851E5A303300F3B2E4 /* AccountRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountRequest.swift; path = Core/Networking/Request/AccountRequest.swift; sourceTree = "<group>"; };
 		F0B450871E5A3D1C00F3B2E4 /* LicensePartsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicensePartsTests.swift; sourceTree = "<group>"; };
+		F0B4508C1E6042A900F3B2E4 /* LicenseNormalizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseNormalizer.swift; sourceTree = "<group>"; };
+		F0B4508E1E604C2800F3B2E4 /* LicenseNormalizerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseNormalizerTests.swift; sourceTree = "<group>"; };
 		F0D038471DD3AE0500E0085D /* FeedbackAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackAssembly.swift; sourceTree = "<group>"; };
 		F0D038481DD3AE0500E0085D /* FeedbackAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackAssemblyImpl.swift; sourceTree = "<group>"; };
 		F0D0384A1DD3AE0500E0085D /* FeedbackInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackInteractor.swift; sourceTree = "<group>"; };
@@ -730,6 +734,7 @@
 			children = (
 				F021D6B21DD7B99300F50091 /* RegisterInteractor.swift */,
 				F021D6B31DD7B99300F50091 /* RegisterInteractorImpl.swift */,
+				F0B4508C1E6042A900F3B2E4 /* LicenseNormalizer.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -1465,6 +1470,7 @@
 			children = (
 				F0B450791E5A276400F3B2E4 /* RegistrationDataValidationServiceTests.swift */,
 				F0B450871E5A3D1C00F3B2E4 /* LicensePartsTests.swift */,
+				F0B4508E1E604C2800F3B2E4 /* LicenseNormalizerTests.swift */,
 				F0B4507B1E5A276400F3B2E4 /* Info.plist */,
 			);
 			path = DricomTests;
@@ -1882,6 +1888,7 @@
 				F0A115301DC62D2000A4DC76 /* DataResult.swift in Sources */,
 				F076D6401DCF67F200E3ED0F /* LoginAssembly.swift in Sources */,
 				F021D6C41DD7B99300F50091 /* RegisterRouter.swift in Sources */,
+				F0B4508D1E6042A900F3B2E4 /* LicenseNormalizer.swift in Sources */,
 				F021D6C81DD7B99300F50091 /* RegisterViewInput.swift in Sources */,
 				F0322B011E43CB4100F3CD47 /* AppStarterInteractorImpl.swift in Sources */,
 				F0128C0C1E4F9CED008E6668 /* PHAssetUtilities.swift in Sources */,
@@ -1964,6 +1971,7 @@
 			files = (
 				F0B450881E5A3D1C00F3B2E4 /* LicensePartsTests.swift in Sources */,
 				F0B4507A1E5A276400F3B2E4 /* RegistrationDataValidationServiceTests.swift in Sources */,
+				F0B4508F1E604C2800F3B2E4 /* LicenseNormalizerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

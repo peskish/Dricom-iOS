@@ -43,7 +43,7 @@ final class RegisterInteractorImpl: RegisterInteractor {
     }
     
     func setLicense(_ license: String?) {
-        registerData.license = license?.trimmingCharacters(in: .whitespacesAndNewlines)
+        registerData.license = LicenseNormalizer.normalize(license: license)
     }
     
     func setPhone(_ phone: String?) {
