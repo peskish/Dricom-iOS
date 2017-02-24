@@ -1,5 +1,5 @@
 import Foundation
 
-protocol LoginRouter: class, RouterFocusable, RouterDismissable, RouterFeedbackShowable {
+protocol LoginRouter: class, RouterFocusable, RouterDismissable {
     func showRegister(configure: (_ module: RegisterModule) -> ())
 }

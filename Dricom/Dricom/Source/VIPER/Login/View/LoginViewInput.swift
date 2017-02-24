@@ -17,6 +17,5 @@ protocol LoginViewInput: class, ViewLifecycleObservable, MessageDisplayable, Vie
     var onLoginChange: ((String?) -> ())? { get set }
     var onPasswordChange: ((String?) -> ())? { get set }
     var onLoginButtonTap: (() -> ())? { get set }
-    var onInfoButtonTap: (() -> ())? { get set }
     var onRegisterButtonTap: (() -> ())? { get set }
 }

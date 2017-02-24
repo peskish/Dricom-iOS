@@ -57,10 +57,6 @@ final class LoginPresenter:
                 }
             }
         }
-        
-        view?.onInfoButtonTap = { [weak self] in
-            self?.router.showFeedback()
-        }
     }
     
     private func checkFieldsAndProceed(login: String?, password: String?) {

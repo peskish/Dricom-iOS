@@ -9,7 +9,6 @@ final class LoginView: UIScrollView, StandardPreloaderViewHolder, ActivityDispla
     private let passwordView = TextFieldView()
     private let loginButtonView = ActionButtonView()
     private let registerButtonView = ActionButtonView()
-    private let infoButtonView = ImageButtonView(image: UIImage(named: "Info sign"))
     
     let preloader = StandardPreloaderView(style: .dark)
     
@@ -36,7 +35,6 @@ final class LoginView: UIScrollView, StandardPreloaderViewHolder, ActivityDispla
         addSubview(passwordView)
         addSubview(loginButtonView)
         addSubview(registerButtonView)
-        addSubview(infoButtonView)
         addSubview(preloader)
         
         logoTitleView.text = "DRICOM" // this is used as a part of design without any logic
@@ -189,11 +187,6 @@ final class LoginView: UIScrollView, StandardPreloaderViewHolder, ActivityDispla
     var onRegisterButtonTap: (() -> ())? {
         get { return registerButtonView.onTap }
         set { registerButtonView.onTap = newValue }
-    }
-    
-    var onInfoButtonTap: (() -> ())? {
-        get { return infoButtonView.onTap }
-        set { infoButtonView.onTap = newValue }
     }
     
     func focusOnLoginField() {
