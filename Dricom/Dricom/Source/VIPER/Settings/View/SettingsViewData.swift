@@ -7,7 +7,7 @@ struct SettingsViewData {
     
     struct Switcher {
         let title: String
-        let isEnabled: Bool
+        let isOn: Bool
         let onValueChange: ((_ isEnabled: Bool) -> ())?
     }
     

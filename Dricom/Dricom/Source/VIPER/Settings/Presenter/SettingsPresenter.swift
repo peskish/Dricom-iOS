@@ -36,17 +36,24 @@ final class SettingsPresenter: SettingsModule
         let notificationsRow = SettingsViewData.Row.switcher(
             SettingsViewData.Switcher(
                 title: "Уведомления",
-                isEnabled: false, // TODO
-                onValueChange: { [weak self] isEnabled in
-                    self?.onNotificationsToggle(isEnabled)
+                isOn: false, // TODO
+                onValueChange: { [weak self] isOn in
+                    self?.onNotificationsToggle(isOn)
                 }
             )
         )
         
+        
+        let licenseValue: String
+        if let licenseParts = LicenseParts(licenseNumber: user.license) {
+            licenseValue = (licenseParts.firstLetter + licenseParts.numberPart + licenseParts.restLetters)
+        } else {
+            licenseValue = ""
+        }
         let licenseRow = SettingsViewData.Row.select(
             SettingsViewData.Select(
                 title: "Номер автомобиля",
-                displayingValue: user.license ?? "",
+                displayingValue: licenseValue,
                 onTap: { [weak self] in
                     self?.onLicenseTap()
                 }

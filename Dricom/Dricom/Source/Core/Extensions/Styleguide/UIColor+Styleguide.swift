@@ -17,6 +17,10 @@ extension UIColor {
         return UIColor(red: 63.0 / 255.0, green: 77.0 / 255.0, blue: 96.0 / 255.0, alpha: 1.0)
     }
     
+    class var drcSlate60: UIColor {
+        return UIColor(red: 63.0 / 255.0, green: 77.0 / 255.0, blue: 96.0 / 255.0, alpha: 0.6)
+    }
+    
     class var drcSilver: UIColor {
         return UIColor(red: 211.0 / 255.0, green: 214.0 / 255.0, blue: 219.0 / 255.0, alpha: 1.0)
     }
@@ -27,5 +31,9 @@ extension UIColor {
     
     class var drcLightBlue: UIColor {
         return UIColor(red: 71.0 / 255.0, green: 127.0 / 255.0, blue: 1.0, alpha: 1.0)
+    }
+    
+    class var drcPaleGrey: UIColor {
+        return UIColor(red: 234.0 / 255.0, green: 237.0 / 255.0, blue: 239.0 / 255.0, alpha: 1.0)
     }
 }

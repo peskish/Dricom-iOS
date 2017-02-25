@@ -217,6 +217,9 @@
 		F0B450AD1E60B6A400F3B2E4 /* SettingsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450A21E60B6A400F3B2E4 /* SettingsViewInput.swift */; };
 		F0B450AF1E60BBB900F3B2E4 /* SettingsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450AE1E60BBB900F3B2E4 /* SettingsModule.swift */; };
 		F0B450B11E60C1B700F3B2E4 /* SettingsViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450B01E60C1B700F3B2E4 /* SettingsViewData.swift */; };
+		F0B450B31E61B6A100F3B2E4 /* SettingsSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450B21E61B6A100F3B2E4 /* SettingsSwitchCell.swift */; };
+		F0B450B51E61BC3900F3B2E4 /* SettingsSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450B41E61BC3900F3B2E4 /* SettingsSelectCell.swift */; };
+		F0B450B81E61BE7F00F3B2E4 /* SettingsActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450B71E61BE7F00F3B2E4 /* SettingsActionCell.swift */; };
 		F0D038561DD3AE0500E0085D /* FeedbackAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038471DD3AE0500E0085D /* FeedbackAssembly.swift */; };
 		F0D038571DD3AE0500E0085D /* FeedbackAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038481DD3AE0500E0085D /* FeedbackAssemblyImpl.swift */; };
 		F0D038581DD3AE0500E0085D /* FeedbackInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D0384A1DD3AE0500E0085D /* FeedbackInteractor.swift */; };
@@ -462,6 +465,9 @@
 		F0B450A21E60B6A400F3B2E4 /* SettingsViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewInput.swift; sourceTree = "<group>"; };
 		F0B450AE1E60BBB900F3B2E4 /* SettingsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsModule.swift; sourceTree = "<group>"; };
 		F0B450B01E60C1B700F3B2E4 /* SettingsViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewData.swift; sourceTree = "<group>"; };
+		F0B450B21E61B6A100F3B2E4 /* SettingsSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSwitchCell.swift; sourceTree = "<group>"; };
+		F0B450B41E61BC3900F3B2E4 /* SettingsSelectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSelectCell.swift; sourceTree = "<group>"; };
+		F0B450B71E61BE7F00F3B2E4 /* SettingsActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsActionCell.swift; sourceTree = "<group>"; };
 		F0D038471DD3AE0500E0085D /* FeedbackAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackAssembly.swift; sourceTree = "<group>"; };
 		F0D038481DD3AE0500E0085D /* FeedbackAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackAssemblyImpl.swift; sourceTree = "<group>"; };
 		F0D0384A1DD3AE0500E0085D /* FeedbackInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackInteractor.swift; sourceTree = "<group>"; };
@@ -1557,8 +1563,19 @@
 				F0B450A21E60B6A400F3B2E4 /* SettingsViewInput.swift */,
 				F0B450A11E60B6A400F3B2E4 /* SettingsViewController.swift */,
 				F0B450A01E60B6A400F3B2E4 /* SettingsView.swift */,
+				F0B450B61E61BE5D00F3B2E4 /* Cells */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F0B450B61E61BE5D00F3B2E4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F0B450B21E61B6A100F3B2E4 /* SettingsSwitchCell.swift */,
+				F0B450B41E61BC3900F3B2E4 /* SettingsSelectCell.swift */,
+				F0B450B71E61BE7F00F3B2E4 /* SettingsActionCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		F0D038451DD3AE0500E0085D /* Feedback */ = {
@@ -1868,6 +1885,7 @@
 				F0B450861E5A303300F3B2E4 /* AccountRequest.swift in Sources */,
 				F076D6551DCF6D2000E3ED0F /* MessageDisplayable.swift in Sources */,
 				F076D6701DCF6F3800E3ED0F /* SequenceTypeExtensions.swift in Sources */,
+				F0B450B81E61BE7F00F3B2E4 /* SettingsActionCell.swift in Sources */,
 				F0A115761DC6863E00A4DC76 /* CGPoint+Extension.swift in Sources */,
 				F0128C311E4FA520008E6668 /* RegisterTopView.swift in Sources */,
 				F0B450AA1E60B6A400F3B2E4 /* SettingsRouterImpl.swift in Sources */,
@@ -1945,6 +1963,7 @@
 				F0A115891DC6914100A4DC76 /* CrossFadePushTransition.swift in Sources */,
 				F0A115851DC68DF500A4DC76 /* ViewLifecycleObservable.swift in Sources */,
 				F0128C061E4F9CED008E6668 /* ScrollViewKeyboardAvoidingServiceImpl.swift in Sources */,
+				F0B450B31E61B6A100F3B2E4 /* SettingsSwitchCell.swift in Sources */,
 				F0128B7C1E451946008E6668 /* IosVersion.swift in Sources */,
 				F0128BF81E4F9CED008E6668 /* ContentInsetHolder.swift in Sources */,
 				F0823DD51DE9EEA2007BD04D /* MainPageRouterImpl.swift in Sources */,
@@ -2016,6 +2035,7 @@
 				F0A1157E1DC6863E00A4DC76 /* UIView+Properties.swift in Sources */,
 				F0A1157A1DC6863E00A4DC76 /* UIColorExtension.swift in Sources */,
 				F076D66D1DCF6F3800E3ED0F /* NumbersExtension.swift in Sources */,
+				F0B450B51E61BC3900F3B2E4 /* SettingsSelectCell.swift in Sources */,
 				F0A115871DC68E1D00A4DC76 /* ViewControllerTransition.swift in Sources */,
 				F0128C281E4F9D39008E6668 /* ScrollViewRefresherFactory.swift in Sources */,
 				F0D0385E1DD3AE0500E0085D /* FeedbackView.swift in Sources */,
