@@ -2,7 +2,7 @@ import UIKit
 
 final class SettingsViewController: BaseViewController, SettingsViewInput {
     // MARK: - Properties
-    private let settingsView = SettingsView()
+    private let settingsView = UITableView(frame: .zero, style: .grouped)
     
     // MARK: - State
     fileprivate var viewData: SettingsViewData?
@@ -11,15 +11,30 @@ final class SettingsViewController: BaseViewController, SettingsViewInput {
     override func loadView() {
         super.loadView()
         
-        view = settingsView
+        view.addSubview(settingsView)
         
+        automaticallyAdjustsScrollViewInsets = false
+        
+        settingsView.backgroundColor = UIColor.drcWhite
         settingsView.delegate = self
         settingsView.dataSource = self
+        
+        settingsView.bounces = false
+        settingsView.rowHeight = 50
+        settingsView.tableHeaderView = UIView(
+            frame: CGRect(x: 0, y: 0, width: 0, height: CGFloat.leastNormalMagnitude)
+        )
+        settingsView.tableFooterView = UIView(
+            frame: CGRect(x: 0, y: 0, width: 0, height: CGFloat.leastNormalMagnitude)
+        )
+        settingsView.sectionHeaderHeight = CGFloat.leastNormalMagnitude
+        settingsView.sectionFooterHeight = SpecMargins.contentMargin
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // TODO: DRY
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.titleTextAttributes = [
@@ -35,6 +50,11 @@ final class SettingsViewController: BaseViewController, SettingsViewInput {
         }
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        settingsView.frame = view.bounds
+    }
+    
     // MARK: - SettingsViewInput
     func setViewTitle(_ title: String) {
         self.title = title
@@ -47,7 +67,24 @@ final class SettingsViewController: BaseViewController, SettingsViewInput {
 }
 
 extension SettingsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        guard let rowData = rowData(for: indexPath) else { return }
+        
+        switch rowData {
+        case .switcher:
+            return
+        case .action(let action):
+            action.onTap?()
+        case .select(let select):
+            select.onTap?()
+        }
+    }
     
+    fileprivate func rowData(for indexPath: IndexPath) -> SettingsViewData.Row? {
+        return viewData?.sections.elementAtIndex(indexPath.section)?.items.elementAtIndex(indexPath.row)
+    }
 }
 
 extension SettingsViewController: UITableViewDataSource {
@@ -59,19 +96,10 @@ extension SettingsViewController: UITableViewDataSource {
         return viewData?.sections.elementAtIndex(section)?.items.count ?? 0
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0
-    }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return SpecMargins.contentMargin
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let rowData = viewData?
-            .sections.elementAtIndex(indexPath.section)?
-            .items.elementAtIndex(indexPath.row)
-            else { return UITableViewCell() }
+        guard let rowData = rowData(for: indexPath) else {
+            return UITableViewCell()
+        }
         
         return cellForRowData(rowData)
     }

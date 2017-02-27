@@ -20,6 +20,7 @@ class SettingsSwitchCell: UITableViewCell {
         switchView.addTarget(self, action: #selector(onSwitchValueChange(_:)), for: .valueChanged)
         
         accessoryView = switchView
+        selectionStyle = .none
     }
     
     static var reuseIdentifier: String? {

@@ -212,7 +212,6 @@
 		F0B450A81E60B6A400F3B2E4 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B4509B1E60B6A400F3B2E4 /* SettingsPresenter.swift */; };
 		F0B450A91E60B6A400F3B2E4 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B4509D1E60B6A400F3B2E4 /* SettingsRouter.swift */; };
 		F0B450AA1E60B6A400F3B2E4 /* SettingsRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B4509E1E60B6A400F3B2E4 /* SettingsRouterImpl.swift */; };
-		F0B450AB1E60B6A400F3B2E4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450A01E60B6A400F3B2E4 /* SettingsView.swift */; };
 		F0B450AC1E60B6A400F3B2E4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450A11E60B6A400F3B2E4 /* SettingsViewController.swift */; };
 		F0B450AD1E60B6A400F3B2E4 /* SettingsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450A21E60B6A400F3B2E4 /* SettingsViewInput.swift */; };
 		F0B450AF1E60BBB900F3B2E4 /* SettingsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450AE1E60BBB900F3B2E4 /* SettingsModule.swift */; };
@@ -460,7 +459,6 @@
 		F0B4509B1E60B6A400F3B2E4 /* SettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		F0B4509D1E60B6A400F3B2E4 /* SettingsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
 		F0B4509E1E60B6A400F3B2E4 /* SettingsRouterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRouterImpl.swift; sourceTree = "<group>"; };
-		F0B450A01E60B6A400F3B2E4 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F0B450A11E60B6A400F3B2E4 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F0B450A21E60B6A400F3B2E4 /* SettingsViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewInput.swift; sourceTree = "<group>"; };
 		F0B450AE1E60BBB900F3B2E4 /* SettingsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsModule.swift; sourceTree = "<group>"; };
@@ -1562,7 +1560,6 @@
 				F0B450B01E60C1B700F3B2E4 /* SettingsViewData.swift */,
 				F0B450A21E60B6A400F3B2E4 /* SettingsViewInput.swift */,
 				F0B450A11E60B6A400F3B2E4 /* SettingsViewController.swift */,
-				F0B450A01E60B6A400F3B2E4 /* SettingsView.swift */,
 				F0B450B61E61BE5D00F3B2E4 /* Cells */,
 			);
 			path = View;
@@ -1979,7 +1976,6 @@
 				F0128C031E4F9CED008E6668 /* KeyboardAvoidingSettingsObservable.swift in Sources */,
 				F0128C231E4F9D39008E6668 /* ActivityIndicatorRefresherFactory.swift in Sources */,
 				F0128BA01E4A64C6008E6668 /* NetworkResponseConverter.swift in Sources */,
-				F0B450AB1E60B6A400F3B2E4 /* SettingsView.swift in Sources */,
 				F021D6C71DD7B99300F50091 /* RegisterViewController.swift in Sources */,
 				F0D038601DD3AE0500E0085D /* FeedbackViewInput.swift in Sources */,
 				F076D6791DCF7DD200E3ED0F /* UIView+FindFirstResponder.swift in Sources */,

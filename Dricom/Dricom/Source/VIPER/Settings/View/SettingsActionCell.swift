@@ -5,11 +5,11 @@ class SettingsActionCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .value1, reuseIdentifier: reuseIdentifier)
         
-        backgroundView?.backgroundColor = UIColor.drcPaleGrey
-        backgroundView?.alpha = 0.5
+        backgroundColor = UIColor.drcPaleGrey
         
         textLabel?.font = UIFont.drcSettingsCellTitleFont()
         textLabel?.textColor = UIColor.drcBlue
+        selectionStyle = .gray
     }
     
     static var reuseIdentifier: String? {

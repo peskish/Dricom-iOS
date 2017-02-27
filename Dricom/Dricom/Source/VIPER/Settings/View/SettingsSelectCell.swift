@@ -5,8 +5,7 @@ class SettingsSelectCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .value1, reuseIdentifier: reuseIdentifier)
         
-        backgroundView?.backgroundColor = UIColor.drcPaleGrey
-        backgroundView?.alpha = 0.5
+        backgroundColor = UIColor.drcPaleGrey
         
         textLabel?.font = UIFont.drcSettingsCellTitleFont()
         textLabel?.textColor = UIColor.drcSlate
@@ -14,7 +13,8 @@ class SettingsSelectCell: UITableViewCell {
         detailTextLabel?.font = UIFont.drcSettingsSelectValueFont()
         detailTextLabel?.textColor = UIColor.drcSlate60
         
-        accessoryType = .detailButton
+        accessoryType = .disclosureIndicator
+        selectionStyle = .gray
     }
     
     static var reuseIdentifier: String? {
