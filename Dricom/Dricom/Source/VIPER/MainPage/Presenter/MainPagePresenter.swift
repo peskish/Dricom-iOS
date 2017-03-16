@@ -11,6 +11,10 @@ final class MainPagePresenter: MainPageModule {
     {
         self.interactor = interactor
         self.router = router
+        
+        interactor.onUserDataReceived = { [weak self] user in
+            self?.presentUser(user)
+        }
     }
     
     // MARK: - Weak properties
@@ -27,7 +31,7 @@ final class MainPagePresenter: MainPageModule {
     }
     
     // MARK: - MainPageModule
-    func setUser(_ user: User) {
+    func presentUser(_ user: User) {
         view?.setName(user.name)
         
         view?.setAvatarImageUrl(

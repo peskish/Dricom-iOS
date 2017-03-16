@@ -12,6 +12,10 @@ final class SettingsPresenter: SettingsModule
     {
         self.interactor = interactor
         self.router = router
+        
+        interactor.onUserDataReceived = { [weak self] user in
+            self?.presentUser(user)
+        }
     }
     
     // MARK: - Weak properties
@@ -19,12 +23,6 @@ final class SettingsPresenter: SettingsModule
         didSet {
             setUpView()
         }
-    }
-    
-    // MARK: - SettingsModule
-    func setUser(_ user: User) {
-        interactor.setUser(user)
-        presentUser(user)
     }
     
     // MARK: - Private
@@ -121,8 +119,13 @@ final class SettingsPresenter: SettingsModule
     }
     
     private func logOut() {
-        // TODO:
-        print("logOut")
+        interactor.logOut { [weak self] in
+            self?.router.showLogin { loginModule in
+                loginModule.onFinish = { result in
+                    self?.focusOnModule()
+                }
+            }
+        }
     }
     
     // MARK: - SettingsModule

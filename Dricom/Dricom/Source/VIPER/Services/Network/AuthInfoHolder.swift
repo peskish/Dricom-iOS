@@ -17,13 +17,21 @@ protocol LoginResponseProcessor: class {
     func processLoginResponse(_ loginResponse: LoginResponse)
 }
 
+protocol LogoutService: class {
+    func processLogoutAction(completion: (() -> ())?)
+}
+
 final class AuthInfoHolder:
     LastSuccessLoginHolder,
     AuthorizationStatusHolder,
-    LoginResponseProcessor
+    LoginResponseProcessor,
+    LogoutService
 {
+    // MARK: - Properties
     private let syncQueue = DispatchQueue(label: "ru.dricom.AuthInfoHolderImpl.syncQueue")
-    private let authInfoKeychainService = "ru.dricom.keychain.authInfo"
+    
+    // MARK: - Keys
+    private let authInfoKeychainServiceKey = "ru.dricom.keychain.authInfo"
     
     private let jwtKey = "jwt"
     private let lastSuccessLoginKey = "lastSuccessLogin"
@@ -43,7 +51,7 @@ final class AuthInfoHolder:
     // MARK: - LoginResponseProcessor
     func processLoginResponse(_ loginResponse: LoginResponse) {
         syncQueue.async {
-            let authInfoKeychain = Keychain(service: self.authInfoKeychainService)
+            let authInfoKeychain = Keychain(service: self.authInfoKeychainServiceKey)
                 .accessibility(.afterFirstUnlock)
             
             self.lastSuccessLoginStorage = loginResponse.user.email
@@ -53,6 +61,22 @@ final class AuthInfoHolder:
             try? authInfoKeychain.set(loginResponse.jwt, key: self.jwtKey)
             if let email = loginResponse.user.email {
                 try? authInfoKeychain.set(email, key: self.lastSuccessLoginKey)
+            }
+        }
+    }
+    
+    // MARK: - LogoutService
+    func processLogoutAction(completion: (() -> ())?) {
+        syncQueue.async {
+            self.jwtStorage = nil
+            
+            let authInfoKeychain = Keychain(service: self.authInfoKeychainServiceKey)
+                .accessibility(.afterFirstUnlock)
+            
+            try? authInfoKeychain.remove(self.jwtKey)
+            
+            DispatchQueue.main.async {
+                completion?()
             }
         }
     }
@@ -89,7 +113,7 @@ final class AuthInfoHolder:
     
     // MARK: - Private
     private func loadSessionInfo() -> (jwt: String?, lastSuccessLogin: String?) {
-        let authInfoKeychain = Keychain(service: authInfoKeychainService)
+        let authInfoKeychain = Keychain(service: authInfoKeychainServiceKey)
             .accessibility(.afterFirstUnlock)
         
         return (jwt: authInfoKeychain[jwtKey], lastSuccessLogin: authInfoKeychain[lastSuccessLoginKey])

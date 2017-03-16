@@ -219,6 +219,7 @@
 		F0B450B31E61B6A100F3B2E4 /* SettingsSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450B21E61B6A100F3B2E4 /* SettingsSwitchCell.swift */; };
 		F0B450B51E61BC3900F3B2E4 /* SettingsSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450B41E61BC3900F3B2E4 /* SettingsSelectCell.swift */; };
 		F0B450B81E61BE7F00F3B2E4 /* SettingsActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450B71E61BE7F00F3B2E4 /* SettingsActionCell.swift */; };
+		F0B450BA1E64B6C200F3B2E4 /* RouterLoginShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450B91E64B6C200F3B2E4 /* RouterLoginShowable.swift */; };
 		F0D038561DD3AE0500E0085D /* FeedbackAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038471DD3AE0500E0085D /* FeedbackAssembly.swift */; };
 		F0D038571DD3AE0500E0085D /* FeedbackAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038481DD3AE0500E0085D /* FeedbackAssemblyImpl.swift */; };
 		F0D038581DD3AE0500E0085D /* FeedbackInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D0384A1DD3AE0500E0085D /* FeedbackInteractor.swift */; };
@@ -466,6 +467,7 @@
 		F0B450B21E61B6A100F3B2E4 /* SettingsSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSwitchCell.swift; sourceTree = "<group>"; };
 		F0B450B41E61BC3900F3B2E4 /* SettingsSelectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSelectCell.swift; sourceTree = "<group>"; };
 		F0B450B71E61BE7F00F3B2E4 /* SettingsActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsActionCell.swift; sourceTree = "<group>"; };
+		F0B450B91E64B6C200F3B2E4 /* RouterLoginShowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterLoginShowable.swift; path = Router/RouterLoginShowable.swift; sourceTree = "<group>"; };
 		F0D038471DD3AE0500E0085D /* FeedbackAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackAssembly.swift; sourceTree = "<group>"; };
 		F0D038481DD3AE0500E0085D /* FeedbackAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackAssemblyImpl.swift; sourceTree = "<group>"; };
 		F0D0384A1DD3AE0500E0085D /* FeedbackInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackInteractor.swift; sourceTree = "<group>"; };
@@ -1307,6 +1309,7 @@
 				F076D6501DCF6A0000E3ED0F /* RouterDismissable.swift */,
 				F0D038611DD3AFA100E0085D /* RouterFeedbackShowable.swift */,
 				F021D6CE1DD8914200F50091 /* RouterCameraShowable.swift */,
+				F0B450B91E64B6C200F3B2E4 /* RouterLoginShowable.swift */,
 				F076D67E1DCFAEF400E3ED0F /* ViewControllerPosition.swift */,
 			);
 			name = Router;
@@ -2069,6 +2072,7 @@
 				F0D0385C1DD3AE0500E0085D /* FeedbackRouter.swift in Sources */,
 				F0A115781DC6863E00A4DC76 /* CGSizeLayoutExtension.swift in Sources */,
 				F076D6511DCF6A0000E3ED0F /* RouterDismissable.swift in Sources */,
+				F0B450BA1E64B6C200F3B2E4 /* RouterLoginShowable.swift in Sources */,
 				F021D6EC1DD8925B00F50091 /* CameraViewController.swift in Sources */,
 				F0A1157B1DC6863E00A4DC76 /* UIEdgeInsetsLayoutExtension.swift in Sources */,
 				F0128C081E4F9CED008E6668 /* KeyboardFrameObservingAccessoryView.swift in Sources */,

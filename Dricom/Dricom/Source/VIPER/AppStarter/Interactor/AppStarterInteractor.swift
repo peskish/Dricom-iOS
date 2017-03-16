@@ -1,5 +1,5 @@
 import Foundation
 
 protocol AppStarterInteractor: class {
-    func user(completion: @escaping ApiResult<User>.Completion)
+    func requestUserData(completion: ApiResult<Void>.Completion?)
 }

@@ -18,5 +18,5 @@ protocol RegisterInteractor: class {
     func validatePhone() -> RegisterInputFieldError?
     func validatePassword() -> RegisterInputFieldError?
     
-    func registerUser(completion: @escaping ApiResult<User>.Completion)
+    func registerUser(completion: @escaping ApiResult<Void>.Completion)
 }

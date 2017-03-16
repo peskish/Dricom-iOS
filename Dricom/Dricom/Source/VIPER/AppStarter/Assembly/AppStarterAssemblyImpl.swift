@@ -2,7 +2,7 @@ import UIKit
 
 final class AppStarterAssemblyImpl: BaseAssembly, AppStarterAssembly {
     // MARK: - AppStarterAssembly
-    func module(disposeBag: DisposeBag, userSettable: UserSettable?)
+    func module(disposeBag: DisposeBag)
         -> (viewController: UIViewController, applicationLaunchHandler: ApplicationLaunchHandler) {
         // Splash screen
         let storyboard = UIStoryboard(name: "LaunchScreen", bundle: Bundle.main)
@@ -15,7 +15,6 @@ final class AppStarterAssemblyImpl: BaseAssembly, AppStarterAssembly {
             interactor: interactor,
             router: router
         )
-        presenter.userSettable = userSettable
         
         disposeBag.addDisposable(presenter)
         

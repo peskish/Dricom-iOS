@@ -1,3 +1,3 @@
-protocol SettingsModule: class, UserSettable, ModuleFocusable {
+protocol SettingsModule: class, ModuleFocusable {
     
 }

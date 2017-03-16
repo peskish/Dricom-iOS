@@ -82,7 +82,7 @@ final class RegisterInteractorImpl: RegisterInteractor {
         return registerDataValidationService.validatePassword(registerData.password)
     }
     
-    func registerUser(completion: @escaping (ApiResult<User>) -> ()) {
+    func registerUser(completion: @escaping (ApiResult<Void>) -> ()) {
         let registrationData = RegistrationData(
             avatarImageId: nil, // TODO: after image uploading implementation
             name: registerData.name ?? "",

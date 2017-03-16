@@ -4,7 +4,10 @@ final class SettingsAssemblyImpl: BaseAssembly, SettingsAssembly {
     // MARK: - SettingsAssembly
     func module() -> (viewController: UIViewController, interface: SettingsModule)
     {
-        let interactor = SettingsInteractorImpl()
+        let interactor = SettingsInteractorImpl(
+            logoutService: serviceFactory.logoutService(),
+            userDataService: serviceFactory.userDataService()
+        )
         
         let viewController = SettingsViewController()
         

@@ -10,7 +10,7 @@ final class AppStarterInteractorImpl: AppStarterInteractor {
     }
     
     // MARK: - AppStarterInteractor
-    func user(completion: @escaping ApiResult<User>.Completion) {
-        userDataService.user(completion: completion)
+    func requestUserData(completion: ApiResult<Void>.Completion?) {
+        userDataService.requestUserData(completion: completion)
     }
 }

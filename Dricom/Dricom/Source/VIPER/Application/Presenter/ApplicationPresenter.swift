@@ -4,11 +4,7 @@ protocol ApplicationLaunchHandler {
     func handleApplicationDidFinishLaunching()
 }
 
-protocol UserSettable: class {
-    func setUser(_ user: User)
-}
-
-final class ApplicationPresenter: ApplicationLaunchHandler, UserSettable {
+final class ApplicationPresenter: ApplicationLaunchHandler {
     // MARK: - Private properties
     private let interactor: ApplicationInteractor
     private let router: ApplicationRouter
@@ -25,17 +21,11 @@ final class ApplicationPresenter: ApplicationLaunchHandler, UserSettable {
         self.router = router
     }
     
-    // MARK: - UserSettable
-    func setUser(_ user: User) {
-        let modules: [UserSettable?] = [mainPageModule, settingsModule]
-        modules.flatMap{ $0 }.forEach({ $0.setUser(user) })
-    }
-    
     // MARK: - ApplicationLaunchHandler
     func handleApplicationDidFinishLaunching() {
         guard let view = view else { return }
         
-        router.showAppStarter(disposeBag: view.disposeBag, userSettable: self) { applicationLaunchHandler in
+        router.showAppStarter(disposeBag: view.disposeBag) { applicationLaunchHandler in
             applicationLaunchHandler.handleApplicationDidFinishLaunching()
         }
     }

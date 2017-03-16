@@ -9,22 +9,28 @@ struct RegistrationData {
 }
 
 protocol RegistrationService {
-    func register(with data: RegistrationData, completion: @escaping ApiResult<User>.Completion)
+    func register(with data: RegistrationData, completion: @escaping ApiResult<Void>.Completion)
 }
 
 final class RegistrationServiceImpl: RegistrationService {
     // MARK: - Dependencies
     private let networkClient: NetworkClient
     private let loginResponseProcessor: LoginResponseProcessor
+    private let userDataNotifier: UserDataNotifier
     
     // MARK: - Init
-    init(networkClient: NetworkClient, loginResponseProcessor: LoginResponseProcessor) {
+    init(
+        networkClient: NetworkClient,
+        loginResponseProcessor: LoginResponseProcessor,
+        userDataNotifier: UserDataNotifier)
+    {
         self.networkClient = networkClient
         self.loginResponseProcessor = loginResponseProcessor
+        self.userDataNotifier = userDataNotifier
     }
     
     // MARK: - RegistrationService
-    func register(with data: RegistrationData, completion: @escaping ApiResult<User>.Completion) {
+    func register(with data: RegistrationData, completion: @escaping ApiResult<Void>.Completion) {
         let request = RegisterRequest(
             email: data.email,
             name: data.name,
@@ -34,10 +40,11 @@ final class RegistrationServiceImpl: RegistrationService {
             token: nil  // TODO: send push token if exists
         )
         
-        networkClient.send(request: request) { result in
-            result.onData { [weak self] loginResponse in
+        networkClient.send(request: request) { [weak self] result in
+            result.onData { loginResponse in
                 self?.loginResponseProcessor.processLoginResponse(loginResponse)
-                completion(.data(loginResponse.user))
+                self?.userDataNotifier.notifyOnUserDataReceived(loginResponse.user)
+                completion(.data())
             }
             result.onError { networkRequestError in
                 completion(.error(networkRequestError))

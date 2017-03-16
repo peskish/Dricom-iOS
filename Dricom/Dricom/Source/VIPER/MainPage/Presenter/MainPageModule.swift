@@ -1,3 +1,3 @@
-protocol MainPageModule: class, UserSettable, ModuleFocusable {
+protocol MainPageModule: class, ModuleFocusable {
     
 }

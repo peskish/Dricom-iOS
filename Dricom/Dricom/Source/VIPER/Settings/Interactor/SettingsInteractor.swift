@@ -1,5 +1,6 @@
 import Foundation
 
 protocol SettingsInteractor: class {
-    func setUser(_ user: User)
+    func logOut(completion: (() -> ())?)
+    var onUserDataReceived: ((User) -> ())? { get set }
 }

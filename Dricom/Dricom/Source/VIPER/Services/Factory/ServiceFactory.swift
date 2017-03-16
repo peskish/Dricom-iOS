@@ -5,36 +5,41 @@ protocol ServiceFactory {
     func mailComposeDelegateService() -> MailComposeDelegateService
     func registerDataValidationService() -> RegisterDataValidationService
     func userDataService() -> UserDataService
+    func logoutService() -> LogoutService
 }
 
 final class ServiceFactoryImpl: ServiceFactory {
     // MARK: - Properties
     private let networkClientInstance: NetworkClient
-    private let authInfoHolderInstance: LoginResponseProcessor & AuthorizationStatusHolder & LastSuccessLoginHolder
+    private let authInfoHolderInstance: LoginResponseProcessor & AuthorizationStatusHolder & LastSuccessLoginHolder & LogoutService
+    private let userDataServiceInstance: UserDataService & UserDataNotifier
     
     // MARK: - Init
     init() {
         authInfoHolderInstance = AuthInfoHolder()
         networkClientInstance = NetworkClientImpl(authorizationStatusHolder: authInfoHolderInstance)
+        userDataServiceInstance = UserDataServiceImpl(networkClient: networkClientInstance)
     }
     
     // MARK: - ServiceFactory
-    func networkClient() -> NetworkClient {
-        return networkClientInstance
-    }
-    
     func registrationService() -> RegistrationService {
         return RegistrationServiceImpl(
-            networkClient: networkClient(),
-            loginResponseProcessor: authInfoHolderInstance
+            networkClient: networkClientInstance,
+            loginResponseProcessor: authInfoHolderInstance,
+            userDataNotifier: userDataServiceInstance
         )
     }
     
     func authorizationService() -> AuthorizationService {
         return AuthorizationServiceImpl(
-            networkClient: networkClient(),
-            loginResponseProcessor: authInfoHolderInstance
+            networkClient: networkClientInstance,
+            loginResponseProcessor: authInfoHolderInstance,
+            userDataNotifier: userDataServiceInstance
         )
+    }
+    
+    func logoutService() -> LogoutService {
+        return authInfoHolderInstance
     }
     
     func mailComposeDelegateService() -> MailComposeDelegateService {
@@ -46,6 +51,6 @@ final class ServiceFactoryImpl: ServiceFactory {
     }
     
     func userDataService() -> UserDataService {
-        return UserDataServiceImpl(networkClient: networkClient())
+        return userDataServiceInstance
     }
 }

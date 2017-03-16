@@ -1,10 +1,23 @@
 protocol UserDataService: class {
-    func user(completion: @escaping ApiResult<User>.Completion)
+    func requestUserData(completion: ApiResult<Void>.Completion?)
+    func subscribe(_ observer: AnyObject, onUserDataReceived: @escaping (User) -> ())
 }
 
-final class UserDataServiceImpl: UserDataService {
+protocol UserDataNotifier: class {
+    func notifyOnUserDataReceived(_ user: User)
+}
+
+private struct UserDataSubscriber {
+    weak var object: AnyObject?
+    let onUserDataReceived: (User) -> ()
+}
+
+final class UserDataServiceImpl: UserDataService, UserDataNotifier {
     // MARK: - Dependencies
     private let networkClient: NetworkClient
+    
+    // MARK: - Properties
+    private var subscribers = [UserDataSubscriber]()
     
     // MARK: - Init
     init(networkClient: NetworkClient) {
@@ -12,8 +25,38 @@ final class UserDataServiceImpl: UserDataService {
     }
     
     // MARK: - UserDataService
-    func user(completion: @escaping ApiResult<User>.Completion) {
+    func requestUserData(completion: ApiResult<Void>.Completion?) {
         let request = AccountRequest()
-        networkClient.send(request: request, completion: completion)
+        networkClient.send(request: request) { [weak self] result in
+            result.onData { user in
+                self?.notifyOnUserDataReceived(user)
+                completion?(.data())
+            }
+            result.onError { networkRequestError in
+                completion?(.error(networkRequestError))
+            }
+        }
+    }
+    
+    func subscribe(_ observer: AnyObject, onUserDataReceived: @escaping (User) -> ()) {
+        subscribers = subscribers.filter { $0.object !== observer && $0.object != nil }
+        
+        let subscriber = UserDataSubscriber(
+            object: observer,
+            onUserDataReceived: onUserDataReceived
+        )
+        
+        subscribers.append(subscriber)
+    }
+    
+    // MARK: - Private
+    
+    func notifyOnUserDataReceived(_ user: User) {
+        self.allSubscribers().forEach { $0.onUserDataReceived(user) }
+    }
+    
+    private func allSubscribers() -> [UserDataSubscriber] {
+        subscribers = subscribers.filter { $0.object != nil }
+        return subscribers
     }
 }

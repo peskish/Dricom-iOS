@@ -1,19 +1,13 @@
 import UIKit
 
-final class AppStarterRouterImpl: BaseRouter, AppStarterRouter {
+final class AppStarterRouterImpl: BaseRouter, AppStarterRouter, RouterLoginShowable {
     // MARK: - AppStarterRouter
     func showLogin(configure: (_ module: LoginModule) -> ()) {
-        guard let viewController = viewController else {
-            assertionFailure("viewController is nil")
-            return
-        }
-        
-        let assembly = assemblyFactory.loginAssembly()
-        let targetViewController = assembly.module(configure: configure)
-        let navigationController = UINavigationController(rootViewController: targetViewController)
-        
-        navigationController.modalTransitionStyle = .crossDissolve
-        navigationController.modalPresentationStyle = .overCurrentContext
-        viewController.present(navigationController, animated: true, completion: nil)
+        showLogin(
+            configure: configure,
+            animated: true,
+            modalTransitionStyle: .crossDissolve,
+            modalPresentationStyle: .overCurrentContext
+        )
     }
 }
