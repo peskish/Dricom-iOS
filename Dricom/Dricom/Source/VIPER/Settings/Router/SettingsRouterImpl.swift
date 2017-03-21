@@ -10,4 +10,10 @@ final class SettingsRouterImpl: BaseRouter, SettingsRouter, RouterLoginShowable 
             modalPresentationStyle: nil
         )
     }
+    
+    func showUserProfile() {
+        let assembly = assemblyFactory.userProfileAssembly()
+        let targetViewController = assembly.module()
+        navigationController?.pushViewController(targetViewController, animated: true)
+    }
 }

@@ -43,4 +43,8 @@ final class AssemblyFactoryImpl: AssemblyFactory {
     func settingsAssembly() -> SettingsAssembly {
         return SettingsAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
     }
+    
+    func userProfileAssembly() -> UserProfileAssembly {
+        return UserProfileAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
+    }
 }

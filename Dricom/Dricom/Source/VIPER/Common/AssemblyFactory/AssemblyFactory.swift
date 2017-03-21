@@ -8,4 +8,5 @@ protocol AssemblyFactory: class {
     func cameraAssembly() -> CameraAssembly
     func mainPageAssembly() -> MainPageAssembly
     func settingsAssembly() -> SettingsAssembly
+    func userProfileAssembly() -> UserProfileAssembly
 }

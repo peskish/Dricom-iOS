@@ -117,6 +117,17 @@
 		F05790D71E32A72D004FBD4A /* UIFont+Styleguide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05790D51E32A72D004FBD4A /* UIFont+Styleguide.swift */; };
 		F05790DB1E34DC5D004FBD4A /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05790D91E34DC5D004FBD4A /* HoshiTextField.swift */; };
 		F05790DC1E34DC5D004FBD4A /* TextFieldsEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05790DA1E34DC5D004FBD4A /* TextFieldsEffects.swift */; };
+		F06E3F731E81B0EE00829A3F /* UserProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E3F641E81B0EE00829A3F /* UserProfileAssembly.swift */; };
+		F06E3F741E81B0EE00829A3F /* UserProfileAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E3F651E81B0EE00829A3F /* UserProfileAssemblyImpl.swift */; };
+		F06E3F751E81B0EE00829A3F /* UserProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E3F671E81B0EE00829A3F /* UserProfileInteractor.swift */; };
+		F06E3F761E81B0EE00829A3F /* UserProfileInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E3F681E81B0EE00829A3F /* UserProfileInteractorImpl.swift */; };
+		F06E3F771E81B0EE00829A3F /* UserProfileModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E3F6A1E81B0EE00829A3F /* UserProfileModule.swift */; };
+		F06E3F781E81B0EE00829A3F /* UserProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E3F6B1E81B0EE00829A3F /* UserProfilePresenter.swift */; };
+		F06E3F791E81B0EE00829A3F /* UserProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E3F6D1E81B0EE00829A3F /* UserProfileRouter.swift */; };
+		F06E3F7A1E81B0EE00829A3F /* UserProfileRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E3F6E1E81B0EE00829A3F /* UserProfileRouterImpl.swift */; };
+		F06E3F7B1E81B0EE00829A3F /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E3F701E81B0EE00829A3F /* UserProfileView.swift */; };
+		F06E3F7C1E81B0EE00829A3F /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E3F711E81B0EE00829A3F /* UserProfileViewController.swift */; };
+		F06E3F7D1E81B0EE00829A3F /* UserProfileViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E3F721E81B0EE00829A3F /* UserProfileViewInput.swift */; };
 		F076D6401DCF67F200E3ED0F /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6311DCF67F200E3ED0F /* LoginAssembly.swift */; };
 		F076D6411DCF67F200E3ED0F /* LoginAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6321DCF67F200E3ED0F /* LoginAssemblyImpl.swift */; };
 		F076D6421DCF67F200E3ED0F /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D6341DCF67F200E3ED0F /* LoginInteractor.swift */; };
@@ -361,6 +372,17 @@
 		F05790D51E32A72D004FBD4A /* UIFont+Styleguide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Styleguide.swift"; sourceTree = "<group>"; };
 		F05790D91E34DC5D004FBD4A /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
 		F05790DA1E34DC5D004FBD4A /* TextFieldsEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldsEffects.swift; sourceTree = "<group>"; };
+		F06E3F641E81B0EE00829A3F /* UserProfileAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileAssembly.swift; sourceTree = "<group>"; };
+		F06E3F651E81B0EE00829A3F /* UserProfileAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileAssemblyImpl.swift; sourceTree = "<group>"; };
+		F06E3F671E81B0EE00829A3F /* UserProfileInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileInteractor.swift; sourceTree = "<group>"; };
+		F06E3F681E81B0EE00829A3F /* UserProfileInteractorImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileInteractorImpl.swift; sourceTree = "<group>"; };
+		F06E3F6A1E81B0EE00829A3F /* UserProfileModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileModule.swift; sourceTree = "<group>"; };
+		F06E3F6B1E81B0EE00829A3F /* UserProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfilePresenter.swift; sourceTree = "<group>"; };
+		F06E3F6D1E81B0EE00829A3F /* UserProfileRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileRouter.swift; sourceTree = "<group>"; };
+		F06E3F6E1E81B0EE00829A3F /* UserProfileRouterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileRouterImpl.swift; sourceTree = "<group>"; };
+		F06E3F701E81B0EE00829A3F /* UserProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		F06E3F711E81B0EE00829A3F /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		F06E3F721E81B0EE00829A3F /* UserProfileViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewInput.swift; sourceTree = "<group>"; };
 		F076D6311DCF67F200E3ED0F /* LoginAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		F076D6321DCF67F200E3ED0F /* LoginAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAssemblyImpl.swift; sourceTree = "<group>"; };
 		F076D6341DCF67F200E3ED0F /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
@@ -981,6 +1003,64 @@
 			path = ThirdParty;
 			sourceTree = "<group>";
 		};
+		F06E3F621E81B0EE00829A3F /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				F06E3F631E81B0EE00829A3F /* Assembly */,
+				F06E3F661E81B0EE00829A3F /* Interactor */,
+				F06E3F691E81B0EE00829A3F /* Presenter */,
+				F06E3F6C1E81B0EE00829A3F /* Router */,
+				F06E3F6F1E81B0EE00829A3F /* View */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		F06E3F631E81B0EE00829A3F /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				F06E3F641E81B0EE00829A3F /* UserProfileAssembly.swift */,
+				F06E3F651E81B0EE00829A3F /* UserProfileAssemblyImpl.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		F06E3F661E81B0EE00829A3F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				F06E3F671E81B0EE00829A3F /* UserProfileInteractor.swift */,
+				F06E3F681E81B0EE00829A3F /* UserProfileInteractorImpl.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		F06E3F691E81B0EE00829A3F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F06E3F6A1E81B0EE00829A3F /* UserProfileModule.swift */,
+				F06E3F6B1E81B0EE00829A3F /* UserProfilePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F06E3F6C1E81B0EE00829A3F /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F06E3F6D1E81B0EE00829A3F /* UserProfileRouter.swift */,
+				F06E3F6E1E81B0EE00829A3F /* UserProfileRouterImpl.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F06E3F6F1E81B0EE00829A3F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F06E3F701E81B0EE00829A3F /* UserProfileView.swift */,
+				F06E3F711E81B0EE00829A3F /* UserProfileViewController.swift */,
+				F06E3F721E81B0EE00829A3F /* UserProfileViewInput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F076D62F1DCF67F200E3ED0F /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -1227,6 +1307,7 @@
 				F021D6AD1DD7B99300F50091 /* Register */,
 				F0B450921E60B6A400F3B2E4 /* Settings */,
 				F0A115271DC62C2E00A4DC76 /* Services */,
+				F06E3F621E81B0EE00829A3F /* UserProfile */,
 			);
 			path = VIPER;
 			sourceTree = "<group>";
@@ -1871,8 +1952,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0A115351DC6309F00A4DC76 /* ServiceFactory.swift in Sources */,
+				F06E3F761E81B0EE00829A3F /* UserProfileInteractorImpl.swift in Sources */,
 				F0823DB71DE9D929007BD04D /* ActivityDisplayable.swift in Sources */,
 				F076D6411DCF67F200E3ED0F /* LoginAssemblyImpl.swift in Sources */,
+				F06E3F7D1E81B0EE00829A3F /* UserProfileViewInput.swift in Sources */,
 				F0128C221E4F9D39008E6668 /* ScrollViewRefresherStateAnimator.swift in Sources */,
 				F05790D61E32A72D004FBD4A /* UIColor+Styleguide.swift in Sources */,
 				F0128B961E4A566A008E6668 /* RegistrationService.swift in Sources */,
@@ -1895,6 +1978,7 @@
 				F0D0385D1DD3AE0500E0085D /* FeedbackRouterImpl.swift in Sources */,
 				F021D6BF1DD7B99300F50091 /* RegisterAssemblyImpl.swift in Sources */,
 				F0D0385B1DD3AE0500E0085D /* FeedbackPresenter.swift in Sources */,
+				F06E3F7A1E81B0EE00829A3F /* UserProfileRouterImpl.swift in Sources */,
 				F0823DD11DE9EEA2007BD04D /* MainPageInteractorImpl.swift in Sources */,
 				F0128B851E49120C008E6668 /* NetworkRequest.swift in Sources */,
 				F0B450841E5A2D8B00F3B2E4 /* MainPageModule.swift in Sources */,
@@ -1923,6 +2007,7 @@
 				F09209A31DC14A7F0057302F /* ApplicationInteractor.swift in Sources */,
 				F0128C0A1E4F9CED008E6668 /* KeyboardFrameProvider.swift in Sources */,
 				F0128BA41E4A6592008E6668 /* Data+JSON.swift in Sources */,
+				F06E3F751E81B0EE00829A3F /* UserProfileInteractor.swift in Sources */,
 				F021D69B1DD7A43A00F50091 /* SupportMessageData.swift in Sources */,
 				F0128B981E4A56A9008E6668 /* RegisterRequest.swift in Sources */,
 				F0322B031E43CB4100F3CD47 /* AppStarterPresenter.swift in Sources */,
@@ -1930,6 +2015,8 @@
 				F0F434081DD10CAB00F278BD /* AlertDisplayable.swift in Sources */,
 				F021D6E91DD8925B00F50091 /* CameraRouter.swift in Sources */,
 				F0128C011E4F9CED008E6668 /* ContentFittingRect.swift in Sources */,
+				F06E3F741E81B0EE00829A3F /* UserProfileAssemblyImpl.swift in Sources */,
+				F06E3F7C1E81B0EE00829A3F /* UserProfileViewController.swift in Sources */,
 				F076D6451DCF67F200E3ED0F /* LoginPresenter.swift in Sources */,
 				F076D67B1DCF87D300E3ED0F /* TextFieldView.swift in Sources */,
 				F0128BFE1E4F9CED008E6668 /* ContentFittingCombineFunctionBuilder.swift in Sources */,
@@ -1951,11 +2038,13 @@
 				F0823DD41DE9EEA2007BD04D /* MainPageRouter.swift in Sources */,
 				F0128C2A1E4F9D39008E6668 /* ScrollViewRefresherInterfaceState.swift in Sources */,
 				F0D038591DD3AE0500E0085D /* FeedbackInteractorImpl.swift in Sources */,
+				F06E3F771E81B0EE00829A3F /* UserProfileModule.swift in Sources */,
 				F076D6421DCF67F200E3ED0F /* LoginInteractor.swift in Sources */,
 				F0823DCE1DE9EEA2007BD04D /* MainPageAssembly.swift in Sources */,
 				F05790D71E32A72D004FBD4A /* UIFont+Styleguide.swift in Sources */,
 				F021D6E51DD8925B00F50091 /* CameraInteractor.swift in Sources */,
 				F0B450AF1E60BBB900F3B2E4 /* SettingsModule.swift in Sources */,
+				F06E3F7B1E81B0EE00829A3F /* UserProfileView.swift in Sources */,
 				F076D66F1DCF6F3800E3ED0F /* RangeExtension.swift in Sources */,
 				F0322B001E43CB4100F3CD47 /* AppStarterInteractor.swift in Sources */,
 				F0322AFE1E43CB4100F3CD47 /* AppStarterAssembly.swift in Sources */,
@@ -2000,10 +2089,12 @@
 				F0B4508D1E6042A900F3B2E4 /* LicenseNormalizer.swift in Sources */,
 				F021D6C81DD7B99300F50091 /* RegisterViewInput.swift in Sources */,
 				F0322B011E43CB4100F3CD47 /* AppStarterInteractorImpl.swift in Sources */,
+				F06E3F731E81B0EE00829A3F /* UserProfileAssembly.swift in Sources */,
 				F0128C0C1E4F9CED008E6668 /* PHAssetUtilities.swift in Sources */,
 				F0128C021E4F9CED008E6668 /* KeyboardAvoidingSettings.swift in Sources */,
 				F076D66B1DCF6F3800E3ED0F /* CollectionsExtensions.swift in Sources */,
 				F0823DD31DE9EEA2007BD04D /* MainPagePresenter.swift in Sources */,
+				F06E3F791E81B0EE00829A3F /* UserProfileRouter.swift in Sources */,
 				F0B450AC1E60B6A400F3B2E4 /* SettingsViewController.swift in Sources */,
 				F0128BFC1E4F9CED008E6668 /* BypassingKeyboardAvoidingService.swift in Sources */,
 				F0322B041E43CB4100F3CD47 /* AppStarterRouter.swift in Sources */,
@@ -2021,6 +2112,7 @@
 				F01398E51DF43D8300E4F188 /* User.swift in Sources */,
 				F076D6711DCF6F3800E3ED0F /* String+Pluralization.swift in Sources */,
 				F0128C0B1E4F9CED008E6668 /* KeyboardFrameService.swift in Sources */,
+				F06E3F781E81B0EE00829A3F /* UserProfilePresenter.swift in Sources */,
 				F05790DB1E34DC5D004FBD4A /* HoshiTextField.swift in Sources */,
 				F076D6491DCF67F200E3ED0F /* LoginViewController.swift in Sources */,
 				F0128C291E4F9D39008E6668 /* ScrollViewRefresher.swift in Sources */,
