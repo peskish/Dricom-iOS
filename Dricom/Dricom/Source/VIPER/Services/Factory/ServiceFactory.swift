@@ -3,7 +3,7 @@ protocol ServiceFactory {
     func authorizationService() -> AuthorizationService
     func registrationService() -> RegistrationService
     func mailComposeDelegateService() -> MailComposeDelegateService
-    func registerDataValidationService() -> RegisterDataValidationService
+    func dataValidationService() -> DataValidationService
     func userDataService() -> UserDataService
     func logoutService() -> LogoutService
 }
@@ -46,8 +46,8 @@ final class ServiceFactoryImpl: ServiceFactory {
         return MailComposeDelegateServiceImpl()
     }
     
-    func registerDataValidationService() -> RegisterDataValidationService {
-        return RegisterDataValidationServiceImpl()
+    func dataValidationService() -> DataValidationService {
+        return DataValidationServiceImpl()
     }
     
     func userDataService() -> UserDataService {

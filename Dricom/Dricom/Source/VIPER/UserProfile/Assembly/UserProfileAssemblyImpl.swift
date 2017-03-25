@@ -4,7 +4,8 @@ final class UserProfileAssemblyImpl: BaseAssembly, UserProfileAssembly {
     // MARK: - UserProfileAssembly
     func module() -> UIViewController {
         let interactor = UserProfileInteractorImpl(
-            userDataService: serviceFactory.userDataService()
+            userDataService: serviceFactory.userDataService(),
+            dataValidationService: serviceFactory.dataValidationService()
         )
         
         let viewController = UserProfileViewController()

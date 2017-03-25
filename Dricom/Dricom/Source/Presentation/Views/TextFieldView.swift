@@ -21,19 +21,26 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
         textField.addTarget(self, action: #selector(textFieldDidChangeValue(_:)), for: .editingChanged)
         addSubview(textField)
         
-        setStyle()
+        updateStyle()
     }
     
-    private func setStyle() {
+    private func updateStyle() {
         backgroundColor = .clear
         
-        textField.placeholderColor = .drcSlate
-        textField.borderInactiveColor = .drcSilver
-        textField.borderActiveColor = .drcSlate
-        textField.font = UIFont.drcInputPlaceholderFont()
-        textField.textColor = .drcSlate
         textField.placeholderNormalFontScale = 1
         textField.placeholderEditingFontScale = 0.75
+        textField.font = UIFont.drcInputPlaceholderFont()
+        textField.borderInactiveColor = .drcSilver
+        
+        if isEnabled {
+            textField.placeholderColor = .drcSlate
+            textField.borderActiveColor = .drcSlate
+            textField.textColor = .drcSlate
+        } else {
+            textField.placeholderColor = .drcSilver
+            textField.borderActiveColor = .drcSilver
+            textField.textColor = .drcSilver
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -113,6 +120,21 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
         }
     }
     
+    var isEnabled: Bool = true {
+        didSet {
+            if isEnabled != oldValue {
+                if !isEnabled && textField.isFirstResponder {
+                    textField.resignFirstResponder()
+                }
+                
+                isUserInteractionEnabled = isEnabled
+                
+                updateVisibleState()
+                updateStyle()
+            }
+        }
+    }
+    
     var isSecureTextEntry: Bool {
         get { return textField.isSecureTextEntry }
         set { textField.isSecureTextEntry = newValue }
@@ -175,19 +197,23 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
     
     // MARK: Private
     func updateVisibleState() {
-        switch state {
-        case .normal:
-            textField.borderActiveColor = .drcSlate
-        case .validationError:
-            textField.borderActiveColor = .red // TODO: style
-        }
-        
-        guard textField.isFirstResponder else { return }
-        
-        if let text = text, text.isNotEmpty {
-            textField.animateViewsForTextDisplay()
+        if isEnabled {
+            switch state {
+            case .normal:
+                textField.borderActiveColor = .drcSlate
+            case .validationError:
+                textField.borderActiveColor = .red // TODO: style
+            }
+            
+            guard textField.isFirstResponder else { return }
+            
+            if let text = text, text.isNotEmpty {
+                textField.animateViewsForTextDisplay()
+            } else {
+                textField.animateViewsForTextEntry()
+            }
         } else {
-            textField.animateViewsForTextEntry()
+            textField.borderActiveColor = .clear
         }
     }
 }

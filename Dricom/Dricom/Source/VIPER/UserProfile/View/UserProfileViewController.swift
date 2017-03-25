@@ -1,6 +1,6 @@
 import UIKit
 
-final class UserProfileViewController: BaseViewController, UserProfileViewInput {
+final class UserProfileViewController: BaseViewController, UserProfileViewInput, InputFieldsContainerHolder {
     // MARK: - Properties
     private let userProfileView = UserProfileView()
     
@@ -80,6 +80,10 @@ final class UserProfileViewController: BaseViewController, UserProfileViewInput 
         userProfileView.setAddPhotoTitleVisible(isVisible)
     }
     
+    func endEditing() {
+        userProfileView.endEditing(true)
+    }
+    
     // MARK: ActivityDisplayable
     func startActivity() {
         userProfileView.startActivity()
@@ -87,5 +91,10 @@ final class UserProfileViewController: BaseViewController, UserProfileViewInput 
     
     func stopActivity() {
         userProfileView.stopActivity()
+    }
+    
+    // MARK: InputFieldsContainerHolder
+    var inputFieldsContainer: InputFieldsContainer {
+        return userProfileView
     }
 }

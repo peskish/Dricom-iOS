@@ -1,6 +1,6 @@
 import UIKit
 
-final class RegisterViewController: BaseViewController, RegisterViewInput {
+final class RegisterViewController: BaseViewController, RegisterViewInput, InputFieldsContainerHolder {
     // MARK: - Properties
     private let registerView = RegisterView()
     
@@ -55,27 +55,7 @@ final class RegisterViewController: BaseViewController, RegisterViewInput {
         registerView.setRegisterButtonTitle(title)
     }
     
-    func setOnInputChange(field: RegisterInputField, onChange: ((String?) -> ())?) {
-        registerView.setOnInputChange(field: field, onChange: onChange)
-    }
-    
-    func setInputPlaceholder(field: RegisterInputField, placeholder: String?) {
-        registerView.setInputPlaceholder(field: field, placeholder: placeholder)
-    }
-    
-    func focusOnField(_ field: RegisterInputField?) {
-        registerView.focusOnField(field)
-    }
-    
-    func setStateAccordingToErrors(_ errors: [RegisterInputFieldError]) {
-        registerView.setStateAccordingToErrors(errors)
-    }
-    
-    func setState(_ state: InputFieldViewState, to field: RegisterInputField) {
-        registerView.setState(state, to: field)
-    }
-    
-    func setOnDoneButtonTap(field: RegisterInputField, onDoneButtonTap: (() -> ())?) {
+    func setOnDoneButtonTap(field: InputField, onDoneButtonTap: (() -> ())?) {
         registerView.setOnDoneButtonTap(field: field, onDoneButtonTap: onDoneButtonTap)
     }
     
@@ -100,5 +80,10 @@ final class RegisterViewController: BaseViewController, RegisterViewInput {
     
     func stopActivity() {
         registerView.stopActivity()
+    }
+    
+    // MARK: InputFieldsContainerHolder
+    var inputFieldsContainer: InputFieldsContainer {
+        return registerView
     }
 }

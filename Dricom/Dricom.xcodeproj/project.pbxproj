@@ -94,8 +94,7 @@
 		F021D6ED1DD8925B00F50091 /* CameraViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6E21DD8925B00F50091 /* CameraViewInput.swift */; };
 		F021D6EF1DDDB4E600F50091 /* CameraPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6EE1DDDB4E600F50091 /* CameraPreviewViewController.swift */; };
 		F021D6F31DDDB5E600F50091 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6F21DDDB5E600F50091 /* CameraPreviewView.swift */; };
-		F021D7A51DDF1B3D00F50091 /* RegisterInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D7A41DDF1B3D00F50091 /* RegisterInputField.swift */; };
-		F021D7A91DE0E63F00F50091 /* RegisterDataValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D7A81DE0E63F00F50091 /* RegisterDataValidationService.swift */; };
+		F021D7A91DE0E63F00F50091 /* DataValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D7A81DE0E63F00F50091 /* DataValidationService.swift */; };
 		F0322AFE1E43CB4100F3CD47 /* AppStarterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AEF1E43CB4100F3CD47 /* AppStarterAssembly.swift */; };
 		F0322AFF1E43CB4100F3CD47 /* AppStarterAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AF01E43CB4100F3CD47 /* AppStarterAssemblyImpl.swift */; };
 		F0322B001E43CB4100F3CD47 /* AppStarterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AF21E43CB4100F3CD47 /* AppStarterInteractor.swift */; };
@@ -103,6 +102,9 @@
 		F0322B031E43CB4100F3CD47 /* AppStarterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AF61E43CB4100F3CD47 /* AppStarterPresenter.swift */; };
 		F0322B041E43CB4100F3CD47 /* AppStarterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AF81E43CB4100F3CD47 /* AppStarterRouter.swift */; };
 		F0322B051E43CB4100F3CD47 /* AppStarterRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AF91E43CB4100F3CD47 /* AppStarterRouterImpl.swift */; };
+		F03DE8181E87051900ADC5CB /* InputField+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03DE8171E87051900ADC5CB /* InputField+Error.swift */; };
+		F03DE81A1E87056D00ADC5CB /* InputFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03DE8191E87056D00ADC5CB /* InputFieldValidator.swift */; };
+		F03DE81C1E870A2900ADC5CB /* InputFieldsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03DE81B1E870A2900ADC5CB /* InputFieldsContainer.swift */; };
 		F05790C61E32A442004FBD4A /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790BC1E32A442004FBD4A /* Rubik-Black.ttf */; };
 		F05790C71E32A442004FBD4A /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790BD1E32A442004FBD4A /* Rubik-BlackItalic.ttf */; };
 		F05790C81E32A442004FBD4A /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790BE1E32A442004FBD4A /* Rubik-Bold.ttf */; };
@@ -349,8 +351,7 @@
 		F021D6E21DD8925B00F50091 /* CameraViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewInput.swift; sourceTree = "<group>"; };
 		F021D6EE1DDDB4E600F50091 /* CameraPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewViewController.swift; sourceTree = "<group>"; };
 		F021D6F21DDDB5E600F50091 /* CameraPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
-		F021D7A41DDF1B3D00F50091 /* RegisterInputField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterInputField.swift; sourceTree = "<group>"; };
-		F021D7A81DE0E63F00F50091 /* RegisterDataValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterDataValidationService.swift; path = Dricom/Source/VIPER/Services/Validation/RegisterDataValidationService.swift; sourceTree = SOURCE_ROOT; };
+		F021D7A81DE0E63F00F50091 /* DataValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataValidationService.swift; path = Dricom/Source/VIPER/Services/Validation/DataValidationService.swift; sourceTree = SOURCE_ROOT; };
 		F0322AEF1E43CB4100F3CD47 /* AppStarterAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterAssembly.swift; sourceTree = "<group>"; };
 		F0322AF01E43CB4100F3CD47 /* AppStarterAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterAssemblyImpl.swift; sourceTree = "<group>"; };
 		F0322AF21E43CB4100F3CD47 /* AppStarterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterInteractor.swift; sourceTree = "<group>"; };
@@ -358,6 +359,9 @@
 		F0322AF61E43CB4100F3CD47 /* AppStarterPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterPresenter.swift; sourceTree = "<group>"; };
 		F0322AF81E43CB4100F3CD47 /* AppStarterRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterRouter.swift; sourceTree = "<group>"; };
 		F0322AF91E43CB4100F3CD47 /* AppStarterRouterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterRouterImpl.swift; sourceTree = "<group>"; };
+		F03DE8171E87051900ADC5CB /* InputField+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "InputField+Error.swift"; path = "Dricom/Source/VIPER/Services/Validation/InputField+Error.swift"; sourceTree = SOURCE_ROOT; };
+		F03DE8191E87056D00ADC5CB /* InputFieldValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputFieldValidator.swift; path = Dricom/Source/VIPER/Services/Validation/InputFieldValidator.swift; sourceTree = SOURCE_ROOT; };
+		F03DE81B1E870A2900ADC5CB /* InputFieldsContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputFieldsContainer.swift; path = Dricom/Source/VIPER/Services/Validation/InputFieldsContainer.swift; sourceTree = SOURCE_ROOT; };
 		F05790BC1E32A442004FBD4A /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Black.ttf"; sourceTree = "<group>"; };
 		F05790BD1E32A442004FBD4A /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
 		F05790BE1E32A442004FBD4A /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
@@ -796,7 +800,6 @@
 			children = (
 				F021D6B51DD7B99300F50091 /* RegisterModule.swift */,
 				F021D6B61DD7B99300F50091 /* RegisterPresenter.swift */,
-				F021D7A41DDF1B3D00F50091 /* RegisterInputField.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -908,7 +911,10 @@
 		F021D7AA1DE0E64300F50091 /* Validation */ = {
 			isa = PBXGroup;
 			children = (
-				F021D7A81DE0E63F00F50091 /* RegisterDataValidationService.swift */,
+				F021D7A81DE0E63F00F50091 /* DataValidationService.swift */,
+				F03DE8191E87056D00ADC5CB /* InputFieldValidator.swift */,
+				F03DE8171E87051900ADC5CB /* InputField+Error.swift */,
+				F03DE81B1E870A2900ADC5CB /* InputFieldsContainer.swift */,
 			);
 			name = Validation;
 			sourceTree = "<group>";
@@ -1955,7 +1961,9 @@
 				F06E3F761E81B0EE00829A3F /* UserProfileInteractorImpl.swift in Sources */,
 				F0823DB71DE9D929007BD04D /* ActivityDisplayable.swift in Sources */,
 				F076D6411DCF67F200E3ED0F /* LoginAssemblyImpl.swift in Sources */,
+				F03DE8181E87051900ADC5CB /* InputField+Error.swift in Sources */,
 				F06E3F7D1E81B0EE00829A3F /* UserProfileViewInput.swift in Sources */,
+				F03DE81C1E870A2900ADC5CB /* InputFieldsContainer.swift in Sources */,
 				F0128C221E4F9D39008E6668 /* ScrollViewRefresherStateAnimator.swift in Sources */,
 				F05790D61E32A72D004FBD4A /* UIColor+Styleguide.swift in Sources */,
 				F0128B961E4A566A008E6668 /* RegistrationService.swift in Sources */,
@@ -1997,7 +2005,6 @@
 				F021D6A51DD7A6E300F50091 /* MailComposeDelegateService.swift in Sources */,
 				F0A1157F1DC6863E00A4DC76 /* UIView+Resizing.swift in Sources */,
 				F021D6CF1DD8914200F50091 /* RouterCameraShowable.swift in Sources */,
-				F021D7A51DDF1B3D00F50091 /* RegisterInputField.swift in Sources */,
 				F021D6BE1DD7B99300F50091 /* RegisterAssembly.swift in Sources */,
 				F0128C051E4F9CED008E6668 /* ScrollViewKeyboardAvoidingService.swift in Sources */,
 				F021D6CD1DD88D6100F50091 /* SpecSizes.swift in Sources */,
@@ -2100,7 +2107,7 @@
 				F0322B041E43CB4100F3CD47 /* AppStarterRouter.swift in Sources */,
 				F076D64C1DCF684A00E3ED0F /* ModuleFocusable.swift in Sources */,
 				F0128BFA1E4F9CED008E6668 /* DisposeBag.swift in Sources */,
-				F021D7A91DE0E63F00F50091 /* RegisterDataValidationService.swift in Sources */,
+				F021D7A91DE0E63F00F50091 /* DataValidationService.swift in Sources */,
 				F021D6E61DD8925B00F50091 /* CameraInteractorImpl.swift in Sources */,
 				F076D6481DCF67F200E3ED0F /* LoginView.swift in Sources */,
 				F0D038581DD3AE0500E0085D /* FeedbackInteractor.swift in Sources */,
@@ -2128,6 +2135,7 @@
 				F076D66D1DCF6F3800E3ED0F /* NumbersExtension.swift in Sources */,
 				F0B450B51E61BC3900F3B2E4 /* SettingsSelectCell.swift in Sources */,
 				F0A115871DC68E1D00A4DC76 /* ViewControllerTransition.swift in Sources */,
+				F03DE81A1E87056D00ADC5CB /* InputFieldValidator.swift in Sources */,
 				F0128C281E4F9D39008E6668 /* ScrollViewRefresherFactory.swift in Sources */,
 				F0D0385E1DD3AE0500E0085D /* FeedbackView.swift in Sources */,
 				F09209A81DC14A7F0057302F /* ApplicationRouterImpl.swift in Sources */,

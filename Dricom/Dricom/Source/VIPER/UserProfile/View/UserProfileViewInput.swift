@@ -1,6 +1,11 @@
 import UIKit
 
-protocol UserProfileViewInput: class, ViewLifecycleObservable, ActivityDisplayable, MessageDisplayable {
+protocol UserProfileViewInput: class,
+    ViewLifecycleObservable,
+    ActivityDisplayable,
+    MessageDisplayable,
+    InputFieldsContainer
+{
     func setViewTitle(_ title: String)
     func setRightButton(title: String, onTap: @escaping () -> ())
     func setRightButtonEnabled(_ isEnabled: Bool)
@@ -11,4 +16,5 @@ protocol UserProfileViewInput: class, ViewLifecycleObservable, ActivityDisplayab
     func setAvatarImageUrl(_ avatarImageUrl: URL?)
     func setAddPhotoTitle(_ title: String)
     func setAddPhotoTitleVisible(_ isVisible: Bool)
+    func endEditing()
 }

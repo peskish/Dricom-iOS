@@ -1,7 +1,7 @@
 import UIKit
 import AlamofireImage
 
-final class UserProfileView: UIView, ActivityDisplayable, StandardPreloaderViewHolder {
+final class UserProfileView: UIView, ActivityDisplayable, StandardPreloaderViewHolder, InputFieldsContainer {
     let preloader = StandardPreloaderView(style: .dark)
     
     private let changePhotoButton = UIButton(type: .custom)
@@ -10,6 +10,9 @@ final class UserProfileView: UIView, ActivityDisplayable, StandardPreloaderViewH
         target: self,
         action: #selector(changePhotoPressed)
     )
+    private let nameInputView = TextFieldView()
+    private let emailInputView = TextFieldView()
+    private let phoneInputView = TextFieldView()
     
     // MARK: - Init
     init() {
@@ -17,8 +20,15 @@ final class UserProfileView: UIView, ActivityDisplayable, StandardPreloaderViewH
         
         addSubview(preloader)
         
-        addSubview(changePhotoButton)
         addSubview(avatarImageView)
+        addSubview(changePhotoButton)
+        
+        addSubview(nameInputView)
+        addSubview(emailInputView)
+        addSubview(phoneInputView)
+        
+        emailInputView.keyboardType = .emailAddress
+        phoneInputView.keyboardType = .phonePad
         
         changePhotoButton.addTarget(self, action: #selector(changePhotoPressed), for: .touchUpInside)
         
@@ -52,6 +62,32 @@ final class UserProfileView: UIView, ActivityDisplayable, StandardPreloaderViewH
         changePhotoButton.sizeToFit()
         changePhotoButton.top = avatarImageView.bottom + 10
         changePhotoButton.centerX = bounds.centerX
+        
+        // Input fields
+        nameInputView.layout(
+            left: bounds.left,
+            right: bounds.right,
+            top: changePhotoButton.bottom + 20,
+            height: SpecSizes.inputFieldHeight
+        )
+        
+        emailInputView.layout(
+            left: bounds.left,
+            right: bounds.right,
+            top: nameInputView.bottom,
+            height: SpecSizes.inputFieldHeight
+        )
+        
+        phoneInputView.layout(
+            left: bounds.left,
+            right: bounds.right,
+            top: emailInputView.bottom,
+            height: SpecSizes.inputFieldHeight
+        )
+    }
+    
+    private var inputFields: [TextFieldView] {
+        return [nameInputView, emailInputView, phoneInputView]
     }
     
     // MARK: - Public
@@ -76,7 +112,7 @@ final class UserProfileView: UIView, ActivityDisplayable, StandardPreloaderViewH
     }
     
     func setInputFieldsEnabled(_ isEnabled: Bool) {
-        // TODO:
+        inputFields.forEach({ $0.isEnabled = isEnabled })
     }
     
     func setAvatarSelectionEnabled(_ isEnabled: Bool) {
@@ -112,5 +148,27 @@ final class UserProfileView: UIView, ActivityDisplayable, StandardPreloaderViewH
     // MARK: - Private
     @objc private func changePhotoPressed() {
         onChangePhotoButtonTap?()
+    }
+    
+    // MARK: - InputFieldsContainer
+    func inputFieldView(field: InputField) -> TextFieldView? {
+        switch field {
+        case .name:
+            return nameInputView
+        case .email:
+            return emailInputView
+        case .phone:
+            return phoneInputView
+        case .license, .password, .passwordConfirmation:
+            return nil
+        }
+    }
+    
+    func allFields() -> [InputField] {
+        return [
+            .name,
+            .email,
+            .phone
+        ]
     }
 }

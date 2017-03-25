@@ -11,12 +11,12 @@ protocol RegisterInteractor: class {
     func setPassword(_ password: String?)
     func setPasswordConfirmation(_ passwordConfirmation: String?)
     
-    func validateData(completion: @escaping (RegisterDataValidationResult) -> ())
-    func validateName() -> RegisterInputFieldError?
-    func validateEmail() -> RegisterInputFieldError?
-    func validateLicense() -> RegisterInputFieldError?
-    func validatePhone() -> RegisterInputFieldError?
-    func validatePassword() -> RegisterInputFieldError?
+    func validateData(completion: @escaping (DataValidationResult) -> ())
+    func validateName() -> InputFieldError?
+    func validateEmail() -> InputFieldError?
+    func validateLicense() -> InputFieldError?
+    func validatePhone() -> InputFieldError?
+    func validatePassword() -> InputFieldError?
     
     func registerUser(completion: @escaping ApiResult<Void>.Completion)
 }

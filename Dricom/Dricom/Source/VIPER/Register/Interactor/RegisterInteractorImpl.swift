@@ -17,11 +17,11 @@ final class RegisterInteractorImpl: RegisterInteractor {
     
     // MARK: - Dependencies
     private let registrationService: RegistrationService
-    private let registerDataValidationService: RegisterDataValidationService
+    private let dataValidationService: DataValidationService
     
     // MARK: - Init
-    init(registerDataValidationService: RegisterDataValidationService, registrationService: RegistrationService) {
-        self.registerDataValidationService = registerDataValidationService
+    init(dataValidationService: DataValidationService, registrationService: RegistrationService) {
+        self.dataValidationService = dataValidationService
         self.registrationService = registrationService
     }
     
@@ -58,28 +58,28 @@ final class RegisterInteractorImpl: RegisterInteractor {
         registerData.passwordConfirmation = passwordConfirmation?.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
-    func validateData(completion: @escaping (RegisterDataValidationResult) -> ()) {
-        registerDataValidationService.validateData(registerData, completion: completion)
+    func validateData(completion: @escaping (DataValidationResult) -> ()) {
+        dataValidationService.validateData(registerData, completion: completion)
     }
     
-    func validateName() -> RegisterInputFieldError? {
-        return registerDataValidationService.validateName(registerData.name)
+    func validateName() -> InputFieldError? {
+        return dataValidationService.validateName(registerData.name)
     }
     
-    func validateEmail() -> RegisterInputFieldError? {
-        return registerDataValidationService.validateEmail(registerData.email)
+    func validateEmail() -> InputFieldError? {
+        return dataValidationService.validateEmail(registerData.email)
     }
     
-    func validateLicense() -> RegisterInputFieldError? {
-        return registerDataValidationService.validateLicense(registerData.license)
+    func validateLicense() -> InputFieldError? {
+        return dataValidationService.validateLicense(registerData.license)
     }
     
-    func validatePhone() -> RegisterInputFieldError? {
-        return registerDataValidationService.validatePhone(registerData.phone)
+    func validatePhone() -> InputFieldError? {
+        return dataValidationService.validatePhone(registerData.phone)
     }
     
-    func validatePassword() -> RegisterInputFieldError? {
-        return registerDataValidationService.validatePassword(registerData.password)
+    func validatePassword() -> InputFieldError? {
+        return dataValidationService.validatePassword(registerData.password)
     }
     
     func registerUser(completion: @escaping (ApiResult<Void>) -> ()) {

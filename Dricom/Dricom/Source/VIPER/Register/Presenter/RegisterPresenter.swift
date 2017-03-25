@@ -131,7 +131,7 @@ final class RegisterPresenter: NSObject,
         }
     }
     
-    private func showValidationErrors(_ errors: [RegisterInputFieldError]) {
+    private func showValidationErrors(_ errors: [InputFieldError]) {
         view?.setStateAccordingToErrors(errors)
         
         let validationErrors: [String] = errors.flatMap {

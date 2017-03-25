@@ -37,6 +37,28 @@ final class UserProfilePresenter:
         view?.setAddPhotoTitle("Изменить фото")
         view?.setRightButtonEnabled(false)
         
+        view?.setInputPlaceholder(field: .name, placeholder: "Ваше имя")
+        view?.setInputPlaceholder(field: .email, placeholder: "Ваш Email")
+        view?.setInputPlaceholder(field: .phone, placeholder: "Контактный телефон")
+        
+        view?.setOnInputChange(field: .name) { [weak self] text in
+            self?.interactor.setName(text)
+            let error = self?.interactor.validateName()
+            self?.view?.setState(error == nil ? .normal : .validationError, to: .name)
+        }
+        
+        view?.setOnInputChange(field: .email) { [weak self] text in
+            self?.interactor.setEmail(text)
+            let error = self?.interactor.validateEmail()
+            self?.view?.setState(error == nil ? .normal : .validationError, to: .email)
+        }
+        
+        view?.setOnInputChange(field: .phone) { [weak self] text in
+            self?.interactor.setPhone(text)
+            let error = self?.interactor.validatePhone()
+            self?.view?.setState(error == nil ? .normal : .validationError, to: .phone)
+        }
+        
         view?.onViewDidLoad = { [weak self] in
             self?.setViewState(.read)
             self?.view?.startActivity()

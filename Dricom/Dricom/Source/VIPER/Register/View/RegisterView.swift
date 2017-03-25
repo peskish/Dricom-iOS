@@ -1,6 +1,6 @@
 import UIKit
 
-final class RegisterView: UIView, ActivityDisplayable, StandardPreloaderViewHolder {
+final class RegisterView: UIView, ActivityDisplayable, StandardPreloaderViewHolder, InputFieldsContainer {
     // MARK: - Properties
     private let topContainer = RegisterTopView()
     private let inputFieldsContainer = UIScrollView()
@@ -166,46 +166,8 @@ final class RegisterView: UIView, ActivityDisplayable, StandardPreloaderViewHold
         set { registerButtonView.onTap = newValue }
     }
     
-    func focusOnField(_ field: RegisterInputField?) {
-        guard let field = field else { return }
-        
-        let inputField = inputFieldView(field: field)
-        inputField.startEditing()
-    }
-    
-    func setOnInputChange(field: RegisterInputField, onChange: ((String?) -> ())?) {
-        let inputField = inputFieldView(field: field)
-        inputField.onTextChange = onChange
-    }
-    
-    func setOnDoneButtonTap(field: RegisterInputField, onDoneButtonTap: (() -> ())?) {
-        let inputField = inputFieldView(field: field)
-        inputField.onDoneButtonTap = onDoneButtonTap
-    }
-    
-    func setInputPlaceholder(field: RegisterInputField, placeholder: String?) {
-        let inputField = inputFieldView(field: field)
-        inputField.placeholder = placeholder
-    }
-    
-    func setStateAccordingToErrors(_ errors: [RegisterInputFieldError]) {
-        allFields().forEach{ field in
-            let state: InputFieldViewState = errors.contains(where: { $0.field == field })
-                ? .validationError
-                : .normal
-            
-            let inputView = self.inputFieldView(field: field)
-            inputView.state = state
-        }
-    }
-    
-    func setState(_ state: InputFieldViewState, to field: RegisterInputField) {
-        let inputField = inputFieldView(field: field)
-        inputField.state = state
-    }
-    
-    // MARK: - Private
-    private func inputFieldView(field: RegisterInputField) -> TextFieldView {
+    // MARK: - InputFieldsContainer
+    func inputFieldView(field: InputField) -> TextFieldView? {
         switch field {
         case .name:
             return nameInputView
@@ -222,7 +184,7 @@ final class RegisterView: UIView, ActivityDisplayable, StandardPreloaderViewHold
         }
     }
     
-    private func allFields() -> [RegisterInputField] {
+    func allFields() -> [InputField] {
         return [
             .name,
             .email,
