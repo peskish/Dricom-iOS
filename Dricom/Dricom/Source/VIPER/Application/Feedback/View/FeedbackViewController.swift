@@ -4,8 +4,6 @@ final class FeedbackViewController: BaseViewController, FeedbackViewInput {
     private let feedbackView = FeedbackView()
     
     override func loadView() {
-        super.loadView()
-        
         view = feedbackView
     }
     

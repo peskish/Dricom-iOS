@@ -6,8 +6,6 @@ final class MainPageViewController: BaseViewController, MainPageViewInput {
     
     // MARK: - View events
     override func loadView() {
-        super.loadView()
-        
         view = mainPageView
     }
     

@@ -8,8 +8,8 @@ final class SettingsViewController: BaseViewController, SettingsViewInput {
     fileprivate var viewData: SettingsViewData?
     
     // MARK: - View events
-    override func loadView() {
-        super.loadView()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         view.addSubview(settingsView)
         
@@ -29,10 +29,6 @@ final class SettingsViewController: BaseViewController, SettingsViewInput {
         )
         settingsView.sectionHeaderHeight = CGFloat.leastNormalMagnitude
         settingsView.sectionFooterHeight = SpecMargins.contentMargin
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
         
         // TODO: DRY
         navigationController?.navigationBar.shadowImage = UIImage()

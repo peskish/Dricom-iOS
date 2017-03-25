@@ -6,8 +6,6 @@ final class RegisterViewController: BaseViewController, RegisterViewInput {
     
     // MARK: - View events
     override func loadView() {
-        super.loadView()
-        
         view = registerView
     }
     

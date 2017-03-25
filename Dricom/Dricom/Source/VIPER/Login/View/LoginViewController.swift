@@ -6,8 +6,6 @@ final class LoginViewController: BaseViewController, LoginViewInput {
     
     // MARK: - View events
     override func loadView() {
-        super.loadView()
-        
         view = loginView
         
         automaticallyAdjustsScrollViewInsets = true

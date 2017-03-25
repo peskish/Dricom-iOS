@@ -34,6 +34,7 @@ final class UserProfilePresenter:
     
     private func setUpView() {
         view?.setViewTitle("Профиль")
+        view?.setAddPhotoTitle("Изменить фото")
         view?.setRightButtonEnabled(false)
         
         view?.onViewDidLoad = { [weak self] in
@@ -58,6 +59,7 @@ final class UserProfilePresenter:
         case .edit:
             view?.setInputFieldsEnabled(true)
             view?.setAvatarSelectionEnabled(true)
+            view?.setAddPhotoTitleVisible(true)
             view?.setRightButton(title: "Сохранить") { [weak self] in
                 self?.view?.startActivity()
                 
@@ -66,7 +68,7 @@ final class UserProfilePresenter:
         case .read:
             view?.setInputFieldsEnabled(false)
             view?.setAvatarSelectionEnabled(false)
-            
+            view?.setAddPhotoTitleVisible(false)
             view?.setRightButton(title: "Изменить") { [weak self] in
                 self?.setViewState(.edit)
                 self?.view?.setRightButtonEnabled(false)
@@ -75,7 +77,7 @@ final class UserProfilePresenter:
     }
     
     private func presentUser(_ user: User) {
-        // TODO
+        view?.setAvatarImageUrl(user.avatar.flatMap { URL.init(string: $0) })
     }
     
     // MARK: - UserProfileModule

@@ -6,22 +6,22 @@ final class UserProfileViewController: BaseViewController, UserProfileViewInput 
     
     // MARK: - View events
     override func loadView() {
-        super.loadView()
-        
         view = userProfileView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.tintColor = UIColor.drcBlue
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.titleTextAttributes = [
+        guard let navBar = navigationController?.navigationBar else { return }
+        
+        navBar.shadowImage = UIImage()
+        navBar.tintColor = UIColor.drcBlue
+        navBar.isTranslucent = false
+        navBar.titleTextAttributes = [
             NSForegroundColorAttributeName: UIColor.drcSlate,
             NSFontAttributeName: UIFont.drcScreenNameFont() ?? UIFont.systemFont(ofSize: 17)
         ]
-        navigationController?.navigationBar.setBackgroundImage(
+        navBar.setBackgroundImage(
             UIImage(),
             for: .default
         )
@@ -36,7 +36,7 @@ final class UserProfileViewController: BaseViewController, UserProfileViewInput 
     func setRightButton(title: String, onTap: @escaping () -> ()) {
         onRightButtonTap = onTap
         
-        navigationController?.navigationItem.rightBarButtonItem = UIBarButtonItem(
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
             title: title,
             style: .plain,
             target: self,
@@ -44,7 +44,7 @@ final class UserProfileViewController: BaseViewController, UserProfileViewInput 
     }
     
     func setRightButtonEnabled(_ isEnabled: Bool) {
-        navigationController?.navigationItem.rightBarButtonItem?.isEnabled = isEnabled
+        navigationItem.rightBarButtonItem?.isEnabled = isEnabled
     }
     
     @objc private func onRightButtonTap(sender: UIControl) {
@@ -52,11 +52,32 @@ final class UserProfileViewController: BaseViewController, UserProfileViewInput 
     }
     
     func setInputFieldsEnabled(_ isEnabled: Bool) {
-        // TODO:
+        userProfileView.setInputFieldsEnabled(isEnabled)
     }
     
     func setAvatarSelectionEnabled(_ isEnabled: Bool) {
-        // TODO:
+        userProfileView.setAvatarSelectionEnabled(isEnabled)
+    }
+    
+    var onChangePhotoButtonTap: (() -> ())? {
+        get { return userProfileView.onChangePhotoButtonTap }
+        set { userProfileView.onChangePhotoButtonTap = newValue }
+    }
+    
+    func setAvatarPhotoImage(_ image: UIImage?) {
+        userProfileView.setAvatarPhotoImage(image)
+    }
+    
+    func setAvatarImageUrl(_ avatarImageUrl: URL?) {
+        userProfileView.setAvatarImageUrl(avatarImageUrl)
+    }
+    
+    func setAddPhotoTitle(_ title: String) {
+        userProfileView.setAddPhotoTitle(title)
+    }
+    
+    func setAddPhotoTitleVisible(_ isVisible: Bool) {
+        userProfileView.setAddPhotoTitleVisible(isVisible)
     }
     
     // MARK: ActivityDisplayable

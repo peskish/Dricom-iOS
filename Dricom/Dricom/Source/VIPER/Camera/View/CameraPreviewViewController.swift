@@ -6,8 +6,6 @@ final class CameraPreviewViewController: UIViewController {
     
     // MARK: - View events
     override func loadView() {
-        super.loadView()
-        
         view = previewView
     }
     

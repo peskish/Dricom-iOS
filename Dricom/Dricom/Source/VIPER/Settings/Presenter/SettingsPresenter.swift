@@ -110,8 +110,7 @@ final class SettingsPresenter: SettingsModule
     }
     
     private func onProfileTap() {
-        // TODO:
-        print("onProfileTap")
+        router.showUserProfile()
     }
     
     private func onPasswordChangeTap() {
