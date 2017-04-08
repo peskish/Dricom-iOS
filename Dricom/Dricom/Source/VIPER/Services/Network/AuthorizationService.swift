@@ -1,5 +1,5 @@
 protocol AuthorizationService: class {
-    func authorize(email: String, password: String, completion: @escaping ApiResult<Void>.Completion)
+    func authorize(username: String, password: String, completion: @escaping ApiResult<Void>.Completion)
 }
 
 import CryptoSwift
@@ -22,8 +22,8 @@ final class AuthorizationServiceImpl: AuthorizationService {
     }
     
     // MARK: - AuthorizationService
-    func authorize(email: String, password: String, completion: @escaping ApiResult<Void>.Completion) {
-        let request = AuthRequest(email: email, password: password.sha512())
+    func authorize(username: String, password: String, completion: @escaping ApiResult<Void>.Completion) {
+        let request = AuthRequest(username: username, password: password.sha512())
 
         networkClient.send(request: request) { [weak self] result in
             result.onData { loginResponse in

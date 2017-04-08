@@ -28,7 +28,7 @@ final class LoginPresenter:
     
     // MARK: - Private
     private func setUpView() {
-        view?.setLoginPlaceholder("Имя пользователя")
+        view?.setLoginPlaceholder("Email, телефон или номер автомобиля")
         view?.setPasswordPlaceholder("Введите пароль")
         view?.setLoginButtonTitle("Войти")
         view?.setRegisterButtonTitle("Регистрация")
@@ -85,7 +85,7 @@ final class LoginPresenter:
     private func proceed(login: String, password: String) {
         view?.endEditing()
         view?.startActivity()
-        interactor.login(email: login, password: password) { [weak self] result in
+        interactor.login(username: login, password: password) { [weak self] result in
             self?.view?.stopActivity()
             result.onData { user in
                 self?.onFinish?(.finished)

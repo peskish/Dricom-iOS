@@ -10,7 +10,7 @@ final class LoginInteractorImpl: LoginInteractor {
     }
     
     // MARK: - LoginInteractor
-    func login(email: String, password: String, completion: @escaping ApiResult<Void>.Completion) {
-        authorizationService.authorize(email: email, password: password, completion: completion)
+    func login(username: String, password: String, completion: @escaping ApiResult<Void>.Completion) {
+        authorizationService.authorize(username: username, password: password, completion: completion)
     }
 }

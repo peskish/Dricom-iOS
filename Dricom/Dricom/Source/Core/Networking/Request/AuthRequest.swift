@@ -3,26 +3,26 @@ import Alamofire
 struct AuthRequest: NetworkRequest {
     typealias Result = LoginResponse
     
-    private let email: String
+    private let username: String
     private let password: String
     
     init(
-        email: String,
+        username: String,
         password: String
         )
     {
-        self.email = email
+        self.username = username
         self.password = password
     }
     
     let version = 1
     let httpMethod: HTTPMethod = .post
     let isAuthorizationRequired = false
-    let path = "auth"
+    let path = "api-token-auth"
     
     var params: [String: Any] {
         var parameters = [String: Any]()
-        parameters["email"] = email
+        parameters["username"] = username
         parameters["password"] = password
         return parameters
     }

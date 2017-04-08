@@ -43,7 +43,7 @@ final class SettingsPresenter: SettingsModule
         
         
         let licenseValue: String
-        if let licenseParts = LicenseParts(licenseNumber: user.license) {
+        if let licenseParts = LicenseParts(licenseNumber: user.licenses.first?.title) {
             licenseValue = (licenseParts.firstLetter + licenseParts.numberPart + licenseParts.restLetters)
         } else {
             licenseValue = ""

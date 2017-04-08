@@ -38,7 +38,8 @@ final class MainPagePresenter: MainPageModule {
             user.avatar.flatMap{ URL(string: $0) }
         )
         
-        if let licenseNumber = user.license, let licenseParts = LicenseParts(licenseNumber: licenseNumber) {
+        if let licenseNumber = user.licenses.first?.title,
+            let licenseParts = LicenseParts(licenseNumber: licenseNumber) {
             view?.setLicenseParts(licenseParts)
         }
     }

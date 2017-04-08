@@ -28,7 +28,7 @@ final class NetworkClientImpl: NetworkClient {
             return
         }
         
-        var parameters = request.params
+        var headers = HTTPHeaders()
         
         if request.isAuthorizationRequired {
             switch authorizationStatusHolder.authorizationStatus {
@@ -36,16 +36,16 @@ final class NetworkClientImpl: NetworkClient {
                 completion(.error(.userIsNotAuthorized))
                 return
             case .authorized(let jwt):
-                parameters["jwt"] = jwt
+                headers["Authorization"] = "JWT " + jwt
             }
         }
         
         Alamofire.request(
             url,
             method: request.httpMethod,
-            parameters: parameters,
+            parameters: request.params,
             encoding: request.encoding,
-            headers: nil
+            headers: headers
         ).responseData { response in
             if let httpStatusCode = response.response?.statusCode {
                 switch(httpStatusCode) {
@@ -78,16 +78,7 @@ final class NetworkClientImpl: NetworkClient {
     
     // MARK: URL
     private func makeUrl<R: NetworkRequest>(from request: R) -> URL? {
-        let path = preparedRequestPath(request.path)
-        return URL(string: baseUrl + String(request.version) + path)
-    }
-    
-    private func preparedRequestPath(_ path: String) -> String {
-        // remove leading and trailing `/` characters
-        let components = path.components(separatedBy: "/")
-        let nonEmptyComponents = components.filter { !$0.isEmpty }
-        
-        // return leading `/` character
-        return "/" + nonEmptyComponents.joined(separator: "/")
+        // Django requires the trailing `/`, it fails with 500 otherwise
+        return URL(string: baseUrl + request.path + "/")
     }
 }

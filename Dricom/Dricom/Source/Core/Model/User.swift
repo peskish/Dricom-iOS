@@ -1,44 +1,44 @@
 import Unbox
 
-struct User: Equatable, Unboxable {
+struct User {
     let userId: String
     let avatar: String?
     let name: String?
-    let license: String?
+    let licenses: [License]
     let phone: String?
     let email: String?
     
-    init(
-        userId: String,
-        avatar: String?,
-        name: String?,
-        licence: String?,
-        phone: String?,
-        email: String?)
-    {
-        self.userId = userId
-        self.avatar = avatar
-        self.name = name
-        self.license = licence
-        self.phone = phone
-        self.email = email
+    struct License: Equatable, Unboxable {
+        let id: String
+        let title: String
+        
+        init(unboxer: Unboxer) throws {
+            id = try unboxer.unbox(key: "id")
+            title = try unboxer.unbox(key: "title")
+        }
+        
+        static func ==(left: License, right: License) -> Bool {
+            return left.id == right.id && left.title == right.title
+        }
     }
-    
-    // MARK: Equatable
+}
+
+extension User: Equatable {
     static func ==(left: User, right: User) -> Bool {
         return left.avatar == right.avatar
-            && left.license == right.license
+            && left.licenses == right.licenses
             && left.name == right.name
             && left.phone == right.phone
             && left.email == right.email
             && left.userId == right.userId
     }
-    
-    // MARK: Unboxable
+}
+
+extension User: Unboxable {
     init(unboxer: Unboxer) throws {
         avatar = unboxer.unbox(key: "avatar")
-        name = unboxer.unbox(key: "name")
-        license = unboxer.unbox(key: "license")
+        name = unboxer.unbox(key: "first_name") // TODO: return `name` back
+        licenses = try unboxer.unbox(key: "licenses")
         phone = unboxer.unbox(key: "phone")
         email = unboxer.unbox(key: "email")
         userId = try unboxer.unbox(key: "id")

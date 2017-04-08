@@ -36,11 +36,10 @@ struct RegisterRequest: NetworkRequest {
     var params: [String: Any] {
         var parameters = [String: Any]()
         parameters["email"] = email
-        parameters["name"] = name
+        parameters["first_name"] = name // TODO: return `name` back
         parameters["license"] = license
         parameters["phone"] = phone
         parameters["password"] = password
-        parameters["token"] = token
         return parameters
     }
 }
