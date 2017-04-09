@@ -6,7 +6,7 @@ struct LoginResponse: Unboxable {
     
     // MARK: - Unboxable
     init(unboxer: Unboxer) throws {
-        jwt = try unboxer.unbox(key: "jwt")
+        jwt = try unboxer.unbox(key: "token")
         user = try unboxer.unbox(key: "user")
     }
 }

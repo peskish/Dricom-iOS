@@ -49,10 +49,15 @@ final class NetworkClientImpl: NetworkClient {
         ).responseData { response in
             if let httpStatusCode = response.response?.statusCode {
                 switch(httpStatusCode) {
+                case 400:
+                    completion(.error(.badRequest))
+                    return
                 case 401:
                     completion(.error(.userIsNotAuthorized))
+                    return
                 case 500:
                     completion(.error(.internalServerError))
+                    return
                 default:
                     break
                 }
@@ -65,7 +70,6 @@ final class NetworkClientImpl: NetworkClient {
                 } else if let result = request.resultConverter.decodeResponse(data: value) {
                     completion(.data(result))
                 } else {
-                    assertionFailure("Parsing failure with data: \(value.toJSON)")
                     completion(.error(.parsingFailure))
                 }
             case .failure(let error):

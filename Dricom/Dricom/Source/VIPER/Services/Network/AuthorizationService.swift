@@ -32,7 +32,13 @@ final class AuthorizationServiceImpl: AuthorizationService {
                 completion(.data())
             }
             result.onError { networkRequestError in
-                completion(.error(networkRequestError))
+                switch networkRequestError {
+                case .badRequest:
+                    // Treat 400 as 401 due to current backend implementation
+                    completion(.error(NetworkRequestError.userIsNotAuthorized))
+                default:
+                    completion(.error(networkRequestError))
+                }
             }
         }
     }

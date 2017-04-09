@@ -31,7 +31,7 @@ extension MessageDisplayable where Self: AlertDisplayable {
         showAlert(StandardAlert(title: "", message: message))
     }
     
-    private func showErrorMessage(_ message: String) {
+    func showErrorMessage(_ message: String) {
         showAlert(StandardAlert(title: "Ошибка", message: message))
     }
     

@@ -91,7 +91,12 @@ final class LoginPresenter:
                 self?.onFinish?(.finished)
             }
             result.onError { networkRequestError in
-                self?.view?.showError(networkRequestError)
+                switch networkRequestError {
+                case .userIsNotAuthorized:
+                    self?.view?.showErrorMessage("Неверное имя пользователя или пароль")
+                default:
+                    self?.view?.showError(networkRequestError)
+                }
             }
         }
     }
