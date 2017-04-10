@@ -3,22 +3,44 @@ PODS:
   - AlamofireImage (3.0.0):
     - Alamofire (~> 4.0)
   - CryptoSwift (0.6.7)
-  - CTAssetsPickerController (3.3.1):
-    - PureLayout (~> 3.0.0)
-  - FastttCamera (0.3.4):
-    - FastttCamera/Default (= 0.3.4)
-  - FastttCamera/Default (0.3.4)
+  - ImageSource (1.0.0):
+    - ImageSource/Core (= 1.0.0)
+    - ImageSource/Local (= 1.0.0)
+    - ImageSource/PHAsset (= 1.0.0)
+    - ImageSource/Remote (= 1.0.0)
+    - ImageSource/UIKit (= 1.0.0)
+  - ImageSource/Core (1.0.0)
+  - ImageSource/Local (1.0.0):
+    - ImageSource/Core
+  - ImageSource/PHAsset (1.0.0):
+    - ImageSource/Core
+  - ImageSource/Remote (1.0.0):
+    - ImageSource/Core
+    - ImageSource/Remote/SDWebImage (= 1.0.0)
+    - ImageSource/UIKit
+  - ImageSource/Remote/SDWebImage (1.0.0):
+    - ImageSource/Core
+    - ImageSource/UIKit
+    - SDWebImage (~> 3.8)
+  - ImageSource/UIKit (1.0.0):
+    - ImageSource/Core
+  - JNWSpringAnimation (0.7.1)
   - KeychainAccess (3.0.1)
-  - PureLayout (3.0.2)
+  - Paparazzo/Core (1.0.0):
+    - ImageSource
+    - JNWSpringAnimation
+    - SDWebImage (~> 3.8)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
   - Unbox (2.2.0)
 
 DEPENDENCIES:
   - Alamofire (from `https://github.com/avito-tech/Alamofire`)
   - AlamofireImage (from `https://github.com/avito-tech/AlamofireImage`)
   - CryptoSwift
-  - CTAssetsPickerController
-  - FastttCamera
   - KeychainAccess
+  - Paparazzo/Core
   - Unbox
 
 EXTERNAL SOURCES:
@@ -39,12 +61,13 @@ SPEC CHECKSUMS:
   Alamofire: 29102f79068e4769ded8aec795a792f11da018a6
   AlamofireImage: e2176b92a7374745f03661d740cc4bb35e874d7d
   CryptoSwift: 685ae257941e5447474348a2b545583e1a16b573
-  CTAssetsPickerController: b1d1d50ab87cf6b8b13531de5f4530482e7e53ed
-  FastttCamera: 51f16712cbd5bdb08bc6231b957325c6be5e478d
+  ImageSource: 81419e0abad686305b19d148c72d8fc9d094dddd
+  JNWSpringAnimation: cd4c2f4464324f63f176c3624ffccf205211a100
   KeychainAccess: 017ea25e313a49eda10bb19b0bb0760fb1edfe1a
-  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  Paparazzo: 3ec4e4455fba14d48dd073f1ccb200d33f2cedbb
+  SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
   Unbox: 03d7128ce429987986bc08d967e9d5e0da158946
 
-PODFILE CHECKSUM: ca16e660fba7427d499bea7d9efc34912f477c35
+PODFILE CHECKSUM: bb9c27350000c83634e8666e75595be775e5bc25
 
 COCOAPODS: 1.2.0

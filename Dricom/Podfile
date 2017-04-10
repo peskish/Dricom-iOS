@@ -10,9 +10,8 @@ def dricom_pods
     pod 'Alamofire', :git => 'https://github.com/avito-tech/Alamofire'
     pod 'Unbox'
     pod 'KeychainAccess'
-    pod 'FastttCamera'
-    pod 'CTAssetsPickerController'
     pod 'CryptoSwift'
+    pod 'Paparazzo/Core'
 end
     
 target 'Dricom' do
