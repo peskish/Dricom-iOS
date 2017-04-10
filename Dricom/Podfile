@@ -11,6 +11,7 @@ def dricom_pods
     pod 'Unbox'
     pod 'KeychainAccess'
     pod 'CryptoSwift'
+    pod 'FastttCamera'
     pod 'Paparazzo/Core'
 end
     

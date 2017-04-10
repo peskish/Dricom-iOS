@@ -1,5 +1,5 @@
-import CTAssetsPickerController
+import Paparazzo
 
 protocol RegisterRouter: class, RouterFocusable, RouterDismissable, RouterCameraShowable, RouterFeedbackShowable {
-    func showMediaPicker(delegate: CTAssetsPickerControllerDelegate)
+    func showPhotoLibrary(maxSelectedItemsCount: Int, configuration: (PhotoLibraryModule) -> ())
 }

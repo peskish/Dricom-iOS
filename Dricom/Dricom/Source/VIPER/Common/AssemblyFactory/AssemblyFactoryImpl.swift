@@ -1,6 +1,9 @@
+import Paparazzo
+
 final class AssemblyFactoryImpl: AssemblyFactory {
     // MARK: Properties
     private let serviceFactory: ServiceFactory
+    private let paparazzoAssemblyFactory = Paparazzo.AssemblyFactory()
     
     // MARK: Init
     init(serviceFactory: ServiceFactory) {
@@ -46,5 +49,9 @@ final class AssemblyFactoryImpl: AssemblyFactory {
     
     func userProfileAssembly() -> UserProfileAssembly {
         return UserProfileAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
+    }
+    
+    func photoLibraryAssembly() -> PhotoLibraryAssembly {
+        return paparazzoAssemblyFactory.photoLibraryAssembly()
     }
 }

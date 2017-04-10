@@ -1,15 +1,15 @@
-import CTAssetsPickerController
+import Paparazzo
 
 final class RegisterRouterImpl: BaseRouter, RegisterRouter {
     // MARK: - RegisterRouter
-    func showMediaPicker(delegate: CTAssetsPickerControllerDelegate) {
-        PHPhotoLibrary.requestAuthorization { authorizationStatus in
-            DispatchQueue.main.async {
-                let picker = CTAssetsPickerController()
-                picker.showsEmptyAlbums = false
-                picker.delegate = delegate
-                self.viewController?.present(picker, animated: true, completion: nil)
-            }
-        }
+    func showPhotoLibrary(maxSelectedItemsCount: Int, configuration: (PhotoLibraryModule) -> ()) {
+        let assembly = assemblyFactory.photoLibraryAssembly()
+        let targetViewController = assembly.module(
+            selectedItems: [],
+            maxSelectedItemsCount: maxSelectedItemsCount,
+            configuration: configuration
+        )
+        let navigationController = UINavigationController(rootViewController: targetViewController)
+        viewController?.present(navigationController, animated: true, completion: nil)
     }
 }

@@ -1,9 +1,8 @@
-import CTAssetsPickerController
+import Paparazzo
+import ImageSource
+import Photos
 
-final class RegisterPresenter: NSObject,
-    RegisterModule,
-    CTAssetsPickerControllerDelegate
-{
+final class RegisterPresenter: RegisterModule {
     // MARK: - Private properties
     private let interactor: RegisterInteractor
     private let router: RegisterRouter
@@ -200,7 +199,25 @@ final class RegisterPresenter: NSObject,
     }
     
     private func selectAvatarPhoto() {
-        router.showMediaPicker(delegate: self)
+        router.showPhotoLibrary(maxSelectedItemsCount: 1) { photoLibraryModule in
+            weak var weakPhotoLibraryModule = photoLibraryModule
+            photoLibraryModule.onFinish = { [weakPhotoLibraryModule] result in
+                switch result {
+                case .selectedItems(let items):
+                    let options = ImageRequestOptions(
+                        size: .fitSize(SpecSizes.avatarImageNativeSize()),
+                        deliveryMode: .best
+                    )
+                    items.first?.image.requestImage(options: options) { [weak self] (image: UIImage?) in
+                        self?.setAvatarImage(image)
+                    }
+                case .cancelled:
+                    break
+                }
+                
+                weakPhotoLibraryModule?.dismissModule()
+            }
+        }
     }
     
     private func removeAvatarPhoto() {
@@ -209,26 +226,19 @@ final class RegisterPresenter: NSObject,
         view?.setAddPhotoButtonVisible(true)
     }
     
-    // MARK: - CTAssetsPickerControllerDelegate
-    func assetsPickerController(_ picker: CTAssetsPickerController!, didFinishPickingAssets assets: [Any]!) {
-        if let asset = assets.first as? PHAsset {
-            setAvatarImageFromAsset(asset)
-        }
-        
-        focusOnModule()
-    }
-    
-    func assetsPickerController(_ picker: CTAssetsPickerController!, didSelect asset: PHAsset!) {
-        setAvatarImageFromAsset(asset)
-        focusOnModule()
-    }
-    
     private func setAvatarImageFromAsset(_ asset: PHAsset) {
         let avatarThumbnail = PHAssetUtilities.getImageFrom(asset: asset)
-        interactor.setAvatar(avatarThumbnail)
+        setAvatarImage(avatarThumbnail)
+    }
+    
+    private func setAvatarImage(_ image: UIImage?) {
+        guard let image = image else { return }
         
-        let croppedAvatar = avatarThumbnail.imageByScalingAndCropping(SpecSizes.avatarImageSize)
+        interactor.setAvatar(image)
+        
+        let croppedAvatar = image.imageByScalingAndCropping(SpecSizes.avatarImageNativeSize())
         view?.setAvatarPhotoImage(croppedAvatar)
+        
         view?.setAddPhotoButtonVisible(false)
     }
     

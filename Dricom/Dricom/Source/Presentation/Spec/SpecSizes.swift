@@ -12,4 +12,9 @@ final class SpecSizes {
     static let socialFeedbackButtonSize = CGSize(width: 60, height: 60)
     static let avatarImageSize = CGSize(width: 130, height: 130)
     static let smallAvatarImageSize = CGSize(width: 44*scale, height: 44*scale)
+    
+    static func avatarImageNativeSize() -> CGSize {
+        let scale = UIScreen.main.nativeScale
+        return CGSize(width: avatarImageSize.width * scale, height: avatarImageSize.height * scale)
+    }
 }

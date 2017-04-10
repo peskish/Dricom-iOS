@@ -1,3 +1,5 @@
+import Paparazzo
+
 protocol AssemblyFactory: class {
     func appStarterAssembly() -> AppStarterAssembly
     func applicationAssembly() -> ApplicationAssembly
@@ -9,4 +11,5 @@ protocol AssemblyFactory: class {
     func mainPageAssembly() -> MainPageAssembly
     func settingsAssembly() -> SettingsAssembly
     func userProfileAssembly() -> UserProfileAssembly
+    func photoLibraryAssembly() -> PhotoLibraryAssembly
 }
