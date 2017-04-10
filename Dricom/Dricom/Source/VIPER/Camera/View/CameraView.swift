@@ -16,6 +16,7 @@ final class CameraView: UIView {
     init() {
         super.init(frame: .zero)
         
+        takePhotoButton.setImage(#imageLiteral(resourceName: "Shutter"), for: .normal)
         takePhotoButton.addTarget(self, action: #selector(takePhotoTapped), for: .touchUpInside)
         addSubview(takePhotoButton)
         
