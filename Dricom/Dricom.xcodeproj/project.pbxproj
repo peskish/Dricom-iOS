@@ -245,6 +245,7 @@
 		F0D0385F1DD3AE0500E0085D /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038541DD3AE0500E0085D /* FeedbackViewController.swift */; };
 		F0D038601DD3AE0500E0085D /* FeedbackViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038551DD3AE0500E0085D /* FeedbackViewInput.swift */; };
 		F0D038621DD3AFA100E0085D /* RouterFeedbackShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038611DD3AFA100E0085D /* RouterFeedbackShowable.swift */; };
+		F0F14AB01E9C211F004752A8 /* RouterPhotoPickerShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F14AAF1E9C211F004752A8 /* RouterPhotoPickerShowable.swift */; };
 		F0F434081DD10CAB00F278BD /* AlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F434071DD10CAB00F278BD /* AlertDisplayable.swift */; };
 		F0F4340B1DD10CC500F278BD /* WindowWaiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F4340A1DD10CC500F278BD /* WindowWaiter.swift */; };
 /* End PBXBuildFile section */
@@ -506,6 +507,7 @@
 		F0D038541DD3AE0500E0085D /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		F0D038551DD3AE0500E0085D /* FeedbackViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewInput.swift; sourceTree = "<group>"; };
 		F0D038611DD3AFA100E0085D /* RouterFeedbackShowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterFeedbackShowable.swift; path = Router/RouterFeedbackShowable.swift; sourceTree = "<group>"; };
+		F0F14AAF1E9C211F004752A8 /* RouterPhotoPickerShowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterPhotoPickerShowable.swift; path = Router/RouterPhotoPickerShowable.swift; sourceTree = "<group>"; };
 		F0F434071DD10CAB00F278BD /* AlertDisplayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertDisplayable.swift; path = MessageDisplaying/AlertDisplayable.swift; sourceTree = "<group>"; };
 		F0F4340A1DD10CC500F278BD /* WindowWaiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowWaiter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1396,6 +1398,7 @@
 				F076D6501DCF6A0000E3ED0F /* RouterDismissable.swift */,
 				F0D038611DD3AFA100E0085D /* RouterFeedbackShowable.swift */,
 				F021D6CE1DD8914200F50091 /* RouterCameraShowable.swift */,
+				F0F14AAF1E9C211F004752A8 /* RouterPhotoPickerShowable.swift */,
 				F0B450B91E64B6C200F3B2E4 /* RouterLoginShowable.swift */,
 				F076D67E1DCFAEF400E3ED0F /* ViewControllerPosition.swift */,
 			);
@@ -1998,6 +2001,7 @@
 				F076D6431DCF67F200E3ED0F /* LoginInteractorImpl.swift in Sources */,
 				F0128B741E45156C008E6668 /* ApplicationTabBarController.swift in Sources */,
 				F0322AFF1E43CB4100F3CD47 /* AppStarterAssemblyImpl.swift in Sources */,
+				F0F14AB01E9C211F004752A8 /* RouterPhotoPickerShowable.swift in Sources */,
 				F09209A61DC14A7F0057302F /* ApplicationPresenter.swift in Sources */,
 				F076D6581DCF6E2F00E3ED0F /* StandardAlert.swift in Sources */,
 				F0D0385A1DD3AE0500E0085D /* FeedbackModule.swift in Sources */,
