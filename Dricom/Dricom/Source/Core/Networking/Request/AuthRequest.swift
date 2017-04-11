@@ -15,7 +15,6 @@ struct AuthRequest: NetworkRequest {
         self.password = password
     }
     
-    let version = 1
     let httpMethod: HTTPMethod = .post
     let isAuthorizationRequired = false
     let path = "api-token-auth"

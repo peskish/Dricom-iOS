@@ -6,12 +6,12 @@ import Unbox
 protocol NetworkRequest {
     associatedtype Result
     
-    var version: Int { get }
     var httpMethod: HTTPMethod { get }
     var isAuthorizationRequired: Bool { get }
     var path: String { get }
     var params: [String: Any] { get }
     var encoding: ParameterEncoding { get }
+    var uploadData: Data? { get }
     
     var errorConverter: NetworkResponseConverterOf<ApiError> { get }
     var resultConverter: NetworkResponseConverterOf<Result> { get }
@@ -23,7 +23,10 @@ extension NetworkRequest {
     var encoding: ParameterEncoding {
         return JSONEncoding.default
     }
-    public var errorConverter: NetworkResponseConverterOf<ApiError> {
+    var uploadData: Data? {
+        return nil
+    }
+    var errorConverter: NetworkResponseConverterOf<ApiError> {
         return NetworkResponseConverterOf(ApiErrorConverter())
     }
 }

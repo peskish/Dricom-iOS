@@ -163,13 +163,6 @@ final class RegisterPresenter: RegisterModule {
         
         actionSheet.cancelButton = StandardAlert.Button("Отмена".uppercased(), type: .cancel)
         
-        if interactor.hasAvatar() == true {
-            let removePhotoButton = StandardAlert.Button("Удалить".uppercased(), type: .destructive) { [weak self] in
-                self?.setAvatarImage(nil)
-            }
-            actionSheet.buttons.append(removePhotoButton)
-        }
-        
         let takePhotoButton = StandardAlert.Button("Сделать фото".uppercased(), type: .custom) { [weak self] in
             self?.takeAvatarPhoto()
         }
@@ -212,6 +205,7 @@ final class RegisterPresenter: RegisterModule {
                         deliveryMode: .best
                     )
                     items.first?.image.requestImage(options: options) { [weak self] (image: UIImage?) in
+                        guard let image = image else { return }
                         self?.setAvatarImage(image)
                     }
                 case .cancelled:
@@ -223,16 +217,16 @@ final class RegisterPresenter: RegisterModule {
         }
     }
     
-    private func setAvatarImage(_ image: UIImage?) {
+    private func setAvatarImage(_ image: UIImage) {
         interactor.setAvatar(image)
         
-        let croppedAvatar = image?.imageByScalingAndCropping(
+        let croppedAvatar = image.imageByScalingAndCropping(
             SpecSizes.avatarImageNativeSize()
         )
         
         view?.setAvatarPhotoImage(croppedAvatar)
         
-        view?.setAddPhotoButtonVisible(image == nil)
+        view?.setAddPhotoButtonVisible(false)
     }
     
     // MARK: - RegisterModule

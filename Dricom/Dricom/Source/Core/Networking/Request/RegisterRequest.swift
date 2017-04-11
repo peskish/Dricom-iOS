@@ -9,15 +9,13 @@ struct RegisterRequest: NetworkRequest {
     private let license: String
     private let phone: String
     private let password: String
-    private let token: String?
     
     init(
         email: String,
         name: String,
         license: String,
         phone: String,
-        password: String,
-        token: String?
+        password: String
         )
     {
         self.email = email
@@ -25,10 +23,8 @@ struct RegisterRequest: NetworkRequest {
         self.license = license
         self.phone = phone
         self.password = password.sha512()
-        self.token = token
     }
     
-    let version = 1
     let httpMethod: HTTPMethod = .post
     let isAuthorizationRequired = false
     let path = "register"

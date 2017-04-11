@@ -246,6 +246,8 @@
 		F0D038601DD3AE0500E0085D /* FeedbackViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038551DD3AE0500E0085D /* FeedbackViewInput.swift */; };
 		F0D038621DD3AFA100E0085D /* RouterFeedbackShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038611DD3AFA100E0085D /* RouterFeedbackShowable.swift */; };
 		F0F14AB01E9C211F004752A8 /* RouterPhotoPickerShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F14AAF1E9C211F004752A8 /* RouterPhotoPickerShowable.swift */; };
+		F0F14AB21E9D7215004752A8 /* UploadAvatarRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F14AB11E9D7215004752A8 /* UploadAvatarRequest.swift */; };
+		F0F14AB41E9D7588004752A8 /* SuccessResponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F14AB31E9D7588004752A8 /* SuccessResponce.swift */; };
 		F0F434081DD10CAB00F278BD /* AlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F434071DD10CAB00F278BD /* AlertDisplayable.swift */; };
 		F0F4340B1DD10CC500F278BD /* WindowWaiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F4340A1DD10CC500F278BD /* WindowWaiter.swift */; };
 /* End PBXBuildFile section */
@@ -508,6 +510,8 @@
 		F0D038551DD3AE0500E0085D /* FeedbackViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewInput.swift; sourceTree = "<group>"; };
 		F0D038611DD3AFA100E0085D /* RouterFeedbackShowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterFeedbackShowable.swift; path = Router/RouterFeedbackShowable.swift; sourceTree = "<group>"; };
 		F0F14AAF1E9C211F004752A8 /* RouterPhotoPickerShowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterPhotoPickerShowable.swift; path = Router/RouterPhotoPickerShowable.swift; sourceTree = "<group>"; };
+		F0F14AB11E9D7215004752A8 /* UploadAvatarRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UploadAvatarRequest.swift; path = Core/Networking/Request/UploadAvatarRequest.swift; sourceTree = "<group>"; };
+		F0F14AB31E9D7588004752A8 /* SuccessResponce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuccessResponce.swift; path = Core/Networking/Response/SuccessResponce.swift; sourceTree = "<group>"; };
 		F0F434071DD10CAB00F278BD /* AlertDisplayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertDisplayable.swift; path = MessageDisplaying/AlertDisplayable.swift; sourceTree = "<group>"; };
 		F0F4340A1DD10CC500F278BD /* WindowWaiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowWaiter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -569,6 +573,7 @@
 				F0128C321E50F8CF008E6668 /* AuthRequest.swift */,
 				F0128B841E49120C008E6668 /* NetworkRequest.swift */,
 				F0128B971E4A56A9008E6668 /* RegisterRequest.swift */,
+				F0F14AB11E9D7215004752A8 /* UploadAvatarRequest.swift */,
 			);
 			name = Request;
 			sourceTree = "<group>";
@@ -577,6 +582,7 @@
 			isa = PBXGroup;
 			children = (
 				F0128B871E491787008E6668 /* LoginResponse.swift */,
+				F0F14AB31E9D7588004752A8 /* SuccessResponce.swift */,
 			);
 			name = Response;
 			sourceTree = "<group>";
@@ -1969,6 +1975,7 @@
 				F03DE81C1E870A2900ADC5CB /* InputFieldsContainer.swift in Sources */,
 				F0128C221E4F9D39008E6668 /* ScrollViewRefresherStateAnimator.swift in Sources */,
 				F05790D61E32A72D004FBD4A /* UIColor+Styleguide.swift in Sources */,
+				F0F14AB41E9D7588004752A8 /* SuccessResponce.swift in Sources */,
 				F0128B961E4A566A008E6668 /* RegistrationService.swift in Sources */,
 				F0AFDA371E3D2A7000CCEE24 /* LicensePlateView.swift in Sources */,
 				F021D6A21DD7A61900F50091 /* MailComposerAssemblyImpl.swift in Sources */,
@@ -2121,6 +2128,7 @@
 				F0128B771E4515C4008E6668 /* ApplicationViewInput.swift in Sources */,
 				F0B450A91E60B6A400F3B2E4 /* SettingsRouter.swift in Sources */,
 				F01398E51DF43D8300E4F188 /* User.swift in Sources */,
+				F0F14AB21E9D7215004752A8 /* UploadAvatarRequest.swift in Sources */,
 				F076D6711DCF6F3800E3ED0F /* String+Pluralization.swift in Sources */,
 				F0128C0B1E4F9CED008E6668 /* KeyboardFrameService.swift in Sources */,
 				F06E3F781E81B0EE00829A3F /* UserProfilePresenter.swift in Sources */,

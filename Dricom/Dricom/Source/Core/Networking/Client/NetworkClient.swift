@@ -40,13 +40,25 @@ final class NetworkClientImpl: NetworkClient {
             }
         }
         
-        Alamofire.request(
-            url,
-            method: request.httpMethod,
-            parameters: request.params,
-            encoding: request.encoding,
-            headers: headers
-        ).responseData { response in
+        let dataRequest: DataRequest
+        if let uploadData = request.uploadData {
+            dataRequest = Alamofire.upload(
+                uploadData,
+                to: url,
+                method: .post,
+                headers: headers
+            )
+        } else {
+            dataRequest = Alamofire.request(
+                url,
+                method: request.httpMethod,
+                parameters: request.params,
+                encoding: request.encoding,
+                headers: headers
+            )
+        }
+        
+        dataRequest.responseData { response in
             if let httpStatusCode = response.response?.statusCode {
                 switch(httpStatusCode) {
                 case 400:
@@ -76,6 +88,7 @@ final class NetworkClientImpl: NetworkClient {
                 completion(.error(.unknownError(error)))
             }
         }
+
     }
     
     // MARK: - Private

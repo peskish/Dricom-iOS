@@ -1,15 +1,16 @@
+import Foundation
+
 struct RegistrationData {
-    var avatarImageId: String?
+    var avatarImageDataCreator: (() -> Data?)?
     var name: String
     var email: String
     var phone: String
     var license: String
     var password: String
-    let token: String?
 }
 
 protocol RegistrationService {
-    func register(with data: RegistrationData, completion: @escaping ApiResult<Void>.Completion)
+    func register(with registrationData: RegistrationData, completion: @escaping ApiResult<Void>.Completion)
 }
 
 final class RegistrationServiceImpl: RegistrationService {
@@ -30,25 +31,48 @@ final class RegistrationServiceImpl: RegistrationService {
     }
     
     // MARK: - RegistrationService
-    func register(with data: RegistrationData, completion: @escaping ApiResult<Void>.Completion) {
+    func register(with registrationData: RegistrationData, completion: @escaping ApiResult<Void>.Completion) {
         let request = RegisterRequest(
-            email: data.email,
-            name: data.name,
-            license: data.license,
-            phone: data.phone,
-            password: data.password,
-            token: nil  // TODO: send push token if exists
+            email: registrationData.email,
+            name: registrationData.name,
+            license: registrationData.license,
+            phone: registrationData.phone,
+            password: registrationData.password
         )
         
         networkClient.send(request: request) { [weak self] result in
             result.onData { loginResponse in
                 self?.loginResponseProcessor.processLoginResponse(loginResponse)
-                self?.userDataNotifier.notifyOnUserDataReceived(loginResponse.user)
-                completion(.data())
+                
+                if let avatarImageDataCreator = registrationData.avatarImageDataCreator {
+                    DispatchQueue.global().async {
+                        if let avatarImageData = avatarImageDataCreator() {
+                            let uploadAvatarRequest = UploadAvatarRequest(imageData: avatarImageData)
+                            self?.networkClient.send(request: uploadAvatarRequest) { _ in
+                                // No matter success or failure - user was registered already
+                                self?.processLoginResponce(loginResponse, completion: completion)
+                            }
+                        } else {
+                            self?.processLoginResponce(loginResponse, completion: completion)
+                        }
+                    }
+                } else {
+                    self?.processLoginResponce(loginResponse, completion: completion)
+                }
             }
             result.onError { networkRequestError in
                 completion(.error(networkRequestError))
             }
+        }
+    }
+    
+    private func processLoginResponce(
+        _ loginResponse: LoginResponse,
+        completion: @escaping ApiResult<Void>.Completion)
+    {
+        DispatchQueue.main.async {
+            self.userDataNotifier.notifyOnUserDataReceived(loginResponse.user)
+            completion(.data())
         }
     }
 }
