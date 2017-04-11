@@ -47,12 +47,12 @@ final class CameraView: UIView {
             left: bounds.left,
             right: bounds.right,
             top: bounds.top,
-            height: min(bounds.height, 480)
+            height: bounds.width
         )
         
         takePhotoButton.sizeToFit()
         takePhotoButton.centerX = bounds.centerX
-        takePhotoButton.centerY = bounds.bottom - cameraArea.bottom
+        takePhotoButton.bottom = bounds.bottom - 30
         
         flashButton.sizeToFit()
         flashButton.right = bounds.right - buttonsPadding

@@ -12,7 +12,7 @@ protocol RegisterViewInput: class,
     func setAvatarPhotoImage(_ image: UIImage?)
     func setRegisterButtonTitle(_ title: String)
     func endEditing()
-    
+    func setUserInteractionEnabled(_ isEnabled: Bool)
     
     var onAddPhotoButtonTap: (() -> ())? { get set }
     var onRegisterButtonTap: (() -> ())? { get set }

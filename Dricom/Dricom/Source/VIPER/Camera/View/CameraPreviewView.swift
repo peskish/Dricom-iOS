@@ -3,7 +3,8 @@ import UIKit
 class CameraPreviewView: UIView {
     // MARK: - Properties
     private let previewView = UIImageView()
-    private let usePhotoButton = UIButton(type: .custom)
+    private let usePhotoButtonView = ActionButtonView()
+    private let retakePhotoButtonView = ActionButtonView()
     
     // MARK: - Init
     init() {
@@ -12,22 +13,19 @@ class CameraPreviewView: UIView {
         previewView.contentMode = .scaleAspectFit
         addSubview(previewView)
         
-        usePhotoButton.addTarget(self, action: #selector(usePhotoButtonTapped), for: .touchUpInside)
-        addSubview(usePhotoButton)
+        usePhotoButtonView.setTitle("Отлично!")
+        usePhotoButtonView.style = .dark
+        addSubview(usePhotoButtonView)
         
-        usePhotoButton.backgroundColor = .clear
-        usePhotoButton.setTitle("Use photo", for: .normal)
+        retakePhotoButtonView.setTitle("Переснять")
+        retakePhotoButtonView.style = .light
+        addSubview(retakePhotoButtonView)
         
-        setStyle()
+        backgroundColor = UIColor.drcWhite
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    // MARK: Style
-    private func setStyle() {
-        backgroundColor = SpecColors.Background.defaultEdge
     }
     
     // MARK: Layout
@@ -36,12 +34,26 @@ class CameraPreviewView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        previewView.center = bounds.center
-        previewView.size = cameraArea.size
+        previewView.layout(
+            left: bounds.left,
+            right: bounds.right,
+            top: bounds.top,
+            height: bounds.width
+        )
         
-        usePhotoButton.sizeToFit()
-        usePhotoButton.centerX = bounds.centerX
-        usePhotoButton.top = cameraArea.bottom + SpecMargins.contentMargin
+        retakePhotoButtonView.layout(
+            left: bounds.left,
+            right: bounds.right,
+            bottom: bounds.bottom - SpecMargins.contentSidePadding,
+            height: SpecSizes.actionButtonHeight
+        )
+        
+        usePhotoButtonView.layout(
+            left: bounds.left,
+            right: bounds.right,
+            bottom: retakePhotoButtonView.top - SpecMargins.contentMargin,
+            height: SpecSizes.actionButtonHeight
+        )
     }
     
     // MARK: - Public
@@ -50,11 +62,16 @@ class CameraPreviewView: UIView {
     }
     
     func setUsePhotoButtonEnabled(_ enabled: Bool) {
-        usePhotoButton.isEnabled = enabled
+        usePhotoButtonView.setEnabled(enabled)
     }
     
-    var onUsePhotoButtonTap: (() -> ())?
-    @objc private func usePhotoButtonTapped() {
-        onUsePhotoButtonTap?()
+    var onUsePhotoButtonTap: (() -> ())? {
+        get { return usePhotoButtonView.onTap }
+        set { usePhotoButtonView.onTap = newValue }
+    }
+    
+    var onRetakePhotoButtonTap: (() -> ())? {
+        get { return retakePhotoButtonView.onTap }
+        set { retakePhotoButtonView.onTap = newValue }
     }
 }

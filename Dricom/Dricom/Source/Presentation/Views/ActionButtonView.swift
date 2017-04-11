@@ -76,6 +76,10 @@ class ActionButtonView: UIView {
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 12)
     }
     
+    func setEnabled(_ isEnabled: Bool) {
+        button.isEnabled = isEnabled
+    }
+    
     // - MARK: Private
     private func setColorScheme(_ scheme: ActionButtonColorScheme.Type) {
         button.setTitleColor(scheme.title, for: .normal)

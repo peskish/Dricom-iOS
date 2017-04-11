@@ -28,4 +28,9 @@ final class CameraPreviewViewController: UIViewController {
         get { return previewView.onUsePhotoButtonTap }
         set { previewView.onUsePhotoButtonTap = newValue }
     }
+    
+    var onRetakePhotoButtonTap: (() -> ())? {
+        get { return previewView.onRetakePhotoButtonTap }
+        set { previewView.onRetakePhotoButtonTap = newValue }
+    }
 }

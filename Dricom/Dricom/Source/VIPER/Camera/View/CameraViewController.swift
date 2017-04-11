@@ -85,7 +85,7 @@ final class CameraViewController: BaseViewController, CameraViewInput, FastttCam
         super.viewWillLayoutSubviews()
 
         cameraView.frame = view.bounds
-        previewViewController?.view.frame = view.frame
+        previewViewController?.view.frame = view.bounds
     }
     
     // MARK: - CameraViewInput
@@ -133,6 +133,9 @@ final class CameraViewController: BaseViewController, CameraViewInput, FastttCam
         previewViewController.cameraArea = cameraView.cameraArea
         previewViewController.onUsePhotoButtonTap = { [weak self] in
             self?.onDidTakePhoto?(capturedImage.fullImage)
+        }
+        previewViewController.onRetakePhotoButtonTap = { [weak self] in
+            self?.hidePreview()
         }
         
         self.previewViewController = previewViewController

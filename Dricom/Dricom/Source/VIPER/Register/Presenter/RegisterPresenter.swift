@@ -165,7 +165,7 @@ final class RegisterPresenter: RegisterModule {
         
         if interactor.hasAvatar() == true {
             let removePhotoButton = StandardAlert.Button("Удалить".uppercased(), type: .destructive) { [weak self] in
-                self?.removeAvatarPhoto()
+                self?.setAvatarImage(nil)
             }
             actionSheet.buttons.append(removePhotoButton)
         }
@@ -187,10 +187,11 @@ final class RegisterPresenter: RegisterModule {
         router.showCamera { [weak self] cameraModule in
             let module = cameraModule
             cameraModule.onFinish = { [weak module] result in
-                if case .finished(let avatar) = result {
-                    self?.interactor.setAvatar(avatar)
-                    self?.view?.setAvatarPhotoImage(avatar)
-                    self?.view?.setAddPhotoButtonVisible(false)
+                switch result {
+                case .finished(let photo):
+                    self?.setAvatarImage(photo)
+                case .cancelled:
+                    break
                 }
                 
                 module?.dismissModule()
@@ -199,7 +200,9 @@ final class RegisterPresenter: RegisterModule {
     }
     
     private func selectAvatarPhoto() {
+        view?.setUserInteractionEnabled(false)
         router.showPhotoLibrary(maxSelectedItemsCount: 1) { photoLibraryModule in
+            view?.setUserInteractionEnabled(true)
             weak var weakPhotoLibraryModule = photoLibraryModule
             photoLibraryModule.onFinish = { [weakPhotoLibraryModule] result in
                 switch result {
@@ -220,26 +223,16 @@ final class RegisterPresenter: RegisterModule {
         }
     }
     
-    private func removeAvatarPhoto() {
-        interactor.setAvatar(nil)
-        view?.setAvatarPhotoImage(nil)
-        view?.setAddPhotoButtonVisible(true)
-    }
-    
-    private func setAvatarImageFromAsset(_ asset: PHAsset) {
-        let avatarThumbnail = PHAssetUtilities.getImageFrom(asset: asset)
-        setAvatarImage(avatarThumbnail)
-    }
-    
     private func setAvatarImage(_ image: UIImage?) {
-        guard let image = image else { return }
-        
         interactor.setAvatar(image)
         
-        let croppedAvatar = image.imageByScalingAndCropping(SpecSizes.avatarImageNativeSize())
+        let croppedAvatar = image?.imageByScalingAndCropping(
+            SpecSizes.avatarImageNativeSize()
+        )
+        
         view?.setAvatarPhotoImage(croppedAvatar)
         
-        view?.setAddPhotoButtonVisible(false)
+        view?.setAddPhotoButtonVisible(image == nil)
     }
     
     // MARK: - RegisterModule
