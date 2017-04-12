@@ -11,7 +11,7 @@ struct UploadAvatarRequest: NetworkRequest {
     
     let httpMethod: HTTPMethod = .post
     let isAuthorizationRequired = true
-    let path = "upload_avatar"
+    let path = "upload-avatar"
     
     var uploadData: Data? {
         return imageData
