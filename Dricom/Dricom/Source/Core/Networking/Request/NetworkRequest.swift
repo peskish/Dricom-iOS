@@ -11,10 +11,16 @@ protocol NetworkRequest {
     var path: String { get }
     var params: [String: Any] { get }
     var encoding: ParameterEncoding { get }
-    var uploadData: Data? { get }
     
     var errorConverter: NetworkResponseConverterOf<ApiError> { get }
     var resultConverter: NetworkResponseConverterOf<Result> { get }
+}
+
+protocol MultipartFormDataRequest: NetworkRequest {
+    var uploadData: Data? { get }
+    var name: String { get }
+    var fileName: String { get }
+    var mimeType: String { get }
 }
 
 //MARK: - Default declarations
@@ -22,9 +28,6 @@ protocol NetworkRequest {
 extension NetworkRequest {
     var encoding: ParameterEncoding {
         return JSONEncoding.default
-    }
-    var uploadData: Data? {
-        return nil
     }
     var errorConverter: NetworkResponseConverterOf<ApiError> {
         return NetworkResponseConverterOf(ApiErrorConverter())

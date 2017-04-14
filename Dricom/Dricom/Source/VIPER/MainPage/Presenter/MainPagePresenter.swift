@@ -35,7 +35,7 @@ final class MainPagePresenter: MainPageModule {
         view?.setName(user.name)
         
         view?.setAvatarImageUrl(
-            user.avatar.flatMap{ URL(string: $0) }
+            user.avatar.flatMap{ URL(string: $0.image) }
         )
         
         if let licenseNumber = user.licenses.first?.title,

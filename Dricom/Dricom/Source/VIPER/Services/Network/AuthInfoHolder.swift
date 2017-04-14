@@ -11,6 +11,7 @@ enum AuthorizationStatus {
 
 protocol AuthorizationStatusHolder: class {
     var authorizationStatus: AuthorizationStatus { get }
+    var isAuthorized: Bool { get }
 }
 
 protocol LoginResponseProcessor: class {
@@ -108,6 +109,15 @@ final class AuthInfoHolder:
             return .authorized(jwt: jwt)
         } else {
             return .notAuthorized
+        }
+    }
+    
+    var isAuthorized: Bool {
+        switch authorizationStatus {
+        case .authorized:
+            return true
+        case .notAuthorized:
+            return false
         }
     }
     

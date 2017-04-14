@@ -28,7 +28,7 @@ final class LoginPresenter:
     
     // MARK: - Private
     private func setUpView() {
-        view?.setLoginPlaceholder("Email, телефон или номер автомобиля")
+        view?.setLoginPlaceholder("Email, телефон или номер")
         view?.setPasswordPlaceholder("Введите пароль")
         view?.setLoginButtonTitle("Войти")
         view?.setRegisterButtonTitle("Регистрация")

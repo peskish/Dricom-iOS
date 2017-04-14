@@ -4,6 +4,10 @@ protocol NetworkClient: class {
     func send<T, R: NetworkRequest>(
         request: R,
         completion: @escaping ApiResult<T>.Completion) where R.Result == T
+    
+    func send<T, R: MultipartFormDataRequest>(
+        request: R,
+        completion: @escaping ApiResult<T>.Completion) where R.Result == T
 }
 
 final class NetworkClientImpl: NetworkClient {
@@ -28,36 +32,86 @@ final class NetworkClientImpl: NetworkClient {
             return
         }
         
+        if request.isAuthorizationRequired && !authorizationStatusHolder.isAuthorized {
+            completion(.error(.userIsNotAuthorized))
+            return
+        }
+        
+        let dataRequest = Alamofire.request(
+            url,
+            method: request.httpMethod,
+            parameters: request.params,
+            encoding: request.encoding,
+            headers: makeHeaders(from: request)
+        )
+        
+        processDataRequest(dataRequest, request: request, completion: completion)
+    }
+    
+    func send<T, R: MultipartFormDataRequest>(
+        request: R,
+        completion: @escaping ApiResult<T>.Completion) where R.Result == T
+    {
+        guard let url = makeUrl(from: request) else {
+            completion(.error(.badRequest))
+            return
+        }
+        
+        guard let data = request.uploadData else {
+            completion(.error(.badRequest))
+            return
+        }
+        
+        if request.isAuthorizationRequired && !authorizationStatusHolder.isAuthorized {
+            completion(.error(.userIsNotAuthorized))
+            return
+        }
+        
+        Alamofire.upload(
+            multipartFormData: { multipartFormData in
+                multipartFormData.append(
+                    data,
+                    withName: request.name,
+                    fileName: request.fileName,
+                    mimeType: request.mimeType
+                )
+            },
+            to: url,
+            method: request.httpMethod,
+            headers: makeHeaders(from: request),
+            encodingCompletion: { [weak self] encodingResult in
+                
+                switch encodingResult {
+                case .success(let uploadRequest, _, _):
+                    self?.processDataRequest(uploadRequest, request: request, completion: completion)
+                case .failure:
+                    completion(.error(.dataEncodingFailure))
+                }
+            }
+        )
+    }
+    
+    // MARK: - Private
+    private func makeHeaders<R: NetworkRequest>(from request: R) -> HTTPHeaders {
         var headers = HTTPHeaders()
         
         if request.isAuthorizationRequired {
             switch authorizationStatusHolder.authorizationStatus {
             case .notAuthorized:
-                completion(.error(.userIsNotAuthorized))
-                return
+                break
             case .authorized(let jwt):
                 headers["Authorization"] = "JWT " + jwt
             }
         }
         
-        let dataRequest: DataRequest
-        if let uploadData = request.uploadData {
-            dataRequest = Alamofire.upload(
-                uploadData,
-                to: url,
-                method: .post,
-                headers: headers
-            )
-        } else {
-            dataRequest = Alamofire.request(
-                url,
-                method: request.httpMethod,
-                parameters: request.params,
-                encoding: request.encoding,
-                headers: headers
-            )
-        }
-        
+        return headers
+    }
+    
+    private func processDataRequest<T, R: NetworkRequest>(
+        _ dataRequest: DataRequest,
+        request: R,
+        completion: @escaping ApiResult<T>.Completion) where R.Result == T
+    {
         dataRequest.responseData { response in
             if let httpStatusCode = response.response?.statusCode {
                 switch(httpStatusCode) {
@@ -88,10 +142,7 @@ final class NetworkClientImpl: NetworkClient {
                 completion(.error(.unknownError(error)))
             }
         }
-
     }
-    
-    // MARK: - Private
     
     // MARK: URL
     private func makeUrl<R: NetworkRequest>(from request: R) -> URL? {

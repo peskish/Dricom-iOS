@@ -1,7 +1,7 @@
 import Alamofire
 
-struct UploadAvatarRequest: NetworkRequest {
-    typealias Result = SuccessResponse
+struct UploadAvatarRequest: MultipartFormDataRequest {
+    typealias Result = LoginResponse
     
     private let imageData: Data
     
@@ -9,13 +9,16 @@ struct UploadAvatarRequest: NetworkRequest {
         self.imageData = imageData
     }
     
-    let httpMethod: HTTPMethod = .post
     let isAuthorizationRequired = true
     let path = "upload-avatar"
+    let params: [String: Any] = [:]
+    let httpMethod: HTTPMethod = .post
     
     var uploadData: Data? {
         return imageData
     }
     
-    let params = [String: Any]()
+    let name = "image"
+    let fileName = "avatar.jpg"
+    let mimeType = "image/jpg"
 }

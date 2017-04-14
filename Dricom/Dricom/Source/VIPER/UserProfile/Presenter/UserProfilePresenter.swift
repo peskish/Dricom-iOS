@@ -99,7 +99,7 @@ final class UserProfilePresenter:
     }
     
     private func presentUser(_ user: User) {
-        view?.setAvatarImageUrl(user.avatar.flatMap { URL.init(string: $0) })
+        view?.setAvatarImageUrl(user.avatar.flatMap { URL.init(string: $0.image) })
     }
     
     // MARK: - UserProfileModule

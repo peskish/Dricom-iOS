@@ -13,7 +13,7 @@ final class RegisterView: UIView, ActivityDisplayable, StandardPreloaderViewHold
     private let confirmPasswordInputView = TextFieldView()
     private let registerButtonView = ActionButtonView()
     
-    let preloader = StandardPreloaderView(style: .dark)
+    let preloader = StandardPreloaderView(style: .light)
     
     private let keyboardAvoidingService = ScrollViewKeyboardAvoidingServiceImpl()
     
@@ -109,26 +109,12 @@ final class RegisterView: UIView, ActivityDisplayable, StandardPreloaderViewHold
             height: SpecSizes.inputFieldHeight
         )
         
-        let lastInputFieldDesiredMaxY = frame.bottom
-            - SpecMargins.contentSidePadding
-            - SpecSizes.actionButtonHeight
-            - SpecMargins.contentMargin
-        
-        if confirmPasswordInputView.bottom >= lastInputFieldDesiredMaxY {
-            registerButtonView.layout(
-                left: bounds.left,
-                right: bounds.right,
-                top: confirmPasswordInputView.bottom + SpecMargins.contentMargin,
-                height: SpecSizes.actionButtonHeight
-            )
-        } else {
-            registerButtonView.layout(
-                left: bounds.left,
-                bottom: bounds.bottom - SpecMargins.contentSidePadding,
-                fitWidth: bounds.width,
-                fitHeight: SpecSizes.actionButtonHeight
-            )
-        }
+        registerButtonView.layout(
+            left: bounds.left,
+            right: bounds.right,
+            top: confirmPasswordInputView.bottom + SpecMargins.contentMargin,
+            height: SpecSizes.actionButtonHeight
+        )
         
         inputFieldsContainer.frame = bounds
         preloader.frame = bounds

@@ -7,7 +7,7 @@ protocol MessageDisplayable: AlertDisplayable {
 extension MessageDisplayable where Self: AlertDisplayable {
     func showError(_ networkRequestError: NetworkRequestError) {
         switch networkRequestError {
-        case .badRequest, .internalServerError, .parsingFailure:
+        case .badRequest, .internalServerError, .parsingFailure, .dataEncodingFailure:
             showUnknownErrorMessage()
         case .userIsNotAuthorized:
             break
