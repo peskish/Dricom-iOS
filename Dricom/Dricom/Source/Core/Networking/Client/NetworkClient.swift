@@ -20,6 +20,20 @@ final class NetworkClientImpl: NetworkClient {
     // MARK: - Init
     init(authorizationStatusHolder: AuthorizationStatusHolder) {
         self.authorizationStatusHolder = authorizationStatusHolder
+        
+        // Workaround for deal with missing `Authorization` header in redirected requests
+        // https://github.com/Alamofire/Alamofire/issues/798
+        Alamofire.SessionManager.default.delegate.taskWillPerformHTTPRedirection = { session, task, response, request in
+            var redirectedRequest = request
+            
+            if let originalRequest = task.originalRequest,
+                let headers = originalRequest.allHTTPHeaderFields,
+                let authorizationHeaderValue = headers["Authorization"] {
+                redirectedRequest.setValue(authorizationHeaderValue, forHTTPHeaderField: "Authorization")
+            }
+            
+            return redirectedRequest
+        }
     }
     
     // MARK: - NetworkClient
