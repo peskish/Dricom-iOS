@@ -22,6 +22,7 @@ final class MainPageView: UIScrollView, StandardPreloaderViewHolder, ActivityDis
         addSubview(licenceView)
         addSubview(licenseSearchInputField)
         addSubview(licenseSearchButton)
+        addSubview(preloader)
         
         licenseSearchButton.setImage(#imageLiteral(resourceName: "Loupe"), forState: .normal)
         
@@ -74,6 +75,8 @@ final class MainPageView: UIScrollView, StandardPreloaderViewHolder, ActivityDis
             top: licenseSearchInputField.bottom + SpecMargins.inputAndButtonMargin,
             height: SpecSizes.actionButtonHeight
         )
+        
+        preloader.frame = bounds
     }
     
     // MARK: Public

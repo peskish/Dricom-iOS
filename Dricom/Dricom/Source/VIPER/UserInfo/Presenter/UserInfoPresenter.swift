@@ -1,8 +1,6 @@
 import Foundation
 
-final class UserInfoPresenter:
-    UserInfoModule
-{
+final class UserInfoPresenter: UserInfoModule {
     // MARK: - Private properties
     private let interactor: UserInfoInteractor
     private let router: UserInfoRouter
@@ -24,17 +22,53 @@ final class UserInfoPresenter:
     
     // MARK: - Private
     private func setUpView() {
+        let user = interactor.obtainUser()
         
+        view?.setCallButtonTitle("Позвонить")
+        view?.setMessageButtonTitle("Написать")
+        view?.setUserConnectionHint("Свяжитесь с пользователем удобным для вас способом")
+        
+        updateFavoritesStatus()
+        
+        view?.onMessageButtonTap = { [weak self] in
+            self?.sendMessage(to: user)
+        }
+        
+        view?.onCallButtonTap = { [weak self] in
+            // TODO:
+        }
+        
+        view?.onViewDidLoad = { [weak self] in
+            self?.presentUser(user)
+        }
+    }
+    
+    private func presentUser(_ user: User) {
+        view?.setName(user.name)
+        
+        view?.setAvatarImageUrl(
+            user.avatar.flatMap{ URL(string: $0.image) }
+        )
+        
+        if let licenseNumber = user.licenses.first?.title,
+            let licenseParts = LicenseParts(licenseNumber: licenseNumber) {
+            view?.setLicenseParts(licenseParts)
+        }
+    }
+    
+    private func updateFavoritesStatus() {
+        // TODO:
+    }
+    
+    private func sendMessage(to user: User) {
+        // TODO:
     }
     
     // MARK: - UserInfoModule
-    func focusOnModule() {
-        router.focusOnCurrentModule()
-    }
-    
     func dismissModule() {
         router.dismissCurrentModule()
     }
     
-    var onFinish: ((UserInfoResult) -> ())?
+    var onAddUserToFavorites: ((User) -> ())?
+    var onRemoveUserFromFavorites: ((User) -> ())?
 }

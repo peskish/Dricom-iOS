@@ -3,10 +3,11 @@ import UIKit
 final class UserInfoAssemblyImpl: BaseAssembly, UserInfoAssembly {
     // MARK: - UserInfoAssembly
     func module(
+        user: User,
         configure: (_ module: UserInfoModule) -> ())
         -> UIViewController
     {
-        let interactor = UserInfoInteractorImpl()
+        let interactor = UserInfoInteractorImpl(user: user)
         
         let viewController = UserInfoViewController()
         
