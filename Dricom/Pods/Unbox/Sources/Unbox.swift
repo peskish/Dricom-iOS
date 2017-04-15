@@ -60,14 +60,14 @@ public func unbox<T: Unboxable>(dictionaries: [UnboxableDictionary], allowInvali
 }
 
 /// Unbox an array JSON dictionary into an array of model `T` beginning at a certain key, optionally allowing invalid elements. Throws `UnboxError`.
-public func unbox<T: Unboxable>(dictionary: UnboxableDictionary, atKey key: String) throws -> [T] {
-    let container: UnboxArrayContainer<T> = try unbox(dictionary: dictionary, context: .key(key))
+public func unbox<T: Unboxable>(dictionary: UnboxableDictionary, atKey key: String, allowInvalidElements: Bool = false) throws -> [T] {
+    let container: UnboxArrayContainer<T> = try unbox(dictionary: dictionary, context: (.key(key), allowInvalidElements))
     return container.models
 }
 
 /// Unbox an array JSON dictionary into an array of model `T` beginning at a certain key path, optionally allowing invalid elements. Throws `UnboxError`.
-public func unbox<T: Unboxable>(dictionary: UnboxableDictionary, atKeyPath keyPath: String) throws -> [T] {
-    let container: UnboxArrayContainer<T> = try unbox(dictionary: dictionary, context: .keyPath(keyPath))
+public func unbox<T: Unboxable>(dictionary: UnboxableDictionary, atKeyPath keyPath: String, allowInvalidElements: Bool = false) throws -> [T] {
+    let container: UnboxArrayContainer<T> = try unbox(dictionary: dictionary, context: (.keyPath(keyPath), allowInvalidElements))
     return container.models
 }
 
@@ -77,7 +77,11 @@ public func unbox<T: Unboxable>(data: Data) throws -> T {
 }
 
 /// Unbox binary data into an array of `T`, optionally allowing invalid elements. Throws `UnboxError`.
-public func unbox<T: Unboxable>(data: Data, allowInvalidElements: Bool = false) throws -> [T] {
+public func unbox<T: Unboxable>(data: Data, atKeyPath keyPath: String? = nil, allowInvalidElements: Bool = false) throws -> [T] {
+    if let keyPath = keyPath {
+        return try unbox(dictionary: JSONSerialization.unbox(data: data), atKeyPath: keyPath, allowInvalidElements: allowInvalidElements)
+    }
+    
     return try data.unbox(allowInvalidElements: allowInvalidElements)
 }
 
@@ -103,14 +107,91 @@ public func unbox<T: UnboxableWithContext>(data: Data, context: T.UnboxContext, 
     return try data.unbox(context: context, allowInvalidElements: allowInvalidElements)
 }
 
+/// Unbox binary data into a dictionary of type `[String: T]`. Throws `UnboxError`.
+public func unbox<T: Unboxable>(data: Data) throws -> [String: T] {
+    let dictionary : [String: [String: Any]] = try JSONSerialization.unbox(data: data)
+    return try unbox(dictionary: dictionary)
+}
+
+/// Unbox `UnboxableDictionary` into a dictionary of type `[String: T]` where `T` is `Unboxable`. Throws `UnboxError`.
+public func unbox<T: Unboxable>(dictionary: UnboxableDictionary) throws -> [String: T] {
+    var mappedDictionary = [String: T]()
+    try dictionary.forEach { key, value in
+        guard let innerDictionary = value as? UnboxableDictionary else {
+            throw UnboxError.invalidData
+        }
+        let data : T = try unbox(dictionary: innerDictionary)
+        mappedDictionary[key] = data
+    }
+    return mappedDictionary
+}
+
 // MARK: - Error type
 
 /// Error type that Unbox throws in case an unrecoverable error was encountered
-public struct UnboxError: Error, CustomStringConvertible {
-    public let description: String
-    
-    fileprivate init(description: String) {
-        self.description = "[UnboxError] " + description
+public enum UnboxError: Error {
+    /// Invalid data was provided when calling unbox(data:...)
+    case invalidData
+    /// Custom unboxing failed, either by throwing or returning `nil`
+    case customUnboxingFailed
+    /// An error occured while unboxing a value for a path (contains the underlying path error, and the path)
+    case pathError(UnboxPathError, String)
+}
+
+/// Extension making `UnboxError` conform to `CustomStringConvertible`
+extension UnboxError: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .invalidData:
+            return "[UnboxError] Invalid data."
+        case .customUnboxingFailed:
+            return "[UnboxError] Custom unboxing failed."
+        case .pathError(let error, let path):
+            return "[UnboxError] An error occured while unboxing path \"\(path)\": \(error)"
+        }
+    }
+}
+
+/// Type for errors that can occur while unboxing a certain path
+public enum UnboxPathError: Error {
+    /// An empty key path was given
+    case emptyKeyPath
+    /// A required key was missing (contains the key)
+    case missingKey(String)
+    /// An invalid value was found (contains the value, and its key)
+    case invalidValue(Any, String)
+    /// An invalid collection element type was found (contains the type)
+    case invalidCollectionElementType(Any)
+    /// An invalid array element was found (contains the element, and its index)
+    case invalidArrayElement(Any, Int)
+    /// An invalid dictionary key type was found (contains the type)
+    case invalidDictionaryKeyType(Any)
+    /// An invalid dictionary key was found (contains the key)
+    case invalidDictionaryKey(Any)
+    /// An invalid dictionary value was found (contains the value, and its key)
+    case invalidDictionaryValue(Any, String)
+}
+
+extension UnboxPathError: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .emptyKeyPath:
+            return "Key path can't be empty."
+        case .missingKey(let key):
+            return "The key \"\(key)\" is missing."
+        case .invalidValue(let value, let key):
+            return "Invalid value (\(value)) for key \"\(key)\"."
+        case .invalidCollectionElementType(let type):
+            return "Invalid collection element type: \(type). Must be UnboxCompatible or Unboxable."
+        case .invalidArrayElement(let element, let index):
+            return "Invalid array element (\(element)) at index \(index)."
+        case .invalidDictionaryKeyType(let type):
+            return "Invalid dictionary key type: \(type). Must be either String or UnboxableKey."
+        case .invalidDictionaryKey(let key):
+            return "Invalid dictionary key: \(key)."
+        case .invalidDictionaryValue(let value, let key):
+            return "Invalid dictionary value (\(value)) for key \"\(key)\"."
+        }
     }
 }
 
@@ -358,6 +439,17 @@ extension Float: UnboxableRawType {
     }
 }
 
+/// Extension making Decimal an Unboxable raw type
+extension Decimal: UnboxableRawType {
+    public static func transform(unboxedNumber: NSNumber) -> Decimal? {
+        return Decimal(string: unboxedNumber.stringValue)
+    }
+    
+    public static func transform(unboxedString unboxedValue: String) -> Decimal? {
+        return Decimal(string: unboxedValue)
+    }
+}
+
 /// Extension making Array an unboxable collection
 extension Array: UnboxableCollection {
     public typealias UnboxValue = Element
@@ -370,6 +462,19 @@ extension Array: UnboxableCollection {
         return try array.enumerated().map(allowInvalidElements: allowInvalidElements) { index, element in
             try transformer.unbox(element: element, allowInvalidCollectionElements: allowInvalidElements).orThrow(UnboxPathError.invalidArrayElement(element, index))
         }
+    }
+}
+
+/// Extension making Set an unboxable collection
+extension Set: UnboxableCollection {
+    public typealias UnboxValue = Element
+  
+    public static func unbox<T: UnboxCollectionElementTransformer>(value: Any, allowInvalidElements: Bool, transformer: T) throws -> Set? where T.UnboxedElement == UnboxValue {
+        guard let array = try [UnboxValue].unbox(value: value, allowInvalidElements: allowInvalidElements, transformer: transformer) else {
+            return nil
+        }
+        
+        return Set(array)
     }
 }
 
@@ -438,15 +543,6 @@ extension URL: UnboxableByTransform {
     
     public static func transform(unboxedValue: String) -> URL? {
         return URL(string: unboxedValue)
-    }
-}
-
-/// Extension making Decimal Unboxable by transform
-extension Decimal: UnboxableByTransform {
-    public typealias UnboxRawValue = String
-
-    public static func transform(unboxedValue: String) -> Decimal? {
-        return self.init(string: unboxedValue)
     }
 }
 
@@ -673,42 +769,6 @@ extension UnboxPath: CustomStringConvertible {
     }
 }
 
-// MARK: - UnboxPathError
-
-private enum UnboxPathError: Error {
-    case emptyKeyPath
-    case missingKey(String)
-    case invalidValue(Any, String)
-    case invalidCollectionElementType(Any)
-    case invalidArrayElement(Any, Int)
-    case invalidDictionaryKeyType(Any)
-    case invalidDictionaryKey(Any)
-    case invalidDictionaryValue(Any, String)
-}
-
-extension UnboxPathError {
-    func publicError(forPath path: UnboxPath) -> UnboxError {
-        switch self {
-        case .emptyKeyPath:
-            return UnboxError(path: path, description: "Key path can't be empty.")
-        case .missingKey(let key):
-            return UnboxError(path: path, description: "The key \"\(key)\" is missing.")
-        case .invalidValue(let value, let key):
-            return UnboxError(path: path, description: "Invalid value (\(value)) for key \"\(key)\".")
-        case .invalidCollectionElementType(let type):
-            return UnboxError(path: path, description: "Invalid collection element type: \(type). Must be UnboxCompatible or Unboxable.")
-        case .invalidArrayElement(let element, let index):
-            return UnboxError(path: path, description: "Invalid array element (\(element)) at index \(index).")
-        case .invalidDictionaryKeyType(let type):
-            return UnboxError(path: path, description: "Invalid dictionary key type: \(type). Must be either String or UnboxableKey.")
-        case .invalidDictionaryKey(let key):
-            return UnboxError(path: path, description: "Invalid dictionary key: \(key).")
-        case .invalidDictionaryValue(let value, let key):
-            return UnboxError(path: path, description: "Invalid dictionary value (\(value)) for key \"\(key)\".")
-        }
-    }
-}
-
 // MARK: - UnboxContainers
 
 private struct UnboxContainer<T: Unboxable>: UnboxableWithContext {
@@ -727,12 +787,12 @@ private struct UnboxContainer<T: Unboxable>: UnboxableWithContext {
 private struct UnboxArrayContainer<T: Unboxable>: UnboxableWithContext {
     let models: [T]
     
-    init(unboxer: Unboxer, context: UnboxPath) throws {
-        switch context {
+    init(unboxer: Unboxer, context: (path: UnboxPath, allowInvalidElements: Bool)) throws {
+        switch context.path {
         case .key(let key):
-            self.models = try unboxer.unbox(key: key)
+            self.models = try unboxer.unbox(key: key, allowInvalidElements: context.allowInvalidElements)
         case .keyPath(let keyPath):
-            self.models = try unboxer.unbox(keyPath: keyPath)
+            self.models = try unboxer.unbox(keyPath: keyPath, allowInvalidElements: context.allowInvalidElements)
         }
     }
 }
@@ -828,20 +888,6 @@ private extension UnboxFormatter {
     }
 }
 
-private extension UnboxError {
-    static var invalidData: UnboxError {
-        return UnboxError(description: "Invalid data.")
-    }
-    
-    static var customUnboxingFailed: UnboxError {
-        return UnboxError(description: "Custom unboxing failed.")
-    }
-    
-    init(path: UnboxPath, description: String) {
-        self.init(description: "An error occured while unboxing path \"\(path)\": \(description)")
-    }
-}
-
 // MARK: - Path nodes
 
 private protocol UnboxPathNode {
@@ -904,7 +950,6 @@ private extension Unboxer {
                     }
                     
                     guard let nextNode = nextValue as? UnboxPathNode else {
-                        print(type(of: nextValue))
                         throw UnboxPathError.invalidValue(nextValue, key)
                     }
                     
@@ -917,7 +962,7 @@ private extension Unboxer {
             if let publicError = error as? UnboxError {
                 throw publicError
             } else if let pathError = error as? UnboxPathError {
-                throw pathError.publicError(forPath: path)
+                throw UnboxError.pathError(pathError, path.description)
             }
             
             throw error
@@ -980,14 +1025,16 @@ private extension Data {
     
     func unbox<T: Unboxable>(allowInvalidElements: Bool) throws -> [T] {
         let array: [UnboxableDictionary] = try JSONSerialization.unbox(data: self, options: [.allowFragments])
-        return try array.map(allowInvalidElements: allowInvalidElements, transform: Unbox.unbox)
+        return try array.map(allowInvalidElements: allowInvalidElements) { dictionary in
+            return try Unboxer(dictionary: dictionary).performUnboxing()
+        }
     }
     
     func unbox<T: UnboxableWithContext>(context: T.UnboxContext, allowInvalidElements: Bool) throws -> [T] {
         let array: [UnboxableDictionary] = try JSONSerialization.unbox(data: self, options: [.allowFragments])
         
-        return try array.map(allowInvalidElements: allowInvalidElements) {
-            try Unbox.unbox(dictionary: $0, context: context)
+        return try array.map(allowInvalidElements: allowInvalidElements) { dictionary in
+            return try Unboxer(dictionary: dictionary).performUnboxing(context: context)
         }
     }
 }

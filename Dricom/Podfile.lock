@@ -36,7 +36,7 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
-  - Unbox (2.2.0)
+  - Unbox (2.4.0)
 
 DEPENDENCIES:
   - Alamofire (from `https://github.com/avito-tech/Alamofire`)
@@ -71,8 +71,8 @@ SPEC CHECKSUMS:
   KeychainAccess: 017ea25e313a49eda10bb19b0bb0760fb1edfe1a
   Paparazzo: 3ec4e4455fba14d48dd073f1ccb200d33f2cedbb
   SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
-  Unbox: 03d7128ce429987986bc08d967e9d5e0da158946
+  Unbox: c8b2ab69d3337597b4a3f47a0538807dc12db670
 
 PODFILE CHECKSUM: b7760457479cfe68baba8864a8a45fdefafb194b
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1

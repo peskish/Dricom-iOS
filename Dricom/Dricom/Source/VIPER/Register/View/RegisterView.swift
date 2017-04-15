@@ -13,7 +13,7 @@ final class RegisterView: UIView, ActivityDisplayable, StandardPreloaderViewHold
     private let confirmPasswordInputView = TextFieldView()
     private let registerButtonView = ActionButtonView()
     
-    let preloader = StandardPreloaderView(style: .light)
+    let preloader = StandardPreloaderView(style: .darkClearBackground)
     
     private let keyboardAvoidingService = ScrollViewKeyboardAvoidingServiceImpl()
     

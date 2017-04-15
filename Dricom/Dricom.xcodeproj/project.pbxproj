@@ -247,6 +247,8 @@
 		F0D038621DD3AFA100E0085D /* RouterFeedbackShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038611DD3AFA100E0085D /* RouterFeedbackShowable.swift */; };
 		F0F14AB01E9C211F004752A8 /* RouterPhotoPickerShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F14AAF1E9C211F004752A8 /* RouterPhotoPickerShowable.swift */; };
 		F0F14AB21E9D7215004752A8 /* UploadAvatarRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F14AB11E9D7215004752A8 /* UploadAvatarRequest.swift */; };
+		F0F14AB81EA15CAF004752A8 /* SearchUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F14AB71EA15CAF004752A8 /* SearchUserRequest.swift */; };
+		F0F14ABA1EA15F4E004752A8 /* Unbox+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F14AB91EA15F4E004752A8 /* Unbox+Extensions.swift */; };
 		F0F434081DD10CAB00F278BD /* AlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F434071DD10CAB00F278BD /* AlertDisplayable.swift */; };
 		F0F4340B1DD10CC500F278BD /* WindowWaiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F4340A1DD10CC500F278BD /* WindowWaiter.swift */; };
 /* End PBXBuildFile section */
@@ -510,6 +512,8 @@
 		F0D038611DD3AFA100E0085D /* RouterFeedbackShowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterFeedbackShowable.swift; path = Router/RouterFeedbackShowable.swift; sourceTree = "<group>"; };
 		F0F14AAF1E9C211F004752A8 /* RouterPhotoPickerShowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterPhotoPickerShowable.swift; path = Router/RouterPhotoPickerShowable.swift; sourceTree = "<group>"; };
 		F0F14AB11E9D7215004752A8 /* UploadAvatarRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UploadAvatarRequest.swift; path = Core/Networking/Request/UploadAvatarRequest.swift; sourceTree = "<group>"; };
+		F0F14AB71EA15CAF004752A8 /* SearchUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchUserRequest.swift; path = Core/Networking/Request/SearchUserRequest.swift; sourceTree = "<group>"; };
+		F0F14AB91EA15F4E004752A8 /* Unbox+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Unbox+Extensions.swift"; path = "Core/Extensions/Unbox+Extensions.swift"; sourceTree = "<group>"; };
 		F0F434071DD10CAB00F278BD /* AlertDisplayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertDisplayable.swift; path = MessageDisplaying/AlertDisplayable.swift; sourceTree = "<group>"; };
 		F0F4340A1DD10CC500F278BD /* WindowWaiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowWaiter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -572,6 +576,7 @@
 				F0128B841E49120C008E6668 /* NetworkRequest.swift */,
 				F0128B971E4A56A9008E6668 /* RegisterRequest.swift */,
 				F0F14AB11E9D7215004752A8 /* UploadAvatarRequest.swift */,
+				F0F14AB71EA15CAF004752A8 /* SearchUserRequest.swift */,
 			);
 			name = Request;
 			sourceTree = "<group>";
@@ -1447,6 +1452,7 @@
 				F0A1151E1DC6284B00A4DC76 /* Networking */,
 				F0A1155B1DC637C600A4DC76 /* Utilities */,
 				F0A115691DC685B300A4DC76 /* Extensions */,
+				F0F14AB91EA15F4E004752A8 /* Unbox+Extensions.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -1893,7 +1899,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		406EE42D80C3AD3A638563B3 /* [CP] Check Pods Manifest.lock */ = {
@@ -1908,7 +1914,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		6DFA16AF4678E3C77E298D45 /* [CP] Embed Pods Frameworks */ = {
@@ -2059,6 +2065,7 @@
 				F021D6E51DD8925B00F50091 /* CameraInteractor.swift in Sources */,
 				F0B450AF1E60BBB900F3B2E4 /* SettingsModule.swift in Sources */,
 				F06E3F7B1E81B0EE00829A3F /* UserProfileView.swift in Sources */,
+				F0F14ABA1EA15F4E004752A8 /* Unbox+Extensions.swift in Sources */,
 				F076D66F1DCF6F3800E3ED0F /* RangeExtension.swift in Sources */,
 				F0322B001E43CB4100F3CD47 /* AppStarterInteractor.swift in Sources */,
 				F0322AFE1E43CB4100F3CD47 /* AppStarterAssembly.swift in Sources */,
@@ -2178,6 +2185,7 @@
 				F021D6C61DD7B99300F50091 /* RegisterView.swift in Sources */,
 				F0A115771DC6863E00A4DC76 /* CGRectLayoutExtension.swift in Sources */,
 				F0D0385C1DD3AE0500E0085D /* FeedbackRouter.swift in Sources */,
+				F0F14AB81EA15CAF004752A8 /* SearchUserRequest.swift in Sources */,
 				F0A115781DC6863E00A4DC76 /* CGSizeLayoutExtension.swift in Sources */,
 				F076D6511DCF6A0000E3ED0F /* RouterDismissable.swift in Sources */,
 				F0B450BA1E64B6C200F3B2E4 /* RouterLoginShowable.swift in Sources */,

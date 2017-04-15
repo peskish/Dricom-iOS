@@ -2,6 +2,7 @@ import UIKit
 
 public enum StandardPreloaderViewStyle {
     case dark
+    case darkClearBackground
     case light
 }
 
@@ -33,6 +34,9 @@ public final class StandardPreloaderView: UIView {
         case .dark:
             backgroundColor = UIColor(white: 1, alpha: 0.3)
             activityIndicatorStyle =  .gray
+        case .darkClearBackground:
+            backgroundColor = .clear
+            activityIndicatorStyle = .gray
         case .light:
             backgroundColor = .clear
             activityIndicatorStyle = .whiteLarge
