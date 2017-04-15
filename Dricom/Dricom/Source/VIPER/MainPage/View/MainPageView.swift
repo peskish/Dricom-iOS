@@ -123,4 +123,8 @@ final class MainPageView: UIScrollView, StandardPreloaderViewHolder, ActivityDis
             onSearchButtonTap?(licenseSearchInputField.text)
         }
     }
+    
+    func setSearchButtonEnabled(_ enabled: Bool) {
+        licenseSearchButton.setEnabled(enabled)
+    }
 }

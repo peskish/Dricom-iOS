@@ -51,6 +51,10 @@ final class MainPageViewController: BaseViewController, MainPageViewInput {
         mainPageView.setOnSearchButtonTap(onSearchButtonTap)
     }
     
+    func setSearchButtonEnabled(_ enabled: Bool) {
+        mainPageView.setSearchButtonEnabled(enabled)
+    }
+    
     // MARK: ActivityDisplayable
     func startActivity() {
         mainPageView.startActivity()

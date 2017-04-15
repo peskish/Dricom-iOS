@@ -5,6 +5,7 @@ protocol ServiceFactory {
     func mailComposeDelegateService() -> MailComposeDelegateService
     func dataValidationService() -> DataValidationService
     func userDataService() -> UserDataService
+    func userSearchService() -> UserSearchService
     func logoutService() -> LogoutService
 }
 
@@ -52,5 +53,12 @@ final class ServiceFactoryImpl: ServiceFactory {
     
     func userDataService() -> UserDataService {
         return userDataServiceInstance
+    }
+    
+    func userSearchService() -> UserSearchService {
+        return UserSearchServiceImpl(
+            dataValidationService: dataValidationService(),
+            networkClient: networkClientInstance
+        )
     }
 }

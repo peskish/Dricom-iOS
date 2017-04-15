@@ -6,6 +6,7 @@ protocol MainPageViewInput: class, ViewLifecycleObservable, MessageDisplayable, 
     func setLicenseParts(_ licenseParts: LicenseParts)
     func setLicenseSearchPlaceholder(_ placeholder: String?)
     func setLicenseSearchTitle(_ title: String)
+    func setSearchButtonEnabled(_ enabled: Bool)
     func setOnSearchButtonTap(_ onSearchButtonTap: ((String?) -> ())?)
     
     var onLicenseSearchChange: ((String?) -> ())? { get set }

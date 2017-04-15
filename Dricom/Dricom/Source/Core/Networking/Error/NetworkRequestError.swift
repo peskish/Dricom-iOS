@@ -4,6 +4,7 @@ enum NetworkRequestError: Error {
     case dataEncodingFailure
     case userIsNotAuthorized
     case internalServerError
+    case wrongInputParameters(message: String)
     case apiError(ApiError)
     case unknownError(Error)
 }

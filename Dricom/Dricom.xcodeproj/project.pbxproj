@@ -249,6 +249,7 @@
 		F0F14AB21E9D7215004752A8 /* UploadAvatarRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F14AB11E9D7215004752A8 /* UploadAvatarRequest.swift */; };
 		F0F14AB81EA15CAF004752A8 /* SearchUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F14AB71EA15CAF004752A8 /* SearchUserRequest.swift */; };
 		F0F14ABA1EA15F4E004752A8 /* Unbox+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F14AB91EA15F4E004752A8 /* Unbox+Extensions.swift */; };
+		F0F14ABC1EA1F7BB004752A8 /* UserSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F14ABB1EA1F7BB004752A8 /* UserSearchService.swift */; };
 		F0F434081DD10CAB00F278BD /* AlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F434071DD10CAB00F278BD /* AlertDisplayable.swift */; };
 		F0F4340B1DD10CC500F278BD /* WindowWaiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F4340A1DD10CC500F278BD /* WindowWaiter.swift */; };
 /* End PBXBuildFile section */
@@ -514,6 +515,7 @@
 		F0F14AB11E9D7215004752A8 /* UploadAvatarRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UploadAvatarRequest.swift; path = Core/Networking/Request/UploadAvatarRequest.swift; sourceTree = "<group>"; };
 		F0F14AB71EA15CAF004752A8 /* SearchUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchUserRequest.swift; path = Core/Networking/Request/SearchUserRequest.swift; sourceTree = "<group>"; };
 		F0F14AB91EA15F4E004752A8 /* Unbox+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Unbox+Extensions.swift"; path = "Core/Extensions/Unbox+Extensions.swift"; sourceTree = "<group>"; };
+		F0F14ABB1EA1F7BB004752A8 /* UserSearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearchService.swift; sourceTree = "<group>"; };
 		F0F434071DD10CAB00F278BD /* AlertDisplayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertDisplayable.swift; path = MessageDisplaying/AlertDisplayable.swift; sourceTree = "<group>"; };
 		F0F4340A1DD10CC500F278BD /* WindowWaiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowWaiter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1497,6 +1499,7 @@
 				F0128C341E50FB50008E6668 /* AuthorizationService.swift */,
 				F0128B951E4A566A008E6668 /* RegistrationService.swift */,
 				F0B450811E5A2D1D00F3B2E4 /* UserDataService.swift */,
+				F0F14ABB1EA1F7BB004752A8 /* UserSearchService.swift */,
 			);
 			name = Network;
 			path = Dricom/Source/VIPER/Services/Network;
@@ -2194,6 +2197,7 @@
 				F0128C081E4F9CED008E6668 /* KeyboardFrameObservingAccessoryView.swift in Sources */,
 				F0F4340B1DD10CC500F278BD /* WindowWaiter.swift in Sources */,
 				F08BE1A41DC926B600243B56 /* SpecMargins.swift in Sources */,
+				F0F14ABC1EA1F7BB004752A8 /* UserSearchService.swift in Sources */,
 				F08BE1A21DC9265000243B56 /* ActionButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -28,6 +28,31 @@ final class MainPagePresenter: MainPageModule {
     private func setUpView() {
         view?.setLicenseSearchPlaceholder("Введите номер автомобиля")
         view?.setLicenseSearchTitle("Найти пользователя")
+        
+        view?.onLicenseSearchChange = { [weak self] license in
+            self?.view?.setSearchButtonEnabled(!isEmptyOrNil(license))
+        }
+        
+        view?.setOnSearchButtonTap { [weak self] license in
+            guard let license = license else { return }
+            
+            self?.view?.startActivity()
+            self?.interactor.searchUser(license: license) { result in
+                self?.view?.stopActivity()
+                
+                result.onData { user in
+                    if let user = user {
+                        self?.router.showUser(user)
+                    } else {
+                        self?.router.showNoUserFound()
+                    }
+                }
+                
+                result.onError { error in
+                    self?.view?.showError(error)
+                }
+            }
+        }
     }
     
     // MARK: - MainPageModule

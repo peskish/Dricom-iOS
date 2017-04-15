@@ -13,6 +13,8 @@ extension MessageDisplayable where Self: AlertDisplayable {
             break
         case .apiError(let apiError):
             showError(apiError)
+        case .wrongInputParameters(let message):
+            showErrorMessage(message)
         case .unknownError(let error):
             debugPrint(error.localizedDescription)
             showUnknownErrorMessage()

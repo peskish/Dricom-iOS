@@ -4,7 +4,10 @@ final class MainPageAssemblyImpl: BaseAssembly, MainPageAssembly {
     // MARK: - MainPageAssembly
     func module() -> (viewController: UIViewController, interface: MainPageModule)
     {
-        let interactor = MainPageInteractorImpl(userDataService: serviceFactory.userDataService())
+        let interactor = MainPageInteractorImpl(
+            userDataService: serviceFactory.userDataService(),
+            userSearchService: serviceFactory.userSearchService()
+        )
         
         let viewController = MainPageViewController()
         
