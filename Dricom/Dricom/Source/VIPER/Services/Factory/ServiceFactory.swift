@@ -35,7 +35,8 @@ final class ServiceFactoryImpl: ServiceFactory {
         return AuthorizationServiceImpl(
             networkClient: networkClientInstance,
             loginResponseProcessor: authInfoHolderInstance,
-            userDataNotifier: userDataServiceInstance
+            userDataNotifier: userDataServiceInstance,
+            dataValidationService: dataValidationService()
         )
     }
     

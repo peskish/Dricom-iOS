@@ -13,6 +13,7 @@ struct SearchUserRequest: NetworkRequest {
     let httpMethod: HTTPMethod = .get
     let isAuthorizationRequired = true
     let path = "search"
+    let encoding: ParameterEncoding = URLEncoding.default
     
     var params: [String: Any] {
         var parameters = [String: Any]()

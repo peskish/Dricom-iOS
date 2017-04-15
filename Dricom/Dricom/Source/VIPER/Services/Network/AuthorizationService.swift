@@ -9,20 +9,31 @@ final class AuthorizationServiceImpl: AuthorizationService {
     private let networkClient: NetworkClient
     private let loginResponseProcessor: LoginResponseProcessor
     private let userDataNotifier: UserDataNotifier
+    private let dataValidationService: DataValidationService
     
     // MARK: - Init
     init(
         networkClient: NetworkClient,
         loginResponseProcessor: LoginResponseProcessor,
-        userDataNotifier: UserDataNotifier)
+        userDataNotifier: UserDataNotifier,
+        dataValidationService: DataValidationService)
     {
         self.networkClient = networkClient
         self.loginResponseProcessor = loginResponseProcessor
         self.userDataNotifier = userDataNotifier
+        self.dataValidationService = dataValidationService
     }
     
     // MARK: - AuthorizationService
     func authorize(username: String, password: String, completion: @escaping ApiResult<Void>.Completion) {
+        var username = username
+        
+        // Check if username is the license number
+        if let license = LicenseNormalizer.normalize(license: username),
+            dataValidationService.validateLicense(license) == nil {
+            username = license
+        }
+        
         let request = AuthRequest(username: username, password: password.sha512())
 
         networkClient.send(request: request) { [weak self] result in

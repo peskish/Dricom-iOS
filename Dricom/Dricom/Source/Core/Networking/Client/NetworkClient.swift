@@ -146,7 +146,12 @@ final class NetworkClientImpl: NetworkClient {
     
     // MARK: URL
     private func makeUrl<R: NetworkRequest>(from request: R) -> URL? {
-        // Django requires the trailing `/`, it fails with 500 otherwise
-        return URL(string: baseUrl + request.path + "/")
+        var urlString = baseUrl + request.path
+        if request.httpMethod == .post {
+            // Django requires the trailing `/` for POST requests, it fails with 500 otherwise
+            urlString += "/"
+        }
+        
+        return URL(string: urlString)
     }
 }
