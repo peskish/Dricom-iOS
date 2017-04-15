@@ -197,6 +197,17 @@
 		F099E3C31EA29C520082CD92 /* NoUserFoundViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099E3B81EA29C520082CD92 /* NoUserFoundViewInput.swift */; };
 		F099E3C71EA29DC50082CD92 /* NoUserFoundRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099E3C51EA29DC50082CD92 /* NoUserFoundRouter.swift */; };
 		F099E3C81EA29DC50082CD92 /* NoUserFoundRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099E3C61EA29DC50082CD92 /* NoUserFoundRouterImpl.swift */; };
+		F099E3DC1EA2B4040082CD92 /* UserInfoAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099E3CD1EA2B4030082CD92 /* UserInfoAssembly.swift */; };
+		F099E3DD1EA2B4040082CD92 /* UserInfoAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099E3CE1EA2B4030082CD92 /* UserInfoAssemblyImpl.swift */; };
+		F099E3DE1EA2B4040082CD92 /* UserInfoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099E3D01EA2B4040082CD92 /* UserInfoInteractor.swift */; };
+		F099E3DF1EA2B4040082CD92 /* UserInfoInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099E3D11EA2B4040082CD92 /* UserInfoInteractorImpl.swift */; };
+		F099E3E01EA2B4040082CD92 /* UserInfoModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099E3D31EA2B4040082CD92 /* UserInfoModule.swift */; };
+		F099E3E11EA2B4040082CD92 /* UserInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099E3D41EA2B4040082CD92 /* UserInfoPresenter.swift */; };
+		F099E3E21EA2B4040082CD92 /* UserInfoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099E3D61EA2B4040082CD92 /* UserInfoRouter.swift */; };
+		F099E3E31EA2B4040082CD92 /* UserInfoRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099E3D71EA2B4040082CD92 /* UserInfoRouterImpl.swift */; };
+		F099E3E41EA2B4040082CD92 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099E3D91EA2B4040082CD92 /* UserInfoView.swift */; };
+		F099E3E51EA2B4040082CD92 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099E3DA1EA2B4040082CD92 /* UserInfoViewController.swift */; };
+		F099E3E61EA2B4040082CD92 /* UserInfoViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099E3DB1EA2B4040082CD92 /* UserInfoViewInput.swift */; };
 		F0A115161DC6229500A4DC76 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115151DC6229500A4DC76 /* BaseViewController.swift */; };
 		F0A115241DC629CE00A4DC76 /* SessionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115231DC629CE00A4DC76 /* SessionInfo.swift */; };
 		F0A115301DC62D2000A4DC76 /* DataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1152F1DC62D2000A4DC76 /* DataResult.swift */; };
@@ -469,6 +480,17 @@
 		F099E3B81EA29C520082CD92 /* NoUserFoundViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoUserFoundViewInput.swift; sourceTree = "<group>"; };
 		F099E3C51EA29DC50082CD92 /* NoUserFoundRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoUserFoundRouter.swift; sourceTree = "<group>"; };
 		F099E3C61EA29DC50082CD92 /* NoUserFoundRouterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoUserFoundRouterImpl.swift; sourceTree = "<group>"; };
+		F099E3CD1EA2B4030082CD92 /* UserInfoAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoAssembly.swift; sourceTree = "<group>"; };
+		F099E3CE1EA2B4030082CD92 /* UserInfoAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoAssemblyImpl.swift; sourceTree = "<group>"; };
+		F099E3D01EA2B4040082CD92 /* UserInfoInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoInteractor.swift; sourceTree = "<group>"; };
+		F099E3D11EA2B4040082CD92 /* UserInfoInteractorImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoInteractorImpl.swift; sourceTree = "<group>"; };
+		F099E3D31EA2B4040082CD92 /* UserInfoModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoModule.swift; sourceTree = "<group>"; };
+		F099E3D41EA2B4040082CD92 /* UserInfoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoPresenter.swift; sourceTree = "<group>"; };
+		F099E3D61EA2B4040082CD92 /* UserInfoRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoRouter.swift; sourceTree = "<group>"; };
+		F099E3D71EA2B4040082CD92 /* UserInfoRouterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoRouterImpl.swift; sourceTree = "<group>"; };
+		F099E3D91EA2B4040082CD92 /* UserInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
+		F099E3DA1EA2B4040082CD92 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		F099E3DB1EA2B4040082CD92 /* UserInfoViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewInput.swift; sourceTree = "<group>"; };
 		F0A115151DC6229500A4DC76 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Dricom/Source/Presentation/ViewControllers/BaseViewController.swift; sourceTree = SOURCE_ROOT; };
 		F0A115231DC629CE00A4DC76 /* SessionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionInfo.swift; sourceTree = "<group>"; };
 		F0A1152F1DC62D2000A4DC76 /* DataResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataResult.swift; path = Core/Common/DataResult.swift; sourceTree = "<group>"; };
@@ -1342,6 +1364,7 @@
 				F021D6AD1DD7B99300F50091 /* Register */,
 				F0B450921E60B6A400F3B2E4 /* Settings */,
 				F0A115271DC62C2E00A4DC76 /* Services */,
+				F099E3CB1EA2B4030082CD92 /* UserInfo */,
 				F06E3F621E81B0EE00829A3F /* UserProfile */,
 			);
 			path = VIPER;
@@ -1485,6 +1508,64 @@
 				F099E3C61EA29DC50082CD92 /* NoUserFoundRouterImpl.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		F099E3CB1EA2B4030082CD92 /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				F099E3CC1EA2B4030082CD92 /* Assembly */,
+				F099E3CF1EA2B4040082CD92 /* Interactor */,
+				F099E3D21EA2B4040082CD92 /* Presenter */,
+				F099E3D51EA2B4040082CD92 /* Router */,
+				F099E3D81EA2B4040082CD92 /* View */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		F099E3CC1EA2B4030082CD92 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				F099E3CD1EA2B4030082CD92 /* UserInfoAssembly.swift */,
+				F099E3CE1EA2B4030082CD92 /* UserInfoAssemblyImpl.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		F099E3CF1EA2B4040082CD92 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				F099E3D01EA2B4040082CD92 /* UserInfoInteractor.swift */,
+				F099E3D11EA2B4040082CD92 /* UserInfoInteractorImpl.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		F099E3D21EA2B4040082CD92 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F099E3D31EA2B4040082CD92 /* UserInfoModule.swift */,
+				F099E3D41EA2B4040082CD92 /* UserInfoPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F099E3D51EA2B4040082CD92 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F099E3D61EA2B4040082CD92 /* UserInfoRouter.swift */,
+				F099E3D71EA2B4040082CD92 /* UserInfoRouterImpl.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F099E3D81EA2B4040082CD92 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F099E3D91EA2B4040082CD92 /* UserInfoView.swift */,
+				F099E3DA1EA2B4040082CD92 /* UserInfoViewController.swift */,
+				F099E3DB1EA2B4040082CD92 /* UserInfoViewInput.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F0A115171DC622A100A4DC76 /* Presentation */ = {
@@ -2068,6 +2149,7 @@
 				F06E3F7A1E81B0EE00829A3F /* UserProfileRouterImpl.swift in Sources */,
 				F0823DD11DE9EEA2007BD04D /* MainPageInteractorImpl.swift in Sources */,
 				F0128B851E49120C008E6668 /* NetworkRequest.swift in Sources */,
+				F099E3E01EA2B4040082CD92 /* UserInfoModule.swift in Sources */,
 				F0B450841E5A2D8B00F3B2E4 /* MainPageModule.swift in Sources */,
 				F0B450B11E60C1B700F3B2E4 /* SettingsViewData.swift in Sources */,
 				F0A115161DC6229500A4DC76 /* BaseViewController.swift in Sources */,
@@ -2082,12 +2164,14 @@
 				F09209A61DC14A7F0057302F /* ApplicationPresenter.swift in Sources */,
 				F076D6581DCF6E2F00E3ED0F /* StandardAlert.swift in Sources */,
 				F099E3C21EA29C520082CD92 /* NoUserFoundViewController.swift in Sources */,
+				F099E3E31EA2B4040082CD92 /* UserInfoRouterImpl.swift in Sources */,
 				F099E3B91EA29C520082CD92 /* NoUserFoundAssembly.swift in Sources */,
 				F0D0385A1DD3AE0500E0085D /* FeedbackModule.swift in Sources */,
 				F0A115801DC6863E00A4DC76 /* UIView+Size.swift in Sources */,
 				F021D6A51DD7A6E300F50091 /* MailComposeDelegateService.swift in Sources */,
 				F0A1157F1DC6863E00A4DC76 /* UIView+Resizing.swift in Sources */,
 				F021D6CF1DD8914200F50091 /* RouterCameraShowable.swift in Sources */,
+				F099E3E21EA2B4040082CD92 /* UserInfoRouter.swift in Sources */,
 				F021D6BE1DD7B99300F50091 /* RegisterAssembly.swift in Sources */,
 				F0128C051E4F9CED008E6668 /* ScrollViewKeyboardAvoidingService.swift in Sources */,
 				F021D6CD1DD88D6100F50091 /* SpecSizes.swift in Sources */,
@@ -2100,8 +2184,10 @@
 				F06E3F751E81B0EE00829A3F /* UserProfileInteractor.swift in Sources */,
 				F021D69B1DD7A43A00F50091 /* SupportMessageData.swift in Sources */,
 				F0128B981E4A56A9008E6668 /* RegisterRequest.swift in Sources */,
+				F099E3E41EA2B4040082CD92 /* UserInfoView.swift in Sources */,
 				F0322B031E43CB4100F3CD47 /* AppStarterPresenter.swift in Sources */,
 				F09209821DC146300057302F /* AppDelegate.swift in Sources */,
+				F099E3DF1EA2B4040082CD92 /* UserInfoInteractorImpl.swift in Sources */,
 				F0F434081DD10CAB00F278BD /* AlertDisplayable.swift in Sources */,
 				F021D6E91DD8925B00F50091 /* CameraRouter.swift in Sources */,
 				F0128C011E4F9CED008E6668 /* ContentFittingRect.swift in Sources */,
@@ -2149,6 +2235,7 @@
 				F0823DD51DE9EEA2007BD04D /* MainPageRouterImpl.swift in Sources */,
 				F021D6E31DD8925B00F50091 /* CameraAssembly.swift in Sources */,
 				F0128C241E4F9D39008E6668 /* ActivityIndicatorRefresherStateAnimator.swift in Sources */,
+				F099E3E61EA2B4040082CD92 /* UserInfoViewInput.swift in Sources */,
 				F0128BFD1E4F9CED008E6668 /* FirstResponderSettingsManager.swift in Sources */,
 				F0128C2C1E4F9D39008E6668 /* ScrollViewRefresherProgress.swift in Sources */,
 				F021D6ED1DD8925B00F50091 /* CameraViewInput.swift in Sources */,
@@ -2158,6 +2245,7 @@
 				F021D6E71DD8925B00F50091 /* CameraModule.swift in Sources */,
 				F0128C031E4F9CED008E6668 /* KeyboardAvoidingSettingsObservable.swift in Sources */,
 				F0128C231E4F9D39008E6668 /* ActivityIndicatorRefresherFactory.swift in Sources */,
+				F099E3E51EA2B4040082CD92 /* UserInfoViewController.swift in Sources */,
 				F0128BA01E4A64C6008E6668 /* NetworkResponseConverter.swift in Sources */,
 				F021D6C71DD7B99300F50091 /* RegisterViewController.swift in Sources */,
 				F0D038601DD3AE0500E0085D /* FeedbackViewInput.swift in Sources */,
@@ -2208,10 +2296,12 @@
 				F076D6711DCF6F3800E3ED0F /* String+Pluralization.swift in Sources */,
 				F0128C0B1E4F9CED008E6668 /* KeyboardFrameService.swift in Sources */,
 				F06E3F781E81B0EE00829A3F /* UserProfilePresenter.swift in Sources */,
+				F099E3DC1EA2B4040082CD92 /* UserInfoAssembly.swift in Sources */,
 				F05790DB1E34DC5D004FBD4A /* HoshiTextField.swift in Sources */,
 				F076D6491DCF67F200E3ED0F /* LoginViewController.swift in Sources */,
 				F099E3C11EA29C520082CD92 /* NoUserFoundView.swift in Sources */,
 				F0128C291E4F9D39008E6668 /* ScrollViewRefresher.swift in Sources */,
+				F099E3DE1EA2B4040082CD92 /* UserInfoInteractor.swift in Sources */,
 				F021D6C21DD7B99300F50091 /* RegisterModule.swift in Sources */,
 				F076D66A1DCF6F3800E3ED0F /* AppMetadataExtension.swift in Sources */,
 				F0128BFB1E4F9CED008E6668 /* DisposeBagHolder.swift in Sources */,
@@ -2231,12 +2321,14 @@
 				F0B450A41E60B6A400F3B2E4 /* SettingsAssemblyImpl.swift in Sources */,
 				F021D6EB1DD8925B00F50091 /* CameraView.swift in Sources */,
 				F0D038621DD3AFA100E0085D /* RouterFeedbackShowable.swift in Sources */,
+				F099E3DD1EA2B4040082CD92 /* UserInfoAssemblyImpl.swift in Sources */,
 				F09209A41DC14A7F0057302F /* ApplicationInteractorImpl.swift in Sources */,
 				F076D6751DCF6FC500E3ED0F /* NSURLPathComponents.swift in Sources */,
 				F0128C251E4F9D39008E6668 /* ActivityIndicatorRefreshView.swift in Sources */,
 				F0B450A51E60B6A400F3B2E4 /* SettingsInteractor.swift in Sources */,
 				F0128C351E50FB50008E6668 /* AuthorizationService.swift in Sources */,
 				F09209BD1DC1524E0057302F /* BaseAssembly.swift in Sources */,
+				F099E3E11EA2B4040082CD92 /* UserInfoPresenter.swift in Sources */,
 				F0128C2B1E4F9D39008E6668 /* ScrollViewRefresherPosition.swift in Sources */,
 				F0823DD61DE9EEA2007BD04D /* MainPageView.swift in Sources */,
 				F0A115241DC629CE00A4DC76 /* SessionInfo.swift in Sources */,
