@@ -191,15 +191,12 @@
 		F09209BD1DC1524E0057302F /* BaseAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09209BC1DC1524E0057302F /* BaseAssembly.swift */; };
 		F099E3B91EA29C520082CD92 /* NoUserFoundAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099E3AA1EA29C520082CD92 /* NoUserFoundAssembly.swift */; };
 		F099E3BA1EA29C520082CD92 /* NoUserFoundAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099E3AB1EA29C520082CD92 /* NoUserFoundAssemblyImpl.swift */; };
-		F099E3BB1EA29C520082CD92 /* NoUserFoundInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099E3AD1EA29C520082CD92 /* NoUserFoundInteractor.swift */; };
-		F099E3BC1EA29C520082CD92 /* NoUserFoundInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099E3AE1EA29C520082CD92 /* NoUserFoundInteractorImpl.swift */; };
-		F099E3BD1EA29C520082CD92 /* NoUserFoundModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099E3B01EA29C520082CD92 /* NoUserFoundModule.swift */; };
 		F099E3BE1EA29C520082CD92 /* NoUserFoundPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099E3B11EA29C520082CD92 /* NoUserFoundPresenter.swift */; };
-		F099E3BF1EA29C520082CD92 /* NoUserFoundRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099E3B31EA29C520082CD92 /* NoUserFoundRouter.swift */; };
-		F099E3C01EA29C520082CD92 /* NoUserFoundRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099E3B41EA29C520082CD92 /* NoUserFoundRouterImpl.swift */; };
 		F099E3C11EA29C520082CD92 /* NoUserFoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099E3B61EA29C520082CD92 /* NoUserFoundView.swift */; };
 		F099E3C21EA29C520082CD92 /* NoUserFoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099E3B71EA29C520082CD92 /* NoUserFoundViewController.swift */; };
 		F099E3C31EA29C520082CD92 /* NoUserFoundViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099E3B81EA29C520082CD92 /* NoUserFoundViewInput.swift */; };
+		F099E3C71EA29DC50082CD92 /* NoUserFoundRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099E3C51EA29DC50082CD92 /* NoUserFoundRouter.swift */; };
+		F099E3C81EA29DC50082CD92 /* NoUserFoundRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099E3C61EA29DC50082CD92 /* NoUserFoundRouterImpl.swift */; };
 		F0A115161DC6229500A4DC76 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115151DC6229500A4DC76 /* BaseViewController.swift */; };
 		F0A115241DC629CE00A4DC76 /* SessionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115231DC629CE00A4DC76 /* SessionInfo.swift */; };
 		F0A115301DC62D2000A4DC76 /* DataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1152F1DC62D2000A4DC76 /* DataResult.swift */; };
@@ -466,15 +463,12 @@
 		F09209BC1DC1524E0057302F /* BaseAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseAssembly.swift; path = Assembly/BaseAssembly.swift; sourceTree = "<group>"; };
 		F099E3AA1EA29C520082CD92 /* NoUserFoundAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoUserFoundAssembly.swift; sourceTree = "<group>"; };
 		F099E3AB1EA29C520082CD92 /* NoUserFoundAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoUserFoundAssemblyImpl.swift; sourceTree = "<group>"; };
-		F099E3AD1EA29C520082CD92 /* NoUserFoundInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoUserFoundInteractor.swift; sourceTree = "<group>"; };
-		F099E3AE1EA29C520082CD92 /* NoUserFoundInteractorImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoUserFoundInteractorImpl.swift; sourceTree = "<group>"; };
-		F099E3B01EA29C520082CD92 /* NoUserFoundModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoUserFoundModule.swift; sourceTree = "<group>"; };
 		F099E3B11EA29C520082CD92 /* NoUserFoundPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoUserFoundPresenter.swift; sourceTree = "<group>"; };
-		F099E3B31EA29C520082CD92 /* NoUserFoundRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoUserFoundRouter.swift; sourceTree = "<group>"; };
-		F099E3B41EA29C520082CD92 /* NoUserFoundRouterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoUserFoundRouterImpl.swift; sourceTree = "<group>"; };
 		F099E3B61EA29C520082CD92 /* NoUserFoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoUserFoundView.swift; sourceTree = "<group>"; };
 		F099E3B71EA29C520082CD92 /* NoUserFoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoUserFoundViewController.swift; sourceTree = "<group>"; };
 		F099E3B81EA29C520082CD92 /* NoUserFoundViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoUserFoundViewInput.swift; sourceTree = "<group>"; };
+		F099E3C51EA29DC50082CD92 /* NoUserFoundRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoUserFoundRouter.swift; sourceTree = "<group>"; };
+		F099E3C61EA29DC50082CD92 /* NoUserFoundRouterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoUserFoundRouterImpl.swift; sourceTree = "<group>"; };
 		F0A115151DC6229500A4DC76 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Dricom/Source/Presentation/ViewControllers/BaseViewController.swift; sourceTree = SOURCE_ROOT; };
 		F0A115231DC629CE00A4DC76 /* SessionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionInfo.swift; sourceTree = "<group>"; };
 		F0A1152F1DC62D2000A4DC76 /* DataResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataResult.swift; path = Core/Common/DataResult.swift; sourceTree = "<group>"; };
@@ -1450,9 +1444,8 @@
 			isa = PBXGroup;
 			children = (
 				F099E3A91EA29C520082CD92 /* Assembly */,
-				F099E3AC1EA29C520082CD92 /* Interactor */,
 				F099E3AF1EA29C520082CD92 /* Presenter */,
-				F099E3B21EA29C520082CD92 /* Router */,
+				F099E3C41EA29DC50082CD92 /* Router */,
 				F099E3B51EA29C520082CD92 /* View */,
 			);
 			path = NoUserFound;
@@ -1467,31 +1460,12 @@
 			path = Assembly;
 			sourceTree = "<group>";
 		};
-		F099E3AC1EA29C520082CD92 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				F099E3AD1EA29C520082CD92 /* NoUserFoundInteractor.swift */,
-				F099E3AE1EA29C520082CD92 /* NoUserFoundInteractorImpl.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
 		F099E3AF1EA29C520082CD92 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				F099E3B01EA29C520082CD92 /* NoUserFoundModule.swift */,
 				F099E3B11EA29C520082CD92 /* NoUserFoundPresenter.swift */,
 			);
 			path = Presenter;
-			sourceTree = "<group>";
-		};
-		F099E3B21EA29C520082CD92 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				F099E3B31EA29C520082CD92 /* NoUserFoundRouter.swift */,
-				F099E3B41EA29C520082CD92 /* NoUserFoundRouterImpl.swift */,
-			);
-			path = Router;
 			sourceTree = "<group>";
 		};
 		F099E3B51EA29C520082CD92 /* View */ = {
@@ -1502,6 +1476,15 @@
 				F099E3B81EA29C520082CD92 /* NoUserFoundViewInput.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F099E3C41EA29DC50082CD92 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F099E3C51EA29DC50082CD92 /* NoUserFoundRouter.swift */,
+				F099E3C61EA29DC50082CD92 /* NoUserFoundRouterImpl.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		F0A115171DC622A100A4DC76 /* Presentation */ = {
@@ -2058,7 +2041,6 @@
 				F0823DB71DE9D929007BD04D /* ActivityDisplayable.swift in Sources */,
 				F076D6411DCF67F200E3ED0F /* LoginAssemblyImpl.swift in Sources */,
 				F03DE8181E87051900ADC5CB /* InputField+Error.swift in Sources */,
-				F099E3C01EA29C520082CD92 /* NoUserFoundRouterImpl.swift in Sources */,
 				F06E3F7D1E81B0EE00829A3F /* UserProfileViewInput.swift in Sources */,
 				F03DE81C1E870A2900ADC5CB /* InputFieldsContainer.swift in Sources */,
 				F0128C221E4F9D39008E6668 /* ScrollViewRefresherStateAnimator.swift in Sources */,
@@ -2069,7 +2051,6 @@
 				F0128B881E491787008E6668 /* LoginResponse.swift in Sources */,
 				F0128C071E4F9CED008E6668 /* KeyboardFrameChange.swift in Sources */,
 				F076D67F1DCFAEF400E3ED0F /* ViewControllerPosition.swift in Sources */,
-				F099E3BF1EA29C520082CD92 /* NoUserFoundRouter.swift in Sources */,
 				F0128C001E4F9CED008E6668 /* ContentFittingFunctionBuilder.swift in Sources */,
 				F0B450861E5A303300F3B2E4 /* AccountRequest.swift in Sources */,
 				F076D6551DCF6D2000E3ED0F /* MessageDisplayable.swift in Sources */,
@@ -2118,7 +2099,6 @@
 				F0128BA41E4A6592008E6668 /* Data+JSON.swift in Sources */,
 				F06E3F751E81B0EE00829A3F /* UserProfileInteractor.swift in Sources */,
 				F021D69B1DD7A43A00F50091 /* SupportMessageData.swift in Sources */,
-				F099E3BB1EA29C520082CD92 /* NoUserFoundInteractor.swift in Sources */,
 				F0128B981E4A56A9008E6668 /* RegisterRequest.swift in Sources */,
 				F0322B031E43CB4100F3CD47 /* AppStarterPresenter.swift in Sources */,
 				F09209821DC146300057302F /* AppDelegate.swift in Sources */,
@@ -2153,7 +2133,6 @@
 				F0823DCE1DE9EEA2007BD04D /* MainPageAssembly.swift in Sources */,
 				F05790D71E32A72D004FBD4A /* UIFont+Styleguide.swift in Sources */,
 				F021D6E51DD8925B00F50091 /* CameraInteractor.swift in Sources */,
-				F099E3BD1EA29C520082CD92 /* NoUserFoundModule.swift in Sources */,
 				F0B450AF1E60BBB900F3B2E4 /* SettingsModule.swift in Sources */,
 				F06E3F7B1E81B0EE00829A3F /* UserProfileView.swift in Sources */,
 				F0F14ABA1EA15F4E004752A8 /* Unbox+Extensions.swift in Sources */,
@@ -2183,6 +2162,7 @@
 				F021D6C71DD7B99300F50091 /* RegisterViewController.swift in Sources */,
 				F0D038601DD3AE0500E0085D /* FeedbackViewInput.swift in Sources */,
 				F076D6791DCF7DD200E3ED0F /* UIView+FindFirstResponder.swift in Sources */,
+				F099E3C71EA29DC50082CD92 /* NoUserFoundRouter.swift in Sources */,
 				F076D66C1DCF6F3800E3ED0F /* DictionaryExtensions.swift in Sources */,
 				F076D66E1DCF6F3800E3ED0F /* OptionalsExtensions.swift in Sources */,
 				F0B450721E58CFE000F3B2E4 /* AuthInfoHolder.swift in Sources */,
@@ -2192,7 +2172,6 @@
 				F09209B81DC1513B0057302F /* BaseRouter.swift in Sources */,
 				F0D038571DD3AE0500E0085D /* FeedbackAssemblyImpl.swift in Sources */,
 				F021D6C51DD7B99300F50091 /* RegisterRouterImpl.swift in Sources */,
-				F099E3BC1EA29C520082CD92 /* NoUserFoundInteractorImpl.swift in Sources */,
 				F05790DC1E34DC5D004FBD4A /* TextFieldsEffects.swift in Sources */,
 				F0823DBA1DE9DA10007BD04D /* StandardPreloaderView.swift in Sources */,
 				F0A115821DC6897300A4DC76 /* SpecColors.swift in Sources */,
@@ -2225,6 +2204,7 @@
 				F0B450A91E60B6A400F3B2E4 /* SettingsRouter.swift in Sources */,
 				F01398E51DF43D8300E4F188 /* User.swift in Sources */,
 				F0F14AB21E9D7215004752A8 /* UploadAvatarRequest.swift in Sources */,
+				F099E3C81EA29DC50082CD92 /* NoUserFoundRouterImpl.swift in Sources */,
 				F076D6711DCF6F3800E3ED0F /* String+Pluralization.swift in Sources */,
 				F0128C0B1E4F9CED008E6668 /* KeyboardFrameService.swift in Sources */,
 				F06E3F781E81B0EE00829A3F /* UserProfilePresenter.swift in Sources */,

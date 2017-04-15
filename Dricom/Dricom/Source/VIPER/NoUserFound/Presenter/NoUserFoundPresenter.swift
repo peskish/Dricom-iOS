@@ -1,17 +1,11 @@
 import Foundation
 
-final class NoUserFoundPresenter:
-    NoUserFoundModule
-{
+final class NoUserFoundPresenter {
     // MARK: - Private properties
-    private let interactor: NoUserFoundInteractor
     private let router: NoUserFoundRouter
     
     // MARK: - Init
-    init(interactor: NoUserFoundInteractor,
-         router: NoUserFoundRouter)
-    {
-        self.interactor = interactor
+    init(router: NoUserFoundRouter) {
         self.router = router
     }
     
@@ -24,17 +18,14 @@ final class NoUserFoundPresenter:
     
     // MARK: - Private
     private func setUpView() {
-        
+        view?.setMessage("Упс! Такого пользователя нет")
+        view?.setDescription("Найдите автомобилиста в реальном мире и предложите воспользоваться данным приложением")
+        view?.onCloseTap = { [weak self] in
+            self?.dismissModule()
+        }
     }
     
-    // MARK: - NoUserFoundModule
-    func focusOnModule() {
-        router.focusOnCurrentModule()
-    }
-    
-    func dismissModule() {
+    private func dismissModule() {
         router.dismissCurrentModule()
     }
-    
-    var onFinish: ((NoUserFoundResult) -> ())?
 }

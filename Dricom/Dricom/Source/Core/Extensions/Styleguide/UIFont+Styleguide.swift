@@ -68,4 +68,12 @@ extension UIFont {
     class func drcSettingsSelectValueFont() -> UIFont? {
         return UIFont(name: "Rubik-Regular", size: 14.0)
     }
+    
+    class func drcNoUserDescriptionFont() -> UIFont? {
+        return UIFont(name: "Rubik-Regular", size: 14.0)
+    }
+    
+    class func drcNoUserMessageFont() -> UIFont? {
+        return UIFont(name: "Rubik-Medium", size: 17.0)
+    }
 }

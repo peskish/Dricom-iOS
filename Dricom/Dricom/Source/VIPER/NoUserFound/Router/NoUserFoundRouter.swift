@@ -1,5 +1,5 @@
 import Foundation
 
-protocol NoUserFoundRouter: class, RouterFocusable, RouterDismissable {
+protocol NoUserFoundRouter: class, RouterDismissable {
     
 }

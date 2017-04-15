@@ -54,4 +54,8 @@ final class AssemblyFactoryImpl: AssemblyFactory {
     func photoLibraryAssembly() -> PhotoLibraryAssembly {
         return paparazzoAssemblyFactory.photoLibraryAssembly()
     }
+    
+    func noUserFoundAssembly() -> NoUserFoundAssembly {
+        return NoUserFoundAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
+    }
 }
