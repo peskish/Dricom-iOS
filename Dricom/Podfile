@@ -6,8 +6,8 @@ use_frameworks!
 
 def dricom_pods
     # Pods for Dricom
-    pod 'AlamofireImage', :git => 'https://github.com/avito-tech/AlamofireImage'
-    pod 'Alamofire', :git => 'https://github.com/avito-tech/Alamofire'
+    pod 'AlamofireImage'
+    pod 'Alamofire'
     pod 'Unbox'
     pod 'KeychainAccess'
     pod 'CryptoSwift'

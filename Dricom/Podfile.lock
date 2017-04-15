@@ -1,7 +1,7 @@
 PODS:
-  - Alamofire (4.0.0)
-  - AlamofireImage (3.0.0):
-    - Alamofire (~> 4.0)
+  - Alamofire (4.4.0)
+  - AlamofireImage (3.2.0):
+    - Alamofire (~> 4.1)
   - CryptoSwift (0.6.7)
   - FastttCamera (0.3.4):
     - FastttCamera/Default (= 0.3.4)
@@ -39,31 +39,17 @@ PODS:
   - Unbox (2.4.0)
 
 DEPENDENCIES:
-  - Alamofire (from `https://github.com/avito-tech/Alamofire`)
-  - AlamofireImage (from `https://github.com/avito-tech/AlamofireImage`)
+  - Alamofire
+  - AlamofireImage
   - CryptoSwift
   - FastttCamera
   - KeychainAccess
   - Paparazzo/Core
   - Unbox
 
-EXTERNAL SOURCES:
-  Alamofire:
-    :git: https://github.com/avito-tech/Alamofire
-  AlamofireImage:
-    :git: https://github.com/avito-tech/AlamofireImage
-
-CHECKOUT OPTIONS:
-  Alamofire:
-    :commit: 601754aa1dd07f821eff7b9603e4668f644fde4c
-    :git: https://github.com/avito-tech/Alamofire
-  AlamofireImage:
-    :commit: e7854e483da8447a0ab4604e13338072316c4535
-    :git: https://github.com/avito-tech/AlamofireImage
-
 SPEC CHECKSUMS:
-  Alamofire: 29102f79068e4769ded8aec795a792f11da018a6
-  AlamofireImage: e2176b92a7374745f03661d740cc4bb35e874d7d
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   CryptoSwift: 685ae257941e5447474348a2b545583e1a16b573
   FastttCamera: 51f16712cbd5bdb08bc6231b957325c6be5e478d
   ImageSource: 81419e0abad686305b19d148c72d8fc9d094dddd
@@ -73,6 +59,6 @@ SPEC CHECKSUMS:
   SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
   Unbox: c8b2ab69d3337597b4a3f47a0538807dc12db670
 
-PODFILE CHECKSUM: b7760457479cfe68baba8864a8a45fdefafb194b
+PODFILE CHECKSUM: 26efec8bb349d99aef8658d6f2016ebf8045cbff
 
 COCOAPODS: 1.2.1
