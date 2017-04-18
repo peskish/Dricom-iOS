@@ -32,7 +32,7 @@ struct User: Equatable, Unboxable {
         }
     }
     
-    let userId: String
+    let id: String
     let avatar: Avatar?
     let name: String?
     let licenses: [License]
@@ -46,7 +46,7 @@ struct User: Equatable, Unboxable {
         licenses = try unboxer.unbox(key: "licenses")
         phone = unboxer.unbox(key: "phone")
         email = unboxer.unbox(key: "email")
-        userId = try unboxer.unbox(key: "id")
+        id = try unboxer.unbox(key: "id")
     }
     
     // MARK: - Equatable
@@ -56,7 +56,7 @@ struct User: Equatable, Unboxable {
             && left.name == right.name
             && left.phone == right.phone
             && left.email == right.email
-            && left.userId == right.userId
+            && left.id == right.id
     }
 }
 

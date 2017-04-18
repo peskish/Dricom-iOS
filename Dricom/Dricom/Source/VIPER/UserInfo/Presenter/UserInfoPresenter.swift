@@ -36,6 +36,11 @@ final class UserInfoPresenter: UserInfoModule {
         
         view?.onCallButtonTap = { [weak self] in
             // TODO:
+            print("Call the man")
+        }
+        
+        view?.onCloseTap = { [weak self] in
+            self?.dismissModule()
         }
         
         view?.onViewDidLoad = { [weak self] in

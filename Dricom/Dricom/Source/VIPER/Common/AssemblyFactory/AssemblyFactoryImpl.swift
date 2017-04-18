@@ -58,4 +58,8 @@ final class AssemblyFactoryImpl: AssemblyFactory {
     func noUserFoundAssembly() -> NoUserFoundAssembly {
         return NoUserFoundAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
     }
+    
+    func userInfoAssembly() -> UserInfoAssembly {
+        return UserInfoAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
+    }
 }

@@ -42,7 +42,15 @@ final class MainPagePresenter: MainPageModule {
                 
                 result.onData { user in
                     if let user = user {
-                        self?.router.showUser(user)
+                        self?.router.showUser(user) { userInfoModule in
+                            userInfoModule.onAddUserToFavorites = { user in
+                                print("added to favorites: \(user.id)")
+                            }
+                            
+                            userInfoModule.onRemoveUserFromFavorites = { user in
+                                print("removed from favorites: \(user.id)")
+                            }
+                        }
                     } else {
                         self?.router.showNoUserFound()
                     }

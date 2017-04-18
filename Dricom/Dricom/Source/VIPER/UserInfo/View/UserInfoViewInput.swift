@@ -11,4 +11,5 @@ protocol UserInfoViewInput: class, ViewLifecycleObservable, MessageDisplayable, 
     var onCallButtonTap: (() -> ())? { get set }
     func setMessageButtonTitle(_ title: String)
     var onMessageButtonTap: (() -> ())? { get set }
+    var onCloseTap: (() -> ())? { get set }
 }

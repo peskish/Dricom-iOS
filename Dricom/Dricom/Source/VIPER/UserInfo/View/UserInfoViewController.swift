@@ -1,10 +1,17 @@
 import UIKit
 
 final class UserInfoViewController: BaseViewController, UserInfoViewInput {
+
     private let userInfoView = UserInfoView()
     
     override func loadView() {
         view = userInfoView
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     // MARK: - UserInfoViewInput
@@ -49,6 +56,11 @@ final class UserInfoViewController: BaseViewController, UserInfoViewInput {
     var onMessageButtonTap: (() -> ())? {
         get { return userInfoView.onMessageButtonTap }
         set { userInfoView.onMessageButtonTap = newValue }
+    }
+    
+    var onCloseTap: (() -> ())? {
+        get { return userInfoView.onCloseTap }
+        set { userInfoView.onCloseTap = newValue }
     }
     
     // MARK: ActivityDisplayable
