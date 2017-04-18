@@ -8,12 +8,6 @@ final class UserInfoViewController: BaseViewController, UserInfoViewInput {
         view = userInfoView
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navigationController?.setNavigationBarHidden(true, animated: true)
-    }
-    
     // MARK: - UserInfoViewInput
     func setName(_ name: String?) {
         userInfoView.setName(name)

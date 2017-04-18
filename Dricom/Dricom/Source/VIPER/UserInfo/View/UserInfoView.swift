@@ -6,6 +6,7 @@ final class UserInfoView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
     private let nameLabel = UILabel()
     private let avatarImageView = UIImageView(image: #imageLiteral(resourceName: "Avatar"))
     private let licenceView = LicensePlateView()
+    private let favoritesButton = UIButton(type: .custom)
     
     let preloader = StandardPreloaderView(style: .dark)
     
@@ -16,10 +17,13 @@ final class UserInfoView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
         addSubview(nameLabel)
         addSubview(avatarImageView)
         addSubview(licenceView)
+        addSubview(favoritesButton)
         
         addSubview(preloader)
         
         setUpStyle()
+        
+        favoritesButton.addTarget(self, action: #selector(favoritesButtonPressed), for: .touchUpInside)
         
         // TODO: Replace with close button
         let closeGesture = UITapGestureRecognizer(target: self, action: #selector(handleClose(_:)))
@@ -40,10 +44,14 @@ final class UserInfoView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
         nameLabel.font = UIFont.drcUserNameFont()
         nameLabel.textColor = UIColor.drcSlate
         nameLabel.textAlignment = .center
+        
+        favoritesButton.setImage(#imageLiteral(resourceName: "Add photo"), for: .normal)
+        favoritesButton.adjustsImageWhenHighlighted = false
+        favoritesButton.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
     }
     
     // MARK: - Layout
-    // MARK: Layout
+    private let favoritesButtonPadding: CGFloat = 29
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -56,6 +64,16 @@ final class UserInfoView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
         licenceView.size = licenceView.sizeThatFits()
         licenceView.top = avatarImageView.bottom + SpecMargins.contentMargin
         licenceView.centerX = bounds.centerX
+        
+        favoritesButton.sizeToFit()
+        let sizeOfText = favoritesButton.titleLabel?.sizeThatFits() ?? .zero
+        let sizeOfImage = favoritesButton.imageView?.sizeThatFits() ?? .zero
+        favoritesButton.width = sizeOfText.width
+            + sizeOfImage.width
+            + favoritesButton.titleEdgeInsets.left
+            + favoritesButton.titleEdgeInsets.right
+        favoritesButton.top = licenceView.bottom + favoritesButtonPadding
+        favoritesButton.centerX = bounds.centerX
         
         preloader.frame = bounds
     }
@@ -90,10 +108,13 @@ final class UserInfoView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
     }
     
     func setFavoritesButtonTitle(_ title: String) {
-        
+        favoritesButton.setTitle(title, for: .normal)
     }
     
     var onFavoritesButtonTap: (() -> ())?
+    @objc private func favoritesButtonPressed() {
+        onFavoritesButtonTap?()
+    }
     
     func setUserConnectionHint(_ hint: String) {
         

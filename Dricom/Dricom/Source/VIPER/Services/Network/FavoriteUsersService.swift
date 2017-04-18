@@ -1,0 +1,3 @@
+protocol FavoriteUsersService: class {
+    
+}

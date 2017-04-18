@@ -12,7 +12,7 @@ final class MainPagePresenter: MainPageModule {
         self.interactor = interactor
         self.router = router
         
-        interactor.onUserDataReceived = { [weak self] user in
+        interactor.onAccountDataReceived = { [weak self] user in
             self?.presentUser(user)
         }
     }
@@ -40,9 +40,9 @@ final class MainPagePresenter: MainPageModule {
             self?.interactor.searchUser(license: license) { result in
                 self?.view?.stopActivity()
                 
-                result.onData { user in
-                    if let user = user {
-                        self?.router.showUser(user) { userInfoModule in
+                result.onData { userInfo in
+                    if let userInfo = userInfo {
+                        self?.router.showUserInfo(userInfo) { userInfoModule in
                             userInfoModule.onAddUserToFavorites = { user in
                                 print("added to favorites: \(user.id)")
                             }

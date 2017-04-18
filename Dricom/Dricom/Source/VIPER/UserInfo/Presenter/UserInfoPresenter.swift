@@ -22,7 +22,7 @@ final class UserInfoPresenter: UserInfoModule {
     
     // MARK: - Private
     private func setUpView() {
-        let user = interactor.obtainUser()
+        let userInfo = interactor.obtainUserInfo()
         
         view?.setCallButtonTitle("Позвонить")
         view?.setMessageButtonTitle("Написать")
@@ -31,7 +31,7 @@ final class UserInfoPresenter: UserInfoModule {
         updateFavoritesStatus()
         
         view?.onMessageButtonTap = { [weak self] in
-            self?.sendMessage(to: user)
+            self?.sendMessage(to: userInfo.user)
         }
         
         view?.onCallButtonTap = { [weak self] in
@@ -44,18 +44,18 @@ final class UserInfoPresenter: UserInfoModule {
         }
         
         view?.onViewDidLoad = { [weak self] in
-            self?.presentUser(user)
+            self?.presentUserInfo(userInfo)
         }
     }
     
-    private func presentUser(_ user: User) {
-        view?.setName(user.name)
+    private func presentUserInfo(_ userInfo: UserInfo) {
+        view?.setName(userInfo.user.name)
         
         view?.setAvatarImageUrl(
-            user.avatar.flatMap{ URL(string: $0.image) }
+            userInfo.user.avatar.flatMap{ URL(string: $0.image) }
         )
         
-        if let licenseNumber = user.licenses.first?.title,
+        if let licenseNumber = userInfo.user.licenses.first?.title,
             let licenseParts = LicenseParts(licenseNumber: licenseNumber) {
             view?.setLicenseParts(licenseParts)
         }

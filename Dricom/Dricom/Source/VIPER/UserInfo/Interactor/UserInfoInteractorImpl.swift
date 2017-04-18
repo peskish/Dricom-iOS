@@ -1,14 +1,14 @@
 import Foundation
 
 final class UserInfoInteractorImpl: UserInfoInteractor {
-    private let user: User
+    private let userInfo: UserInfo
     
-    init(user: User) {
-        self.user = user
+    init(userInfo: UserInfo) {
+        self.userInfo = userInfo
     }
     
     // MARK: - UserInfoInteractor
-    func obtainUser() -> User {
-        return user
+    func obtainUserInfo() -> UserInfo {
+        return userInfo
     }
 }

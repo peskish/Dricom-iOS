@@ -228,6 +228,11 @@
 		F0A115851DC68DF500A4DC76 /* ViewLifecycleObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115841DC68DF500A4DC76 /* ViewLifecycleObservable.swift */; };
 		F0A115871DC68E1D00A4DC76 /* ViewControllerTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115861DC68E1D00A4DC76 /* ViewControllerTransition.swift */; };
 		F0A115891DC6914100A4DC76 /* CrossFadePushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115881DC6914100A4DC76 /* CrossFadePushTransition.swift */; };
+		F0AE364A1EA6AF3000172E09 /* FavoriteUsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AE36491EA6AF3000172E09 /* FavoriteUsersService.swift */; };
+		F0AE364C1EA6AFEE00172E09 /* FavoriteUsersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AE364B1EA6AFEE00172E09 /* FavoriteUsersRequest.swift */; };
+		F0AE364E1EA6B00A00172E09 /* AddUserToFavoritesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AE364D1EA6B00A00172E09 /* AddUserToFavoritesRequest.swift */; };
+		F0AE36501EA6B02500172E09 /* RemoveUserFromFavoritesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AE364F1EA6B02500172E09 /* RemoveUserFromFavoritesRequest.swift */; };
+		F0AE36551EA6B11900172E09 /* SearchUserResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AE36541EA6B11900172E09 /* SearchUserResult.swift */; };
 		F0AFDA371E3D2A7000CCEE24 /* LicensePlateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AFDA361E3D2A7000CCEE24 /* LicensePlateView.swift */; };
 		F0B450721E58CFE000F3B2E4 /* AuthInfoHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450711E58CFE000F3B2E4 /* AuthInfoHolder.swift */; };
 		F0B4507A1E5A276400F3B2E4 /* RegistrationDataValidationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450791E5A276400F3B2E4 /* RegistrationDataValidationServiceTests.swift */; };
@@ -511,6 +516,11 @@
 		F0A115841DC68DF500A4DC76 /* ViewLifecycleObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewLifecycleObservable.swift; path = Dricom/Source/Presentation/ViewControllers/ViewLifecycleObservable.swift; sourceTree = SOURCE_ROOT; };
 		F0A115861DC68E1D00A4DC76 /* ViewControllerTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerTransition.swift; path = Dricom/Source/Presentation/Transitions/ViewControllerTransition.swift; sourceTree = SOURCE_ROOT; };
 		F0A115881DC6914100A4DC76 /* CrossFadePushTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CrossFadePushTransition.swift; path = Dricom/Source/Presentation/Transitions/CrossFadePushTransition.swift; sourceTree = SOURCE_ROOT; };
+		F0AE36491EA6AF3000172E09 /* FavoriteUsersService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteUsersService.swift; sourceTree = "<group>"; };
+		F0AE364B1EA6AFEE00172E09 /* FavoriteUsersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteUsersRequest.swift; path = Core/Networking/Request/FavoriteUsersRequest.swift; sourceTree = "<group>"; };
+		F0AE364D1EA6B00A00172E09 /* AddUserToFavoritesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddUserToFavoritesRequest.swift; path = Core/Networking/Request/AddUserToFavoritesRequest.swift; sourceTree = "<group>"; };
+		F0AE364F1EA6B02500172E09 /* RemoveUserFromFavoritesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoveUserFromFavoritesRequest.swift; path = Core/Networking/Request/RemoveUserFromFavoritesRequest.swift; sourceTree = "<group>"; };
+		F0AE36541EA6B11900172E09 /* SearchUserResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchUserResult.swift; path = Core/Networking/Response/SearchUserResult.swift; sourceTree = "<group>"; };
 		F0AFDA361E3D2A7000CCEE24 /* LicensePlateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LicensePlateView.swift; path = Dricom/Source/Presentation/Views/LicensePlateView.swift; sourceTree = SOURCE_ROOT; };
 		F0B450711E58CFE000F3B2E4 /* AuthInfoHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthInfoHolder.swift; sourceTree = "<group>"; };
 		F0B450771E5A276400F3B2E4 /* DricomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DricomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -611,12 +621,10 @@
 		F0128B861E49176C008E6668 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				F0B450851E5A303300F3B2E4 /* AccountRequest.swift */,
-				F0128C321E50F8CF008E6668 /* AuthRequest.swift */,
 				F0128B841E49120C008E6668 /* NetworkRequest.swift */,
-				F0128B971E4A56A9008E6668 /* RegisterRequest.swift */,
-				F0F14AB11E9D7215004752A8 /* UploadAvatarRequest.swift */,
-				F0F14AB71EA15CAF004752A8 /* SearchUserRequest.swift */,
+				F0AE36531EA6B05600172E09 /* ProfileUser */,
+				F0AE36521EA6B04B00172E09 /* Search */,
+				F0AE36511EA6B03400172E09 /* FavoriteUsers */,
 			);
 			name = Request;
 			sourceTree = "<group>";
@@ -625,6 +633,7 @@
 			isa = PBXGroup;
 			children = (
 				F0128B871E491787008E6668 /* LoginResponse.swift */,
+				F0AE36541EA6B11900172E09 /* SearchUserResult.swift */,
 			);
 			name = Response;
 			sourceTree = "<group>";
@@ -1642,6 +1651,7 @@
 			children = (
 				F0B450711E58CFE000F3B2E4 /* AuthInfoHolder.swift */,
 				F0128C341E50FB50008E6668 /* AuthorizationService.swift */,
+				F0AE36491EA6AF3000172E09 /* FavoriteUsersService.swift */,
 				F0128B951E4A566A008E6668 /* RegistrationService.swift */,
 				F0B450811E5A2D1D00F3B2E4 /* UserDataService.swift */,
 				F0F14ABB1EA1F7BB004752A8 /* UserSearchService.swift */,
@@ -1742,6 +1752,35 @@
 				F0A115881DC6914100A4DC76 /* CrossFadePushTransition.swift */,
 			);
 			name = ViewControllerTransitions;
+			sourceTree = "<group>";
+		};
+		F0AE36511EA6B03400172E09 /* FavoriteUsers */ = {
+			isa = PBXGroup;
+			children = (
+				F0AE364D1EA6B00A00172E09 /* AddUserToFavoritesRequest.swift */,
+				F0AE364B1EA6AFEE00172E09 /* FavoriteUsersRequest.swift */,
+				F0AE364F1EA6B02500172E09 /* RemoveUserFromFavoritesRequest.swift */,
+			);
+			name = FavoriteUsers;
+			sourceTree = "<group>";
+		};
+		F0AE36521EA6B04B00172E09 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F0F14AB71EA15CAF004752A8 /* SearchUserRequest.swift */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		F0AE36531EA6B05600172E09 /* ProfileUser */ = {
+			isa = PBXGroup;
+			children = (
+				F0B450851E5A303300F3B2E4 /* AccountRequest.swift */,
+				F0128C321E50F8CF008E6668 /* AuthRequest.swift */,
+				F0128B971E4A56A9008E6668 /* RegisterRequest.swift */,
+				F0F14AB11E9D7215004752A8 /* UploadAvatarRequest.swift */,
+			);
+			name = ProfileUser;
 			sourceTree = "<group>";
 		};
 		F0B450781E5A276400F3B2E4 /* DricomTests */ = {
@@ -2175,6 +2214,7 @@
 				F021D6BE1DD7B99300F50091 /* RegisterAssembly.swift in Sources */,
 				F0128C051E4F9CED008E6668 /* ScrollViewKeyboardAvoidingService.swift in Sources */,
 				F021D6CD1DD88D6100F50091 /* SpecSizes.swift in Sources */,
+				F0AE364A1EA6AF3000172E09 /* FavoriteUsersService.swift in Sources */,
 				F09209A11DC14A7F0057302F /* ApplicationAssembly.swift in Sources */,
 				F0128C091E4F9CED008E6668 /* KeyboardFrameObservingAccessoryViewDelegate.swift in Sources */,
 				F0128BA21E4A64C6008E6668 /* OptionalNetworkResponseConverterOf.swift in Sources */,
@@ -2204,11 +2244,13 @@
 				F0128B9A1E4A599E008E6668 /* NetworkRequestError.swift in Sources */,
 				F076D67D1DCF8F4900E3ED0F /* DoneButtonAccessoryView.swift in Sources */,
 				F0D038561DD3AE0500E0085D /* FeedbackAssembly.swift in Sources */,
+				F0AE364E1EA6B00A00172E09 /* AddUserToFavoritesRequest.swift in Sources */,
 				F0B450A31E60B6A400F3B2E4 /* SettingsAssembly.swift in Sources */,
 				F09209B61DC150CB0057302F /* AssemblyFactoryImpl.swift in Sources */,
 				F0823DD01DE9EEA2007BD04D /* MainPageInteractor.swift in Sources */,
 				F0A1157C1DC6863E00A4DC76 /* UIImageExtension.swift in Sources */,
 				F0128B931E4A5260008E6668 /* NetworkClient.swift in Sources */,
+				F0AE36501EA6B02500172E09 /* RemoveUserFromFavoritesRequest.swift in Sources */,
 				F0128C2F1E4F9E47008E6668 /* KeyValueObserver.swift in Sources */,
 				F0128C041E4F9CED008E6668 /* UIView+FirstResponderSettings.swift in Sources */,
 				F0823DD41DE9EEA2007BD04D /* MainPageRouter.swift in Sources */,
@@ -2270,6 +2312,7 @@
 				F021D6C81DD7B99300F50091 /* RegisterViewInput.swift in Sources */,
 				F0322B011E43CB4100F3CD47 /* AppStarterInteractorImpl.swift in Sources */,
 				F06E3F731E81B0EE00829A3F /* UserProfileAssembly.swift in Sources */,
+				F0AE36551EA6B11900172E09 /* SearchUserResult.swift in Sources */,
 				F0128C0C1E4F9CED008E6668 /* PHAssetUtilities.swift in Sources */,
 				F0128C021E4F9CED008E6668 /* KeyboardAvoidingSettings.swift in Sources */,
 				F076D66B1DCF6F3800E3ED0F /* CollectionsExtensions.swift in Sources */,
@@ -2316,6 +2359,7 @@
 				F0A115871DC68E1D00A4DC76 /* ViewControllerTransition.swift in Sources */,
 				F03DE81A1E87056D00ADC5CB /* InputFieldValidator.swift in Sources */,
 				F0128C281E4F9D39008E6668 /* ScrollViewRefresherFactory.swift in Sources */,
+				F0AE364C1EA6AFEE00172E09 /* FavoriteUsersRequest.swift in Sources */,
 				F0D0385E1DD3AE0500E0085D /* FeedbackView.swift in Sources */,
 				F09209A81DC14A7F0057302F /* ApplicationRouterImpl.swift in Sources */,
 				F0B450A41E60B6A400F3B2E4 /* SettingsAssemblyImpl.swift in Sources */,

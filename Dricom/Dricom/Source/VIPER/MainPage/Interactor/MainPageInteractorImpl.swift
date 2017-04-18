@@ -11,17 +11,21 @@ final class MainPageInteractorImpl: MainPageInteractor {
         self.userSearchService = userSearchService
         
         self.userDataService.subscribe(self) { [weak self] user in
-            self?.onUserDataReceived?(user)
+            self?.onAccountDataReceived?(user)
         }
     }
     
     // MARK: - MainPageInteractor
-    func searchUser(license: String, completion: @escaping ApiResult<User?>.Completion) {
-        userSearchService.searchUser(
-            license: license,
-            completion: completion
-        )
+    func searchUser(license: String, completion: @escaping ApiResult<UserInfo?>.Completion) {
+        userSearchService.searchUser(license: license) { result in
+            result.onData { user in
+                // TODO: get favorites and return data
+            }
+            result.onError { error in
+                completion(.error(error))
+            }
+        }
     }
     
-    var onUserDataReceived: ((User) -> ())?
+    var onAccountDataReceived: ((User) -> ())?
 }
