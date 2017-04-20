@@ -28,8 +28,6 @@ final class UserInfoPresenter: UserInfoModule {
         view?.setMessageButtonTitle("Написать")
         view?.setUserConnectionHint("Свяжитесь с пользователем удобным для вас способом")
         
-        updateFavoritesStatus()
-        
         view?.onMessageButtonTap = { [weak self] in
             self?.sendMessage(to: userInfo.user)
         }
@@ -59,10 +57,14 @@ final class UserInfoPresenter: UserInfoModule {
             let licenseParts = LicenseParts(licenseNumber: licenseNumber) {
             view?.setLicenseParts(licenseParts)
         }
+        
+        updateFavoritesStatus()
     }
     
     private func updateFavoritesStatus() {
         // TODO:
+        // обновить подпись
+        // поставить колбэк во вью
     }
     
     private func sendMessage(to user: User) {

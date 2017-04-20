@@ -7,6 +7,7 @@ protocol ServiceFactory {
     func userDataService() -> UserDataService
     func userSearchService() -> UserSearchService
     func logoutService() -> LogoutService
+    func favoriteUsersService() -> FavoriteUsersService
 }
 
 final class ServiceFactoryImpl: ServiceFactory {
@@ -61,5 +62,9 @@ final class ServiceFactoryImpl: ServiceFactory {
             dataValidationService: dataValidationService(),
             networkClient: networkClientInstance
         )
+    }
+    
+    func favoriteUsersService() -> FavoriteUsersService {
+        return FavoriteUsersServiceImpl(networkClient: networkClientInstance)
     }
 }

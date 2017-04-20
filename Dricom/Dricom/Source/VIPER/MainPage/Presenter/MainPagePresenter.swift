@@ -29,38 +29,54 @@ final class MainPagePresenter: MainPageModule {
         view?.setLicenseSearchPlaceholder("Введите номер автомобиля")
         view?.setLicenseSearchTitle("Найти пользователя")
         
+        view?.onViewDidLoad = { [weak self] in
+            self?.view?.startActivity()
+            self?.interactor.favoriteUsersList { result in
+                self?.view?.stopActivity()
+                self?.showFavoriteUsers(result.cachedData() ?? [])
+            }
+        }
+        
         view?.onLicenseSearchChange = { [weak self] license in
             self?.view?.setSearchButtonEnabled(!isEmptyOrNil(license))
         }
         
         view?.setOnSearchButtonTap { [weak self] license in
-            guard let license = license else { return }
+            self?.searchUser(license: license)
+        }
+    }
+    
+    private func searchUser(license: String?) {
+        guard let license = license else { return }
+        
+        view?.startActivity()
+        interactor.searchUser(license: license) { [weak self] result in
+            self?.view?.stopActivity()
             
-            self?.view?.startActivity()
-            self?.interactor.searchUser(license: license) { result in
-                self?.view?.stopActivity()
-                
-                result.onData { userInfo in
-                    if let userInfo = userInfo {
-                        self?.router.showUserInfo(userInfo) { userInfoModule in
-                            userInfoModule.onAddUserToFavorites = { user in
-                                print("added to favorites: \(user.id)")
-                            }
-                            
-                            userInfoModule.onRemoveUserFromFavorites = { user in
-                                print("removed from favorites: \(user.id)")
-                            }
+            result.onData { userInfo in
+                if let userInfo = userInfo {
+                    self?.router.showUserInfo(userInfo) { userInfoModule in
+                        userInfoModule.onAddUserToFavorites = { user in
+                            print("added to favorites: \(user.id)")
                         }
-                    } else {
-                        self?.router.showNoUserFound()
+                        
+                        userInfoModule.onRemoveUserFromFavorites = { user in
+                            print("removed from favorites: \(user.id)")
+                        }
                     }
-                }
-                
-                result.onError { error in
-                    self?.view?.showError(error)
+                } else {
+                    self?.router.showNoUserFound()
                 }
             }
+            
+            result.onError { error in
+                self?.view?.showError(error)
+            }
         }
+    }
+    
+    private func showFavoriteUsers(_ users: [User]) {
+        print("showFavoriteUsers: \(users)")
     }
     
     // MARK: - MainPageModule

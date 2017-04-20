@@ -6,7 +6,8 @@ final class MainPageAssemblyImpl: BaseAssembly, MainPageAssembly {
     {
         let interactor = MainPageInteractorImpl(
             userDataService: serviceFactory.userDataService(),
-            userSearchService: serviceFactory.userSearchService()
+            userSearchService: serviceFactory.userSearchService(),
+            favoriteUsersService: serviceFactory.favoriteUsersService()
         )
         
         let viewController = MainPageViewController()

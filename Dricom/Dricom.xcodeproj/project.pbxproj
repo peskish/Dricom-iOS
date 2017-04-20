@@ -269,6 +269,7 @@
 		F0D0385F1DD3AE0500E0085D /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038541DD3AE0500E0085D /* FeedbackViewController.swift */; };
 		F0D038601DD3AE0500E0085D /* FeedbackViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038551DD3AE0500E0085D /* FeedbackViewInput.swift */; };
 		F0D038621DD3AFA100E0085D /* RouterFeedbackShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038611DD3AFA100E0085D /* RouterFeedbackShowable.swift */; };
+		F0D7107A1EA95808003A06E8 /* DataLoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D710791EA95808003A06E8 /* DataLoadingState.swift */; };
 		F0F14AB01E9C211F004752A8 /* RouterPhotoPickerShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F14AAF1E9C211F004752A8 /* RouterPhotoPickerShowable.swift */; };
 		F0F14AB21E9D7215004752A8 /* UploadAvatarRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F14AB11E9D7215004752A8 /* UploadAvatarRequest.swift */; };
 		F0F14AB81EA15CAF004752A8 /* SearchUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F14AB71EA15CAF004752A8 /* SearchUserRequest.swift */; };
@@ -559,6 +560,7 @@
 		F0D038541DD3AE0500E0085D /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		F0D038551DD3AE0500E0085D /* FeedbackViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewInput.swift; sourceTree = "<group>"; };
 		F0D038611DD3AFA100E0085D /* RouterFeedbackShowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterFeedbackShowable.swift; path = Router/RouterFeedbackShowable.swift; sourceTree = "<group>"; };
+		F0D710791EA95808003A06E8 /* DataLoadingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoadingState.swift; sourceTree = "<group>"; };
 		F0F14AAF1E9C211F004752A8 /* RouterPhotoPickerShowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterPhotoPickerShowable.swift; path = Router/RouterPhotoPickerShowable.swift; sourceTree = "<group>"; };
 		F0F14AB11E9D7215004752A8 /* UploadAvatarRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UploadAvatarRequest.swift; path = Core/Networking/Request/UploadAvatarRequest.swift; sourceTree = "<group>"; };
 		F0F14AB71EA15CAF004752A8 /* SearchUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchUserRequest.swift; path = Core/Networking/Request/SearchUserRequest.swift; sourceTree = "<group>"; };
@@ -1687,6 +1689,7 @@
 				F0128C2E1E4F9E47008E6668 /* KeyValueObserver.swift */,
 				F0128BF61E4F9CED008E6668 /* PHAssetUtilities.swift */,
 				F0128BF71E4F9CED008E6668 /* RecursionBreakingClosure.swift */,
+				F0D710791EA95808003A06E8 /* DataLoadingState.swift */,
 			);
 			name = Utilities;
 			path = Core/Utilities;
@@ -2226,6 +2229,7 @@
 				F0128B981E4A56A9008E6668 /* RegisterRequest.swift in Sources */,
 				F099E3E41EA2B4040082CD92 /* UserInfoView.swift in Sources */,
 				F0322B031E43CB4100F3CD47 /* AppStarterPresenter.swift in Sources */,
+				F0D7107A1EA95808003A06E8 /* DataLoadingState.swift in Sources */,
 				F09209821DC146300057302F /* AppDelegate.swift in Sources */,
 				F099E3DF1EA2B4040082CD92 /* UserInfoInteractorImpl.swift in Sources */,
 				F0F434081DD10CAB00F278BD /* AlertDisplayable.swift in Sources */,
