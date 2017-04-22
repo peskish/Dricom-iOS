@@ -8,4 +8,5 @@ struct UserInfo {
 protocol UserInfoInteractor: class {
     func obtainUserInfo() -> UserInfo
     func changeUserFavoritesStatus(completion: @escaping ApiResult<Void>.Completion)
+    func callUser()
 }

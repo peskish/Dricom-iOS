@@ -7,6 +7,9 @@ final class UserInfoView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
     private let avatarImageView = UIImageView(image: #imageLiteral(resourceName: "Avatar"))
     private let licenceView = LicensePlateView()
     private let favoritesButton = UIButton(type: .custom)
+    private let hintLabel = UILabel()
+    private let sendMessageButton = ActionButtonView()
+    private let callButton = ActionButtonView()
     
     let preloader = StandardPreloaderView(style: .dark)
     
@@ -18,6 +21,9 @@ final class UserInfoView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
         addSubview(avatarImageView)
         addSubview(licenceView)
         addSubview(favoritesButton)
+        addSubview(hintLabel)
+        addSubview(sendMessageButton)
+        addSubview(callButton)
         
         addSubview(preloader)
         
@@ -48,6 +54,14 @@ final class UserInfoView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
         favoritesButton.setImage(#imageLiteral(resourceName: "Add photo"), for: .normal)
         favoritesButton.adjustsImageWhenHighlighted = false
         favoritesButton.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
+        
+        hintLabel.font = UIFont.drcUserHintFont()
+        hintLabel.textColor = UIColor.drcSlate
+        hintLabel.textAlignment = .center
+        hintLabel.numberOfLines = 0
+        
+        sendMessageButton.style = .dark
+        callButton.style = .dark
     }
     
     // MARK: - Layout
@@ -74,6 +88,26 @@ final class UserInfoView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
             + favoritesButton.titleEdgeInsets.right
         favoritesButton.top = licenceView.bottom + favoritesButtonPadding
         favoritesButton.centerX = bounds.centerX
+        
+        callButton.layout(
+            left: bounds.left,
+            right: bounds.right,
+            bottom: bounds.bottom - SpecMargins.contentSidePadding,
+            height: SpecSizes.actionButtonHeight
+        )
+        
+        sendMessageButton.layout(
+            left: bounds.left,
+            right: bounds.right,
+            bottom: callButton.top - SpecMargins.contentMargin,
+            height: SpecSizes.actionButtonHeight
+        )
+        
+        hintLabel.size = hintLabel.sizeThatFits(
+            CGSize(width: bounds.width - (2 * SpecMargins.contentSidePadding), height: .greatestFiniteMagnitude)
+        )
+        hintLabel.centerX = bounds.centerX
+        hintLabel.bottom = sendMessageButton.top - SpecMargins.contentMargin
         
         preloader.frame = bounds
     }
@@ -129,20 +163,35 @@ final class UserInfoView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
     }
     
     func setUserConnectionHint(_ hint: String) {
-        
+        hintLabel.text = hint
+        setNeedsLayout()
     }
     
     func setCallButtonTitle(_ title: String) {
-        
+        callButton.setTitle(title)
     }
     
-    var onCallButtonTap: (() -> ())?
+    func setCallButtonEnabled(_ enabled: Bool) {
+        callButton.setEnabled(enabled)
+    }
+    
+    var onCallButtonTap: (() -> ())? {
+        get { return callButton.onTap }
+        set { callButton.onTap = newValue }
+    }
     
     func setMessageButtonTitle(_ title: String) {
-        
+        sendMessageButton.setTitle(title)
     }
     
-    var onMessageButtonTap: (() -> ())?
+    func setMessageButtonEnabled(_ enabled: Bool) {
+        sendMessageButton.setEnabled(enabled)
+    }
+    
+    var onMessageButtonTap: (() -> ())? {
+        get { return sendMessageButton.onTap }
+        set { sendMessageButton.onTap = newValue }
+    }
     
     var onCloseTap: (() -> ())?
     @objc private func handleClose(_ sender: UIGestureRecognizer) {

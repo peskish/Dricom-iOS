@@ -34,7 +34,7 @@ final class NoUserFoundView: UIView {
         messageLabel.textAlignment = .center
         messageLabel.textColor = UIColor.drcSlate
         
-        descriptionLabel.font = UIFont.drcNoUserDescriptionFont()
+        descriptionLabel.font = UIFont.drcUserHintFont()
         descriptionLabel.textColor = UIColor.drcSlate
         descriptionLabel.textAlignment = .center
         descriptionLabel.numberOfLines = 0

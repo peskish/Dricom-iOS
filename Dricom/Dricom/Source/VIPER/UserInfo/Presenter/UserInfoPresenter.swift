@@ -26,15 +26,16 @@ final class UserInfoPresenter: UserInfoModule {
         
         view?.setCallButtonTitle("Позвонить")
         view?.setMessageButtonTitle("Написать")
-        view?.setUserConnectionHint("Свяжитесь с пользователем удобным для вас способом")
+        view?.setUserConnectionHint("Свяжитесь с пользователем удобным\nдля вас способом")
+        
+        view?.setCallButtonEnabled(userInfo.user.phone != nil)
         
         view?.onMessageButtonTap = { [weak self] in
             self?.sendMessage(to: userInfo.user)
         }
         
         view?.onCallButtonTap = { [weak self] in
-            // TODO:
-            print("Call the man")
+            self?.interactor.callUser()
         }
         
         view?.onCloseTap = { [weak self] in
@@ -69,6 +70,13 @@ final class UserInfoPresenter: UserInfoModule {
                 self?.view?.stopActivity()
                 result.onData {
                     guard let userInfo = self?.interactor.obtainUserInfo() else { return }
+                    
+                    if userInfo.isInFavorites {
+                        self?.onAddUserToFavorites?(userInfo.user)
+                    } else {
+                        self?.onRemoveUserFromFavorites?(userInfo.user)
+                    }
+                    
                     self?.presentUserInfo(userInfo)
                 }
                 result.onError { networkRequestError in
@@ -79,7 +87,7 @@ final class UserInfoPresenter: UserInfoModule {
     }
     
     private func sendMessage(to user: User) {
-        // TODO: открыть чат с пользователем
+        router.openChat(with: user)
     }
     
     // MARK: - UserInfoModule

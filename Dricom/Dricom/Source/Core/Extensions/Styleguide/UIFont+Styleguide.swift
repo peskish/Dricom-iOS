@@ -69,7 +69,7 @@ extension UIFont {
         return UIFont(name: "Rubik-Regular", size: 14.0)
     }
     
-    class func drcNoUserDescriptionFont() -> UIFont? {
+    class func drcUserHintFont() -> UIFont? {
         return UIFont(name: "Rubik-Regular", size: 14.0)
     }
     

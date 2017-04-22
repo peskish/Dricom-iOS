@@ -38,6 +38,10 @@ final class UserInfoViewController: BaseViewController, UserInfoViewInput {
         userInfoView.setCallButtonTitle(title)
     }
     
+    func setCallButtonEnabled(_ enabled: Bool) {
+        userInfoView.setCallButtonEnabled(enabled)
+    }
+    
     var onCallButtonTap: (() -> ())? {
         get { return userInfoView.onCallButtonTap }
         set { userInfoView.onCallButtonTap = newValue }
@@ -45,6 +49,10 @@ final class UserInfoViewController: BaseViewController, UserInfoViewInput {
     
     func setMessageButtonTitle(_ title: String) {
         userInfoView.setMessageButtonTitle(title)
+    }
+    
+    func setMessageButtonEnabled(_ enabled: Bool) {
+        userInfoView.setMessageButtonEnabled(enabled)
     }
     
     var onMessageButtonTap: (() -> ())? {

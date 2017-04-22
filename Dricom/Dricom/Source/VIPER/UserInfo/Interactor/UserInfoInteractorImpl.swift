@@ -6,11 +6,13 @@ final class UserInfoInteractorImpl: UserInfoInteractor {
     
     // MARK: - Dependencies
     private let favoriteUsersService: FavoriteUsersService
+    private let phoneService: PhoneService
     
     // MARK: - Init
-    init(userInfo: UserInfo, favoriteUsersService: FavoriteUsersService) {
+    init(userInfo: UserInfo, favoriteUsersService: FavoriteUsersService, phoneService: PhoneService) {
         self.userInfo = userInfo
         self.favoriteUsersService = favoriteUsersService
+        self.phoneService = phoneService
     }
     
     // MARK: - UserInfoInteractor
@@ -44,5 +46,10 @@ final class UserInfoInteractorImpl: UserInfoInteractor {
                 }
             }
         }
+    }
+    
+    func callUser() {
+        guard let phone = userInfo.user.phone else { return }
+        phoneService.call(number: phone)
     }
 }

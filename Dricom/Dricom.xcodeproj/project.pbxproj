@@ -270,6 +270,7 @@
 		F0D038601DD3AE0500E0085D /* FeedbackViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038551DD3AE0500E0085D /* FeedbackViewInput.swift */; };
 		F0D038621DD3AFA100E0085D /* RouterFeedbackShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038611DD3AFA100E0085D /* RouterFeedbackShowable.swift */; };
 		F0D7107A1EA95808003A06E8 /* DataLoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D710791EA95808003A06E8 /* DataLoadingState.swift */; };
+		F0D710821EABEA16003A06E8 /* PhoneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D710811EABEA16003A06E8 /* PhoneService.swift */; };
 		F0F14AB01E9C211F004752A8 /* RouterPhotoPickerShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F14AAF1E9C211F004752A8 /* RouterPhotoPickerShowable.swift */; };
 		F0F14AB21E9D7215004752A8 /* UploadAvatarRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F14AB11E9D7215004752A8 /* UploadAvatarRequest.swift */; };
 		F0F14AB81EA15CAF004752A8 /* SearchUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F14AB71EA15CAF004752A8 /* SearchUserRequest.swift */; };
@@ -561,6 +562,7 @@
 		F0D038551DD3AE0500E0085D /* FeedbackViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewInput.swift; sourceTree = "<group>"; };
 		F0D038611DD3AFA100E0085D /* RouterFeedbackShowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterFeedbackShowable.swift; path = Router/RouterFeedbackShowable.swift; sourceTree = "<group>"; };
 		F0D710791EA95808003A06E8 /* DataLoadingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoadingState.swift; sourceTree = "<group>"; };
+		F0D710811EABEA16003A06E8 /* PhoneService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhoneService.swift; path = Dricom/Source/VIPER/Services/Device/PhoneService.swift; sourceTree = SOURCE_ROOT; };
 		F0F14AAF1E9C211F004752A8 /* RouterPhotoPickerShowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterPhotoPickerShowable.swift; path = Router/RouterPhotoPickerShowable.swift; sourceTree = "<group>"; };
 		F0F14AB11E9D7215004752A8 /* UploadAvatarRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UploadAvatarRequest.swift; path = Core/Networking/Request/UploadAvatarRequest.swift; sourceTree = "<group>"; };
 		F0F14AB71EA15CAF004752A8 /* SearchUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchUserRequest.swift; path = Core/Networking/Request/SearchUserRequest.swift; sourceTree = "<group>"; };
@@ -1643,6 +1645,7 @@
 				F0A115361DC630A500A4DC76 /* Factory */,
 				F0A115291DC62C6900A4DC76 /* Network */,
 				F021D7AA1DE0E64300F50091 /* Validation */,
+				F0D710811EABEA16003A06E8 /* PhoneService.swift */,
 			);
 			name = Services;
 			path = Application;
@@ -2176,6 +2179,7 @@
 				F076D67F1DCFAEF400E3ED0F /* ViewControllerPosition.swift in Sources */,
 				F0128C001E4F9CED008E6668 /* ContentFittingFunctionBuilder.swift in Sources */,
 				F0B450861E5A303300F3B2E4 /* AccountRequest.swift in Sources */,
+				F0D710821EABEA16003A06E8 /* PhoneService.swift in Sources */,
 				F076D6551DCF6D2000E3ED0F /* MessageDisplayable.swift in Sources */,
 				F076D6701DCF6F3800E3ED0F /* SequenceTypeExtensions.swift in Sources */,
 				F0B450B81E61BE7F00F3B2E4 /* SettingsActionCell.swift in Sources */,
