@@ -7,7 +7,10 @@ final class UserInfoAssemblyImpl: BaseAssembly, UserInfoAssembly {
         configure: (_ module: UserInfoModule) -> ())
         -> UIViewController
     {
-        let interactor = UserInfoInteractorImpl(userInfo: userInfo)
+        let interactor = UserInfoInteractorImpl(
+            userInfo: userInfo,
+            favoriteUsersService: serviceFactory.favoriteUsersService()
+        )
         
         let viewController = UserInfoViewController()
         

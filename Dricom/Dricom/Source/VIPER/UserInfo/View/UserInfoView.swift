@@ -108,7 +108,19 @@ final class UserInfoView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
     }
     
     func setFavoritesButtonTitle(_ title: String) {
-        favoritesButton.setTitle(title, for: .normal)
+        var attributes: [String: Any] = [
+            NSForegroundColorAttributeName: UIColor.drcBlue,
+            NSFontAttributeName: UIFont.drcAddPhotoFont() ?? .systemFont(ofSize: 15)
+        ]
+        let normalTitle = NSAttributedString(string: title, attributes: attributes)
+        
+        attributes[NSForegroundColorAttributeName] = UIColor.drcWarmBlue
+        let highlightedTitle = NSAttributedString(string: title, attributes: attributes)
+        
+        favoritesButton.setAttributedTitle(normalTitle, for: .normal)
+        favoritesButton.setAttributedTitle(highlightedTitle, for: .highlighted)
+        
+        setNeedsLayout()
     }
     
     var onFavoritesButtonTap: (() -> ())?

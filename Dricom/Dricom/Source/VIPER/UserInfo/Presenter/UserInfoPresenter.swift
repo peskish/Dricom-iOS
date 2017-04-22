@@ -58,17 +58,28 @@ final class UserInfoPresenter: UserInfoModule {
             view?.setLicenseParts(licenseParts)
         }
         
-        updateFavoritesStatus()
-    }
-    
-    private func updateFavoritesStatus() {
-        // TODO:
-        // обновить подпись
-        // поставить колбэк во вью
+        let favoritesButtonTitle = userInfo.isInFavorites
+            ? "Удалить из избранного"
+            : "Добавить в избранное"
+        view?.setFavoritesButtonTitle(favoritesButtonTitle)
+        
+        view?.onFavoritesButtonTap = { [weak self] in
+            self?.view?.startActivity()
+            self?.interactor.changeUserFavoritesStatus { result in
+                self?.view?.stopActivity()
+                result.onData {
+                    guard let userInfo = self?.interactor.obtainUserInfo() else { return }
+                    self?.presentUserInfo(userInfo)
+                }
+                result.onError { networkRequestError in
+                    self?.view?.showError(networkRequestError)
+                }
+            }
+        }
     }
     
     private func sendMessage(to user: User) {
-        // TODO:
+        // TODO: открыть чат с пользователем
     }
     
     // MARK: - UserInfoModule
