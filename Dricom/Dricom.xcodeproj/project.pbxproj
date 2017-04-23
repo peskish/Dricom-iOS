@@ -278,6 +278,7 @@
 		F0F14ABC1EA1F7BB004752A8 /* UserSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F14ABB1EA1F7BB004752A8 /* UserSearchService.swift */; };
 		F0F434081DD10CAB00F278BD /* AlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F434071DD10CAB00F278BD /* AlertDisplayable.swift */; };
 		F0F4340B1DD10CC500F278BD /* WindowWaiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F4340A1DD10CC500F278BD /* WindowWaiter.swift */; };
+		F0F888201EAD407A00F1C93D /* ChangeAccountInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8881F1EAD407A00F1C93D /* ChangeAccountInfoRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -570,6 +571,7 @@
 		F0F14ABB1EA1F7BB004752A8 /* UserSearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearchService.swift; sourceTree = "<group>"; };
 		F0F434071DD10CAB00F278BD /* AlertDisplayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertDisplayable.swift; path = MessageDisplaying/AlertDisplayable.swift; sourceTree = "<group>"; };
 		F0F4340A1DD10CC500F278BD /* WindowWaiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowWaiter.swift; sourceTree = "<group>"; };
+		F0F8881F1EAD407A00F1C93D /* ChangeAccountInfoRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeAccountInfoRequest.swift; path = Core/Networking/Request/ChangeAccountInfoRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1781,8 +1783,9 @@
 		F0AE36531EA6B05600172E09 /* ProfileUser */ = {
 			isa = PBXGroup;
 			children = (
-				F0B450851E5A303300F3B2E4 /* AccountRequest.swift */,
 				F0128C321E50F8CF008E6668 /* AuthRequest.swift */,
+				F0B450851E5A303300F3B2E4 /* AccountRequest.swift */,
+				F0F8881F1EAD407A00F1C93D /* ChangeAccountInfoRequest.swift */,
 				F0128B971E4A56A9008E6668 /* RegisterRequest.swift */,
 				F0F14AB11E9D7215004752A8 /* UploadAvatarRequest.swift */,
 			);
@@ -2389,6 +2392,7 @@
 				F0823DD71DE9EEA2007BD04D /* MainPageViewController.swift in Sources */,
 				F0128C2D1E4F9D39008E6668 /* ScrollViewRefresherState.swift in Sources */,
 				F0128B791E45182A008E6668 /* ViewControllerExtensions.swift in Sources */,
+				F0F888201EAD407A00F1C93D /* ChangeAccountInfoRequest.swift in Sources */,
 				F0B450A81E60B6A400F3B2E4 /* SettingsPresenter.swift in Sources */,
 				F021D6E81DD8925B00F50091 /* CameraPresenter.swift in Sources */,
 				F0128C0D1E4F9CED008E6668 /* RecursionBreakingClosure.swift in Sources */,

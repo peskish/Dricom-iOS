@@ -18,14 +18,14 @@ final class UserProfileView: UIView, ActivityDisplayable, StandardPreloaderViewH
     init() {
         super.init(frame: .zero)
         
-        addSubview(preloader)
-        
         addSubview(avatarImageView)
         addSubview(changePhotoButton)
         
         addSubview(nameInputView)
         addSubview(emailInputView)
         addSubview(phoneInputView)
+        
+        addSubview(preloader)
         
         emailInputView.keyboardType = .emailAddress
         phoneInputView.keyboardType = .phonePad
@@ -55,7 +55,6 @@ final class UserProfileView: UIView, ActivityDisplayable, StandardPreloaderViewH
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        avatarImageView.sizeToFit()
         avatarImageView.centerX = bounds.centerX
         avatarImageView.top = bounds.top + 15
         

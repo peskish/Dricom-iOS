@@ -16,5 +16,6 @@ protocol UserProfileViewInput: class,
     func setAvatarImageUrl(_ avatarImageUrl: URL?)
     func setAddPhotoTitle(_ title: String)
     func setAddPhotoTitleVisible(_ isVisible: Bool)
+    func setUserInteractionEnabled(_ isEnabled: Bool)
     func endEditing()
 }

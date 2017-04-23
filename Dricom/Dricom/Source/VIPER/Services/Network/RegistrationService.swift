@@ -77,6 +77,7 @@ final class RegistrationServiceImpl: RegistrationService {
         completion: @escaping ApiResult<Void>.Completion)
     {
         DispatchQueue.main.async {
+            self.loginResponseProcessor.processLoginResponse(loginResponse)
             self.userDataNotifier.notifyOnUserDataReceived(loginResponse.user)
             completion(.data())
         }

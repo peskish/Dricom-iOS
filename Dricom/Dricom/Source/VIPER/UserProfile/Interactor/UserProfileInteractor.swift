@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 protocol UserProfileInteractor: class {
     func requestUserData(completion: ApiResult<Void>.Completion?)
@@ -9,4 +9,7 @@ protocol UserProfileInteractor: class {
     func validateName() -> InputFieldError?
     func validateEmail() -> InputFieldError?
     func validatePhone() -> InputFieldError?
+    func validateData(completion: @escaping (DataValidationResult) -> ())
+    func setAvatar(_ avatar: UIImage?)
+    func saveChanges(completion: @escaping ApiResult<Void>.Completion)
 }

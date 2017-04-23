@@ -7,6 +7,7 @@ enum DataValidationResult {
 
 protocol DataValidationService {
     func validateData(_ data: RegisterData, completion: @escaping (DataValidationResult) -> ())
+    func validateData(_ data: UserProfileDataChangeSet, completion: @escaping (DataValidationResult) -> ())
     func validateName(_ name: String?) -> InputFieldError?
     func validateEmail(_ email: String?) -> InputFieldError?
     func validateLicense(_ license: String?) -> InputFieldError?
@@ -25,6 +26,22 @@ final class DataValidationServiceImpl: DataValidationService {
             validator.validatePhone(data.phone),
             validator.validatePassword(data.password),
             validator.validatePasswordConfirmation(data.passwordConfirmation, password: data.password)
+            ].flatMap{$0}
+        
+        if errors.isEmpty {
+            completion(.correct)
+        } else {
+            completion(.incorrect(errors: errors))
+        }
+    }
+    
+    func validateData(_ data: UserProfileDataChangeSet, completion: @escaping (DataValidationResult) -> ()) {
+        let validator = InputFieldValidator()
+        
+        let errors: [InputFieldError] = [
+            validator.validateName(data.name),
+            validator.validateEmail(data.email),
+            validator.validatePhone(data.phone)
             ].flatMap{$0}
         
         if errors.isEmpty {

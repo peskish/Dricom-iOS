@@ -30,16 +30,15 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
         textField.placeholderNormalFontScale = 1
         textField.placeholderEditingFontScale = 0.75
         textField.font = UIFont.drcInputPlaceholderFont()
-        textField.borderInactiveColor = .drcSilver
+        textField.borderInactiveColor = .drcSlate
+        textField.borderActiveColor = .drcSlate
+        textField.placeholderColor = .drcSlate
+        textField.textColor = .drcSlate
         
         if isEnabled {
-            textField.placeholderColor = .drcSlate
-            textField.borderActiveColor = .drcSlate
-            textField.textColor = .drcSlate
+            textField.alpha = 1
         } else {
-            textField.placeholderColor = .drcSilver
-            textField.borderActiveColor = .drcSilver
-            textField.textColor = .drcSilver
+            textField.alpha = 0.75
         }
     }
     

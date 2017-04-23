@@ -26,6 +26,11 @@ extension InputFieldsContainer {
         inputField?.placeholder = placeholder
     }
     
+    func setInputValue(field: InputField, value: String?) {
+        let inputField = inputFieldView(field: field)
+        inputField?.text = value
+    }
+    
     func setStateAccordingToErrors(_ errors: [InputFieldError]) {
         allFields().forEach{ field in
             let state: InputFieldViewState = errors.contains(where: { $0.field == field })

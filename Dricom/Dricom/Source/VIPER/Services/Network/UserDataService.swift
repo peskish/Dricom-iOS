@@ -1,5 +1,15 @@
+import UIKit
+
+struct UserProfileDataChangeSet {
+    var avatar: UIImage?
+    var name: String?
+    var email: String?
+    var phone: String?
+}
+
 protocol UserDataService: class {
     func requestUserData(completion: ApiResult<Void>.Completion?)
+    func changeUserData(with changeSet: UserProfileDataChangeSet, completion: @escaping ApiResult<Void>.Completion)
     func subscribe(_ observer: AnyObject, onUserDataReceived: @escaping (User) -> ())
 }
 
@@ -15,13 +25,15 @@ private struct UserDataSubscriber {
 final class UserDataServiceImpl: UserDataService, UserDataNotifier {
     // MARK: - Dependencies
     private let networkClient: NetworkClient
+    private let loginResponseProcessor: LoginResponseProcessor
     
     // MARK: - Properties
     private var subscribers = [UserDataSubscriber]()
     
     // MARK: - Init
-    init(networkClient: NetworkClient) {
+    init(networkClient: NetworkClient, loginResponseProcessor: LoginResponseProcessor) {
         self.networkClient = networkClient
+        self.loginResponseProcessor = loginResponseProcessor
     }
     
     // MARK: - UserDataService
@@ -49,7 +61,55 @@ final class UserDataServiceImpl: UserDataService, UserDataNotifier {
         subscribers.append(subscriber)
     }
     
+    func changeUserData(with changeSet: UserProfileDataChangeSet, completion: @escaping ApiResult<Void>.Completion) {
+        let request = ChangeAccountInfoRequest(
+            email: changeSet.email,
+            name: changeSet.name,
+            phone: changeSet.phone
+        )
+        
+        networkClient.send(request: request) { [weak self] result in
+            result.onData { loginResponse in
+                self?.loginResponseProcessor.processLoginResponse(loginResponse)
+                
+                if let avatar = changeSet.avatar {
+                    DispatchQueue.global().async {
+                        if let avatarImageData = UIImageJPEGRepresentation(avatar, 0.9) {
+                            let uploadAvatarRequest = UploadAvatarRequest(imageData: avatarImageData)
+                            self?.networkClient.send(request: uploadAvatarRequest) { uploadAvatarResult in
+                                uploadAvatarResult.onData { avatarLoginResponse in
+                                    self?.processLoginResponce(avatarLoginResponse, completion: completion)
+                                }
+                                uploadAvatarResult.onError { avatarError in
+                                    debugPrint(avatarError)
+                                    self?.processLoginResponce(loginResponse, completion: completion)
+                                }
+                            }
+                        } else {
+                            self?.processLoginResponce(loginResponse, completion: completion)
+                        }
+                    }
+                } else {
+                    self?.processLoginResponce(loginResponse, completion: completion)
+                }
+            }
+            result.onError { networkRequestError in
+                completion(.error(networkRequestError))
+            }
+        }
+    }
+    
     // MARK: - Private
+    private func processLoginResponce(
+        _ loginResponse: LoginResponse,
+        completion: @escaping ApiResult<Void>.Completion)
+    {
+        DispatchQueue.main.async {
+            self.loginResponseProcessor.processLoginResponse(loginResponse)
+            self.notifyOnUserDataReceived(loginResponse.user)
+            completion(.data())
+        }
+    }
     
     func notifyOnUserDataReceived(_ user: User) {
         self.allSubscribers().forEach { $0.onUserDataReceived(user) }

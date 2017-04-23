@@ -1,12 +1,5 @@
 import UIKit
 
-struct UserProfileDataChangeSet {
-    var avatar: UIImage?
-    var name: String?
-    var email: String?
-    var phone: String?
-}
-
 final class UserProfileInteractorImpl: UserProfileInteractor {
     // MARK: - Dependencies
     private let userDataService: UserDataService
@@ -21,6 +14,10 @@ final class UserProfileInteractorImpl: UserProfileInteractor {
         self.dataValidationService = dataValidationService
         
         self.userDataService.subscribe(self) { [weak self] user in
+            self?.userDataChangeSet.name = user.name
+            self?.userDataChangeSet.phone = user.phone
+            self?.userDataChangeSet.email = user.email
+            
             self?.onUserDataReceived?(user)
         }
     }
@@ -44,6 +41,10 @@ final class UserProfileInteractorImpl: UserProfileInteractor {
         return dataValidationService.validatePhone(userDataChangeSet.phone)
     }
     
+    func validateData(completion: @escaping (DataValidationResult) -> ()) {
+        return dataValidationService.validateData(userDataChangeSet, completion: completion)
+    }
+    
     func setName(_ name: String?) {
         userDataChangeSet.name = name?.trimmingCharacters(in: .whitespacesAndNewlines)
     }
@@ -54,5 +55,13 @@ final class UserProfileInteractorImpl: UserProfileInteractor {
     
     func setPhone(_ phone: String?) {
         userDataChangeSet.phone = phone?.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    
+    func setAvatar(_ avatar: UIImage?) {
+        userDataChangeSet.avatar = avatar
+    }
+    
+    func saveChanges(completion: @escaping ApiResult<Void>.Completion) {
+        userDataService.changeUserData(with: userDataChangeSet, completion: completion)
     }
 }

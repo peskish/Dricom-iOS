@@ -21,7 +21,10 @@ final class ServiceFactoryImpl: ServiceFactory {
     init() {
         authInfoHolderInstance = AuthInfoHolder()
         networkClientInstance = NetworkClientImpl(authorizationStatusHolder: authInfoHolderInstance)
-        userDataServiceInstance = UserDataServiceImpl(networkClient: networkClientInstance)
+        userDataServiceInstance = UserDataServiceImpl(
+            networkClient: networkClientInstance,
+            loginResponseProcessor: authInfoHolderInstance
+        )
     }
     
     // MARK: - ServiceFactory

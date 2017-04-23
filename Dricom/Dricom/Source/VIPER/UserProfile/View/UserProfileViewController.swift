@@ -28,6 +28,12 @@ final class UserProfileViewController: BaseViewController, UserProfileViewInput,
     }
     
     // MARK: - UserProfileViewInput
+    func setUserInteractionEnabled(_ isEnabled: Bool) {
+        view.isUserInteractionEnabled = isEnabled
+        navigationController?.navigationBar.isUserInteractionEnabled = isEnabled
+        navigationController?.view.isUserInteractionEnabled = isEnabled
+    }
+    
     func setViewTitle(_ title: String) {
         self.title = title
     }
