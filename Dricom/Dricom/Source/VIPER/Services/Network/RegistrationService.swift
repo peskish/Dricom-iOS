@@ -51,19 +51,14 @@ final class RegistrationServiceImpl: RegistrationService {
                             self?.networkClient.send(request: uploadAvatarRequest) { uploadAvatarResult in
                                 // No matter success or failure - user was registered already
                                 uploadAvatarResult.onData { avatarLoginResponse in
-                                    self?.processLoginResponce(avatarLoginResponse, completion: completion)
+                                    self?.processLoginResponse(avatarLoginResponse, completion: completion)
                                 }
                                 uploadAvatarResult.onError { avatarError in
                                     debugPrint(avatarError)
-                                    self?.processLoginResponce(loginResponse, completion: completion)
                                 }
                             }
-                        } else {
-                            self?.processLoginResponce(loginResponse, completion: completion)
                         }
                     }
-                } else {
-                    self?.processLoginResponce(loginResponse, completion: completion)
                 }
             }
             result.onError { networkRequestError in
@@ -72,12 +67,11 @@ final class RegistrationServiceImpl: RegistrationService {
         }
     }
     
-    private func processLoginResponce(
+    private func processLoginResponse(
         _ loginResponse: LoginResponse,
         completion: @escaping ApiResult<Void>.Completion)
     {
         DispatchQueue.main.async {
-            self.loginResponseProcessor.processLoginResponse(loginResponse)
             self.userDataNotifier.notifyOnUserDataReceived(loginResponse.user)
             completion(.data())
         }

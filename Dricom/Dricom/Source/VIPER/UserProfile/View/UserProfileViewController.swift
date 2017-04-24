@@ -93,10 +93,12 @@ final class UserProfileViewController: BaseViewController, UserProfileViewInput,
     // MARK: ActivityDisplayable
     func startActivity() {
         userProfileView.startActivity()
+        setUserInteractionEnabled(false)
     }
     
     func stopActivity() {
         userProfileView.stopActivity()
+        setUserInteractionEnabled(true)
     }
     
     // MARK: InputFieldsContainerHolder

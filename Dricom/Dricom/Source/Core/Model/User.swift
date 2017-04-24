@@ -7,7 +7,9 @@ struct User: Equatable, Unboxable {
     
         // MARK: - Unboxable
         init(unboxer: Unboxer) throws {
-            image = try unboxer.unbox(key: "image")
+            // Kludge to reflect the strange API behavior - it pass only path sometimes
+            let imageUrl: String = try unboxer.unbox(key: "image")
+            image = imageUrl.hasPrefix(baseUrl) ? imageUrl : baseUrl + imageUrl
         }
         
         // MARK: - Equatable

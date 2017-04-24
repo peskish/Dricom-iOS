@@ -81,7 +81,7 @@ final class UserProfilePresenter:
         interactor.validateData { [weak self] result in
             switch result {
             case .correct:
-                self?.view?.setRightButtonEnabled(true)
+                self?.view?.setRightButtonEnabled(self?.interactor.hasChanges() == true)
                 self?.view?.setState(.normal, to: field)
             case .incorrect(let errors):
                 self?.view?.setRightButtonEnabled(false)
@@ -197,6 +197,8 @@ final class UserProfilePresenter:
         view?.setAvatarPhotoImage(croppedAvatar)
         
         view?.setAddPhotoTitleVisible(false)
+        
+        view?.setRightButtonEnabled(interactor.hasChanges())
     }
     
     // MARK: - UserProfileModule

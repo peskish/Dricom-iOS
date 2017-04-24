@@ -6,7 +6,8 @@ final class UserProfileInteractorImpl: UserProfileInteractor {
     private let dataValidationService: DataValidationService
     
     // MARK: - State
-    var userDataChangeSet = UserProfileDataChangeSet()
+    var originalChangeSet = UserProfileDataChangeSet()
+    var updatedChangeSet = UserProfileDataChangeSet()
     
     // MARK: - Init
     init(userDataService: UserDataService, dataValidationService: DataValidationService) {
@@ -14,11 +15,16 @@ final class UserProfileInteractorImpl: UserProfileInteractor {
         self.dataValidationService = dataValidationService
         
         self.userDataService.subscribe(self) { [weak self] user in
-            self?.userDataChangeSet.name = user.name
-            self?.userDataChangeSet.phone = user.phone
-            self?.userDataChangeSet.email = user.email
+            guard let `self` = self else { return }
             
-            self?.onUserDataReceived?(user)
+            self.originalChangeSet.name = user.name
+            self.originalChangeSet.phone = user.phone
+            self.originalChangeSet.email = user.email
+            self.originalChangeSet.avatar = nil
+            
+            self.updatedChangeSet = self.originalChangeSet
+            
+            self.onUserDataReceived?(user)
         }
     }
     
@@ -30,38 +36,53 @@ final class UserProfileInteractorImpl: UserProfileInteractor {
     var onUserDataReceived: ((User) -> ())?
     
     func validateName() -> InputFieldError? {
-        return dataValidationService.validateName(userDataChangeSet.name)
+        return dataValidationService.validateName(updatedChangeSet.name)
     }
     
     func validateEmail() -> InputFieldError? {
-        return dataValidationService.validateEmail(userDataChangeSet.email)
+        return dataValidationService.validateEmail(updatedChangeSet.email)
     }
     
     func validatePhone() -> InputFieldError? {
-        return dataValidationService.validatePhone(userDataChangeSet.phone)
+        return dataValidationService.validatePhone(updatedChangeSet.phone)
     }
     
     func validateData(completion: @escaping (DataValidationResult) -> ()) {
-        return dataValidationService.validateData(userDataChangeSet, completion: completion)
+        return dataValidationService.validateData(updatedChangeSet, completion: completion)
     }
     
     func setName(_ name: String?) {
-        userDataChangeSet.name = name?.trimmingCharacters(in: .whitespacesAndNewlines)
+        updatedChangeSet.name = name?.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
     func setEmail(_ email: String?) {
-        userDataChangeSet.email = email?.trimmingCharacters(in: .whitespacesAndNewlines)
+        updatedChangeSet.email = email?.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
     func setPhone(_ phone: String?) {
-        userDataChangeSet.phone = phone?.trimmingCharacters(in: .whitespacesAndNewlines)
+        updatedChangeSet.phone = phone?.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
     func setAvatar(_ avatar: UIImage?) {
-        userDataChangeSet.avatar = avatar
+        updatedChangeSet.avatar = avatar
+    }
+    
+    func hasChanges() -> Bool {
+        return hasChangesInFields() || updatedChangeSet.avatar != nil
     }
     
     func saveChanges(completion: @escaping ApiResult<Void>.Completion) {
-        userDataService.changeUserData(with: userDataChangeSet, completion: completion)
+        if hasChangesInFields() {
+            userDataService.changeUserData(with: updatedChangeSet, completion: completion)
+        } else if let avatar = updatedChangeSet.avatar {
+            userDataService.changeUserAvatar(avatar, completion: completion)
+        }
+    }
+    
+    // MARK: - Private
+    private func hasChangesInFields() -> Bool {
+        return originalChangeSet.name != updatedChangeSet.name
+            || originalChangeSet.phone != updatedChangeSet.phone
+            || originalChangeSet.email != updatedChangeSet.email
     }
 }

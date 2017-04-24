@@ -11,5 +11,6 @@ protocol UserProfileInteractor: class {
     func validatePhone() -> InputFieldError?
     func validateData(completion: @escaping (DataValidationResult) -> ())
     func setAvatar(_ avatar: UIImage?)
+    func hasChanges() -> Bool
     func saveChanges(completion: @escaping ApiResult<Void>.Completion)
 }

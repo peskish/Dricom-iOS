@@ -1,5 +1,7 @@
 import Alamofire
 
+let baseUrl = "http://dricom.hftgeek.com"
+
 protocol NetworkClient: class {
     func send<T, R: NetworkRequest>(
         request: R,
@@ -11,9 +13,6 @@ protocol NetworkClient: class {
 }
 
 final class NetworkClientImpl: NetworkClient {
-    // MARK: - Properties
-    private let baseUrl = "http://dricom.hftgeek.com/"
-    
     // MARK: - Dependencies
     private let authorizationStatusHolder: AuthorizationStatusHolder
     
@@ -160,7 +159,7 @@ final class NetworkClientImpl: NetworkClient {
     
     // MARK: URL
     private func makeUrl<R: NetworkRequest>(from request: R) -> URL? {
-        var urlString = baseUrl + request.path
+        var urlString = baseUrl + "/" + request.path
         if request.httpMethod == .post {
             // Django requires the trailing `/` for POST requests, it fails with 500 otherwise
             urlString += "/"

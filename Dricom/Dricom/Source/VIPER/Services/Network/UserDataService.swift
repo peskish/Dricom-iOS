@@ -5,11 +5,16 @@ struct UserProfileDataChangeSet {
     var name: String?
     var email: String?
     var phone: String?
+    
+    var hasFieldChanges: Bool {
+        return name != nil || email != nil || phone != nil
+    }
 }
 
 protocol UserDataService: class {
     func requestUserData(completion: ApiResult<Void>.Completion?)
     func changeUserData(with changeSet: UserProfileDataChangeSet, completion: @escaping ApiResult<Void>.Completion)
+    func changeUserAvatar(_ avatar: UIImage, completion: @escaping ApiResult<Void>.Completion)
     func subscribe(_ observer: AnyObject, onUserDataReceived: @escaping (User) -> ())
 }
 
@@ -62,50 +67,50 @@ final class UserDataServiceImpl: UserDataService, UserDataNotifier {
     }
     
     func changeUserData(with changeSet: UserProfileDataChangeSet, completion: @escaping ApiResult<Void>.Completion) {
-        let request = ChangeAccountInfoRequest(
-            email: changeSet.email,
-            name: changeSet.name,
-            phone: changeSet.phone
-        )
-        
-        networkClient.send(request: request) { [weak self] result in
-            result.onData { loginResponse in
-                self?.loginResponseProcessor.processLoginResponse(loginResponse)
-                
-                if let avatar = changeSet.avatar {
-                    DispatchQueue.global().async {
-                        if let avatarImageData = UIImageJPEGRepresentation(avatar, 0.9) {
-                            let uploadAvatarRequest = UploadAvatarRequest(imageData: avatarImageData)
-                            self?.networkClient.send(request: uploadAvatarRequest) { uploadAvatarResult in
-                                uploadAvatarResult.onData { avatarLoginResponse in
-                                    self?.processLoginResponce(avatarLoginResponse, completion: completion)
-                                }
-                                uploadAvatarResult.onError { avatarError in
-                                    debugPrint(avatarError)
-                                    self?.processLoginResponce(loginResponse, completion: completion)
-                                }
-                            }
-                        } else {
-                            self?.processLoginResponce(loginResponse, completion: completion)
-                        }
+        if changeSet.hasFieldChanges {
+            let request = ChangeAccountInfoRequest(
+                email: changeSet.email,
+                name: changeSet.name,
+                phone: changeSet.phone
+            )
+            
+            networkClient.send(request: request) { [weak self] result in
+                result.onData { loginResponse in
+                    self?.loginResponseProcessor.processLoginResponse(loginResponse)
+                    
+                    if let avatar = changeSet.avatar {
+                        self?.changeUserAvatar(avatar, completion: completion)
                     }
-                } else {
-                    self?.processLoginResponce(loginResponse, completion: completion)
                 }
-            }
-            result.onError { networkRequestError in
-                completion(.error(networkRequestError))
+                result.onError { networkRequestError in
+                    completion(.error(networkRequestError))
+                }
             }
         }
     }
-    
+
+    func changeUserAvatar(_ avatar: UIImage, completion: @escaping ApiResult<Void>.Completion) {
+        DispatchQueue.global().async {
+            if let avatarImageData = UIImageJPEGRepresentation(avatar, 0.9) {
+                let uploadAvatarRequest = UploadAvatarRequest(imageData: avatarImageData)
+                self.networkClient.send(request: uploadAvatarRequest) { uploadAvatarResult in
+                    uploadAvatarResult.onData { [weak self] avatarLoginResponse in
+                        self?.processLoginResponse(avatarLoginResponse, completion: completion)
+                    }
+                    uploadAvatarResult.onError { avatarError in
+                        debugPrint(avatarError)
+                    }
+                }
+            }
+        }
+    }
+
     // MARK: - Private
-    private func processLoginResponce(
+    private func processLoginResponse(
         _ loginResponse: LoginResponse,
         completion: @escaping ApiResult<Void>.Completion)
     {
         DispatchQueue.main.async {
-            self.loginResponseProcessor.processLoginResponse(loginResponse)
             self.notifyOnUserDataReceived(loginResponse.user)
             completion(.data())
         }
