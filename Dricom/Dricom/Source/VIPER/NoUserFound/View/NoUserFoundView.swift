@@ -2,7 +2,7 @@ import UIKit
 
 final class NoUserFoundView: UIView {
     // MARK: - Properties
-//    private let closeButton = ImageButtonView(image: )
+    private let closeButton = ImageButtonView(image: #imageLiteral(resourceName: "Close blue"))
     private let sadCarImageView = UIImageView(image: #imageLiteral(resourceName: "SadCar"))
     private let messageLabel = UILabel(frame: .zero)
     private let descriptionLabel = UILabel(frame: .zero)
@@ -11,16 +11,12 @@ final class NoUserFoundView: UIView {
     init() {
         super.init(frame: .zero)
         
-//        addSubview(closeButton)
+        addSubview(closeButton)
         addSubview(sadCarImageView)
         addSubview(messageLabel)
         addSubview(descriptionLabel)
         
         setUpStyle()
-        
-        // TODO: Replace with close button
-        let closeGesture = UITapGestureRecognizer(target: self, action: #selector(handleClose(_:)))
-        addGestureRecognizer(closeGesture)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -46,6 +42,9 @@ final class NoUserFoundView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        closeButton.sizeToFit()
+        closeButton.top = 10
+        
         sadCarImageView.sizeToFit()
         sadCarImageView.top = 142
         sadCarImageView.centerX = bounds.centerX
@@ -70,13 +69,8 @@ final class NoUserFoundView: UIView {
         descriptionLabel.text = description
     }
     
-    var onCloseTap: (() -> ())?
-    @objc private func handleClose(_ sender: UIGestureRecognizer) {
-        switch sender.state {
-        case .ended:
-            onCloseTap?()
-        default:
-            break
-        }
+    var onCloseTap: (() -> ())? {
+        get { return closeButton.onTap }
+        set { closeButton.onTap = newValue }
     }
 }

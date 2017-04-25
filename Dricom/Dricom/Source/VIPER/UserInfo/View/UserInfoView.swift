@@ -3,6 +3,7 @@ import AlamofireImage
 
 final class UserInfoView: UIView, StandardPreloaderViewHolder, ActivityDisplayable {
     // MARK: Properties
+    private let closeButton = ImageButtonView(image: #imageLiteral(resourceName: "Close blue"))
     private let nameLabel = UILabel()
     private let avatarImageView = UIImageView(image: #imageLiteral(resourceName: "Avatar"))
     private let licenceView = LicensePlateView()
@@ -17,6 +18,7 @@ final class UserInfoView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
     init() {
         super.init(frame: .zero)
         
+        addSubview(closeButton)
         addSubview(nameLabel)
         addSubview(avatarImageView)
         addSubview(licenceView)
@@ -30,10 +32,6 @@ final class UserInfoView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
         setUpStyle()
         
         favoritesButton.addTarget(self, action: #selector(favoritesButtonPressed), for: .touchUpInside)
-        
-        // TODO: Replace with close button
-        let closeGesture = UITapGestureRecognizer(target: self, action: #selector(handleClose(_:)))
-        addGestureRecognizer(closeGesture)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -68,6 +66,9 @@ final class UserInfoView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
     private let favoritesButtonPadding: CGFloat = 29
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        closeButton.sizeToFit()
+        closeButton.top = 10
         
         nameLabel.sizeToFit()
         nameLabel.layout(left: bounds.left, right: bounds.right, top: 45, height: nameLabel.height)
@@ -193,13 +194,8 @@ final class UserInfoView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
         set { sendMessageButton.onTap = newValue }
     }
     
-    var onCloseTap: (() -> ())?
-    @objc private func handleClose(_ sender: UIGestureRecognizer) {
-        switch sender.state {
-        case .ended:
-            onCloseTap?()
-        default:
-            break
-        }
+    var onCloseTap: (() -> ())? {
+        get { return closeButton.onTap }
+        set { closeButton.onTap = newValue }
     }
 }
