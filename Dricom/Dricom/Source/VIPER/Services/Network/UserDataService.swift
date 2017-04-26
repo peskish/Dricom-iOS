@@ -95,6 +95,8 @@ final class UserDataServiceImpl: UserDataService, UserDataNotifier {
                 let uploadAvatarRequest = UploadAvatarRequest(imageData: avatarImageData)
                 self.networkClient.send(request: uploadAvatarRequest) { uploadAvatarResult in
                     uploadAvatarResult.onData { [weak self] avatarLoginResponse in
+                        self?.loginResponseProcessor.processLoginResponse(avatarLoginResponse)
+                        
                         self?.processLoginResponse(avatarLoginResponse, completion: completion)
                     }
                     uploadAvatarResult.onError { avatarError in

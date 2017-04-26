@@ -55,10 +55,15 @@ final class RegistrationServiceImpl: RegistrationService {
                                 }
                                 uploadAvatarResult.onError { avatarError in
                                     debugPrint(avatarError)
+                                    self?.processLoginResponse(loginResponse, completion: completion)
                                 }
                             }
+                        } else {
+                            self?.processLoginResponse(loginResponse, completion: completion)
                         }
                     }
+                } else {
+                    self?.processLoginResponse(loginResponse, completion: completion)
                 }
             }
             result.onError { networkRequestError in
