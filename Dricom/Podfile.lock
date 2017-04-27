@@ -2,7 +2,7 @@ PODS:
   - Alamofire (4.4.0)
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
-  - CryptoSwift (0.6.7)
+  - CryptoSwift (0.6.8)
   - FastttCamera (0.3.4):
     - FastttCamera/Default (= 0.3.4)
   - FastttCamera/Default (0.3.4)
@@ -50,7 +50,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
-  CryptoSwift: 685ae257941e5447474348a2b545583e1a16b573
+  CryptoSwift: f21ea03ed3a94e79d241648ce26652cd4810508a
   FastttCamera: 51f16712cbd5bdb08bc6231b957325c6be5e478d
   ImageSource: 81419e0abad686305b19d148c72d8fc9d094dddd
   JNWSpringAnimation: cd4c2f4464324f63f176c3624ffccf205211a100

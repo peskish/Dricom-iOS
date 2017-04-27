@@ -2008,7 +2008,7 @@
 					F09209361DC13EFB0057302F = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = RU54DQG53V;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					F0B450761E5A276400F3B2E4 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -2553,15 +2553,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = RU54DQG53V;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Dricom/Info.plist;
+				INSTALL_GROUP = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-Onone";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.dricom.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ac0cfbe4-86ab-496e-af00-c0d7374cc701";
-				PROVISIONING_PROFILE_SPECIFIER = "Dricom Dev";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};
@@ -2573,8 +2575,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Dricom/Info.plist;
+				INSTALL_GROUP = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.dricom.app;
