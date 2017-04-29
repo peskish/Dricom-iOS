@@ -16,7 +16,6 @@
 		F0128B851E49120C008E6668 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B841E49120C008E6668 /* NetworkRequest.swift */; };
 		F0128B881E491787008E6668 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B871E491787008E6668 /* LoginResponse.swift */; };
 		F0128B931E4A5260008E6668 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B921E4A5260008E6668 /* NetworkClient.swift */; };
-		F0128B961E4A566A008E6668 /* RegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B951E4A566A008E6668 /* RegistrationService.swift */; };
 		F0128B981E4A56A9008E6668 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B971E4A56A9008E6668 /* RegisterRequest.swift */; };
 		F0128B9A1E4A599E008E6668 /* NetworkRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B991E4A599E008E6668 /* NetworkRequestError.swift */; };
 		F0128BA01E4A64C6008E6668 /* NetworkResponseConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B9D1E4A64C6008E6668 /* NetworkResponseConverter.swift */; };
@@ -61,7 +60,6 @@
 		F0128C2F1E4F9E47008E6668 /* KeyValueObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C2E1E4F9E47008E6668 /* KeyValueObserver.swift */; };
 		F0128C311E4FA520008E6668 /* RegisterTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C301E4FA520008E6668 /* RegisterTopView.swift */; };
 		F0128C331E50F8CF008E6668 /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C321E50F8CF008E6668 /* AuthRequest.swift */; };
-		F0128C351E50FB50008E6668 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128C341E50FB50008E6668 /* AuthorizationService.swift */; };
 		F01398E51DF43D8300E4F188 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01398E41DF43D8300E4F188 /* User.swift */; };
 		F021D69B1DD7A43A00F50091 /* SupportMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D69A1DD7A43A00F50091 /* SupportMessageData.swift */; };
 		F021D6A21DD7A61900F50091 /* MailComposerAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6A01DD7A61900F50091 /* MailComposerAssemblyImpl.swift */; };
@@ -94,7 +92,6 @@
 		F021D6ED1DD8925B00F50091 /* CameraViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6E21DD8925B00F50091 /* CameraViewInput.swift */; };
 		F021D6EF1DDDB4E600F50091 /* CameraPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6EE1DDDB4E600F50091 /* CameraPreviewViewController.swift */; };
 		F021D6F31DDDB5E600F50091 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D6F21DDDB5E600F50091 /* CameraPreviewView.swift */; };
-		F021D7A91DE0E63F00F50091 /* DataValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021D7A81DE0E63F00F50091 /* DataValidationService.swift */; };
 		F0322AFE1E43CB4100F3CD47 /* AppStarterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AEF1E43CB4100F3CD47 /* AppStarterAssembly.swift */; };
 		F0322AFF1E43CB4100F3CD47 /* AppStarterAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AF01E43CB4100F3CD47 /* AppStarterAssemblyImpl.swift */; };
 		F0322B001E43CB4100F3CD47 /* AppStarterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AF21E43CB4100F3CD47 /* AppStarterInteractor.swift */; };
@@ -102,9 +99,6 @@
 		F0322B031E43CB4100F3CD47 /* AppStarterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AF61E43CB4100F3CD47 /* AppStarterPresenter.swift */; };
 		F0322B041E43CB4100F3CD47 /* AppStarterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AF81E43CB4100F3CD47 /* AppStarterRouter.swift */; };
 		F0322B051E43CB4100F3CD47 /* AppStarterRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AF91E43CB4100F3CD47 /* AppStarterRouterImpl.swift */; };
-		F03DE8181E87051900ADC5CB /* InputField+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03DE8171E87051900ADC5CB /* InputField+Error.swift */; };
-		F03DE81A1E87056D00ADC5CB /* InputFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03DE8191E87056D00ADC5CB /* InputFieldValidator.swift */; };
-		F03DE81C1E870A2900ADC5CB /* InputFieldsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03DE81B1E870A2900ADC5CB /* InputFieldsContainer.swift */; };
 		F05790C61E32A442004FBD4A /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790BC1E32A442004FBD4A /* Rubik-Black.ttf */; };
 		F05790C71E32A442004FBD4A /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790BD1E32A442004FBD4A /* Rubik-BlackItalic.ttf */; };
 		F05790C81E32A442004FBD4A /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790BE1E32A442004FBD4A /* Rubik-Bold.ttf */; };
@@ -212,7 +206,6 @@
 		F0A115241DC629CE00A4DC76 /* SessionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115231DC629CE00A4DC76 /* SessionInfo.swift */; };
 		F0A115301DC62D2000A4DC76 /* DataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1152F1DC62D2000A4DC76 /* DataResult.swift */; };
 		F0A115331DC62DB600A4DC76 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115321DC62DB600A4DC76 /* ApiError.swift */; };
-		F0A115351DC6309F00A4DC76 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115341DC6309F00A4DC76 /* ServiceFactory.swift */; };
 		F0A115611DC6385400A4DC76 /* RouterFocusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115601DC6385400A4DC76 /* RouterFocusable.swift */; };
 		F0A115761DC6863E00A4DC76 /* CGPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1156B1DC6863D00A4DC76 /* CGPoint+Extension.swift */; };
 		F0A115771DC6863E00A4DC76 /* CGRectLayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1156C1DC6863D00A4DC76 /* CGRectLayoutExtension.swift */; };
@@ -228,15 +221,12 @@
 		F0A115851DC68DF500A4DC76 /* ViewLifecycleObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115841DC68DF500A4DC76 /* ViewLifecycleObservable.swift */; };
 		F0A115871DC68E1D00A4DC76 /* ViewControllerTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115861DC68E1D00A4DC76 /* ViewControllerTransition.swift */; };
 		F0A115891DC6914100A4DC76 /* CrossFadePushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115881DC6914100A4DC76 /* CrossFadePushTransition.swift */; };
-		F0AE364A1EA6AF3000172E09 /* FavoriteUsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AE36491EA6AF3000172E09 /* FavoriteUsersService.swift */; };
 		F0AE364C1EA6AFEE00172E09 /* FavoriteUsersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AE364B1EA6AFEE00172E09 /* FavoriteUsersRequest.swift */; };
 		F0AE364E1EA6B00A00172E09 /* AddUserToFavoritesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AE364D1EA6B00A00172E09 /* AddUserToFavoritesRequest.swift */; };
 		F0AE36501EA6B02500172E09 /* RemoveUserFromFavoritesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AE364F1EA6B02500172E09 /* RemoveUserFromFavoritesRequest.swift */; };
 		F0AE36551EA6B11900172E09 /* SearchUserResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AE36541EA6B11900172E09 /* SearchUserResult.swift */; };
 		F0AFDA371E3D2A7000CCEE24 /* LicensePlateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AFDA361E3D2A7000CCEE24 /* LicensePlateView.swift */; };
-		F0B450721E58CFE000F3B2E4 /* AuthInfoHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450711E58CFE000F3B2E4 /* AuthInfoHolder.swift */; };
 		F0B4507A1E5A276400F3B2E4 /* RegistrationDataValidationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450791E5A276400F3B2E4 /* RegistrationDataValidationServiceTests.swift */; };
-		F0B450821E5A2D1D00F3B2E4 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450811E5A2D1D00F3B2E4 /* UserDataService.swift */; };
 		F0B450841E5A2D8B00F3B2E4 /* MainPageModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450831E5A2D8B00F3B2E4 /* MainPageModule.swift */; };
 		F0B450861E5A303300F3B2E4 /* AccountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450851E5A303300F3B2E4 /* AccountRequest.swift */; };
 		F0B450881E5A3D1C00F3B2E4 /* LicensePartsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B450871E5A3D1C00F3B2E4 /* LicensePartsTests.swift */; };
@@ -270,15 +260,25 @@
 		F0D038601DD3AE0500E0085D /* FeedbackViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038551DD3AE0500E0085D /* FeedbackViewInput.swift */; };
 		F0D038621DD3AFA100E0085D /* RouterFeedbackShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D038611DD3AFA100E0085D /* RouterFeedbackShowable.swift */; };
 		F0D7107A1EA95808003A06E8 /* DataLoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D710791EA95808003A06E8 /* DataLoadingState.swift */; };
-		F0D710821EABEA16003A06E8 /* PhoneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D710811EABEA16003A06E8 /* PhoneService.swift */; };
 		F0F14AB01E9C211F004752A8 /* RouterPhotoPickerShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F14AAF1E9C211F004752A8 /* RouterPhotoPickerShowable.swift */; };
 		F0F14AB21E9D7215004752A8 /* UploadAvatarRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F14AB11E9D7215004752A8 /* UploadAvatarRequest.swift */; };
 		F0F14AB81EA15CAF004752A8 /* SearchUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F14AB71EA15CAF004752A8 /* SearchUserRequest.swift */; };
 		F0F14ABA1EA15F4E004752A8 /* Unbox+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F14AB91EA15F4E004752A8 /* Unbox+Extensions.swift */; };
-		F0F14ABC1EA1F7BB004752A8 /* UserSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F14ABB1EA1F7BB004752A8 /* UserSearchService.swift */; };
 		F0F434081DD10CAB00F278BD /* AlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F434071DD10CAB00F278BD /* AlertDisplayable.swift */; };
 		F0F4340B1DD10CC500F278BD /* WindowWaiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F4340A1DD10CC500F278BD /* WindowWaiter.swift */; };
 		F0F888201EAD407A00F1C93D /* ChangeAccountInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8881F1EAD407A00F1C93D /* ChangeAccountInfoRequest.swift */; };
+		F0FD0C801EB4C26E0059A3E5 /* PhoneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD0C711EB4C26E0059A3E5 /* PhoneService.swift */; };
+		F0FD0C811EB4C26E0059A3E5 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD0C731EB4C26E0059A3E5 /* ServiceFactory.swift */; };
+		F0FD0C821EB4C26E0059A3E5 /* AuthInfoHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD0C751EB4C26E0059A3E5 /* AuthInfoHolder.swift */; };
+		F0FD0C831EB4C26E0059A3E5 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD0C761EB4C26E0059A3E5 /* AuthorizationService.swift */; };
+		F0FD0C841EB4C26E0059A3E5 /* FavoriteUsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD0C771EB4C26E0059A3E5 /* FavoriteUsersService.swift */; };
+		F0FD0C851EB4C26E0059A3E5 /* RegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD0C781EB4C26E0059A3E5 /* RegistrationService.swift */; };
+		F0FD0C861EB4C26E0059A3E5 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD0C791EB4C26E0059A3E5 /* UserDataService.swift */; };
+		F0FD0C871EB4C26E0059A3E5 /* UserSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD0C7A1EB4C26E0059A3E5 /* UserSearchService.swift */; };
+		F0FD0C881EB4C26E0059A3E5 /* DataValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD0C7C1EB4C26E0059A3E5 /* DataValidationService.swift */; };
+		F0FD0C891EB4C26E0059A3E5 /* InputField+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD0C7D1EB4C26E0059A3E5 /* InputField+Error.swift */; };
+		F0FD0C8A1EB4C26E0059A3E5 /* InputFieldsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD0C7E1EB4C26E0059A3E5 /* InputFieldsContainer.swift */; };
+		F0FD0C8B1EB4C26E0059A3E5 /* InputFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD0C7F1EB4C26E0059A3E5 /* InputFieldValidator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -305,7 +305,6 @@
 		F0128B841E49120C008E6668 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkRequest.swift; path = Core/Networking/Request/NetworkRequest.swift; sourceTree = "<group>"; };
 		F0128B871E491787008E6668 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginResponse.swift; path = Core/Networking/Response/LoginResponse.swift; sourceTree = "<group>"; };
 		F0128B921E4A5260008E6668 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkClient.swift; path = Core/Networking/Client/NetworkClient.swift; sourceTree = "<group>"; };
-		F0128B951E4A566A008E6668 /* RegistrationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationService.swift; sourceTree = "<group>"; };
 		F0128B971E4A56A9008E6668 /* RegisterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterRequest.swift; path = Core/Networking/Request/RegisterRequest.swift; sourceTree = "<group>"; };
 		F0128B991E4A599E008E6668 /* NetworkRequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkRequestError.swift; path = Core/Networking/Error/NetworkRequestError.swift; sourceTree = "<group>"; };
 		F0128B9D1E4A64C6008E6668 /* NetworkResponseConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseConverter.swift; sourceTree = "<group>"; };
@@ -350,7 +349,6 @@
 		F0128C2E1E4F9E47008E6668 /* KeyValueObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyValueObserver.swift; path = Dricom/Source/Core/Utilities/KeyValueObserver.swift; sourceTree = SOURCE_ROOT; };
 		F0128C301E4FA520008E6668 /* RegisterTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterTopView.swift; sourceTree = "<group>"; };
 		F0128C321E50F8CF008E6668 /* AuthRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthRequest.swift; path = Core/Networking/Request/AuthRequest.swift; sourceTree = "<group>"; };
-		F0128C341E50FB50008E6668 /* AuthorizationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
 		F01398E41DF43D8300E4F188 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		F021D69A1DD7A43A00F50091 /* SupportMessageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportMessageData.swift; sourceTree = "<group>"; };
 		F021D6A01DD7A61900F50091 /* MailComposerAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailComposerAssemblyImpl.swift; sourceTree = "<group>"; };
@@ -383,7 +381,6 @@
 		F021D6E21DD8925B00F50091 /* CameraViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewInput.swift; sourceTree = "<group>"; };
 		F021D6EE1DDDB4E600F50091 /* CameraPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewViewController.swift; sourceTree = "<group>"; };
 		F021D6F21DDDB5E600F50091 /* CameraPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
-		F021D7A81DE0E63F00F50091 /* DataValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataValidationService.swift; path = Dricom/Source/VIPER/Services/Validation/DataValidationService.swift; sourceTree = SOURCE_ROOT; };
 		F0322AEF1E43CB4100F3CD47 /* AppStarterAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterAssembly.swift; sourceTree = "<group>"; };
 		F0322AF01E43CB4100F3CD47 /* AppStarterAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterAssemblyImpl.swift; sourceTree = "<group>"; };
 		F0322AF21E43CB4100F3CD47 /* AppStarterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterInteractor.swift; sourceTree = "<group>"; };
@@ -391,9 +388,6 @@
 		F0322AF61E43CB4100F3CD47 /* AppStarterPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterPresenter.swift; sourceTree = "<group>"; };
 		F0322AF81E43CB4100F3CD47 /* AppStarterRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterRouter.swift; sourceTree = "<group>"; };
 		F0322AF91E43CB4100F3CD47 /* AppStarterRouterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterRouterImpl.swift; sourceTree = "<group>"; };
-		F03DE8171E87051900ADC5CB /* InputField+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "InputField+Error.swift"; path = "Dricom/Source/VIPER/Services/Validation/InputField+Error.swift"; sourceTree = SOURCE_ROOT; };
-		F03DE8191E87056D00ADC5CB /* InputFieldValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputFieldValidator.swift; path = Dricom/Source/VIPER/Services/Validation/InputFieldValidator.swift; sourceTree = SOURCE_ROOT; };
-		F03DE81B1E870A2900ADC5CB /* InputFieldsContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputFieldsContainer.swift; path = Dricom/Source/VIPER/Services/Validation/InputFieldsContainer.swift; sourceTree = SOURCE_ROOT; };
 		F05790BC1E32A442004FBD4A /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Black.ttf"; sourceTree = "<group>"; };
 		F05790BD1E32A442004FBD4A /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
 		F05790BE1E32A442004FBD4A /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
@@ -503,7 +497,6 @@
 		F0A115231DC629CE00A4DC76 /* SessionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionInfo.swift; sourceTree = "<group>"; };
 		F0A1152F1DC62D2000A4DC76 /* DataResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataResult.swift; path = Core/Common/DataResult.swift; sourceTree = "<group>"; };
 		F0A115321DC62DB600A4DC76 /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiError.swift; path = Core/Common/ApiError.swift; sourceTree = "<group>"; };
-		F0A115341DC6309F00A4DC76 /* ServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceFactory.swift; path = Dricom/Source/VIPER/Services/Factory/ServiceFactory.swift; sourceTree = SOURCE_ROOT; };
 		F0A115601DC6385400A4DC76 /* RouterFocusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterFocusable.swift; path = Router/RouterFocusable.swift; sourceTree = "<group>"; };
 		F0A1156B1DC6863D00A4DC76 /* CGPoint+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGPoint+Extension.swift"; path = "Core/Extensions/UIKit/CGPoint+Extension.swift"; sourceTree = "<group>"; };
 		F0A1156C1DC6863D00A4DC76 /* CGRectLayoutExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGRectLayoutExtension.swift; path = Core/Extensions/UIKit/CGRectLayoutExtension.swift; sourceTree = "<group>"; };
@@ -519,17 +512,14 @@
 		F0A115841DC68DF500A4DC76 /* ViewLifecycleObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewLifecycleObservable.swift; path = Dricom/Source/Presentation/ViewControllers/ViewLifecycleObservable.swift; sourceTree = SOURCE_ROOT; };
 		F0A115861DC68E1D00A4DC76 /* ViewControllerTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerTransition.swift; path = Dricom/Source/Presentation/Transitions/ViewControllerTransition.swift; sourceTree = SOURCE_ROOT; };
 		F0A115881DC6914100A4DC76 /* CrossFadePushTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CrossFadePushTransition.swift; path = Dricom/Source/Presentation/Transitions/CrossFadePushTransition.swift; sourceTree = SOURCE_ROOT; };
-		F0AE36491EA6AF3000172E09 /* FavoriteUsersService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteUsersService.swift; sourceTree = "<group>"; };
 		F0AE364B1EA6AFEE00172E09 /* FavoriteUsersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteUsersRequest.swift; path = Core/Networking/Request/FavoriteUsersRequest.swift; sourceTree = "<group>"; };
 		F0AE364D1EA6B00A00172E09 /* AddUserToFavoritesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddUserToFavoritesRequest.swift; path = Core/Networking/Request/AddUserToFavoritesRequest.swift; sourceTree = "<group>"; };
 		F0AE364F1EA6B02500172E09 /* RemoveUserFromFavoritesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoveUserFromFavoritesRequest.swift; path = Core/Networking/Request/RemoveUserFromFavoritesRequest.swift; sourceTree = "<group>"; };
 		F0AE36541EA6B11900172E09 /* SearchUserResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchUserResult.swift; path = Core/Networking/Response/SearchUserResult.swift; sourceTree = "<group>"; };
 		F0AFDA361E3D2A7000CCEE24 /* LicensePlateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LicensePlateView.swift; path = Dricom/Source/Presentation/Views/LicensePlateView.swift; sourceTree = SOURCE_ROOT; };
-		F0B450711E58CFE000F3B2E4 /* AuthInfoHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthInfoHolder.swift; sourceTree = "<group>"; };
 		F0B450771E5A276400F3B2E4 /* DricomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DricomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0B450791E5A276400F3B2E4 /* RegistrationDataValidationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationDataValidationServiceTests.swift; sourceTree = "<group>"; };
 		F0B4507B1E5A276400F3B2E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F0B450811E5A2D1D00F3B2E4 /* UserDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		F0B450831E5A2D8B00F3B2E4 /* MainPageModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageModule.swift; sourceTree = "<group>"; };
 		F0B450851E5A303300F3B2E4 /* AccountRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountRequest.swift; path = Core/Networking/Request/AccountRequest.swift; sourceTree = "<group>"; };
 		F0B450871E5A3D1C00F3B2E4 /* LicensePartsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicensePartsTests.swift; sourceTree = "<group>"; };
@@ -563,15 +553,25 @@
 		F0D038551DD3AE0500E0085D /* FeedbackViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewInput.swift; sourceTree = "<group>"; };
 		F0D038611DD3AFA100E0085D /* RouterFeedbackShowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterFeedbackShowable.swift; path = Router/RouterFeedbackShowable.swift; sourceTree = "<group>"; };
 		F0D710791EA95808003A06E8 /* DataLoadingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoadingState.swift; sourceTree = "<group>"; };
-		F0D710811EABEA16003A06E8 /* PhoneService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhoneService.swift; path = Dricom/Source/VIPER/Services/Device/PhoneService.swift; sourceTree = SOURCE_ROOT; };
 		F0F14AAF1E9C211F004752A8 /* RouterPhotoPickerShowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterPhotoPickerShowable.swift; path = Router/RouterPhotoPickerShowable.swift; sourceTree = "<group>"; };
 		F0F14AB11E9D7215004752A8 /* UploadAvatarRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UploadAvatarRequest.swift; path = Core/Networking/Request/UploadAvatarRequest.swift; sourceTree = "<group>"; };
 		F0F14AB71EA15CAF004752A8 /* SearchUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchUserRequest.swift; path = Core/Networking/Request/SearchUserRequest.swift; sourceTree = "<group>"; };
 		F0F14AB91EA15F4E004752A8 /* Unbox+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Unbox+Extensions.swift"; path = "Core/Extensions/Unbox+Extensions.swift"; sourceTree = "<group>"; };
-		F0F14ABB1EA1F7BB004752A8 /* UserSearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearchService.swift; sourceTree = "<group>"; };
 		F0F434071DD10CAB00F278BD /* AlertDisplayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertDisplayable.swift; path = MessageDisplaying/AlertDisplayable.swift; sourceTree = "<group>"; };
 		F0F4340A1DD10CC500F278BD /* WindowWaiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowWaiter.swift; sourceTree = "<group>"; };
 		F0F8881F1EAD407A00F1C93D /* ChangeAccountInfoRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeAccountInfoRequest.swift; path = Core/Networking/Request/ChangeAccountInfoRequest.swift; sourceTree = "<group>"; };
+		F0FD0C711EB4C26E0059A3E5 /* PhoneService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneService.swift; sourceTree = "<group>"; };
+		F0FD0C731EB4C26E0059A3E5 /* ServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
+		F0FD0C751EB4C26E0059A3E5 /* AuthInfoHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthInfoHolder.swift; sourceTree = "<group>"; };
+		F0FD0C761EB4C26E0059A3E5 /* AuthorizationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
+		F0FD0C771EB4C26E0059A3E5 /* FavoriteUsersService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteUsersService.swift; sourceTree = "<group>"; };
+		F0FD0C781EB4C26E0059A3E5 /* RegistrationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationService.swift; sourceTree = "<group>"; };
+		F0FD0C791EB4C26E0059A3E5 /* UserDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
+		F0FD0C7A1EB4C26E0059A3E5 /* UserSearchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearchService.swift; sourceTree = "<group>"; };
+		F0FD0C7C1EB4C26E0059A3E5 /* DataValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataValidationService.swift; sourceTree = "<group>"; };
+		F0FD0C7D1EB4C26E0059A3E5 /* InputField+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InputField+Error.swift"; sourceTree = "<group>"; };
+		F0FD0C7E1EB4C26E0059A3E5 /* InputFieldsContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputFieldsContainer.swift; sourceTree = "<group>"; };
+		F0FD0C7F1EB4C26E0059A3E5 /* InputFieldValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputFieldValidator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -973,17 +973,6 @@
 			name = Preview;
 			sourceTree = "<group>";
 		};
-		F021D7AA1DE0E64300F50091 /* Validation */ = {
-			isa = PBXGroup;
-			children = (
-				F021D7A81DE0E63F00F50091 /* DataValidationService.swift */,
-				F03DE8191E87056D00ADC5CB /* InputFieldValidator.swift */,
-				F03DE8171E87051900ADC5CB /* InputField+Error.swift */,
-				F03DE81B1E870A2900ADC5CB /* InputFieldsContainer.swift */,
-			);
-			name = Validation;
-			sourceTree = "<group>";
-		};
 		F0322AED1E43CB4100F3CD47 /* AppStarter */ = {
 			isa = PBXGroup;
 			children = (
@@ -1351,6 +1340,7 @@
 				F09209701DC146300057302F /* VIPER */,
 				F0A115171DC622A100A4DC76 /* Presentation */,
 				F0A1151D1DC6284400A4DC76 /* Core */,
+				F0FD0C6F1EB4C26E0059A3E5 /* Services */,
 				F05790D81E34DC5D004FBD4A /* ThirdParty */,
 			);
 			path = Source;
@@ -1378,7 +1368,6 @@
 				F099E3A81EA29C520082CD92 /* NoUserFound */,
 				F021D6AD1DD7B99300F50091 /* Register */,
 				F0B450921E60B6A400F3B2E4 /* Settings */,
-				F0A115271DC62C2E00A4DC76 /* Services */,
 				F099E3CB1EA2B4030082CD92 /* UserInfo */,
 				F06E3F621E81B0EE00829A3F /* UserProfile */,
 			);
@@ -1641,32 +1630,6 @@
 			path = Core/Model;
 			sourceTree = "<group>";
 		};
-		F0A115271DC62C2E00A4DC76 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				F0A115361DC630A500A4DC76 /* Factory */,
-				F0A115291DC62C6900A4DC76 /* Network */,
-				F021D7AA1DE0E64300F50091 /* Validation */,
-				F0D710811EABEA16003A06E8 /* PhoneService.swift */,
-			);
-			name = Services;
-			path = Application;
-			sourceTree = "<group>";
-		};
-		F0A115291DC62C6900A4DC76 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				F0B450711E58CFE000F3B2E4 /* AuthInfoHolder.swift */,
-				F0128C341E50FB50008E6668 /* AuthorizationService.swift */,
-				F0AE36491EA6AF3000172E09 /* FavoriteUsersService.swift */,
-				F0128B951E4A566A008E6668 /* RegistrationService.swift */,
-				F0B450811E5A2D1D00F3B2E4 /* UserDataService.swift */,
-				F0F14ABB1EA1F7BB004752A8 /* UserSearchService.swift */,
-			);
-			name = Network;
-			path = Dricom/Source/VIPER/Services/Network;
-			sourceTree = SOURCE_ROOT;
-		};
 		F0A115311DC62D2300A4DC76 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -1674,14 +1637,6 @@
 				F0A115321DC62DB600A4DC76 /* ApiError.swift */,
 			);
 			name = Common;
-			sourceTree = "<group>";
-		};
-		F0A115361DC630A500A4DC76 /* Factory */ = {
-			isa = PBXGroup;
-			children = (
-				F0A115341DC6309F00A4DC76 /* ServiceFactory.swift */,
-			);
-			name = Factory;
 			sourceTree = "<group>";
 		};
 		F0A1155B1DC637C600A4DC76 /* Utilities */ = {
@@ -1942,6 +1897,57 @@
 			path = Dricom/Source/Presentation/UIServices;
 			sourceTree = SOURCE_ROOT;
 		};
+		F0FD0C6F1EB4C26E0059A3E5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F0FD0C701EB4C26E0059A3E5 /* Device */,
+				F0FD0C721EB4C26E0059A3E5 /* Factory */,
+				F0FD0C741EB4C26E0059A3E5 /* Network */,
+				F0FD0C7B1EB4C26E0059A3E5 /* Validation */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F0FD0C701EB4C26E0059A3E5 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				F0FD0C711EB4C26E0059A3E5 /* PhoneService.swift */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		F0FD0C721EB4C26E0059A3E5 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				F0FD0C731EB4C26E0059A3E5 /* ServiceFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		F0FD0C741EB4C26E0059A3E5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F0FD0C751EB4C26E0059A3E5 /* AuthInfoHolder.swift */,
+				F0FD0C761EB4C26E0059A3E5 /* AuthorizationService.swift */,
+				F0FD0C771EB4C26E0059A3E5 /* FavoriteUsersService.swift */,
+				F0FD0C781EB4C26E0059A3E5 /* RegistrationService.swift */,
+				F0FD0C791EB4C26E0059A3E5 /* UserDataService.swift */,
+				F0FD0C7A1EB4C26E0059A3E5 /* UserSearchService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F0FD0C7B1EB4C26E0059A3E5 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				F0FD0C7C1EB4C26E0059A3E5 /* DataValidationService.swift */,
+				F0FD0C7D1EB4C26E0059A3E5 /* InputField+Error.swift */,
+				F0FD0C7E1EB4C26E0059A3E5 /* InputFieldsContainer.swift */,
+				F0FD0C7F1EB4C26E0059A3E5 /* InputFieldValidator.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
 		F279DA0D2D1A1E4AFAC3F9E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2165,16 +2171,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0A115351DC6309F00A4DC76 /* ServiceFactory.swift in Sources */,
 				F06E3F761E81B0EE00829A3F /* UserProfileInteractorImpl.swift in Sources */,
 				F0823DB71DE9D929007BD04D /* ActivityDisplayable.swift in Sources */,
 				F076D6411DCF67F200E3ED0F /* LoginAssemblyImpl.swift in Sources */,
-				F03DE8181E87051900ADC5CB /* InputField+Error.swift in Sources */,
 				F06E3F7D1E81B0EE00829A3F /* UserProfileViewInput.swift in Sources */,
-				F03DE81C1E870A2900ADC5CB /* InputFieldsContainer.swift in Sources */,
 				F0128C221E4F9D39008E6668 /* ScrollViewRefresherStateAnimator.swift in Sources */,
 				F05790D61E32A72D004FBD4A /* UIColor+Styleguide.swift in Sources */,
-				F0128B961E4A566A008E6668 /* RegistrationService.swift in Sources */,
 				F0AFDA371E3D2A7000CCEE24 /* LicensePlateView.swift in Sources */,
 				F021D6A21DD7A61900F50091 /* MailComposerAssemblyImpl.swift in Sources */,
 				F0128B881E491787008E6668 /* LoginResponse.swift in Sources */,
@@ -2182,18 +2184,19 @@
 				F076D67F1DCFAEF400E3ED0F /* ViewControllerPosition.swift in Sources */,
 				F0128C001E4F9CED008E6668 /* ContentFittingFunctionBuilder.swift in Sources */,
 				F0B450861E5A303300F3B2E4 /* AccountRequest.swift in Sources */,
-				F0D710821EABEA16003A06E8 /* PhoneService.swift in Sources */,
 				F076D6551DCF6D2000E3ED0F /* MessageDisplayable.swift in Sources */,
 				F076D6701DCF6F3800E3ED0F /* SequenceTypeExtensions.swift in Sources */,
 				F0B450B81E61BE7F00F3B2E4 /* SettingsActionCell.swift in Sources */,
 				F0A115761DC6863E00A4DC76 /* CGPoint+Extension.swift in Sources */,
 				F0128C311E4FA520008E6668 /* RegisterTopView.swift in Sources */,
 				F0B450AA1E60B6A400F3B2E4 /* SettingsRouterImpl.swift in Sources */,
+				F0FD0C811EB4C26E0059A3E5 /* ServiceFactory.swift in Sources */,
 				F076D6721DCF6F3800E3ED0F /* StringExtensions.swift in Sources */,
 				F076D6471DCF67F200E3ED0F /* LoginRouterImpl.swift in Sources */,
 				F0B450A61E60B6A400F3B2E4 /* SettingsInteractorImpl.swift in Sources */,
 				F0D0385D1DD3AE0500E0085D /* FeedbackRouterImpl.swift in Sources */,
 				F021D6BF1DD7B99300F50091 /* RegisterAssemblyImpl.swift in Sources */,
+				F0FD0C8B1EB4C26E0059A3E5 /* InputFieldValidator.swift in Sources */,
 				F0D0385B1DD3AE0500E0085D /* FeedbackPresenter.swift in Sources */,
 				F06E3F7A1E81B0EE00829A3F /* UserProfileRouterImpl.swift in Sources */,
 				F0823DD11DE9EEA2007BD04D /* MainPageInteractorImpl.swift in Sources */,
@@ -2224,11 +2227,11 @@
 				F021D6BE1DD7B99300F50091 /* RegisterAssembly.swift in Sources */,
 				F0128C051E4F9CED008E6668 /* ScrollViewKeyboardAvoidingService.swift in Sources */,
 				F021D6CD1DD88D6100F50091 /* SpecSizes.swift in Sources */,
-				F0AE364A1EA6AF3000172E09 /* FavoriteUsersService.swift in Sources */,
 				F09209A11DC14A7F0057302F /* ApplicationAssembly.swift in Sources */,
 				F0128C091E4F9CED008E6668 /* KeyboardFrameObservingAccessoryViewDelegate.swift in Sources */,
 				F0128BA21E4A64C6008E6668 /* OptionalNetworkResponseConverterOf.swift in Sources */,
 				F09209A31DC14A7F0057302F /* ApplicationInteractor.swift in Sources */,
+				F0FD0C841EB4C26E0059A3E5 /* FavoriteUsersService.swift in Sources */,
 				F0128C0A1E4F9CED008E6668 /* KeyboardFrameProvider.swift in Sources */,
 				F0128BA41E4A6592008E6668 /* Data+JSON.swift in Sources */,
 				F06E3F751E81B0EE00829A3F /* UserProfileInteractor.swift in Sources */,
@@ -2253,6 +2256,7 @@
 				F0A1157D1DC6863E00A4DC76 /* UIView+Layout.swift in Sources */,
 				F021D6A31DD7A61900F50091 /* MailComposerAssembly.swift in Sources */,
 				F0128B9A1E4A599E008E6668 /* NetworkRequestError.swift in Sources */,
+				F0FD0C891EB4C26E0059A3E5 /* InputField+Error.swift in Sources */,
 				F076D67D1DCF8F4900E3ED0F /* DoneButtonAccessoryView.swift in Sources */,
 				F0D038561DD3AE0500E0085D /* FeedbackAssembly.swift in Sources */,
 				F0AE364E1EA6B00A00172E09 /* AddUserToFavoritesRequest.swift in Sources */,
@@ -2269,6 +2273,7 @@
 				F0D038591DD3AE0500E0085D /* FeedbackInteractorImpl.swift in Sources */,
 				F06E3F771E81B0EE00829A3F /* UserProfileModule.swift in Sources */,
 				F076D6421DCF67F200E3ED0F /* LoginInteractor.swift in Sources */,
+				F0FD0C831EB4C26E0059A3E5 /* AuthorizationService.swift in Sources */,
 				F0823DCE1DE9EEA2007BD04D /* MainPageAssembly.swift in Sources */,
 				F05790D71E32A72D004FBD4A /* UIFont+Styleguide.swift in Sources */,
 				F021D6E51DD8925B00F50091 /* CameraInteractor.swift in Sources */,
@@ -2276,6 +2281,7 @@
 				F06E3F7B1E81B0EE00829A3F /* UserProfileView.swift in Sources */,
 				F0F14ABA1EA15F4E004752A8 /* Unbox+Extensions.swift in Sources */,
 				F076D66F1DCF6F3800E3ED0F /* RangeExtension.swift in Sources */,
+				F0FD0C821EB4C26E0059A3E5 /* AuthInfoHolder.swift in Sources */,
 				F0322B001E43CB4100F3CD47 /* AppStarterInteractor.swift in Sources */,
 				F0322AFE1E43CB4100F3CD47 /* AppStarterAssembly.swift in Sources */,
 				F09209A21DC14A7F0057302F /* ApplicationAssemblyImpl.swift in Sources */,
@@ -2306,7 +2312,6 @@
 				F099E3C71EA29DC50082CD92 /* NoUserFoundRouter.swift in Sources */,
 				F076D66C1DCF6F3800E3ED0F /* DictionaryExtensions.swift in Sources */,
 				F076D66E1DCF6F3800E3ED0F /* OptionalsExtensions.swift in Sources */,
-				F0B450721E58CFE000F3B2E4 /* AuthInfoHolder.swift in Sources */,
 				F076D6461DCF67F200E3ED0F /* LoginRouter.swift in Sources */,
 				F09209B41DC1502B0057302F /* AssemblyFactory.swift in Sources */,
 				F076D6441DCF67F200E3ED0F /* LoginModule.swift in Sources */,
@@ -2335,7 +2340,6 @@
 				F0322B041E43CB4100F3CD47 /* AppStarterRouter.swift in Sources */,
 				F076D64C1DCF684A00E3ED0F /* ModuleFocusable.swift in Sources */,
 				F0128BFA1E4F9CED008E6668 /* DisposeBag.swift in Sources */,
-				F021D7A91DE0E63F00F50091 /* DataValidationService.swift in Sources */,
 				F021D6E61DD8925B00F50091 /* CameraInteractorImpl.swift in Sources */,
 				F076D6481DCF67F200E3ED0F /* LoginView.swift in Sources */,
 				F0D038581DD3AE0500E0085D /* FeedbackInteractor.swift in Sources */,
@@ -2355,8 +2359,10 @@
 				F076D6491DCF67F200E3ED0F /* LoginViewController.swift in Sources */,
 				F099E3C11EA29C520082CD92 /* NoUserFoundView.swift in Sources */,
 				F0128C291E4F9D39008E6668 /* ScrollViewRefresher.swift in Sources */,
+				F0FD0C871EB4C26E0059A3E5 /* UserSearchService.swift in Sources */,
 				F099E3DE1EA2B4040082CD92 /* UserInfoInteractor.swift in Sources */,
 				F021D6C21DD7B99300F50091 /* RegisterModule.swift in Sources */,
+				F0FD0C851EB4C26E0059A3E5 /* RegistrationService.swift in Sources */,
 				F076D66A1DCF6F3800E3ED0F /* AppMetadataExtension.swift in Sources */,
 				F0128BFB1E4F9CED008E6668 /* DisposeBagHolder.swift in Sources */,
 				F0823DD81DE9EEA2007BD04D /* MainPageViewInput.swift in Sources */,
@@ -2368,8 +2374,9 @@
 				F076D66D1DCF6F3800E3ED0F /* NumbersExtension.swift in Sources */,
 				F0B450B51E61BC3900F3B2E4 /* SettingsSelectCell.swift in Sources */,
 				F0A115871DC68E1D00A4DC76 /* ViewControllerTransition.swift in Sources */,
-				F03DE81A1E87056D00ADC5CB /* InputFieldValidator.swift in Sources */,
+				F0FD0C8A1EB4C26E0059A3E5 /* InputFieldsContainer.swift in Sources */,
 				F0128C281E4F9D39008E6668 /* ScrollViewRefresherFactory.swift in Sources */,
+				F0FD0C861EB4C26E0059A3E5 /* UserDataService.swift in Sources */,
 				F0AE364C1EA6AFEE00172E09 /* FavoriteUsersRequest.swift in Sources */,
 				F0D0385E1DD3AE0500E0085D /* FeedbackView.swift in Sources */,
 				F09209A81DC14A7F0057302F /* ApplicationRouterImpl.swift in Sources */,
@@ -2381,7 +2388,6 @@
 				F076D6751DCF6FC500E3ED0F /* NSURLPathComponents.swift in Sources */,
 				F0128C251E4F9D39008E6668 /* ActivityIndicatorRefreshView.swift in Sources */,
 				F0B450A51E60B6A400F3B2E4 /* SettingsInteractor.swift in Sources */,
-				F0128C351E50FB50008E6668 /* AuthorizationService.swift in Sources */,
 				F09209BD1DC1524E0057302F /* BaseAssembly.swift in Sources */,
 				F099E3E11EA2B4040082CD92 /* UserInfoPresenter.swift in Sources */,
 				F0128C2B1E4F9D39008E6668 /* ScrollViewRefresherPosition.swift in Sources */,
@@ -2392,6 +2398,7 @@
 				F0823DD71DE9EEA2007BD04D /* MainPageViewController.swift in Sources */,
 				F0128C2D1E4F9D39008E6668 /* ScrollViewRefresherState.swift in Sources */,
 				F0128B791E45182A008E6668 /* ViewControllerExtensions.swift in Sources */,
+				F0FD0C801EB4C26E0059A3E5 /* PhoneService.swift in Sources */,
 				F0F888201EAD407A00F1C93D /* ChangeAccountInfoRequest.swift in Sources */,
 				F0B450A81E60B6A400F3B2E4 /* SettingsPresenter.swift in Sources */,
 				F021D6E81DD8925B00F50091 /* CameraPresenter.swift in Sources */,
@@ -2401,7 +2408,6 @@
 				F0322B051E43CB4100F3CD47 /* AppStarterRouterImpl.swift in Sources */,
 				F0B450AD1E60B6A400F3B2E4 /* SettingsViewInput.swift in Sources */,
 				F099E3BA1EA29C520082CD92 /* NoUserFoundAssemblyImpl.swift in Sources */,
-				F0B450821E5A2D1D00F3B2E4 /* UserDataService.swift in Sources */,
 				F0128C271E4F9D39008E6668 /* ScrollToRefreshProgressCalculator.swift in Sources */,
 				F021D6EF1DDDB4E600F50091 /* CameraPreviewViewController.swift in Sources */,
 				F076D64A1DCF67F200E3ED0F /* LoginViewInput.swift in Sources */,
@@ -2417,8 +2423,8 @@
 				F0128C081E4F9CED008E6668 /* KeyboardFrameObservingAccessoryView.swift in Sources */,
 				F0F4340B1DD10CC500F278BD /* WindowWaiter.swift in Sources */,
 				F08BE1A41DC926B600243B56 /* SpecMargins.swift in Sources */,
-				F0F14ABC1EA1F7BB004752A8 /* UserSearchService.swift in Sources */,
 				F08BE1A21DC9265000243B56 /* ActionButtonView.swift in Sources */,
+				F0FD0C881EB4C26E0059A3E5 /* DataValidationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
