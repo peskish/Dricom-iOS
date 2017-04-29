@@ -63,7 +63,6 @@ final class ServiceFactoryImpl: ServiceFactory {
     
     func userSearchService() -> UserSearchService {
         return UserSearchServiceImpl(
-            dataValidationService: dataValidationService(),
             networkClient: networkClientInstance
         )
     }

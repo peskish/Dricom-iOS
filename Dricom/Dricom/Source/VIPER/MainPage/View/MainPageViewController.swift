@@ -22,6 +22,19 @@ final class MainPageViewController: BaseViewController, MainPageViewInput {
     }
     
     // MARK: - MainPageViewInput
+    func setScreenTitle(_ title: String) {
+        self.title = title
+    }
+    
+    func setSearchPlaceholder(_ placeholder: String) {
+        mainPageView.setSearchPlaceholder(placeholder)
+    }
+    
+    var onSearchTextChange: ((String?) -> ())? {
+        get { return mainPageView.onSearchTextChange }
+        set { mainPageView.onSearchTextChange = newValue }
+    }
+    
     func setAvatarImageUrl(_ avatarImageUrl: URL?) {
         mainPageView.setAvatarImageUrl(avatarImageUrl)
     }
@@ -34,25 +47,29 @@ final class MainPageViewController: BaseViewController, MainPageViewInput {
         mainPageView.setLicenseParts(licenseParts)
     }
     
-    func setLicenseSearchPlaceholder(_ placeholder: String?) {
-        mainPageView.setLicenseSearchPlaceholder(placeholder)
+    func setFavoritesSectionTitle(_ title: String) {
+        mainPageView.setFavoritesSectionTitle(title)
     }
     
-    var onLicenseSearchChange: ((String?) -> ())? {
-        get { return mainPageView.onLicenseSearchChange }
-        set { mainPageView.onLicenseSearchChange = newValue }
+    func setNoFavoritesTitle(_ title: String) {
+        mainPageView.setNoFavoritesTitle(title)
     }
     
-    func setLicenseSearchTitle(_ title: String) {
-        mainPageView.setLicenseSearchTitle(title)
+    func setNoFavoritesDescription(_ decription: String) {
+        mainPageView.setNoFavoritesDescription(decription)
     }
     
-    func setOnSearchButtonTap(_ onSearchButtonTap: ((String?) -> ())?) {
-        mainPageView.setOnSearchButtonTap(onSearchButtonTap)
+    func setFavorites(_ users: [UserViewData]) {
+        mainPageView.setFavorites(users)
     }
     
-    func setSearchButtonEnabled(_ enabled: Bool) {
-        mainPageView.setSearchButtonEnabled(enabled)
+    func setUserSuggestList(_ suggestList: [UserViewData]) {
+        mainPageView.setUserSuggestList(suggestList)
+    }
+    
+    var onUserSuggestTap: ((_ userId: String) -> ())? {
+        get { return mainPageView.onUserSuggestTap }
+        set { mainPageView.onUserSuggestTap = newValue }
     }
     
     // MARK: ActivityDisplayable

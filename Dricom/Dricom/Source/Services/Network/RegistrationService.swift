@@ -48,7 +48,7 @@ final class RegistrationServiceImpl: RegistrationService {
                     DispatchQueue.global().async {
                         if let avatarImageData = avatarImageDataCreator() {
                             let uploadAvatarRequest = UploadAvatarRequest(imageData: avatarImageData)
-                            self?.networkClient.send(request: uploadAvatarRequest) { uploadAvatarResult in
+                            _ = self?.networkClient.send(request: uploadAvatarRequest) { uploadAvatarResult in
                                 // No matter success or failure - user was registered already
                                 uploadAvatarResult.onData { avatarLoginResponse in
                                     self?.processLoginResponse(avatarLoginResponse, completion: completion)

@@ -2,11 +2,35 @@ import Alamofire
 
 let baseUrl = "http://dricom.hftgeek.com"
 
+// MARK: - DataTask -
+public protocol NetworkDataTask {
+    func cancel()
+}
+
+final class NetworkDataTaskImpl: NetworkDataTask {
+    var request: Alamofire.Request?
+    
+    var isCancelled = false
+    
+    func cancel() {
+        guard !isCancelled else {
+            return
+        }
+        
+        request?.cancel()
+        
+        isCancelled = true
+    }
+}
+
+// MARK: - NetworkClient
 protocol NetworkClient: class {
+    @discardableResult
     func send<T, R: NetworkRequest>(
         request: R,
-        completion: @escaping ApiResult<T>.Completion) where R.Result == T
+        completion: @escaping ApiResult<T>.Completion) -> NetworkDataTask? where R.Result == T
     
+    @discardableResult
     func send<T, R: MultipartFormDataRequest>(
         request: R,
         completion: @escaping ApiResult<T>.Completion) where R.Result == T
@@ -36,20 +60,22 @@ final class NetworkClientImpl: NetworkClient {
     }
     
     // MARK: - NetworkClient
+    @discardableResult
     func send<T, R: NetworkRequest>(
         request: R,
-        completion: @escaping ApiResult<T>.Completion) where R.Result == T
+        completion: @escaping ApiResult<T>.Completion) -> NetworkDataTask? where R.Result == T
     {
         guard let url = makeUrl(from: request) else {
             completion(.error(.badRequest))
-            return
+            return nil
         }
         
         if request.isAuthorizationRequired && !authorizationStatusHolder.isAuthorized {
             completion(.error(.userIsNotAuthorized))
-            return
+            return nil
         }
         
+        let networkDataTask = NetworkDataTaskImpl()
         let dataRequest = Alamofire.request(
             url,
             method: request.httpMethod,
@@ -59,6 +85,10 @@ final class NetworkClientImpl: NetworkClient {
         )
         
         processDataRequest(dataRequest, request: request, completion: completion)
+        
+        networkDataTask.request = dataRequest
+        
+        return networkDataTask
     }
     
     func send<T, R: MultipartFormDataRequest>(

@@ -80,6 +80,10 @@ final class MainPageView: UIScrollView, StandardPreloaderViewHolder, ActivityDis
     }
     
     // MARK: Public
+    func setSearchPlaceholder(_ placeholder: String) {
+        // TODO:
+    }
+    
     func setName(_ name: String?) {
         nameLabel.text = name
         setNeedsLayout()
@@ -108,26 +112,30 @@ final class MainPageView: UIScrollView, StandardPreloaderViewHolder, ActivityDis
         licenceView.setLicenseParts(licenseParts)
     }
     
-    func setLicenseSearchPlaceholder(_ placeholder: String?) {
-        licenseSearchInputField.placeholder = placeholder
-    }
-    
-    var onLicenseSearchChange: ((String?) -> ())? {
+    var onSearchTextChange: ((String?) -> ())? {
         get { return licenseSearchInputField.onTextChange }
         set { licenseSearchInputField.onTextChange = newValue }
     }
     
-    func setLicenseSearchTitle(_ title: String) {
-        licenseSearchButton.setTitle(title)
+    func setFavoritesSectionTitle(_ title: String) {
+        // TODO:
     }
     
-    func setOnSearchButtonTap(_ onSearchButtonTap: ((String?) -> ())?) {
-        licenseSearchButton.onTap = { [licenseSearchInputField] in
-            onSearchButtonTap?(licenseSearchInputField.text)
-        }
+    func setNoFavoritesTitle(_ title: String) {
+        // TODO:
     }
     
-    func setSearchButtonEnabled(_ enabled: Bool) {
-        licenseSearchButton.setEnabled(enabled)
+    func setNoFavoritesDescription(_ decription: String) {
+        // TODO:
     }
+    
+    func setFavorites(_ users: [UserViewData]) {
+        // TODO:
+    }
+    
+    func setUserSuggestList(_ suggestList: [UserViewData]) {
+        // TODO:
+    }
+    
+    var onUserSuggestTap: ((_ userId: String) -> ())?
 }

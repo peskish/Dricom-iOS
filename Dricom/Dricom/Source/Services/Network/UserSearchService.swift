@@ -1,35 +1,36 @@
 protocol UserSearchService: class {
-    func searchUser(license: String, completion: @escaping ApiResult<User?>.Completion)
+    func searchUsers(license: String, shouldCancelPrevious: Bool, completion: @escaping ApiResult<[User]>.Completion)
+    func cancelCurrentSearch()
 }
 
 final class UserSearchServiceImpl: UserSearchService {
     // MARK: - Dependencies
-    private let dataValidationService: DataValidationService
     private let networkClient: NetworkClient
     
     // MARK: - Init
-    init(dataValidationService: DataValidationService, networkClient: NetworkClient) {
-        self.dataValidationService = dataValidationService
+    init(networkClient: NetworkClient) {
         self.networkClient = networkClient
     }
     
+    // MARK: - State
+    private var currentSearchTask: NetworkDataTask?
+    
     // MARK: - UserSearchService
-    func searchUser(license: String, completion: @escaping ApiResult<User?>.Completion) {
-        guard let normalizedLicense = LicenseNormalizer.normalize(license: license) else {
-            completion(.error(.wrongInputParameters(message: "Введите номер")))
-            return
+    func searchUsers(license: String, shouldCancelPrevious: Bool, completion: @escaping ApiResult<[User]>.Completion) {
+        if shouldCancelPrevious {
+            cancelCurrentSearch()
         }
         
-        if let licenseError = dataValidationService.validateLicense(normalizedLicense) {
-            completion(.error(.wrongInputParameters(message: message(from: licenseError))))
+        guard let normalizedLicense = LicenseNormalizer.normalize(license: license) else {
+            completion(.data([]))
             return
         }
         
         let request = SearchUserRequest(license: normalizedLicense)
         
-        networkClient.send(request: request) { result in
+        currentSearchTask = networkClient.send(request: request) { result in
             result.onData { searchUserResult in
-                completion(.data(searchUserResult.results.first))
+                completion(.data(searchUserResult.results))
             }
             result.onError { error in
                 completion(.error(error))
@@ -37,13 +38,7 @@ final class UserSearchServiceImpl: UserSearchService {
         }
     }
     
-    // MARK: - Private
-    private func message(from inputFieldError: InputFieldError) -> String {
-        switch inputFieldError.errorType {
-        case .requiredFieldIsEmpty:
-            return "Введите номер"
-        case .incorrectData(let validationErrorMessage):
-            return validationErrorMessage
-        }
+    func cancelCurrentSearch() {
+        currentSearchTask?.cancel()
     }
 }

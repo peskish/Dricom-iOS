@@ -13,6 +13,9 @@ final class FavoriteUsersServiceImpl: FavoriteUsersService {
         self.networkClient = networkClient
     }
     
+    // MARK: - State
+    private var currentFavoritesListTask: NetworkDataTask?
+    
     // MARK: - FavoriteUsersService
     func addToFavorites(userId: String, completion: @escaping ApiResult<Bool>.Completion) {
         let request = AddUserToFavoritesRequest(userId: userId)
@@ -39,7 +42,9 @@ final class FavoriteUsersServiceImpl: FavoriteUsersService {
     }
     
     func favoritesList(completion: @escaping ApiResult<SearchUserResult>.Completion) {
+        currentFavoritesListTask?.cancel()
+        
         let request = FavoriteUsersRequest()
-        networkClient.send(request: request, completion: completion)
+        currentFavoritesListTask = networkClient.send(request: request, completion: completion)
     }
 }

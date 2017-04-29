@@ -4,6 +4,7 @@ final class MainPagePresenter: MainPageModule {
     // MARK: - Private properties
     private let interactor: MainPageInteractor
     private let router: MainPageRouter
+    private let searchDebouncer = Debouncer(delay: 0.5)
     
     // MARK: - Init
     init(interactor: MainPageInteractor,
@@ -26,46 +27,55 @@ final class MainPagePresenter: MainPageModule {
     
     // MARK: - Private
     private func setUpView() {
-        view?.setLicenseSearchPlaceholder("Введите номер автомобиля")
-        view?.setLicenseSearchTitle("Найти пользователя")
+        view?.setScreenTitle("Автовладельцы")
+        view?.setSearchPlaceholder("Найти по номеру")
+        view?.setFavoritesSectionTitle("Избранные пользователи")
+        view?.setNoFavoritesTitle("У вас пока нет избранных пользователей")
+        view?.setNoFavoritesDescription("Вы можете воспользоваться поиском автовладельцев и добавить пользователей")
         
         view?.onViewDidLoad = { [weak self] in
-            self?.view?.startActivity()
-            self?.interactor.favoriteUsersList { result in
-                self?.view?.stopActivity()
-                self?.showFavoriteUsers(result.cachedData() ?? [])
+            self?.updateFavoritesList(forceReload: false)
+        }
+        
+        view?.onSearchTextChange = { [weak self] license in
+            self?.searchDebouncer.debounce {
+                self?.searchUsers(license: license)
             }
-        }
-        
-        view?.onLicenseSearchChange = { [weak self] license in
-            self?.view?.setSearchButtonEnabled(!isEmptyOrNil(license))
-        }
-        
-        view?.setOnSearchButtonTap { [weak self] license in
-            self?.searchUser(license: license)
         }
     }
     
-    private func searchUser(license: String?) {
-        guard let license = license else { return }
-        
+    private func updateFavoritesList(forceReload: Bool) {
         view?.startActivity()
-        interactor.searchUser(license: license) { [weak self] result in
+        interactor.favoriteUsersList(forceReload: forceReload) { [weak self] result in
             self?.view?.stopActivity()
-            
-            result.onData { userInfo in
-                if let userInfo = userInfo {
+            self?.showFavoriteUsers(result.cachedData() ?? [])
+        }
+    }
+    
+    private func searchUsers(license: String?) {
+        guard let license = license, license.characters.count > 1 else {
+            view?.setUserSuggestList([])
+            return
+        }
+        
+        interactor.searchUsers(license: license) { [weak self] result in
+            result.onData { userInfoList in
+                guard let `self` = self else { return }
+                
+                self.view?.setUserSuggestList(userInfoList.map(self.convertToFavoriteUserViewData))
+                
+                self.view?.onUserSuggestTap = { [weak self] userId in
+                    guard let userInfo = userInfoList.first(where: { $0.user.id == userId }) else { return }
+                    
                     self?.router.showUserInfo(userInfo) { userInfoModule in
                         userInfoModule.onAddUserToFavorites = { user in
-                            print("added to favorites: \(user.id)")
+                            self?.updateFavoritesList(forceReload: false)
                         }
                         
                         userInfoModule.onRemoveUserFromFavorites = { user in
-                            print("removed from favorites: \(user.id)")
+                            self?.updateFavoritesList(forceReload: false)
                         }
                     }
-                } else {
-                    self?.router.showNoUserFound()
                 }
             }
             
@@ -76,7 +86,27 @@ final class MainPagePresenter: MainPageModule {
     }
     
     private func showFavoriteUsers(_ users: [User]) {
-        print("showFavoriteUsers: \(users)")
+        view?.setFavorites(
+            users.map {
+                UserViewData(
+                    id: $0.id,
+                    avatarUrl: $0.avatar?.image,
+                    name: $0.name,
+                    license: $0.licenses.first?.title,
+                    isInFavorites: true
+                )
+            }
+        )
+    }
+    
+    private func convertToFavoriteUserViewData(_ userInfo: UserInfo) -> UserViewData {
+        return UserViewData(
+            id: userInfo.user.id,
+            avatarUrl: userInfo.user.avatar?.image,
+            name: userInfo.user.name,
+            license: userInfo.user.licenses.first?.title,
+            isInFavorites: userInfo.isInFavorites
+        )
     }
     
     // MARK: - MainPageModule
