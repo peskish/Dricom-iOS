@@ -284,6 +284,7 @@
 		F0FD0C921EB4CC170059A3E5 /* Throttler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD0C8F1EB4CC170059A3E5 /* Throttler.swift */; };
 		F0FD0C941EB511ED0059A3E5 /* MainPageAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD0C931EB511ED0059A3E5 /* MainPageAccountView.swift */; };
 		F0FD0C961EB519E10059A3E5 /* UINavigationController+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD0C951EB519E10059A3E5 /* UINavigationController+Style.swift */; };
+		F0FD0C9D1EB526170059A3E5 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD0C9C1EB526170059A3E5 /* SearchBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -582,6 +583,7 @@
 		F0FD0C8F1EB4CC170059A3E5 /* Throttler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Throttler.swift; sourceTree = "<group>"; };
 		F0FD0C931EB511ED0059A3E5 /* MainPageAccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageAccountView.swift; sourceTree = "<group>"; };
 		F0FD0C951EB519E10059A3E5 /* UINavigationController+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Style.swift"; sourceTree = "<group>"; };
+		F0FD0C9C1EB526170059A3E5 /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchBarView.swift; path = Dricom/Source/Presentation/Views/SearchBarView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1674,6 +1676,7 @@
 				F08BE1A11DC9265000243B56 /* ActionButtonView.swift */,
 				F076D67C1DCF8F4900E3ED0F /* DoneButtonAccessoryView.swift */,
 				F08BE1A51DC9326A00243B56 /* ImageButtonView.swift */,
+				F0FD0C9C1EB526170059A3E5 /* SearchBarView.swift */,
 				F0823DB91DE9DA10007BD04D /* StandardPreloaderView.swift */,
 				F076D67A1DCF87D300E3ED0F /* TextFieldView.swift */,
 				F0AFDA361E3D2A7000CCEE24 /* LicensePlateView.swift */,
@@ -2295,6 +2298,7 @@
 				F0128C2F1E4F9E47008E6668 /* KeyValueObserver.swift in Sources */,
 				F0128C041E4F9CED008E6668 /* UIView+FirstResponderSettings.swift in Sources */,
 				F0823DD41DE9EEA2007BD04D /* MainPageRouter.swift in Sources */,
+				F0FD0C9D1EB526170059A3E5 /* SearchBarView.swift in Sources */,
 				F0128C2A1E4F9D39008E6668 /* ScrollViewRefresherInterfaceState.swift in Sources */,
 				F0D038591DD3AE0500E0085D /* FeedbackInteractorImpl.swift in Sources */,
 				F06E3F771E81B0EE00829A3F /* UserProfileModule.swift in Sources */,

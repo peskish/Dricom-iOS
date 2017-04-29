@@ -31,7 +31,7 @@ final class MainPageViewController: BaseViewController, MainPageViewInput {
         mainPageView.setSearchPlaceholder(placeholder)
     }
     
-    var onSearchTextChange: ((String?) -> ())? {
+    var onSearchTextChange: ((String) -> ())? {
         get { return mainPageView.onSearchTextChange }
         set { mainPageView.onSearchTextChange = newValue }
     }

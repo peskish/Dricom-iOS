@@ -17,7 +17,7 @@ struct AccountViewData {
 protocol MainPageViewInput: class, ViewLifecycleObservable, MessageDisplayable, ActivityDisplayable {
     func setScreenTitle(_ title: String)
     func setSearchPlaceholder(_ placeholder: String)
-    var onSearchTextChange: ((String?) -> ())? { get set }
+    var onSearchTextChange: ((String) -> ())? { get set }
     func setAccountViewData(_ accountViewData: AccountViewData)
     func setFavoritesSectionTitle(_ title: String)
     func setNoFavoritesTitle(_ title: String)

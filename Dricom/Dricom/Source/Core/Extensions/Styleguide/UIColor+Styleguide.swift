@@ -36,4 +36,16 @@ extension UIColor {
     class var drcPaleGrey: UIColor {
         return UIColor(red: 234.0 / 255.0, green: 237.0 / 255.0, blue: 239.0 / 255.0, alpha: 1.0)
     }
+    
+    class var drcCoolGreyTwo: UIColor {
+        return UIColor(red: 178.0 / 255.0, green: 184.0 / 255.0, blue: 191.0 / 255.0, alpha: 1.0)
+    }
+    
+    class var drcPaleGreyTwo: UIColor {
+        return UIColor(red: 233.0 / 255.0, green: 234.0 / 255.0, blue: 237.0 / 255.0, alpha: 1.0)
+    }
+    
+    class var drcPaleGreyThree: UIColor {
+        return UIColor(red: 244.0 / 255.0, green: 246.0 / 255.0, blue: 247.0 / 255.0, alpha: 1.0)
+    }
 }
