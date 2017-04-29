@@ -3,12 +3,12 @@ import XCTest
 
 class RegistrationDataValidationServiceTests: XCTestCase {
     
-    var validator: RegisterDataValidationServiceImpl!
+    var validator: DataValidationServiceImpl!
     
     override func setUp() {
         super.setUp()
         
-        validator = RegisterDataValidationServiceImpl()
+        validator = DataValidationServiceImpl()
     }
     
     override func tearDown() {

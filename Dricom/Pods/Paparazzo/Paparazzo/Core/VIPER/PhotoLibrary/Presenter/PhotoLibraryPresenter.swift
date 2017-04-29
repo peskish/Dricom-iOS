@@ -43,7 +43,7 @@ final class PhotoLibraryPresenter: PhotoLibraryModule {
         view?.setCancelButtonTitle("Отменить")
         
         view?.setAccessDeniedTitle("Чтобы выбрать фото из галереи")
-        view?.setAccessDeniedMessage("Разрешите доступ приложению Avito к вашим фотографиям")
+        view?.setAccessDeniedMessage("Разрешите доступ приложению Dricom к вашим фотографиям")
         view?.setAccessDeniedButtonTitle("Разрешить доступ к галерее")
         
         interactor.observeAuthorizationStatus { [weak self] accessGranted in
