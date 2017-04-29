@@ -282,6 +282,8 @@
 		F0FD0C901EB4CC170059A3E5 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD0C8D1EB4CC170059A3E5 /* Debouncer.swift */; };
 		F0FD0C911EB4CC170059A3E5 /* Delayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD0C8E1EB4CC170059A3E5 /* Delayer.swift */; };
 		F0FD0C921EB4CC170059A3E5 /* Throttler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD0C8F1EB4CC170059A3E5 /* Throttler.swift */; };
+		F0FD0C941EB511ED0059A3E5 /* MainPageAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD0C931EB511ED0059A3E5 /* MainPageAccountView.swift */; };
+		F0FD0C961EB519E10059A3E5 /* UINavigationController+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD0C951EB519E10059A3E5 /* UINavigationController+Style.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -578,6 +580,8 @@
 		F0FD0C8D1EB4CC170059A3E5 /* Debouncer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 		F0FD0C8E1EB4CC170059A3E5 /* Delayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delayer.swift; sourceTree = "<group>"; };
 		F0FD0C8F1EB4CC170059A3E5 /* Throttler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Throttler.swift; sourceTree = "<group>"; };
+		F0FD0C931EB511ED0059A3E5 /* MainPageAccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageAccountView.swift; sourceTree = "<group>"; };
+		F0FD0C951EB519E10059A3E5 /* UINavigationController+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Style.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1055,6 +1059,7 @@
 			children = (
 				F05790D41E32A72D004FBD4A /* UIColor+Styleguide.swift */,
 				F05790D51E32A72D004FBD4A /* UIFont+Styleguide.swift */,
+				F0FD0C951EB519E10059A3E5 /* UINavigationController+Style.swift */,
 			);
 			name = Styleguide;
 			path = Core/Extensions/Styleguide;
@@ -1286,6 +1291,7 @@
 				F0823DCB1DE9EEA2007BD04D /* MainPageView.swift */,
 				F0823DCC1DE9EEA2007BD04D /* MainPageViewController.swift */,
 				F0823DCD1DE9EEA2007BD04D /* MainPageViewInput.swift */,
+				F0FD0C931EB511ED0059A3E5 /* MainPageAccountView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2311,6 +2317,7 @@
 				F0B450B31E61B6A100F3B2E4 /* SettingsSwitchCell.swift in Sources */,
 				F0128B7C1E451946008E6668 /* IosVersion.swift in Sources */,
 				F0128BF81E4F9CED008E6668 /* ContentInsetHolder.swift in Sources */,
+				F0FD0C961EB519E10059A3E5 /* UINavigationController+Style.swift in Sources */,
 				F0823DD51DE9EEA2007BD04D /* MainPageRouterImpl.swift in Sources */,
 				F021D6E31DD8925B00F50091 /* CameraAssembly.swift in Sources */,
 				F0128C241E4F9D39008E6668 /* ActivityIndicatorRefresherStateAnimator.swift in Sources */,
@@ -2391,6 +2398,7 @@
 				F021D6E41DD8925B00F50091 /* CameraAssemblyImpl.swift in Sources */,
 				F0A1157E1DC6863E00A4DC76 /* UIView+Properties.swift in Sources */,
 				F0A1157A1DC6863E00A4DC76 /* UIColorExtension.swift in Sources */,
+				F0FD0C941EB511ED0059A3E5 /* MainPageAccountView.swift in Sources */,
 				F076D66D1DCF6F3800E3ED0F /* NumbersExtension.swift in Sources */,
 				F0B450B51E61BC3900F3B2E4 /* SettingsSelectCell.swift in Sources */,
 				F0A115871DC68E1D00A4DC76 /* ViewControllerTransition.swift in Sources */,

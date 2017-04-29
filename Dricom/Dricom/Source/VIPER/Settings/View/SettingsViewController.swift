@@ -30,20 +30,7 @@ final class SettingsViewController: BaseViewController, SettingsViewInput {
         settingsView.sectionHeaderHeight = CGFloat.leastNormalMagnitude
         settingsView.sectionFooterHeight = SpecMargins.contentMargin
         
-        // TODO: DRY
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.titleTextAttributes = [
-            NSForegroundColorAttributeName: UIColor.drcSlate,
-            NSFontAttributeName: UIFont.drcScreenNameFont() ?? UIFont.systemFont(ofSize: 17)
-        ]
-        
-        if let backgroundImage = UIImage.imageWithColor(UIColor.drcWhite) {
-            navigationController?.navigationBar.setBackgroundImage(
-                backgroundImage,
-                for: .default
-            )
-        }
+        navigationController?.setStyle(.main)
     }
     
     override func viewWillLayoutSubviews() {

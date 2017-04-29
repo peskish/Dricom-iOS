@@ -8,13 +8,17 @@ struct UserViewData {
     let isInFavorites: Bool
 }
 
+struct AccountViewData {
+    let name: String?
+    let avatarImageUrl: URL?
+    let license: String?
+}
+
 protocol MainPageViewInput: class, ViewLifecycleObservable, MessageDisplayable, ActivityDisplayable {
     func setScreenTitle(_ title: String)
     func setSearchPlaceholder(_ placeholder: String)
     var onSearchTextChange: ((String?) -> ())? { get set }
-    func setName(_ name: String?)
-    func setAvatarImageUrl(_ avatarImageUrl: URL?)
-    func setLicenseParts(_ licenseParts: LicenseParts)
+    func setAccountViewData(_ accountViewData: AccountViewData)
     func setFavoritesSectionTitle(_ title: String)
     func setNoFavoritesTitle(_ title: String)
     func setNoFavoritesDescription(_ decription: String)

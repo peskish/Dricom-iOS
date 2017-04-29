@@ -61,6 +61,10 @@ extension UIFont {
         return UIFont(name: "Rubik-Medium", size: 21.0)
     }
     
+    class func drcAccountUserNameFont() -> UIFont? {
+        return UIFont(name: "Rubik-Regular", size: 21.0)
+    }
+    
     class func drcSettingsCellTitleFont() -> UIFont? {
         return UIFont(name: "Rubik-Regular", size: 17.0)
     }
@@ -75,5 +79,9 @@ extension UIFont {
     
     class func drcNoUserMessageFont() -> UIFont? {
         return UIFont(name: "Rubik-Medium", size: 17.0)
+    }
+    
+    class func drcAccountLicenseFont() -> UIFont? {
+        return UIFont(name: "Rubik-Regular", size: 14.0)
     }
 }

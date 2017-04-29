@@ -111,16 +111,25 @@ final class MainPagePresenter: MainPageModule {
     
     // MARK: - MainPageModule
     func presentUser(_ user: User) {
-        view?.setName(user.name)
-        
-        view?.setAvatarImageUrl(
-            user.avatar.flatMap{ URL(string: $0.image) }
-        )
-        
-        if let licenseNumber = user.licenses.first?.title,
-            let licenseParts = LicenseParts(licenseNumber: licenseNumber) {
-            view?.setLicenseParts(licenseParts)
+        let license: String?
+        if let parts = LicenseParts(licenseNumber: user.licenses.first?.title) {
+            license = parts.firstLetter
+                + parts.numberPart
+                + parts.restLetters
+                + " "
+                + parts.regionCode
+                + parts.countryCode
+        } else {
+            license = nil
         }
+        
+        view?.setAccountViewData(
+            AccountViewData(
+                name: user.name,
+                avatarImageUrl: user.avatar.flatMap{ URL(string: $0.image) },
+                license: license
+            )
+        )
     }
     
     func focusOnModule() {

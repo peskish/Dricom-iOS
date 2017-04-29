@@ -8,11 +8,12 @@ final class MainPageViewController: BaseViewController, MainPageViewInput {
     override func loadView() {
         view = mainPageView
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.setStyle(.main)
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     override func viewWillLayoutSubviews() {
@@ -35,16 +36,8 @@ final class MainPageViewController: BaseViewController, MainPageViewInput {
         set { mainPageView.onSearchTextChange = newValue }
     }
     
-    func setAvatarImageUrl(_ avatarImageUrl: URL?) {
-        mainPageView.setAvatarImageUrl(avatarImageUrl)
-    }
-    
-    func setName(_ name: String?) {
-        mainPageView.setName(name)
-    }
-    
-    func setLicenseParts(_ licenseParts: LicenseParts) {
-        mainPageView.setLicenseParts(licenseParts)
+    func setAccountViewData(_ accountViewData: AccountViewData) {
+        mainPageView.setAccountViewData(accountViewData)
     }
     
     func setFavoritesSectionTitle(_ title: String) {
