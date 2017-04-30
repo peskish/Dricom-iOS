@@ -23,7 +23,7 @@ class SettingsSwitchCell: UITableViewCell {
         selectionStyle = .none
     }
     
-    static var reuseIdentifier: String? {
+    static var reuseIdentifier: String {
         return String(describing: self)
     }
     

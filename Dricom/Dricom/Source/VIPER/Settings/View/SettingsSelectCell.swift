@@ -17,7 +17,7 @@ class SettingsSelectCell: UITableViewCell {
         selectionStyle = .gray
     }
     
-    static var reuseIdentifier: String? {
+    static var reuseIdentifier: String {
         return String(describing: self)
     }
     

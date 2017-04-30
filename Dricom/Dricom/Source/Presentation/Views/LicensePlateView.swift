@@ -12,15 +12,19 @@ struct LicenseParts {
             return nil
         }
         
-        firstLetter = (licenseNumber as NSString).substring(to: 1) + " "
+        firstLetter = (licenseNumber as NSString).substring(to: 1)
         numberPart = (licenseNumber as NSString).substring(
             with: NSRange(location: 1, length: 3)
         )
-        restLetters = " " + (licenseNumber as NSString).substring(
+        restLetters = (licenseNumber as NSString).substring(
             with: NSRange(location: 4, length: 2)
         )
         regionCode = (licenseNumber as NSString).substring(from: 6)
         countryCode = "RUS"
+    }
+    
+    var parts: [String] {
+        return [firstLetter, numberPart, restLetters, regionCode, countryCode]
     }
 }
 

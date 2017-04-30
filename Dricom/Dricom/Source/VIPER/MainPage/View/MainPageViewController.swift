@@ -52,17 +52,12 @@ final class MainPageViewController: BaseViewController, MainPageViewInput {
         mainPageView.setNoFavoritesDescription(decription)
     }
     
-    func setFavorites(_ users: [UserViewData]) {
+    func setFavorites(_ users: [UserRowViewData]) {
         mainPageView.setFavorites(users)
     }
     
-    func setUserSuggestList(_ suggestList: [UserViewData]) {
+    func setUserSuggestList(_ suggestList: [UserRowViewData]) {
         mainPageView.setUserSuggestList(suggestList)
-    }
-    
-    var onUserSuggestTap: ((_ userId: String) -> ())? {
-        get { return mainPageView.onUserSuggestTap }
-        set { mainPageView.onUserSuggestTap = newValue }
     }
     
     // MARK: ActivityDisplayable

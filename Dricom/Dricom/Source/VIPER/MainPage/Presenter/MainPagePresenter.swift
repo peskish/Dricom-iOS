@@ -61,22 +61,7 @@ final class MainPagePresenter: MainPageModule {
         interactor.searchUsers(license: license) { [weak self] result in
             result.onData { userInfoList in
                 guard let `self` = self else { return }
-                
-                self.view?.setUserSuggestList(userInfoList.map(self.convertToFavoriteUserViewData))
-                
-                self.view?.onUserSuggestTap = { [weak self] userId in
-                    guard let userInfo = userInfoList.first(where: { $0.user.id == userId }) else { return }
-                    
-                    self?.router.showUserInfo(userInfo) { userInfoModule in
-                        userInfoModule.onAddUserToFavorites = { user in
-                            self?.updateFavoritesList(forceReload: false)
-                        }
-                        
-                        userInfoModule.onRemoveUserFromFavorites = { user in
-                            self?.updateFavoritesList(forceReload: false)
-                        }
-                    }
-                }
+                self.view?.setUserSuggestList(userInfoList.map(self.convertToUserRowViewData))
             }
             
             result.onError { error in
@@ -85,49 +70,59 @@ final class MainPagePresenter: MainPageModule {
         }
     }
     
+    private func configureUserInfoModule(_ module: UserInfoModule) {
+        module.onAddUserToFavorites = { [weak self] user in
+            self?.updateFavoritesList(forceReload: false)
+        }
+        
+        module.onRemoveUserFromFavorites = { [weak self] user in
+            self?.updateFavoritesList(forceReload: false)
+        }
+    }
+    
     private func showFavoriteUsers(_ users: [User]) {
         view?.setFavorites(
-            users.map {
-                UserViewData(
-                    id: $0.id,
-                    avatarUrl: $0.avatar?.image,
-                    name: $0.name,
-                    license: $0.licenses.first?.title,
-                    isInFavorites: true
+            users.map { user -> UserRowViewData in
+                return UserRowViewData(
+                    id: user.id,
+                    avatarImageUrl: user.avatar.flatMap { URL(string: $0.image) },
+                    name: user.name,
+                    license: user.licenses.first?.title,
+                    isInFavorites: true,
+                    onTap: { [weak self] in
+                        let userInfo = UserInfo(user: user, isInFavorites: true)
+                        self?.router.showUserInfo(userInfo) { userInfoModule in
+                            self?.configureUserInfoModule(userInfoModule)
+                        }
+                    }
                 )
             }
         )
     }
     
-    private func convertToFavoriteUserViewData(_ userInfo: UserInfo) -> UserViewData {
-        return UserViewData(
+    private func convertToUserRowViewData(_ userInfo: UserInfo) -> UserRowViewData {
+        return UserRowViewData(
             id: userInfo.user.id,
-            avatarUrl: userInfo.user.avatar?.image,
+            avatarImageUrl: userInfo.user.avatar.flatMap { URL(string: $0.image) },
             name: userInfo.user.name,
             license: userInfo.user.licenses.first?.title,
-            isInFavorites: userInfo.isInFavorites
+            isInFavorites: userInfo.isInFavorites,
+            onTap: { [weak self] in
+                self?.router.showUserInfo(userInfo) { userInfoModule in
+                    self?.configureUserInfoModule(userInfoModule)
+                }
+            }
         )
     }
     
     // MARK: - MainPageModule
     func presentUser(_ user: User) {
-        let license: String?
-        if let parts = LicenseParts(licenseNumber: user.licenses.first?.title) {
-            license = parts.firstLetter
-                + parts.numberPart
-                + parts.restLetters
-                + " "
-                + parts.regionCode
-                + parts.countryCode
-        } else {
-            license = nil
-        }
-        
+        let licenseParts = LicenseParts(licenseNumber: user.licenses.first?.title)
         view?.setAccountViewData(
             AccountViewData(
-                name: user.name,
                 avatarImageUrl: user.avatar.flatMap{ URL(string: $0.image) },
-                license: license
+                name: user.name,
+                license: licenseParts.flatMap { $0.parts.joined(separator: " ") }
             )
         )
     }

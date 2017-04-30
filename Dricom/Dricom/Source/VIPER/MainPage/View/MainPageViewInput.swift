@@ -1,17 +1,19 @@
 import Foundation
 
-struct UserViewData {
+struct AccountViewData {
+    let avatarImageUrl: URL?
+    let name: String?
+    let license: String?
+}
+
+struct UserRowViewData {
     let id: String
-    let avatarUrl: String?
+    let avatarImageUrl: URL?
     let name: String?
     let license: String?
     let isInFavorites: Bool
-}
-
-struct AccountViewData {
-    let name: String?
-    let avatarImageUrl: URL?
-    let license: String?
+    
+    let onTap: (() -> ())?
 }
 
 protocol MainPageViewInput: class, ViewLifecycleObservable, MessageDisplayable, ActivityDisplayable {
@@ -22,7 +24,6 @@ protocol MainPageViewInput: class, ViewLifecycleObservable, MessageDisplayable, 
     func setFavoritesSectionTitle(_ title: String)
     func setNoFavoritesTitle(_ title: String)
     func setNoFavoritesDescription(_ decription: String)
-    func setFavorites(_ users: [UserViewData])
-    func setUserSuggestList(_ suggestList: [UserViewData])
-    var onUserSuggestTap: ((_ userId: String) -> ())? { get set }
+    func setFavorites(_ users: [UserRowViewData])
+    func setUserSuggestList(_ suggestList: [UserRowViewData])
 }

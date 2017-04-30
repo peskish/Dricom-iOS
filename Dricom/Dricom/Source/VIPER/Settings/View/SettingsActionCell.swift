@@ -12,7 +12,7 @@ class SettingsActionCell: UITableViewCell {
         selectionStyle = .gray
     }
     
-    static var reuseIdentifier: String? {
+    static var reuseIdentifier: String {
         return String(describing: self)
     }
     

@@ -2,7 +2,7 @@ import UIKit
 
 final class SettingsViewController: BaseViewController, SettingsViewInput {
     // MARK: - Properties
-    private let settingsView = UITableView(frame: .zero, style: .grouped)
+    fileprivate let settingsView = UITableView(frame: .zero, style: .grouped)
     
     // MARK: - State
     fileprivate var viewData: SettingsViewData?
@@ -18,6 +18,10 @@ final class SettingsViewController: BaseViewController, SettingsViewInput {
         settingsView.backgroundColor = UIColor.drcWhite
         settingsView.delegate = self
         settingsView.dataSource = self
+        
+        settingsView.register(SettingsActionCell.self, forCellReuseIdentifier: SettingsActionCell.reuseIdentifier)
+        settingsView.register(SettingsSelectCell.self, forCellReuseIdentifier: SettingsSelectCell.reuseIdentifier)
+        settingsView.register(SettingsSwitchCell.self, forCellReuseIdentifier: SettingsSwitchCell.reuseIdentifier)
         
         settingsView.bounces = false
         settingsView.rowHeight = 50
@@ -90,17 +94,29 @@ extension SettingsViewController: UITableViewDataSource {
     private func cellForRowData(_ rowData: SettingsViewData.Row) -> UITableViewCell {
         switch rowData {
         case .action(let actionData):
-            let cell = SettingsActionCell(style: .default, reuseIdentifier: SettingsActionCell.reuseIdentifier)
-            cell.setViewData(actionData)
-            return cell
+            if let cell = settingsView.dequeueReusableCell(
+                withIdentifier: SettingsActionCell.reuseIdentifier) as? SettingsActionCell {
+                cell.setViewData(actionData)
+                return cell
+            } else {
+                return UITableViewCell()
+            }
         case .select(let selectData):
-            let cell = SettingsSelectCell(style: .default, reuseIdentifier: SettingsSelectCell.reuseIdentifier)
-            cell.setViewData(selectData)
-            return cell
+            if let cell = settingsView.dequeueReusableCell(
+                withIdentifier: SettingsSelectCell.reuseIdentifier) as? SettingsSelectCell {
+                cell.setViewData(selectData)
+                return cell
+            } else {
+                return UITableViewCell()
+            }
         case .switcher(let switcherData):
-            let cell = SettingsSwitchCell(style: .default, reuseIdentifier: SettingsSwitchCell.reuseIdentifier)
-            cell.setViewData(switcherData)
-            return cell
+            if let cell = settingsView.dequeueReusableCell(
+                withIdentifier: SettingsSwitchCell.reuseIdentifier) as? SettingsSwitchCell {
+                cell.setViewData(switcherData)
+                return cell
+            } else {
+                return UITableViewCell()
+            }
         }
     }
 }

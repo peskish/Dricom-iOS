@@ -20,6 +20,8 @@ final class MainPageView: UIScrollView, StandardPreloaderViewHolder, ActivityDis
         font: MainPageView.searchBarFont,
         searchTextPositionAdjustment: UIOffset(horizontal: 5, vertical: 0)
     )
+    private let favoritesSectionTitleView = MainPageSectionTitleView()
+    private let favoritesListView = MainPageUsersTableView()
     
     let preloader = StandardPreloaderView(style: .dark)
     
@@ -31,6 +33,8 @@ final class MainPageView: UIScrollView, StandardPreloaderViewHolder, ActivityDis
         
         addSubview(accountView)
         addSubview(searchBarView)
+        addSubview(favoritesSectionTitleView)
+        addSubview(favoritesListView)
         
         addSubview(preloader)
         
@@ -59,6 +63,20 @@ final class MainPageView: UIScrollView, StandardPreloaderViewHolder, ActivityDis
         accountView.top = searchBarView.bottom
         accountView.left = bounds.left
         
+        favoritesSectionTitleView.layout(
+            left: bounds.left,
+            top: accountView.bottom,
+            width: bounds.width,
+            height: favoritesSectionTitleView.sizeThatFits().height
+        )
+        
+        favoritesListView.layout(
+            left: bounds.left,
+            right: bounds.right,
+            top: favoritesSectionTitleView.bottom,
+            bottom: bounds.bottom
+        )
+        
         preloader.frame = bounds
     }
     
@@ -78,7 +96,7 @@ final class MainPageView: UIScrollView, StandardPreloaderViewHolder, ActivityDis
     }
     
     func setFavoritesSectionTitle(_ title: String) {
-        // TODO:
+        favoritesSectionTitleView.setTitle(title)
     }
     
     func setNoFavoritesTitle(_ title: String) {
@@ -89,13 +107,11 @@ final class MainPageView: UIScrollView, StandardPreloaderViewHolder, ActivityDis
         // TODO:
     }
     
-    func setFavorites(_ users: [UserViewData]) {
-        // TODO:
+    func setFavorites(_ users: [UserRowViewData]) {
+        favoritesListView.setViewDataList(users)
     }
     
-    func setUserSuggestList(_ suggestList: [UserViewData]) {
+    func setUserSuggestList(_ suggestList: [UserRowViewData]) {
         // TODO:
     }
-    
-    var onUserSuggestTap: ((_ userId: String) -> ())?
 }
