@@ -48,8 +48,8 @@ final class MainPageViewController: BaseViewController, MainPageViewInput {
         mainPageView.setNoFavoritesTitle(title)
     }
     
-    func setNoFavoritesDescription(_ decription: String) {
-        mainPageView.setNoFavoritesDescription(decription)
+    func setNoFavoritesDescription(_ text: String) {
+        mainPageView.setNoFavoritesDescription(text)
     }
     
     func setFavorites(_ users: [UserRowViewData]) {

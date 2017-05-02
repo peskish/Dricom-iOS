@@ -30,8 +30,8 @@ final class MainPagePresenter: MainPageModule {
         view?.setScreenTitle("Автовладельцы")
         view?.setSearchPlaceholder("Найти по номеру")
         view?.setFavoritesSectionTitle("Избранные пользователи")
-        view?.setNoFavoritesTitle("У вас пока нет избранных пользователей")
-        view?.setNoFavoritesDescription("Вы можете воспользоваться поиском автовладельцев и добавить пользователей")
+        view?.setNoFavoritesTitle("У вас пока нет избранных\nпользователей")
+        view?.setNoFavoritesDescription("Вы можете воспользоваться поиском\nавтовладельцев и добавить пользователей")
         
         view?.onViewDidLoad = { [weak self] in
             self?.updateFavoritesList(forceReload: false)

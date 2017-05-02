@@ -23,7 +23,7 @@ protocol MainPageViewInput: class, ViewLifecycleObservable, MessageDisplayable, 
     func setAccountViewData(_ accountViewData: AccountViewData)
     func setFavoritesSectionTitle(_ title: String)
     func setNoFavoritesTitle(_ title: String)
-    func setNoFavoritesDescription(_ decription: String)
+    func setNoFavoritesDescription(_ text: String)
     func setFavorites(_ users: [UserRowViewData])
     func setUserSuggestList(_ suggestList: [UserRowViewData])
 }

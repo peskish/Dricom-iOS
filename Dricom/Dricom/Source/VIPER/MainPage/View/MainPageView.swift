@@ -22,6 +22,7 @@ final class MainPageView: UIScrollView, StandardPreloaderViewHolder, ActivityDis
     )
     private let favoritesSectionTitleView = MainPageSectionTitleView()
     private let favoritesListView = MainPageUsersTableView()
+    private let noFavoriteUsersView = MainPageNoFavoriteUsersView()
     
     let preloader = StandardPreloaderView(style: .dark)
     
@@ -35,8 +36,12 @@ final class MainPageView: UIScrollView, StandardPreloaderViewHolder, ActivityDis
         addSubview(searchBarView)
         addSubview(favoritesSectionTitleView)
         addSubview(favoritesListView)
+        addSubview(noFavoriteUsersView)
         
         addSubview(preloader)
+        
+        noFavoriteUsersView.isHidden = true
+        favoritesListView.isHidden = true
         
         setStyle()
     }
@@ -77,6 +82,8 @@ final class MainPageView: UIScrollView, StandardPreloaderViewHolder, ActivityDis
             bottom: bounds.bottom
         )
         
+        noFavoriteUsersView.frame = favoritesListView.frame
+        
         preloader.frame = bounds
     }
     
@@ -100,15 +107,18 @@ final class MainPageView: UIScrollView, StandardPreloaderViewHolder, ActivityDis
     }
     
     func setNoFavoritesTitle(_ title: String) {
-        // TODO:
+        noFavoriteUsersView.setTitle(title)
     }
     
-    func setNoFavoritesDescription(_ decription: String) {
-        // TODO:
+    func setNoFavoritesDescription(_ text: String) {
+        noFavoriteUsersView.setDescription(text)
     }
     
     func setFavorites(_ users: [UserRowViewData]) {
         favoritesListView.setViewDataList(users)
+        
+        favoritesListView.isHidden = users.isEmpty
+        noFavoriteUsersView.isHidden = !favoritesListView.isHidden
     }
     
     func setUserSuggestList(_ suggestList: [UserRowViewData]) {

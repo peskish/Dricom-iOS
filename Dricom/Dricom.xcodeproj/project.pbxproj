@@ -222,6 +222,8 @@
 		F0A115871DC68E1D00A4DC76 /* ViewControllerTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115861DC68E1D00A4DC76 /* ViewControllerTransition.swift */; };
 		F0A115891DC6914100A4DC76 /* CrossFadePushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A115881DC6914100A4DC76 /* CrossFadePushTransition.swift */; };
 		F0A702401EB67B5000F2EEA3 /* MainPageSectionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A7023F1EB67B5000F2EEA3 /* MainPageSectionTitleView.swift */; };
+		F0A7026D1EB920DC00F2EEA3 /* MainPageNoFavoriteUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A7026C1EB920DC00F2EEA3 /* MainPageNoFavoriteUsersView.swift */; };
+		F0A7026F1EB9225000F2EEA3 /* SpecFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A7026E1EB9225000F2EEA3 /* SpecFonts.swift */; };
 		F0AE364C1EA6AFEE00172E09 /* FavoriteUsersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AE364B1EA6AFEE00172E09 /* FavoriteUsersRequest.swift */; };
 		F0AE364E1EA6B00A00172E09 /* AddUserToFavoritesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AE364D1EA6B00A00172E09 /* AddUserToFavoritesRequest.swift */; };
 		F0AE36501EA6B02500172E09 /* RemoveUserFromFavoritesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AE364F1EA6B02500172E09 /* RemoveUserFromFavoritesRequest.swift */; };
@@ -522,6 +524,8 @@
 		F0A115861DC68E1D00A4DC76 /* ViewControllerTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerTransition.swift; path = Dricom/Source/Presentation/Transitions/ViewControllerTransition.swift; sourceTree = SOURCE_ROOT; };
 		F0A115881DC6914100A4DC76 /* CrossFadePushTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CrossFadePushTransition.swift; path = Dricom/Source/Presentation/Transitions/CrossFadePushTransition.swift; sourceTree = SOURCE_ROOT; };
 		F0A7023F1EB67B5000F2EEA3 /* MainPageSectionTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageSectionTitleView.swift; sourceTree = "<group>"; };
+		F0A7026C1EB920DC00F2EEA3 /* MainPageNoFavoriteUsersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageNoFavoriteUsersView.swift; sourceTree = "<group>"; };
+		F0A7026E1EB9225000F2EEA3 /* SpecFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpecFonts.swift; path = Dricom/Source/Presentation/Spec/SpecFonts.swift; sourceTree = SOURCE_ROOT; };
 		F0AE364B1EA6AFEE00172E09 /* FavoriteUsersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteUsersRequest.swift; path = Core/Networking/Request/FavoriteUsersRequest.swift; sourceTree = "<group>"; };
 		F0AE364D1EA6B00A00172E09 /* AddUserToFavoritesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddUserToFavoritesRequest.swift; path = Core/Networking/Request/AddUserToFavoritesRequest.swift; sourceTree = "<group>"; };
 		F0AE364F1EA6B02500172E09 /* RemoveUserFromFavoritesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoveUserFromFavoritesRequest.swift; path = Core/Networking/Request/RemoveUserFromFavoritesRequest.swift; sourceTree = "<group>"; };
@@ -1301,6 +1305,7 @@
 				F0823DCB1DE9EEA2007BD04D /* MainPageView.swift */,
 				F0FD0C931EB511ED0059A3E5 /* MainPageAccountView.swift */,
 				F0A7023F1EB67B5000F2EEA3 /* MainPageSectionTitleView.swift */,
+				F0A7026C1EB920DC00F2EEA3 /* MainPageNoFavoriteUsersView.swift */,
 				F0FD0C9E1EB6679B0059A3E5 /* MainPageUsersTableView.swift */,
 				F0FD0CA01EB66D4B0059A3E5 /* UserRowTableViewCell.swift */,
 			);
@@ -1729,6 +1734,7 @@
 				F0A115811DC6897300A4DC76 /* SpecColors.swift */,
 				F08BE1A31DC926B600243B56 /* SpecMargins.swift */,
 				F021D6CC1DD88D6100F50091 /* SpecSizes.swift */,
+				F0A7026E1EB9225000F2EEA3 /* SpecFonts.swift */,
 			);
 			name = Spec;
 			sourceTree = "<group>";
@@ -2207,6 +2213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0A7026D1EB920DC00F2EEA3 /* MainPageNoFavoriteUsersView.swift in Sources */,
 				F06E3F761E81B0EE00829A3F /* UserProfileInteractorImpl.swift in Sources */,
 				F0823DB71DE9D929007BD04D /* ActivityDisplayable.swift in Sources */,
 				F076D6411DCF67F200E3ED0F /* LoginAssemblyImpl.swift in Sources */,
@@ -2390,6 +2397,7 @@
 				F0128B771E4515C4008E6668 /* ApplicationViewInput.swift in Sources */,
 				F0B450A91E60B6A400F3B2E4 /* SettingsRouter.swift in Sources */,
 				F01398E51DF43D8300E4F188 /* User.swift in Sources */,
+				F0A7026F1EB9225000F2EEA3 /* SpecFonts.swift in Sources */,
 				F0F14AB21E9D7215004752A8 /* UploadAvatarRequest.swift in Sources */,
 				F099E3C81EA29DC50082CD92 /* NoUserFoundRouterImpl.swift in Sources */,
 				F076D6711DCF6F3800E3ED0F /* String+Pluralization.swift in Sources */,
