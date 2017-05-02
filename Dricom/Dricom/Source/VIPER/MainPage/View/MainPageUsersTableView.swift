@@ -2,7 +2,7 @@ import UIKit
 
 class MainPageUsersTableView: UIView {
     // MARK: - Properties
-    private let tableView = UITableView(frame: .zero, style: .plain)
+    fileprivate let tableView = UITableView(frame: .zero, style: .plain)
     
     // MARK: - State
     fileprivate var userRowViewDataList = [UserRowViewData]()
@@ -11,13 +11,18 @@ class MainPageUsersTableView: UIView {
     init() {
         super.init(frame: .zero)
         
+        addSubview(tableView)
+        
         tableView.backgroundColor = UIColor.drcWhite
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.register(UserRowTableViewCell.self, forCellReuseIdentifier: UserRowTableViewCell.reuseIdentifier)
+        tableView.register(
+            UserRowTableViewCell.self,
+            forCellReuseIdentifier: UserRowTableViewCell.reuseIdentifier
+        )
         
-        tableView.bounces = false
+        tableView.bounces = true
         tableView.rowHeight = 70
         tableView.tableHeaderView = UIView(
             frame: CGRect(x: 0, y: 0, width: 0, height: CGFloat.leastNormalMagnitude)
@@ -64,14 +69,19 @@ extension MainPageUsersTableView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = userRowTableViewCell()
+        if let viewData = userRowViewDataList.elementAtIndex(indexPath.row) {
+            cell.setViewData(viewData)
+        }
+        return cell
+    }
+    
+    private func userRowTableViewCell() -> UserRowTableViewCell {
         if let cell = tableView.dequeueReusableCell(
             withIdentifier: UserRowTableViewCell.reuseIdentifier) as? UserRowTableViewCell {
-            if let viewData = userRowViewDataList.elementAtIndex(indexPath.row) {
-                cell.setViewData(viewData)
-            }
             return cell
         } else {
-            return UITableViewCell()
+            return UserRowTableViewCell(style: .default, reuseIdentifier: UserRowTableViewCell.reuseIdentifier)
         }
     }
 }

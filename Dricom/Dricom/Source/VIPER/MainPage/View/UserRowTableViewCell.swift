@@ -9,8 +9,8 @@ class UserRowTableViewCell: UITableViewCell {
     private let licenseLabel = UILabel()
     
     // MARK: - Init
-    init() {
-        super.init(style: .default, reuseIdentifier: UserRowTableViewCell.reuseIdentifier)
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: .default, reuseIdentifier: reuseIdentifier)
         
         addSubview(avatarImageView)
         addSubview(nameLabel)

@@ -82,30 +82,21 @@ final class MainPagePresenter: MainPageModule {
     
     private func showFavoriteUsers(_ users: [User]) {
         view?.setFavorites(
-            users.map { user -> UserRowViewData in
-                return UserRowViewData(
-                    id: user.id,
-                    avatarImageUrl: user.avatar.flatMap { URL(string: $0.image) },
-                    name: user.name,
-                    license: user.licenses.first?.title,
-                    isInFavorites: true,
-                    onTap: { [weak self] in
-                        let userInfo = UserInfo(user: user, isInFavorites: true)
-                        self?.router.showUserInfo(userInfo) { userInfoModule in
-                            self?.configureUserInfoModule(userInfoModule)
-                        }
-                    }
-                )
-            }
+            users
+                .map { UserInfo(user: $0, isInFavorites: true) }
+                .map (convertToUserRowViewData)
         )
     }
     
     private func convertToUserRowViewData(_ userInfo: UserInfo) -> UserRowViewData {
+        let licenseParts = LicenseParts(licenseNumber: userInfo.user.licenses.first?.title)
+        let license = licenseParts.flatMap { $0.parts.joined(separator: " ") }
+        
         return UserRowViewData(
             id: userInfo.user.id,
             avatarImageUrl: userInfo.user.avatar.flatMap { URL(string: $0.image) },
             name: userInfo.user.name,
-            license: userInfo.user.licenses.first?.title,
+            license: license,
             isInFavorites: userInfo.isInFavorites,
             onTap: { [weak self] in
                 self?.router.showUserInfo(userInfo) { userInfoModule in
