@@ -7,6 +7,7 @@ class UserRowTableViewCell: UITableViewCell {
     private let nameLabel = UILabel()
     private let avatarImageView = UIImageView(image: #imageLiteral(resourceName: "Avatar"))
     private let licenseLabel = UILabel()
+    private let separatorView = UIView()
     
     // MARK: - Init
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -15,8 +16,10 @@ class UserRowTableViewCell: UITableViewCell {
         addSubview(avatarImageView)
         addSubview(nameLabel)
         addSubview(licenseLabel)
+        addSubview(separatorView)
         
-        backgroundColor = UIColor.drcWhite
+        backgroundColor = .drcWhite
+        separatorView.backgroundColor = .drcPaleGreyTwo
         
         selectionStyle = .gray
         
@@ -61,6 +64,13 @@ class UserRowTableViewCell: UITableViewCell {
             right: bounds.right - SpecMargins.contentMargin,
             top: nameLabel.bottom + 2,
             height: licenseLabel.height
+        )
+        
+        separatorView.layout(
+            left: nameLabel.left,
+            right: bounds.right,
+            bottom: bounds.bottom,
+            height: 1.0 / UIScreen.main.scale
         )
     }
     

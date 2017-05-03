@@ -37,7 +37,7 @@ final class MainPagePresenter: MainPageModule {
             self?.updateFavoritesList(forceReload: false)
         }
         
-        view?.onViewWillDisappear = { [weak self] in
+        view?.onViewDidDisappear = { [weak self] in
             self?.view?.setSearchSuggestionsHidden(true)
         }
         

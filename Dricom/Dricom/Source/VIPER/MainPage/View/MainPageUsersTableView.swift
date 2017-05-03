@@ -23,6 +23,7 @@ class MainPageUsersTableView: UIView {
         )
         
         tableView.bounces = true
+        tableView.separatorStyle = .none
         tableView.rowHeight = 70
         tableView.tableHeaderView = UIView(
             frame: CGRect(x: 0, y: 0, width: 0, height: CGFloat.leastNormalMagnitude)
