@@ -19,11 +19,15 @@ struct UserRowViewData {
 protocol MainPageViewInput: class, ViewLifecycleObservable, MessageDisplayable, ActivityDisplayable {
     func setScreenTitle(_ title: String)
     func setSearchPlaceholder(_ placeholder: String)
-    var onSearchTextChange: ((String) -> ())? { get set }
     func setAccountViewData(_ accountViewData: AccountViewData)
     func setFavoritesSectionTitle(_ title: String)
     func setNoFavoritesTitle(_ title: String)
     func setNoFavoritesDescription(_ text: String)
     func setFavorites(_ users: [UserRowViewData])
+    func setSearchSuggestionsHidden(_ : Bool)
     func setUserSuggestList(_ suggestList: [UserRowViewData])
+    var onSearchDidBegin: ((_ searchQuery: String) -> ())? { get set }
+    var onSearchTextChange: ((String) -> ())? { get set }
+    var onSearchCancelButtonTap: (() -> ())? { get set }
+    var onSearchButtonTap: ((_ searchQuery: String) -> ())? { get set }
 }

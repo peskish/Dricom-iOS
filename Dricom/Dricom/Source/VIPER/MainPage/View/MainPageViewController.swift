@@ -36,6 +36,21 @@ final class MainPageViewController: BaseViewController, MainPageViewInput {
         set { mainPageView.onSearchTextChange = newValue }
     }
     
+    var onSearchDidBegin: ((_ searchQuery: String) -> ())? {
+        get { return mainPageView.onSearchDidBegin }
+        set { mainPageView.onSearchDidBegin = newValue }
+    }
+    
+    var onSearchCancelButtonTap: (() -> ())? {
+        get { return mainPageView.onSearchCancelButtonTap }
+        set { mainPageView.onSearchCancelButtonTap = newValue }
+    }
+    
+    var onSearchButtonTap: ((_ searchQuery: String) -> ())? {
+        get { return mainPageView.onSearchButtonTap }
+        set { mainPageView.onSearchButtonTap = newValue }
+    }
+    
     func setAccountViewData(_ accountViewData: AccountViewData) {
         mainPageView.setAccountViewData(accountViewData)
     }
@@ -54,6 +69,14 @@ final class MainPageViewController: BaseViewController, MainPageViewInput {
     
     func setFavorites(_ users: [UserRowViewData]) {
         mainPageView.setFavorites(users)
+    }
+    
+    func setSearchSuggestionsHidden(_ searchSuggestionsHidden: Bool) {
+        mainPageView.setSearchSuggestionsHidden(searchSuggestionsHidden) { [weak self] didSet in
+            if didSet {
+                self?.navigationController?.setNavigationBarHidden(!searchSuggestionsHidden, animated: true)
+            }
+        }
     }
     
     func setUserSuggestList(_ suggestList: [UserRowViewData]) {

@@ -1,9 +1,24 @@
 import UIKit
 
-public extension UIViewController {
-
+extension UIViewController {
+    
     var defaultContentInsets: UIEdgeInsets {
-        return UIEdgeInsets(top: topLayoutGuide.length, left: 0, bottom: bottomLayoutGuide.length, right: 0)
+        return UIEdgeInsets(
+            top: topLayoutGuide.length,
+            left: 0,
+            bottom: tabBarHeight,
+            right: 0
+        )
+    }
+    
+    private var tabBarHeight: CGFloat {
+        guard
+            let tabBar = tabBarController?.tabBar,
+            !tabBar.isHidden,
+            !hidesBottomBarWhenPushed
+            else { return 0 }
+        
+        return tabBar.height
     }
     
     func setNavigationBarShadowHidden(_ hidden: Bool) {

@@ -37,6 +37,22 @@ final class MainPagePresenter: MainPageModule {
             self?.updateFavoritesList(forceReload: false)
         }
         
+        view?.onViewWillDisappear = { [weak self] in
+            self?.view?.setSearchSuggestionsHidden(true)
+        }
+        
+        view?.onSearchDidBegin = { [weak self] searchQuery in
+            self?.onSearchDidBegin(searchQuery: searchQuery)
+        }
+        
+        view?.onSearchCancelButtonTap = { [weak self] in
+            self?.cancelSearch()
+        }
+        
+        view?.onSearchButtonTap = { [weak self] searchQuery in
+            self?.cancelSearch()
+        }
+        
         view?.onSearchTextChange = { [weak self] license in
             self?.searchDebouncer.debounce {
                 self?.searchUsers(license: license)
@@ -68,6 +84,14 @@ final class MainPagePresenter: MainPageModule {
                 self?.view?.showError(error)
             }
         }
+    }
+    
+    private func onSearchDidBegin(searchQuery: String) {
+        view?.setSearchSuggestionsHidden(false)
+    }
+    
+    private func cancelSearch() {
+        view?.setSearchSuggestionsHidden(true)
     }
     
     private func configureUserInfoModule(_ module: UserInfoModule) {

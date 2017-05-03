@@ -23,8 +23,13 @@ final class MainPageView: UIScrollView, StandardPreloaderViewHolder, ActivityDis
     private let favoritesSectionTitleView = MainPageSectionTitleView()
     private let favoritesListView = MainPageUsersTableView()
     private let noFavoriteUsersView = MainPageNoFavoriteUsersView()
+    private let searchSuggestionsView = MainPageUsersTableView()
     
     let preloader = StandardPreloaderView(style: .dark)
+    
+    private var isSearchSuggestionsViewHidden: Bool {
+        return searchSuggestionsView.isHidden == true
+    }
     
     // MARK: - Init
     init() {
@@ -37,11 +42,13 @@ final class MainPageView: UIScrollView, StandardPreloaderViewHolder, ActivityDis
         addSubview(favoritesSectionTitleView)
         addSubview(favoritesListView)
         addSubview(noFavoriteUsersView)
+        addSubview(searchSuggestionsView)
         
         addSubview(preloader)
         
         noFavoriteUsersView.isHidden = true
         favoritesListView.isHidden = true
+        searchSuggestionsView.isHidden = true
         
         setStyle()
     }
@@ -62,7 +69,7 @@ final class MainPageView: UIScrollView, StandardPreloaderViewHolder, ActivityDis
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        searchBarView.layout(left: bounds.left, top: bounds.top, width: bounds.width, height: 58)
+        searchBarView.layout(left: bounds.left, top: 0, width: bounds.width, height: 58)
         
         accountView.size = accountView.sizeThatFits(bounds.size)
         accountView.top = searchBarView.bottom
@@ -83,6 +90,13 @@ final class MainPageView: UIScrollView, StandardPreloaderViewHolder, ActivityDis
         )
         
         noFavoriteUsersView.frame = favoritesListView.frame
+        
+        searchSuggestionsView.layout(
+            left: bounds.left,
+            right: bounds.right,
+            top: searchBarView.bottom,
+            bottom: bounds.bottom
+        )
         
         preloader.frame = bounds
     }
@@ -121,7 +135,52 @@ final class MainPageView: UIScrollView, StandardPreloaderViewHolder, ActivityDis
         noFavoriteUsersView.isHidden = !favoritesListView.isHidden
     }
     
+    func setSearchSuggestionsHidden(_ searchSuggestionsHidden: Bool, completion: ((_ didSet: Bool) -> ())) {
+        guard isSearchSuggestionsViewHidden != searchSuggestionsHidden
+            else { completion(false); return }
+        
+        searchSuggestionsView.isHidden = searchSuggestionsHidden
+        
+        searchBarView.setShowsCancelButton(!searchSuggestionsHidden, animated: true)
+        
+        if searchSuggestionsHidden {
+            searchBarView.endEditing(true)
+        } else {
+            searchBarView.becomeFirstResponder()
+        }
+        
+        setNeedsLayout() // Force the view controller to update content insets
+        
+        completion(true)
+    }
+    
+    var onSearchDidBegin: ((_ searchQuery: String) -> ())? {
+        didSet {
+            searchBarView.onTextDidBeginEditing = { [weak self] in
+                self?.onSearchDidBegin?(self?.searchBarView.text ?? "")
+            }
+        }
+    }
+    
+    var onSearchTextDidChange: ((_ searchQuery: String) -> ())? {
+        get { return searchBarView.onTextChange }
+        set { searchBarView.onTextChange = newValue }
+    }
+    
+    var onSearchCancelButtonTap: (() -> ())? {
+        get { return searchBarView.onCancelButtonTap }
+        set { searchBarView.onCancelButtonTap = newValue }
+    }
+    
+    var onSearchButtonTap: ((_ searchQuery: String) -> ())? {
+        didSet {
+            searchBarView.onSearchButtonTap = { [weak self] in
+                self?.onSearchButtonTap?(self?.searchBarView.text ?? "")
+            }
+        }
+    }
+    
     func setUserSuggestList(_ suggestList: [UserRowViewData]) {
-        // TODO:
+        searchSuggestionsView.setViewDataList(suggestList)
     }
 }
