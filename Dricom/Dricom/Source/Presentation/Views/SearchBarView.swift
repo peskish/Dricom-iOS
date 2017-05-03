@@ -158,11 +158,12 @@ public final class SearchBarView: UIView, UISearchBarDelegate {
         // Force search bar to relayout. Out layout depends on search bar's text field's position
         searchBar.layoutIfNeeded()
         
+        let separatorHeight = 1.0 / UIScreen.main.scale
         separatorView.frame = CGRect(
             x: 0,
-            y: searchBar.bottom,
+            y: searchBar.bottom - separatorHeight,
             width: width,
-            height: 1.0 / UIScreen.main.scale
+            height: separatorHeight
         )
     }
     
