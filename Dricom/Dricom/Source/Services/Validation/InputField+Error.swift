@@ -3,6 +3,7 @@ enum InputField {
     case email
     case license
     case phone
+    case oldPassword
     case password
     case passwordConfirmation
 }

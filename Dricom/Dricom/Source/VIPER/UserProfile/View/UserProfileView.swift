@@ -158,7 +158,7 @@ final class UserProfileView: UIView, ActivityDisplayable, StandardPreloaderViewH
             return emailInputView
         case .phone:
             return phoneInputView
-        case .license, .password, .passwordConfirmation:
+        default:
             return nil
         }
     }

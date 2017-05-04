@@ -167,6 +167,8 @@ final class RegisterView: UIView, ActivityDisplayable, StandardPreloaderViewHold
             return passwordInputView
         case .passwordConfirmation:
             return confirmPasswordInputView
+        case .oldPassword:
+            return nil
         }
     }
     
