@@ -114,7 +114,11 @@ final class SettingsPresenter: SettingsModule
     }
     
     private func onPasswordChangeTap() {
-        
+        router.showChangePassword { [weak self] changePasswordModule in
+            changePasswordModule.onFinish = { result in
+                self?.focusOnModule()
+            }
+        }
     }
     
     private func logOut() {

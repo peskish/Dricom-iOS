@@ -14,4 +14,5 @@ protocol AssemblyFactory: class {
     func photoLibraryAssembly() -> PhotoLibraryAssembly
     func noUserFoundAssembly() -> NoUserFoundAssembly
     func userInfoAssembly() -> UserInfoAssembly
+    func changePasswordAssembly() -> ChangePasswordAssembly
 }

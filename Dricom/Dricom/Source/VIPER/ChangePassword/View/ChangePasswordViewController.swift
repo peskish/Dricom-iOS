@@ -14,6 +14,7 @@ final class ChangePasswordViewController: BaseViewController, ChangePasswordView
         super.viewWillAppear(animated)
         
         navigationController?.setStyle(.main)
+        navigationController?.navigationBar.shadowImage = nil
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     

@@ -62,4 +62,8 @@ final class AssemblyFactoryImpl: AssemblyFactory {
     func userInfoAssembly() -> UserInfoAssembly {
         return UserInfoAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
     }
+    
+    func changePasswordAssembly() -> ChangePasswordAssembly {
+        return ChangePasswordAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
+    }
 }
