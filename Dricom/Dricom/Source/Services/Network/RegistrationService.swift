@@ -1,4 +1,5 @@
 import Foundation
+import CryptoSwift
 
 struct RegistrationData {
     var avatarImageDataCreator: (() -> Data?)?
@@ -37,7 +38,7 @@ final class RegistrationServiceImpl: RegistrationService {
             name: registrationData.name,
             license: registrationData.license,
             phone: registrationData.phone,
-            password: registrationData.password
+            password: registrationData.password.sha512()
         )
         
         networkClient.send(request: request) { [weak self] result in

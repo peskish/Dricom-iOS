@@ -1,4 +1,5 @@
 import UIKit
+import CryptoSwift
 
 struct UserProfileDataChangeSet {
     var avatar: UIImage?
@@ -13,8 +14,18 @@ struct UserProfileDataChangeSet {
 
 protocol UserDataService: class {
     func requestUserData(completion: ApiResult<Void>.Completion?)
-    func changeUserData(with changeSet: UserProfileDataChangeSet, completion: @escaping ApiResult<Void>.Completion)
+    
+    func changeUserData(
+        with changeSet: UserProfileDataChangeSet,
+        completion: @escaping ApiResult<Void>.Completion)
+    
     func changeUserAvatar(_ avatar: UIImage, completion: @escaping ApiResult<Void>.Completion)
+    
+    func changePassword(
+        oldPassword: String,
+        newPassword: String,
+        completion: @escaping ApiResult<Void>.Completion)
+    
     func subscribe(_ observer: AnyObject, onUserDataReceived: @escaping (User) -> ())
 }
 
@@ -80,6 +91,8 @@ final class UserDataServiceImpl: UserDataService, UserDataNotifier {
                     
                     if let avatar = changeSet.avatar {
                         self?.changeUserAvatar(avatar, completion: completion)
+                    } else {
+                        self?.processLoginResponse(loginResponse, completion: completion)
                     }
                 }
                 result.onError { networkRequestError in
@@ -103,6 +116,27 @@ final class UserDataServiceImpl: UserDataService, UserDataNotifier {
                         debugPrint(avatarError)
                     }
                 }
+            }
+        }
+    }
+    
+    func changePassword(
+        oldPassword: String,
+        newPassword: String,
+        completion: @escaping ApiResult<Void>.Completion)
+    {
+        let request = ChangePasswordRequest(
+            oldPassword: oldPassword.sha512(),
+            newPassword: newPassword.sha512()
+        )
+        
+        self.networkClient.send(request: request) { [weak self] result in
+            result.onData { loginResponse in
+                self?.loginResponseProcessor.processLoginResponse(loginResponse)
+                self?.processLoginResponse(loginResponse, completion: completion)
+            }
+            result.onError { networkRequestError in
+                completion(.error(networkRequestError))
             }
         }
     }

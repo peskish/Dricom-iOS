@@ -1,5 +1,4 @@
 import Alamofire
-import CryptoSwift
 
 struct RegisterRequest: NetworkRequest {
     typealias Result = LoginResponse
@@ -22,7 +21,7 @@ struct RegisterRequest: NetworkRequest {
         self.name = name
         self.license = license
         self.phone = phone
-        self.password = password.sha512()
+        self.password = password
     }
     
     let httpMethod: HTTPMethod = .post
