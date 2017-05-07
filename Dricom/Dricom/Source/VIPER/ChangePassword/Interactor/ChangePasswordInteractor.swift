@@ -9,7 +9,6 @@ protocol ChangePasswordInteractor: class {
     
     func validateOldPassword() -> InputFieldError?
     func validatePassword() -> InputFieldError?
-    func validatePasswordConfirmation() -> InputFieldError?
     
-    func changePassword(completion: @escaping ApiResult<Void>.Completion)
+    func changePassword(completion: @escaping ApiResult<Bool>.Completion)
 }

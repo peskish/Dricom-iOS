@@ -6,7 +6,10 @@ final class ChangePasswordAssemblyImpl: BaseAssembly, ChangePasswordAssembly {
         configure: (_ module: ChangePasswordModule) -> ())
         -> UIViewController
     {
-        let interactor = ChangePasswordInteractorImpl()
+        let interactor = ChangePasswordInteractorImpl(
+            userDataService: serviceFactory.userDataService(),
+            dataValidationService: serviceFactory.dataValidationService()
+        )
         
         let viewController = ChangePasswordViewController()
         

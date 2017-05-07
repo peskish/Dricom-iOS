@@ -1,7 +1,8 @@
 import Alamofire
+import Unbox
 
 struct ChangePasswordRequest: NetworkRequest {
-    typealias Result = LoginResponse
+    typealias Result = ChangePasswordResponse
     
     private let oldPassword: String
     private let newPassword: String
@@ -23,5 +24,14 @@ struct ChangePasswordRequest: NetworkRequest {
         parameters["old_password"] = oldPassword
         parameters["new_password"] = newPassword
         return parameters
+    }
+}
+
+struct ChangePasswordResponse: Unboxable {
+    let success: Bool
+    
+    init(unboxer: Unboxer) throws {
+        let detail: String = try unboxer.unbox(key: "details")
+        success = detail == "success"
     }
 }

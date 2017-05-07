@@ -37,20 +37,17 @@ final class ChangePasswordPresenter:
         
         view?.setOnInputChange(field: .oldPassword) { [weak self] text in
             self?.interactor.setOldPassword(text)
-            let error = self?.interactor.validateOldPassword()
-            self?.view?.setState(error == nil ? .normal : .validationError, to: .oldPassword)
+            self?.validateDataAndShowError(to: .oldPassword)
         }
         
         view?.setOnInputChange(field: .password) { [weak self] text in
             self?.interactor.setPassword(text)
-            let error = self?.interactor.validatePassword()
-            self?.view?.setState(error == nil ? .normal : .validationError, to: .password)
+            self?.validateDataAndShowError(to: .password)
         }
         
         view?.setOnInputChange(field: .passwordConfirmation) { [weak self] text in
             self?.interactor.setPasswordConfirmation(text)
-            let error = self?.interactor.validatePasswordConfirmation()
-            self?.view?.setState(error == nil ? .normal : .validationError, to: .passwordConfirmation)
+            self?.validateDataAndShowError(to: .passwordConfirmation)
         }
         
         view?.setOnDoneButtonTap(field: .oldPassword) { [weak self] in
@@ -68,8 +65,34 @@ final class ChangePasswordPresenter:
         view?.setConfirmButtonTitle("Подтвердить")
         view?.setConfirmButtonEnabled(false)
         view?.onConfirmButtonTap = { [weak self] in
-            // TODO:
-            print("onConfirmButtonTap")
+            self?.view?.startActivity()
+            self?.interactor.changePassword { [weak self] result in
+                self?.view?.stopActivity()
+                result.onData { success in
+                    if success {
+                        self?.dismissModule()
+                    } else {
+                        self?.view?.showError(.internalServerError)
+                    }
+                }
+                result.onError { error in
+                    self?.view?.showError(error)
+                }
+            }
+        }
+    }
+    
+    private func validateDataAndShowError(to field: InputField) {
+        interactor.validateData { [weak self] result in
+            switch result {
+            case .correct:
+                self?.view?.setConfirmButtonEnabled(true)
+                self?.view?.setState(.normal, to: field)
+            case .incorrect(let errors):
+                self?.view?.setConfirmButtonEnabled(false)
+                let error = errors.first(where: { $0.field == field })
+                self?.view?.setState(error == nil ? .normal : .validationError, to: field)
+            }
         }
     }
     

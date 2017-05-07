@@ -14,7 +14,8 @@ final class SettingsRouterImpl: BaseRouter, SettingsRouter, RouterLoginShowable 
     func showUserProfile() {
         let assembly = assemblyFactory.userProfileAssembly()
         let targetViewController = assembly.module()
-        navigationController?.pushViewController(targetViewController, animated: true)
+        let navigationController = UINavigationController(rootViewController: targetViewController)
+        viewController?.present(navigationController, animated: true, completion: nil)
     }
     
     func showChangePassword(configure: (_ module: ChangePasswordModule) -> ()) {

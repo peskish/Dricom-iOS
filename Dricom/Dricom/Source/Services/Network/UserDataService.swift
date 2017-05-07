@@ -24,7 +24,7 @@ protocol UserDataService: class {
     func changePassword(
         oldPassword: String,
         newPassword: String,
-        completion: @escaping ApiResult<Void>.Completion)
+        completion: @escaping ApiResult<Bool>.Completion)
     
     func subscribe(_ observer: AnyObject, onUserDataReceived: @escaping (User) -> ())
 }
@@ -123,17 +123,16 @@ final class UserDataServiceImpl: UserDataService, UserDataNotifier {
     func changePassword(
         oldPassword: String,
         newPassword: String,
-        completion: @escaping ApiResult<Void>.Completion)
+        completion: @escaping ApiResult<Bool>.Completion)
     {
         let request = ChangePasswordRequest(
             oldPassword: oldPassword.sha512(),
             newPassword: newPassword.sha512()
         )
         
-        self.networkClient.send(request: request) { [weak self] result in
-            result.onData { loginResponse in
-                self?.loginResponseProcessor.processLoginResponse(loginResponse)
-                self?.processLoginResponse(loginResponse, completion: completion)
+        self.networkClient.send(request: request) { result in
+            result.onData { response in
+                completion(.data(response.success))
             }
             result.onError { networkRequestError in
                 completion(.error(networkRequestError))

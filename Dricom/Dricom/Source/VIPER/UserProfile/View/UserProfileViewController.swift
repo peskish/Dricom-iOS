@@ -38,6 +38,20 @@ final class UserProfileViewController: BaseViewController, UserProfileViewInput,
         self.title = title
     }
     
+    func setCancelButtonTitle(_ title: String) {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            title: title,
+            style: .plain,
+            target: self,
+            action: #selector(onCancelButtonTap(_:))
+        )
+    }
+    
+    var onCancelButtonTap: (() -> ())?
+    @objc private func onCancelButtonTap(_ sender: UIBarButtonItem) {
+        onCancelButtonTap?()
+    }
+    
     private var onRightButtonTap: (() -> ())?
     func setRightButton(title: String, onTap: @escaping () -> ()) {
         onRightButtonTap = onTap

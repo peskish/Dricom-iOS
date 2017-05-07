@@ -41,6 +41,11 @@ final class UserProfilePresenter:
         view?.setInputPlaceholder(field: .email, placeholder: "Ваш Email")
         view?.setInputPlaceholder(field: .phone, placeholder: "Контактный телефон")
         
+        view?.setCancelButtonTitle("Отменить")
+        view?.onCancelButtonTap = { [weak self] in
+            self?.dismissModule()
+        }
+        
         view?.setOnInputChange(field: .name) { [weak self] text in
             self?.interactor.setName(text)
             self?.validateDataAndShowError(to: .name)
@@ -104,6 +109,7 @@ final class UserProfilePresenter:
                     self?.view?.stopActivity()
                     result.onData {
                         self?.setViewState(.read)
+                        self?.router.dismissCurrentModule()
                     }
                     result.onError { networkRequestError in
                         self?.view?.showError(networkRequestError)

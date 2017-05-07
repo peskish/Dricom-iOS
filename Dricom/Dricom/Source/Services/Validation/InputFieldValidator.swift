@@ -82,6 +82,14 @@ final class InputFieldValidator {
         return nil
     }
     
+    func validateOldPassword(_ oldPassword: String?) -> InputFieldError? {
+        guard let oldPassword = oldPassword, !oldPassword.isEmpty else {
+            return InputFieldError(field: .oldPassword, errorType: .requiredFieldIsEmpty)
+        }
+        
+        return nil
+    }
+    
     func validatePassword(_ password: String?) -> InputFieldError? {
         guard let password = password, !password.isEmpty else {
             return InputFieldError(field: .password, errorType: .requiredFieldIsEmpty)

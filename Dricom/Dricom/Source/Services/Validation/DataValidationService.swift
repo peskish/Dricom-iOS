@@ -8,10 +8,12 @@ enum DataValidationResult {
 protocol DataValidationService {
     func validateData(_ data: RegisterData, completion: @escaping (DataValidationResult) -> ())
     func validateData(_ data: UserProfileDataChangeSet, completion: @escaping (DataValidationResult) -> ())
+    func validateData(_ data: PasswordChangeData, completion: @escaping (DataValidationResult) -> ())
     func validateName(_ name: String?) -> InputFieldError?
     func validateEmail(_ email: String?) -> InputFieldError?
     func validateLicense(_ license: String?) -> InputFieldError?
     func validatePhone(_ phone: String?) -> InputFieldError?
+    func validateOldPassword(_ oldPassword: String?) -> InputFieldError?
     func validatePassword(_ password: String?) -> InputFieldError?
 }
 
@@ -51,6 +53,22 @@ final class DataValidationServiceImpl: DataValidationService {
         }
     }
     
+    func validateData(_ data: PasswordChangeData, completion: @escaping (DataValidationResult) -> ()) {
+        let validator = InputFieldValidator()
+        
+        let errors: [InputFieldError] = [
+            validator.validateOldPassword(data.oldPassword),
+            validator.validatePassword(data.password),
+            validator.validatePasswordConfirmation(data.passwordConfirmation, password: data.password)
+            ].flatMap{$0}
+        
+        if errors.isEmpty {
+            completion(.correct)
+        } else {
+            completion(.incorrect(errors: errors))
+        }
+    }
+    
     func validateName(_ name: String?) -> InputFieldError? {
         return InputFieldValidator().validateName(name)
     }
@@ -65,6 +83,10 @@ final class DataValidationServiceImpl: DataValidationService {
     
     func validatePhone(_ phone: String?) -> InputFieldError? {
         return InputFieldValidator().validatePhone(phone)
+    }
+    
+    func validateOldPassword(_ oldPassword: String?) -> InputFieldError? {
+        return InputFieldValidator().validateOldPassword(oldPassword)
     }
     
     func validatePassword(_ password: String?) -> InputFieldError? {
