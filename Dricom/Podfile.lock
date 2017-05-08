@@ -28,6 +28,9 @@ PODS:
   - ImageSource/UIKit (1.0.0):
     - ImageSource/Core
   - JNWSpringAnimation (0.7.1)
+  - JSQMessagesViewController (7.3.4):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
   - KeychainAccess (3.0.1)
   - Paparazzo/Core (1.0.0):
     - ImageSource
@@ -43,6 +46,7 @@ DEPENDENCIES:
   - AlamofireImage
   - CryptoSwift
   - FastttCamera
+  - JSQMessagesViewController
   - KeychainAccess
   - Paparazzo/Core
   - Unbox
@@ -54,11 +58,13 @@ SPEC CHECKSUMS:
   FastttCamera: 51f16712cbd5bdb08bc6231b957325c6be5e478d
   ImageSource: 81419e0abad686305b19d148c72d8fc9d094dddd
   JNWSpringAnimation: cd4c2f4464324f63f176c3624ffccf205211a100
+  JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   KeychainAccess: 017ea25e313a49eda10bb19b0bb0760fb1edfe1a
   Paparazzo: 3ec4e4455fba14d48dd073f1ccb200d33f2cedbb
   SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
   Unbox: c8b2ab69d3337597b4a3f47a0538807dc12db670
 
-PODFILE CHECKSUM: 26efec8bb349d99aef8658d6f2016ebf8045cbff
+PODFILE CHECKSUM: 824a143bebea4c399b49bd1fed79d618fea4df41
 
 COCOAPODS: 1.2.1
