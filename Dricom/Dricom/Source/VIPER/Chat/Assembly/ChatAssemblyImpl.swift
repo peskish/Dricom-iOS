@@ -2,13 +2,11 @@ import UIKit
 
 final class ChatAssemblyImpl: BaseAssembly, ChatAssembly {
     // MARK: - ChatAssembly
-    func module(
-        configure: (_ module: ChatModule) -> ())
-        -> UIViewController
+    func module(position: ViewControllerPosition) -> UIViewController
     {
         let interactor = ChatInteractorImpl()
         
-        let viewController = ChatViewController()
+        let viewController = ChatViewController(position: position)
         
         let router = ChatRouterImpl(
             assemblyFactory: assemblyFactory,
@@ -23,8 +21,6 @@ final class ChatAssemblyImpl: BaseAssembly, ChatAssembly {
         viewController.addDisposable(presenter)
         
         presenter.view = viewController
-        
-        configure(presenter)
         
         return viewController
     }

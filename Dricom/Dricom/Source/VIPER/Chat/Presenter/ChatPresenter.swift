@@ -1,8 +1,6 @@
 import Foundation
 
-final class ChatPresenter:
-    ChatModule
-{
+final class ChatPresenter {
     // MARK: - Private properties
     private let interactor: ChatInteractor
     private let router: ChatRouter
@@ -35,6 +33,4 @@ final class ChatPresenter:
     func dismissModule() {
         router.dismissCurrentModule()
     }
-    
-    var onFinish: ((ChatResult) -> ())?
 }
