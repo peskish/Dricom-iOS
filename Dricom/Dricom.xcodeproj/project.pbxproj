@@ -21,6 +21,17 @@
 		F0022BCD1EBBBD25009EBD46 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BC21EBBBD25009EBD46 /* ChangePasswordView.swift */; };
 		F0022BCE1EBBBD25009EBD46 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BC31EBBBD25009EBD46 /* ChangePasswordViewController.swift */; };
 		F0022BCF1EBBBD25009EBD46 /* ChangePasswordViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BC41EBBBD25009EBD46 /* ChangePasswordViewInput.swift */; };
+		F0022BE31EC07FDA009EBD46 /* ChatAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BD41EC07FDA009EBD46 /* ChatAssembly.swift */; };
+		F0022BE41EC07FDA009EBD46 /* ChatAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BD51EC07FDA009EBD46 /* ChatAssemblyImpl.swift */; };
+		F0022BE51EC07FDA009EBD46 /* ChatInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BD71EC07FDA009EBD46 /* ChatInteractor.swift */; };
+		F0022BE61EC07FDA009EBD46 /* ChatInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BD81EC07FDA009EBD46 /* ChatInteractorImpl.swift */; };
+		F0022BE71EC07FDA009EBD46 /* ChatModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BDA1EC07FDA009EBD46 /* ChatModule.swift */; };
+		F0022BE81EC07FDA009EBD46 /* ChatPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BDB1EC07FDA009EBD46 /* ChatPresenter.swift */; };
+		F0022BE91EC07FDA009EBD46 /* ChatRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BDD1EC07FDA009EBD46 /* ChatRouter.swift */; };
+		F0022BEA1EC07FDA009EBD46 /* ChatRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BDE1EC07FDA009EBD46 /* ChatRouterImpl.swift */; };
+		F0022BEB1EC07FDA009EBD46 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BE01EC07FDA009EBD46 /* ChatView.swift */; };
+		F0022BEC1EC07FDA009EBD46 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BE11EC07FDA009EBD46 /* ChatViewController.swift */; };
+		F0022BED1EC07FDA009EBD46 /* ChatViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BE21EC07FDA009EBD46 /* ChatViewInput.swift */; };
 		F0128B741E45156C008E6668 /* ApplicationTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B731E45156C008E6668 /* ApplicationTabBarController.swift */; };
 		F0128B771E4515C4008E6668 /* ApplicationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B761E4515C4008E6668 /* ApplicationViewInput.swift */; };
 		F0128B791E45182A008E6668 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B781E45182A008E6668 /* ViewControllerExtensions.swift */; };
@@ -333,6 +344,17 @@
 		F0022BC21EBBBD25009EBD46 /* ChangePasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
 		F0022BC31EBBBD25009EBD46 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		F0022BC41EBBBD25009EBD46 /* ChangePasswordViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewInput.swift; sourceTree = "<group>"; };
+		F0022BD41EC07FDA009EBD46 /* ChatAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatAssembly.swift; sourceTree = "<group>"; };
+		F0022BD51EC07FDA009EBD46 /* ChatAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatAssemblyImpl.swift; sourceTree = "<group>"; };
+		F0022BD71EC07FDA009EBD46 /* ChatInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatInteractor.swift; sourceTree = "<group>"; };
+		F0022BD81EC07FDA009EBD46 /* ChatInteractorImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatInteractorImpl.swift; sourceTree = "<group>"; };
+		F0022BDA1EC07FDA009EBD46 /* ChatModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatModule.swift; sourceTree = "<group>"; };
+		F0022BDB1EC07FDA009EBD46 /* ChatPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatPresenter.swift; sourceTree = "<group>"; };
+		F0022BDD1EC07FDA009EBD46 /* ChatRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRouter.swift; sourceTree = "<group>"; };
+		F0022BDE1EC07FDA009EBD46 /* ChatRouterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRouterImpl.swift; sourceTree = "<group>"; };
+		F0022BE01EC07FDA009EBD46 /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		F0022BE11EC07FDA009EBD46 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		F0022BE21EC07FDA009EBD46 /* ChatViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewInput.swift; sourceTree = "<group>"; };
 		F0128B731E45156C008E6668 /* ApplicationTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationTabBarController.swift; path = Dricom/Source/VIPER/Application/View/ApplicationTabBarController.swift; sourceTree = SOURCE_ROOT; };
 		F0128B761E4515C4008E6668 /* ApplicationViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationViewInput.swift; path = Dricom/Source/VIPER/Application/View/ApplicationViewInput.swift; sourceTree = SOURCE_ROOT; };
 		F0128B781E45182A008E6668 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerExtensions.swift; path = Core/Extensions/UIKit/ViewControllerExtensions.swift; sourceTree = "<group>"; };
@@ -705,6 +727,64 @@
 				F0022BC21EBBBD25009EBD46 /* ChangePasswordView.swift */,
 				F0022BC31EBBBD25009EBD46 /* ChangePasswordViewController.swift */,
 				F0022BC41EBBBD25009EBD46 /* ChangePasswordViewInput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0022BD21EC07FDA009EBD46 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				F0022BD31EC07FDA009EBD46 /* Assembly */,
+				F0022BD61EC07FDA009EBD46 /* Interactor */,
+				F0022BD91EC07FDA009EBD46 /* Presenter */,
+				F0022BDC1EC07FDA009EBD46 /* Router */,
+				F0022BDF1EC07FDA009EBD46 /* View */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		F0022BD31EC07FDA009EBD46 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				F0022BD41EC07FDA009EBD46 /* ChatAssembly.swift */,
+				F0022BD51EC07FDA009EBD46 /* ChatAssemblyImpl.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		F0022BD61EC07FDA009EBD46 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				F0022BD71EC07FDA009EBD46 /* ChatInteractor.swift */,
+				F0022BD81EC07FDA009EBD46 /* ChatInteractorImpl.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		F0022BD91EC07FDA009EBD46 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F0022BDA1EC07FDA009EBD46 /* ChatModule.swift */,
+				F0022BDB1EC07FDA009EBD46 /* ChatPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F0022BDC1EC07FDA009EBD46 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F0022BDD1EC07FDA009EBD46 /* ChatRouter.swift */,
+				F0022BDE1EC07FDA009EBD46 /* ChatRouterImpl.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F0022BDF1EC07FDA009EBD46 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0022BE01EC07FDA009EBD46 /* ChatView.swift */,
+				F0022BE11EC07FDA009EBD46 /* ChatViewController.swift */,
+				F0022BE21EC07FDA009EBD46 /* ChatViewInput.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1472,6 +1552,7 @@
 				F09209901DC14A7F0057302F /* Application */,
 				F021D6D21DD8925B00F50091 /* Camera */,
 				F0022BB41EBBBD25009EBD46 /* ChangePassword */,
+				F0022BD21EC07FDA009EBD46 /* Chat */,
 				F0D038451DD3AE0500E0085D /* Feedback */,
 				F076D62F1DCF67F200E3ED0F /* Login */,
 				F021D69E1DD7A61900F50091 /* MailComposer */,
@@ -2331,6 +2412,7 @@
 				F06E3F7A1E81B0EE00829A3F /* UserProfileRouterImpl.swift in Sources */,
 				F0823DD11DE9EEA2007BD04D /* MainPageInteractorImpl.swift in Sources */,
 				F0128B851E49120C008E6668 /* NetworkRequest.swift in Sources */,
+				F0022BE81EC07FDA009EBD46 /* ChatPresenter.swift in Sources */,
 				F099E3E01EA2B4040082CD92 /* UserInfoModule.swift in Sources */,
 				F0B450841E5A2D8B00F3B2E4 /* MainPageModule.swift in Sources */,
 				F0B450B11E60C1B700F3B2E4 /* SettingsViewData.swift in Sources */,
@@ -2385,11 +2467,13 @@
 				F076D67B1DCF87D300E3ED0F /* TextFieldView.swift in Sources */,
 				F0128BFE1E4F9CED008E6668 /* ContentFittingCombineFunctionBuilder.swift in Sources */,
 				F0823DCF1DE9EEA2007BD04D /* MainPageAssemblyImpl.swift in Sources */,
+				F0022BED1EC07FDA009EBD46 /* ChatViewInput.swift in Sources */,
 				F0D0385F1DD3AE0500E0085D /* FeedbackViewController.swift in Sources */,
 				F0128C331E50F8CF008E6668 /* AuthRequest.swift in Sources */,
 				F0A1157D1DC6863E00A4DC76 /* UIView+Layout.swift in Sources */,
 				F021D6A31DD7A61900F50091 /* MailComposerAssembly.swift in Sources */,
 				F0022BC51EBBBD25009EBD46 /* ChangePasswordAssembly.swift in Sources */,
+				F0022BE41EC07FDA009EBD46 /* ChatAssemblyImpl.swift in Sources */,
 				F0128B9A1E4A599E008E6668 /* NetworkRequestError.swift in Sources */,
 				F0FD0C891EB4C26E0059A3E5 /* InputField+Error.swift in Sources */,
 				F076D67D1DCF8F4900E3ED0F /* DoneButtonAccessoryView.swift in Sources */,
@@ -2427,9 +2511,11 @@
 				F0A115851DC68DF500A4DC76 /* ViewLifecycleObservable.swift in Sources */,
 				F0022BCF1EBBBD25009EBD46 /* ChangePasswordViewInput.swift in Sources */,
 				F0022BCB1EBBBD25009EBD46 /* ChangePasswordRouter.swift in Sources */,
+				F0022BEA1EC07FDA009EBD46 /* ChatRouterImpl.swift in Sources */,
 				F0022BC81EBBBD25009EBD46 /* ChangePasswordInteractorImpl.swift in Sources */,
 				F0128C061E4F9CED008E6668 /* ScrollViewKeyboardAvoidingServiceImpl.swift in Sources */,
 				F0B450B31E61B6A100F3B2E4 /* SettingsSwitchCell.swift in Sources */,
+				F0022BEB1EC07FDA009EBD46 /* ChatView.swift in Sources */,
 				F0128B7C1E451946008E6668 /* IosVersion.swift in Sources */,
 				F0128BF81E4F9CED008E6668 /* ContentInsetHolder.swift in Sources */,
 				F0FD0C961EB519E10059A3E5 /* UINavigationController+Style.swift in Sources */,
@@ -2447,6 +2533,7 @@
 				F0128C031E4F9CED008E6668 /* KeyboardAvoidingSettingsObservable.swift in Sources */,
 				F0128C231E4F9D39008E6668 /* ActivityIndicatorRefresherFactory.swift in Sources */,
 				F099E3E51EA2B4040082CD92 /* UserInfoViewController.swift in Sources */,
+				F0022BE61EC07FDA009EBD46 /* ChatInteractorImpl.swift in Sources */,
 				F0128BA01E4A64C6008E6668 /* NetworkResponseConverter.swift in Sources */,
 				F021D6C71DD7B99300F50091 /* RegisterViewController.swift in Sources */,
 				F0D038601DD3AE0500E0085D /* FeedbackViewInput.swift in Sources */,
@@ -2488,6 +2575,7 @@
 				F0D038581DD3AE0500E0085D /* FeedbackInteractor.swift in Sources */,
 				F021D6F31DDDB5E600F50091 /* CameraPreviewView.swift in Sources */,
 				F0128BFF1E4F9CED008E6668 /* ContentFittingFunction.swift in Sources */,
+				F0022BE31EC07FDA009EBD46 /* ChatAssembly.swift in Sources */,
 				F0128C211E4F9D39008E6668 /* ScrollViewRefresherProgressCalculator.swift in Sources */,
 				F0128B771E4515C4008E6668 /* ApplicationViewInput.swift in Sources */,
 				F0B450A91E60B6A400F3B2E4 /* SettingsRouter.swift in Sources */,
@@ -2497,6 +2585,7 @@
 				F099E3C81EA29DC50082CD92 /* NoUserFoundRouterImpl.swift in Sources */,
 				F076D6711DCF6F3800E3ED0F /* String+Pluralization.swift in Sources */,
 				F0128C0B1E4F9CED008E6668 /* KeyboardFrameService.swift in Sources */,
+				F0022BE51EC07FDA009EBD46 /* ChatInteractor.swift in Sources */,
 				F06E3F781E81B0EE00829A3F /* UserProfilePresenter.swift in Sources */,
 				F0022BC91EBBBD25009EBD46 /* ChangePasswordModule.swift in Sources */,
 				F099E3DC1EA2B4040082CD92 /* UserInfoAssembly.swift in Sources */,
@@ -2544,9 +2633,11 @@
 				F0A115241DC629CE00A4DC76 /* SessionInfo.swift in Sources */,
 				F09209A71DC14A7F0057302F /* ApplicationRouter.swift in Sources */,
 				F0A115331DC62DB600A4DC76 /* ApiError.swift in Sources */,
+				F0022BE71EC07FDA009EBD46 /* ChatModule.swift in Sources */,
 				F0823DD71DE9EEA2007BD04D /* MainPageViewController.swift in Sources */,
 				F0128C2D1E4F9D39008E6668 /* ScrollViewRefresherState.swift in Sources */,
 				F0128B791E45182A008E6668 /* ViewControllerExtensions.swift in Sources */,
+				F0022BE91EC07FDA009EBD46 /* ChatRouter.swift in Sources */,
 				F0FD0C801EB4C26E0059A3E5 /* PhoneService.swift in Sources */,
 				F0F888201EAD407A00F1C93D /* ChangeAccountInfoRequest.swift in Sources */,
 				F0B450A81E60B6A400F3B2E4 /* SettingsPresenter.swift in Sources */,
@@ -2571,6 +2662,7 @@
 				F0A1157B1DC6863E00A4DC76 /* UIEdgeInsetsLayoutExtension.swift in Sources */,
 				F0128C081E4F9CED008E6668 /* KeyboardFrameObservingAccessoryView.swift in Sources */,
 				F0F4340B1DD10CC500F278BD /* WindowWaiter.swift in Sources */,
+				F0022BEC1EC07FDA009EBD46 /* ChatViewController.swift in Sources */,
 				F08BE1A41DC926B600243B56 /* SpecMargins.swift in Sources */,
 				F08BE1A21DC9265000243B56 /* ActionButtonView.swift in Sources */,
 				F0FD0C881EB4C26E0059A3E5 /* DataValidationService.swift in Sources */,
