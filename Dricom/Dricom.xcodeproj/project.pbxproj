@@ -37,6 +37,8 @@
 		F0022BFA1EC3A478009EBD46 /* ChannelsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BF91EC3A478009EBD46 /* ChannelsRequest.swift */; };
 		F0022BFC1EC3A5A1009EBD46 /* AddTextMessageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BFB1EC3A5A1009EBD46 /* AddTextMessageRequest.swift */; };
 		F0022BFE1EC3A677009EBD46 /* ChannelMessagesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BFD1EC3A677009EBD46 /* ChannelMessagesRequest.swift */; };
+		F0022C001EC3A7C5009EBD46 /* MessengerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BFF1EC3A7C5009EBD46 /* MessengerService.swift */; };
+		F0022C021EC3AA11009EBD46 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022C011EC3AA11009EBD46 /* ChatService.swift */; };
 		F0128B741E45156C008E6668 /* ApplicationTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B731E45156C008E6668 /* ApplicationTabBarController.swift */; };
 		F0128B771E4515C4008E6668 /* ApplicationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B761E4515C4008E6668 /* ApplicationViewInput.swift */; };
 		F0128B791E45182A008E6668 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B781E45182A008E6668 /* ViewControllerExtensions.swift */; };
@@ -365,6 +367,8 @@
 		F0022BF91EC3A478009EBD46 /* ChannelsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChannelsRequest.swift; path = Core/Networking/Request/ChannelsRequest.swift; sourceTree = "<group>"; };
 		F0022BFB1EC3A5A1009EBD46 /* AddTextMessageRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTextMessageRequest.swift; path = Core/Networking/Request/AddTextMessageRequest.swift; sourceTree = "<group>"; };
 		F0022BFD1EC3A677009EBD46 /* ChannelMessagesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChannelMessagesRequest.swift; path = Core/Networking/Request/ChannelMessagesRequest.swift; sourceTree = "<group>"; };
+		F0022BFF1EC3A7C5009EBD46 /* MessengerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessengerService.swift; sourceTree = "<group>"; };
+		F0022C011EC3AA11009EBD46 /* ChatService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
 		F0128B731E45156C008E6668 /* ApplicationTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationTabBarController.swift; path = Dricom/Source/VIPER/Application/View/ApplicationTabBarController.swift; sourceTree = SOURCE_ROOT; };
 		F0128B761E4515C4008E6668 /* ApplicationViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationViewInput.swift; path = Dricom/Source/VIPER/Application/View/ApplicationViewInput.swift; sourceTree = SOURCE_ROOT; };
 		F0128B781E45182A008E6668 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerExtensions.swift; path = Core/Extensions/UIKit/ViewControllerExtensions.swift; sourceTree = "<group>"; };
@@ -2150,6 +2154,8 @@
 				F0FD0C761EB4C26E0059A3E5 /* AuthorizationService.swift */,
 				F0FD0C771EB4C26E0059A3E5 /* FavoriteUsersService.swift */,
 				F0FD0C781EB4C26E0059A3E5 /* RegistrationService.swift */,
+				F0022BFF1EC3A7C5009EBD46 /* MessengerService.swift */,
+				F0022C011EC3AA11009EBD46 /* ChatService.swift */,
 				F0FD0C791EB4C26E0059A3E5 /* UserDataService.swift */,
 				F0FD0C7A1EB4C26E0059A3E5 /* UserSearchService.swift */,
 			);
@@ -2412,6 +2418,7 @@
 				F021D6A21DD7A61900F50091 /* MailComposerAssemblyImpl.swift in Sources */,
 				F0022BC71EBBBD25009EBD46 /* ChangePasswordInteractor.swift in Sources */,
 				F0128B881E491787008E6668 /* LoginResponse.swift in Sources */,
+				F0022C001EC3A7C5009EBD46 /* MessengerService.swift in Sources */,
 				F0FD0C921EB4CC170059A3E5 /* Throttler.swift in Sources */,
 				F0022BCD1EBBBD25009EBD46 /* ChangePasswordView.swift in Sources */,
 				F0128C071E4F9CED008E6668 /* KeyboardFrameChange.swift in Sources */,
@@ -2543,6 +2550,7 @@
 				F0128B7C1E451946008E6668 /* IosVersion.swift in Sources */,
 				F0128BF81E4F9CED008E6668 /* ContentInsetHolder.swift in Sources */,
 				F0FD0C961EB519E10059A3E5 /* UINavigationController+Style.swift in Sources */,
+				F0022C021EC3AA11009EBD46 /* ChatService.swift in Sources */,
 				F0823DD51DE9EEA2007BD04D /* MainPageRouterImpl.swift in Sources */,
 				F021D6E31DD8925B00F50091 /* CameraAssembly.swift in Sources */,
 				F0128C241E4F9D39008E6668 /* ActivityIndicatorRefresherStateAnimator.swift in Sources */,

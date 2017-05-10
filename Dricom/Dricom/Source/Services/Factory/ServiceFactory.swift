@@ -9,6 +9,9 @@ protocol ServiceFactory {
     func logoutService() -> LogoutService
     func favoriteUsersService() -> FavoriteUsersService
     func phoneService() -> PhoneService
+    func chatCreationService() -> ChatCreationService
+    func messengerService() -> MessengerService
+    func chatService() -> ChatService
 }
 
 final class ServiceFactoryImpl: ServiceFactory {
@@ -73,5 +76,17 @@ final class ServiceFactoryImpl: ServiceFactory {
     
     func phoneService() -> PhoneService {
         return PhoneServiceImpl()
+    }
+    
+    func chatCreationService() -> ChatCreationService {
+        return messengerService()
+    }
+    
+    func messengerService() -> MessengerService {
+        return MessengerServiceImpl(networkClient: networkClientInstance)
+    }
+    
+    func chatService() -> ChatService {
+        return ChatServiceImpl(networkClient: networkClientInstance)
     }
 }
