@@ -45,7 +45,7 @@ struct User: Equatable, Unboxable {
     init(unboxer: Unboxer) throws {
         avatar = unboxer.unbox(key: "avatar")
         name = unboxer.unbox(key: "first_name") // TODO: return `name` back
-        licenses = try unboxer.unbox(key: "licenses")
+        licenses = unboxer.unbox(key: "licenses", fallbackValue: [])
         phone = unboxer.unbox(key: "phone")
         email = unboxer.unbox(key: "email")
         id = try unboxer.unbox(key: "id")

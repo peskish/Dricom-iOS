@@ -31,6 +31,12 @@
 		F0022BEB1EC07FDA009EBD46 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BE01EC07FDA009EBD46 /* ChatView.swift */; };
 		F0022BEC1EC07FDA009EBD46 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BE11EC07FDA009EBD46 /* ChatViewController.swift */; };
 		F0022BED1EC07FDA009EBD46 /* ChatViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BE21EC07FDA009EBD46 /* ChatViewInput.swift */; };
+		F0022BF31EC39F94009EBD46 /* CreateChannelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BF21EC39F94009EBD46 /* CreateChannelRequest.swift */; };
+		F0022BF61EC3A06D009EBD46 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BF51EC3A06D009EBD46 /* Channel.swift */; };
+		F0022BF81EC3A09A009EBD46 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BF71EC3A09A009EBD46 /* Message.swift */; };
+		F0022BFA1EC3A478009EBD46 /* ChannelsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BF91EC3A478009EBD46 /* ChannelsRequest.swift */; };
+		F0022BFC1EC3A5A1009EBD46 /* AddTextMessageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BFB1EC3A5A1009EBD46 /* AddTextMessageRequest.swift */; };
+		F0022BFE1EC3A677009EBD46 /* ChannelMessagesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BFD1EC3A677009EBD46 /* ChannelMessagesRequest.swift */; };
 		F0128B741E45156C008E6668 /* ApplicationTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B731E45156C008E6668 /* ApplicationTabBarController.swift */; };
 		F0128B771E4515C4008E6668 /* ApplicationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B761E4515C4008E6668 /* ApplicationViewInput.swift */; };
 		F0128B791E45182A008E6668 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128B781E45182A008E6668 /* ViewControllerExtensions.swift */; };
@@ -353,6 +359,12 @@
 		F0022BE01EC07FDA009EBD46 /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		F0022BE11EC07FDA009EBD46 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		F0022BE21EC07FDA009EBD46 /* ChatViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewInput.swift; sourceTree = "<group>"; };
+		F0022BF21EC39F94009EBD46 /* CreateChannelRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateChannelRequest.swift; path = Core/Networking/Request/CreateChannelRequest.swift; sourceTree = "<group>"; };
+		F0022BF51EC3A06D009EBD46 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		F0022BF71EC3A09A009EBD46 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		F0022BF91EC3A478009EBD46 /* ChannelsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChannelsRequest.swift; path = Core/Networking/Request/ChannelsRequest.swift; sourceTree = "<group>"; };
+		F0022BFB1EC3A5A1009EBD46 /* AddTextMessageRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTextMessageRequest.swift; path = Core/Networking/Request/AddTextMessageRequest.swift; sourceTree = "<group>"; };
+		F0022BFD1EC3A677009EBD46 /* ChannelMessagesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChannelMessagesRequest.swift; path = Core/Networking/Request/ChannelMessagesRequest.swift; sourceTree = "<group>"; };
 		F0128B731E45156C008E6668 /* ApplicationTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationTabBarController.swift; path = Dricom/Source/VIPER/Application/View/ApplicationTabBarController.swift; sourceTree = SOURCE_ROOT; };
 		F0128B761E4515C4008E6668 /* ApplicationViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationViewInput.swift; path = Dricom/Source/VIPER/Application/View/ApplicationViewInput.swift; sourceTree = SOURCE_ROOT; };
 		F0128B781E45182A008E6668 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerExtensions.swift; path = Core/Extensions/UIKit/ViewControllerExtensions.swift; sourceTree = "<group>"; };
@@ -786,6 +798,17 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F0022BF41EC39F99009EBD46 /* Messenger */ = {
+			isa = PBXGroup;
+			children = (
+				F0022BFB1EC3A5A1009EBD46 /* AddTextMessageRequest.swift */,
+				F0022BF91EC3A478009EBD46 /* ChannelsRequest.swift */,
+				F0022BFD1EC3A677009EBD46 /* ChannelMessagesRequest.swift */,
+				F0022BF21EC39F94009EBD46 /* CreateChannelRequest.swift */,
+			);
+			name = Messenger;
+			sourceTree = "<group>";
+		};
 		F0128B751E451571008E6668 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -812,6 +835,7 @@
 				F0AE36531EA6B05600172E09 /* ProfileUser */,
 				F0AE36521EA6B04B00172E09 /* Search */,
 				F0AE36511EA6B03400172E09 /* FavoriteUsers */,
+				F0022BF41EC39F99009EBD46 /* Messenger */,
 			);
 			name = Request;
 			sourceTree = "<group>";
@@ -1815,6 +1839,8 @@
 			children = (
 				F0A115231DC629CE00A4DC76 /* SessionInfo.swift */,
 				F01398E41DF43D8300E4F188 /* User.swift */,
+				F0022BF51EC3A06D009EBD46 /* Channel.swift */,
+				F0022BF71EC3A09A009EBD46 /* Message.swift */,
 			);
 			name = Model;
 			path = Core/Model;
@@ -2426,6 +2452,7 @@
 				F0F14AB01E9C211F004752A8 /* RouterPhotoPickerShowable.swift in Sources */,
 				F09209A61DC14A7F0057302F /* ApplicationPresenter.swift in Sources */,
 				F076D6581DCF6E2F00E3ED0F /* StandardAlert.swift in Sources */,
+				F0022BFA1EC3A478009EBD46 /* ChannelsRequest.swift in Sources */,
 				F099E3C21EA29C520082CD92 /* NoUserFoundViewController.swift in Sources */,
 				F099E3E31EA2B4040082CD92 /* UserInfoRouterImpl.swift in Sources */,
 				F0FD0C911EB4CC170059A3E5 /* Delayer.swift in Sources */,
@@ -2528,6 +2555,7 @@
 				F021D6C31DD7B99300F50091 /* RegisterPresenter.swift in Sources */,
 				F021D6E71DD8925B00F50091 /* CameraModule.swift in Sources */,
 				F0128C031E4F9CED008E6668 /* KeyboardAvoidingSettingsObservable.swift in Sources */,
+				F0022BFC1EC3A5A1009EBD46 /* AddTextMessageRequest.swift in Sources */,
 				F0128C231E4F9D39008E6668 /* ActivityIndicatorRefresherFactory.swift in Sources */,
 				F099E3E51EA2B4040082CD92 /* UserInfoViewController.swift in Sources */,
 				F0022BE61EC07FDA009EBD46 /* ChatInteractorImpl.swift in Sources */,
@@ -2566,8 +2594,10 @@
 				F0128BFC1E4F9CED008E6668 /* BypassingKeyboardAvoidingService.swift in Sources */,
 				F0322B041E43CB4100F3CD47 /* AppStarterRouter.swift in Sources */,
 				F076D64C1DCF684A00E3ED0F /* ModuleFocusable.swift in Sources */,
+				F0022BF61EC3A06D009EBD46 /* Channel.swift in Sources */,
 				F0128BFA1E4F9CED008E6668 /* DisposeBag.swift in Sources */,
 				F021D6E61DD8925B00F50091 /* CameraInteractorImpl.swift in Sources */,
+				F0022BFE1EC3A677009EBD46 /* ChannelMessagesRequest.swift in Sources */,
 				F076D6481DCF67F200E3ED0F /* LoginView.swift in Sources */,
 				F0D038581DD3AE0500E0085D /* FeedbackInteractor.swift in Sources */,
 				F021D6F31DDDB5E600F50091 /* CameraPreviewView.swift in Sources */,
@@ -2578,8 +2608,10 @@
 				F0B450A91E60B6A400F3B2E4 /* SettingsRouter.swift in Sources */,
 				F01398E51DF43D8300E4F188 /* User.swift in Sources */,
 				F0A7026F1EB9225000F2EEA3 /* SpecFonts.swift in Sources */,
+				F0022BF31EC39F94009EBD46 /* CreateChannelRequest.swift in Sources */,
 				F0F14AB21E9D7215004752A8 /* UploadAvatarRequest.swift in Sources */,
 				F099E3C81EA29DC50082CD92 /* NoUserFoundRouterImpl.swift in Sources */,
+				F0022BF81EC3A09A009EBD46 /* Message.swift in Sources */,
 				F076D6711DCF6F3800E3ED0F /* String+Pluralization.swift in Sources */,
 				F0128C0B1E4F9CED008E6668 /* KeyboardFrameService.swift in Sources */,
 				F0022BE51EC07FDA009EBD46 /* ChatInteractor.swift in Sources */,
