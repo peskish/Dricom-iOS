@@ -66,4 +66,8 @@ final class AssemblyFactoryImpl: AssemblyFactory {
     func changePasswordAssembly() -> ChangePasswordAssembly {
         return ChangePasswordAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
     }
+    
+    func chatAssembly() -> ChatAssembly {
+        return ChatAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
+    }
 }

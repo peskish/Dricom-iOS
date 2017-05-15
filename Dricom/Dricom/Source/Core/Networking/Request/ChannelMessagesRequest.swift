@@ -2,7 +2,7 @@ import Alamofire
 import Unbox
 
 struct ChannelMessagesRequest: NetworkRequest {
-    typealias Result = ChannelsResult
+    typealias Result = ChannelMessagesResult
     
     private let channelId: String
     

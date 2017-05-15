@@ -2,9 +2,8 @@ import UIKit
 
 final class ChatAssemblyImpl: BaseAssembly, ChatAssembly {
     // MARK: - ChatAssembly
-    func module(position: ViewControllerPosition) -> UIViewController
-    {
-        let interactor = ChatInteractorImpl()
+    func module(channel: Channel, position: ViewControllerPosition) -> UIViewController {
+        let interactor = ChatInteractorImpl(channel: channel, chatService: serviceFactory.chatService())
         
         let viewController = ChatViewController(position: position)
         

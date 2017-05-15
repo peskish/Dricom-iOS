@@ -10,7 +10,8 @@ final class UserInfoAssemblyImpl: BaseAssembly, UserInfoAssembly {
         let interactor = UserInfoInteractorImpl(
             userInfo: userInfo,
             favoriteUsersService: serviceFactory.favoriteUsersService(),
-            phoneService: serviceFactory.phoneService()
+            phoneService: serviceFactory.phoneService(),
+            chatCreationService: serviceFactory.chatCreationService()
         )
         
         let viewController = UserInfoViewController()

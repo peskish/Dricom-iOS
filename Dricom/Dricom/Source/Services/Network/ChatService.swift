@@ -1,5 +1,5 @@
 protocol ChatService: class {
-    func messages(channelId: String, completion: @escaping ApiResult<ChannelsResult>.Completion)
+    func messages(channelId: String, completion: @escaping ApiResult<ChannelMessagesResult>.Completion)
     
     func addTextMessage(
         channelId: String,
@@ -17,7 +17,7 @@ final class ChatServiceImpl: ChatService {
     }
     
     // MARK: - ChatService
-    func messages(channelId: String, completion: @escaping ApiResult<ChannelsResult>.Completion) {
+    func messages(channelId: String, completion: @escaping ApiResult<ChannelMessagesResult>.Completion) {
         let request = ChannelMessagesRequest(channelId: channelId)
         networkClient.send(request: request, completion: completion)
     }

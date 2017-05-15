@@ -28,7 +28,6 @@
 		F0022BE81EC07FDA009EBD46 /* ChatPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BDB1EC07FDA009EBD46 /* ChatPresenter.swift */; };
 		F0022BE91EC07FDA009EBD46 /* ChatRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BDD1EC07FDA009EBD46 /* ChatRouter.swift */; };
 		F0022BEA1EC07FDA009EBD46 /* ChatRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BDE1EC07FDA009EBD46 /* ChatRouterImpl.swift */; };
-		F0022BEB1EC07FDA009EBD46 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BE01EC07FDA009EBD46 /* ChatView.swift */; };
 		F0022BEC1EC07FDA009EBD46 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BE11EC07FDA009EBD46 /* ChatViewController.swift */; };
 		F0022BED1EC07FDA009EBD46 /* ChatViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BE21EC07FDA009EBD46 /* ChatViewInput.swift */; };
 		F0022BF31EC39F94009EBD46 /* CreateChannelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BF21EC39F94009EBD46 /* CreateChannelRequest.swift */; };
@@ -358,7 +357,6 @@
 		F0022BDB1EC07FDA009EBD46 /* ChatPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatPresenter.swift; sourceTree = "<group>"; };
 		F0022BDD1EC07FDA009EBD46 /* ChatRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRouter.swift; sourceTree = "<group>"; };
 		F0022BDE1EC07FDA009EBD46 /* ChatRouterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRouterImpl.swift; sourceTree = "<group>"; };
-		F0022BE01EC07FDA009EBD46 /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		F0022BE11EC07FDA009EBD46 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		F0022BE21EC07FDA009EBD46 /* ChatViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewInput.swift; sourceTree = "<group>"; };
 		F0022BF21EC39F94009EBD46 /* CreateChannelRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateChannelRequest.swift; path = Core/Networking/Request/CreateChannelRequest.swift; sourceTree = "<group>"; };
@@ -795,7 +793,6 @@
 		F0022BDF1EC07FDA009EBD46 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F0022BE01EC07FDA009EBD46 /* ChatView.swift */,
 				F0022BE11EC07FDA009EBD46 /* ChatViewController.swift */,
 				F0022BE21EC07FDA009EBD46 /* ChatViewInput.swift */,
 			);
@@ -2546,7 +2543,6 @@
 				F0022BC81EBBBD25009EBD46 /* ChangePasswordInteractorImpl.swift in Sources */,
 				F0128C061E4F9CED008E6668 /* ScrollViewKeyboardAvoidingServiceImpl.swift in Sources */,
 				F0B450B31E61B6A100F3B2E4 /* SettingsSwitchCell.swift in Sources */,
-				F0022BEB1EC07FDA009EBD46 /* ChatView.swift in Sources */,
 				F0128B7C1E451946008E6668 /* IosVersion.swift in Sources */,
 				F0128BF81E4F9CED008E6668 /* ContentInsetHolder.swift in Sources */,
 				F0FD0C961EB519E10059A3E5 /* UINavigationController+Style.swift in Sources */,

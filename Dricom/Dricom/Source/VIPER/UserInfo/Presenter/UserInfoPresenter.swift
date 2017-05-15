@@ -87,7 +87,14 @@ final class UserInfoPresenter: UserInfoModule {
     }
     
     private func sendMessage(to user: User) {
-        router.openChat(with: user)
+        interactor.createChatWithUser { [weak self] result in
+            result.onData { channel in
+                self?.router.openChannel(channel)
+            }
+            result.onError { networkRequestError in
+                self?.view?.showError(networkRequestError)
+            }
+        }
     }
     
     // MARK: - UserInfoModule

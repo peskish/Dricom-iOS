@@ -1,5 +1,5 @@
 protocol ChatCreationService: class {
-    func createChat(userId: String, completion: @escaping ApiResult<CreateChannelResult>.Completion)
+    func createChat(userId: String, completion: @escaping ApiResult<Channel>.Completion)
 }
 
 protocol MessengerService: ChatCreationService {
@@ -16,7 +16,7 @@ final class MessengerServiceImpl: MessengerService {
     }
     
     // MARK: - ChatCreationService
-    func createChat(userId: String, completion: @escaping ApiResult<CreateChannelResult>.Completion) {
+    func createChat(userId: String, completion: @escaping ApiResult<Channel>.Completion) {
         let request = CreateChannelRequest(userId: userId)
         networkClient.send(request: request, completion: completion)
     }

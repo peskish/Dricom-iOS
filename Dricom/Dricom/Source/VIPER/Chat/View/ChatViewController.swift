@@ -5,7 +5,8 @@ final class ChatViewController: JSQMessagesViewController,
     ChatViewInput,
     DisposeBag,
     DisposeBagHolder,
-    ViewControllerPositionHolder {
+    ViewControllerPositionHolder
+{
     // MARK: - State
     var messages = [JSQMessage]()
     
@@ -59,9 +60,30 @@ final class ChatViewController: JSQMessagesViewController,
     }
     
     // MARK: - ChatViewInput
+    func setChannelInfo(_ info: ChannelInfo) {
+        self.title = info.collocutorName
+        self.senderId = info.ownerId
+        self.senderDisplayName = info.ownerName
+    }
+    
     @nonobjc func setMessages(_ messages: [JSQMessage]) {
         self.messages = messages
         self.finishReceivingMessage(animated: true)
+    }
+    
+    // MARK: - JSQMessagesViewController
+    public override func didPressAccessoryButton(_ sender: UIButton!) {
+        print("Not implemented yet")
+    }
+    
+    public override func didPressSend(
+        _ button: UIButton!,
+        withMessageText text: String!,
+        senderId: String!,
+        senderDisplayName: String!,
+        date: Date!)
+    {
+        print("Send text: \(text)")
     }
     
     // MARK: - ViewLifecycleObservable

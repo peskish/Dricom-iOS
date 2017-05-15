@@ -1,4 +1,5 @@
 import Unbox
+import JSQMessagesViewController
 
 struct TextMessage: Unboxable {
     let id: String
@@ -11,5 +12,15 @@ struct TextMessage: Unboxable {
         createdAt = try unboxer.unbox(key: "created_at")
         owner = try unboxer.unbox(key: "owner")
         text = try unboxer.unbox(key: "text")
+    }
+}
+
+extension TextMessage {
+    func toJSQMessage() -> JSQMessage {
+        return JSQMessage(
+            senderId: owner.id,
+            displayName: owner.name ?? "",
+            text: text
+        )
     }
 }
