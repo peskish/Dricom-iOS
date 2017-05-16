@@ -26,6 +26,12 @@ final class ChatPresenter {
         view?.onViewDidLoad = { [weak self] in
             self?.fetchAndPresentData()
         }
+        
+        view?.onTapSendButton = { [weak self] text in
+            self?.interactor.send(text) { result in
+                self?.processMessagesListResult(result)
+            }
+        }
     }
     
     private func fetchAndPresentData() {
@@ -39,14 +45,18 @@ final class ChatPresenter {
         )
         
         interactor.messages { [weak self] result in
-            result.onData { messageList in
-                self?.view?.setMessages(
-                    messageList.map { $0.toJSQMessage() }
-                )
-            }
-            result.onError { networkRequestError in
-                self?.view?.showError(networkRequestError)
-            }
+            self?.processMessagesListResult(result)
+        }
+    }
+    
+    private func processMessagesListResult(_ result: ApiResult<[TextMessage]>) {
+        result.onData { [weak self] messageList in
+            self?.view?.setMessages(
+                messageList.map { $0.toJSQMessage() }
+            )
+        }
+        result.onError { [weak self] networkRequestError in
+            self?.view?.showError(networkRequestError)
         }
     }
     

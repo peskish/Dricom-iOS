@@ -28,4 +28,19 @@ final class ChatInteractorImpl: ChatInteractor {
             }
         }
     }
+    
+    func send(_ text: String, completion: @escaping ApiResult<[TextMessage]>.Completion) {
+        chatService.addTextMessage(channelId: channel.id, text: text) { [weak self] result in
+            result.onData { addMessageResult in
+                if addMessageResult.success {
+                    self?.messages(completion: completion)
+                } else {
+                    completion(.error(NetworkRequestError.internalServerError))
+                }
+            }
+            result.onError { networkRequestError in
+                completion(.error(networkRequestError))
+            }
+        }
+    }
 }
