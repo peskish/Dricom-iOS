@@ -183,6 +183,10 @@
 		F076D67B1DCF87D300E3ED0F /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D67A1DCF87D300E3ED0F /* TextFieldView.swift */; };
 		F076D67D1DCF8F4900E3ED0F /* DoneButtonAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D67C1DCF8F4900E3ED0F /* DoneButtonAccessoryView.swift */; };
 		F076D67F1DCFAEF400E3ED0F /* ViewControllerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D67E1DCFAEF400E3ED0F /* ViewControllerPosition.swift */; };
+		F081FF611EEDCAB60085643A /* CommonPollingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F081FF5C1EEDCAB60085643A /* CommonPollingService.swift */; };
+		F081FF621EEDCAB60085643A /* PollingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F081FF5D1EEDCAB60085643A /* PollingService.swift */; };
+		F081FF631EEDCAB60085643A /* NativeTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F081FF5F1EEDCAB60085643A /* NativeTimer.swift */; };
+		F081FF641EEDCAB60085643A /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F081FF601EEDCAB60085643A /* Timer.swift */; };
 		F0823DB71DE9D929007BD04D /* ActivityDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0823DB61DE9D929007BD04D /* ActivityDisplayable.swift */; };
 		F0823DBA1DE9DA10007BD04D /* StandardPreloaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0823DB91DE9DA10007BD04D /* StandardPreloaderView.swift */; };
 		F0823DCE1DE9EEA2007BD04D /* MainPageAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0823DBF1DE9EEA2007BD04D /* MainPageAssembly.swift */; };
@@ -512,6 +516,10 @@
 		F076D67A1DCF87D300E3ED0F /* TextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldView.swift; path = Dricom/Source/Presentation/Views/TextFieldView.swift; sourceTree = SOURCE_ROOT; };
 		F076D67C1DCF8F4900E3ED0F /* DoneButtonAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoneButtonAccessoryView.swift; path = Dricom/Source/Presentation/Views/DoneButtonAccessoryView.swift; sourceTree = SOURCE_ROOT; };
 		F076D67E1DCFAEF400E3ED0F /* ViewControllerPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerPosition.swift; path = Router/ViewControllerPosition.swift; sourceTree = "<group>"; };
+		F081FF5C1EEDCAB60085643A /* CommonPollingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonPollingService.swift; sourceTree = "<group>"; };
+		F081FF5D1EEDCAB60085643A /* PollingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollingService.swift; sourceTree = "<group>"; };
+		F081FF5F1EEDCAB60085643A /* NativeTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeTimer.swift; sourceTree = "<group>"; };
+		F081FF601EEDCAB60085643A /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		F0823DB61DE9D929007BD04D /* ActivityDisplayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityDisplayable.swift; path = ActivityDisplayable/ActivityDisplayable.swift; sourceTree = "<group>"; };
 		F0823DB91DE9DA10007BD04D /* StandardPreloaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StandardPreloaderView.swift; path = Dricom/Source/Presentation/Views/StandardPreloaderView.swift; sourceTree = SOURCE_ROOT; };
 		F0823DBF1DE9EEA2007BD04D /* MainPageAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageAssembly.swift; sourceTree = "<group>"; };
@@ -1425,6 +1433,26 @@
 			path = Core/Extensions/SwiftAdditions;
 			sourceTree = "<group>";
 		};
+		F081FF5B1EEDCAB60085643A /* Polling */ = {
+			isa = PBXGroup;
+			children = (
+				F081FF5C1EEDCAB60085643A /* CommonPollingService.swift */,
+				F081FF5D1EEDCAB60085643A /* PollingService.swift */,
+				F081FF5E1EEDCAB60085643A /* Timers */,
+			);
+			name = Polling;
+			path = Core/Polling;
+			sourceTree = "<group>";
+		};
+		F081FF5E1EEDCAB60085643A /* Timers */ = {
+			isa = PBXGroup;
+			children = (
+				F081FF5F1EEDCAB60085643A /* NativeTimer.swift */,
+				F081FF601EEDCAB60085643A /* Timer.swift */,
+			);
+			path = Timers;
+			sourceTree = "<group>";
+		};
 		F0823DB81DE9D931007BD04D /* ActivityDisplayable */ = {
 			isa = PBXGroup;
 			children = (
@@ -1816,6 +1844,7 @@
 				F0FD0C8C1EB4CC170059A3E5 /* DataFlows */,
 				F0A115221DC629CE00A4DC76 /* Model */,
 				F0A1151E1DC6284B00A4DC76 /* Networking */,
+				F081FF5B1EEDCAB60085643A /* Polling */,
 				F0A1155B1DC637C600A4DC76 /* Utilities */,
 				F0A115691DC685B300A4DC76 /* Extensions */,
 				F0F14AB91EA15F4E004752A8 /* Unbox+Extensions.swift */,
@@ -2489,6 +2518,7 @@
 				F0F434081DD10CAB00F278BD /* AlertDisplayable.swift in Sources */,
 				F021D6E91DD8925B00F50091 /* CameraRouter.swift in Sources */,
 				F0128C011E4F9CED008E6668 /* ContentFittingRect.swift in Sources */,
+				F081FF621EEDCAB60085643A /* PollingService.swift in Sources */,
 				F06E3F741E81B0EE00829A3F /* UserProfileAssemblyImpl.swift in Sources */,
 				F06E3F7C1E81B0EE00829A3F /* UserProfileViewController.swift in Sources */,
 				F076D6451DCF67F200E3ED0F /* LoginPresenter.swift in Sources */,
@@ -2546,6 +2576,7 @@
 				F0128B7C1E451946008E6668 /* IosVersion.swift in Sources */,
 				F0128BF81E4F9CED008E6668 /* ContentInsetHolder.swift in Sources */,
 				F0FD0C961EB519E10059A3E5 /* UINavigationController+Style.swift in Sources */,
+				F081FF641EEDCAB60085643A /* Timer.swift in Sources */,
 				F0022C021EC3AA11009EBD46 /* ChatService.swift in Sources */,
 				F0823DD51DE9EEA2007BD04D /* MainPageRouterImpl.swift in Sources */,
 				F021D6E31DD8925B00F50091 /* CameraAssembly.swift in Sources */,
@@ -2556,6 +2587,7 @@
 				F021D6ED1DD8925B00F50091 /* CameraViewInput.swift in Sources */,
 				F0128BA11E4A64C6008E6668 /* NetworkResponseConverterOf.swift in Sources */,
 				F0128C261E4F9D39008E6668 /* PullToRefreshProgressCalculator.swift in Sources */,
+				F081FF611EEDCAB60085643A /* CommonPollingService.swift in Sources */,
 				F021D6C31DD7B99300F50091 /* RegisterPresenter.swift in Sources */,
 				F021D6E71DD8925B00F50091 /* CameraModule.swift in Sources */,
 				F0128C031E4F9CED008E6668 /* KeyboardAvoidingSettingsObservable.swift in Sources */,
@@ -2625,6 +2657,7 @@
 				F05790DB1E34DC5D004FBD4A /* HoshiTextField.swift in Sources */,
 				F076D6491DCF67F200E3ED0F /* LoginViewController.swift in Sources */,
 				F099E3C11EA29C520082CD92 /* NoUserFoundView.swift in Sources */,
+				F081FF631EEDCAB60085643A /* NativeTimer.swift in Sources */,
 				F0128C291E4F9D39008E6668 /* ScrollViewRefresher.swift in Sources */,
 				F0FD0C871EB4C26E0059A3E5 /* UserSearchService.swift in Sources */,
 				F099E3DE1EA2B4040082CD92 /* UserInfoInteractor.swift in Sources */,

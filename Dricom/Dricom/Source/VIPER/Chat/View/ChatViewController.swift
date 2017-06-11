@@ -17,6 +17,7 @@ final class ChatViewController: JSQMessagesViewController,
     // MARK: - Init
     @nonobjc init(position: ViewControllerPosition) {
         self.position = position
+        
         incomingBubble = JSQMessagesBubbleImageFactory(bubble: .jsq_bubbleCompactTailless(), capInsets: .zero)
             .incomingMessagesBubbleImage(with: .drcPaleGreyFour)
         outgoingBubble = JSQMessagesBubbleImageFactory(bubble: .jsq_bubbleCompactTailless(), capInsets: .zero)
@@ -57,6 +58,10 @@ final class ChatViewController: JSQMessagesViewController,
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        navigationController?.setStyle(.main)
+        navigationController?.navigationBar.shadowImage = nil
+        navigationController?.setNavigationBarHidden(false, animated: true)
         
         onViewWillAppear?()
     }

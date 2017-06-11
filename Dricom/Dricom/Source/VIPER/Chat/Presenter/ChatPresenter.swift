@@ -12,6 +12,8 @@ final class ChatPresenter {
     {
         self.interactor = interactor
         self.router = router
+        
+        setUpInteractor()
     }
     
     // MARK: - Weak properties
@@ -22,9 +24,18 @@ final class ChatPresenter {
     }
     
     // MARK: - Private
+    private func setUpInteractor() {
+        interactor.onReceiveMessages = { [weak self] messageList in
+            self?.view?.setMessages(
+                messageList.map { $0.toJSQMessage() }
+            )
+        }
+    }
+    
     private func setUpView() {
         view?.onViewDidLoad = { [weak self] in
             self?.fetchAndPresentData()
+            self?.interactor.startMessagesPolling()
         }
         
         view?.onTapSendButton = { [weak self] text in
@@ -48,7 +59,7 @@ final class ChatPresenter {
             )
         )
         
-        interactor.messages { [weak self] result in
+        interactor.fetchMessages { [weak self] result in
             self?.processMessagesListResult(result)
         }
     }
