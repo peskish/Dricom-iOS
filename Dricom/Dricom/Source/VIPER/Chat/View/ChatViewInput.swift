@@ -10,5 +10,7 @@ struct ChannelInfo {
 protocol ChatViewInput: class, ViewLifecycleObservable, MessageDisplayable {
     func setChannelInfo(_ info: ChannelInfo)
     func setMessages(_ messages: [JSQMessage])
+    
     var onTapSendButton: ((_ text: String) -> ())? { get set }
+    var onCloseTap: (() -> ())? { get set }
 }

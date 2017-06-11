@@ -30,7 +30,6 @@ protocol NetworkClient: class {
         request: R,
         completion: @escaping ApiResult<T>.Completion) -> NetworkDataTask? where R.Result == T
     
-    @discardableResult
     func send<T, R: MultipartFormDataRequest>(
         request: R,
         completion: @escaping ApiResult<T>.Completion) where R.Result == T

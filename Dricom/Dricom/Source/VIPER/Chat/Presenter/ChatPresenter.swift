@@ -32,6 +32,10 @@ final class ChatPresenter {
                 self?.processMessagesListResult(result)
             }
         }
+        
+        view?.onCloseTap = { [weak self] in
+            self?.dismissModule()
+        }
     }
     
     private func fetchAndPresentData() {

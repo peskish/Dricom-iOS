@@ -31,7 +31,7 @@ public final class ActivityIndicatorRefresherStateAnimator: ScrollViewRefresherS
         var transform = CGAffineTransform.identity
         
         if (progress > 0 && progress < 1) {
-            let fullCircle = CGFloat(M_PI * 2)
+            let fullCircle = CGFloat(Double.pi * 2)
             transform = transform.scaledBy(x: progress, y: progress);
             transform = transform.rotated(by: fullCircle * progress);
         }

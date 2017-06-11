@@ -22,8 +22,9 @@ final class ChatViewController: JSQMessagesViewController,
         outgoingBubble = JSQMessagesBubbleImageFactory(bubble: .jsq_bubbleCompactTailless(), capInsets: .zero)
             .outgoingMessagesBubbleImage(with: .drcBlue)
         
-        
         super.init(nibName: nil, bundle: nil)
+        
+        automaticallyScrollsToMostRecentMessage = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -34,13 +35,22 @@ final class ChatViewController: JSQMessagesViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // TODO: левая кнопка в зависимости от position
-        navigationItem.backBarButtonItem = UIBarButtonItem(
-            title: "",
-            style: .plain,
-            target: nil,
-            action: nil
-        )
+        if let position = position, position == .modal {
+            navigationItem.backBarButtonItem = nil
+            navigationItem.leftBarButtonItem = UIBarButtonItem(
+                image: #imageLiteral(resourceName: "Close blue"),
+                style: .plain,
+                target: self,
+                action: #selector(onCloseTap(_:))
+            )
+        } else {
+            navigationItem.backBarButtonItem = UIBarButtonItem(
+                title: "",
+                style: .plain,
+                target: nil,
+                action: nil
+            )
+        }
         
         onViewDidLoad?()
     }
@@ -83,6 +93,11 @@ final class ChatViewController: JSQMessagesViewController,
     
     var onTapSendButton: ((_ text: String) -> ())?
     
+    var onCloseTap: (() -> ())?
+    @objc private func onCloseTap(_ sender: UIControl) {
+        onCloseTap?()
+    }
+    
     // MARK: - JSQMessagesViewController
     public override func didPressAccessoryButton(_ sender: UIButton!) {
         print("Not implemented yet")
@@ -96,6 +111,7 @@ final class ChatViewController: JSQMessagesViewController,
         date: Date!)
     {
         onTapSendButton?(text)
+        self.finishSendingMessage(animated: true)
     }
     
     // MARK: Collection view data source
@@ -136,13 +152,8 @@ final class ChatViewController: JSQMessagesViewController,
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView, attributedTextForMessageBubbleTopLabelAt indexPath: IndexPath) -> NSAttributedString? {
-        let message = messages[indexPath.item]
-        
-        if message.senderId == self.senderId {
-            return nil
-        }
-        
-        return NSAttributedString(string: message.senderDisplayName)
+        // Don't show collocutor's name above the message bubble
+        return nil
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout, heightForCellTopLabelAt indexPath: IndexPath) -> CGFloat {
@@ -168,7 +179,7 @@ final class ChatViewController: JSQMessagesViewController,
             }
         }
         
-        return kJSQMessagesCollectionViewCellLabelHeightDefault;
+        return kJSQMessagesCollectionViewCellLabelHeightDefault
     }
     
     // MARK: - ViewLifecycleObservable
