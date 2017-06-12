@@ -5,8 +5,9 @@ final class MainPageRouterImpl: BaseRouter, MainPageRouter {
     func showUserInfo(_ userInfo: UserInfo, configure: (_ module: UserInfoModule) -> ()) {
         let assembly = assemblyFactory.userInfoAssembly()
         let targetViewController = assembly.module(userInfo: userInfo, configure: configure)
-        targetViewController.modalTransitionStyle = .crossDissolve
-        viewController?.present(targetViewController, animated: true, completion: nil)
+        viewController?.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(targetViewController, animated: true)
+        viewController?.hidesBottomBarWhenPushed = false
     }
     
     func showNoUserFound() {

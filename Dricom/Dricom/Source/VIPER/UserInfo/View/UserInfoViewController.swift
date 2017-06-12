@@ -1,16 +1,25 @@
 import UIKit
 
 final class UserInfoViewController: BaseViewController, UserInfoViewInput {
-
+    
+    // MARK: - Properties
     private let userInfoView = UserInfoView()
     
+    // MARK: - View lifecycle
     override func loadView() {
         view = userInfoView
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setStyle(.main)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     // MARK: - UserInfoViewInput
     func setName(_ name: String?) {
-        userInfoView.setName(name)
+        title = name
     }
     
     func setAvatarImageUrl(_ avatarImageUrl: URL?) {
@@ -58,11 +67,6 @@ final class UserInfoViewController: BaseViewController, UserInfoViewInput {
     var onMessageButtonTap: (() -> ())? {
         get { return userInfoView.onMessageButtonTap }
         set { userInfoView.onMessageButtonTap = newValue }
-    }
-    
-    var onCloseTap: (() -> ())? {
-        get { return userInfoView.onCloseTap }
-        set { userInfoView.onCloseTap = newValue }
     }
     
     // MARK: ActivityDisplayable

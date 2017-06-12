@@ -3,8 +3,6 @@ import AlamofireImage
 
 final class UserInfoView: UIView, StandardPreloaderViewHolder, ActivityDisplayable {
     // MARK: Properties
-    private let closeButton = ImageButtonView(image: #imageLiteral(resourceName: "Close blue"))
-    private let nameLabel = UILabel()
     private let avatarImageView = UIImageView(image: #imageLiteral(resourceName: "Avatar"))
     private let licenceView = LicensePlateView()
     private let favoritesButton = UIButton(type: .custom)
@@ -18,8 +16,6 @@ final class UserInfoView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
     init() {
         super.init(frame: .zero)
         
-        addSubview(closeButton)
-        addSubview(nameLabel)
         addSubview(avatarImageView)
         addSubview(licenceView)
         addSubview(favoritesButton)
@@ -45,10 +41,6 @@ final class UserInfoView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
         avatarImageView.layer.cornerRadius = avatarImageView.size.height/2
         avatarImageView.layer.masksToBounds = true
         
-        nameLabel.font = UIFont.drcUserNameFont()
-        nameLabel.textColor = UIColor.drcSlate
-        nameLabel.textAlignment = .center
-        
         favoritesButton.setImage(#imageLiteral(resourceName: "Add photo"), for: .normal)
         favoritesButton.adjustsImageWhenHighlighted = false
         favoritesButton.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
@@ -67,13 +59,7 @@ final class UserInfoView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        closeButton.sizeToFit()
-        closeButton.top = 10
-        
-        nameLabel.sizeToFit()
-        nameLabel.layout(left: bounds.left, right: bounds.right, top: 45, height: nameLabel.height)
-        
-        avatarImageView.top = nameLabel.bottom + SpecMargins.innerContentMargin
+        avatarImageView.top = bounds.top
         avatarImageView.centerX = bounds.centerX
         
         licenceView.size = licenceView.sizeThatFits()
@@ -114,11 +100,6 @@ final class UserInfoView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
     }
     
     // MARK: - Public
-    func setName(_ name: String?) {
-        nameLabel.text = name
-        setNeedsLayout()
-    }
-    
     func setAvatarImageUrl(_ avatarImageUrl: URL?) {
         guard let avatarImageUrl = avatarImageUrl else {
             avatarImageView.image = #imageLiteral(resourceName: "Avatar")
@@ -192,10 +173,5 @@ final class UserInfoView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
     var onMessageButtonTap: (() -> ())? {
         get { return sendMessageButton.onTap }
         set { sendMessageButton.onTap = newValue }
-    }
-    
-    var onCloseTap: (() -> ())? {
-        get { return closeButton.onTap }
-        set { closeButton.onTap = newValue }
     }
 }

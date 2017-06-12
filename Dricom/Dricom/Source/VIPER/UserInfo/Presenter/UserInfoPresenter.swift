@@ -38,10 +38,6 @@ final class UserInfoPresenter: UserInfoModule {
             self?.interactor.callUser()
         }
         
-        view?.onCloseTap = { [weak self] in
-            self?.dismissModule()
-        }
-        
         view?.onViewDidLoad = { [weak self] in
             self?.presentUserInfo(userInfo)
         }
