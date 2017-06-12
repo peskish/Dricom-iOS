@@ -12,7 +12,6 @@ protocol AssemblyFactory: class {
     func settingsAssembly() -> SettingsAssembly
     func userProfileAssembly() -> UserProfileAssembly
     func photoLibraryAssembly() -> PhotoLibraryAssembly
-    func noUserFoundAssembly() -> NoUserFoundAssembly
     func userInfoAssembly() -> UserInfoAssembly
     func changePasswordAssembly() -> ChangePasswordAssembly
     func chatAssembly() -> ChatAssembly
