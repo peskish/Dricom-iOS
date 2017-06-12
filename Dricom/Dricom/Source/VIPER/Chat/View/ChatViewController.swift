@@ -1,5 +1,6 @@
 import UIKit
 import JSQMessagesViewController
+import AlamofireImage
 
 final class ChatViewController: JSQMessagesViewController,
     ChatViewInput,
@@ -9,13 +10,15 @@ final class ChatViewController: JSQMessagesViewController,
 {
     // MARK: - State
     var messages = [JSQMessage]()
+    var avatars = [String: UIImage]()
     
     // MARK: - Properties
     private let incomingBubble: JSQMessagesBubbleImage
     private let outgoingBubble: JSQMessagesBubbleImage
+    private static let avatarDiameter: UInt = 40
     
     // MARK: - Init
-    @nonobjc init(position: ViewControllerPosition) {
+    @nonobjc init(position: ViewControllerPosition, user: User, collocutor: User) {
         self.position = position
         
         incomingBubble = JSQMessagesBubbleImageFactory(bubble: .jsq_bubbleCompactTailless(), capInsets: .zero)
@@ -26,10 +29,31 @@ final class ChatViewController: JSQMessagesViewController,
         super.init(nibName: nil, bundle: nil)
         
         automaticallyScrollsToMostRecentMessage = true
+        
+        loadAvatar(for: user)
+        loadAvatar(for: collocutor)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func loadAvatar(for user: User) {
+        guard let avatarImage = user.avatar?.image, let imageUrl = URL(string: avatarImage) else { return }
+        
+        let urlRequest = URLRequest(url: imageUrl)
+        let avatarImageSide = CGFloat(ChatViewController.avatarDiameter)
+        let avatarSize = CGSize(width: avatarImageSide, height: avatarImageSide)
+        let imageFilter = AspectScaledToFillSizeWithRoundedCornersFilter(
+            size: avatarSize,
+            radius: avatarImageSide/2
+        )
+        
+        ImageDownloader.default.download(urlRequest, filter: imageFilter)  { response in
+            if case .success(let image) = response.result {
+                self.avatars[user.id] = image
+            }
+        }
     }
     
     // MARK: - View lifecycle
@@ -138,22 +162,23 @@ final class ChatViewController: JSQMessagesViewController,
 
     override func collectionView(
         _ collectionView: JSQMessagesCollectionView,
-        avatarImageDataForItemAt indexPath: IndexPath) -> JSQMessageAvatarImageDataSource? {
-        // TODO: Аватарки
-//        let message = messages[indexPath.item]
-//        return getAvatar(message.senderId)
-        return nil
+        avatarImageDataForItemAt indexPath: IndexPath) -> JSQMessageAvatarImageDataSource?
+    {
+        if let message = messages.elementAtIndex(indexPath.item),
+            let avatarImage = avatars[message.senderId] {
+            return JSQMessagesAvatarImageFactory.avatarImage(with: avatarImage, diameter: 40)
+        } else {
+            return nil
+        }
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView, attributedTextForCellTopLabelAt indexPath: IndexPath) -> NSAttributedString? {
         // Show a timestamp for every 3rd message
-        if (indexPath.item % 3 == 0) {
-            let message = self.messages[indexPath.item]
-            
+        if (indexPath.item % 3 == 0), let message = self.messages.elementAtIndex(indexPath.item) {
             return JSQMessagesTimestampFormatter.shared().attributedTimestamp(for: message.date)
+        } else {
+            return nil
         }
-        
-        return nil
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView, attributedTextForMessageBubbleTopLabelAt indexPath: IndexPath) -> NSAttributedString? {

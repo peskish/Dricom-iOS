@@ -5,7 +5,11 @@ final class ChatAssemblyImpl: BaseAssembly, ChatAssembly {
     func module(channel: Channel, position: ViewControllerPosition) -> UIViewController {
         let interactor = ChatInteractorImpl(channel: channel, chatService: serviceFactory.chatService())
         
-        let viewController = ChatViewController(position: position)
+        let viewController = ChatViewController(
+            position: position,
+            user: channel.user,
+            collocutor: channel.collocutor
+        )
         
         let router = ChatRouterImpl(
             assemblyFactory: assemblyFactory,
