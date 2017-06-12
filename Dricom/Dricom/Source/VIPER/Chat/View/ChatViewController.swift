@@ -30,6 +30,13 @@ final class ChatViewController: JSQMessagesViewController,
         
         automaticallyScrollsToMostRecentMessage = true
         
+        // Set avatar sizes
+        let avatarImageSide = CGFloat(ChatViewController.avatarDiameter)
+        let avatarSize = CGSize(width: avatarImageSide, height: avatarImageSide)
+        collectionView?.collectionViewLayout.incomingAvatarViewSize = avatarSize
+        collectionView?.collectionViewLayout.outgoingAvatarViewSize = avatarSize
+        
+        // Load user's and collocutor's avatars
         loadAvatar(for: user)
         loadAvatar(for: collocutor)
     }
@@ -59,6 +66,14 @@ final class ChatViewController: JSQMessagesViewController,
     // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set up font in bubbles
+        if let font = UIFont.drcChatMessageFont() {
+            collectionView.collectionViewLayout.messageBubbleFont = font
+        }
+        
+        // Hide left button - media upload is currently not supported
+        inputToolbar.contentView?.leftBarButtonItem = nil
         
         if let position = position, position == .modal {
             navigationItem.backBarButtonItem = nil
@@ -166,10 +181,31 @@ final class ChatViewController: JSQMessagesViewController,
     {
         if let message = messages.elementAtIndex(indexPath.item),
             let avatarImage = avatars[message.senderId] {
-            return JSQMessagesAvatarImageFactory.avatarImage(with: avatarImage, diameter: 40)
+            return JSQMessagesAvatarImageFactory.avatarImage(
+                with: avatarImage,
+                diameter: ChatViewController.avatarDiameter
+            )
         } else {
             return nil
         }
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath)
+        -> UICollectionViewCell
+    {
+        guard let cell = super.collectionView(collectionView, cellForItemAt: indexPath) as? JSQMessagesCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        
+        if let message = messages.elementAtIndex(indexPath.item) {
+            if message.senderId == self.senderId {
+                cell.textView.textColor = .drcWhite
+            } else {
+                cell.textView.textColor = .drcSlate
+            }
+        }
+        
+        return cell
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView, attributedTextForCellTopLabelAt indexPath: IndexPath) -> NSAttributedString? {

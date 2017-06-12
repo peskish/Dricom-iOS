@@ -1,10 +1,6 @@
 import UIKit
 
 extension UIFont {
-    class func drcLogoLargeFont() -> UIFont? {
-        return UIFont(name: "Lato-Semibold", size: 34.0)
-    }
-    
     class func drcLicenseNumberFont() -> UIFont? {
         return UIFont(name: "Rubik-Medium", size: 33.5)
     }
@@ -15,10 +11,6 @@ extension UIFont {
     
     class func drcLicenseFont() -> UIFont? {
         return UIFont(name: "Rubik-Medium", size: 24.0)
-    }
-    
-    class func drcButtonInactiveFont() -> UIFont? {
-        return UIFont(name: "Lato-Medium", size: 17.0)
     }
     
     class func drcCameraTitleFont() -> UIFont? {
@@ -94,6 +86,10 @@ extension UIFont {
     }
     
     class func drcFavoritesSectionTitleFont() -> UIFont? {
+        return UIFont(name: "Rubik-Regular", size: 14.0)
+    }
+    
+    class func drcChatMessageFont() -> UIFont? {
         return UIFont(name: "Rubik-Regular", size: 14.0)
     }
 }
