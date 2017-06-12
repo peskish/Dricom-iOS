@@ -3,7 +3,7 @@ import JSQMessagesViewController
 
 struct TextMessage: Unboxable {
     let id: String
-    let createdAt: String   // TODO: parse to date if needed
+    let createdAt: String
     let owner: User
     let text: String
     
@@ -19,7 +19,8 @@ extension TextMessage {
     func toJSQMessage() -> JSQMessage {
         return JSQMessage(
             senderId: owner.id,
-            displayName: owner.name ?? "",
+            senderDisplayName: owner.name ?? "",
+            date: createdAt.dateFromISO8601 ?? Date(),
             text: text
         )
     }

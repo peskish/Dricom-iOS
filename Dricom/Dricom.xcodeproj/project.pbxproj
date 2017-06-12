@@ -187,6 +187,7 @@
 		F081FF621EEDCAB60085643A /* PollingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F081FF5D1EEDCAB60085643A /* PollingService.swift */; };
 		F081FF631EEDCAB60085643A /* NativeTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F081FF5F1EEDCAB60085643A /* NativeTimer.swift */; };
 		F081FF641EEDCAB60085643A /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F081FF601EEDCAB60085643A /* Timer.swift */; };
+		F081FF661EEEBC3D0085643A /* iso8601DateFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F081FF651EEEBC3D0085643A /* iso8601DateFormatting.swift */; };
 		F0823DB71DE9D929007BD04D /* ActivityDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0823DB61DE9D929007BD04D /* ActivityDisplayable.swift */; };
 		F0823DBA1DE9DA10007BD04D /* StandardPreloaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0823DB91DE9DA10007BD04D /* StandardPreloaderView.swift */; };
 		F0823DCE1DE9EEA2007BD04D /* MainPageAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0823DBF1DE9EEA2007BD04D /* MainPageAssembly.swift */; };
@@ -520,6 +521,7 @@
 		F081FF5D1EEDCAB60085643A /* PollingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollingService.swift; sourceTree = "<group>"; };
 		F081FF5F1EEDCAB60085643A /* NativeTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeTimer.swift; sourceTree = "<group>"; };
 		F081FF601EEDCAB60085643A /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		F081FF651EEEBC3D0085643A /* iso8601DateFormatting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iso8601DateFormatting.swift; sourceTree = "<group>"; };
 		F0823DB61DE9D929007BD04D /* ActivityDisplayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityDisplayable.swift; path = ActivityDisplayable/ActivityDisplayable.swift; sourceTree = "<group>"; };
 		F0823DB91DE9DA10007BD04D /* StandardPreloaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StandardPreloaderView.swift; path = Dricom/Source/Presentation/Views/StandardPreloaderView.swift; sourceTree = SOURCE_ROOT; };
 		F0823DBF1DE9EEA2007BD04D /* MainPageAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageAssembly.swift; sourceTree = "<group>"; };
@@ -832,6 +834,7 @@
 			isa = PBXGroup;
 			children = (
 				F0128B7B1E451946008E6668 /* IosVersion.swift */,
+				F081FF651EEEBC3D0085643A /* iso8601DateFormatting.swift */,
 			);
 			name = Tools;
 			path = Core/Extensions/Tools;
@@ -2571,6 +2574,7 @@
 				F0022BCB1EBBBD25009EBD46 /* ChangePasswordRouter.swift in Sources */,
 				F0022BEA1EC07FDA009EBD46 /* ChatRouterImpl.swift in Sources */,
 				F0022BC81EBBBD25009EBD46 /* ChangePasswordInteractorImpl.swift in Sources */,
+				F081FF661EEEBC3D0085643A /* iso8601DateFormatting.swift in Sources */,
 				F0128C061E4F9CED008E6668 /* ScrollViewKeyboardAvoidingServiceImpl.swift in Sources */,
 				F0B450B31E61B6A100F3B2E4 /* SettingsSwitchCell.swift in Sources */,
 				F0128B7C1E451946008E6668 /* IosVersion.swift in Sources */,
