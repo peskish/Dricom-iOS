@@ -1,16 +1,7 @@
 import UIKit
 
-final class SettingsRouterImpl: BaseRouter, SettingsRouter, RouterLoginShowable {
+final class SettingsRouterImpl: BaseRouter, SettingsRouter {
     // MARK: - SettingsRouter
-    func showLogin(configure: (_ module: LoginModule) -> ()) {
-        showLogin(
-            configure: configure,
-            animated: true,
-            modalTransitionStyle: nil,
-            modalPresentationStyle: nil
-        )
-    }
-    
     func showUserProfile() {
         let assembly = assemblyFactory.userProfileAssembly()
         let targetViewController = assembly.module()

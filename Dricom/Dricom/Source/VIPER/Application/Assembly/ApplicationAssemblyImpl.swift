@@ -1,18 +1,16 @@
 import UIKit
 
 final class ApplicationAssemblyImpl: BaseAssembly, ApplicationAssembly {
+    private static weak var applicationModuleInstance: ApplicationModule?
+    
     // MARK: - ApplicationAssembly
+    func applicationModule() -> ApplicationModule? {
+        return ApplicationAssemblyImpl.applicationModuleInstance
+    }
+    
+    // This function should be called once during the application launch
     func module() -> (rootViewController: UIViewController, applicationLaunchHandler: ApplicationLaunchHandler) {
         let tabBarController = ApplicationTabBarController()
-        
-        let mainPageModule = assembleMainPageModule()
-        let settingsModule = assembleSettingsModule()
-        
-        let viewControllers = [
-            mainPageModule.viewController,
-            settingsModule.viewController
-        ]
-        tabBarController.viewControllers = viewControllers
         
         let interactor = ApplicationInteractorImpl()
         
@@ -25,6 +23,17 @@ final class ApplicationAssemblyImpl: BaseAssembly, ApplicationAssembly {
             interactor: interactor,
             router: router
         )
+        
+        ApplicationAssemblyImpl.applicationModuleInstance = presenter
+        
+        let mainPageModule = assembleMainPageModule()
+        let settingsModule = assembleSettingsModule()
+        
+        let viewControllers = [
+            mainPageModule.viewController,
+            settingsModule.viewController
+        ]
+        tabBarController.viewControllers = viewControllers
         
         tabBarController.addDisposable(presenter)
         

@@ -1,6 +1,6 @@
 import UIKit
 
-final class ApplicationRouterImpl: BaseRouter, ApplicationRouter {
+final class ApplicationRouterImpl: BaseRouter, ApplicationRouter, RouterLoginShowable {
     // MARK: - ApplicationRouter
     func showAppStarter(
         disposeBag: DisposeBag,
@@ -14,5 +14,14 @@ final class ApplicationRouterImpl: BaseRouter, ApplicationRouter {
         viewController?.present(module.viewController, animated: false) {
             completion?(module.applicationLaunchHandler)
         }
+    }
+    
+    func showLogin(configure: (_ module: LoginModule) -> ()) {
+        showLogin(
+            configure: configure,
+            animated: true,
+            modalTransitionStyle: nil,
+            modalPresentationStyle: nil
+        )
     }
 }

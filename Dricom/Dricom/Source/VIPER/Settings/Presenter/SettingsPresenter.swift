@@ -19,6 +19,8 @@ final class SettingsPresenter: SettingsModule
     }
     
     // MARK: - Weak properties
+    weak var applicationModule: ApplicationModule?
+    
     weak var view: SettingsViewInput? {
         didSet {
             setUpView()
@@ -123,11 +125,7 @@ final class SettingsPresenter: SettingsModule
     
     private func logOut() {
         interactor.logOut { [weak self] in
-            self?.router.showLogin { loginModule in
-                loginModule.onFinish = { result in
-                    self?.focusOnModule()
-                }
-            }
+            self?.applicationModule?.showLogin(shouldResetViewState: true)
         }
     }
     

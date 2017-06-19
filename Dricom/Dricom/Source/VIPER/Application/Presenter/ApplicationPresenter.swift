@@ -1,10 +1,6 @@
 import Foundation
 
-protocol ApplicationLaunchHandler {
-    func handleApplicationDidFinishLaunching()
-}
-
-final class ApplicationPresenter: ApplicationLaunchHandler {
+final class ApplicationPresenter: ApplicationLaunchHandler, ApplicationModule, ModuleFocusable {
     // MARK: - Private properties
     private let interactor: ApplicationInteractor
     private let router: ApplicationRouter
@@ -21,6 +17,26 @@ final class ApplicationPresenter: ApplicationLaunchHandler {
         self.router = router
     }
     
+    // MARK: - ApplicationModule
+    func resetViewState() {
+        for module in [mainPageModule, settingsModule] as [ModuleFocusable?] {
+            module?.focusOnModule()
+        }
+        
+        view?.selectTab(.mainPage)
+    }
+    
+    func showLogin(shouldResetViewState: Bool) {
+        router.showLogin { loginModule in
+            loginModule.onFinish = { [weak self] result in
+                if shouldResetViewState {
+                    self?.resetViewState()
+                }
+                self?.focusOnModule()
+            }
+        }
+    }
+    
     // MARK: - ApplicationLaunchHandler
     func handleApplicationDidFinishLaunching() {
         guard let view = view else { return }
@@ -28,5 +44,10 @@ final class ApplicationPresenter: ApplicationLaunchHandler {
         router.showAppStarter(disposeBag: view.disposeBag) { applicationLaunchHandler in
             applicationLaunchHandler.handleApplicationDidFinishLaunching()
         }
+    }
+    
+    // MARK: - ModuleFocusable
+    func focusOnModule() {
+        router.focusOnCurrentModule()
     }
 }

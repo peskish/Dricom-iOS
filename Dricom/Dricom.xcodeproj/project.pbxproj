@@ -295,6 +295,7 @@
 		F0F14ABA1EA15F4E004752A8 /* Unbox+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F14AB91EA15F4E004752A8 /* Unbox+Extensions.swift */; };
 		F0F434081DD10CAB00F278BD /* AlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F434071DD10CAB00F278BD /* AlertDisplayable.swift */; };
 		F0F4340B1DD10CC500F278BD /* WindowWaiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F4340A1DD10CC500F278BD /* WindowWaiter.swift */; };
+		F0F86EDA1EF84F97004A37AD /* ApplicationModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F86ED91EF84F97004A37AD /* ApplicationModule.swift */; };
 		F0F888201EAD407A00F1C93D /* ChangeAccountInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8881F1EAD407A00F1C93D /* ChangeAccountInfoRequest.swift */; };
 		F0FD0C801EB4C26E0059A3E5 /* PhoneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD0C711EB4C26E0059A3E5 /* PhoneService.swift */; };
 		F0FD0C811EB4C26E0059A3E5 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD0C731EB4C26E0059A3E5 /* ServiceFactory.swift */; };
@@ -625,6 +626,7 @@
 		F0F14AB91EA15F4E004752A8 /* Unbox+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Unbox+Extensions.swift"; path = "Core/Extensions/Unbox+Extensions.swift"; sourceTree = "<group>"; };
 		F0F434071DD10CAB00F278BD /* AlertDisplayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertDisplayable.swift; path = MessageDisplaying/AlertDisplayable.swift; sourceTree = "<group>"; };
 		F0F4340A1DD10CC500F278BD /* WindowWaiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowWaiter.swift; sourceTree = "<group>"; };
+		F0F86ED91EF84F97004A37AD /* ApplicationModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationModule.swift; sourceTree = "<group>"; };
 		F0F8881F1EAD407A00F1C93D /* ChangeAccountInfoRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeAccountInfoRequest.swift; path = Core/Networking/Request/ChangeAccountInfoRequest.swift; sourceTree = "<group>"; };
 		F0FD0C711EB4C26E0059A3E5 /* PhoneService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneService.swift; sourceTree = "<group>"; };
 		F0FD0C731EB4C26E0059A3E5 /* ServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
@@ -1635,6 +1637,7 @@
 		F09209971DC14A7F0057302F /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				F0F86ED91EF84F97004A37AD /* ApplicationModule.swift */,
 				F09209991DC14A7F0057302F /* ApplicationPresenter.swift */,
 			);
 			path = Presenter;
@@ -2420,6 +2423,7 @@
 				F0128B741E45156C008E6668 /* ApplicationTabBarController.swift in Sources */,
 				F0022BCE1EBBBD25009EBD46 /* ChangePasswordViewController.swift in Sources */,
 				F0322AFF1E43CB4100F3CD47 /* AppStarterAssemblyImpl.swift in Sources */,
+				F0F86EDA1EF84F97004A37AD /* ApplicationModule.swift in Sources */,
 				F0F14AB01E9C211F004752A8 /* RouterPhotoPickerShowable.swift in Sources */,
 				F09209A61DC14A7F0057302F /* ApplicationPresenter.swift in Sources */,
 				F076D6581DCF6E2F00E3ED0F /* StandardAlert.swift in Sources */,

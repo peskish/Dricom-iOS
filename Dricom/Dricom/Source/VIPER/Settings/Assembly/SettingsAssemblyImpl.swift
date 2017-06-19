@@ -24,6 +24,7 @@ final class SettingsAssemblyImpl: BaseAssembly, SettingsAssembly {
         viewController.addDisposable(presenter)
         
         presenter.view = viewController
+        presenter.applicationModule = assemblyFactory.applicationAssembly().applicationModule()
         
         return (viewController: viewController, interface: presenter)
     }
