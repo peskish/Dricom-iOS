@@ -200,6 +200,17 @@
 		F0823DD61DE9EEA2007BD04D /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0823DCB1DE9EEA2007BD04D /* MainPageView.swift */; };
 		F0823DD71DE9EEA2007BD04D /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0823DCC1DE9EEA2007BD04D /* MainPageViewController.swift */; };
 		F0823DD81DE9EEA2007BD04D /* MainPageViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0823DCD1DE9EEA2007BD04D /* MainPageViewInput.swift */; };
+		F08AE1A51EF99FA800390216 /* ChatListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08AE1961EF99FA800390216 /* ChatListAssembly.swift */; };
+		F08AE1A61EF99FA800390216 /* ChatListAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08AE1971EF99FA800390216 /* ChatListAssemblyImpl.swift */; };
+		F08AE1A71EF99FA800390216 /* ChatListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08AE1991EF99FA800390216 /* ChatListInteractor.swift */; };
+		F08AE1A81EF99FA800390216 /* ChatListInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08AE19A1EF99FA800390216 /* ChatListInteractorImpl.swift */; };
+		F08AE1A91EF99FA800390216 /* ChatListModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08AE19C1EF99FA800390216 /* ChatListModule.swift */; };
+		F08AE1AA1EF99FA800390216 /* ChatListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08AE19D1EF99FA800390216 /* ChatListPresenter.swift */; };
+		F08AE1AB1EF99FA800390216 /* ChatListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08AE19F1EF99FA800390216 /* ChatListRouter.swift */; };
+		F08AE1AC1EF99FA800390216 /* ChatListRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08AE1A01EF99FA800390216 /* ChatListRouterImpl.swift */; };
+		F08AE1AD1EF99FA800390216 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08AE1A21EF99FA800390216 /* ChatListView.swift */; };
+		F08AE1AE1EF99FA800390216 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08AE1A31EF99FA800390216 /* ChatListViewController.swift */; };
+		F08AE1AF1EF99FA800390216 /* ChatListViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08AE1A41EF99FA800390216 /* ChatListViewInput.swift */; };
 		F08BE1A21DC9265000243B56 /* ActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BE1A11DC9265000243B56 /* ActionButtonView.swift */; };
 		F08BE1A41DC926B600243B56 /* SpecMargins.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BE1A31DC926B600243B56 /* SpecMargins.swift */; };
 		F08BE1A61DC9326A00243B56 /* ImageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BE1A51DC9326A00243B56 /* ImageButtonView.swift */; };
@@ -527,6 +538,17 @@
 		F0823DCB1DE9EEA2007BD04D /* MainPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 		F0823DCC1DE9EEA2007BD04D /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		F0823DCD1DE9EEA2007BD04D /* MainPageViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewInput.swift; sourceTree = "<group>"; };
+		F08AE1961EF99FA800390216 /* ChatListAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListAssembly.swift; sourceTree = "<group>"; };
+		F08AE1971EF99FA800390216 /* ChatListAssemblyImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListAssemblyImpl.swift; sourceTree = "<group>"; };
+		F08AE1991EF99FA800390216 /* ChatListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListInteractor.swift; sourceTree = "<group>"; };
+		F08AE19A1EF99FA800390216 /* ChatListInteractorImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListInteractorImpl.swift; sourceTree = "<group>"; };
+		F08AE19C1EF99FA800390216 /* ChatListModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListModule.swift; sourceTree = "<group>"; };
+		F08AE19D1EF99FA800390216 /* ChatListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListPresenter.swift; sourceTree = "<group>"; };
+		F08AE19F1EF99FA800390216 /* ChatListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListRouter.swift; sourceTree = "<group>"; };
+		F08AE1A01EF99FA800390216 /* ChatListRouterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListRouterImpl.swift; sourceTree = "<group>"; };
+		F08AE1A21EF99FA800390216 /* ChatListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
+		F08AE1A31EF99FA800390216 /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
+		F08AE1A41EF99FA800390216 /* ChatListViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewInput.swift; sourceTree = "<group>"; };
 		F08BE1A11DC9265000243B56 /* ActionButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionButtonView.swift; path = Dricom/Source/Presentation/Views/ActionButtonView.swift; sourceTree = SOURCE_ROOT; };
 		F08BE1A31DC926B600243B56 /* SpecMargins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpecMargins.swift; path = Dricom/Source/Presentation/Spec/SpecMargins.swift; sourceTree = SOURCE_ROOT; };
 		F08BE1A51DC9326A00243B56 /* ImageButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageButtonView.swift; path = Dricom/Source/Presentation/Views/ImageButtonView.swift; sourceTree = SOURCE_ROOT; };
@@ -1513,6 +1535,64 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F08AE1941EF99FA800390216 /* ChatList */ = {
+			isa = PBXGroup;
+			children = (
+				F08AE1951EF99FA800390216 /* Assembly */,
+				F08AE1981EF99FA800390216 /* Interactor */,
+				F08AE19B1EF99FA800390216 /* Presenter */,
+				F08AE19E1EF99FA800390216 /* Router */,
+				F08AE1A11EF99FA800390216 /* View */,
+			);
+			path = ChatList;
+			sourceTree = "<group>";
+		};
+		F08AE1951EF99FA800390216 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				F08AE1961EF99FA800390216 /* ChatListAssembly.swift */,
+				F08AE1971EF99FA800390216 /* ChatListAssemblyImpl.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		F08AE1981EF99FA800390216 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				F08AE1991EF99FA800390216 /* ChatListInteractor.swift */,
+				F08AE19A1EF99FA800390216 /* ChatListInteractorImpl.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		F08AE19B1EF99FA800390216 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F08AE19C1EF99FA800390216 /* ChatListModule.swift */,
+				F08AE19D1EF99FA800390216 /* ChatListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F08AE19E1EF99FA800390216 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F08AE19F1EF99FA800390216 /* ChatListRouter.swift */,
+				F08AE1A01EF99FA800390216 /* ChatListRouterImpl.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F08AE1A11EF99FA800390216 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F08AE1A21EF99FA800390216 /* ChatListView.swift */,
+				F08AE1A31EF99FA800390216 /* ChatListViewController.swift */,
+				F08AE1A41EF99FA800390216 /* ChatListViewInput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F092092E1DC13EFB0057302F = {
 			isa = PBXGroup;
 			children = (
@@ -1592,6 +1672,7 @@
 				F021D6D21DD8925B00F50091 /* Camera */,
 				F0022BB41EBBBD25009EBD46 /* ChangePassword */,
 				F0022BD21EC07FDA009EBD46 /* Chat */,
+				F08AE1941EF99FA800390216 /* ChatList */,
 				F0D038451DD3AE0500E0085D /* Feedback */,
 				F076D62F1DCF67F200E3ED0F /* Login */,
 				F021D69E1DD7A61900F50091 /* MailComposer */,
@@ -2385,6 +2466,7 @@
 				F0AFDA371E3D2A7000CCEE24 /* LicensePlateView.swift in Sources */,
 				F021D6A21DD7A61900F50091 /* MailComposerAssemblyImpl.swift in Sources */,
 				F0022BC71EBBBD25009EBD46 /* ChangePasswordInteractor.swift in Sources */,
+				F08AE1AA1EF99FA800390216 /* ChatListPresenter.swift in Sources */,
 				F0128B881E491787008E6668 /* LoginResponse.swift in Sources */,
 				F0022C001EC3A7C5009EBD46 /* MessengerService.swift in Sources */,
 				F0FD0C921EB4CC170059A3E5 /* Throttler.swift in Sources */,
@@ -2418,6 +2500,7 @@
 				F021D6C11DD7B99300F50091 /* RegisterInteractorImpl.swift in Sources */,
 				F08BE1A61DC9326A00243B56 /* ImageButtonView.swift in Sources */,
 				F0A702401EB67B5000F2EEA3 /* MainPageSectionTitleView.swift in Sources */,
+				F08AE1A91EF99FA800390216 /* ChatListModule.swift in Sources */,
 				F0A115611DC6385400A4DC76 /* RouterFocusable.swift in Sources */,
 				F076D6431DCF67F200E3ED0F /* LoginInteractorImpl.swift in Sources */,
 				F0128B741E45156C008E6668 /* ApplicationTabBarController.swift in Sources */,
@@ -2440,6 +2523,7 @@
 				F0128C051E4F9CED008E6668 /* ScrollViewKeyboardAvoidingService.swift in Sources */,
 				F021D6CD1DD88D6100F50091 /* SpecSizes.swift in Sources */,
 				F09209A11DC14A7F0057302F /* ApplicationAssembly.swift in Sources */,
+				F08AE1A51EF99FA800390216 /* ChatListAssembly.swift in Sources */,
 				F0128C091E4F9CED008E6668 /* KeyboardFrameObservingAccessoryViewDelegate.swift in Sources */,
 				F0128BA21E4A64C6008E6668 /* OptionalNetworkResponseConverterOf.swift in Sources */,
 				F09209A31DC14A7F0057302F /* ApplicationInteractor.swift in Sources */,
@@ -2478,6 +2562,7 @@
 				F0D038561DD3AE0500E0085D /* FeedbackAssembly.swift in Sources */,
 				F0AE364E1EA6B00A00172E09 /* AddUserToFavoritesRequest.swift in Sources */,
 				F0B450A31E60B6A400F3B2E4 /* SettingsAssembly.swift in Sources */,
+				F08AE1A81EF99FA800390216 /* ChatListInteractorImpl.swift in Sources */,
 				F09209B61DC150CB0057302F /* AssemblyFactoryImpl.swift in Sources */,
 				F0823DD01DE9EEA2007BD04D /* MainPageInteractor.swift in Sources */,
 				F0022BB11EBBB855009EBD46 /* ChangePasswordRequest.swift in Sources */,
@@ -2486,6 +2571,7 @@
 				F0AE36501EA6B02500172E09 /* RemoveUserFromFavoritesRequest.swift in Sources */,
 				F0128C2F1E4F9E47008E6668 /* KeyValueObserver.swift in Sources */,
 				F0128C041E4F9CED008E6668 /* UIView+FirstResponderSettings.swift in Sources */,
+				F08AE1AB1EF99FA800390216 /* ChatListRouter.swift in Sources */,
 				F0823DD41DE9EEA2007BD04D /* MainPageRouter.swift in Sources */,
 				F0FD0C9D1EB526170059A3E5 /* SearchBarView.swift in Sources */,
 				F0128C2A1E4F9D39008E6668 /* ScrollViewRefresherInterfaceState.swift in Sources */,
@@ -2513,6 +2599,7 @@
 				F0022BC81EBBBD25009EBD46 /* ChangePasswordInteractorImpl.swift in Sources */,
 				F081FF661EEEBC3D0085643A /* iso8601DateFormatting.swift in Sources */,
 				F0128C061E4F9CED008E6668 /* ScrollViewKeyboardAvoidingServiceImpl.swift in Sources */,
+				F08AE1A61EF99FA800390216 /* ChatListAssemblyImpl.swift in Sources */,
 				F0B450B31E61B6A100F3B2E4 /* SettingsSwitchCell.swift in Sources */,
 				F0128B7C1E451946008E6668 /* IosVersion.swift in Sources */,
 				F0128BF81E4F9CED008E6668 /* ContentInsetHolder.swift in Sources */,
@@ -2539,6 +2626,7 @@
 				F0128BA01E4A64C6008E6668 /* NetworkResponseConverter.swift in Sources */,
 				F021D6C71DD7B99300F50091 /* RegisterViewController.swift in Sources */,
 				F0D038601DD3AE0500E0085D /* FeedbackViewInput.swift in Sources */,
+				F08AE1AE1EF99FA800390216 /* ChatListViewController.swift in Sources */,
 				F076D6791DCF7DD200E3ED0F /* UIView+FindFirstResponder.swift in Sources */,
 				F076D66C1DCF6F3800E3ED0F /* DictionaryExtensions.swift in Sources */,
 				F0022BCC1EBBBD25009EBD46 /* ChangePasswordRouterImpl.swift in Sources */,
@@ -2615,6 +2703,7 @@
 				F0A115871DC68E1D00A4DC76 /* ViewControllerTransition.swift in Sources */,
 				F0FD0CA11EB66D4B0059A3E5 /* UserRowTableViewCell.swift in Sources */,
 				F0FD0C8A1EB4C26E0059A3E5 /* InputFieldsContainer.swift in Sources */,
+				F08AE1AC1EF99FA800390216 /* ChatListRouterImpl.swift in Sources */,
 				F0128C281E4F9D39008E6668 /* ScrollViewRefresherFactory.swift in Sources */,
 				F0FD0C861EB4C26E0059A3E5 /* UserDataService.swift in Sources */,
 				F0AE364C1EA6AFEE00172E09 /* FavoriteUsersRequest.swift in Sources */,
@@ -2628,6 +2717,7 @@
 				F076D6751DCF6FC500E3ED0F /* NSURLPathComponents.swift in Sources */,
 				F0128C251E4F9D39008E6668 /* ActivityIndicatorRefreshView.swift in Sources */,
 				F0B450A51E60B6A400F3B2E4 /* SettingsInteractor.swift in Sources */,
+				F08AE1A71EF99FA800390216 /* ChatListInteractor.swift in Sources */,
 				F09209BD1DC1524E0057302F /* BaseAssembly.swift in Sources */,
 				F0FD0C901EB4CC170059A3E5 /* Debouncer.swift in Sources */,
 				F099E3E11EA2B4040082CD92 /* UserInfoPresenter.swift in Sources */,
@@ -2643,6 +2733,7 @@
 				F0FD0C801EB4C26E0059A3E5 /* PhoneService.swift in Sources */,
 				F0F888201EAD407A00F1C93D /* ChangeAccountInfoRequest.swift in Sources */,
 				F0B450A81E60B6A400F3B2E4 /* SettingsPresenter.swift in Sources */,
+				F08AE1AD1EF99FA800390216 /* ChatListView.swift in Sources */,
 				F021D6E81DD8925B00F50091 /* CameraPresenter.swift in Sources */,
 				F0128C0D1E4F9CED008E6668 /* RecursionBreakingClosure.swift in Sources */,
 				F021D6EA1DD8925B00F50091 /* CameraRouterImpl.swift in Sources */,
@@ -2667,6 +2758,7 @@
 				F08BE1A41DC926B600243B56 /* SpecMargins.swift in Sources */,
 				F08BE1A21DC9265000243B56 /* ActionButtonView.swift in Sources */,
 				F0FD0C881EB4C26E0059A3E5 /* DataValidationService.swift in Sources */,
+				F08AE1AF1EF99FA800390216 /* ChatListViewInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
