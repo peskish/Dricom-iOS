@@ -12,7 +12,11 @@ struct UserProfileDataChangeSet {
     }
 }
 
-protocol UserDataService: class {
+protocol UserDataObservable: class {
+    func subscribe(_ observer: AnyObject, onUserDataReceived: @escaping (User) -> ())
+}
+
+protocol UserDataService: class, UserDataObservable {
     func requestUserData(completion: ApiResult<Void>.Completion?)
     
     func changeUserData(
@@ -25,8 +29,6 @@ protocol UserDataService: class {
         oldPassword: String,
         newPassword: String,
         completion: @escaping ApiResult<Bool>.Completion)
-    
-    func subscribe(_ observer: AnyObject, onUserDataReceived: @escaping (User) -> ())
 }
 
 protocol UserDataNotifier: class {

@@ -6,7 +6,10 @@ final class ChatListAssemblyImpl: BaseAssembly, ChatListAssembly {
         configure: (_ module: ChatListModule) -> ())
         -> UIViewController
     {
-        let interactor = ChatListInteractorImpl()
+        let interactor = ChatListInteractorImpl(
+            userDataObservable: serviceFactory.userDataObservable(),
+            messengerService: serviceFactory.messengerService()
+        )
         
         let viewController = ChatListViewController()
         

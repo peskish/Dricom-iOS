@@ -3,14 +3,14 @@ import Foundation
 final class SettingsInteractorImpl: SettingsInteractor {
     // MARK: - Dependencies
     private let logoutService: LogoutService
-    private let userDataService: UserDataService
+    private let userDataObservable: UserDataObservable
     
     // MARK: - Init
-    init(logoutService: LogoutService, userDataService: UserDataService) {
+    init(logoutService: LogoutService, userDataObservable: UserDataObservable) {
         self.logoutService = logoutService
-        self.userDataService = userDataService
+        self.userDataObservable = userDataObservable
         
-        self.userDataService.subscribe(self) { [weak self] user in
+        self.userDataObservable.subscribe(self) { [weak self] user in
             self?.onUserDataReceived?(user)
         }
     }

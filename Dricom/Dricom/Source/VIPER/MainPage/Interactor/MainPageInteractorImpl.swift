@@ -2,7 +2,7 @@ import Foundation
 
 final class MainPageInteractorImpl: MainPageInteractor {
     // MARK: - Dependencies
-    private let userDataService: UserDataService
+    private let userDataObservable: UserDataObservable
     private let userSearchService: UserSearchService
     private let favoriteUsersService: FavoriteUsersService
     
@@ -12,15 +12,15 @@ final class MainPageInteractorImpl: MainPageInteractor {
     
     // MARK: - Init
     init(
-        userDataService: UserDataService,
+        userDataObservable: UserDataObservable,
         userSearchService: UserSearchService,
         favoriteUsersService: FavoriteUsersService)
     {
-        self.userDataService = userDataService
+        self.userDataObservable = userDataObservable
         self.userSearchService = userSearchService
         self.favoriteUsersService = favoriteUsersService
         
-        self.userDataService.subscribe(self) { [weak self] user in
+        self.userDataObservable.subscribe(self) { [weak self] user in
             self?.onAccountDataReceived?(user)
         }
     }

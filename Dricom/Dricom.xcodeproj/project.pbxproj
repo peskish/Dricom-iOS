@@ -208,9 +208,10 @@
 		F08AE1AA1EF99FA800390216 /* ChatListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08AE19D1EF99FA800390216 /* ChatListPresenter.swift */; };
 		F08AE1AB1EF99FA800390216 /* ChatListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08AE19F1EF99FA800390216 /* ChatListRouter.swift */; };
 		F08AE1AC1EF99FA800390216 /* ChatListRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08AE1A01EF99FA800390216 /* ChatListRouterImpl.swift */; };
-		F08AE1AD1EF99FA800390216 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08AE1A21EF99FA800390216 /* ChatListView.swift */; };
 		F08AE1AE1EF99FA800390216 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08AE1A31EF99FA800390216 /* ChatListViewController.swift */; };
 		F08AE1AF1EF99FA800390216 /* ChatListViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08AE1A41EF99FA800390216 /* ChatListViewInput.swift */; };
+		F08AE1B11EF9A79600390216 /* ChatListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08AE1B01EF9A79600390216 /* ChatListCell.swift */; };
+		F08AE1B31EF9B4A000390216 /* DateTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08AE1B21EF9B4A000390216 /* DateTimeFormatter.swift */; };
 		F08BE1A21DC9265000243B56 /* ActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BE1A11DC9265000243B56 /* ActionButtonView.swift */; };
 		F08BE1A41DC926B600243B56 /* SpecMargins.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BE1A31DC926B600243B56 /* SpecMargins.swift */; };
 		F08BE1A61DC9326A00243B56 /* ImageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BE1A51DC9326A00243B56 /* ImageButtonView.swift */; };
@@ -546,9 +547,10 @@
 		F08AE19D1EF99FA800390216 /* ChatListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListPresenter.swift; sourceTree = "<group>"; };
 		F08AE19F1EF99FA800390216 /* ChatListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListRouter.swift; sourceTree = "<group>"; };
 		F08AE1A01EF99FA800390216 /* ChatListRouterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListRouterImpl.swift; sourceTree = "<group>"; };
-		F08AE1A21EF99FA800390216 /* ChatListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
 		F08AE1A31EF99FA800390216 /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		F08AE1A41EF99FA800390216 /* ChatListViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewInput.swift; sourceTree = "<group>"; };
+		F08AE1B01EF9A79600390216 /* ChatListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListCell.swift; sourceTree = "<group>"; };
+		F08AE1B21EF9B4A000390216 /* DateTimeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateTimeFormatter.swift; path = Core/Formatters/DateTimeFormatter.swift; sourceTree = "<group>"; };
 		F08BE1A11DC9265000243B56 /* ActionButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionButtonView.swift; path = Dricom/Source/Presentation/Views/ActionButtonView.swift; sourceTree = SOURCE_ROOT; };
 		F08BE1A31DC926B600243B56 /* SpecMargins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpecMargins.swift; path = Dricom/Source/Presentation/Spec/SpecMargins.swift; sourceTree = SOURCE_ROOT; };
 		F08BE1A51DC9326A00243B56 /* ImageButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageButtonView.swift; path = Dricom/Source/Presentation/Views/ImageButtonView.swift; sourceTree = SOURCE_ROOT; };
@@ -1586,11 +1588,19 @@
 		F08AE1A11EF99FA800390216 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F08AE1A21EF99FA800390216 /* ChatListView.swift */,
 				F08AE1A31EF99FA800390216 /* ChatListViewController.swift */,
 				F08AE1A41EF99FA800390216 /* ChatListViewInput.swift */,
+				F08AE1B01EF9A79600390216 /* ChatListCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F08AE1B41EF9B4A500390216 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				F08AE1B21EF9B4A000390216 /* DateTimeFormatter.swift */,
+			);
+			name = Formatters;
 			sourceTree = "<group>";
 		};
 		F092092E1DC13EFB0057302F = {
@@ -1865,6 +1875,7 @@
 			children = (
 				F0A115311DC62D2300A4DC76 /* Common */,
 				F0FD0C8C1EB4CC170059A3E5 /* DataFlows */,
+				F08AE1B41EF9B4A500390216 /* Formatters */,
 				F0A115221DC629CE00A4DC76 /* Model */,
 				F0A1151E1DC6284B00A4DC76 /* Networking */,
 				F081FF5B1EEDCAB60085643A /* Polling */,
@@ -2519,6 +2530,7 @@
 				F0A1157F1DC6863E00A4DC76 /* UIView+Resizing.swift in Sources */,
 				F021D6CF1DD8914200F50091 /* RouterCameraShowable.swift in Sources */,
 				F099E3E21EA2B4040082CD92 /* UserInfoRouter.swift in Sources */,
+				F08AE1B11EF9A79600390216 /* ChatListCell.swift in Sources */,
 				F021D6BE1DD7B99300F50091 /* RegisterAssembly.swift in Sources */,
 				F0128C051E4F9CED008E6668 /* ScrollViewKeyboardAvoidingService.swift in Sources */,
 				F021D6CD1DD88D6100F50091 /* SpecSizes.swift in Sources */,
@@ -2554,6 +2566,7 @@
 				F0128C331E50F8CF008E6668 /* AuthRequest.swift in Sources */,
 				F0A1157D1DC6863E00A4DC76 /* UIView+Layout.swift in Sources */,
 				F021D6A31DD7A61900F50091 /* MailComposerAssembly.swift in Sources */,
+				F08AE1B31EF9B4A000390216 /* DateTimeFormatter.swift in Sources */,
 				F0022BC51EBBBD25009EBD46 /* ChangePasswordAssembly.swift in Sources */,
 				F0022BE41EC07FDA009EBD46 /* ChatAssemblyImpl.swift in Sources */,
 				F0128B9A1E4A599E008E6668 /* NetworkRequestError.swift in Sources */,
@@ -2733,7 +2746,6 @@
 				F0FD0C801EB4C26E0059A3E5 /* PhoneService.swift in Sources */,
 				F0F888201EAD407A00F1C93D /* ChangeAccountInfoRequest.swift in Sources */,
 				F0B450A81E60B6A400F3B2E4 /* SettingsPresenter.swift in Sources */,
-				F08AE1AD1EF99FA800390216 /* ChatListView.swift in Sources */,
 				F021D6E81DD8925B00F50091 /* CameraPresenter.swift in Sources */,
 				F0128C0D1E4F9CED008E6668 /* RecursionBreakingClosure.swift in Sources */,
 				F021D6EA1DD8925B00F50091 /* CameraRouterImpl.swift in Sources */,

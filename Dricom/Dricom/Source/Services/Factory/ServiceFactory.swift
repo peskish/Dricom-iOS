@@ -5,6 +5,7 @@ protocol ServiceFactory {
     func mailComposeDelegateService() -> MailComposeDelegateService
     func dataValidationService() -> DataValidationService
     func userDataService() -> UserDataService
+    func userDataObservable() -> UserDataObservable
     func userSearchService() -> UserSearchService
     func logoutService() -> LogoutService
     func favoriteUsersService() -> FavoriteUsersService
@@ -61,6 +62,10 @@ final class ServiceFactoryImpl: ServiceFactory {
     }
     
     func userDataService() -> UserDataService {
+        return userDataServiceInstance
+    }
+    
+    func userDataObservable() -> UserDataObservable {
         return userDataServiceInstance
     }
     

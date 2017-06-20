@@ -1,6 +1,6 @@
 import UIKit
 
-class SettingsActionCell: UITableViewCell {
+final class SettingsActionCell: UITableViewCell {
     // MARK: Init
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .value1, reuseIdentifier: reuseIdentifier)

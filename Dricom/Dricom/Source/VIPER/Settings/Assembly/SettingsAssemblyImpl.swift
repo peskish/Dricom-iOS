@@ -6,7 +6,7 @@ final class SettingsAssemblyImpl: BaseAssembly, SettingsAssembly {
     {
         let interactor = SettingsInteractorImpl(
             logoutService: serviceFactory.logoutService(),
-            userDataService: serviceFactory.userDataService()
+            userDataObservable: serviceFactory.userDataObservable()
         )
         
         let viewController = SettingsViewController()

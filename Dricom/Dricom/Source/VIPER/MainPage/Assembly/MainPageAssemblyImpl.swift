@@ -5,7 +5,7 @@ final class MainPageAssemblyImpl: BaseAssembly, MainPageAssembly {
     func module() -> (viewController: UIViewController, interface: MainPageModule)
     {
         let interactor = MainPageInteractorImpl(
-            userDataService: serviceFactory.userDataService(),
+            userDataObservable: serviceFactory.userDataObservable(),
             userSearchService: serviceFactory.userSearchService(),
             favoriteUsersService: serviceFactory.favoriteUsersService()
         )

@@ -1,6 +1,6 @@
 import UIKit
 
-class SettingsSwitchCell: UITableViewCell {
+final class SettingsSwitchCell: UITableViewCell {
     private let switchView = UISwitch()
     
     // MARK: Init
