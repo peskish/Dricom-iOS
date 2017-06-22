@@ -34,8 +34,7 @@ class MainPageAccountView: UIView {
         nameLabel.textColor = UIColor.drcSlate
         
         licenseLabel.font = UIFont.drcAccountLicenseFont()
-        licenseLabel.textColor = UIColor.drcSlate
-        licenseLabel.alpha = 0.6
+        licenseLabel.textColor = UIColor.drcSlate.withAlphaComponent(0.6)
     }
     
     // MARK: Layout

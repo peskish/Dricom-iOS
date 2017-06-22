@@ -1,7 +1,7 @@
 import Foundation
 
 struct ChatListRowData {
-    let avatarImage: String?
+    let avatarImageUrl: URL?
     let lastMessageUserName: String?
     let lastMessageText: String?
     let lastMessageCreatedAtText: String?

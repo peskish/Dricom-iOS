@@ -92,4 +92,8 @@ extension UIFont {
     class func drcChatMessageFont() -> UIFont? {
         return UIFont(name: "Rubik-Regular", size: 14.0)
     }
+    
+    class func drcCreatedAtFont() -> UIFont? {
+        return UIFont(name: "Rubik-Regular", size: 11.0)
+    }
 }

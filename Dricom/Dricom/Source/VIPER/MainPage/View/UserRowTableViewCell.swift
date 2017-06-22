@@ -31,8 +31,7 @@ class UserRowTableViewCell: UITableViewCell {
         nameLabel.textColor = UIColor.drcSlate
         
         licenseLabel.font = UIFont.drcUserRowLicenseFont()
-        licenseLabel.textColor = UIColor.drcSlate
-        licenseLabel.alpha = 0.6
+        licenseLabel.textColor = UIColor.drcSlate.withAlphaComponent(0.6)
     }
 
     required init?(coder aDecoder: NSCoder) {

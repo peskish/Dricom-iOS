@@ -48,7 +48,7 @@ final class ChatListPresenter:
         let lastMessageDateTimeText = lastMessageDate.flatMap { DateTimeFormatter.lastMessageDateTimeText($0) }
         
         return ChatListRowData(
-            avatarImage: channel.user.avatar?.image,
+            avatarImageUrl: channel.user.avatar.flatMap{ URL(string: $0.image) },
             lastMessageUserName: channel.lastMessage?.owner.name,
             lastMessageText: channel.lastMessage?.text,
             lastMessageCreatedAtText: lastMessageDateTimeText,
