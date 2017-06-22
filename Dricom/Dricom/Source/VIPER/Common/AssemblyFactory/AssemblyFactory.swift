@@ -15,4 +15,5 @@ protocol AssemblyFactory: class {
     func userInfoAssembly() -> UserInfoAssembly
     func changePasswordAssembly() -> ChangePasswordAssembly
     func chatAssembly() -> ChatAssembly
+    func chatListAssembly() -> ChatListAssembly
 }

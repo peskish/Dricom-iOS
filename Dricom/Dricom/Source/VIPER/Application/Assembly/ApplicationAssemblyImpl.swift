@@ -27,10 +27,12 @@ final class ApplicationAssemblyImpl: BaseAssembly, ApplicationAssembly {
         ApplicationAssemblyImpl.applicationModuleInstance = presenter
         
         let mainPageModule = assembleMainPageModule()
+        let chatListModule = assembleChatListModule()
         let settingsModule = assembleSettingsModule()
         
         let viewControllers = [
             mainPageModule.viewController,
+            chatListModule.viewController,
             settingsModule.viewController
         ]
         tabBarController.viewControllers = viewControllers
@@ -39,6 +41,7 @@ final class ApplicationAssemblyImpl: BaseAssembly, ApplicationAssembly {
         
         presenter.view = tabBarController
         presenter.mainPageModule = mainPageModule.interface
+        presenter.chatListModule = chatListModule.interface
         presenter.settingsModule = settingsModule.interface
         
         return (rootViewController: tabBarController, applicationLaunchHandler: presenter)
@@ -53,6 +56,19 @@ final class ApplicationAssemblyImpl: BaseAssembly, ApplicationAssembly {
             title: "Мой Dricom",
             image: #imageLiteral(resourceName: "TabMain"),
             selectedImage: #imageLiteral(resourceName: "TabMainSelected")
+        )
+        navigationController.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -2)
+        return (viewController: navigationController, interface: module.interface)
+    }
+    
+    private func assembleChatListModule() -> (viewController: UIViewController, interface: ChatListModule) {
+        let assembly = assemblyFactory.chatListAssembly()
+        let module = assembly.module()
+        let navigationController = UINavigationController(rootViewController: module.viewController)
+        navigationController.tabBarItem = UITabBarItem(
+            title: "Сообщения",
+            image: #imageLiteral(resourceName: "TabChat"),
+            selectedImage: #imageLiteral(resourceName: "TabChatSelected")
         )
         navigationController.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -2)
         return (viewController: navigationController, interface: module.interface)

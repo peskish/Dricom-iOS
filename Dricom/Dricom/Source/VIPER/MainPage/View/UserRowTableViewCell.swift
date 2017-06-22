@@ -69,7 +69,7 @@ class UserRowTableViewCell: UITableViewCell {
             left: nameLabel.left,
             right: bounds.right,
             bottom: bounds.bottom,
-            height: 1.0 / UIScreen.main.scale
+            height: 1
         )
     }
     

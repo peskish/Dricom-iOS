@@ -6,6 +6,7 @@ final class ChatListViewController: BaseViewController, ChatListViewInput {
     
     // MARK: - State
     fileprivate var rowDataList = [ChatListRowData]()
+    var shouldReloadOnViewWillAppear = false
     
     // MARK: - ChatListViewInput
     func setViewTitle(_ title: String) {
@@ -14,10 +15,24 @@ final class ChatListViewController: BaseViewController, ChatListViewInput {
     
     func setRowDataList(_ rowDataList: [ChatListRowData]) {
         self.rowDataList = rowDataList
-        chatsTable.reloadData()
+        
+        if isOnScreen {
+            chatsTable.reloadData()
+        } else {
+            shouldReloadOnViewWillAppear = true
+        }
     }
     
     // MARK: - View events
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if shouldReloadOnViewWillAppear {
+            shouldReloadOnViewWillAppear = false
+            chatsTable.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,8 +55,11 @@ final class ChatListViewController: BaseViewController, ChatListViewInput {
         )
         chatsTable.sectionHeaderHeight = .leastNormalMagnitude
         chatsTable.sectionFooterHeight = .leastNormalMagnitude
+        chatsTable.separatorStyle = .none
         
         navigationController?.setStyle(.main)
+        navigationController?.navigationBar.shadowImage = nil
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     override func viewWillLayoutSubviews() {

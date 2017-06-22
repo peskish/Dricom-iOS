@@ -2,10 +2,7 @@ import UIKit
 
 final class ChatListAssemblyImpl: BaseAssembly, ChatListAssembly {
     // MARK: - ChatListAssembly
-    func module(
-        configure: (_ module: ChatListModule) -> ())
-        -> UIViewController
-    {
+    func module() -> (viewController: UIViewController, interface: ChatListModule) {
         let interactor = ChatListInteractorImpl(
             userDataObservable: serviceFactory.userDataObservable(),
             messengerService: serviceFactory.messengerService()
@@ -27,8 +24,6 @@ final class ChatListAssemblyImpl: BaseAssembly, ChatListAssembly {
         
         presenter.view = viewController
         
-        configure(presenter)
-        
-        return viewController
+        return (viewController: viewController, interface: presenter)
     }
 }

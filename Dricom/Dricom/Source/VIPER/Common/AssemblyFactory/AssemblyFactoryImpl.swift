@@ -66,4 +66,8 @@ final class AssemblyFactoryImpl: AssemblyFactory {
     func chatAssembly() -> ChatAssembly {
         return ChatAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
     }
+    
+    func chatListAssembly() -> ChatListAssembly {
+        return ChatListAssemblyImpl(assemblyFactory: self, serviceFactory: serviceFactory)
+    }
 }

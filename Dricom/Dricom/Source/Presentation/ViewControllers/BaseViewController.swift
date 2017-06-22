@@ -45,6 +45,8 @@ class BaseViewController: UIViewController,
         fatalError("init(coder:) has not been implemented")
     }
     
+    var isOnScreen = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,6 +63,8 @@ class BaseViewController: UIViewController,
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        isOnScreen = true
+        
         onViewWillAppear?()
     }
     
@@ -73,6 +77,9 @@ class BaseViewController: UIViewController,
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         view.endEditing(true)
+        
+        isOnScreen = false
+        
         onViewWillDisappear?()
     }
     

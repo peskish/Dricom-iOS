@@ -2,9 +2,9 @@ import Foundation
 
 struct ChatListRowData {
     let avatarImageUrl: URL?
-    let lastMessageUserName: String?
-    let lastMessageText: String?
-    let lastMessageCreatedAtText: String?
+    let userName: String?
+    let messageText: String?
+    let createdAtText: String?
     
     let onTap: (() -> ())?
 }

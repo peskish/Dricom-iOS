@@ -38,7 +38,7 @@ final class ChatListCell: UITableViewCell {
         
         messageLabel.font = UIFont.drcUserRowLicenseFont()
         messageLabel.textColor = UIColor.drcSlate.withAlphaComponent(0.6)
-        messageLabel.numberOfLines = 2
+        messageLabel.numberOfLines = 3
         messageLabel.lineBreakMode = .byTruncatingTail
     }
     
@@ -69,29 +69,34 @@ final class ChatListCell: UITableViewCell {
         )
         
         createdAtLabel.bottom = userNameLabel.bottom
-
-        messageLabel.sizeToFit()
+        
+        let messageLabelRight = createdAtLabel.left - 5
+        let messageFitSize = CGSize(
+            width: messageLabelRight - userNameLabel.left,
+            height: .greatestFiniteMagnitude
+        )
+        let messageLabelSize = messageLabel.sizeThatFits(messageFitSize)
         messageLabel.layout(
             left: userNameLabel.left,
-            right: createdAtLabel.right,
+            right: messageLabelRight,
             top: userNameLabel.bottom + 2,
-            height: messageLabel.height
+            height: messageLabelSize.height
         )
         
         separatorView.layout(
             left: bounds.left,
             right: bounds.right,
             bottom: bounds.bottom,
-            height: 1.0 / UIScreen.main.scale
+            height: 1
         )
     }
     
     // MARK: - Content
     func setViewData(_ viewData: ChatListRowData) {
         setAvatarImageUrl(viewData.avatarImageUrl)
-        userNameLabel.text = viewData.lastMessageUserName
-        createdAtLabel.text = viewData.lastMessageCreatedAtText
-        messageLabel.text = viewData.lastMessageCreatedAtText
+        userNameLabel.text = viewData.userName
+        createdAtLabel.text = viewData.createdAtText
+        messageLabel.text = viewData.messageText
     }
     
     private func setAvatarImageUrl(_ avatarImageUrl: URL?) {

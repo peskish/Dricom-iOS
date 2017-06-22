@@ -7,6 +7,7 @@ final class ApplicationPresenter: ApplicationLaunchHandler, ApplicationModule, M
     
     weak var view: ApplicationViewInput?
     weak var mainPageModule: MainPageModule?
+    weak var chatListModule: ChatListModule?
     weak var settingsModule: SettingsModule?
     
     // MARK: - Init
@@ -19,7 +20,7 @@ final class ApplicationPresenter: ApplicationLaunchHandler, ApplicationModule, M
     
     // MARK: - ApplicationModule
     func resetViewState() {
-        for module in [mainPageModule, settingsModule] as [ModuleFocusable?] {
+        for module in [mainPageModule, chatListModule, settingsModule] as [ModuleFocusable?] {
             module?.focusOnModule()
         }
         

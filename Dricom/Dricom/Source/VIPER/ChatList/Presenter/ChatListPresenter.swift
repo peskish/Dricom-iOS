@@ -1,7 +1,6 @@
 import Foundation
 
-final class ChatListPresenter:
-    ChatListModule
+final class ChatListPresenter: ChatListModule
 {
     // MARK: - Private properties
     private let interactor: ChatListInteractor
@@ -48,10 +47,10 @@ final class ChatListPresenter:
         let lastMessageDateTimeText = lastMessageDate.flatMap { DateTimeFormatter.lastMessageDateTimeText($0) }
         
         return ChatListRowData(
-            avatarImageUrl: channel.user.avatar.flatMap{ URL(string: $0.image) },
-            lastMessageUserName: channel.lastMessage?.owner.name,
-            lastMessageText: channel.lastMessage?.text,
-            lastMessageCreatedAtText: lastMessageDateTimeText,
+            avatarImageUrl: channel.collocutor.avatar.flatMap{ URL(string: $0.image) },
+            userName: channel.collocutor.name,
+            messageText: channel.lastMessage?.text,
+            createdAtText: lastMessageDateTimeText,
             onTap: { [weak self] in
                 self?.router.openChannel(channel)
             }
