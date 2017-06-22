@@ -1,5 +1,4 @@
 import Foundation
-import JSQMessagesViewController
 
 final class ChatListPresenter:
     ChatListModule
@@ -54,7 +53,7 @@ final class ChatListPresenter:
             lastMessageText: channel.lastMessage?.text,
             lastMessageCreatedAtText: lastMessageDateTimeText,
             onTap: { [weak self] in
-                // TODO: Open channel
+                self?.router.openChannel(channel)
             }
         )
     }
