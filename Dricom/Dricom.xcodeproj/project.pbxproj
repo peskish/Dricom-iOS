@@ -128,6 +128,10 @@
 		F0322B031E43CB4100F3CD47 /* AppStarterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AF61E43CB4100F3CD47 /* AppStarterPresenter.swift */; };
 		F0322B041E43CB4100F3CD47 /* AppStarterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AF81E43CB4100F3CD47 /* AppStarterRouter.swift */; };
 		F0322B051E43CB4100F3CD47 /* AppStarterRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0322AF91E43CB4100F3CD47 /* AppStarterRouterImpl.swift */; };
+		F0330A551F12BDAC00791A58 /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0330A511F12BDAC00791A58 /* Raleway-Bold.ttf */; };
+		F0330A561F12BDAC00791A58 /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0330A521F12BDAC00791A58 /* Raleway-Medium.ttf */; };
+		F0330A571F12BDAC00791A58 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0330A531F12BDAC00791A58 /* Raleway-Regular.ttf */; };
+		F0330A581F12BDAC00791A58 /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0330A541F12BDAC00791A58 /* Raleway-SemiBold.ttf */; };
 		F05790C61E32A442004FBD4A /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790BC1E32A442004FBD4A /* Rubik-Black.ttf */; };
 		F05790C71E32A442004FBD4A /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790BD1E32A442004FBD4A /* Rubik-BlackItalic.ttf */; };
 		F05790C81E32A442004FBD4A /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790BE1E32A442004FBD4A /* Rubik-Bold.ttf */; };
@@ -467,6 +471,10 @@
 		F0322AF61E43CB4100F3CD47 /* AppStarterPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterPresenter.swift; sourceTree = "<group>"; };
 		F0322AF81E43CB4100F3CD47 /* AppStarterRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterRouter.swift; sourceTree = "<group>"; };
 		F0322AF91E43CB4100F3CD47 /* AppStarterRouterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStarterRouterImpl.swift; sourceTree = "<group>"; };
+		F0330A511F12BDAC00791A58 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
+		F0330A521F12BDAC00791A58 /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.ttf"; sourceTree = "<group>"; };
+		F0330A531F12BDAC00791A58 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
+		F0330A541F12BDAC00791A58 /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
 		F05790BC1E32A442004FBD4A /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Black.ttf"; sourceTree = "<group>"; };
 		F05790BD1E32A442004FBD4A /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
 		F05790BE1E32A442004FBD4A /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
@@ -1246,9 +1254,21 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		F0330A501F12BDAC00791A58 /* Raleway */ = {
+			isa = PBXGroup;
+			children = (
+				F0330A511F12BDAC00791A58 /* Raleway-Bold.ttf */,
+				F0330A521F12BDAC00791A58 /* Raleway-Medium.ttf */,
+				F0330A531F12BDAC00791A58 /* Raleway-Regular.ttf */,
+				F0330A541F12BDAC00791A58 /* Raleway-SemiBold.ttf */,
+			);
+			path = Raleway;
+			sourceTree = "<group>";
+		};
 		F05790BA1E32A442004FBD4A /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				F0330A501F12BDAC00791A58 /* Raleway */,
 				F05790BB1E32A442004FBD4A /* Rubic */,
 			);
 			path = Fonts;
@@ -2347,10 +2367,14 @@
 				F05790C71E32A442004FBD4A /* Rubik-BlackItalic.ttf in Resources */,
 				F05790CC1E32A442004FBD4A /* Rubik-LightItalic.ttf in Resources */,
 				F05790C81E32A442004FBD4A /* Rubik-Bold.ttf in Resources */,
+				F0330A581F12BDAC00791A58 /* Raleway-SemiBold.ttf in Resources */,
+				F0330A571F12BDAC00791A58 /* Raleway-Regular.ttf in Resources */,
 				F021D6CA1DD8879400F50091 /* Podfile in Resources */,
 				F09209451DC13EFB0057302F /* LaunchScreen.storyboard in Resources */,
 				F05790CB1E32A442004FBD4A /* Rubik-Light.ttf in Resources */,
 				F05790CA1E32A442004FBD4A /* Rubik-Italic.ttf in Resources */,
+				F0330A561F12BDAC00791A58 /* Raleway-Medium.ttf in Resources */,
+				F0330A551F12BDAC00791A58 /* Raleway-Bold.ttf in Resources */,
 				F05790CE1E32A442004FBD4A /* Rubik-MediumItalic.ttf in Resources */,
 				F05790C61E32A442004FBD4A /* Rubik-Black.ttf in Resources */,
 				F05790C91E32A442004FBD4A /* Rubik-BoldItalic.ttf in Resources */,

@@ -4,7 +4,7 @@ final class SpecSizes {
     static let scale = UIScreen.main.scale
     
     static let minimumButtonArea = CGSize(width: 44, height: 44)
-    static let separatorHeight: CGFloat = 1 / UIScreen.main.scale
+    static let separatorHeight: CGFloat = 1 / UIScreen.main.nativeScale
     static let statusBarHeight: CGFloat = 20
     static let bottomAreaHeight: CGFloat = 44
     static let actionButtonHeight: CGFloat = 45
