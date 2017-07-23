@@ -2,25 +2,17 @@ import UIKit
 
 final class LoginView: UIScrollView, StandardPreloaderViewHolder, ActivityDisplayable {
     // MARK: Properties
-    private let logoImageView = UIImageView(image: #imageLiteral(resourceName: "Logo"))
     private let logoTitleView = UILabel()
-    private let illustration = UIImageView(image: #imageLiteral(resourceName: "City illustration"))
+    private let illustration = UIImageView(image: #imageLiteral(resourceName: "Login illustration"))
     private let loginInputView = TextFieldView()
     private let passwordView = TextFieldView()
     private let loginButtonView = ActionButtonView()
     private let registerButtonView = ActionButtonView()
+    private let contactButton = UIButton(type: UIButtonType.custom)
     
     let preloader = StandardPreloaderView(style: .dark)
     
     private let keyboardAvoidingService = ScrollViewKeyboardAvoidingServiceImpl()
-    
-    override var contentInset: UIEdgeInsets {
-        didSet {
-            if contentInset != oldValue {
-                keyboardAvoidingService.contentInset = contentInset
-            }
-        }
-    }
     
     // MARK: - Init
     init() {
@@ -28,13 +20,13 @@ final class LoginView: UIScrollView, StandardPreloaderViewHolder, ActivityDispla
         
         backgroundColor = .drcWhite
         
-        addSubview(illustration)
-        addSubview(logoImageView)
         addSubview(logoTitleView)
+        addSubview(illustration)
         addSubview(loginInputView)
         addSubview(passwordView)
         addSubview(loginButtonView)
         addSubview(registerButtonView)
+        addSubview(contactButton)
         addSubview(preloader)
         
         logoTitleView.text = "DRICOM" // this is used as a part of design without any logic
@@ -54,6 +46,8 @@ final class LoginView: UIScrollView, StandardPreloaderViewHolder, ActivityDispla
         
         keyboardAvoidingService.attachToScrollView(self, contentInsetOutput: self)
         
+        contactButton.addTarget(self, action: #selector(handleContactButtonTap(_:)), for: .touchUpInside)
+        
         setStyle()
     }
     
@@ -62,37 +56,35 @@ final class LoginView: UIScrollView, StandardPreloaderViewHolder, ActivityDispla
     }
     
     private func setStyle() {
-        logoTitleView.font = UIFont.drcLogoMediumFont()
-        logoTitleView.textColor = .drcLightBlue
+        logoTitleView.font = SpecFonts.ralewayBold(24)
+        logoTitleView.textColor = .drcBlue
         logoTitleView.textAlignment = .center
         
         loginButtonView.style = .dark
         registerButtonView.style = .light
+        
+        contactButton.titleLabel?.font = SpecFonts.ralewayRegular(14)
+        contactButton.setTitleColor(.drcCoolGrey, for: .normal)
+        contactButton.setTitleColor(.drcSlate, for: .highlighted)
     }
     
     // MARK: Layout
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let topPadding = calculateTopPadding(for: bounds.size)
-        
-        logoImageView.sizeToFit()
-        logoImageView.top = topPadding
-        logoImageView.centerX = bounds.centerX
-        
         logoTitleView.sizeToFit()
         logoTitleView.centerX = centerX
-        logoTitleView.top = logoImageView.bottom + 4
+        logoTitleView.top = 50
         
         illustration.size = illustration.sizeThatFits(
             CGSize(width: bounds.width, height: .greatestFiniteMagnitude)
         )
-        illustration.top = logoImageView.top + 13
+        illustration.top = logoTitleView.bottom + 30
         
         loginInputView.layout(
             left: bounds.left,
             right: bounds.right,
-            top: illustration.bottom,
+            top: illustration.bottom + 60,
             height: SpecSizes.inputFieldHeight
         )
         
@@ -117,35 +109,18 @@ final class LoginView: UIScrollView, StandardPreloaderViewHolder, ActivityDispla
             height: SpecSizes.actionButtonHeight
         )
         
+        contactButton.left = SpecMargins.contentMargin
+        contactButton.size = contactButton.sizeThatFits(
+            CGSize(width: bounds.width, height: .greatestFiniteMagnitude)
+        )
+        contactButton.top = registerButtonView.bottom + 20
+        
         preloader.frame = bounds
         
         contentSize = CGSize(
             width: bounds.width,
-            height: max(bounds.height, registerButtonView.bottom + SpecMargins.contentMargin)
+            height: max(bounds.height, contactButton.bottom + 5)
         )
-    }
-    
-    private func calculateTopPadding(for size: CGSize) -> CGFloat {
-        let maxTopPadding: CGFloat = 55  // iPhone 6 and bigger
-        
-        let illustrationSize = illustration.sizeThatFits(
-            CGSize(width: bounds.width, height: .greatestFiniteMagnitude)
-        )
-        
-        let desiredHeight = contentInset.top
-            + maxTopPadding
-            + 13
-            + illustrationSize.height
-            + 2 * SpecSizes.inputFieldHeight
-            + SpecMargins.contentSidePadding
-            + SpecSizes.actionButtonHeight
-            + SpecMargins.contentMargin
-            + SpecSizes.actionButtonHeight
-            + SpecMargins.contentMargin
-        
-        return (desiredHeight <= size.height)
-            ? maxTopPadding
-            : max(0, maxTopPadding - ( desiredHeight - size.height ) )
     }
     
     // MARK: Public
@@ -169,6 +144,10 @@ final class LoginView: UIScrollView, StandardPreloaderViewHolder, ActivityDispla
         registerButtonView.setTitle(title)
     }
     
+    func setContactButtonTitle(_ title: String) {
+        contactButton.setTitle(title, for: .normal)
+    }
+    
     var onLoginChange: ((String?) -> ())? {
         get { return loginInputView.onTextChange }
         set { loginInputView.onTextChange = newValue }
@@ -187,6 +166,11 @@ final class LoginView: UIScrollView, StandardPreloaderViewHolder, ActivityDispla
     var onRegisterButtonTap: (() -> ())? {
         get { return registerButtonView.onTap }
         set { registerButtonView.onTap = newValue }
+    }
+    
+    var onContactButtonTap: (() -> ())?
+    @objc private func handleContactButtonTap(_ sender: UIButton) {
+        onContactButtonTap?()
     }
     
     func focusOnLoginField() {

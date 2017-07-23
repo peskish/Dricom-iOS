@@ -22,6 +22,8 @@ class ActionButtonView: UIView {
     init() {
         super.init(frame: .zero)
         
+        button.titleLabel?.font = SpecFonts.ralewayMedium(17)
+        
         button.addTarget(self, action: #selector(onButtonTap), for: .touchUpInside)
         addSubview(button)
         

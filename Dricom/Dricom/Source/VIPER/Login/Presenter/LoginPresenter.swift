@@ -57,6 +57,11 @@ final class LoginPresenter:
                 }
             }
         }
+        
+        view?.setContactButtonTitle("Связаться с нами")
+        view?.onContactButtonTap = {
+            print("Показать черновик письма в поддержку")
+        }
     }
     
     private func checkFieldsAndProceed(login: String?, password: String?) {

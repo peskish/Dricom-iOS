@@ -7,8 +7,6 @@ final class LoginViewController: BaseViewController, LoginViewInput {
     // MARK: - View events
     override func loadView() {
         view = loginView
-        
-        automaticallyAdjustsScrollViewInsets = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,6 +26,10 @@ final class LoginViewController: BaseViewController, LoginViewInput {
     
     func setLoginButtonTitle(_ title: String?) {
         loginView.setLoginButtonTitle(title)
+    }
+    
+    func setContactButtonTitle(_ title: String) {
+        loginView.setContactButtonTitle(title)
     }
     
     func setPasswordPlaceholder(_ placeholder: String?) {
@@ -56,6 +58,11 @@ final class LoginViewController: BaseViewController, LoginViewInput {
     var onRegisterButtonTap: (() -> ())? {
         get { return loginView.onRegisterButtonTap }
         set { loginView.onRegisterButtonTap = newValue }
+    }
+    
+    var onContactButtonTap: (() -> ())? {
+        get { return loginView.onContactButtonTap }
+        set { loginView.onContactButtonTap = newValue }
     }
     
     func focusOnLoginField() {

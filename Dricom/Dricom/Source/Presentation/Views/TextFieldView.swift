@@ -29,7 +29,7 @@ class TextFieldView: UIView, UITextFieldDelegate, UIToolbarDelegate {
         
         textField.placeholderNormalFontScale = 1
         textField.placeholderEditingFontScale = 0.75
-        textField.font = UIFont.drcInputPlaceholderFont()
+        textField.font = SpecFonts.ralewayRegular(14)
         textField.borderInactiveColor = .drcSlate
         textField.borderActiveColor = .drcSlate
         textField.placeholderColor = .drcSlate
