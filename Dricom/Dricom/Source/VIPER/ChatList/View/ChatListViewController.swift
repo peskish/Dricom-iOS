@@ -5,7 +5,7 @@ final class ChatListViewController: BaseViewController, ChatListViewInput {
     fileprivate let chatsTable = UITableView(frame: .zero, style: .plain)
     
     // MARK: - State
-    fileprivate var rowDataList = [ChatListRowData]()
+    fileprivate var state: ChatListViewState = .undefined
     var shouldReloadOnViewWillAppear = false
     
     // MARK: - ChatListViewInput
@@ -13,14 +13,9 @@ final class ChatListViewController: BaseViewController, ChatListViewInput {
         self.title = title
     }
     
-    func setRowDataList(_ rowDataList: [ChatListRowData]) {
-        self.rowDataList = rowDataList
-        
-        if isOnScreen {
-            chatsTable.reloadData()
-        } else {
-            shouldReloadOnViewWillAppear = true
-        }
+    func setState(_ state: ChatListViewState) {
+        self.state = state
+        reloadData()
     }
     
     // MARK: - View events
@@ -45,8 +40,8 @@ final class ChatListViewController: BaseViewController, ChatListViewInput {
         chatsTable.dataSource = self
         
         chatsTable.register(ChatListCell.self, forCellReuseIdentifier: ChatListCell.reuseIdentifier)
+        chatsTable.register(ChatListEmptyCell.self, forCellReuseIdentifier: ChatListEmptyCell.reuseIdentifier)
         
-        chatsTable.rowHeight = 101
         chatsTable.tableHeaderView = UIView(
             frame: CGRect(x: 0, y: 0, width: 0, height: CGFloat.leastNormalMagnitude)
         )
@@ -66,19 +61,35 @@ final class ChatListViewController: BaseViewController, ChatListViewInput {
         super.viewWillLayoutSubviews()
         chatsTable.frame = view.bounds
     }
+    
+    // MARK: - Private
+    private func reloadData() {
+        if isOnScreen {
+            chatsTable.reloadData()
+        } else {
+            shouldReloadOnViewWillAppear = true
+        }
+    }
 }
 
 extension ChatListViewController: UITableViewDelegate {
-    fileprivate func rowData(for indexPath: IndexPath) -> ChatListRowData? {
-        return rowDataList.elementAtIndex(indexPath.row)
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
         guard let rowData = rowData(for: indexPath) else { return }
         
         rowData.onTap?()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch state {
+        case .empty:
+            return chatsTable.bounds.shrinked(chatsTable.contentInset).height
+        case .data:
+            return 101
+        case .undefined:
+            return 0
+        }
     }
 }
 
@@ -88,16 +99,67 @@ extension ChatListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rowDataList.count
+        switch state {
+        case .data(let rowDataList):
+            return rowDataList.count
+        case .empty:
+            return 1
+        case .undefined:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch state {
+        case .data:
+            return chatCell(indexPath: indexPath)
+        case .empty:
+            return emptyListCell()
+        case .undefined:
+            return UITableViewCell()
+        }
+    }
+    
+    // MARK: - Private
+    fileprivate func rowData(for indexPath: IndexPath) -> ChatListRowData? {
+        switch state {
+        case .data(let rowDataList):
+            return rowDataList.elementAtIndex(indexPath.row)
+        default:
+            return nil
+        }
+    }
+    
+    fileprivate func emptyRowData() -> ChatListEmptyRowData? {
+        switch state {
+        case .empty(let rowData):
+            return rowData
+        default:
+            return nil
+        }
+    }
+    
+    private func chatCell(indexPath: IndexPath) -> UITableViewCell {
         guard let rowData = rowData(for: indexPath) else {
             return UITableViewCell()
         }
         
         if let cell = chatsTable.dequeueReusableCell(
             withIdentifier: ChatListCell.reuseIdentifier) as? ChatListCell {
+            cell.setViewData(rowData)
+            return cell
+        } else {
+            return UITableViewCell()
+        }
+    }
+    
+    private func emptyListCell() -> UITableViewCell {
+        guard let rowData = emptyRowData() else {
+            return UITableViewCell()
+        }
+        
+        if let cell = chatsTable.dequeueReusableCell(
+            withIdentifier: ChatListEmptyCell.reuseIdentifier) as? ChatListEmptyCell {
             cell.setViewData(rowData)
             return cell
         } else {

@@ -9,7 +9,18 @@ struct ChatListRowData {
     let onTap: (() -> ())?
 }
 
+struct ChatListEmptyRowData {
+    let title: String
+    let message: String
+}
+
+enum ChatListViewState {
+    case undefined
+    case empty(ChatListEmptyRowData)
+    case data([ChatListRowData])
+}
+
 protocol ChatListViewInput: class, ViewLifecycleObservable, MessageDisplayable {
     func setViewTitle(_ title: String)
-    func setRowDataList(_ rowDataList: [ChatListRowData])
+    func setState(_ state: ChatListViewState)
 }

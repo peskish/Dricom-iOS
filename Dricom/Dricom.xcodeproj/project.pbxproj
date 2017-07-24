@@ -187,6 +187,7 @@
 		F076D67B1DCF87D300E3ED0F /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D67A1DCF87D300E3ED0F /* TextFieldView.swift */; };
 		F076D67D1DCF8F4900E3ED0F /* DoneButtonAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D67C1DCF8F4900E3ED0F /* DoneButtonAccessoryView.swift */; };
 		F076D67F1DCFAEF400E3ED0F /* ViewControllerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F076D67E1DCFAEF400E3ED0F /* ViewControllerPosition.swift */; };
+		F0818D2A1F267A50005E85E3 /* ChatListEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0818D291F267A50005E85E3 /* ChatListEmptyCell.swift */; };
 		F081FF611EEDCAB60085643A /* CommonPollingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F081FF5C1EEDCAB60085643A /* CommonPollingService.swift */; };
 		F081FF621EEDCAB60085643A /* PollingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F081FF5D1EEDCAB60085643A /* PollingService.swift */; };
 		F081FF631EEDCAB60085643A /* NativeTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F081FF5F1EEDCAB60085643A /* NativeTimer.swift */; };
@@ -530,6 +531,7 @@
 		F076D67A1DCF87D300E3ED0F /* TextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldView.swift; path = Dricom/Source/Presentation/Views/TextFieldView.swift; sourceTree = SOURCE_ROOT; };
 		F076D67C1DCF8F4900E3ED0F /* DoneButtonAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoneButtonAccessoryView.swift; path = Dricom/Source/Presentation/Views/DoneButtonAccessoryView.swift; sourceTree = SOURCE_ROOT; };
 		F076D67E1DCFAEF400E3ED0F /* ViewControllerPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerPosition.swift; path = Router/ViewControllerPosition.swift; sourceTree = "<group>"; };
+		F0818D291F267A50005E85E3 /* ChatListEmptyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListEmptyCell.swift; sourceTree = "<group>"; };
 		F081FF5C1EEDCAB60085643A /* CommonPollingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonPollingService.swift; sourceTree = "<group>"; };
 		F081FF5D1EEDCAB60085643A /* PollingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PollingService.swift; sourceTree = "<group>"; };
 		F081FF5F1EEDCAB60085643A /* NativeTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeTimer.swift; sourceTree = "<group>"; };
@@ -1611,6 +1613,7 @@
 				F08AE1A31EF99FA800390216 /* ChatListViewController.swift */,
 				F08AE1A41EF99FA800390216 /* ChatListViewInput.swift */,
 				F08AE1B01EF9A79600390216 /* ChatListCell.swift */,
+				F0818D291F267A50005E85E3 /* ChatListEmptyCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2505,6 +2508,7 @@
 				F0128B881E491787008E6668 /* LoginResponse.swift in Sources */,
 				F0022C001EC3A7C5009EBD46 /* MessengerService.swift in Sources */,
 				F0FD0C921EB4CC170059A3E5 /* Throttler.swift in Sources */,
+				F0818D2A1F267A50005E85E3 /* ChatListEmptyCell.swift in Sources */,
 				F0022BCD1EBBBD25009EBD46 /* ChangePasswordView.swift in Sources */,
 				F0128C071E4F9CED008E6668 /* KeyboardFrameChange.swift in Sources */,
 				F076D67F1DCFAEF400E3ED0F /* ViewControllerPosition.swift in Sources */,

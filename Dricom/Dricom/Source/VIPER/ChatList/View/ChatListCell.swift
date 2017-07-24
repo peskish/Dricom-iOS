@@ -97,6 +97,8 @@ final class ChatListCell: UITableViewCell {
         userNameLabel.text = viewData.userName
         createdAtLabel.text = viewData.createdAtText
         messageLabel.text = viewData.messageText
+        
+        setNeedsLayout()
     }
     
     private func setAvatarImageUrl(_ avatarImageUrl: URL?) {

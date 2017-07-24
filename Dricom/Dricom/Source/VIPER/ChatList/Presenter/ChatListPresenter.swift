@@ -32,14 +32,31 @@ final class ChatListPresenter: ChatListModule
         interactor.onAccountDataReceived = { [weak self] _ in
             self?.interactor.chatList { result in
                 result.onData { channelList in
-                    guard let `self` = self else { return }
-                    self.view?.setRowDataList(channelList.flatMap(self.makeChatListRowData))
+                    guard let strongSelf = self else { return }
+                    if channelList.isEmpty {
+                        strongSelf.view?.setState(
+                            .empty(strongSelf.makeEmptyChatListRowData())
+                        )
+                    } else {
+                        strongSelf.view?.setState(
+                            .data(channelList.flatMap(strongSelf.makeChatListRowData))
+                        )
+                    }
                 }
                 result.onError { networkRequestError in
                     self?.view?.showError(networkRequestError)
                 }
             }
         }
+    }
+    
+    private func makeEmptyChatListRowData() -> ChatListEmptyRowData {
+        return ChatListEmptyRowData(
+            title: "У вас пока нет сообщений",
+            message: "Найдите автовладельца через\n"
+                + "поиск и напишите ему сообщение.\n"
+                + "Новый разговор появится здесь."
+        )
     }
     
     private func makeChatListRowData(_ channel: Channel) -> ChatListRowData {
