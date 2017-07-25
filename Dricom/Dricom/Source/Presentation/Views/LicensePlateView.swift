@@ -140,31 +140,31 @@ final class LicensePlateView: UIView {
         license.textAlignment = .center
         
         regionCode.textColor = UIColor.drcSlate
-        regionCode.font = UIFont.drcLicenseFont()
+        regionCode.font = SpecFonts.rubicMedium(24)
         regionCode.textAlignment = .center
         
         country.textColor = UIColor.drcSlate
-        country.font = UIFont.drcLicenceCountryFont()
+        country.font = SpecFonts.rubicMedium(11)
     }
     
     private let licenseLettersStyleAttributes: [String: Any] = {
         return [
             NSForegroundColorAttributeName: UIColor.drcSlate,
-            NSFontAttributeName: UIFont.drcLicenseFont() ?? .systemFont(ofSize: 24)
+            NSFontAttributeName: SpecFonts.rubicMedium(24)
         ]
     }()
     
     private let licenseNumberStyleAttributes: [String: Any] = {
         return [
             NSForegroundColorAttributeName: UIColor.drcSlate,
-            NSFontAttributeName: UIFont.drcLicenseNumberFont() ?? .systemFont(ofSize: 24)
+            NSFontAttributeName: SpecFonts.rubicMedium(34)
         ]
     }()
     
     private let countryStyleAttributes: [String: Any] = {
         return [
             NSForegroundColorAttributeName: UIColor.drcSlate,
-            NSFontAttributeName: UIFont.drcLicenceCountryFont() ?? .systemFont(ofSize: 11)
+            NSFontAttributeName: SpecFonts.rubicMedium(11)
         ]
     }()
 }

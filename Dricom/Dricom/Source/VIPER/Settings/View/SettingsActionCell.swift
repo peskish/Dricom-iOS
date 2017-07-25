@@ -7,7 +7,7 @@ final class SettingsActionCell: UITableViewCell {
         
         backgroundColor = UIColor.drcPaleGrey
         
-        textLabel?.font = UIFont.drcSettingsCellTitleFont()
+        textLabel?.font = SpecFonts.ralewayRegular(17)
         textLabel?.textColor = UIColor.drcBlue
         selectionStyle = .gray
     }

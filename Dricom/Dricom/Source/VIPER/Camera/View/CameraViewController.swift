@@ -29,19 +29,7 @@ final class CameraViewController: BaseViewController, CameraViewInput, FastttCam
         fastCamera.view.backgroundColor = .black
         
         // Navigation bar
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.tintColor = UIColor.drcBlue
-        navigationController?.navigationBar.titleTextAttributes = [
-            NSForegroundColorAttributeName: UIColor.drcSlate,
-            NSFontAttributeName: UIFont.drcScreenNameFont() ?? UIFont.systemFont(ofSize: 17)
-        ]
-        
-        if let backgroundImage = UIImage.imageWithColor(UIColor.drcWhite) {
-            navigationController?.navigationBar.setBackgroundImage(
-                backgroundImage,
-                for: .default
-            )
-        }
+        navigationController?.setStyle(.main)
     }
     
     private func setupViewHierarchy() {
@@ -78,6 +66,11 @@ final class CameraViewController: BaseViewController, CameraViewInput, FastttCam
             style: .plain,
             target: self,
             action: #selector(closeButtonTapped)
+        )
+        navigationItem.leftBarButtonItem?.setTitleTextAttributes(
+            [NSForegroundColorAttributeName: UIColor.drcBlue,
+             NSFontAttributeName: SpecFonts.ralewayMedium(14)],
+            for: .normal
         )
     }
     

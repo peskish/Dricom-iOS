@@ -12,8 +12,9 @@ extension UINavigationController {
             navigationBar.isTranslucent = false
             navigationBar.titleTextAttributes = [
                 NSForegroundColorAttributeName: UIColor.drcSlate,
-                NSFontAttributeName: UIFont.drcScreenNameFont() ?? UIFont.systemFont(ofSize: 17)
+                NSFontAttributeName: SpecFonts.ralewayBold(16)
             ]
+            navigationBar.tintColor = UIColor.drcBlue
             
             if let backgroundImage = UIImage.imageWithColor(UIColor.drcWhite) {
                 navigationBar.setBackgroundImage(

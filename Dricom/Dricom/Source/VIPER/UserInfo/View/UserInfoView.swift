@@ -45,7 +45,7 @@ final class UserInfoView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
         favoritesButton.adjustsImageWhenHighlighted = false
         favoritesButton.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0)
         
-        hintLabel.font = UIFont.drcUserHintFont()
+        hintLabel.font = SpecFonts.ralewayRegular(14)
         hintLabel.textColor = UIColor.drcSlate
         hintLabel.textAlignment = .center
         hintLabel.numberOfLines = 0
@@ -126,7 +126,7 @@ final class UserInfoView: UIView, StandardPreloaderViewHolder, ActivityDisplayab
     func setFavoritesButtonTitle(_ title: String) {
         var attributes: [String: Any] = [
             NSForegroundColorAttributeName: UIColor.drcBlue,
-            NSFontAttributeName: UIFont.drcAddPhotoFont() ?? .systemFont(ofSize: 15)
+            NSFontAttributeName: SpecFonts.ralewayRegular(15)
         ]
         let normalTitle = NSAttributedString(string: title, attributes: attributes)
         

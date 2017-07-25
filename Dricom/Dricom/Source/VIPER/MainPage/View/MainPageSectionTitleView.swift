@@ -21,7 +21,7 @@ class MainPageSectionTitleView: UIView {
     private func setStyle() {
         backgroundColor = UIColor.drcPaleGreyThree
         
-        titleLabel.font = UIFont.drcFavoritesSectionTitleFont()
+        titleLabel.font = SpecFonts.ralewayRegular(14)
         titleLabel.textColor = UIColor.drcCoolGreyTwo
     }
     

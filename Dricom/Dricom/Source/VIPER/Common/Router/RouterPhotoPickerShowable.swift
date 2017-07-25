@@ -13,25 +13,7 @@ extension RouterPhotoPickerShowable where Self: BaseRouter {
             configuration: configuration
         )
         let navigationController = UINavigationController(rootViewController: targetViewController)
-        setupStyle(navigationController: navigationController)
+        navigationController.setStyle(.main)
         viewController?.present(navigationController, animated: true, completion: nil)
-    }
-    
-    // TODO: Move to extension
-    private func setupStyle(navigationController: UINavigationController?) {
-        // Navigation bar
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.tintColor = UIColor.drcBlue
-        navigationController?.navigationBar.titleTextAttributes = [
-            NSForegroundColorAttributeName: UIColor.drcSlate,
-            NSFontAttributeName: UIFont.drcScreenNameFont() ?? UIFont.systemFont(ofSize: 17)
-        ]
-        
-        if let backgroundImage = UIImage.imageWithColor(UIColor.drcWhite) {
-            navigationController?.navigationBar.setBackgroundImage(
-                backgroundImage,
-                for: .default
-            )
-        }
     }
 }

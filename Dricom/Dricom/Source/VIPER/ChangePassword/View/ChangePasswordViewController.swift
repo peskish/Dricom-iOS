@@ -30,6 +30,11 @@ final class ChangePasswordViewController: BaseViewController, ChangePasswordView
             target: self,
             action: #selector(onCancelButtonTap(_:))
         )
+        navigationItem.leftBarButtonItem?.setTitleTextAttributes(
+            [NSForegroundColorAttributeName: UIColor.drcBlue,
+             NSFontAttributeName: SpecFonts.ralewayMedium(14)],
+            for: .normal
+        )
     }
     
     var onCancelButtonTap: (() -> ())?

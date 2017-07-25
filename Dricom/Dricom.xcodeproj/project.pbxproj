@@ -143,7 +143,6 @@
 		F05790CE1E32A442004FBD4A /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790C41E32A442004FBD4A /* Rubik-MediumItalic.ttf */; };
 		F05790CF1E32A442004FBD4A /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F05790C51E32A442004FBD4A /* Rubik-Regular.ttf */; };
 		F05790D61E32A72D004FBD4A /* UIColor+Styleguide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05790D41E32A72D004FBD4A /* UIColor+Styleguide.swift */; };
-		F05790D71E32A72D004FBD4A /* UIFont+Styleguide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05790D51E32A72D004FBD4A /* UIFont+Styleguide.swift */; };
 		F05790DB1E34DC5D004FBD4A /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05790D91E34DC5D004FBD4A /* HoshiTextField.swift */; };
 		F05790DC1E34DC5D004FBD4A /* TextFieldsEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05790DA1E34DC5D004FBD4A /* TextFieldsEffects.swift */; };
 		F06E3F731E81B0EE00829A3F /* UserProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E3F641E81B0EE00829A3F /* UserProfileAssembly.swift */; };
@@ -487,7 +486,6 @@
 		F05790C41E32A442004FBD4A /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
 		F05790C51E32A442004FBD4A /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		F05790D41E32A72D004FBD4A /* UIColor+Styleguide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Styleguide.swift"; sourceTree = "<group>"; };
-		F05790D51E32A72D004FBD4A /* UIFont+Styleguide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Styleguide.swift"; sourceTree = "<group>"; };
 		F05790D91E34DC5D004FBD4A /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
 		F05790DA1E34DC5D004FBD4A /* TextFieldsEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldsEffects.swift; sourceTree = "<group>"; };
 		F06E3F641E81B0EE00829A3F /* UserProfileAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileAssembly.swift; sourceTree = "<group>"; };
@@ -1297,7 +1295,6 @@
 			isa = PBXGroup;
 			children = (
 				F05790D41E32A72D004FBD4A /* UIColor+Styleguide.swift */,
-				F05790D51E32A72D004FBD4A /* UIFont+Styleguide.swift */,
 				F0FD0C951EB519E10059A3E5 /* UINavigationController+Style.swift */,
 			);
 			name = Styleguide;
@@ -2621,7 +2618,6 @@
 				F076D6421DCF67F200E3ED0F /* LoginInteractor.swift in Sources */,
 				F0FD0C831EB4C26E0059A3E5 /* AuthorizationService.swift in Sources */,
 				F0823DCE1DE9EEA2007BD04D /* MainPageAssembly.swift in Sources */,
-				F05790D71E32A72D004FBD4A /* UIFont+Styleguide.swift in Sources */,
 				F021D6E51DD8925B00F50091 /* CameraInteractor.swift in Sources */,
 				F0B450AF1E60BBB900F3B2E4 /* SettingsModule.swift in Sources */,
 				F06E3F7B1E81B0EE00829A3F /* UserProfileView.swift in Sources */,

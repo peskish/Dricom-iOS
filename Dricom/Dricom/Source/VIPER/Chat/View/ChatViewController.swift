@@ -68,9 +68,7 @@ final class ChatViewController: JSQMessagesViewController,
         super.viewDidLoad()
         
         // Set up font in bubbles
-        if let font = UIFont.drcChatMessageFont() {
-            collectionView.collectionViewLayout.messageBubbleFont = font
-        }
+        collectionView.collectionViewLayout.messageBubbleFont = SpecFonts.ralewayRegular(14)
         
         // Hide left button - media upload is currently not supported
         inputToolbar.contentView?.leftBarButtonItem = nil

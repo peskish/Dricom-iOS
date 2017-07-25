@@ -93,7 +93,7 @@ final class UserProfileView: UIView, ActivityDisplayable, StandardPreloaderViewH
     func setAddPhotoTitle(_ title: String) {
         var attributes: [String: Any] = [
             NSForegroundColorAttributeName: UIColor.drcBlue,
-            NSFontAttributeName: UIFont.drcAddPhotoFont() ?? .systemFont(ofSize: 15)
+            NSFontAttributeName: SpecFonts.ralewayRegular(15)
         ]
         let normalTitle = NSAttributedString(string: title, attributes: attributes)
         

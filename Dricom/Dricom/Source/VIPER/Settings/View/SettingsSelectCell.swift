@@ -7,10 +7,10 @@ final class SettingsSelectCell: UITableViewCell {
         
         backgroundColor = UIColor.drcPaleGrey
         
-        textLabel?.font = UIFont.drcSettingsCellTitleFont()
+        textLabel?.font = SpecFonts.ralewayRegular(17)
         textLabel?.textColor = UIColor.drcSlate
         
-        detailTextLabel?.font = UIFont.drcSettingsSelectValueFont()
+        detailTextLabel?.font = SpecFonts.ralewayRegular(14)
         detailTextLabel?.textColor = UIColor.drcSlate60
         
         accessoryType = .disclosureIndicator

@@ -30,10 +30,10 @@ class MainPageAccountView: UIView {
         avatarImageView.layer.cornerRadius = avatarImageView.size.height/2
         avatarImageView.layer.masksToBounds = true
         
-        nameLabel.font = UIFont.drcAccountUserNameFont()
+        nameLabel.font = SpecFonts.ralewayMedium(21)
         nameLabel.textColor = UIColor.drcSlate
         
-        licenseLabel.font = UIFont.drcAccountLicenseFont()
+        licenseLabel.font = SpecFonts.ralewayRegular(14)
         licenseLabel.textColor = UIColor.drcSlate.withAlphaComponent(0.6)
     }
     

@@ -27,10 +27,10 @@ class UserRowTableViewCell: UITableViewCell {
         avatarImageView.layer.cornerRadius = avatarImageView.size.height/2
         avatarImageView.layer.masksToBounds = true
         
-        nameLabel.font = UIFont.drcUserRowNameFont()
+        nameLabel.font = SpecFonts.ralewayMedium(13)
         nameLabel.textColor = UIColor.drcSlate
         
-        licenseLabel.font = UIFont.drcUserRowLicenseFont()
+        licenseLabel.font = SpecFonts.ralewayRegular(14)
         licenseLabel.textColor = UIColor.drcSlate.withAlphaComponent(0.6)
     }
 

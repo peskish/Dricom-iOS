@@ -25,12 +25,12 @@ class MainPageNoFavoriteUsersView: UIView {
     private func setStyle() {
         backgroundColor = .drcWhite
         
-        titleLabel.font = SpecFonts.rubicMedium(17)
+        titleLabel.font = SpecFonts.ralewayMedium(17)
         titleLabel.textColor = .drcSlate
         titleLabel.textAlignment = .center
         titleLabel.numberOfLines = 0
         
-        descriptionLabel.font = SpecFonts.rubicRegular(14)
+        descriptionLabel.font = SpecFonts.ralewayRegular(14)
         descriptionLabel.textColor = .drcCoolGrey
         descriptionLabel.textAlignment = .center
         descriptionLabel.numberOfLines = 0

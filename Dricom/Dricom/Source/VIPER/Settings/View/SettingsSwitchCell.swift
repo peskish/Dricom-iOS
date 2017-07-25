@@ -9,7 +9,7 @@ final class SettingsSwitchCell: UITableViewCell {
         
         backgroundColor = UIColor.drcPaleGrey
         
-        textLabel?.font = UIFont.drcSettingsCellTitleFont()
+        textLabel?.font = SpecFonts.ralewayRegular(17)
         textLabel?.textColor = UIColor.drcSlate
         
         contentView.addSubview(switchView)

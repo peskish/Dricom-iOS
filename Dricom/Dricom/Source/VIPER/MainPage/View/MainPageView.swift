@@ -3,13 +3,7 @@ import AlamofireImage
 
 final class MainPageView: UIScrollView, StandardPreloaderViewHolder, ActivityDisplayable {
     // MARK: Properties
-    private static let searchBarFont: UIFont = {
-        if let font = UIFont.drcAccountLicenseFont() {
-            return font
-        } else {
-            return UIFont.systemFont(ofSize: 15)
-        }
-    }()
+    private static let searchBarFont = SpecFonts.ralewayRegular(14)
     private let accountView = MainPageAccountView()
     private let searchBarView = SearchBarView(
         textColor: .drcSlate,

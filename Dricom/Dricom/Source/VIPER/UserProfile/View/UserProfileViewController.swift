@@ -19,7 +19,7 @@ final class UserProfileViewController: BaseViewController, UserProfileViewInput,
         navBar.isTranslucent = false
         navBar.titleTextAttributes = [
             NSForegroundColorAttributeName: UIColor.drcSlate,
-            NSFontAttributeName: UIFont.drcScreenNameFont() ?? UIFont.systemFont(ofSize: 17)
+            NSFontAttributeName: SpecFonts.ralewayMedium(17)
         ]
         navBar.setBackgroundImage(
             UIImage(),
@@ -45,6 +45,11 @@ final class UserProfileViewController: BaseViewController, UserProfileViewInput,
             target: self,
             action: #selector(onCancelButtonTap(_:))
         )
+        navigationItem.leftBarButtonItem?.setTitleTextAttributes(
+            [NSForegroundColorAttributeName: UIColor.drcBlue,
+             NSFontAttributeName: SpecFonts.ralewayMedium(14)],
+            for: .normal
+        )
     }
     
     var onCancelButtonTap: (() -> ())?
@@ -60,7 +65,13 @@ final class UserProfileViewController: BaseViewController, UserProfileViewInput,
             title: title,
             style: .plain,
             target: self,
-            action: #selector(onRightButtonTap(sender:)))
+            action: #selector(onRightButtonTap(sender:))
+        )
+        navigationItem.rightBarButtonItem?.setTitleTextAttributes(
+            [NSForegroundColorAttributeName: UIColor.drcBlue,
+             NSFontAttributeName: SpecFonts.ralewayMedium(14)],
+            for: .normal
+        )
     }
     
     func setRightButtonEnabled(_ isEnabled: Bool) {

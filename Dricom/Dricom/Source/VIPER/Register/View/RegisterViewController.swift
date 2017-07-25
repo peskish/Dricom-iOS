@@ -17,7 +17,7 @@ final class RegisterViewController: BaseViewController, RegisterViewInput, Input
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.titleTextAttributes = [
             NSForegroundColorAttributeName: UIColor.drcWhite,
-            NSFontAttributeName: UIFont.drcScreenNameFont() ?? UIFont.systemFont(ofSize: 17)
+            NSFontAttributeName: SpecFonts.ralewayMedium(17)
         ]
         
         if let backgroundImage = UIImage.imageWithColor(UIColor.drcBlue) {
