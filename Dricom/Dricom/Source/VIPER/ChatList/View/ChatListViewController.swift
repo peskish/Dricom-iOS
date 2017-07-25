@@ -3,10 +3,18 @@ import UIKit
 final class ChatListViewController: BaseViewController, ChatListViewInput {
     // MARK: - Properties
     fileprivate let chatsTable = UITableView(frame: .zero, style: .plain)
+    private let pullToRefresh: ScrollViewRefresher = {
+        let refresherFactory = ActivityIndicatorRefresherFactory()
+        return refresherFactory.createRefresh(position: .top)
+    }()
     
     // MARK: - State
     fileprivate var state: ChatListViewState = .undefined
     var shouldReloadOnViewWillAppear = false
+    
+    deinit {
+        pullToRefresh.detachFromScrollView()
+    }
     
     // MARK: - ChatListViewInput
     func setViewTitle(_ title: String) {
@@ -17,6 +25,16 @@ final class ChatListViewController: BaseViewController, ChatListViewInput {
         self.state = state
         reloadData()
     }
+    
+    func setCanRefresh(_ canRefresh: Bool) {
+        pullToRefresh.enabled = canRefresh
+    }
+    
+    func endRefreshing() {
+        pullToRefresh.endRefreshing()
+    }
+    
+    var onPullToRefreshAction: (() -> ())?
     
     // MARK: - View events
     override func viewWillAppear(_ animated: Bool) {
@@ -32,8 +50,6 @@ final class ChatListViewController: BaseViewController, ChatListViewInput {
         super.viewDidLoad()
         
         view.addSubview(chatsTable)
-        
-        automaticallyAdjustsScrollViewInsets = false
         
         chatsTable.backgroundColor = UIColor.drcWhite
         chatsTable.delegate = self
@@ -55,14 +71,28 @@ final class ChatListViewController: BaseViewController, ChatListViewInput {
         navigationController?.setStyle(.main)
         navigationController?.navigationBar.shadowImage = nil
         navigationController?.setNavigationBarHidden(false, animated: true)
+        
+        pullToRefresh.attachToScrollView(chatsTable)
+        pullToRefresh.enabled = true
+        pullToRefresh.action = { [weak self] in
+            self?.onPullToRefreshAction?()
+        }
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
+        
         chatsTable.frame = view.bounds
+        updateContentInsets(defaultContentInsets)
     }
     
     // MARK: - Private
+    private func updateContentInsets(_ contentInsets: UIEdgeInsets) {
+        chatsTable.contentInset = contentInsets
+        chatsTable.scrollIndicatorInsets = contentInsets
+        pullToRefresh.scrollViewContentInsets = contentInsets
+    }
+    
     private func reloadData() {
         if isOnScreen {
             chatsTable.reloadData()

@@ -25,28 +25,38 @@ final class ChatListPresenter: ChatListModule
     
     // MARK: - Private
     private func setUpView() {
-        view?.setViewTitle("Разговоры")
+        view?.setViewTitle("СООБЩЕНИЯ")
+        
+        view?.onPullToRefreshAction = { [weak self] in
+            self?.reloadChatList()
+        }
+    }
+    
+    private func reloadChatList() {
+        interactor.chatList { [weak self] result in
+            self?.view?.endRefreshing()
+            
+            result.onData { channelList in
+                guard let strongSelf = self else { return }
+                if channelList.isEmpty {
+                    strongSelf.view?.setState(
+                        .empty(strongSelf.makeEmptyChatListRowData())
+                    )
+                } else {
+                    strongSelf.view?.setState(
+                        .data(channelList.flatMap(strongSelf.makeChatListRowData))
+                    )
+                }
+            }
+            result.onError { networkRequestError in
+                self?.view?.showError(networkRequestError)
+            }
+        }
     }
     
     private func setUpInteractor() {
         interactor.onAccountDataReceived = { [weak self] _ in
-            self?.interactor.chatList { result in
-                result.onData { channelList in
-                    guard let strongSelf = self else { return }
-                    if channelList.isEmpty {
-                        strongSelf.view?.setState(
-                            .empty(strongSelf.makeEmptyChatListRowData())
-                        )
-                    } else {
-                        strongSelf.view?.setState(
-                            .data(channelList.flatMap(strongSelf.makeChatListRowData))
-                        )
-                    }
-                }
-                result.onError { networkRequestError in
-                    self?.view?.showError(networkRequestError)
-                }
-            }
+            self?.reloadChatList()
         }
     }
     

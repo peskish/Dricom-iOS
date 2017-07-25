@@ -23,4 +23,8 @@ enum ChatListViewState {
 protocol ChatListViewInput: class, ViewLifecycleObservable, MessageDisplayable {
     func setViewTitle(_ title: String)
     func setState(_ state: ChatListViewState)
+    func setCanRefresh(_ canRefresh: Bool)
+    func endRefreshing()
+    
+    var onPullToRefreshAction: (() -> ())? { get set }
 }
