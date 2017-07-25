@@ -29,14 +29,14 @@ final class ChatListCell: UITableViewCell {
         avatarImageView.layer.cornerRadius = avatarImageView.size.height/2
         avatarImageView.layer.masksToBounds = true
         
-        userNameLabel.font = UIFont.drcUserRowNameFont()
+        userNameLabel.font = SpecFonts.ralewaySemiBold(13)
         userNameLabel.lineBreakMode = .byTruncatingTail
         userNameLabel.textColor = UIColor.drcSlate
         
-        createdAtLabel.font = UIFont.drcCreatedAtFont()
+        createdAtLabel.font = SpecFonts.ralewayRegular(11)
         createdAtLabel.textColor = UIColor.drcSlate.withAlphaComponent(0.6)
         
-        messageLabel.font = UIFont.drcUserRowLicenseFont()
+        messageLabel.font = SpecFonts.ralewayRegular(14)
         messageLabel.textColor = UIColor.drcSlate.withAlphaComponent(0.6)
         messageLabel.numberOfLines = 3
         messageLabel.lineBreakMode = .byTruncatingTail
