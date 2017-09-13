@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		27533475C0A2BD856D9F321C /* Pods_DricomTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36BD3AD360B63F1B8A3635D2 /* Pods_DricomTests.framework */; };
 		9B2644558852E66D87B22CAF /* Pods_Dricom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FE1AE5ED782AA0B3DB9DB8 /* Pods_Dricom.framework */; };
+		A72140471F67080F00B3AD29 /* EmptyDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72140461F67080F00B3AD29 /* EmptyDataView.swift */; };
 		F0022BB11EBBB855009EBD46 /* ChangePasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BB01EBBB855009EBD46 /* ChangePasswordRequest.swift */; };
 		F0022BC51EBBBD25009EBD46 /* ChangePasswordAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BB61EBBBD25009EBD46 /* ChangePasswordAssembly.swift */; };
 		F0022BC61EBBBD25009EBD46 /* ChangePasswordAssemblyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0022BB71EBBBD25009EBD46 /* ChangePasswordAssemblyImpl.swift */; };
@@ -351,6 +352,7 @@
 		3CEAD0BF03CF89749F61C8F2 /* Pods-Dricom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dricom.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dricom/Pods-Dricom.release.xcconfig"; sourceTree = "<group>"; };
 		4DB1949EEFE9AB53D8BFFE3D /* Pods-Dricom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dricom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dricom/Pods-Dricom.debug.xcconfig"; sourceTree = "<group>"; };
 		59F04607D182323815686D50 /* Pods-DricomTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DricomTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DricomTests/Pods-DricomTests.release.xcconfig"; sourceTree = "<group>"; };
+		A72140461F67080F00B3AD29 /* EmptyDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyDataView.swift; path = Dricom/Source/Presentation/Views/EmptyDataView.swift; sourceTree = SOURCE_ROOT; };
 		D3FEE52193AC8F8716FDABAF /* Pods-DricomTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DricomTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DricomTests/Pods-DricomTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F0022BB01EBBB855009EBD46 /* ChangePasswordRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangePasswordRequest.swift; path = Core/Networking/Request/ChangePasswordRequest.swift; sourceTree = "<group>"; };
 		F0022BB61EBBBD25009EBD46 /* ChangePasswordAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordAssembly.swift; sourceTree = "<group>"; };
@@ -1965,6 +1967,7 @@
 				F0823DB91DE9DA10007BD04D /* StandardPreloaderView.swift */,
 				F076D67A1DCF87D300E3ED0F /* TextFieldView.swift */,
 				F0AFDA361E3D2A7000CCEE24 /* LicensePlateView.swift */,
+				A72140461F67080F00B3AD29 /* EmptyDataView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -2527,6 +2530,7 @@
 				F0D0385B1DD3AE0500E0085D /* FeedbackPresenter.swift in Sources */,
 				F06E3F7A1E81B0EE00829A3F /* UserProfileRouterImpl.swift in Sources */,
 				F0823DD11DE9EEA2007BD04D /* MainPageInteractorImpl.swift in Sources */,
+				A72140471F67080F00B3AD29 /* EmptyDataView.swift in Sources */,
 				F0128B851E49120C008E6668 /* NetworkRequest.swift in Sources */,
 				F0022BE81EC07FDA009EBD46 /* ChatPresenter.swift in Sources */,
 				F099E3E01EA2B4040082CD92 /* UserInfoModule.swift in Sources */,

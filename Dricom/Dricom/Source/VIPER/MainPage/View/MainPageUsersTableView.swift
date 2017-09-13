@@ -3,6 +3,7 @@ import UIKit
 class MainPageUsersTableView: UIView {
     // MARK: - Properties
     fileprivate let tableView = UITableView(frame: .zero, style: .plain)
+    fileprivate let emptyDataView = EmptyDataView(style: .search)
     
     // MARK: - State
     fileprivate var userRowViewDataList = [UserRowViewData]()
@@ -33,6 +34,9 @@ class MainPageUsersTableView: UIView {
         )
         tableView.sectionHeaderHeight = CGFloat.leastNormalMagnitude
         tableView.sectionFooterHeight = CGFloat.leastNormalMagnitude
+        
+        addSubview(emptyDataView)
+        emptyDataView.isHidden = true
     }
     
     // MARK: - Layout
@@ -40,12 +44,17 @@ class MainPageUsersTableView: UIView {
         super.layoutSubviews()
         
         tableView.frame = bounds
+        emptyDataView.frame = bounds
     }
     
     // MARK: - Content
     func setViewDataList(_ userRowViewDataList: [UserRowViewData]) {
         self.userRowViewDataList = userRowViewDataList
         tableView.reloadData()
+    }
+    
+    func showEmptyDataView(_ show: Bool) {
+        emptyDataView.isHidden = !show
     }
     
     // MARK: - Unused

@@ -176,5 +176,8 @@ final class MainPageView: UIScrollView, StandardPreloaderViewHolder, ActivityDis
     
     func setUserSuggestList(_ suggestList: [UserRowViewData]) {
         searchSuggestionsView.setViewDataList(suggestList)
+        if let searchText = searchBarView.text {
+            searchSuggestionsView.showEmptyDataView(suggestList.isEmpty && searchText.isNotEmpty)
+        }
     }
 }
